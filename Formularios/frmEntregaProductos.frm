@@ -1,7 +1,7 @@
 VERSION 5.00
 Object = "{BDC217C8-ED16-11CD-956C-0000C04E4C0A}#1.1#0"; "TABCTL32.OCX"
 Object = "{5E9E78A0-531B-11CF-91F6-C2863C385E30}#1.0#0"; "MSFLXGRD.OCX"
-Object = "{5F09B5DF-6F4D-11D2-8355-4854E82A9183}#15.0#0"; "FECHA32.OCX"
+Object = "{5F09B5DF-6F4D-11D2-8355-4854E82A9183}#15.0#0"; "Fecha32.ocx"
 Begin VB.Form frmEntregaProductos 
    Caption         =   "Salida de Mercadería"
    ClientHeight    =   7125
@@ -96,8 +96,8 @@ Begin VB.Form frmEntregaProductos
       TabCaption(1)   =   "&Buscar"
       TabPicture(1)   =   "frmEntregaProductos.frx":186C
       Tab(1).ControlEnabled=   0   'False
-      Tab(1).Control(0)=   "grdModulos"
-      Tab(1).Control(1)=   "Frame4"
+      Tab(1).Control(0)=   "Frame4"
+      Tab(1).Control(1)=   "grdModulos"
       Tab(1).ControlCount=   2
       Begin VB.Frame FrameRemito 
          Caption         =   "Remito ..."
@@ -631,8 +631,8 @@ Private Sub chkFecha_Click()
     Else
         FechaDesde.Enabled = False
         FechaHasta.Enabled = False
-        FechaDesde.Text = ""
-        FechaHasta.Text = ""
+        FechaDesde.Value = ""
+        FechaHasta.Value = ""
     End If
 End Sub
 
@@ -640,7 +640,7 @@ Private Sub CmdBorrar_Click()
     If txtNentrega.Text <> "" Then
         If MsgBox("Confirma Anular Salida de Mercadería", vbQuestion + vbYesNo, TIT_MSGBOX) = vbYes Then
             On Error GoTo HayError
-            lblEstado.Caption = "Anulando..."
+            lblestado.Caption = "Anulando..."
             Screen.MousePointer = vbNormal
             DBConn.BeginTrans
             'LE PONGO EL ESTADO ANULADO A LA SALIDA
@@ -657,22 +657,22 @@ Private Sub CmdBorrar_Click()
                 sql = sql & " AND PTO_CODIGO =" & XN(grdGrilla.TextMatrix(I, 0))
                 DBConn.Execute sql
             Next
-            lblEstado.Caption = ""
+            lblestado.Caption = ""
             Screen.MousePointer = vbHourglass
             DBConn.CommitTrans
-            cmdNuevo_Click
+            CmdNuevo_Click
         End If
     End If
     Exit Sub
 HayError:
-        lblEstado.Caption = ""
+        lblestado.Caption = ""
         Screen.MousePointer = vbNormal
         DBConn.RollbackTrans
         MsgBox Err.Description, vbCritical, TIT_MSGBOX
 End Sub
 
 Private Sub CmdBuscAprox_Click()
-    lblEstado.Caption = "Buscando..."
+    lblestado.Caption = "Buscando..."
     Screen.MousePointer = vbHourglass
     
     sql = " SELECT E.EGA_CODIGO, E.EGA_FECHA, E.EST_CODIGO, E.VEN_CODIGO,"
@@ -700,21 +700,21 @@ Private Sub CmdBuscAprox_Click()
         Loop
         GrdModulos.SetFocus
     Else
-        lblEstado.Caption = ""
+        lblestado.Caption = ""
         Screen.MousePointer = vbNormal
         MsgBox "No se encontraron datos...", vbExclamation, TIT_MSGBOX
     End If
-    lblEstado.Caption = ""
+    lblestado.Caption = ""
     Screen.MousePointer = vbNormal
     rec.Close
 End Sub
 
-Private Sub CmdGrabar_Click()
+Private Sub cmdGrabar_Click()
     On Error GoTo HayError
     If validarentrega = False Then Exit Sub
          
         Screen.MousePointer = vbHourglass
-        lblEstado.Caption = "Guardando ..."
+        lblestado.Caption = "Guardando ..."
         
         DBConn.BeginTrans
         sql = "INSERT INTO ENTREGA_PRODUCTO(EGA_CODIGO, EGA_FECHA, VEN_CODIGO,"
@@ -751,13 +751,13 @@ Private Sub CmdGrabar_Click()
         DBConn.Execute sql
         
         Screen.MousePointer = vbNormal
-        lblEstado.Caption = ""
+        lblestado.Caption = ""
         DBConn.CommitTrans
-        cmdNuevo_Click
+        CmdNuevo_Click
     Exit Sub
          
 HayError:
-         lblEstado.Caption = ""
+         lblestado.Caption = ""
          DBConn.RollbackTrans
          Screen.MousePointer = vbNormal
          MsgBox Err.Description, vbCritical, TIT_MSGBOX
@@ -790,7 +790,7 @@ Function validarentrega()
     validarentrega = True
     
 End Function
-Private Sub cmdNuevo_Click()
+Private Sub CmdNuevo_Click()
     Consulta = False 'no hace consulta
     frameGeneral.Enabled = True
     FrameRemito.Enabled = True
@@ -832,7 +832,7 @@ End Sub
 
 Private Sub Form_Load()
     Set rec = New ADODB.Recordset
-    lblEstado.Caption = ""
+    lblestado.Caption = ""
     Call Centrar_pantalla(Me)
     preparogrilla
     'CARGO COMBO EMPLEADO
@@ -923,9 +923,9 @@ Private Sub cargocboEmpl()
     rec.Close
 End Sub
 
-Private Sub GrdModulos_dblClick()
+Private Sub GrdModulos_DblClick()
     If GrdModulos.Rows > 1 Then
-        cmdNuevo_Click
+        CmdNuevo_Click
         Consulta = True
         txtNentrega.Text = GrdModulos.TextMatrix(GrdModulos.RowSel, 0)
         Fecha.Text = GrdModulos.TextMatrix(GrdModulos.RowSel, 1)
@@ -950,7 +950,7 @@ Private Sub GrdModulos_dblClick()
 End Sub
 
 Private Sub GrdModulos_KeyDown(KeyCode As Integer, Shift As Integer)
-    If KeyCode = vbKeyReturn Then GrdModulos_dblClick
+    If KeyCode = vbKeyReturn Then GrdModulos_DblClick
 End Sub
 
 Private Sub tabDatos_Click(PreviousTab As Integer)
@@ -969,8 +969,8 @@ End Sub
 
 Private Sub LimpiarBusqueda()
     cboEmpleado1.ListIndex = -1
-    FechaDesde.Text = ""
-    FechaHasta.Text = ""
+    FechaDesde.Value = ""
+    FechaHasta.Value = ""
     GrdModulos.Rows = 1
     chkEncargado.Value = Unchecked
     chkFecha.Value = Unchecked
@@ -1018,7 +1018,7 @@ Private Sub txtNroRemito_LostFocus()
                 Exit Sub
             End If
             Screen.MousePointer = vbHourglass
-            lblEstado.Caption = "Buscando..."
+            lblestado.Caption = "Buscando..."
 
             'CARGO CABECERA DEL REMITO
             FechaRemito.Text = rec!RCL_FECHA
@@ -1030,7 +1030,7 @@ Private Sub txtNroRemito_LostFocus()
 
             If rec!EST_CODIGO <> 3 Then
                 Screen.MousePointer = vbNormal
-                lblEstado.Caption = ""
+                lblestado.Caption = ""
                 
                 MsgBox "El Remito número: " & txtNroRemito.Text & Chr(13) & _
                        "No puede ser utilizado por su estado (" & rec!EST_DESCRI & ")", vbExclamation, TIT_MSGBOX
@@ -1045,7 +1045,7 @@ Private Sub txtNroRemito_LostFocus()
             End If
         Else
             Screen.MousePointer = vbNormal
-            lblEstado.Caption = ""
+            lblestado.Caption = ""
             MsgBox "El Remito no Existe", vbCritical, TIT_MSGBOX
             LimpiarRemito
             txtRemSuc.SetFocus
@@ -1064,7 +1064,7 @@ Private Sub txtNroRemito_LostFocus()
             
             If rec.EOF = False Then
                 Screen.MousePointer = vbNormal
-                lblEstado.Caption = ""
+                lblestado.Caption = ""
                 MsgBox "El Remito ya fue usado en la Salida de Mercadería Nro: " & Format(rec!EGA_CODIGO, "00000000"), vbExclamation, TIT_MSGBOX
                 LimpiarRemito
                 rec.Close
@@ -1107,7 +1107,7 @@ Private Sub txtNroRemito_LostFocus()
         rec.Close
         '--------------------------------------------------
         Screen.MousePointer = vbNormal
-        lblEstado.Caption = ""
+        lblestado.Caption = ""
     End If
 End Sub
 

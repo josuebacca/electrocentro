@@ -1,6 +1,6 @@
 VERSION 5.00
 Object = "{BDC217C8-ED16-11CD-956C-0000C04E4C0A}#1.1#0"; "TABCTL32.OCX"
-Object = "{5E9E78A0-531B-11CF-91F6-C2863C385E30}#1.0#0"; "Msflxgrd.ocx"
+Object = "{5E9E78A0-531B-11CF-91F6-C2863C385E30}#1.0#0"; "MSFLXGRD.OCX"
 Object = "{5F09B5DF-6F4D-11D2-8355-4854E82A9183}#15.0#0"; "Fecha32.ocx"
 Begin VB.Form frmOrdenesCompra 
    BorderStyle     =   1  'Fixed Single
@@ -104,9 +104,9 @@ Begin VB.Form frmOrdenesCompra
       TabCaption(1)   =   "&Buscar"
       TabPicture(1)   =   "frmOrdenesCompra.frx":001C
       Tab(1).ControlEnabled=   0   'False
-      Tab(1).Control(0)=   "Frame4"
+      Tab(1).Control(0)=   "GrdModulos"
       Tab(1).Control(0).Enabled=   0   'False
-      Tab(1).Control(1)=   "GrdModulos"
+      Tab(1).Control(1)=   "Frame4"
       Tab(1).Control(1).Enabled=   0   'False
       Tab(1).ControlCount=   2
       Begin VB.Frame Frame8 
@@ -1106,8 +1106,8 @@ Private Sub chkFecha_Click()
         FechaDesde.Enabled = True
         FechaHasta.Enabled = True
     Else
-        FechaDesde.Text = ""
-        FechaHasta.Text = ""
+        FechaDesde.Value = ""
+        FechaHasta.Value = ""
         FechaDesde.Enabled = False
         FechaHasta.Enabled = False
     End If
@@ -1303,7 +1303,7 @@ Private Sub cmdBuscarVendedor_Click()
     End If
 End Sub
 
-Private Sub CmdGrabar_Click()
+Private Sub cmdGrabar_Click()
     If ValidarNotaPedido = False Then Exit Sub
     If MsgBox("¿Confirma Orden de Compra?", vbQuestion + vbYesNo, TIT_MSGBOX) = vbNo Then Exit Sub
     On Error GoTo HayErrorNota
@@ -1588,7 +1588,7 @@ Private Sub CmdNuevo_Click()
    tabDatos.Tab = 0
    Call BuscoEstado(1, lblEstadoNota)
    cmdGrabar.Enabled = True
-   CmdBorrar.Enabled = True
+   cmdBorrar.Enabled = True
    txtNroNotaPedido.Text = BuscoUltimoRenito
    If txtNroNotaPedido.Text = "" Then
         txtNroNotaPedido.Text = "00000001"
@@ -1630,7 +1630,7 @@ Private Sub cmdQuitarProducto_Click()
     End If
 End Sub
 
-Private Sub cmdSalir_Click()
+Private Sub CmdSalir_Click()
     If MsgBox("Seguro que desea Salir", vbQuestion + vbYesNo, TIT_MSGBOX) = vbYes Then
         Set frmOrdenesCompra = Nothing
         Unload Me
@@ -1655,7 +1655,7 @@ Private Sub Form_KeyPress(KeyAscii As Integer)
         KeyAscii = vbKeyReturn Then
         SendKeys "{TAB}"
     End If
-    If KeyAscii = vbKeyEscape Then cmdSalir_Click
+    If KeyAscii = vbKeyEscape Then CmdSalir_Click
 End Sub
 Private Function BuscoUltimoRenito() As String
     'ACA BUSCA EL NUMERO DE ORDEN DE COMPRA SIGUIENTE AL ULTIMO CARGADO
@@ -1880,7 +1880,7 @@ Private Sub tabDatos_Click(PreviousTab As Integer)
     FechaHasta.Enabled = False
     txtVendedor.Enabled = False
     cmdGrabar.Enabled = False
-    CmdBorrar.Enabled = False
+    cmdBorrar.Enabled = False
     cmdBuscarCli.Enabled = False
     cmdBuscarVen.Enabled = False
     LimpiarBusqueda
@@ -1888,15 +1888,15 @@ Private Sub tabDatos_Click(PreviousTab As Integer)
   Else
     'If Me.Visible = True Then txtNroNotaPedido.SetFocus
     cmdGrabar.Enabled = True
-    CmdBorrar.Enabled = True
+    cmdBorrar.Enabled = True
   End If
 End Sub
 
 Private Sub LimpiarBusqueda()
     txtCliente.Text = ""
     txtDesCli.Text = ""
-    FechaDesde.Text = ""
-    FechaHasta.Text = ""
+    FechaDesde.Value = ""
+    FechaHasta.Value = ""
     txtVendedor.Text = ""
     txtDesVen.Text = ""
     GrdModulos.Rows = 1
@@ -2282,7 +2282,7 @@ Set Rec1 = New ADODB.Recordset
                 'cmdImprimir.Enabled = False
             Else
                 cmdGrabar.Enabled = True
-                CmdBorrar.Enabled = True
+                cmdBorrar.Enabled = True
                 FramePedido.Enabled = True
                 fraDatos.Enabled = True
             End If

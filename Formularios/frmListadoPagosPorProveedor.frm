@@ -307,29 +307,29 @@ Private Sub cmdListar_Click()
         Rep.SelectionFormula = "{PAGOS_PROVEEDORES_V.TPR_CODIGO}=" & cboTipoProveedor.ItemData(cboTipoProveedor.ListIndex)
         Rep.SelectionFormula = Rep.SelectionFormula & " AND {PAGOS_PROVEEDORES_V.PROV_CODIGO}=" & txtCodProveedor.Text
     End If
-    If FechaDesde.Text <> "" Then
+    If FechaDesde.Value <> "" Then
         If Rep.SelectionFormula = "" Then
-            Rep.SelectionFormula = " {PAGOS_PROVEEDORES_V.OPG_FECHA}>= DATE (" & Mid(FechaDesde.Text, 7, 4) & "," & Mid(FechaDesde.Text, 4, 2) & "," & Mid(FechaDesde.Text, 1, 2) & ")"
+            Rep.SelectionFormula = " {PAGOS_PROVEEDORES_V.OPG_FECHA}>= DATE (" & Mid(FechaDesde.Value, 7, 4) & "," & Mid(FechaDesde.Value, 4, 2) & "," & Mid(FechaDesde.Value, 1, 2) & ")"
         Else
-            Rep.SelectionFormula = Rep.SelectionFormula & " AND {PAGOS_PROVEEDORES_V.OPG_FECHA}>= DATE (" & Mid(FechaDesde.Text, 7, 4) & "," & Mid(FechaDesde.Text, 4, 2) & "," & Mid(FechaDesde.Text, 1, 2) & ")"
+            Rep.SelectionFormula = Rep.SelectionFormula & " AND {PAGOS_PROVEEDORES_V.OPG_FECHA}>= DATE (" & Mid(FechaDesde.Value, 7, 4) & "," & Mid(FechaDesde.Value, 4, 2) & "," & Mid(FechaDesde.Value, 1, 2) & ")"
         End If
     End If
-    If FechaHasta.Text <> "" Then
+    If FechaHasta.Value <> "" Then
         If Rep.SelectionFormula = "" Then
-            Rep.SelectionFormula = " {PAGOS_PROVEEDORES_V.OPG_FECHA}<= DATE (" & Mid(FechaHasta.Text, 7, 4) & "," & Mid(FechaHasta.Text, 4, 2) & "," & Mid(FechaHasta.Text, 1, 2) & ")"
+            Rep.SelectionFormula = " {PAGOS_PROVEEDORES_V.OPG_FECHA}<= DATE (" & Mid(FechaHasta.Value, 7, 4) & "," & Mid(FechaHasta.Value, 4, 2) & "," & Mid(FechaHasta.Value, 1, 2) & ")"
                            
         Else
-            Rep.SelectionFormula = Rep.SelectionFormula & " AND {PAGOS_PROVEEDORES_V.OPG_FECHA}<= DATE (" & Mid(FechaHasta.Text, 7, 4) & "," & Mid(FechaHasta.Text, 4, 2) & "," & Mid(FechaHasta.Text, 1, 2) & ")"
+            Rep.SelectionFormula = Rep.SelectionFormula & " AND {PAGOS_PROVEEDORES_V.OPG_FECHA}<= DATE (" & Mid(FechaHasta.Value, 7, 4) & "," & Mid(FechaHasta.Value, 4, 2) & "," & Mid(FechaHasta.Value, 1, 2) & ")"
         End If
     End If
     
-    If FechaDesde.Text <> "" And FechaHasta.Text <> "" Then
-        Rep.Formulas(0) = "FECHA='" & "Desde: " & FechaDesde.Text & "   Hasta: " & FechaHasta.Text & "'"
-    ElseIf FechaDesde.Text <> "" And FechaHasta.Text = "" Then
-        Rep.Formulas(0) = "FECHA='" & "Desde: " & FechaDesde.Text & "   Hasta: " & Date & "'"
-    ElseIf FechaDesde.Text = "" And FechaHasta.Text <> "" Then
-        Rep.Formulas(0) = "FECHA='" & "Desde: Inicio" & "   Hasta: " & FechaHasta.Text & "'"
-    ElseIf FechaDesde.Text = "" And FechaHasta.Text = "" Then
+    If FechaDesde.Value <> "" And FechaHasta.Value <> "" Then
+        Rep.Formulas(0) = "FECHA='" & "Desde: " & FechaDesde.Value & "   Hasta: " & FechaHasta.Value & "'"
+    ElseIf FechaDesde.Value <> "" And FechaHasta.Value = "" Then
+        Rep.Formulas(0) = "FECHA='" & "Desde: " & FechaDesde.Value & "   Hasta: " & Date & "'"
+    ElseIf FechaDesde.Value = "" And FechaHasta.Value <> "" Then
+        Rep.Formulas(0) = "FECHA='" & "Desde: Inicio" & "   Hasta: " & FechaHasta.Value & "'"
+    ElseIf FechaDesde.Value = "" And FechaHasta.Value = "" Then
         Rep.Formulas(0) = "FECHA='" & "Desde: Inicio" & "   Hasta: " & Date & "'"
     End If
     
@@ -350,20 +350,20 @@ End Sub
 
 Private Sub CmdNuevo_Click()
     txtCodProveedor.Text = ""
-    FechaDesde.Text = ""
-    FechaHasta.Text = ""
+    FechaDesde.Value = ""
+    FechaHasta.Value = ""
     cboTipoProveedor.ListIndex = 0
     cboTipoProveedor.SetFocus
 End Sub
 
-Private Sub cmdSalir_Click()
+Private Sub CmdSalir_Click()
     Set frmListadoPagosPorProveedor = Nothing
     Unload Me
 End Sub
 
 Private Sub Form_KeyPress(KeyAscii As Integer)
     If KeyAscii = vbKeyReturn Then SendKeys "{TAB}"
-    If KeyAscii = vbKeyEscape Then cmdSalir_Click
+    If KeyAscii = vbKeyEscape Then CmdSalir_Click
 End Sub
 
 Private Sub Form_Load()

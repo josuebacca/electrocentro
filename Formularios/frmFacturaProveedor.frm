@@ -80,8 +80,8 @@ Begin VB.Form frmfacturaproveedor
       TabCaption(1)   =   "&Buscar"
       TabPicture(1)   =   "frmFacturaProveedor.frx":001C
       Tab(1).ControlEnabled=   0   'False
-      Tab(1).Control(0)=   "frameBuscar"
-      Tab(1).Control(1)=   "GrdModulos"
+      Tab(1).Control(0)=   "GrdModulos"
+      Tab(1).Control(1)=   "frameBuscar"
       Tab(1).ControlCount=   2
       Begin VB.Frame freCliente 
          Height          =   1775
@@ -1227,7 +1227,7 @@ Attribute VB_Creatable = False
 Attribute VB_PredeclaredId = True
 Attribute VB_Exposed = False
 Option Explicit
-Dim i As Integer
+Dim I As Integer
 Dim w As Integer
 Dim TipoBusquedaDoc As Integer
 Dim VBonificacion As Double
@@ -1304,7 +1304,7 @@ End Sub
 
 Private Sub CmdBuscAprox_Click()
     GrdModulos.Rows = 1
-    lblEstado.Caption = "Buscando..."
+    lblestado.Caption = "Buscando..."
     Screen.MousePointer = vbHourglass
     
     Select Case TipoBusquedaDoc
@@ -1350,7 +1350,7 @@ Private Sub CmdBuscAprox_Click()
             Loop
             GrdModulos.SetFocus
         Else
-            lblEstado.Caption = ""
+            lblestado.Caption = ""
             Screen.MousePointer = vbNormal
             MsgBox "No se encontraron datos...", vbExclamation, TIT_MSGBOX
         End If
@@ -1381,13 +1381,13 @@ Private Sub CmdBuscAprox_Click()
             Loop
             GrdModulos.SetFocus
         Else
-            lblEstado.Caption = ""
+            lblestado.Caption = ""
             Screen.MousePointer = vbNormal
             MsgBox "No se encontraron datos...", vbExclamation, TIT_MSGBOX
         End If
     End Select
     
-    lblEstado.Caption = ""
+    lblestado.Caption = ""
     Screen.MousePointer = vbNormal
     rec.Close
 End Sub
@@ -1443,7 +1443,7 @@ Private Sub cmdBuscarVen_Click()
     End If
 End Sub
 
-Private Sub CmdGrabar_Click()
+Private Sub cmdGrabar_Click()
     
     If ValidarFactura = False Then Exit Sub
     If MsgBox("¿Confirma Factura?", vbQuestion + vbYesNo, TIT_MSGBOX) = vbNo Then Exit Sub
@@ -1462,7 +1462,7 @@ Private Sub CmdGrabar_Click()
     rec.Open sql, DBConn, adOpenStatic, adLockOptimistic
     
     Screen.MousePointer = vbHourglass
-    lblEstado.Caption = "Guardando..."
+    lblestado.Caption = "Guardando..."
     
     If rec.EOF = True Then
         'NUEVA FACTURA
@@ -1506,8 +1506,8 @@ Private Sub CmdGrabar_Click()
         sql = sql & 5 & ")"
         DBConn.Execute sql
            
-        For i = 1 To grdGrilla.Rows - 1
-            If grdGrilla.TextMatrix(i, 0) <> "" Then
+        For I = 1 To grdGrilla.Rows - 1
+            If grdGrilla.TextMatrix(I, 0) <> "" Then
                 sql = "INSERT INTO DETALLE_FACTURA_PROVEEDOR"
                 sql = sql & " (TCO_CODIGO,FPR_NUMERO,FPR_NROSUC,FPR_FECHA,"
                 sql = sql & "DFP_NROITEM,PTO_CODIGO,DFP_CANTIDAD,DFP_PRECIO,DFP_BONIFICA,DFP_DETALLE"
@@ -1518,12 +1518,12 @@ Private Sub CmdGrabar_Click()
                 sql = sql & XN(txtNroFactura) & ","
                 sql = sql & XN(txtNroSucursal) & ","
                 sql = sql & XDQ(FechaFactura) & ","
-                sql = sql & XN(grdGrilla.TextMatrix(i, 9)) & ","
-                sql = sql & XS(grdGrilla.TextMatrix(i, 0), True) & ","
-                sql = sql & XN(grdGrilla.TextMatrix(i, 2)) & ","
-                sql = sql & XN(grdGrilla.TextMatrix(i, 3)) & ","
-                sql = sql & XN(grdGrilla.TextMatrix(i, 4)) & ","
-                sql = sql & XS(grdGrilla.TextMatrix(i, 1)) & ","
+                sql = sql & XN(grdGrilla.TextMatrix(I, 9)) & ","
+                sql = sql & XS(grdGrilla.TextMatrix(I, 0), True) & ","
+                sql = sql & XN(grdGrilla.TextMatrix(I, 2)) & ","
+                sql = sql & XN(grdGrilla.TextMatrix(I, 3)) & ","
+                sql = sql & XN(grdGrilla.TextMatrix(I, 4)) & ","
+                sql = sql & XS(grdGrilla.TextMatrix(I, 1)) & ","
                 'AGREGUE ACA
                 sql = sql & XN(TxtCodigoCli) & ")"
                 DBConn.Execute sql
@@ -1531,13 +1531,13 @@ Private Sub CmdGrabar_Click()
         Next
         
         'ACTUALIZO EL STOCK CUANDO EL REMITO ES DEFINITIVO (STOCK PENDIENTE)
-         For i = 1 To grdGrilla.Rows - 1
-             If grdGrilla.TextMatrix(i, 0) <> "" Then
+         For I = 1 To grdGrilla.Rows - 1
+             If grdGrilla.TextMatrix(I, 0) <> "" Then
                      sql = "UPDATE DETALLE_STOCK"
                      sql = sql & " SET"
-                     sql = sql & " DST_STKFIS = DST_STKFIS + " & XN(grdGrilla.TextMatrix(i, 2))
+                     sql = sql & " DST_STKFIS = DST_STKFIS + " & XN(grdGrilla.TextMatrix(I, 2))
                      sql = sql & " WHERE STK_CODIGO= 1"
-                     sql = sql & " AND PTO_CODIGO LIKE '" & grdGrilla.TextMatrix(i, 0) & "'"
+                     sql = sql & " AND PTO_CODIGO LIKE '" & grdGrilla.TextMatrix(I, 0) & "'"
                      DBConn.Execute sql
              End If
          Next
@@ -1578,19 +1578,19 @@ Private Sub CmdGrabar_Click()
         MsgBox "La Factura ya fue Registrada", vbCritical, TIT_MSGBOX
         txtNroFactura.SetFocus
         Screen.MousePointer = vbNormal
-        lblEstado.Caption = ""
+        lblestado.Caption = ""
         rec.Close
         DBConn.CommitTrans
         Exit Sub
     End If
     rec.Close
     Screen.MousePointer = vbNormal
-    lblEstado.Caption = ""
+    lblestado.Caption = ""
     CmdNuevo_Click
     Exit Sub
     
 HayErrorFactura:
-    lblEstado.Caption = ""
+    lblestado.Caption = ""
     Screen.MousePointer = vbNormal
     If rec.State = 1 Then rec.Close
     DBConn.RollbackTrans
@@ -1646,17 +1646,17 @@ Private Function ValidarFactura() As Boolean
     ValidarFactura = True
 End Function
 Private Sub CmdNuevo_Click()
-   For i = 1 To grdGrilla.Rows - 1
-        grdGrilla.TextMatrix(i, 0) = ""
-        grdGrilla.TextMatrix(i, 1) = ""
-        grdGrilla.TextMatrix(i, 2) = ""
-        grdGrilla.TextMatrix(i, 3) = ""
-        grdGrilla.TextMatrix(i, 4) = ""
-        grdGrilla.TextMatrix(i, 5) = ""
-        grdGrilla.TextMatrix(i, 6) = ""
-        grdGrilla.TextMatrix(i, 7) = ""
-        grdGrilla.TextMatrix(i, 8) = ""
-        grdGrilla.TextMatrix(i, 9) = i
+   For I = 1 To grdGrilla.Rows - 1
+        grdGrilla.TextMatrix(I, 0) = ""
+        grdGrilla.TextMatrix(I, 1) = ""
+        grdGrilla.TextMatrix(I, 2) = ""
+        grdGrilla.TextMatrix(I, 3) = ""
+        grdGrilla.TextMatrix(I, 4) = ""
+        grdGrilla.TextMatrix(I, 5) = ""
+        grdGrilla.TextMatrix(I, 6) = ""
+        grdGrilla.TextMatrix(I, 7) = ""
+        grdGrilla.TextMatrix(I, 8) = ""
+        grdGrilla.TextMatrix(I, 9) = I
    Next
    LimpiarRemito
    CmdBuscAprox.Tag = ""
@@ -1674,7 +1674,7 @@ Private Sub CmdNuevo_Click()
    txtImporteIva.Text = ""
    txtObservaciones.Text = ""
    cboCondicion.ListIndex = 0
-   lblEstado.Caption = ""
+   lblestado.Caption = ""
    cmdGrabar.Enabled = True
    'BUSCO IVA
    BuscoIva
@@ -1711,7 +1711,7 @@ Private Sub cmdNuevoVendedor_Click()
     txtNroVendedor.SetFocus
 End Sub
 
-Private Sub cmdSalir_Click()
+Private Sub CmdSalir_Click()
     If MsgBox("Seguro que desea Salir", vbQuestion + vbYesNo, TIT_MSGBOX) = vbYes Then
         Set frmfacturaproveedor = Nothing
         Unload Me
@@ -1763,7 +1763,7 @@ Private Sub Form_KeyPress(KeyAscii As Integer)
         KeyAscii = vbKeyReturn Then
         SendKeys "{TAB}"
     End If
-    If KeyAscii = vbKeyEscape Then cmdSalir_Click
+    If KeyAscii = vbKeyEscape Then CmdSalir_Click
 End Sub
 
 Private Sub Form_Load()
@@ -1787,9 +1787,9 @@ Private Sub Form_Load()
     grdGrilla.ColWidth(9) = 0    'ORDEN
     grdGrilla.Cols = 10
     grdGrilla.Rows = 1
-    For i = 2 To 14
+    For I = 2 To 14
         grdGrilla.AddItem "" & Chr(9) & "" & Chr(9) & "" & Chr(9) & "" & Chr(9) & "" & Chr(9) & "" _
-                             & Chr(9) & "" & Chr(9) & "" & Chr(9) & "" & Chr(9) & (i - 1)
+                             & Chr(9) & "" & Chr(9) & "" & Chr(9) & "" & Chr(9) & (I - 1)
     Next
     'GRILLA (GrdModulos) PARA LA BUSQUEDA
     GrdModulos.FormatString = "Tipo Fac|^Número|^Fecha|Proveedor|Domicilio|Empleado|Cod_Estado|" _
@@ -1816,7 +1816,7 @@ Private Sub Form_Load()
     '------------------------------------
    
     '------------------------------------
-    lblEstado.Caption = ""
+    lblestado.Caption = ""
     'CARGO COMBO CON LOS TIPOS DE FACTURA
     LlenarComboFactura
     'CARGO COMBO CON LAS CONDICIONES DE VENTA
@@ -1985,7 +1985,7 @@ Private Sub GrdModulos_DblClick()
         Select Case TipoBusquedaDoc
         Case 1 'BUSCA FACTURA
             Set Rec1 = New ADODB.Recordset
-            lblEstado.Caption = "Buscando..."
+            lblestado.Caption = "Buscando..."
             Screen.MousePointer = vbHourglass
             'CABEZA FACTURA
             Call BuscaCodigoProxItemData(CInt(GrdModulos.TextMatrix(GrdModulos.RowSel, 12)), cboFactura)
@@ -2029,32 +2029,32 @@ Private Sub GrdModulos_DblClick()
             sql = sql & " ORDER BY DFP.DFP_NROITEM"
             Rec1.Open sql, DBConn, adOpenStatic, adLockOptimistic
             If Rec1.EOF = False Then
-                i = 1
+                I = 1
                 Do While Rec1.EOF = False
-                    grdGrilla.TextMatrix(i, 0) = Rec1!PTO_CODIGO
-                    grdGrilla.TextMatrix(i, 1) = Rec1!PTO_DESCRI
-                    grdGrilla.TextMatrix(i, 2) = Rec1!DFP_CANTIDAD
-                    grdGrilla.TextMatrix(i, 3) = Valido_Importe(Rec1!DFP_PRECIO)
+                    grdGrilla.TextMatrix(I, 0) = Rec1!PTO_CODIGO
+                    grdGrilla.TextMatrix(I, 1) = Rec1!PTO_DESCRI
+                    grdGrilla.TextMatrix(I, 2) = Rec1!DFP_CANTIDAD
+                    grdGrilla.TextMatrix(I, 3) = Valido_Importe(Rec1!DFP_PRECIO)
                     If IsNull(Rec1!DFP_BONIFICA) Then
-                        grdGrilla.TextMatrix(i, 4) = ""
+                        grdGrilla.TextMatrix(I, 4) = ""
                     Else
-                        grdGrilla.TextMatrix(i, 4) = Valido_Importe(Rec1!DFP_BONIFICA)
+                        grdGrilla.TextMatrix(I, 4) = Valido_Importe(Rec1!DFP_BONIFICA)
                     End If
                     VBonificacion = 0
                     If Not IsNull(Rec1!DFP_BONIFICA) Then
                         VBonificacion = (((CDbl(Rec1!DFP_CANTIDAD) * CDbl(Rec1!DFP_PRECIO)) * CDbl(Rec1!DFP_BONIFICA)) / 100)
                         VBonificacion = ((CDbl(Rec1!DFP_CANTIDAD) * CDbl(Rec1!DFP_PRECIO)) - VBonificacion)
-                        grdGrilla.TextMatrix(i, 5) = Valido_Importe(CStr(VBonificacion))
-                        grdGrilla.TextMatrix(i, 6) = Valido_Importe(CStr(VBonificacion))
+                        grdGrilla.TextMatrix(I, 5) = Valido_Importe(CStr(VBonificacion))
+                        grdGrilla.TextMatrix(I, 6) = Valido_Importe(CStr(VBonificacion))
                     Else
                         VBonificacion = (CDbl(Rec1!DFP_CANTIDAD) * CDbl(Rec1!DFP_PRECIO))
-                        grdGrilla.TextMatrix(i, 5) = ""
-                        grdGrilla.TextMatrix(i, 6) = Valido_Importe(CStr(VBonificacion))
+                        grdGrilla.TextMatrix(I, 5) = ""
+                        grdGrilla.TextMatrix(I, 6) = Valido_Importe(CStr(VBonificacion))
                     End If
-                    grdGrilla.TextMatrix(i, 7) = Rec1!RUB_DESCRI
-                    grdGrilla.TextMatrix(i, 8) = Rec1!LNA_DESCRI
-                    grdGrilla.TextMatrix(i, 9) = Rec1!DFP_NROITEM
-                    i = i + 1
+                    grdGrilla.TextMatrix(I, 7) = Rec1!RUB_DESCRI
+                    grdGrilla.TextMatrix(I, 8) = Rec1!LNA_DESCRI
+                    grdGrilla.TextMatrix(I, 9) = Rec1!DFP_NROITEM
+                    I = I + 1
                     Rec1.MoveNext
                 Loop
                 VBonificacion = 0
@@ -2079,7 +2079,7 @@ Private Sub GrdModulos_DblClick()
                 txtPorcentajeIva = GrdModulos.TextMatrix(GrdModulos.RowSel, 10)
                 txtPorcentajeIva_LostFocus
             End If
-            lblEstado.Caption = ""
+            lblestado.Caption = ""
             Screen.MousePointer = vbNormal
             '--------------
             FrameFactura.Enabled = False
@@ -2090,7 +2090,7 @@ Private Sub GrdModulos_DblClick()
         '----------------------------------------------------------
         Case 2 'BUSCA REMITO
         
-            lblEstado.Caption = "Buscando..."
+            lblestado.Caption = "Buscando..."
             Screen.MousePointer = vbHourglass
             
             txtRemSuc.Text = Left(GrdModulos.TextMatrix(GrdModulos.RowSel, 1), 4)
@@ -2101,7 +2101,7 @@ Private Sub GrdModulos_DblClick()
             'grillaRemito.TextMatrix(1, 1) = GrdModulos.TextMatrix(GrdModulos.RowSel, 4)
             TxtCodigoCli.Text = GrdModulos.TextMatrix(GrdModulos.RowSel, 5)
         
-            lblEstado.Caption = ""
+            lblestado.Caption = ""
             Screen.MousePointer = vbNormal
             tabDatos.Tab = 0
             txtNroRemito_LostFocus
@@ -2148,8 +2148,8 @@ End Sub
 Private Sub LimpiarBusqueda()
     txtCliente.Text = ""
     txtDesCli.Text = ""
-    FechaDesde.Text = ""
-    FechaHasta.Text = ""
+    FechaDesde.Value = ""
+    FechaHasta.Value = ""
     txtVendedor.Text = ""
     txtDesVen.Text = ""
     cboFactura1.ListIndex = 0
@@ -2298,9 +2298,9 @@ Private Sub TxtEdit_KeyDown(KeyCode As Integer, Shift As Integer)
 End Sub
 
 Private Function BuscoRepetetidos(Codigo As Long, Linea As Integer) As Boolean
-    For i = 1 To grdGrilla.Rows - 1
-        If grdGrilla.TextMatrix(i, 0) <> "" Then
-            If Codigo = CLng(grdGrilla.TextMatrix(i, 0)) And (i <> Linea) Then
+    For I = 1 To grdGrilla.Rows - 1
+        If grdGrilla.TextMatrix(I, 0) <> "" Then
+            If Codigo = CLng(grdGrilla.TextMatrix(I, 0)) And (I <> Linea) Then
                 MsgBox "El producto ya fue elegido anteriormente", vbExclamation, TIT_MSGBOX
                 BuscoRepetetidos = False
                 Exit Function
@@ -2400,7 +2400,7 @@ Private Sub txtNroRemito_LostFocus()
                 Exit Sub
             End If
             Screen.MousePointer = vbHourglass
-            lblEstado.Caption = "Buscando..."
+            lblestado.Caption = "Buscando..."
             
             'CARGO CABECERA DEL REMITO
             FechaRemito.Text = Rec2!RPR_FECHA
@@ -2417,7 +2417,7 @@ Private Sub txtNroRemito_LostFocus()
                        "No puede ser asignado a la Factura por su estado (" & Rec2!EST_DESCRI & ")", vbExclamation, TIT_MSGBOX
                 cmdGrabar.Enabled = False
                 Screen.MousePointer = vbNormal
-                lblEstado.Caption = ""
+                lblestado.Caption = ""
                 Rec2.Close
                 LimpiarRemito
                 txtRemSuc.SetFocus
@@ -2445,19 +2445,19 @@ Private Sub txtNroRemito_LostFocus()
             sql = sql & " ORDER BY DRPR.DRPR_NROITEM"
             Rec1.Open sql, DBConn, adOpenStatic, adLockOptimistic
             If Rec1.EOF = False Then
-                i = 1
+                I = 1
                 Do While Rec1.EOF = False
-                    grdGrilla.TextMatrix(i, 0) = Rec1!PTO_CODIGO
-                    grdGrilla.TextMatrix(i, 1) = IIf(IsNull(Rec1!DRPR_DETALLE), Rec1!PTO_DESCRI, Rec1!DRPR_DETALLE)
-                    grdGrilla.TextMatrix(i, 2) = IIf(IsNull(Rec1!DRPR_CANTIDAD), 0, Rec1!DRPR_CANTIDAD)
-                    grdGrilla.TextMatrix(i, 3) = Valido_Importe(Rec1!DRPR_PRECIO)
-                    grdGrilla.TextMatrix(i, 4) = ""
-                    grdGrilla.TextMatrix(i, 5) = ""
-                    grdGrilla.TextMatrix(i, 6) = Valido_Importe(CStr(CDbl(IIf(IsNull(Rec1!DRPR_CANTIDAD), 0, Rec1!DRPR_CANTIDAD) * CDbl(Rec1!DRPR_PRECIO))))
-                    grdGrilla.TextMatrix(i, 7) = Rec1!RUB_DESCRI
-                    grdGrilla.TextMatrix(i, 8) = Rec1!LNA_DESCRI
-                    grdGrilla.TextMatrix(i, 9) = Rec1!DRPR_NROITEM
-                    i = i + 1
+                    grdGrilla.TextMatrix(I, 0) = Rec1!PTO_CODIGO
+                    grdGrilla.TextMatrix(I, 1) = IIf(IsNull(Rec1!DRPR_DETALLE), Rec1!PTO_DESCRI, Rec1!DRPR_DETALLE)
+                    grdGrilla.TextMatrix(I, 2) = IIf(IsNull(Rec1!DRPR_CANTIDAD), 0, Rec1!DRPR_CANTIDAD)
+                    grdGrilla.TextMatrix(I, 3) = Valido_Importe(Rec1!DRPR_PRECIO)
+                    grdGrilla.TextMatrix(I, 4) = ""
+                    grdGrilla.TextMatrix(I, 5) = ""
+                    grdGrilla.TextMatrix(I, 6) = Valido_Importe(CStr(CDbl(IIf(IsNull(Rec1!DRPR_CANTIDAD), 0, Rec1!DRPR_CANTIDAD) * CDbl(Rec1!DRPR_PRECIO))))
+                    grdGrilla.TextMatrix(I, 7) = Rec1!RUB_DESCRI
+                    grdGrilla.TextMatrix(I, 8) = Rec1!LNA_DESCRI
+                    grdGrilla.TextMatrix(I, 9) = Rec1!DRPR_NROITEM
+                    I = I + 1
                     Rec1.MoveNext
                 Loop
                 txtSubtotal.Text = Valido_Importe(SumaTotal)
@@ -2473,7 +2473,7 @@ Private Sub txtNroRemito_LostFocus()
             cboCondicion.SetFocus
             txtPorcentajeIva_LostFocus
             Screen.MousePointer = vbNormal
-            lblEstado.Caption = ""
+            lblestado.Caption = ""
         Else
             MsgBox "El Remito no existe", vbExclamation, TIT_MSGBOX
             If Rec2.State = 1 Then Rec2.Close
@@ -2485,9 +2485,9 @@ End Sub
 
 Private Function SumaTotal() As Double
     VTotal = 0
-    For i = 1 To grdGrilla.Rows - 1
-        If grdGrilla.TextMatrix(i, 6) <> "" Then
-            VTotal = VTotal + (CDbl(grdGrilla.TextMatrix(i, 2)) * CDbl(grdGrilla.TextMatrix(i, 3)))
+    For I = 1 To grdGrilla.Rows - 1
+        If grdGrilla.TextMatrix(I, 6) <> "" Then
+            VTotal = VTotal + (CDbl(grdGrilla.TextMatrix(I, 2)) * CDbl(grdGrilla.TextMatrix(I, 3)))
         End If
     Next
     SumaTotal = Valido_Importe(CStr(VTotal))
@@ -2495,9 +2495,9 @@ End Function
 
 Private Function SumaBonificacion() As Double
     VTotal = 0
-    For i = 1 To grdGrilla.Rows - 1
-        If grdGrilla.TextMatrix(i, 6) <> "" Then
-            VTotal = VTotal + CDbl(grdGrilla.TextMatrix(i, 6))
+    For I = 1 To grdGrilla.Rows - 1
+        If grdGrilla.TextMatrix(I, 6) <> "" Then
+            VTotal = VTotal + CDbl(grdGrilla.TextMatrix(I, 6))
         End If
     Next
     SumaBonificacion = Valido_Importe(CStr(VTotal))

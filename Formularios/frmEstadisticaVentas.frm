@@ -330,7 +330,7 @@ Private Sub cboAño_LostFocus()
 End Sub
 
 Private Sub CmdBuscAprox_Click()
-    Dim i As Integer
+    Dim I As Integer
     Dim MesAño As String
     Dim Contado As Double
     Dim CtaCTe As Double
@@ -347,11 +347,11 @@ Private Sub CmdBuscAprox_Click()
     
     ' CONTADO
     GrdModulos.Rows = 1
-    For i = 1 To 12
-        MesAño = MES(i)
+    For I = 1 To 12
+        MesAño = MES(I)
         GrdModulos.AddItem MesAño & " " & cboAño.Text & Chr(9) & "0,00" _
                            & Chr(9) & "0,00" & Chr(9) & "0,00" & Chr(9) & "0,00"
-    Next i
+    Next I
     'CONTADO
     sql = "SELECT MONTH(RCL_FECHA)AS MES,SUM(RCL_TOTAL)AS TOTAL FROM REMITO_CLIENTE "
     sql = sql & " WHERE FPG_CODIGO = 1"
@@ -403,21 +403,21 @@ Private Sub CmdBuscAprox_Click()
        PORGAN = Rec1!PORGAN
     End If
     Rec1.Close
-    For i = 1 To 12
-        Contado = Valido_Importe(GrdModulos.TextMatrix(i, 1))
-        CtaCTe = Valido_Importe(GrdModulos.TextMatrix(i, 2))
+    For I = 1 To 12
+        Contado = Valido_Importe(GrdModulos.TextMatrix(I, 1))
+        CtaCTe = Valido_Importe(GrdModulos.TextMatrix(I, 2))
         TOTAL = Contado + CtaCTe
-        GrdModulos.TextMatrix(i, 3) = Format(TOTAL, "0.00")
-        If GrdModulos.TextMatrix(i, 3) = 0 Then
-            GrdModulos.TextMatrix(i, 3) = "0,00"
+        GrdModulos.TextMatrix(I, 3) = Format(TOTAL, "0.00")
+        If GrdModulos.TextMatrix(I, 3) = 0 Then
+            GrdModulos.TextMatrix(I, 3) = "0,00"
         End If
         'calculo porcentaje ganancia empleado
-        TOTPorGan = Valido_Importe(GrdModulos.TextMatrix(i, 3) * PORGAN) / 100
-        GrdModulos.TextMatrix(i, 5) = Format(TOTPorGan, "0.00")
-        If GrdModulos.TextMatrix(i, 5) = 0 Then
-            GrdModulos.TextMatrix(i, 5) = "0,00"
+        TOTPorGan = Valido_Importe(GrdModulos.TextMatrix(I, 3) * PORGAN) / 100
+        GrdModulos.TextMatrix(I, 5) = Format(TOTPorGan, "0.00")
+        If GrdModulos.TextMatrix(I, 5) = 0 Then
+            GrdModulos.TextMatrix(I, 5) = "0,00"
         End If
-    Next i
+    Next I
     
     ' Calculo Diferencia Año Interior
     'Todo - Contado y Cta cte
@@ -447,13 +447,13 @@ Private Sub CmdBuscAprox_Click()
     
     
     'Calculo totales
-    For i = 1 To 12
-        TOTCont = TOTCont + Valido_Importe(GrdModulos.TextMatrix(i, 1))
-        TOTCtaCte = TOTCtaCte + Valido_Importe(GrdModulos.TextMatrix(i, 2))
-        TOTTot = TOTTot + Valido_Importe(GrdModulos.TextMatrix(i, 3))
-        TOTTotDif = TOTTotDif + Valido_Importe(GrdModulos.TextMatrix(i, 4))
-        TOTPorGan = TOTPorGan + Valido_Importe(GrdModulos.TextMatrix(i, 5))
-    Next i
+    For I = 1 To 12
+        TOTCont = TOTCont + Valido_Importe(GrdModulos.TextMatrix(I, 1))
+        TOTCtaCte = TOTCtaCte + Valido_Importe(GrdModulos.TextMatrix(I, 2))
+        TOTTot = TOTTot + Valido_Importe(GrdModulos.TextMatrix(I, 3))
+        TOTTotDif = TOTTotDif + Valido_Importe(GrdModulos.TextMatrix(I, 4))
+        TOTPorGan = TOTPorGan + Valido_Importe(GrdModulos.TextMatrix(I, 5))
+    Next I
     txtTotCont.Text = Format(TOTCont, "0.00")
     txtTotCtaCte.Text = Format(TOTCtaCte, "0.00")
     txtTotTot.Text = Format(TOTTot, "0.00")
@@ -461,11 +461,11 @@ Private Sub CmdBuscAprox_Click()
     txtTotPorGan = Format(TOTPorGan, "0.00")
     'contar meses con total
     j = 0
-    For i = 1 To 12
-        If GrdModulos.TextMatrix(i, 3) <> "0,00" Then
+    For I = 1 To 12
+        If GrdModulos.TextMatrix(I, 3) <> "0,00" Then
             j = j + 1
         End If
-    Next i
+    Next I
     If j <> 0 Then
         ProMen = TOTTot / j
     Else
@@ -491,19 +491,19 @@ Private Function MES(nromes As Integer) As String
 End Function
 
 Private Sub cmdListar_Click()
-    Dim i As Integer
+    Dim I As Integer
     If GrdModulos.Rows > 2 Then
             
         DBConn.Execute "DELETE FROM TMP_VENTAS"
-        For i = 1 To 12
+        For I = 1 To 12
             sql = "INSERT INTO TMP_VENTAS (TMP_MESANIO,TMP_CONTADO,TMP_CTACTE,TMP_TOTAL,TMP_DIFAANT) VALUES ("
-            sql = sql & XS(Format(i, "00") & "- " & GrdModulos.TextMatrix(i, 0)) & ","
-            sql = sql & XN(GrdModulos.TextMatrix(i, 1)) & ","
-            sql = sql & XN(GrdModulos.TextMatrix(i, 2)) & ","
-            sql = sql & XN(GrdModulos.TextMatrix(i, 3)) & ","
-            sql = sql & XN(GrdModulos.TextMatrix(i, 4)) & ")"
+            sql = sql & XS(Format(I, "00") & "- " & GrdModulos.TextMatrix(I, 0)) & ","
+            sql = sql & XN(GrdModulos.TextMatrix(I, 1)) & ","
+            sql = sql & XN(GrdModulos.TextMatrix(I, 2)) & ","
+            sql = sql & XN(GrdModulos.TextMatrix(I, 3)) & ","
+            sql = sql & XN(GrdModulos.TextMatrix(I, 4)) & ")"
             DBConn.Execute sql
-        Next i
+        Next I
         ListarVentas
     End If
     
@@ -537,12 +537,12 @@ Private Sub CmdNuevo_Click()
     cboAño.Text = Year(Date)
     FechaDesde.Enabled = False
     FechaHasta.Enabled = False
-    FechaDesde.Text = Date
-    FechaHasta.Text = Date
+    FechaDesde.Value = Date
+    FechaHasta.Value = Date
     optAnio.Value = True
 End Sub
 
-Private Sub cmdSalir_Click()
+Private Sub CmdSalir_Click()
     Unload Me
 End Sub
 
@@ -552,7 +552,7 @@ End Sub
 
 Private Sub Form_KeyPress(KeyAscii As Integer)
     If KeyAscii = vbKeyReturn Then SendKeys "{TAB}"
-    If KeyAscii = vbKeyEscape Then cmdSalir_Click
+    If KeyAscii = vbKeyEscape Then CmdSalir_Click
 End Sub
 
 Private Sub Form_Load()
@@ -570,8 +570,8 @@ Private Sub Form_Load()
     cboAño.Text = Year(Date)
     FechaDesde.Enabled = False
     FechaHasta.Enabled = False
-    FechaDesde.Text = Date
-    FechaHasta.Text = Date
+    FechaDesde.Value = Date
+    FechaHasta.Value = Date
     CmdBuscAprox_Click
 End Sub
 Private Function preparogrilla()
@@ -586,9 +586,9 @@ Private Function preparogrilla()
     
 End Function
 Private Function cargocboanio()
-    For i = 1980 To 2099
-        cboAño.AddItem i
-    Next i
+    For I = 1980 To 2099
+        cboAño.AddItem I
+    Next I
 End Function
 
 Private Sub optAnio_Click()

@@ -1,6 +1,6 @@
 VERSION 5.00
 Object = "{BDC217C8-ED16-11CD-956C-0000C04E4C0A}#1.1#0"; "TABCTL32.OCX"
-Object = "{5E9E78A0-531B-11CF-91F6-C2863C385E30}#1.0#0"; "Msflxgrd.ocx"
+Object = "{5E9E78A0-531B-11CF-91F6-C2863C385E30}#1.0#0"; "MSFLXGRD.OCX"
 Object = "{00025600-0000-0000-C000-000000000046}#5.2#0"; "Crystl32.OCX"
 Object = "{5F09B5DF-6F4D-11D2-8355-4854E82A9183}#15.0#0"; "Fecha32.ocx"
 Begin VB.Form frmPagoProveedores 
@@ -86,8 +86,8 @@ Begin VB.Form frmPagoProveedores
       TabCaption(1)   =   "&Buscar"
       TabPicture(1)   =   "frmPagoProveedores.frx":001C
       Tab(1).ControlEnabled=   0   'False
-      Tab(1).Control(0)=   "GrdModulos"
-      Tab(1).Control(1)=   "frameBuscar"
+      Tab(1).Control(0)=   "frameBuscar"
+      Tab(1).Control(1)=   "GrdModulos"
       Tab(1).ControlCount=   2
       Begin VB.Frame FrameProveedor 
          Caption         =   "Proveedor..."
@@ -2052,9 +2052,9 @@ Private Sub cmdAgregarCheque_Click()
                       CboBanco.List(CboBanco.ListIndex) & Chr(9) & "P"
     Else
         
-        If TxtBanco.Text = "" Then
+        If TxtBANCO.Text = "" Then
             MsgBox "Debe ingresar el código del banco", vbExclamation, TIT_MSGBOX
-            TxtBanco.SetFocus
+            TxtBANCO.SetFocus
             Exit Sub
         End If
         If txtlocalidad.Text = "" Then
@@ -2062,9 +2062,9 @@ Private Sub cmdAgregarCheque_Click()
             txtlocalidad.SetFocus
             Exit Sub
         End If
-        If TxtSucursal.Text = "" Then
+        If TxtSUCURSAL.Text = "" Then
             MsgBox "Debe ingresar el código del banco", vbExclamation, TIT_MSGBOX
-            TxtSucursal.SetFocus
+            TxtSUCURSAL.SetFocus
             Exit Sub
         End If
         If TxtCodigo.Text = "" Then
@@ -2072,8 +2072,8 @@ Private Sub cmdAgregarCheque_Click()
             TxtCodigo.SetFocus
             Exit Sub
         End If
-        GrillaCheques.AddItem TxtBanco.Text & Chr(9) & txtlocalidad.Text & Chr(9) & _
-                          TxtSucursal.Text & Chr(9) & TxtCodigo.Text & Chr(9) & _
+        GrillaCheques.AddItem TxtBANCO.Text & Chr(9) & txtlocalidad.Text & Chr(9) & _
+                          TxtSUCURSAL.Text & Chr(9) & TxtCodigo.Text & Chr(9) & _
                           TxtCheNumero.Text & Chr(9) & TxtCheFecVto.Text & Chr(9) & _
                           TxtCheImport.Text & Chr(9) & TxtCodInt.Text & Chr(9) & _
                           TxtBanDescri.Text & Chr(9) & "T"
@@ -2099,9 +2099,9 @@ Private Function ValidoIngCheques() As Boolean
 End Function
 
 Private Sub LimpiarCheques()
-    TxtBanco.Text = ""
+    TxtBANCO.Text = ""
     txtlocalidad.Text = ""
-    TxtSucursal.Text = ""
+    TxtSUCURSAL.Text = ""
     TxtCodigo.Text = ""
     TxtCheNumero.Text = ""
     TxtCheFecVto.Text = ""
@@ -2347,11 +2347,11 @@ Private Sub cmdBuscarCheques_Click()
             frmBuscar.grdBuscar.Col = 4
             TxtCodInt.Text = frmBuscar.grdBuscar.Text
             frmBuscar.grdBuscar.Col = 5
-            TxtBanco.Text = frmBuscar.grdBuscar.Text
+            TxtBANCO.Text = frmBuscar.grdBuscar.Text
             frmBuscar.grdBuscar.Col = 6
             txtlocalidad.Text = frmBuscar.grdBuscar.Text
             frmBuscar.grdBuscar.Col = 7
-            TxtSucursal.Text = frmBuscar.grdBuscar.Text
+            TxtSUCURSAL.Text = frmBuscar.grdBuscar.Text
             frmBuscar.grdBuscar.Col = 8
             TxtCodigo.Text = frmBuscar.grdBuscar.Text
             cmdAgregarCheque_Click
@@ -2427,7 +2427,7 @@ Private Sub cmdCancelarMoneda_Click()
     tabValores.Tab = 0
 End Sub
 
-Private Sub CmdGrabar_Click()
+Private Sub cmdGrabar_Click()
     If ValidarOrdenPago = False Then Exit Sub
     If MsgBox("¿Confirma Orden de Pago?", vbQuestion + vbYesNo, TIT_MSGBOX) = vbNo Then Exit Sub
     
@@ -3037,7 +3037,7 @@ Private Sub cmdQuitarVal_Click()
     End If
 End Sub
 
-Private Sub cmdSalir_Click()
+Private Sub CmdSalir_Click()
     If MsgBox("Seguro que desea Salir", vbQuestion + vbYesNo, TIT_MSGBOX) = vbYes Then
         Set frmPagoProveedores = Nothing
         Unload Me
@@ -3059,7 +3059,7 @@ End Sub
 
 Private Sub Form_KeyPress(KeyAscii As Integer)
     If KeyAscii = vbKeyReturn Then SendKeys "{TAB}"
-    If KeyAscii = vbKeyEscape Then cmdSalir_Click
+    If KeyAscii = vbKeyEscape Then CmdSalir_Click
 End Sub
 
 Private Sub Form_Load()
@@ -3381,8 +3381,8 @@ Private Sub tabDatos_Click(PreviousTab As Integer)
 End Sub
 
 Private Sub LimpiarBusqueda()
-    FechaDesde.Text = ""
-    FechaHasta.Text = ""
+    FechaDesde.Value = ""
+    FechaHasta.Value = ""
     txtProveedor.Text = ""
     cboTipoProveedor.ListIndex = -1
     GrdModulos.Rows = 1
@@ -3411,11 +3411,11 @@ Private Sub tabValores_Click(PreviousTab As Integer)
 End Sub
 
 Private Sub TxtBANCO_GotFocus()
-    SelecTexto TxtBanco
+    SelecTexto TxtBANCO
 End Sub
 
 Private Sub TxtBANCO_LostFocus()
-    If Len(TxtBanco.Text) < 3 Then TxtBanco.Text = CompletarConCeros(TxtBanco.Text, 3)
+    If Len(TxtBANCO.Text) < 3 Then TxtBANCO.Text = CompletarConCeros(TxtBANCO.Text, 3)
 End Sub
 
 Private Sub TxtCheNumero_Change()
@@ -3962,7 +3962,7 @@ Private Function BuscoProveedor(Pro As String) As String
 End Function
 
 Private Sub txtSucursal_GotFocus()
-    SelecTexto TxtSucursal
+    SelecTexto TxtSUCURSAL
 End Sub
 
 Private Sub TxtSucursal_KeyPress(KeyAscii As Integer)
@@ -3988,17 +3988,17 @@ Private Sub TxtCodigo_LostFocus()
     If Len(TxtCodigo.Text) < 6 Then TxtCodigo.Text = CompletarConCeros(TxtCodigo.Text, 6)
      
     If Trim(Me.TxtCheNumero.Text) <> "" And _
-       Trim(Me.TxtBanco.Text) <> "" And _
+       Trim(Me.TxtBANCO.Text) <> "" And _
        Trim(Me.txtlocalidad.Text) <> "" And _
-       Trim(Me.TxtSucursal.Text) <> "" And _
+       Trim(Me.TxtSUCURSAL.Text) <> "" And _
        Trim(Me.TxtCodigo.Text) <> "" Then
        
        'BUSCO EL CODIGO INTERNO
        sql = "SELECT BAN_CODINT, BAN_DESCRI"
        sql = sql & " FROM BANCO"
-       sql = sql & " WHERE BAN_BANCO = " & XS(TxtBanco.Text)
+       sql = sql & " WHERE BAN_BANCO = " & XS(TxtBANCO.Text)
        sql = sql & " AND BAN_LOCALIDAD = " & XS(Me.txtlocalidad.Text)
-       sql = sql & " AND BAN_SUCURSAL = " & XS(Me.TxtSucursal.Text)
+       sql = sql & " AND BAN_SUCURSAL = " & XS(Me.TxtSUCURSAL.Text)
        sql = sql & " AND BAN_CODIGO = " & XS(TxtCodigo.Text)
        rec.Open sql, DBConn, adOpenStatic, adLockOptimistic
        If rec.RecordCount > 0 Then 'EXITE
@@ -4008,7 +4008,7 @@ Private Sub TxtCodigo_LostFocus()
        Else
           If Me.ActiveControl.Name <> "CmdSalir" And Me.ActiveControl.Name <> "CmdNuevo" Then
             MsgBox "Banco NO Registrado.", 16, TIT_MSGBOX
-            TxtBanco.SetFocus
+            TxtBANCO.SetFocus
             Me.CmdBanco.SetFocus
           End If
           rec.Close
@@ -4047,9 +4047,9 @@ Private Sub TxtCodigo_LostFocus()
                    "WHERE BAN_CODINT = " & XN(Me.TxtCodInt.Text)
             Rec1.Open sql, DBConn, adOpenStatic, adLockOptimistic
             If Rec1.RecordCount > 0 Then 'EXITE
-                Me.TxtBanco.Text = Rec1!BAN_BANCO
+                Me.TxtBANCO.Text = Rec1!BAN_BANCO
                 Me.txtlocalidad.Text = Rec1!BAN_LOCALIDAD
-                Me.TxtSucursal.Text = Rec1!BAN_SUCURSAL
+                Me.TxtSUCURSAL.Text = Rec1!BAN_SUCURSAL
                 Me.TxtCodigo.Text = Rec1!BAN_CODIGO
             End If
             Rec1.Close
@@ -4063,6 +4063,6 @@ Private Sub TxtCodigo_LostFocus()
 End Sub
 
 Private Sub txtSucursal_LostFocus()
-    If Len(TxtSucursal.Text) < 3 Then TxtSucursal.Text = CompletarConCeros(TxtSucursal.Text, 3)
+    If Len(TxtSUCURSAL.Text) < 3 Then TxtSUCURSAL.Text = CompletarConCeros(TxtSUCURSAL.Text, 3)
 End Sub
 

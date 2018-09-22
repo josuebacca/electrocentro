@@ -1,6 +1,6 @@
 VERSION 5.00
-Object = "{BDC217C8-ED16-11CD-956C-0000C04E4C0A}#1.1#0"; "tabctl32.ocx"
-Object = "{5E9E78A0-531B-11CF-91F6-C2863C385E30}#1.0#0"; "msflxgrd.ocx"
+Object = "{BDC217C8-ED16-11CD-956C-0000C04E4C0A}#1.1#0"; "TABCTL32.OCX"
+Object = "{5E9E78A0-531B-11CF-91F6-C2863C385E30}#1.0#0"; "MSFLXGRD.OCX"
 Object = "{5F09B5DF-6F4D-11D2-8355-4854E82A9183}#15.0#0"; "Fecha32.ocx"
 Begin VB.Form frmNotaCreditoCliente 
    BorderStyle     =   1  'Fixed Single
@@ -88,8 +88,8 @@ Begin VB.Form frmNotaCreditoCliente
       TabCaption(1)   =   "&Buscar"
       TabPicture(1)   =   "frmNotaCreditoCliente.frx":001C
       Tab(1).ControlEnabled=   0   'False
-      Tab(1).Control(0)=   "GrdModulos"
-      Tab(1).Control(1)=   "frameBuscar"
+      Tab(1).Control(0)=   "frameBuscar"
+      Tab(1).Control(1)=   "GrdModulos"
       Tab(1).ControlCount=   2
       Begin VB.Frame FrameCliente 
          Caption         =   "Cliente..."
@@ -1179,7 +1179,7 @@ End Sub
 Private Sub txtCodCliente_Change()
     If txtCodCliente.Text = "" Then
         txtCliRazSoc.Text = ""
-        txtProvincia.Text = ""
+        txtprovincia.Text = ""
         txtCliLocalidad.Text = ""
         txtDomici.Text = ""
         txtCUIT.Text = ""
@@ -1202,7 +1202,7 @@ Private Sub txtCodCliente_LostFocus()
         Rec1.Open BuscoCliente(txtCodCliente), DBConn, adOpenStatic, adLockOptimistic
         If Rec1.EOF = False Then
             txtCliRazSoc.Text = Rec1!CLI_RAZSOC
-            txtProvincia.Text = Rec1!PRO_DESCRI
+            txtprovincia.Text = Rec1!PRO_DESCRI
             txtCliLocalidad.Text = Rec1!LOC_DESCRI
             txtDomici.Text = Rec1!CLI_DOMICI
             txtCUIT.Text = IIf(IsNull(Rec1!CLI_CUIT), "", Rec1!CLI_CUIT)
@@ -1219,7 +1219,7 @@ End Sub
 Private Sub txtCliRazSoc_Change()
     If txtCliRazSoc.Text = "" Then
         txtCodCliente.Text = ""
-        txtProvincia.Text = ""
+        txtprovincia.Text = ""
         txtCliLocalidad.Text = ""
         txtDomici.Text = ""
         txtCUIT.Text = ""
@@ -1303,7 +1303,7 @@ End Sub
 
 Private Sub CmdBuscAprox_Click()
     GrdModulos.Rows = 1
-    lblEstado.Caption = "Buscando..."
+    lblestado.Caption = "Buscando..."
     Screen.MousePointer = vbHourglass
     
      sql = "SELECT NC.*, C.CLI_RAZSOC, TC.TCO_ABREVIA, C.CLI_DOMICI"
@@ -1333,11 +1333,11 @@ Private Sub CmdBuscAprox_Click()
         Loop
         GrdModulos.SetFocus
     Else
-        lblEstado.Caption = ""
+        lblestado.Caption = ""
         Screen.MousePointer = vbNormal
         MsgBox "No se encontraron datos...", vbExclamation, TIT_MSGBOX
     End If
-    lblEstado.Caption = ""
+    lblestado.Caption = ""
     Screen.MousePointer = vbNormal
     rec.Close
 End Sub
@@ -1356,7 +1356,7 @@ Private Sub cmdBuscarCli_Click()
     End If
 End Sub
 
-Private Sub CmdGrabar_Click()
+Private Sub cmdGrabar_Click()
     Dim VStockFisico As String
     
     If ValidarNotaCredito = False Then Exit Sub
@@ -1374,7 +1374,7 @@ Private Sub CmdGrabar_Click()
     rec.Open sql, DBConn, adOpenStatic, adLockOptimistic
     
     Screen.MousePointer = vbHourglass
-    lblEstado.Caption = "Guardando..."
+    lblestado.Caption = "Guardando..."
     
     If rec.EOF = True Then
         sql = "INSERT INTO NOTA_CREDITO_CLIENTE"
@@ -1473,12 +1473,12 @@ Private Sub CmdGrabar_Click()
     End If
     rec.Close
     Screen.MousePointer = vbNormal
-    lblEstado.Caption = ""
+    lblestado.Caption = ""
     CmdNuevo_Click
     Exit Sub
     
 HayErrorFactura:
-    lblEstado.Caption = ""
+    lblestado.Caption = ""
     Screen.MousePointer = vbNormal
     If rec.State = 1 Then rec.Close
     DBConn.RollbackTrans
@@ -1547,7 +1547,7 @@ Public Sub ImprimirNotaCredito()
     Dim Renglon As Double
     Dim canttxt As Integer
     Screen.MousePointer = vbHourglass
-    lblEstado.Caption = "Imprimiendo..."
+    lblestado.Caption = "Imprimiendo..."
     
     For w = 1 To 2 'SE IMPRIME POR DUPLICADO
       '-----IMPRESION DEL ENCABEZADO------------------
@@ -1615,7 +1615,7 @@ Public Sub ImprimirNotaCredito()
         Printer.EndDoc
     Next w
     Screen.MousePointer = vbNormal
-    lblEstado.Caption = ""
+    lblestado.Caption = ""
 End Sub
 
 Public Sub ImprimirEncabezado()
@@ -1702,7 +1702,7 @@ Private Sub CmdNuevo_Click()
    txtSubTotalBoni.Text = ""
    txtImporteIva.Text = ""
    txtObservaciones.Text = ""
-   lblEstado.Caption = ""
+   lblestado.Caption = ""
    cboConcepto.ListIndex = 0
    cmdGrabar.Enabled = True
    'BUSCO IVA
@@ -1897,7 +1897,7 @@ Private Sub CortarCadena(Renglon As Double, Cadena As String)
     'End If
     
 End Sub
-Private Sub cmdSalir_Click()
+Private Sub CmdSalir_Click()
     If MsgBox("Seguro que desea Salir", vbQuestion + vbYesNo, TIT_MSGBOX) = vbYes Then
         Set frmNotaCreditoCliente = Nothing
         Unload Me
@@ -1914,7 +1914,7 @@ Private Sub Form_KeyPress(KeyAscii As Integer)
         KeyAscii = vbKeyReturn Then
         SendKeys "{TAB}"
     End If
-    If KeyAscii = vbKeyEscape Then cmdSalir_Click
+    If KeyAscii = vbKeyEscape Then CmdSalir_Click
 End Sub
 
 Private Sub Form_Load()
@@ -1965,7 +1965,7 @@ Private Sub Form_Load()
     GrdModulos.Rows = 1
     frameBuscar.Caption = "Buscar Nota de Crédito por..."
     '------------------------------------
-    lblEstado.Caption = ""
+    lblestado.Caption = ""
     'CARGO COMBO CON LOS TIPOS DE NOTA DE CREDITO
     LlenarComboNotaCredito
     'CARGO COMBO CON LOS CONCEPTOS DE NOTA DE CREDITO
@@ -2169,7 +2169,7 @@ Private Sub GrdModulos_DblClick()
     If GrdModulos.Rows > 1 Then
         
         Set Rec1 = New ADODB.Recordset
-        lblEstado.Caption = "Buscando..."
+        lblestado.Caption = "Buscando..."
         Screen.MousePointer = vbHourglass
         'CABEZA NOTA CREDITO
         Call BuscaCodigoProxItemData(CInt(GrdModulos.TextMatrix(GrdModulos.RowSel, 9)), cboNotaCredito)
@@ -2253,7 +2253,7 @@ Private Sub GrdModulos_DblClick()
             txtPorcentajeIva = GrdModulos.TextMatrix(GrdModulos.RowSel, 7)
             txtPorcentajeIva_LostFocus
         End If
-        lblEstado.Caption = ""
+        lblestado.Caption = ""
         Screen.MousePointer = vbNormal
         '--------------
         FrameNotaCredito.Enabled = False
@@ -2304,8 +2304,8 @@ End Sub
 Private Sub LimpiarBusqueda()
     txtCliente.Text = ""
     txtDesCli.Text = ""
-    FechaDesde.Text = ""
-    FechaHasta.Text = ""
+    FechaDesde.Value = ""
+    FechaHasta.Value = ""
     GrdModulos.Rows = 1
     chkCliente.Value = Unchecked
     chkFecha.Value = Unchecked

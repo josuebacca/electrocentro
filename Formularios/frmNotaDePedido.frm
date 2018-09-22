@@ -1,6 +1,6 @@
 VERSION 5.00
 Object = "{BDC217C8-ED16-11CD-956C-0000C04E4C0A}#1.1#0"; "TABCTL32.OCX"
-Object = "{5E9E78A0-531B-11CF-91F6-C2863C385E30}#1.0#0"; "Msflxgrd.ocx"
+Object = "{5E9E78A0-531B-11CF-91F6-C2863C385E30}#1.0#0"; "MSFLXGRD.OCX"
 Object = "{5F09B5DF-6F4D-11D2-8355-4854E82A9183}#15.0#0"; "Fecha32.ocx"
 Begin VB.Form frmNotaDePedido 
    BorderStyle     =   1  'Fixed Single
@@ -89,10 +89,10 @@ Begin VB.Form frmNotaDePedido
       TabCaption(0)   =   "&Datos"
       TabPicture(0)   =   "frmNotaDePedido.frx":0000
       Tab(0).ControlEnabled=   0   'False
-      Tab(0).Control(0)=   "fraDatos"
-      Tab(0).Control(1)=   "FramePedido"
-      Tab(0).Control(2)=   "Frame1"
-      Tab(0).Control(3)=   "Frame3"
+      Tab(0).Control(0)=   "Frame3"
+      Tab(0).Control(1)=   "Frame1"
+      Tab(0).Control(2)=   "FramePedido"
+      Tab(0).Control(3)=   "fraDatos"
       Tab(0).ControlCount=   4
       TabCaption(1)   =   "&Buscar"
       TabPicture(1)   =   "frmNotaDePedido.frx":001C
@@ -1386,7 +1386,7 @@ Private Sub cmdBuscarVendedor_Click()
     End If
 End Sub
 
-Private Sub CmdGrabar_Click()
+Private Sub cmdGrabar_Click()
     If ValidarNotaPedido = False Then Exit Sub
     If MsgBox("¿Confirma el Presupuesto?", vbQuestion + vbYesNo, TIT_MSGBOX) = vbNo Then Exit Sub
     On Error GoTo HayErrorNota
@@ -1785,7 +1785,7 @@ Private Sub CmdNuevo_Click()
    tabDatos.Tab = 0
    Call BuscoEstado(1, lblEstadoNota)
    cmdGrabar.Enabled = True
-   CmdBorrar.Enabled = True
+   cmdBorrar.Enabled = True
    txtNroNotaPedido.Text = BuscoUltimoPedido
    txtNroNotaPedido.SetFocus
    BuscoIva
@@ -1887,7 +1887,7 @@ Private Sub cmdQuitarProducto_Click()
     End If
 End Sub
 
-Private Sub cmdSalir_Click()
+Private Sub CmdSalir_Click()
     If MsgBox("Seguro que desea Salir", vbQuestion + vbYesNo, TIT_MSGBOX) = vbYes Then
         Set frmNotaDePedido = Nothing
         Unload Me
@@ -1912,7 +1912,7 @@ Private Sub Form_KeyPress(KeyAscii As Integer)
         KeyAscii = vbKeyReturn Then
         SendKeys "{TAB}"
     End If
-    If KeyAscii = vbKeyEscape Then cmdSalir_Click
+    If KeyAscii = vbKeyEscape Then CmdSalir_Click
 End Sub
 
 Private Sub Form_Load()
@@ -2125,7 +2125,7 @@ Private Sub tabDatos_Click(PreviousTab As Integer)
     FechaHasta.Enabled = False
     txtVendedor.Enabled = False
     cmdGrabar.Enabled = False
-    CmdBorrar.Enabled = False
+    cmdBorrar.Enabled = False
     cmdBuscarCli.Enabled = False
     cmdBuscarVen.Enabled = False
     LimpiarBusqueda
@@ -2133,15 +2133,15 @@ Private Sub tabDatos_Click(PreviousTab As Integer)
   Else
     'If Me.Visible = True Then txtNroNotaPedido.SetFocus
     cmdGrabar.Enabled = True
-    CmdBorrar.Enabled = True
+    cmdBorrar.Enabled = True
   End If
 End Sub
 
 Private Sub LimpiarBusqueda()
     txtCliente.Text = ""
     txtDesCli.Text = ""
-    FechaDesde.Text = ""
-    FechaHasta.Text = ""
+    FechaDesde.Value = ""
+    FechaHasta.Value = ""
     txtVendedor.Text = ""
     txtDesVen.Text = ""
     GrdModulos.Rows = 1
@@ -2631,13 +2631,13 @@ Private Sub txtNroNotaPedido_LostFocus()
             Call BuscoEstado(Rec2!EST_CODIGO, lblEstadoNota)
             If Rec2!EST_CODIGO <> 1 Then
                 cmdGrabar.Enabled = False
-                CmdBorrar.Enabled = False
+                cmdBorrar.Enabled = False
                 FramePedido.Enabled = False
                 fraDatos.Enabled = False
                 grdGrilla.SetFocus
             Else
                 cmdGrabar.Enabled = True
-                CmdBorrar.Enabled = True
+                cmdBorrar.Enabled = True
                 FramePedido.Enabled = True
                 fraDatos.Enabled = True
             End If

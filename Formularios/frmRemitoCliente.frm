@@ -1,6 +1,6 @@
 VERSION 5.00
 Object = "{BDC217C8-ED16-11CD-956C-0000C04E4C0A}#1.1#0"; "TABCTL32.OCX"
-Object = "{5E9E78A0-531B-11CF-91F6-C2863C385E30}#1.0#0"; "Msflxgrd.ocx"
+Object = "{5E9E78A0-531B-11CF-91F6-C2863C385E30}#1.0#0"; "MSFLXGRD.OCX"
 Object = "{5F09B5DF-6F4D-11D2-8355-4854E82A9183}#15.0#0"; "Fecha32.ocx"
 Begin VB.Form frmRemitoCliente 
    BorderStyle     =   1  'Fixed Single
@@ -93,17 +93,17 @@ Begin VB.Form frmRemitoCliente
       TabCaption(1)   =   "&Buscar"
       TabPicture(1)   =   "frmRemitoCliente.frx":001C
       Tab(1).ControlEnabled=   0   'False
-      Tab(1).Control(0)=   "Label20"
+      Tab(1).Control(0)=   "cmdDesc"
       Tab(1).Control(0).Enabled=   0   'False
-      Tab(1).Control(1)=   "cmdAum"
+      Tab(1).Control(1)=   "txtAum"
       Tab(1).Control(1).Enabled=   0   'False
-      Tab(1).Control(2)=   "GrdModulos"
+      Tab(1).Control(2)=   "frameBuscar"
       Tab(1).Control(2).Enabled=   0   'False
-      Tab(1).Control(3)=   "frameBuscar"
+      Tab(1).Control(3)=   "GrdModulos"
       Tab(1).Control(3).Enabled=   0   'False
-      Tab(1).Control(4)=   "txtAum"
+      Tab(1).Control(4)=   "cmdAum"
       Tab(1).Control(4).Enabled=   0   'False
-      Tab(1).Control(5)=   "cmdDesc"
+      Tab(1).Control(5)=   "Label20"
       Tab(1).Control(5).Enabled=   0   'False
       Tab(1).ControlCount=   6
       Begin VB.CommandButton cmdDesc 
@@ -1867,7 +1867,7 @@ Private Sub cmdFacturar_Click()
     CmdNuevo_Click
 End Sub
 
-Private Sub CmdGrabar_Click()
+Private Sub cmdGrabar_Click()
     
     On Error GoTo HayErrorRemito
     If ValidarRemito = False Then Exit Sub
@@ -2498,7 +2498,7 @@ Private Sub cmdQuitarProducto_Click()
 '    End If
 '    Rec2.Close
 End Sub
-Private Sub cmdSalir_Click()
+Private Sub CmdSalir_Click()
     If MsgBox("Seguro que desea Salir", vbQuestion + vbYesNo, TIT_MSGBOX) = vbYes Then
         Set frmRemitoCliente = Nothing
         Unload Me
@@ -2520,7 +2520,7 @@ Private Sub Form_KeyPress(KeyAscii As Integer)
         KeyAscii = vbKeyReturn Then
         SendKeys "{TAB}"
     End If
-    If KeyAscii = vbKeyEscape Then cmdSalir_Click
+    If KeyAscii = vbKeyEscape Then CmdSalir_Click
 End Sub
 
 Private Sub Form_Load()
@@ -2987,8 +2987,8 @@ End Sub
 Private Sub LimpiarBusqueda()
     txtCliente.Text = ""
     txtDesCli.Text = ""
-    FechaDesde.Text = ""
-    FechaHasta.Text = ""
+    FechaDesde.Value = ""
+    FechaHasta.Value = ""
     txtVendedor.Text = ""
     txtDesVen.Text = ""
     GrdModulos.Rows = 1

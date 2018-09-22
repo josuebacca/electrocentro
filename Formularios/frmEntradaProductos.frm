@@ -1,7 +1,7 @@
 VERSION 5.00
 Object = "{BDC217C8-ED16-11CD-956C-0000C04E4C0A}#1.1#0"; "TABCTL32.OCX"
 Object = "{5E9E78A0-531B-11CF-91F6-C2863C385E30}#1.0#0"; "MSFLXGRD.OCX"
-Object = "{5F09B5DF-6F4D-11D2-8355-4854E82A9183}#15.0#0"; "FECHA32.OCX"
+Object = "{5F09B5DF-6F4D-11D2-8355-4854E82A9183}#15.0#0"; "Fecha32.ocx"
 Begin VB.Form frmEntradaProductos 
    BorderStyle     =   1  'Fixed Single
    Caption         =   "Recepción de Mercadería"
@@ -94,8 +94,8 @@ Begin VB.Form frmEntradaProductos
       TabCaption(1)   =   "&Buscar"
       TabPicture(1)   =   "frmEntradaProductos.frx":25EE
       Tab(1).ControlEnabled=   0   'False
-      Tab(1).Control(0)=   "Frame4"
-      Tab(1).Control(1)=   "GRDGrilla"
+      Tab(1).Control(0)=   "GRDGrilla"
+      Tab(1).Control(1)=   "Frame4"
       Tab(1).ControlCount=   2
       Begin VB.Frame Frame1 
          Caption         =   "Datos Generales"
@@ -700,7 +700,7 @@ Attribute VB_Exposed = False
 Option Explicit
 Dim resp As Integer
 Dim I As Integer
-Dim LINEA As String
+Dim Linea As String
 Dim RUBRO As String
 Dim REPRE As String
 
@@ -721,8 +721,8 @@ Private Sub chkFecha_Click()
     Else
         FechaDesde.Enabled = False
         FechaHasta.Enabled = False
-        FechaDesde.Text = ""
-        FechaHasta.Text = ""
+        FechaDesde.Value = ""
+        FechaHasta.Value = ""
     End If
 End Sub
 
@@ -737,34 +737,34 @@ Private Sub chkRepresentada_Click()
 End Sub
 
 Private Sub cmdAsignar_Click()
-    If txtcodigo.Text <> "" Then
+    If TxtCodigo.Text <> "" Then
         GrdModulos.HighLight = flexHighlightAlways
         If txtCantidad <> "" Then
             If txtNumero.Text = "" Then
                 For I = 1 To GrdModulos.Rows - 1
-                    If GrdModulos.TextMatrix(I, 5) = CInt(txtcodigo.Text) Then
+                    If GrdModulos.TextMatrix(I, 5) = CInt(TxtCodigo.Text) Then
                         GrdModulos.TextMatrix(I, 4) = CDbl(GrdModulos.TextMatrix(I, 4)) + CDbl(txtCantidad.Text)
-                        txtcodigo.Text = ""
-                        txtcodigo.SetFocus
+                        TxtCodigo.Text = ""
+                        TxtCodigo.SetFocus
                         Exit Sub
                     End If
                 Next
             Else
                 For I = 1 To GrdModulos.Rows - 1
-                    If GrdModulos.TextMatrix(I, 5) = CInt(txtcodigo.Text) Then
+                    If GrdModulos.TextMatrix(I, 5) = CInt(TxtCodigo.Text) Then
                         MsgBox "El producto ya fue ingresado", vbExclamation, TIT_MSGBOX
-                        txtcodigo.SetFocus
+                        TxtCodigo.SetFocus
                         Exit Sub
                     End If
                 Next
             End If
-            GrdModulos.AddItem txtdescri & Chr(9) & LINEA & Chr(9) & _
+            GrdModulos.AddItem txtdescri & Chr(9) & Linea & Chr(9) & _
                    RUBRO & Chr(9) & REPRE & Chr(9) & _
-                   txtCantidad & Chr(9) & txtcodigo & Chr(9) & ""
+                   txtCantidad & Chr(9) & TxtCodigo & Chr(9) & ""
              
             'txtIngNuevo_Click
-            txtcodigo.Text = ""
-            txtcodigo.SetFocus
+            TxtCodigo.Text = ""
+            TxtCodigo.SetFocus
         Else
             MsgBox "Debe Ingresar la cantidad", vbExclamation, TIT_MSGBOX
             txtCantidad.SetFocus
@@ -778,7 +778,7 @@ End Sub
 Private Sub Agregoproducto()
     GrdModulos.AddItem txtdescri & Chr(9) & "" & Chr(9) & _
                    "" & Chr(9) & "" & Chr(9) & _
-                   txtCantidad & Chr(9) & txtcodigo
+                   txtCantidad & Chr(9) & TxtCodigo
 End Sub
 
 Private Sub CmdBorrar_Click()
@@ -806,7 +806,7 @@ Private Sub CmdBorrar_Click()
             End If
             lblestado.Caption = ""
             Screen.MousePointer = vbNormal
-            cmdNuevo_Click
+            CmdNuevo_Click
         End If
     End If
   Exit Sub
@@ -835,13 +835,13 @@ Private Sub CmdBuscAprox_Click()
     rec.Open sql, DBConn, adOpenStatic, adLockOptimistic
       
     If rec.EOF = False Then
-        GRDGrilla.Rows = 1
+        grdGrilla.Rows = 1
         Do While rec.EOF = False
-            GRDGrilla.AddItem Format(rec!EPR_CODIGO, "00000000") & Chr(9) & rec!EPR_FECHA & Chr(9) & _
+            grdGrilla.AddItem Format(rec!EPR_CODIGO, "00000000") & Chr(9) & rec!EPR_FECHA & Chr(9) & _
                               rec!VEN_NOMBRE
             rec.MoveNext
         Loop
-        GRDGrilla.SetFocus
+        grdGrilla.SetFocus
     Else
         lblestado.Caption = ""
         Screen.MousePointer = vbNormal
@@ -858,17 +858,17 @@ Private Sub cmdBuscarCliente_Click()
     
     If frmBuscar.grdBuscar.Text <> "" Then
         frmBuscar.grdBuscar.Col = 0
-        txtcodigo.Text = frmBuscar.grdBuscar.Text
+        TxtCodigo.Text = frmBuscar.grdBuscar.Text
         frmBuscar.grdBuscar.Col = 1
         txtdescri.Text = frmBuscar.grdBuscar.Text
         txtCantidad.SetFocus
     Else
-        txtcodigo.SetFocus
+        TxtCodigo.SetFocus
     End If
     
     End Sub
 
-Private Sub CmdGrabar_Click()
+Private Sub cmdGrabar_Click()
     On Error GoTo HayError2
          
     If ValidarEntrada = False Then Exit Sub
@@ -936,7 +936,7 @@ Private Sub CmdGrabar_Click()
         Screen.MousePointer = vbNormal
         lblestado.Caption = ""
         DBConn.CommitTrans
-        cmdNuevo_Click
+        CmdNuevo_Click
     Exit Sub
          
 HayError2:
@@ -980,7 +980,7 @@ Function ValidarEntrada()
     ValidarEntrada = True
 End Function
 
-Private Sub cmdNuevo_Click()
+Private Sub CmdNuevo_Click()
     txtNumero.Text = ""
     txtNroSucursal.Text = ""
     txtObservaciones.Text = ""
@@ -990,7 +990,7 @@ Private Sub cmdNuevo_Click()
     cboRep.ListIndex = 0
     cboTransporte.ListIndex = 0
     Fecha.Text = Date
-    txtcodigo.Text = ""
+    TxtCodigo.Text = ""
     GrdModulos.Rows = 1
     GrdModulos.HighLight = flexHighlightNever
     Call BuscoEstado(1, lblEstadoRecepcion)
@@ -1010,10 +1010,10 @@ Private Sub cmdQuitar_Click()
         If GrdModulos.Rows = 2 Then
             GrdModulos.HighLight = flexHighlightNever
             GrdModulos.Rows = 1
-            txtcodigo.SetFocus
+            TxtCodigo.SetFocus
         Else
             GrdModulos.RemoveItem (GrdModulos.RowSel)
-            txtcodigo.SetFocus
+            TxtCodigo.SetFocus
         End If
         lblestado.Caption = ""
         Screen.MousePointer = vbNormal
@@ -1059,7 +1059,7 @@ Private Sub Form_Load()
     BuscoNumeroRecepcion
     Call BuscoEstado(1, lblEstadoRecepcion)
     Fecha.Text = Date
-    LINEA = ""
+    Linea = ""
     RUBRO = ""
     REPRE = ""
 End Sub
@@ -1120,11 +1120,11 @@ Private Sub preparogrilla()
     '"" para cuando no lo recupero de la base
     GrdModulos.Rows = 1
     'GRILLA PARA LA BUSQUEDA
-    GRDGrilla.FormatString = "^Numero|^Fecha|Encargado"
-    GRDGrilla.ColWidth(0) = 1200 'NUMERO
-    GRDGrilla.ColWidth(1) = 1300 'FECHA
-    GRDGrilla.ColWidth(2) = 5000 'EMPLEADO
-    GRDGrilla.Rows = 1
+    grdGrilla.FormatString = "^Numero|^Fecha|Encargado"
+    grdGrilla.ColWidth(0) = 1200 'NUMERO
+    grdGrilla.ColWidth(1) = 1300 'FECHA
+    grdGrilla.ColWidth(2) = 5000 'EMPLEADO
+    grdGrilla.Rows = 1
 End Sub
 
 Private Sub cargocboEmpl()
@@ -1145,10 +1145,10 @@ Private Sub cargocboEmpl()
 End Sub
 
 Private Sub GRDGrilla_DblClick()
-    If GRDGrilla.Rows > 1 Then
-        cmdNuevo_Click
-        txtNumero.Text = GRDGrilla.TextMatrix(GRDGrilla.RowSel, 0)
-        Fecha.Text = GRDGrilla.TextMatrix(GRDGrilla.RowSel, 1)
+    If grdGrilla.Rows > 1 Then
+        CmdNuevo_Click
+        txtNumero.Text = grdGrilla.TextMatrix(grdGrilla.RowSel, 0)
+        Fecha.Text = grdGrilla.TextMatrix(grdGrilla.RowSel, 1)
         txtNumero_LostFocus
         tabDatos.Tab = 0
     End If
@@ -1177,9 +1177,9 @@ Private Sub tabDatos_Click(PreviousTab As Integer)
 End Sub
 
 Private Sub LimpiarBusqueda()
-    FechaDesde.Text = ""
-    FechaHasta.Text = ""
-    GRDGrilla.Rows = 1
+    FechaDesde.Value = ""
+    FechaHasta.Value = ""
+    grdGrilla.Rows = 1
     chkFecha.Value = Unchecked
     chkRepresentada.Value = Unchecked
     chkEncargado.Value = Unchecked
@@ -1193,12 +1193,12 @@ Private Sub txtCantidad_KeyPress(KeyAscii As Integer)
     KeyAscii = CarNumeroEntero(KeyAscii)
 End Sub
 
-Private Sub txtcodigo_Change()
-    If txtcodigo.Text = "" Then
-        txtcodigo.Text = ""
+Private Sub TxtCodigo_Change()
+    If TxtCodigo.Text = "" Then
+        TxtCodigo.Text = ""
         txtdescri.Text = ""
         txtCantidad.Text = ""
-        LINEA = ""
+        Linea = ""
         RUBRO = ""
         REPRE = ""
         cmdAsignar.Enabled = False
@@ -1208,15 +1208,15 @@ Private Sub txtcodigo_Change()
 End Sub
 
 Private Sub TxtCodigo_GotFocus()
-    SelecTexto txtcodigo
+    SelecTexto TxtCodigo
 End Sub
 
-Private Sub txtcodigo_KeyPress(KeyAscii As Integer)
+Private Sub TxtCodigo_KeyPress(KeyAscii As Integer)
     KeyAscii = CarNumeroEntero(KeyAscii)
 End Sub
 
 Private Sub TxtCodigo_LostFocus()
-    If txtcodigo.Text <> "" Then
+    If TxtCodigo.Text <> "" Then
         Set rec = New ADODB.Recordset
         sql = " SELECT P.PTO_DESCRI,L.LNA_DESCRI, "
         sql = sql & " R.RUB_DESCRI,RE.REP_RAZSOC,P.PTO_CODIGO"
@@ -1226,20 +1226,20 @@ Private Sub TxtCodigo_LostFocus()
         sql = sql & " AND P.REP_CODIGO = RE.REP_CODIGO"
         sql = sql & " AND DS.PTO_CODIGO = P.PTO_CODIGO"
         sql = sql & " AND DS.STK_CODIGO = " & XN(cboStock.ItemData(cboStock.ListIndex))
-        sql = sql & " AND P.PTO_CODIGO = " & XN(txtcodigo.Text)
+        sql = sql & " AND P.PTO_CODIGO = " & XN(TxtCodigo.Text)
         sql = sql & " ORDER BY P.PTO_CODIGO"
         rec.Open sql, DBConn, adOpenStatic, adLockOptimistic
         If rec.EOF = False Then
             txtdescri.Text = rec!PTO_DESCRI
-            LINEA = rec!LNA_DESCRI
+            Linea = rec!LNA_DESCRI
             RUBRO = rec!RUB_DESCRI
             REPRE = rec!REP_RAZSOC
         Else
             MsgBox "El Código no existe, o no pertenece al stock de " & cboStock.Text & "", vbExclamation, TIT_MSGBOX
-            LINEA = ""
+            Linea = ""
             RUBRO = ""
             REPRE = ""
-            txtcodigo.SetFocus
+            TxtCodigo.SetFocus
             
         End If
         rec.Close
@@ -1265,7 +1265,7 @@ End Sub
 
 Private Sub txtDescri_Change()
     If txtdescri.Text = "" Then
-        txtcodigo.Text = ""
+        TxtCodigo.Text = ""
     End If
 End Sub
 
@@ -1279,7 +1279,7 @@ End Sub
 
 Private Sub txtDescri_LostFocus()
            
-   If txtcodigo.Text = "" And txtdescri.Text <> "" Then
+   If TxtCodigo.Text = "" And txtdescri.Text <> "" Then
         Set rec = New ADODB.Recordset
         Screen.MousePointer = vbHourglass
         sql = "SELECT P.PTO_CODIGO,P.PTO_DESCRI, R.RUB_DESCRI, L.LNA_DESCRI,RE.REP_RAZSOC"
@@ -1297,19 +1297,19 @@ Private Sub txtDescri_LostFocus()
                 frmBuscar.TxtDescriB.Text = txtdescri.Text
                 frmBuscar.Show vbModal
                 frmBuscar.grdBuscar.Col = 0
-                txtcodigo.Text = frmBuscar.grdBuscar.TextMatrix(frmBuscar.grdBuscar.RowSel, 0)
+                TxtCodigo.Text = frmBuscar.grdBuscar.TextMatrix(frmBuscar.grdBuscar.RowSel, 0)
                 frmBuscar.grdBuscar.Col = 1
                 txtdescri.Text = frmBuscar.grdBuscar.TextMatrix(frmBuscar.grdBuscar.RowSel, 1)
                 frmBuscar.grdBuscar.Col = 2
-                LINEA = frmBuscar.grdBuscar.TextMatrix(frmBuscar.grdBuscar.RowSel, 2)
+                Linea = frmBuscar.grdBuscar.TextMatrix(frmBuscar.grdBuscar.RowSel, 2)
                 frmBuscar.grdBuscar.Col = 3
                 RUBRO = frmBuscar.grdBuscar.TextMatrix(frmBuscar.grdBuscar.RowSel, 3)
                 frmBuscar.grdBuscar.Col = 4
                 REPRE = frmBuscar.grdBuscar.TextMatrix(frmBuscar.grdBuscar.RowSel, 4)
             Else
-                txtcodigo.Text = Trim(rec!PTO_CODIGO)
+                TxtCodigo.Text = Trim(rec!PTO_CODIGO)
                 txtdescri.Text = Trim(rec!PTO_DESCRI)
-                LINEA = rec!LNA_DESCRI
+                Linea = rec!LNA_DESCRI
                 RUBRO = rec!RUB_DESCRI
                 REPRE = rec!REP_RAZSOC
             End If
@@ -1321,9 +1321,9 @@ Private Sub txtDescri_LostFocus()
         End If
         rec.Close
         Screen.MousePointer = vbNormal
-    ElseIf txtcodigo.Text = "" And txtdescri.Text = "" Then
+    ElseIf TxtCodigo.Text = "" And txtdescri.Text = "" Then
         MsgBox "Debe ingresar un Producto", vbExclamation, TIT_MSGBOX
-        txtcodigo.SetFocus
+        TxtCodigo.SetFocus
     End If
     
 End Sub
@@ -1384,7 +1384,7 @@ Private Sub txtNumero_LostFocus()
             cmdGrabar.Enabled = False
         Else
             MsgBox "El Código no existe", vbExclamation, TIT_MSGBOX
-            cmdNuevo_Click
+            CmdNuevo_Click
             cboStock.SetFocus
         End If
         Rec1.Close

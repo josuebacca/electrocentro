@@ -1,6 +1,6 @@
 VERSION 5.00
 Object = "{F9043C88-F6F2-101A-A3C9-08002B2F49FB}#1.2#0"; "Comdlg32.ocx"
-Object = "{5E9E78A0-531B-11CF-91F6-C2863C385E30}#1.0#0"; "Msflxgrd.ocx"
+Object = "{5E9E78A0-531B-11CF-91F6-C2863C385E30}#1.0#0"; "MSFLXGRD.OCX"
 Object = "{00025600-0000-0000-C000-000000000046}#5.2#0"; "Crystl32.OCX"
 Object = "{5F09B5DF-6F4D-11D2-8355-4854E82A9183}#15.0#0"; "Fecha32.ocx"
 Begin VB.Form frmListadoRemitoProveedor 
@@ -419,28 +419,28 @@ Private Sub cmdListar_Click()
         Else
             Rep.Formulas(0) = "CLIENTE='" & "Proveedor: Todos'"
         End If
-        If FechaDesde.Text <> "" Then
+        If FechaDesde.Value <> "" Then
             If Rep.SelectionFormula = "" Then
-                Rep.SelectionFormula = " {REMITO_PROVEEDOR.RPR_FECHA}>= DATE (" & Mid(FechaDesde.Text, 7, 4) & "," & Mid(FechaDesde.Text, 4, 2) & "," & Mid(FechaDesde.Text, 1, 2) & ")"
+                Rep.SelectionFormula = " {REMITO_PROVEEDOR.RPR_FECHA}>= DATE (" & Mid(FechaDesde.Value, 7, 4) & "," & Mid(FechaDesde.Value, 4, 2) & "," & Mid(FechaDesde.Value, 1, 2) & ")"
             Else
-                Rep.SelectionFormula = Rep.SelectionFormula & " AND {REMITO_PROVEEDOR.RPR_FECHA}>= DATE (" & Mid(FechaDesde.Text, 7, 4) & "," & Mid(FechaDesde.Text, 4, 2) & "," & Mid(FechaDesde.Text, 1, 2) & ")"
+                Rep.SelectionFormula = Rep.SelectionFormula & " AND {REMITO_PROVEEDOR.RPR_FECHA}>= DATE (" & Mid(FechaDesde.Value, 7, 4) & "," & Mid(FechaDesde.Value, 4, 2) & "," & Mid(FechaDesde.Value, 1, 2) & ")"
             End If
         End If
         
-        If FechaHasta.Text <> "" Then
+        If FechaHasta.Value <> "" Then
             If Rep.SelectionFormula = "" Then
-                Rep.SelectionFormula = " {REMITO_PROVEEDOR.RPR_FECHA}<= DATE (" & Mid(FechaHasta.Text, 7, 4) & "," & Mid(FechaHasta.Text, 4, 2) & "," & Mid(FechaHasta.Text, 1, 2) & ")"
+                Rep.SelectionFormula = " {REMITO_PROVEEDOR.RPR_FECHA}<= DATE (" & Mid(FechaHasta.Value, 7, 4) & "," & Mid(FechaHasta.Value, 4, 2) & "," & Mid(FechaHasta.Value, 1, 2) & ")"
             Else
-                Rep.SelectionFormula = Rep.SelectionFormula & " AND {REMITO_PROVEEDOR.RPR_FECHA}<= DATE (" & Mid(FechaHasta.Text, 7, 4) & "," & Mid(FechaHasta.Text, 4, 2) & "," & Mid(FechaHasta.Text, 1, 2) & ")"
+                Rep.SelectionFormula = Rep.SelectionFormula & " AND {REMITO_PROVEEDOR.RPR_FECHA}<= DATE (" & Mid(FechaHasta.Value, 7, 4) & "," & Mid(FechaHasta.Value, 4, 2) & "," & Mid(FechaHasta.Value, 1, 2) & ")"
             End If
         End If
         
-        If FechaDesde.Text <> "" And FechaHasta.Text <> "" Then
-            Rep.Formulas(2) = "FECHA='" & "Desde: " & FechaDesde.Text & "   Hasta: " & FechaHasta.Text & "'"
-        ElseIf FechaDesde.Text <> "" And FechaHasta.Text = "" Then
-            Rep.Formulas(2) = "FECHA='" & "Desde: " & FechaDesde.Text & "   Hasta: " & Date & "'"
-        ElseIf FechaDesde.Text = "" And FechaHasta.Text <> "" Then
-            Rep.Formulas(2) = "FECHA='" & "Desde: Inicio" & "   Hasta: " & FechaHasta.Text & "'"
+        If FechaDesde.Value <> "" And FechaHasta.Value <> "" Then
+            Rep.Formulas(2) = "FECHA='" & "Desde: " & FechaDesde.Value & "   Hasta: " & FechaHasta.Value & "'"
+        ElseIf FechaDesde.Value <> "" And FechaHasta.Value = "" Then
+            Rep.Formulas(2) = "FECHA='" & "Desde: " & FechaDesde.Value & "   Hasta: " & Date & "'"
+        ElseIf FechaDesde.Value = "" And FechaHasta.Value <> "" Then
+            Rep.Formulas(2) = "FECHA='" & "Desde: Inicio" & "   Hasta: " & FechaHasta.Value & "'"
         End If
         
 '            Rep.WindowTitle = "Remito de Proveedor - General - Por cuenta y orden de Terceros"
@@ -493,8 +493,8 @@ End Sub
 Private Sub CmdNuevo_Click()
     txtCliente.Text = ""
     txtDesCli.Text = ""
-    FechaDesde.Text = ""
-    FechaHasta.Text = ""
+    FechaDesde.Value = ""
+    FechaHasta.Value = ""
     GrdModulos.Rows = 1
     GrdModulos.Rows = 2
     txtCliente.Enabled = False
@@ -533,7 +533,7 @@ End Sub
 
 Private Sub Form_KeyPress(KeyAscii As Integer)
     If KeyAscii = vbKeyReturn Then SendKeys "{TAB}"
-    If KeyAscii = vbKeyEscape Then cmdSalir_Click
+    If KeyAscii = vbKeyEscape Then CmdSalir_Click
 End Sub
 
 Private Sub chkCliente_Click()
@@ -589,7 +589,7 @@ Private Sub txtCliente_LostFocus()
         And ActiveControl.Name <> "cmdBuscarCli" _
         And ActiveControl.Name <> "cmdNuevo" And ActiveControl.Name <> "CmdSalir" Then CmdBuscAprox.SetFocus
 End Sub
-Private Sub cmdSalir_Click()
+Private Sub CmdSalir_Click()
     Set frmListadoRemitoProveedor = Nothing
     Unload Me
 End Sub

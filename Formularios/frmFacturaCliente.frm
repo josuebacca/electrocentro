@@ -1,6 +1,6 @@
 VERSION 5.00
 Object = "{BDC217C8-ED16-11CD-956C-0000C04E4C0A}#1.1#0"; "TABCTL32.OCX"
-Object = "{5E9E78A0-531B-11CF-91F6-C2863C385E30}#1.0#0"; "Msflxgrd.ocx"
+Object = "{5E9E78A0-531B-11CF-91F6-C2863C385E30}#1.0#0"; "MSFLXGRD.OCX"
 Object = "{5F09B5DF-6F4D-11D2-8355-4854E82A9183}#15.0#0"; "Fecha32.ocx"
 Begin VB.Form frmFacturaCliente 
    BorderStyle     =   1  'Fixed Single
@@ -75,15 +75,15 @@ Begin VB.Form frmFacturaCliente
       TabCaption(0)   =   "&Datos"
       TabPicture(0)   =   "frmFacturaCliente.frx":0000
       Tab(0).ControlEnabled=   0   'False
-      Tab(0).Control(0)=   "Frame3"
+      Tab(0).Control(0)=   "freCliente"
       Tab(0).Control(0).Enabled=   0   'False
-      Tab(0).Control(1)=   "Frame4"
+      Tab(0).Control(1)=   "FrameRemito"
       Tab(0).Control(1).Enabled=   0   'False
       Tab(0).Control(2)=   "FrameFactura"
       Tab(0).Control(2).Enabled=   0   'False
-      Tab(0).Control(3)=   "FrameRemito"
+      Tab(0).Control(3)=   "Frame4"
       Tab(0).Control(3).Enabled=   0   'False
-      Tab(0).Control(4)=   "freCliente"
+      Tab(0).Control(4)=   "Frame3"
       Tab(0).Control(4).Enabled=   0   'False
       Tab(0).ControlCount=   5
       TabCaption(1)   =   "&Buscar"
@@ -1314,7 +1314,7 @@ End Sub
 
 Private Sub CmdBuscAprox_Click()
     GrdModulos.Rows = 1
-    lblEstado.Caption = "Buscando..."
+    lblestado.Caption = "Buscando..."
     Screen.MousePointer = vbHourglass
     
     Select Case TipoBusquedaDoc
@@ -1362,7 +1362,7 @@ Private Sub CmdBuscAprox_Click()
             Loop
             GrdModulos.SetFocus
         Else
-            lblEstado.Caption = ""
+            lblestado.Caption = ""
             Screen.MousePointer = vbNormal
             MsgBox "No se encontraron datos...", vbExclamation, TIT_MSGBOX
         End If
@@ -1393,13 +1393,13 @@ Private Sub CmdBuscAprox_Click()
             Loop
             GrdModulos.SetFocus
         Else
-            lblEstado.Caption = ""
+            lblestado.Caption = ""
             Screen.MousePointer = vbNormal
             MsgBox "No se encontraron datos...", vbExclamation, TIT_MSGBOX
         End If
     End Select
     
-    lblEstado.Caption = ""
+    lblestado.Caption = ""
     Screen.MousePointer = vbNormal
     rec.Close
 End Sub
@@ -1455,7 +1455,7 @@ Private Sub cmdBuscarVen_Click()
     End If
 End Sub
 
-Private Sub CmdGrabar_Click()
+Private Sub cmdGrabar_Click()
     
     If ValidarFactura = False Then Exit Sub
     If MsgBox("¿Confirma Factura?", vbQuestion + vbYesNo, TIT_MSGBOX) = vbNo Then Exit Sub
@@ -1470,7 +1470,7 @@ Private Sub CmdGrabar_Click()
     rec.Open sql, DBConn, adOpenStatic, adLockOptimistic
     
     Screen.MousePointer = vbHourglass
-    lblEstado.Caption = "Guardando..."
+    lblestado.Caption = "Guardando..."
     
     If rec.EOF = True Then
         'NUEVA FACTURA
@@ -1501,7 +1501,7 @@ Private Sub CmdGrabar_Click()
         If txtSubTotalBoni.Text <> "" Then 'SUBTOTAL
             sql = sql & XN(txtSubTotalBoni) & ","
         Else
-            sql = sql & XN(txtSubTotal) & ","
+            sql = sql & XN(txtSubtotal) & ","
         End If
         sql = sql & XN(txtTotal) & ","
         sql = sql & XN(txtTotal) & "," 'SALDO FACTURA
@@ -1582,14 +1582,14 @@ Private Sub CmdGrabar_Click()
     End If
     rec.Close
     Screen.MousePointer = vbNormal
-    lblEstado.Caption = ""
+    lblestado.Caption = ""
     cmdImprimir_Click
     
     CmdNuevo_Click
     Exit Sub
     
 HayErrorFactura:
-    lblEstado.Caption = ""
+    lblestado.Caption = ""
     Screen.MousePointer = vbNormal
     If rec.State = 1 Then rec.Close
     DBConn.RollbackTrans
@@ -1674,7 +1674,7 @@ Public Sub ImprimirFactura()
     Dim Renglon As Double
     Dim canttxt As Integer
     Screen.MousePointer = vbHourglass
-    lblEstado.Caption = "Imprimiendo..."
+    lblestado.Caption = "Imprimiendo..."
     
     For w = 1 To 2 'SE IMPRIME POR DUPLICADO
       '-----IMPRESION DEL ENCABEZADO------------------
@@ -1791,7 +1791,7 @@ Public Sub ImprimirFactura()
             End If
             'Imprimir 0, 16.5, True, "texto de bajo del detalle"
             '-------------IMPRIMO TOTALES--------------------
-            Imprimir 16.8, 20.5, True, txtSubTotal.Text
+            Imprimir 16.8, 20.5, True, txtSubtotal.Text
             
 '            If txtPorcentajeBoni.Text <> "" Then
 '                If chkBonificaEnPesos.Value = Checked Then
@@ -1807,7 +1807,7 @@ Public Sub ImprimirFactura()
              If txtPorcentajeBoni.Text <> "" Then
                  Imprimir 16.8, 22.5, True, txtSubTotalBoni.Text
              Else
-                 Imprimir 16.8, 22.5, True, txtSubTotal.Text
+                 Imprimir 16.8, 22.5, True, txtSubtotal.Text
              End If
             
             Imprimir 14, 23.5, True, "    " & txtPorcentajeIva.Text
@@ -1817,7 +1817,7 @@ Public Sub ImprimirFactura()
         Printer.EndDoc
     Next w
     Screen.MousePointer = vbNormal
-    lblEstado.Caption = ""
+    lblestado.Caption = ""
 End Sub
 
 Public Sub ImprimirEncabezado()
@@ -1901,7 +1901,7 @@ Private Sub CmdNuevo_Click()
    txtNroSucursal.Text = ""
    FechaFactura.Text = Date
    lblEstadoFactura.Caption = ""
-   txtSubTotal.Text = ""
+   txtSubtotal.Text = ""
    txtTotal.Text = ""
    txtCodigoStock.Text = ""
    txtPorcentajeBoni.Text = ""
@@ -1911,7 +1911,7 @@ Private Sub CmdNuevo_Click()
    txtImporteIva.Text = ""
    txtObservaciones.Text = ""
    cboCondicion.ListIndex = 0
-   lblEstado.Caption = ""
+   lblestado.Caption = ""
    cmdGrabar.Enabled = True
    cmdImprimir.Enabled = False
    'BUSCO IVA
@@ -1954,7 +1954,7 @@ Private Sub cmdredondeo_Click()
     If txtTotal.Text <> "" Then
         txtTotal.Text = Round(txtTotal.Text, 0)
         txtTotal.Text = Valido_Importe(txtTotal.Text)
-        txtImporteIva.Text = txtTotal.Text - txtSubTotal
+        txtImporteIva.Text = txtTotal.Text - txtSubtotal
         txtImporteIva.Text = Valido_Importe(txtImporteIva)
     End If
     'If txtImporteIva.Text <> "" Then
@@ -1963,7 +1963,7 @@ Private Sub cmdredondeo_Click()
     'End If
 End Sub
 
-Private Sub cmdSalir_Click()
+Private Sub CmdSalir_Click()
     If MsgBox("Seguro que desea Salir", vbQuestion + vbYesNo, TIT_MSGBOX) = vbYes Then
         Set frmFacturaCliente = Nothing
         Unload Me
@@ -2015,7 +2015,7 @@ Private Sub Form_KeyPress(KeyAscii As Integer)
         KeyAscii = vbKeyReturn Then
         SendKeys "{TAB}"
     End If
-    If KeyAscii = vbKeyEscape Then cmdSalir_Click
+    If KeyAscii = vbKeyEscape Then CmdSalir_Click
 End Sub
 
 Private Sub Form_Load()
@@ -2070,7 +2070,7 @@ Private Sub Form_Load()
     '------------------------------------
    
     '------------------------------------
-    lblEstado.Caption = ""
+    lblestado.Caption = ""
     'CARGO COMBO CON LOS TIPOS DE FACTURA
     LlenarComboFactura
     'CARGO COMBO CON LAS CONDICIONES DE VENTA
@@ -2176,8 +2176,8 @@ Private Sub grdGrilla_KeyDown(KeyCode As Integer, Shift As Integer)
             grdGrilla.Text = ""
             VBonificacion = (CDbl(grdGrilla.TextMatrix(grdGrilla.RowSel, 2)) * CDbl(grdGrilla.TextMatrix(grdGrilla.RowSel, 3)))
             grdGrilla.TextMatrix(grdGrilla.RowSel, 6) = Valido_Importe(CStr(VBonificacion))
-            txtSubTotal.Text = Valido_Importe(SumaBonificacion)
-            txtTotal.Text = txtSubTotal.Text
+            txtSubtotal.Text = Valido_Importe(SumaBonificacion)
+            txtTotal.Text = txtSubtotal.Text
             grdGrilla.Col = 4
         End Select
     End If
@@ -2238,7 +2238,7 @@ Private Sub GrdModulos_DblClick()
         Select Case TipoBusquedaDoc
         Case 1 'BUSCA FACTURA
             Set Rec1 = New ADODB.Recordset
-            lblEstado.Caption = "Buscando..."
+            lblestado.Caption = "Buscando..."
             Screen.MousePointer = vbHourglass
             'CABEZA FACTURA
             Call BuscaCodigoProxItemData(CInt(GrdModulos.TextMatrix(GrdModulos.RowSel, 12)), cboFactura)
@@ -2327,7 +2327,7 @@ Private Sub GrdModulos_DblClick()
             End If
             Rec1.Close
             '--CARGO LOS TOTALES----
-            txtSubTotal.Text = Valido_Importe(SumaBonificacion)
+            txtSubtotal.Text = Valido_Importe(SumaBonificacion)
             'txtTotal.Text = txtSubtotal.Text
             
             
@@ -2347,7 +2347,7 @@ Private Sub GrdModulos_DblClick()
                 txtPorcentajeIva = GrdModulos.TextMatrix(GrdModulos.RowSel, 10)
                 txtPorcentajeIva_LostFocus
             End If
-            lblEstado.Caption = ""
+            lblestado.Caption = ""
             Screen.MousePointer = vbNormal
             '--------------
             FrameFactura.Enabled = False
@@ -2359,7 +2359,7 @@ Private Sub GrdModulos_DblClick()
         '----------------------------------------------------------
         Case 2 'BUSCA REMITO
         
-            lblEstado.Caption = "Buscando..."
+            lblestado.Caption = "Buscando..."
             Screen.MousePointer = vbHourglass
             
             txtRemSuc.Text = Left(GrdModulos.TextMatrix(GrdModulos.RowSel, 1), 4)
@@ -2370,7 +2370,7 @@ Private Sub GrdModulos_DblClick()
             'grillaRemito.TextMatrix(1, 1) = GrdModulos.TextMatrix(GrdModulos.RowSel, 4)
             'grillaRemito.TextMatrix(2, 1) = GrdModulos.TextMatrix(GrdModulos.RowSel, 5)
         
-            lblEstado.Caption = ""
+            lblestado.Caption = ""
             Screen.MousePointer = vbNormal
             tabDatos.Tab = 0
             txtNroRemito_LostFocus
@@ -2420,8 +2420,8 @@ End Sub
 Private Sub LimpiarBusqueda()
     txtCliente.Text = ""
     txtDesCli.Text = ""
-    FechaDesde.Text = ""
-    FechaHasta.Text = ""
+    FechaDesde.Value = ""
+    FechaHasta.Value = ""
     txtVendedor.Text = ""
     txtDesVen.Text = ""
     cboFactura1.ListIndex = 0
@@ -2567,8 +2567,8 @@ Private Sub TxtEdit_KeyDown(KeyCode As Integer, Shift As Integer)
                     VBonificacion = (CDbl(grdGrilla.TextMatrix(grdGrilla.RowSel, 6)) - VBonificacion)
                     grdGrilla.TextMatrix(grdGrilla.RowSel, 5) = Valido_Importe(CStr(VBonificacion))
                     grdGrilla.TextMatrix(grdGrilla.RowSel, 6) = Valido_Importe(CStr(VBonificacion))
-                    txtSubTotal.Text = Valido_Importe(SumaBonificacion)
-                    txtTotal.Text = txtSubTotal.Text
+                    txtSubtotal.Text = Valido_Importe(SumaBonificacion)
+                    txtTotal.Text = txtSubtotal.Text
                 Else
                     MsgBox "Debe ingresar el Importe", vbExclamation, TIT_MSGBOX
                     grdGrilla.Col = 4
@@ -2684,7 +2684,7 @@ Private Sub txtNroRemito_LostFocus()
                 Exit Sub
             End If
             Screen.MousePointer = vbHourglass
-            lblEstado.Caption = "Buscando..."
+            lblestado.Caption = "Buscando..."
             
             'CARGO CABECERA DEL REMITO
             FechaRemito.Text = Rec2!RCL_FECHA
@@ -2701,7 +2701,7 @@ Private Sub txtNroRemito_LostFocus()
                        "No puede ser asignado a la Factura por su estado (" & Rec2!EST_DESCRI & ")", vbExclamation, TIT_MSGBOX
                 cmdGrabar.Enabled = False
                 Screen.MousePointer = vbNormal
-                lblEstado.Caption = ""
+                lblestado.Caption = ""
                 Rec2.Close
                 LimpiarRemito
                 If txtRemSuc.Enabled = True Then
@@ -2746,8 +2746,8 @@ Private Sub txtNroRemito_LostFocus()
                     I = I + 1
                     Rec1.MoveNext
                 Loop
-                txtSubTotal.Text = Valido_Importe(SumaTotal)
-                txtTotal.Text = txtSubTotal.Text
+                txtSubtotal.Text = Valido_Importe(SumaTotal)
+                txtTotal.Text = txtSubtotal.Text
             End If
             Rec1.Close
             '--------------------------------------------------
@@ -2759,7 +2759,7 @@ Private Sub txtNroRemito_LostFocus()
             cboCondicion.SetFocus
             txtPorcentajeIva_LostFocus
             Screen.MousePointer = vbNormal
-            lblEstado.Caption = ""
+            lblestado.Caption = ""
         Else
             MsgBox "El Remito no existe", vbExclamation, TIT_MSGBOX
             If Rec2.State = 1 Then Rec2.Close
@@ -2872,24 +2872,24 @@ Private Sub txtPorcentajeBoni_KeyPress(KeyAscii As Integer)
 End Sub
 
 Private Sub txtPorcentajeBoni_LostFocus()
-    If txtPorcentajeBoni.Text <> "" And txtSubTotal.Text <> "" Then
+    If txtPorcentajeBoni.Text <> "" And txtSubtotal.Text <> "" Then
         If chkBonificaEnPorsentaje.Value = Checked Then
             If ValidarPorcentaje(txtPorcentajeBoni) = False Then
                 txtPorcentajeBoni.SetFocus
                 Exit Sub
             End If
-            txtImporteBoni.Text = (CDbl(txtSubTotal.Text) * CDbl(txtPorcentajeBoni.Text)) / 100
+            txtImporteBoni.Text = (CDbl(txtSubtotal.Text) * CDbl(txtPorcentajeBoni.Text)) / 100
             txtImporteBoni.Text = Valido_Importe(txtImporteBoni.Text)
-            txtTotal.Text = CDbl(txtSubTotal.Text) - CDbl(txtImporteBoni.Text)
+            txtTotal.Text = CDbl(txtSubtotal.Text) - CDbl(txtImporteBoni.Text)
             txtTotal.Text = Valido_Importe(txtTotal.Text)
-            txtSubTotalBoni.Text = CDbl(txtSubTotal.Text) - CDbl(txtImporteBoni.Text)
+            txtSubTotalBoni.Text = CDbl(txtSubtotal.Text) - CDbl(txtImporteBoni.Text)
             txtSubTotalBoni.Text = Valido_Importe(txtSubTotalBoni.Text)
         ElseIf chkBonificaEnPesos.Value = Checked Then
             txtPorcentajeBoni.Text = Valido_Importe(txtPorcentajeBoni.Text)
             txtImporteBoni.Text = Valido_Importe(txtPorcentajeBoni.Text)
-            txtTotal.Text = CDbl(txtSubTotal.Text) - CDbl(txtImporteBoni.Text)
+            txtTotal.Text = CDbl(txtSubtotal.Text) - CDbl(txtImporteBoni.Text)
             txtTotal.Text = Valido_Importe(txtTotal.Text)
-            txtSubTotalBoni.Text = CDbl(txtSubTotal.Text) - CDbl(txtImporteBoni.Text)
+            txtSubTotalBoni.Text = CDbl(txtSubtotal.Text) - CDbl(txtImporteBoni.Text)
             txtSubTotalBoni.Text = Valido_Importe(txtSubTotalBoni.Text)
         Else
             txtPorcentajeBoni.Text = ""
@@ -2909,7 +2909,7 @@ Private Sub txtPorcentajeIva_KeyPress(KeyAscii As Integer)
 End Sub
 
 Private Sub txtPorcentajeIva_LostFocus()
-    If txtPorcentajeIva.Text <> "" And txtSubTotal.Text <> "" Then
+    If txtPorcentajeIva.Text <> "" And txtSubtotal.Text <> "" Then
         If ValidarPorcentaje(txtPorcentajeIva) = False Then
             txtPorcentajeIva.SetFocus
             Exit Sub
@@ -2920,9 +2920,9 @@ Private Sub txtPorcentajeIva_LostFocus()
             txtTotal.Text = CDbl(txtSubTotalBoni.Text) + CDbl(txtImporteIva.Text)
             txtTotal.Text = Valido_Importe(txtTotal.Text)
         Else
-            txtImporteIva.Text = (CDbl(txtSubTotal.Text) * CDbl(txtPorcentajeIva.Text)) / 100
+            txtImporteIva.Text = (CDbl(txtSubtotal.Text) * CDbl(txtPorcentajeIva.Text)) / 100
             txtImporteIva.Text = Valido_Importe(txtImporteIva.Text)
-            txtTotal.Text = CDbl(txtSubTotal.Text) + CDbl(txtImporteIva.Text)
+            txtTotal.Text = CDbl(txtSubtotal.Text) + CDbl(txtImporteIva.Text)
             txtTotal.Text = Valido_Importe(txtTotal.Text)
         End If
     End If

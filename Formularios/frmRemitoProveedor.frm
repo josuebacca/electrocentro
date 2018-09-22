@@ -1,6 +1,6 @@
 VERSION 5.00
-Object = "{BDC217C8-ED16-11CD-956C-0000C04E4C0A}#1.1#0"; "tabctl32.ocx"
-Object = "{5E9E78A0-531B-11CF-91F6-C2863C385E30}#1.0#0"; "msflxgrd.ocx"
+Object = "{BDC217C8-ED16-11CD-956C-0000C04E4C0A}#1.1#0"; "TABCTL32.OCX"
+Object = "{5E9E78A0-531B-11CF-91F6-C2863C385E30}#1.0#0"; "MSFLXGRD.OCX"
 Object = "{5F09B5DF-6F4D-11D2-8355-4854E82A9183}#15.0#0"; "Fecha32.ocx"
 Begin VB.Form frmRemitoProveedor 
    BorderStyle     =   1  'Fixed Single
@@ -87,9 +87,9 @@ Begin VB.Form frmRemitoProveedor
       TabCaption(1)   =   "&Buscar"
       TabPicture(1)   =   "frmRemitoProveedor.frx":001C
       Tab(1).ControlEnabled=   0   'False
-      Tab(1).Control(0)=   "GrdModulos"
+      Tab(1).Control(0)=   "frameBuscar"
       Tab(1).Control(0).Enabled=   0   'False
-      Tab(1).Control(1)=   "frameBuscar"
+      Tab(1).Control(1)=   "GrdModulos"
       Tab(1).Control(1).Enabled=   0   'False
       Tab(1).ControlCount=   2
       Begin VB.CheckBox chkNotaPedido 
@@ -1156,8 +1156,8 @@ Private Sub chkFecha_Click()
     Else
         FechaDesde.Enabled = False
         FechaHasta.Enabled = False
-        FechaDesde.Text = ""
-        FechaHasta.Text = ""
+        FechaDesde.Value = ""
+        FechaHasta.Value = ""
     End If
 End Sub
 
@@ -1381,7 +1381,7 @@ Private Sub cmdBuscarVendedor_Click()
     End If
 End Sub
 
-Private Sub CmdGrabar_Click()
+Private Sub cmdGrabar_Click()
     If ValidarRemito = False Then Exit Sub
     
     On Error GoTo HayErrorRemito
@@ -1647,7 +1647,7 @@ Private Sub CmdNuevo_Click()
    lblEstadoRemito.Caption = ""
    txtObservaciones.Text = ""
    lblestado.Caption = ""
-   CmdGrabar.Enabled = True
+   cmdGrabar.Enabled = True
    freRemito.Enabled = True
    freCliente.Enabled = True
    
@@ -1696,7 +1696,7 @@ Private Sub cmdQuitarProducto_Click()
     End If
 End Sub
 
-Private Sub cmdSalir_Click()
+Private Sub CmdSalir_Click()
     If MsgBox("Seguro que desea Salir", vbQuestion + vbYesNo, TIT_MSGBOX) = vbYes Then
         Set frmRemitoProveedor = Nothing
         Unload Me
@@ -1715,7 +1715,7 @@ Private Sub Form_KeyPress(KeyAscii As Integer)
         KeyAscii = vbKeyReturn Then
         SendKeys "{TAB}"
     End If
-    If KeyAscii = vbKeyEscape Then cmdSalir_Click
+    If KeyAscii = vbKeyEscape Then CmdSalir_Click
 End Sub
 
 Private Sub Form_Load()
@@ -1953,14 +1953,14 @@ Private Sub GrdModulos_DblClick()
             VEstadoRemito = CInt(GrdModulos.TextMatrix(GrdModulos.RowSel, 6))
             
             If VEstadoRemito <> 1 Then
-                CmdGrabar.Enabled = False
+                cmdGrabar.Enabled = False
                 freCliente.Enabled = False
                 freNotaPedido.Enabled = False
                 freRemito.Enabled = False
                 chkNotaPedido.Enabled = False
                 grdGrilla.SetFocus
             Else
-                CmdGrabar.Enabled = True
+                cmdGrabar.Enabled = True
                 freCliente.Enabled = True
                 freNotaPedido.Enabled = True
                 freRemito.Enabled = True
@@ -2064,7 +2064,7 @@ Private Sub tabDatos_Click(PreviousTab As Integer)
     FechaDesde.Enabled = False
     FechaHasta.Enabled = False
     txtVendedor.Enabled = False
-    CmdGrabar.Enabled = False
+    cmdGrabar.Enabled = False
     cmdBuscarCli.Enabled = False
     cmdBuscarVendedor.Enabled = False
     'LimpiarBusqueda
@@ -2080,9 +2080,9 @@ Private Sub tabDatos_Click(PreviousTab As Integer)
     End If
   Else
     If VEstadoRemito = 1 Then
-        CmdGrabar.Enabled = True
+        cmdGrabar.Enabled = True
     Else
-        CmdGrabar.Enabled = False
+        cmdGrabar.Enabled = False
     End If
   End If
 End Sub
@@ -2090,8 +2090,8 @@ End Sub
 Private Sub LimpiarBusqueda()
     txtCliente.Text = ""
     txtDesCli.Text = ""
-    FechaDesde.Text = ""
-    FechaHasta.Text = ""
+    FechaDesde.Value = ""
+    FechaHasta.Value = ""
     txtVendedor.Text = ""
     txtDesVen.Text = ""
     GrdModulos.Rows = 1
@@ -2477,13 +2477,13 @@ Private Sub txtNroNotaPedido_LostFocus()
                 MsgBox "La Orden de Compra número: " & txtNroNotaPedido.Text & Chr(13) & Chr(13) & _
                        "No puede ser asignada al Remito por su estado (" & Rec2!EST_DESCRI & ")", vbExclamation, TIT_MSGBOX
                 LimpiarNotaPedido
-                CmdGrabar.Enabled = False
+                cmdGrabar.Enabled = False
                 Screen.MousePointer = vbNormal
                 lblestado.Caption = ""
                 Rec2.Close
                 Exit Sub
             Else
-                CmdGrabar.Enabled = True
+                cmdGrabar.Enabled = True
             End If
             Rec2.Close
             

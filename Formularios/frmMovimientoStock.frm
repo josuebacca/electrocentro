@@ -455,13 +455,13 @@ Private Sub LlamoReporte()
     Rep.Formulas(0) = ""
     Rep.Formulas(1) = ""
     
-    If FechaDesde.Text <> "" And FechaHasta.Text <> "" Then
-        Rep.Formulas(0) = "FECHA='" & "Periodo  Desde: " & FechaDesde.Text & "   Hasta: " & FechaHasta.Text & "'"
-    ElseIf FechaDesde.Text <> "" And FechaHasta.Text = "" Then
-        Rep.Formulas(0) = "FECHA='" & "Periodo  Desde: " & FechaDesde.Text & "   Hasta: " & Date & "'"
-    ElseIf FechaDesde.Text = "" And FechaHasta.Text <> "" Then
-        Rep.Formulas(0) = "FECHA='" & "Periodo  Desde: Inicio" & "   Hasta: " & FechaHasta.Text & "'"
-    ElseIf FechaDesde.Text = "" And FechaHasta.Text = "" Then
+    If FechaDesde.Value <> "" And FechaHasta.Value <> "" Then
+        Rep.Formulas(0) = "FECHA='" & "Periodo  Desde: " & FechaDesde.Value & "   Hasta: " & FechaHasta.Value & "'"
+    ElseIf FechaDesde.Value <> "" And FechaHasta.Value = "" Then
+        Rep.Formulas(0) = "FECHA='" & "Periodo  Desde: " & FechaDesde.Value & "   Hasta: " & Date & "'"
+    ElseIf FechaDesde.Value = "" And FechaHasta.Value <> "" Then
+        Rep.Formulas(0) = "FECHA='" & "Periodo  Desde: Inicio" & "   Hasta: " & FechaHasta.Value & "'"
+    ElseIf FechaDesde.Value = "" And FechaHasta.Value = "" Then
         Rep.Formulas(0) = "FECHA='" & "Periodo  Desde: Inicio" & "   Hasta: " & Date & "'"
     End If
     If cboStock.List(cboStock.ListIndex) <> "<Todos>" Then
@@ -488,13 +488,13 @@ End Sub
 
 Private Sub CmdNuevo_Click()
     TxtCodigo.Text = ""
-    FechaDesde.Text = ""
-    FechaHasta.Text = ""
+    FechaDesde.Value = ""
+    FechaHasta.Value = ""
     cboStock.ListIndex = 0
     TxtCodigo.SetFocus
 End Sub
 
-Private Sub cmdSalir_Click()
+Private Sub CmdSalir_Click()
     Set frmMovimientoStock = Nothing
     Unload Me
 End Sub

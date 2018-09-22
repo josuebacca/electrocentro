@@ -258,12 +258,12 @@ Private Sub CmdAceptar_Click()
      Tamanio = 0
      TotIva = 0
      
-     If FechaDesde.Text = "" Then
+     If FechaDesde.Value = "" Then
         MsgBox "Debe ingresar el periodo", vbExclamation, TIT_MSGBOX
         FechaDesde.SetFocus
         Exit Sub
      End If
-     If FechaHasta.Text = "" Then
+     If FechaHasta.Value = "" Then
         MsgBox "Debe ingresar el periodo", vbExclamation, TIT_MSGBOX
         FechaHasta.SetFocus
         Exit Sub
@@ -484,14 +484,14 @@ Private Sub ListarLibroIVA()
 End Sub
 
 Private Sub CmdNuevo_Click()
-    FechaDesde.Text = ""
+    FechaDesde.Value = ""
     lblPeriodo1.Caption = ""
-    FechaHasta.Text = ""
+    FechaHasta.Value = ""
     lblPeriodo2.Caption = ""
     FechaDesde.SetFocus
 End Sub
 
-Private Sub cmdSalir_Click()
+Private Sub CmdSalir_Click()
     Set frmLibroIvaVentas = Nothing
     Unload Me
 End Sub
@@ -508,17 +508,17 @@ Private Sub Form_Load()
 End Sub
 
 Private Sub FechaDesde_LostFocus()
-    If Trim(FechaDesde.Text) <> "" Then
-        FechaHasta.Text = FechaDesde.Text
-        lblPeriodo1.Caption = UCase(Format(FechaDesde.Text, "mmmm/yyyy"))
+    If Trim(FechaDesde.Value) <> "" Then
+        FechaHasta.Value = FechaDesde.Value
+        lblPeriodo1.Caption = UCase(Format(FechaDesde.Value, "mmmm/yyyy"))
     Else
         lblPeriodo1.Caption = ""
     End If
 End Sub
 
 Private Sub FechaHasta_LostFocus()
-    If Trim(FechaHasta.Text) <> "" Then
-        lblPeriodo2.Caption = UCase(Format(FechaHasta.Text, "mmmm/yyyy"))
+    If Trim(FechaHasta.Value) <> "" Then
+        lblPeriodo2.Caption = UCase(Format(FechaHasta.Value, "mmmm/yyyy"))
     Else
         lblPeriodo2.Caption = ""
     End If

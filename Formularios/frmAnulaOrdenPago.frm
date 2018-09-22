@@ -1,6 +1,6 @@
 VERSION 5.00
 Object = "{5E9E78A0-531B-11CF-91F6-C2863C385E30}#1.0#0"; "MSFLXGRD.OCX"
-Object = "{5F09B5DF-6F4D-11D2-8355-4854E82A9183}#15.0#0"; "FECHA32.OCX"
+Object = "{5F09B5DF-6F4D-11D2-8355-4854E82A9183}#15.0#0"; "Fecha32.ocx"
 Begin VB.Form frmAnulaOrdenPago 
    BorderStyle     =   1  'Fixed Single
    Caption         =   "Anular Orden de Pago...."
@@ -339,7 +339,7 @@ End Sub
 
 Private Sub CmdBuscAprox_Click()
     GrdModulos.Rows = 1
-    lblEstado.Caption = "Buscando..."
+    lblestado.Caption = "Buscando..."
     Screen.MousePointer = vbHourglass
     
     Set Rec1 = New ADODB.Recordset
@@ -374,13 +374,13 @@ Private Sub CmdBuscAprox_Click()
         Loop
         GrdModulos.SetFocus
     Else
-        lblEstado.Caption = ""
+        lblestado.Caption = ""
         Screen.MousePointer = vbNormal
         MsgBox "No se encontraron datos...", vbExclamation, TIT_MSGBOX
         chkTipoProveedor.SetFocus
     End If
     Rec1.Close
-    lblEstado.Caption = ""
+    lblestado.Caption = ""
     Screen.MousePointer = vbNormal
 End Sub
 
@@ -401,25 +401,25 @@ Private Sub cmdBuscarProveedor_Click()
     End If
 End Sub
 
-Private Sub CmdGrabar_Click()
+Private Sub cmdGrabar_Click()
     If MsgBox("¿Confirma Anular?", vbQuestion + vbYesNo, TIT_MSGBOX) = vbNo Then Exit Sub
     
     On Error GoTo SeClavo
-    lblEstado.Caption = "Actualizando..."
+    lblestado.Caption = "Actualizando..."
     Screen.MousePointer = vbHourglass
     DBConn.BeginTrans
     
     ActualizoOrdenPago
     
     DBConn.CommitTrans
-    lblEstado.Caption = ""
+    lblestado.Caption = ""
     Screen.MousePointer = vbNormal
-    cmdNuevo_Click
+    CmdNuevo_Click
     Exit Sub
 
 SeClavo:
     DBConn.RollbackTrans
-    lblEstado.Caption = ""
+    lblestado.Caption = ""
     Screen.MousePointer = vbNormal
     MsgBox Err.Description, vbCritical, TIT_MSGBOX
 End Sub
@@ -557,7 +557,7 @@ Private Sub Form_Load()
     cmdBuscarProveedor.Enabled = False
     FechaDesde.Enabled = False
     FechaHasta.Enabled = False
-    lblEstado.Caption = ""
+    lblestado.Caption = ""
 End Sub
 
 Private Sub LlenarComboTipoProv()
@@ -589,7 +589,7 @@ Private Sub ConfiguroGrilla()
     GrdModulos.Rows = 2
 End Sub
 
-Private Sub GrdModulos_dblClick()
+Private Sub GrdModulos_DblClick()
     If GrdModulos.Rows > 1 Then
         If GrdModulos.TextMatrix(GrdModulos.RowSel, 4) = 2 Then
             MsgBox "No se puede cambiar el estado a la Orden de Pago" & Chr(13) & _
@@ -611,16 +611,16 @@ Private Sub GrdModulos_dblClick()
 End Sub
 
 Private Sub GrdModulos_KeyDown(KeyCode As Integer, Shift As Integer)
-    If KeyCode = vbKeySpace Then GrdModulos_dblClick
+    If KeyCode = vbKeySpace Then GrdModulos_DblClick
 End Sub
 
-Private Sub cmdNuevo_Click()
+Private Sub CmdNuevo_Click()
     TipoCOMPROBANTE = 0
     txtProveedor.Text = ""
     txtDesProv.Text = ""
     cboBuscaTipoProveedor.ListIndex = -1
-    FechaDesde.Text = ""
-    FechaHasta.Text = ""
+    FechaDesde.Value = ""
+    FechaHasta.Value = ""
     GrdModulos.Rows = 1
     GrdModulos.Rows = 2
     txtProveedor.Enabled = False
