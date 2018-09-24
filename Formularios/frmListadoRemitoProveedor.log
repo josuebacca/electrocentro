@@ -1,0 +1,17 @@
+Línea 45: la clase Crystal.CrystalReport del control Rep no era una clase de control cargada.
+Línea 263: la clase FechaCtl.Fecha del control FechaHasta no era una clase de control cargada.
+Línea 275: la clase FechaCtl.Fecha del control FechaDesde no era una clase de control cargada.
+Línea 48: el nombre de la propiedad _ExtentX de Rep no es válido.
+Línea 49: el nombre de la propiedad _ExtentY de Rep no es válido.
+Línea 50: el nombre de la propiedad _Version de Rep no es válido.
+Línea 51: el nombre de la propiedad PrintFileLinesPerPage de Rep no es válido.
+Línea 269: el nombre de la propiedad _ExtentX de FechaHasta no es válido.
+Línea 270: el nombre de la propiedad _ExtentY de FechaHasta no es válido.
+Línea 271: el nombre de la propiedad Separador de FechaHasta no es válido.
+Línea 272: el nombre de la propiedad Text de FechaHasta no es válido.
+Línea 273: el nombre de la propiedad MensajeErrMin de FechaHasta no es válido.
+Línea 281: el nombre de la propiedad _ExtentX de FechaDesde no es válido.
+Línea 282: el nombre de la propiedad _ExtentY de FechaDesde no es válido.
+Línea 283: el nombre de la propiedad Separador de FechaDesde no es válido.
+Línea 284: el nombre de la propiedad Text de FechaDesde no es válido.
+Línea 285: el nombre de la propiedad MensajeErrMin de FechaDesde no es válido.

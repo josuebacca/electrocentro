@@ -1,7 +1,7 @@
 VERSION 5.00
-Object = "{BDC217C8-ED16-11CD-956C-0000C04E4C0A}#1.1#0"; "TABCTL32.OCX"
-Object = "{5E9E78A0-531B-11CF-91F6-C2863C385E30}#1.0#0"; "MSFLXGRD.OCX"
-Object = "{5F09B5DF-6F4D-11D2-8355-4854E82A9183}#15.0#0"; "Fecha32.ocx"
+Object = "{BDC217C8-ED16-11CD-956C-0000C04E4C0A}#1.1#0"; "tabctl32.ocx"
+Object = "{5E9E78A0-531B-11CF-91F6-C2863C385E30}#1.0#0"; "msflxgrd.ocx"
+Object = "{86CF1D34-0C5F-11D2-A9FC-0000F8754DA1}#2.0#0"; "mscomct2.ocx"
 Begin VB.Form frmfacturaproveedor 
    BorderStyle     =   1  'Fixed Single
    Caption         =   "Factura de Proveedores...."
@@ -21,7 +21,7 @@ Begin VB.Form frmfacturaproveedor
       Caption         =   "&Salir"
       Height          =   570
       Left            =   10185
-      TabIndex        =   15
+      TabIndex        =   13
       Top             =   7575
       Width           =   990
    End
@@ -29,7 +29,7 @@ Begin VB.Form frmfacturaproveedor
       Caption         =   "&Aceptar"
       Height          =   570
       Left            =   8160
-      TabIndex        =   13
+      TabIndex        =   11
       Top             =   7575
       Width           =   990
    End
@@ -37,14 +37,14 @@ Begin VB.Form frmfacturaproveedor
       Caption         =   "&Nuevo"
       Height          =   570
       Left            =   9172
-      TabIndex        =   14
+      TabIndex        =   12
       Top             =   7575
       Width           =   990
    End
    Begin TabDlg.SSTab tabDatos 
       Height          =   7530
       Left            =   60
-      TabIndex        =   27
+      TabIndex        =   25
       Top             =   15
       Width           =   11145
       _ExtentX        =   19659
@@ -84,9 +84,9 @@ Begin VB.Form frmfacturaproveedor
       Tab(1).Control(1)=   "frameBuscar"
       Tab(1).ControlCount=   2
       Begin VB.Frame freCliente 
-         Height          =   1775
+         Height          =   1890
          Left            =   4080
-         TabIndex        =   68
+         TabIndex        =   66
          Top             =   900
          Width           =   6950
          Begin VB.TextBox txtDomici 
@@ -104,7 +104,7 @@ Begin VB.Form frmfacturaproveedor
             Height          =   285
             Left            =   930
             MaxLength       =   50
-            TabIndex        =   94
+            TabIndex        =   92
             Top             =   465
             Width           =   4620
          End
@@ -122,7 +122,7 @@ Begin VB.Form frmfacturaproveedor
             EndProperty
             Height          =   285
             Left            =   930
-            TabIndex        =   88
+            TabIndex        =   86
             Top             =   780
             Width           =   1215
          End
@@ -141,7 +141,7 @@ Begin VB.Form frmfacturaproveedor
             Height          =   285
             Left            =   930
             MaxLength       =   50
-            TabIndex        =   77
+            TabIndex        =   75
             Top             =   1080
             Width           =   4620
          End
@@ -160,7 +160,7 @@ Begin VB.Form frmfacturaproveedor
             Height          =   285
             Left            =   2250
             MaxLength       =   50
-            TabIndex        =   76
+            TabIndex        =   74
             Top             =   780
             Width           =   4620
          End
@@ -178,7 +178,7 @@ Begin VB.Form frmfacturaproveedor
             EndProperty
             Height          =   300
             Left            =   930
-            TabIndex        =   75
+            TabIndex        =   73
             Top             =   1395
             Width           =   1455
          End
@@ -189,7 +189,7 @@ Begin VB.Form frmfacturaproveedor
             MaskColor       =   &H000000FF&
             Picture         =   "frmFacturaProveedor.frx":0038
             Style           =   1  'Graphical
-            TabIndex        =   74
+            TabIndex        =   72
             ToolTipText     =   "Agregar Cliente"
             Top             =   120
             UseMaskColor    =   -1  'True
@@ -202,7 +202,7 @@ Begin VB.Form frmfacturaproveedor
             MaskColor       =   &H000000FF&
             Picture         =   "frmFacturaProveedor.frx":03C2
             Style           =   1  'Graphical
-            TabIndex        =   73
+            TabIndex        =   71
             ToolTipText     =   "Buscar Cliente"
             Top             =   120
             UseMaskColor    =   -1  'True
@@ -222,7 +222,7 @@ Begin VB.Form frmfacturaproveedor
             EndProperty
             Height          =   300
             Left            =   2415
-            TabIndex        =   72
+            TabIndex        =   70
             Top             =   1395
             Width           =   3135
          End
@@ -231,7 +231,7 @@ Begin VB.Form frmfacturaproveedor
             Height          =   300
             Left            =   930
             MaxLength       =   40
-            TabIndex        =   71
+            TabIndex        =   69
             Top             =   120
             Width           =   975
          End
@@ -250,7 +250,7 @@ Begin VB.Form frmfacturaproveedor
             Height          =   300
             Left            =   2835
             MaxLength       =   50
-            TabIndex        =   70
+            TabIndex        =   68
             Tag             =   "Descripción"
             Top             =   120
             Width           =   3990
@@ -269,7 +269,7 @@ Begin VB.Form frmfacturaproveedor
             EndProperty
             Height          =   285
             Left            =   5610
-            TabIndex        =   69
+            TabIndex        =   67
             Top             =   1395
             Width           =   1215
          End
@@ -278,7 +278,7 @@ Begin VB.Form frmfacturaproveedor
             Caption         =   "Domicilio:"
             Height          =   195
             Left            =   180
-            TabIndex        =   95
+            TabIndex        =   93
             Top             =   510
             Width           =   675
          End
@@ -287,7 +287,7 @@ Begin VB.Form frmfacturaproveedor
             Caption         =   "Provincia:"
             Height          =   195
             Left            =   150
-            TabIndex        =   82
+            TabIndex        =   80
             Top             =   1125
             Width           =   705
          End
@@ -296,7 +296,7 @@ Begin VB.Form frmfacturaproveedor
             Caption         =   "Localidad:"
             Height          =   195
             Left            =   120
-            TabIndex        =   81
+            TabIndex        =   79
             Top             =   795
             Width           =   735
          End
@@ -310,7 +310,7 @@ Begin VB.Form frmfacturaproveedor
             Height          =   195
             Index           =   1
             Left            =   90
-            TabIndex        =   80
+            TabIndex        =   78
             Top             =   165
             Width           =   780
          End
@@ -319,7 +319,7 @@ Begin VB.Form frmfacturaproveedor
             Caption         =   "C.U.I.T.:"
             Height          =   195
             Left            =   255
-            TabIndex        =   79
+            TabIndex        =   77
             Top             =   1440
             Width           =   600
          End
@@ -328,7 +328,7 @@ Begin VB.Form frmfacturaproveedor
             Caption         =   "Ing. Brutos"
             Height          =   195
             Left            =   5730
-            TabIndex        =   78
+            TabIndex        =   76
             Top             =   1200
             Width           =   765
          End
@@ -346,7 +346,7 @@ Begin VB.Form frmfacturaproveedor
          EndProperty
          Height          =   575
          Left            =   4080
-         TabIndex        =   44
+         TabIndex        =   42
          Top             =   330
          Width           =   6945
          Begin VB.TextBox txtNroRemito 
@@ -362,7 +362,7 @@ Begin VB.Form frmfacturaproveedor
             EndProperty
             Height          =   315
             Left            =   1515
-            TabIndex        =   91
+            TabIndex        =   89
             Top             =   200
             Width           =   1065
          End
@@ -372,7 +372,7 @@ Begin VB.Form frmfacturaproveedor
             MaskColor       =   &H000000FF&
             Picture         =   "frmFacturaProveedor.frx":06CC
             Style           =   1  'Graphical
-            TabIndex        =   90
+            TabIndex        =   88
             ToolTipText     =   "Buscar Remito"
             Top             =   200
             UseMaskColor    =   -1  'True
@@ -392,36 +392,36 @@ Begin VB.Form frmfacturaproveedor
             Height          =   315
             Left            =   930
             MaxLength       =   4
-            TabIndex        =   89
+            TabIndex        =   87
             Top             =   200
             Width           =   555
          End
          Begin VB.TextBox txtCodigoStock 
             Height          =   300
             Left            =   5760
-            TabIndex        =   65
+            TabIndex        =   63
             Top             =   220
             Visible         =   0   'False
             Width           =   465
          End
-         Begin FechaCtl.Fecha FechaRemito 
-            Height          =   285
-            Left            =   4170
-            TabIndex        =   5
-            Top             =   220
-            Width           =   1155
-            _ExtentX        =   2037
-            _ExtentY        =   503
-            Separador       =   "/"
-            Text            =   ""
-            MensajeErrMin   =   "La fecha ingresada no alcanza el mínimo permitido"
+         Begin MSComCtl2.DTPicker FechaRemito 
+            Height          =   375
+            Left            =   4200
+            TabIndex        =   94
+            Top             =   120
+            Width           =   1335
+            _ExtentX        =   2355
+            _ExtentY        =   661
+            _Version        =   393216
+            Format          =   55508993
+            CurrentDate     =   43367
          End
          Begin VB.Label Label3 
             AutoSize        =   -1  'True
             Caption         =   "Número:"
             Height          =   195
             Left            =   240
-            TabIndex        =   92
+            TabIndex        =   90
             Top             =   285
             Width           =   600
          End
@@ -430,7 +430,7 @@ Begin VB.Form frmfacturaproveedor
             Caption         =   "Fecha:"
             Height          =   195
             Left            =   3555
-            TabIndex        =   45
+            TabIndex        =   43
             Top             =   255
             Width           =   495
          End
@@ -448,14 +448,14 @@ Begin VB.Form frmfacturaproveedor
          EndProperty
          Height          =   2130
          Left            =   -74595
-         TabIndex        =   32
+         TabIndex        =   30
          Top             =   480
          Width           =   10410
          Begin VB.CheckBox chkanuladas 
             Caption         =   "Ver Anuladas"
             Height          =   255
             Left            =   6600
-            TabIndex        =   93
+            TabIndex        =   91
             Top             =   1560
             Width           =   1695
          End
@@ -465,7 +465,7 @@ Begin VB.Form frmfacturaproveedor
             MaskColor       =   &H000000FF&
             Picture         =   "frmFacturaProveedor.frx":09D6
             Style           =   1  'Graphical
-            TabIndex        =   66
+            TabIndex        =   64
             ToolTipText     =   "Buscar Vendedor"
             Top             =   840
             UseMaskColor    =   -1  'True
@@ -475,7 +475,7 @@ Begin VB.Form frmfacturaproveedor
             Height          =   315
             Left            =   3360
             Style           =   2  'Dropdown List
-            TabIndex        =   24
+            TabIndex        =   22
             Top             =   1485
             Width           =   2400
          End
@@ -483,7 +483,7 @@ Begin VB.Form frmfacturaproveedor
             Caption         =   "Tipo de Facrura"
             Height          =   195
             Left            =   210
-            TabIndex        =   19
+            TabIndex        =   17
             Top             =   1440
             Width           =   1485
          End
@@ -493,7 +493,7 @@ Begin VB.Form frmfacturaproveedor
             MaskColor       =   &H000000FF&
             Picture         =   "frmFacturaProveedor.frx":0CE0
             Style           =   1  'Graphical
-            TabIndex        =   39
+            TabIndex        =   37
             ToolTipText     =   "Buscar Cliente"
             Top             =   495
             UseMaskColor    =   -1  'True
@@ -502,7 +502,7 @@ Begin VB.Form frmfacturaproveedor
          Begin VB.TextBox txtVendedor 
             Height          =   300
             Left            =   3360
-            TabIndex        =   21
+            TabIndex        =   19
             Top             =   825
             Width           =   990
          End
@@ -520,7 +520,7 @@ Begin VB.Form frmfacturaproveedor
             EndProperty
             Height          =   285
             Left            =   4845
-            TabIndex        =   37
+            TabIndex        =   35
             Top             =   840
             Width           =   4620
          End
@@ -528,7 +528,7 @@ Begin VB.Form frmfacturaproveedor
             Caption         =   "Empleado"
             Height          =   195
             Left            =   210
-            TabIndex        =   17
+            TabIndex        =   15
             Top             =   885
             Width           =   1035
          End
@@ -538,35 +538,29 @@ Begin VB.Form frmfacturaproveedor
             MaskColor       =   &H000000FF&
             Picture         =   "frmFacturaProveedor.frx":0FEA
             Style           =   1  'Graphical
-            TabIndex        =   25
+            TabIndex        =   23
             ToolTipText     =   "Buscar "
             Top             =   225
             UseMaskColor    =   -1  'True
             Width           =   570
          End
-         Begin FechaCtl.Fecha FechaHasta 
+         Begin VB.PictureBox FechaHasta 
             Height          =   285
             Left            =   5865
-            TabIndex        =   23
+            ScaleHeight     =   225
+            ScaleWidth      =   1125
+            TabIndex        =   21
             Top             =   1170
             Width           =   1185
-            _ExtentX        =   2090
-            _ExtentY        =   503
-            Separador       =   "/"
-            Text            =   ""
-            MensajeErrMin   =   "La fecha ingresada no alcanza el mínimo permitido"
          End
-         Begin FechaCtl.Fecha FechaDesde 
+         Begin VB.PictureBox FechaDesde 
             Height          =   330
             Left            =   3360
-            TabIndex        =   22
+            ScaleHeight     =   270
+            ScaleWidth      =   1110
+            TabIndex        =   20
             Top             =   1170
             Width           =   1170
-            _ExtentX        =   2064
-            _ExtentY        =   582
-            Separador       =   "/"
-            Text            =   ""
-            MensajeErrMin   =   "La fecha ingresada no alcanza el mínimo permitido"
          End
          Begin VB.TextBox txtDesCli 
             BackColor       =   &H8000000F&
@@ -583,7 +577,7 @@ Begin VB.Form frmfacturaproveedor
             Height          =   300
             Left            =   4845
             MaxLength       =   50
-            TabIndex        =   33
+            TabIndex        =   31
             Tag             =   "Descripción"
             Top             =   495
             Width           =   4620
@@ -592,7 +586,7 @@ Begin VB.Form frmfacturaproveedor
             Height          =   300
             Left            =   3360
             MaxLength       =   40
-            TabIndex        =   20
+            TabIndex        =   18
             Top             =   495
             Width           =   975
          End
@@ -600,7 +594,7 @@ Begin VB.Form frmfacturaproveedor
             Caption         =   "Fecha"
             Height          =   195
             Left            =   210
-            TabIndex        =   18
+            TabIndex        =   16
             Top             =   1170
             Width           =   810
          End
@@ -608,7 +602,7 @@ Begin VB.Form frmfacturaproveedor
             Caption         =   "Proveedor"
             Height          =   195
             Left            =   210
-            TabIndex        =   16
+            TabIndex        =   14
             Top             =   585
             Width           =   1095
          End
@@ -617,7 +611,7 @@ Begin VB.Form frmfacturaproveedor
             Caption         =   "Tipo Factura:"
             Height          =   195
             Left            =   2325
-            TabIndex        =   63
+            TabIndex        =   61
             Top             =   1530
             Width           =   945
          End
@@ -627,7 +621,7 @@ Begin VB.Form frmfacturaproveedor
             Height          =   195
             Index           =   0
             Left            =   2535
-            TabIndex        =   38
+            TabIndex        =   36
             Top             =   855
             Width           =   750
          End
@@ -636,7 +630,7 @@ Begin VB.Form frmfacturaproveedor
             Caption         =   "Fecha Hasta:"
             Height          =   195
             Left            =   4815
-            TabIndex        =   36
+            TabIndex        =   34
             Top             =   1215
             Width           =   960
          End
@@ -645,7 +639,7 @@ Begin VB.Form frmfacturaproveedor
             Caption         =   "Fecha Desde:"
             Height          =   195
             Left            =   2265
-            TabIndex        =   35
+            TabIndex        =   33
             Top             =   1200
             Width           =   1005
          End
@@ -659,7 +653,7 @@ Begin VB.Form frmfacturaproveedor
             Height          =   195
             Index           =   3
             Left            =   2505
-            TabIndex        =   34
+            TabIndex        =   32
             Top             =   540
             Width           =   780
          End
@@ -675,20 +669,32 @@ Begin VB.Form frmfacturaproveedor
             Italic          =   0   'False
             Strikethrough   =   0   'False
          EndProperty
-         Height          =   2335
+         Height          =   2460
          Left            =   120
-         TabIndex        =   29
+         TabIndex        =   27
          Top             =   330
          Width           =   3920
+         Begin MSComCtl2.DTPicker FechaFactura 
+            Height          =   375
+            Left            =   1320
+            TabIndex        =   95
+            Top             =   960
+            Width           =   1335
+            _ExtentX        =   2355
+            _ExtentY        =   661
+            _Version        =   393216
+            Format          =   55508993
+            CurrentDate     =   43367
+         End
          Begin VB.CommandButton cmdNuevoVendedor 
             Height          =   315
             Left            =   2460
             MaskColor       =   &H000000FF&
             Picture         =   "frmFacturaProveedor.frx":378C
             Style           =   1  'Graphical
-            TabIndex        =   85
+            TabIndex        =   83
             ToolTipText     =   "Agregar Vendedor"
-            Top             =   1560
+            Top             =   1680
             UseMaskColor    =   -1  'True
             Width           =   405
          End
@@ -698,9 +704,9 @@ Begin VB.Form frmfacturaproveedor
             MaskColor       =   &H000000FF&
             Picture         =   "frmFacturaProveedor.frx":3B16
             Style           =   1  'Graphical
-            TabIndex        =   84
+            TabIndex        =   82
             ToolTipText     =   "Buscar Vendedor"
-            Top             =   1560
+            Top             =   1680
             UseMaskColor    =   -1  'True
             Width           =   405
          End
@@ -718,15 +724,15 @@ Begin VB.Form frmfacturaproveedor
             EndProperty
             Height          =   330
             Left            =   240
-            TabIndex        =   83
-            Top             =   1905
+            TabIndex        =   81
+            Top             =   2025
             Width           =   3165
          End
          Begin VB.TextBox txtNroVendedor 
             Height          =   300
             Left            =   1140
-            TabIndex        =   4
-            Top             =   1560
+            TabIndex        =   3
+            Top             =   1680
             Width           =   780
          End
          Begin VB.TextBox txtNroSucursal 
@@ -771,25 +777,13 @@ Begin VB.Form frmfacturaproveedor
             Top             =   585
             Width           =   1065
          End
-         Begin FechaCtl.Fecha FechaFactura 
-            Height          =   285
-            Left            =   1200
-            TabIndex        =   3
-            Top             =   945
-            Width           =   1155
-            _ExtentX        =   2037
-            _ExtentY        =   503
-            Separador       =   "/"
-            Text            =   ""
-            MensajeErrMin   =   "La fecha ingresada no alcanza el mínimo permitido"
-         End
          Begin VB.Label Label24 
             AutoSize        =   -1  'True
             Caption         =   "Empleado:"
             Height          =   195
             Left            =   300
-            TabIndex        =   86
-            Top             =   1605
+            TabIndex        =   84
+            Top             =   1725
             Width           =   750
          End
          Begin VB.Label Label8 
@@ -797,7 +791,7 @@ Begin VB.Form frmfacturaproveedor
             Caption         =   "Tipo:"
             Height          =   195
             Left            =   780
-            TabIndex        =   49
+            TabIndex        =   47
             Top             =   255
             Width           =   360
          End
@@ -806,7 +800,7 @@ Begin VB.Form frmfacturaproveedor
             Caption         =   "Fecha:"
             Height          =   195
             Left            =   645
-            TabIndex        =   46
+            TabIndex        =   44
             Top             =   1095
             Width           =   495
          End
@@ -815,7 +809,7 @@ Begin VB.Form frmfacturaproveedor
             Caption         =   "Número:"
             Height          =   195
             Left            =   540
-            TabIndex        =   43
+            TabIndex        =   41
             Top             =   615
             Width           =   600
          End
@@ -824,8 +818,8 @@ Begin VB.Form frmfacturaproveedor
             Caption         =   "Estado:"
             Height          =   195
             Left            =   600
-            TabIndex        =   42
-            Top             =   1290
+            TabIndex        =   40
+            Top             =   1410
             Width           =   540
          End
          Begin VB.Label lblEstadoFactura 
@@ -843,15 +837,15 @@ Begin VB.Form frmfacturaproveedor
             ForeColor       =   &H00FF0000&
             Height          =   195
             Left            =   1200
-            TabIndex        =   41
-            Top             =   1305
+            TabIndex        =   39
+            Top             =   1425
             Width           =   1350
          End
       End
       Begin MSFlexGridLib.MSFlexGrid GrdModulos 
          Height          =   4620
          Left            =   -74640
-         TabIndex        =   26
+         TabIndex        =   24
          Top             =   2700
          Width           =   10455
          _ExtentX        =   18441
@@ -868,8 +862,8 @@ Begin VB.Form frmfacturaproveedor
       Begin VB.Frame Frame4 
          Height          =   540
          Left            =   105
-         TabIndex        =   47
-         Top             =   2615
+         TabIndex        =   45
+         Top             =   2730
          Width           =   10935
          Begin VB.CommandButton cmdNuevoRubro 
             Height          =   315
@@ -877,7 +871,7 @@ Begin VB.Form frmfacturaproveedor
             MaskColor       =   &H000000FF&
             Picture         =   "frmFacturaProveedor.frx":3E20
             Style           =   1  'Graphical
-            TabIndex        =   64
+            TabIndex        =   62
             ToolTipText     =   "Agregar Condición de Venta"
             Top             =   165
             UseMaskColor    =   -1  'True
@@ -887,7 +881,7 @@ Begin VB.Form frmfacturaproveedor
             Height          =   315
             Left            =   1200
             Style           =   2  'Dropdown List
-            TabIndex        =   6
+            TabIndex        =   4
             Top             =   165
             Width           =   4950
          End
@@ -905,7 +899,7 @@ Begin VB.Form frmfacturaproveedor
             EndProperty
             Height          =   240
             Left            =   8400
-            TabIndex        =   67
+            TabIndex        =   65
             Top             =   210
             Width           =   2250
          End
@@ -914,7 +908,7 @@ Begin VB.Form frmfacturaproveedor
             Caption         =   "Condición:"
             Height          =   195
             Left            =   390
-            TabIndex        =   60
+            TabIndex        =   58
             Top             =   210
             Width           =   810
          End
@@ -922,7 +916,7 @@ Begin VB.Form frmfacturaproveedor
       Begin VB.Frame Frame3 
          Height          =   4350
          Left            =   105
-         TabIndex        =   30
+         TabIndex        =   28
          Top             =   3075
          Width           =   10935
          Begin VB.CheckBox chkBonificaEnPesos 
@@ -930,7 +924,7 @@ Begin VB.Form frmfacturaproveedor
             Caption         =   "Bonifica en $"
             Height          =   285
             Left            =   390
-            TabIndex        =   9
+            TabIndex        =   7
             Top             =   3600
             Width           =   1290
          End
@@ -939,7 +933,7 @@ Begin VB.Form frmfacturaproveedor
             Caption         =   "Bonifica en % "
             Height          =   285
             Left            =   390
-            TabIndex        =   8
+            TabIndex        =   6
             Top             =   3300
             Width           =   1290
          End
@@ -957,7 +951,7 @@ Begin VB.Form frmfacturaproveedor
             EndProperty
             Height          =   315
             Left            =   4905
-            TabIndex        =   61
+            TabIndex        =   59
             Top             =   3630
             Width           =   1155
          End
@@ -975,7 +969,7 @@ Begin VB.Form frmfacturaproveedor
             EndProperty
             Height          =   315
             Left            =   6900
-            TabIndex        =   57
+            TabIndex        =   55
             Top             =   3630
             Width           =   1155
          End
@@ -983,7 +977,7 @@ Begin VB.Form frmfacturaproveedor
             Alignment       =   1  'Right Justify
             Height          =   315
             Left            =   6900
-            TabIndex        =   11
+            TabIndex        =   9
             Top             =   3300
             Width           =   1155
          End
@@ -1001,7 +995,7 @@ Begin VB.Form frmfacturaproveedor
             EndProperty
             Height          =   315
             Left            =   2850
-            TabIndex        =   54
+            TabIndex        =   52
             Top             =   3630
             Width           =   1155
          End
@@ -1009,7 +1003,7 @@ Begin VB.Form frmfacturaproveedor
             Alignment       =   1  'Right Justify
             Height          =   315
             Left            =   2850
-            TabIndex        =   10
+            TabIndex        =   8
             Top             =   3300
             Width           =   1155
          End
@@ -1027,7 +1021,7 @@ Begin VB.Form frmfacturaproveedor
             EndProperty
             Height          =   315
             Left            =   8970
-            TabIndex        =   51
+            TabIndex        =   49
             Top             =   3630
             Width           =   1350
          End
@@ -1045,7 +1039,7 @@ Begin VB.Form frmfacturaproveedor
             EndProperty
             Height          =   315
             Left            =   8970
-            TabIndex        =   50
+            TabIndex        =   48
             Top             =   3300
             Width           =   1350
          End
@@ -1054,7 +1048,7 @@ Begin VB.Form frmfacturaproveedor
             Height          =   300
             Left            =   1455
             MaxLength       =   60
-            TabIndex        =   12
+            TabIndex        =   10
             Top             =   3975
             Width           =   8865
          End
@@ -1063,7 +1057,7 @@ Begin VB.Form frmfacturaproveedor
             BorderStyle     =   0  'None
             Height          =   330
             Left            =   1140
-            TabIndex        =   31
+            TabIndex        =   29
             Top             =   420
             Visible         =   0   'False
             Width           =   1185
@@ -1071,8 +1065,8 @@ Begin VB.Form frmfacturaproveedor
          Begin MSFlexGridLib.MSFlexGrid grdGrilla 
             Height          =   3135
             Left            =   75
-            TabIndex        =   7
-            Top             =   120
+            TabIndex        =   5
+            Top             =   240
             Width           =   10725
             _ExtentX        =   18918
             _ExtentY        =   5530
@@ -1103,7 +1097,7 @@ Begin VB.Form frmfacturaproveedor
             Caption         =   "Sub-Total:"
             Height          =   195
             Left            =   4110
-            TabIndex        =   62
+            TabIndex        =   60
             Top             =   3690
             Width           =   735
          End
@@ -1112,7 +1106,7 @@ Begin VB.Form frmfacturaproveedor
             Caption         =   "Importe:"
             Height          =   195
             Left            =   6270
-            TabIndex        =   59
+            TabIndex        =   57
             Top             =   3675
             Width           =   570
          End
@@ -1121,7 +1115,7 @@ Begin VB.Form frmfacturaproveedor
             Caption         =   "% I.V.A.:"
             Height          =   195
             Left            =   6240
-            TabIndex        =   58
+            TabIndex        =   56
             Top             =   3330
             Width           =   600
          End
@@ -1130,7 +1124,7 @@ Begin VB.Form frmfacturaproveedor
             Caption         =   "Importe:"
             Height          =   195
             Left            =   2235
-            TabIndex        =   56
+            TabIndex        =   54
             Top             =   3915
             Width           =   570
          End
@@ -1139,7 +1133,7 @@ Begin VB.Form frmfacturaproveedor
             Caption         =   "Bonificación:"
             Height          =   195
             Left            =   1890
-            TabIndex        =   55
+            TabIndex        =   53
             Top             =   3330
             Width           =   915
          End
@@ -1148,7 +1142,7 @@ Begin VB.Form frmfacturaproveedor
             Caption         =   "Total:"
             Height          =   195
             Left            =   8505
-            TabIndex        =   53
+            TabIndex        =   51
             Top             =   3675
             Width           =   405
          End
@@ -1157,7 +1151,7 @@ Begin VB.Form frmfacturaproveedor
             Caption         =   "Sub-Total:"
             Height          =   195
             Left            =   8175
-            TabIndex        =   52
+            TabIndex        =   50
             Top             =   3330
             Width           =   735
          End
@@ -1166,7 +1160,7 @@ Begin VB.Form frmfacturaproveedor
             Caption         =   "Observaciones:"
             Height          =   195
             Left            =   210
-            TabIndex        =   48
+            TabIndex        =   46
             Top             =   4020
             Width           =   1110
          End
@@ -1177,7 +1171,7 @@ Begin VB.Form frmfacturaproveedor
          Height          =   195
          Index           =   0
          Left            =   -74820
-         TabIndex        =   28
+         TabIndex        =   26
          Top             =   570
          Width           =   1065
       End
@@ -1197,7 +1191,7 @@ Begin VB.Form frmfacturaproveedor
       Height          =   240
       Index           =   1
       Left            =   3240
-      TabIndex        =   87
+      TabIndex        =   85
       Top             =   7800
       Width           =   2130
    End
@@ -1216,7 +1210,7 @@ Begin VB.Form frmfacturaproveedor
       EndProperty
       Height          =   345
       Left            =   225
-      TabIndex        =   40
+      TabIndex        =   38
       Top             =   7755
       Width           =   750
    End
@@ -1304,7 +1298,7 @@ End Sub
 
 Private Sub CmdBuscAprox_Click()
     GrdModulos.Rows = 1
-    lblestado.Caption = "Buscando..."
+    lblEstado.Caption = "Buscando..."
     Screen.MousePointer = vbHourglass
     
     Select Case TipoBusquedaDoc
@@ -1350,7 +1344,7 @@ Private Sub CmdBuscAprox_Click()
             Loop
             GrdModulos.SetFocus
         Else
-            lblestado.Caption = ""
+            lblEstado.Caption = ""
             Screen.MousePointer = vbNormal
             MsgBox "No se encontraron datos...", vbExclamation, TIT_MSGBOX
         End If
@@ -1381,13 +1375,13 @@ Private Sub CmdBuscAprox_Click()
             Loop
             GrdModulos.SetFocus
         Else
-            lblestado.Caption = ""
+            lblEstado.Caption = ""
             Screen.MousePointer = vbNormal
             MsgBox "No se encontraron datos...", vbExclamation, TIT_MSGBOX
         End If
     End Select
     
-    lblestado.Caption = ""
+    lblEstado.Caption = ""
     Screen.MousePointer = vbNormal
     rec.Close
 End Sub
@@ -1462,7 +1456,7 @@ Private Sub cmdGrabar_Click()
     rec.Open sql, DBConn, adOpenStatic, adLockOptimistic
     
     Screen.MousePointer = vbHourglass
-    lblestado.Caption = "Guardando..."
+    lblEstado.Caption = "Guardando..."
     
     If rec.EOF = True Then
         'NUEVA FACTURA
@@ -1578,19 +1572,19 @@ Private Sub cmdGrabar_Click()
         MsgBox "La Factura ya fue Registrada", vbCritical, TIT_MSGBOX
         txtNroFactura.SetFocus
         Screen.MousePointer = vbNormal
-        lblestado.Caption = ""
+        lblEstado.Caption = ""
         rec.Close
         DBConn.CommitTrans
         Exit Sub
     End If
     rec.Close
     Screen.MousePointer = vbNormal
-    lblestado.Caption = ""
+    lblEstado.Caption = ""
     CmdNuevo_Click
     Exit Sub
     
 HayErrorFactura:
-    lblestado.Caption = ""
+    lblEstado.Caption = ""
     Screen.MousePointer = vbNormal
     If rec.State = 1 Then rec.Close
     DBConn.RollbackTrans
@@ -1610,7 +1604,7 @@ Private Function ValidarFactura() As Boolean
         ValidarFactura = False
         Exit Function
     End If
-    If FechaFactura.Text = "" Then
+    If FechaFactura.Value = "" Then
         MsgBox "La Fecha de la Factura es requerida", vbExclamation, TIT_MSGBOX
         FechaFactura.SetFocus
         ValidarFactura = False
@@ -1622,7 +1616,7 @@ Private Function ValidarFactura() As Boolean
         ValidarFactura = False
         Exit Function
     End If
-    If FechaRemito.Text = "" Then
+    If FechaRemito.Value = "" Then
         MsgBox "La Fecha del Remito es requerida", vbExclamation, TIT_MSGBOX
         FechaRemito.SetFocus
         ValidarFactura = False
@@ -1662,7 +1656,7 @@ Private Sub CmdNuevo_Click()
    CmdBuscAprox.Tag = ""
    txtNroFactura.Text = ""
    txtNroSucursal.Text = ""
-   FechaFactura.Text = Date
+   FechaFactura.Value = Date
    lblEstadoFactura.Caption = ""
    txtSubtotal.Text = ""
    txtTotal.Text = ""
@@ -1674,7 +1668,7 @@ Private Sub CmdNuevo_Click()
    txtImporteIva.Text = ""
    txtObservaciones.Text = ""
    cboCondicion.ListIndex = 0
-   lblestado.Caption = ""
+   lblEstado.Caption = ""
    cmdGrabar.Enabled = True
    'BUSCO IVA
    BuscoIva
@@ -1687,7 +1681,7 @@ Private Sub CmdNuevo_Click()
     FrameFactura.Enabled = True
     FrameRemito.Enabled = True
     tabDatos.Tab = 0
-    FechaFactura.Text = Date
+    FechaFactura.Value = Date
     cboFactura.ListIndex = 0
     TxtCodigoCli.Text = ""
     TxtCodigoCli_Change
@@ -1816,7 +1810,7 @@ Private Sub Form_Load()
     '------------------------------------
    
     '------------------------------------
-    lblestado.Caption = ""
+    lblEstado.Caption = ""
     'CARGO COMBO CON LOS TIPOS DE FACTURA
     LlenarComboFactura
     'CARGO COMBO CON LAS CONDICIONES DE VENTA
@@ -1840,7 +1834,7 @@ Private Sub Form_Load()
     'CARGO ESTADO
     Call BuscoEstado(1, lblEstadoFactura) 'ESTADO PENDIENTE
     VEstadoFactura = 1
-    FechaFactura.Text = Date
+    FechaFactura.Value = Date
     TipoBusquedaDoc = 1 'ESTO ES PARA BUSCAR FACTURA(1), (2)PARA BUSCAR REMITOS
     tabDatos.Tab = 0
     'BUSCO IVA
@@ -1985,13 +1979,13 @@ Private Sub GrdModulos_DblClick()
         Select Case TipoBusquedaDoc
         Case 1 'BUSCA FACTURA
             Set Rec1 = New ADODB.Recordset
-            lblestado.Caption = "Buscando..."
+            lblEstado.Caption = "Buscando..."
             Screen.MousePointer = vbHourglass
             'CABEZA FACTURA
             Call BuscaCodigoProxItemData(CInt(GrdModulos.TextMatrix(GrdModulos.RowSel, 12)), cboFactura)
             txtNroSucursal.Text = Left(GrdModulos.TextMatrix(GrdModulos.RowSel, 1), 4)
             txtNroFactura.Text = Right(GrdModulos.TextMatrix(GrdModulos.RowSel, 1), 8)
-            FechaFactura.Text = GrdModulos.TextMatrix(GrdModulos.RowSel, 2)
+            FechaFactura.Value = GrdModulos.TextMatrix(GrdModulos.RowSel, 2)
             Call BuscoEstado(CInt(GrdModulos.TextMatrix(GrdModulos.RowSel, 6)), lblEstadoFactura)
             VEstadoFactura = CInt(GrdModulos.TextMatrix(GrdModulos.RowSel, 6))
             
@@ -2001,7 +1995,7 @@ Private Sub GrdModulos_DblClick()
             'CABEZA REMITO
             txtRemSuc.Text = Left(GrdModulos.TextMatrix(GrdModulos.RowSel, 7), 4)
             txtNroRemito.Text = Right(GrdModulos.TextMatrix(GrdModulos.RowSel, 7), 8)
-            FechaRemito.Text = GrdModulos.TextMatrix(GrdModulos.RowSel, 8)
+            FechaRemito.Value = GrdModulos.TextMatrix(GrdModulos.RowSel, 8)
             
             
             TxtCodigoCli.Text = GrdModulos.TextMatrix(GrdModulos.RowSel, 15)
@@ -2079,7 +2073,7 @@ Private Sub GrdModulos_DblClick()
                 txtPorcentajeIva = GrdModulos.TextMatrix(GrdModulos.RowSel, 10)
                 txtPorcentajeIva_LostFocus
             End If
-            lblestado.Caption = ""
+            lblEstado.Caption = ""
             Screen.MousePointer = vbNormal
             '--------------
             FrameFactura.Enabled = False
@@ -2090,18 +2084,18 @@ Private Sub GrdModulos_DblClick()
         '----------------------------------------------------------
         Case 2 'BUSCA REMITO
         
-            lblestado.Caption = "Buscando..."
+            lblEstado.Caption = "Buscando..."
             Screen.MousePointer = vbHourglass
             
             txtRemSuc.Text = Left(GrdModulos.TextMatrix(GrdModulos.RowSel, 1), 4)
             txtNroRemito.Text = Right(GrdModulos.TextMatrix(GrdModulos.RowSel, 1), 8)
-            FechaRemito.Text = GrdModulos.TextMatrix(GrdModulos.RowSel, 2)
+            FechaRemito.Value = GrdModulos.TextMatrix(GrdModulos.RowSel, 2)
             
             'grillaRemito.TextMatrix(0, 1) = GrdModulos.TextMatrix(GrdModulos.RowSel, 3)
             'grillaRemito.TextMatrix(1, 1) = GrdModulos.TextMatrix(GrdModulos.RowSel, 4)
             TxtCodigoCli.Text = GrdModulos.TextMatrix(GrdModulos.RowSel, 5)
         
-            lblestado.Caption = ""
+            lblEstado.Caption = ""
             Screen.MousePointer = vbNormal
             tabDatos.Tab = 0
             txtNroRemito_LostFocus
@@ -2218,7 +2212,7 @@ Private Sub TxtCodigoCli_Change()
         txtCondicionIVA.Text = ""
         txtDomici.Text = ""
         txtlocalidad.Text = ""
-        txtprovincia.Text = ""
+        txtProvincia.Text = ""
         txtcodpos.Text = ""
     End If
 End Sub
@@ -2240,7 +2234,7 @@ If ActiveControl.Name = "cmdGrabar" Or ActiveControl.Name = "cmdBorrar" Or Activ
             txtRazSocCli.Text = Rec1!PROV_RAZSOC
             txtDomici.Text = Rec1!PROV_DOMICI
             txtlocalidad.Text = Rec1!LOC_DESCRI
-            txtprovincia.Text = Rec1!PRO_DESCRI
+            txtProvincia.Text = Rec1!PRO_DESCRI
             txtCondicionIVA.Text = BuscoCondicionIVA(Rec1!IVA_CODIGO)
             txtCUIT.Text = IIf(IsNull(Rec1!PROV_CUIT), "NO INFORMADO", Format(Rec1!PROV_CUIT, "##-########-#"))
             txtIngBrutos.Text = IIf(IsNull(Rec1!PROV_INGBRU), "NO INFORMADO", Format(Rec1!PROV_INGBRU, "###-#####-##"))
@@ -2313,7 +2307,7 @@ End Function
 Private Sub LimpiarRemito()
     txtRemSuc.Text = ""
     txtNroRemito.Text = ""
-    FechaRemito.Text = ""
+    FechaRemito.Value = ""
     txtCodigoStock.Text = ""
     'grillaRemito.TextMatrix(0, 1) = ""
     'grillaRemito.TextMatrix(1, 1) = ""
@@ -2400,10 +2394,10 @@ Private Sub txtNroRemito_LostFocus()
                 Exit Sub
             End If
             Screen.MousePointer = vbHourglass
-            lblestado.Caption = "Buscando..."
+            lblEstado.Caption = "Buscando..."
             
             'CARGO CABECERA DEL REMITO
-            FechaRemito.Text = Rec2!RPR_FECHA
+            FechaRemito.Value = Rec2!RPR_FECHA
             TxtCodigoCli.Text = Rec2!PROV_CODIGO
             TxtCodigoCli_LostFocus
             'grillaRemito.TextMatrix(0, 1) = BuscoCliente(Rec2!PROV_CODIGO)
@@ -2417,7 +2411,7 @@ Private Sub txtNroRemito_LostFocus()
                        "No puede ser asignado a la Factura por su estado (" & Rec2!EST_DESCRI & ")", vbExclamation, TIT_MSGBOX
                 cmdGrabar.Enabled = False
                 Screen.MousePointer = vbNormal
-                lblestado.Caption = ""
+                lblEstado.Caption = ""
                 Rec2.Close
                 LimpiarRemito
                 txtRemSuc.SetFocus
@@ -2473,7 +2467,7 @@ Private Sub txtNroRemito_LostFocus()
             cboCondicion.SetFocus
             txtPorcentajeIva_LostFocus
             Screen.MousePointer = vbNormal
-            lblestado.Caption = ""
+            lblEstado.Caption = ""
         Else
             MsgBox "El Remito no existe", vbExclamation, TIT_MSGBOX
             If Rec2.State = 1 Then Rec2.Close

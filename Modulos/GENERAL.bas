@@ -2168,9 +2168,9 @@ Public Sub Calculo_Interes_Grilla(G As MSFlexGrid, Fila As Integer, ColorFuente 
     
              'nMonto es el Valor Actual y Rec2.Fields(5) es lo grabado en la tabla
              Actualizacion = nMonto - G.TextArray(GRIDINDEX(G, G.row, 8))
-             Interes = CalculoInteresMatricula(G.TextArray(GRIDINDEX(G, G.row, 0)) & G.TextArray(GRIDINDEX(G, G.row, 1)) & G.TextArray(GRIDINDEX(G, G.row, 2)), nMonto, FrmReciboContribuciones.txtRec_Fecha.Text)
+             Interes = CalculoInteresMatricula(G.TextArray(GRIDINDEX(G, G.row, 0)) & G.TextArray(GRIDINDEX(G, G.row, 1)) & G.TextArray(GRIDINDEX(G, G.row, 2)), nMonto, FrmReciboContribuciones.txtRec_Fecha.Value)
         Else
-             Interes = CalculoInteresMatricula(G.TextArray(GRIDINDEX(G, G.row, 0)) & G.TextArray(GRIDINDEX(G, G.row, 1)) & G.TextArray(GRIDINDEX(G, G.row, 2)), G.TextArray(GRIDINDEX(G, G.row, 8)), FrmReciboContribuciones.txtRec_Fecha.Text)
+             Interes = CalculoInteresMatricula(G.TextArray(GRIDINDEX(G, G.row, 0)) & G.TextArray(GRIDINDEX(G, G.row, 1)) & G.TextArray(GRIDINDEX(G, G.row, 2)), G.TextArray(GRIDINDEX(G, G.row, 8)), FrmReciboContribuciones.txtRec_Fecha.Value)
         End If
         'Actualizo las Celdas de la Grilla
         G.TextArray(GRIDINDEX(G, G.row, 9)) = Format(Actualizacion, "###,##0.00")

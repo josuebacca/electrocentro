@@ -1,8 +1,7 @@
 VERSION 5.00
-Object = "{F9043C88-F6F2-101A-A3C9-08002B2F49FB}#1.2#0"; "Comdlg32.ocx"
-Object = "{5E9E78A0-531B-11CF-91F6-C2863C385E30}#1.0#0"; "MSFLXGRD.OCX"
-Object = "{00025600-0000-0000-C000-000000000046}#5.2#0"; "Crystl32.OCX"
-Object = "{5F09B5DF-6F4D-11D2-8355-4854E82A9183}#15.0#0"; "Fecha32.ocx"
+Object = "{F9043C88-F6F2-101A-A3C9-08002B2F49FB}#1.2#0"; "comdlg32.ocx"
+Object = "{5E9E78A0-531B-11CF-91F6-C2863C385E30}#1.0#0"; "msflxgrd.ocx"
+Object = "{86CF1D34-0C5F-11D2-A9FC-0000F8754DA1}#2.0#0"; "mscomct2.ocx"
 Begin VB.Form frmListadoRemitoProveedor 
    BorderStyle     =   1  'Fixed Single
    Caption         =   "Listado Remito de Proveedor"
@@ -24,7 +23,7 @@ Begin VB.Form frmListadoRemitoProveedor
       Left            =   8865
       Picture         =   "frmListadoRemitoProveedor.frx":030A
       Style           =   1  'Graphical
-      TabIndex        =   12
+      TabIndex        =   10
       Top             =   5535
       Width           =   870
    End
@@ -38,17 +37,18 @@ Begin VB.Form frmListadoRemitoProveedor
    Begin VB.Frame Frame2 
       Height          =   120
       Left            =   -15
-      TabIndex        =   26
+      TabIndex        =   24
       Top             =   6300
       Width           =   10650
    End
-   Begin Crystal.CrystalReport Rep 
+   Begin VB.PictureBox Rep 
+      Height          =   480
       Left            =   7275
+      ScaleHeight     =   420
+      ScaleWidth      =   1140
+      TabIndex        =   25
       Top             =   4935
-      _ExtentX        =   741
-      _ExtentY        =   741
-      _Version        =   348160
-      PrintFileLinesPerPage=   60
+      Width           =   1200
    End
    Begin VB.CommandButton cmdSalir 
       Caption         =   "&Salir"
@@ -56,7 +56,7 @@ Begin VB.Form frmListadoRemitoProveedor
       Left            =   9750
       Picture         =   "frmListadoRemitoProveedor.frx":0614
       Style           =   1  'Graphical
-      TabIndex        =   13
+      TabIndex        =   11
       Top             =   5535
       Width           =   840
    End
@@ -66,7 +66,7 @@ Begin VB.Form frmListadoRemitoProveedor
       Left            =   7995
       Picture         =   "frmListadoRemitoProveedor.frx":091E
       Style           =   1  'Graphical
-      TabIndex        =   11
+      TabIndex        =   9
       Top             =   5535
       Width           =   855
    End
@@ -83,7 +83,7 @@ Begin VB.Form frmListadoRemitoProveedor
       EndProperty
       Height          =   600
       Left            =   90
-      TabIndex        =   24
+      TabIndex        =   22
       Top             =   4440
       Width           =   10425
       Begin VB.OptionButton optDetallado 
@@ -91,7 +91,7 @@ Begin VB.Form frmListadoRemitoProveedor
          Caption         =   "... Listado Detallado"
          Height          =   255
          Left            =   2370
-         TabIndex        =   7
+         TabIndex        =   5
          Top             =   225
          Value           =   -1  'True
          Width           =   1770
@@ -101,7 +101,7 @@ Begin VB.Form frmListadoRemitoProveedor
          Caption         =   "... Listado General"
          Height          =   210
          Left            =   5265
-         TabIndex        =   8
+         TabIndex        =   6
          Top             =   240
          Width           =   1620
       End
@@ -119,14 +119,14 @@ Begin VB.Form frmListadoRemitoProveedor
       EndProperty
       Height          =   1215
       Left            =   90
-      TabIndex        =   20
+      TabIndex        =   18
       Top             =   5055
       Width           =   7845
       Begin VB.OptionButton optImpresora 
          Caption         =   "Impresora"
          Height          =   195
          Left            =   2370
-         TabIndex        =   10
+         TabIndex        =   8
          Top             =   360
          Width           =   1050
       End
@@ -134,7 +134,7 @@ Begin VB.Form frmListadoRemitoProveedor
          Caption         =   "Pantalla"
          Height          =   195
          Left            =   945
-         TabIndex        =   9
+         TabIndex        =   7
          Top             =   360
          Value           =   -1  'True
          Width           =   885
@@ -144,7 +144,7 @@ Begin VB.Form frmListadoRemitoProveedor
          Height          =   435
          Left            =   105
          Style           =   1  'Graphical
-         TabIndex        =   21
+         TabIndex        =   19
          Top             =   660
          Width           =   1665
       End
@@ -153,7 +153,7 @@ Begin VB.Form frmListadoRemitoProveedor
          Caption         =   "Destino:"
          Height          =   195
          Left            =   150
-         TabIndex        =   23
+         TabIndex        =   21
          Top             =   360
          Width           =   585
       End
@@ -171,7 +171,7 @@ Begin VB.Form frmListadoRemitoProveedor
          EndProperty
          Height          =   195
          Left            =   1965
-         TabIndex        =   22
+         TabIndex        =   20
          Top             =   840
          Width           =   840
       End
@@ -189,7 +189,7 @@ Begin VB.Form frmListadoRemitoProveedor
       EndProperty
       Height          =   1590
       Left            =   105
-      TabIndex        =   14
+      TabIndex        =   12
       Top             =   75
       Width           =   10395
       Begin VB.CheckBox chkCliente 
@@ -231,7 +231,7 @@ Begin VB.Form frmListadoRemitoProveedor
          Height          =   300
          Left            =   4845
          MaxLength       =   50
-         TabIndex        =   16
+         TabIndex        =   14
          Tag             =   "Descripción"
          Top             =   495
          Width           =   4620
@@ -242,7 +242,7 @@ Begin VB.Form frmListadoRemitoProveedor
          MaskColor       =   &H000000FF&
          Picture         =   "frmListadoRemitoProveedor.frx":11E8
          Style           =   1  'Graphical
-         TabIndex        =   5
+         TabIndex        =   3
          ToolTipText     =   "Buscar Nota de Pedido"
          Top             =   225
          UseMaskColor    =   -1  'True
@@ -254,35 +254,35 @@ Begin VB.Form frmListadoRemitoProveedor
          MaskColor       =   &H000000FF&
          Picture         =   "frmListadoRemitoProveedor.frx":398A
          Style           =   1  'Graphical
-         TabIndex        =   15
+         TabIndex        =   13
          ToolTipText     =   "Buscar"
          Top             =   510
          UseMaskColor    =   -1  'True
          Width           =   405
       End
-      Begin FechaCtl.Fecha FechaHasta 
-         Height          =   285
-         Left            =   5865
-         TabIndex        =   4
-         Top             =   960
-         Width           =   1185
-         _ExtentX        =   2090
-         _ExtentY        =   503
-         Separador       =   "/"
-         Text            =   ""
-         MensajeErrMin   =   "La fecha ingresada no alcanza el mínimo permitido"
-      End
-      Begin FechaCtl.Fecha FechaDesde 
-         Height          =   330
+      Begin MSComCtl2.DTPicker FechaDesde 
+         Height          =   375
          Left            =   3360
-         TabIndex        =   3
+         TabIndex        =   26
          Top             =   960
-         Width           =   1170
-         _ExtentX        =   2064
-         _ExtentY        =   582
-         Separador       =   "/"
-         Text            =   ""
-         MensajeErrMin   =   "La fecha ingresada no alcanza el mínimo permitido"
+         Width           =   1335
+         _ExtentX        =   2355
+         _ExtentY        =   661
+         _Version        =   393216
+         Format          =   53870593
+         CurrentDate     =   43367
+      End
+      Begin MSComCtl2.DTPicker FechaHasta 
+         Height          =   375
+         Left            =   5880
+         TabIndex        =   27
+         Top             =   960
+         Width           =   1335
+         _ExtentX        =   2355
+         _ExtentY        =   661
+         _Version        =   393216
+         Format          =   53870593
+         CurrentDate     =   43367
       End
       Begin VB.Label lbl 
          Appearance      =   0  'Flat
@@ -294,7 +294,7 @@ Begin VB.Form frmListadoRemitoProveedor
          Height          =   195
          Index           =   3
          Left            =   2505
-         TabIndex        =   19
+         TabIndex        =   17
          Top             =   540
          Width           =   780
       End
@@ -303,7 +303,7 @@ Begin VB.Form frmListadoRemitoProveedor
          Caption         =   "Fecha Desde:"
          Height          =   195
          Left            =   2265
-         TabIndex        =   18
+         TabIndex        =   16
          Top             =   1005
          Width           =   1005
       End
@@ -312,7 +312,7 @@ Begin VB.Form frmListadoRemitoProveedor
          Caption         =   "Fecha Hasta:"
          Height          =   195
          Left            =   4815
-         TabIndex        =   17
+         TabIndex        =   15
          Top             =   1020
          Width           =   960
       End
@@ -320,7 +320,7 @@ Begin VB.Form frmListadoRemitoProveedor
    Begin MSFlexGridLib.MSFlexGrid GrdModulos 
       Height          =   2715
       Left            =   90
-      TabIndex        =   6
+      TabIndex        =   4
       Top             =   1725
       Width           =   10425
       _ExtentX        =   18389
@@ -348,7 +348,7 @@ Begin VB.Form frmListadoRemitoProveedor
       EndProperty
       Height          =   240
       Left            =   165
-      TabIndex        =   25
+      TabIndex        =   23
       Top             =   6555
       Width           =   750
    End
@@ -368,7 +368,7 @@ End Sub
 
 Private Sub CmdBuscAprox_Click()
     GrdModulos.Rows = 1
-    lblestado.Caption = "Buscando..."
+    lblEstado.Caption = "Buscando..."
     Screen.MousePointer = vbHourglass
     GrdModulos.HighLight = flexHighlightNever
     sql = "SELECT RC.RPR_NUMERO, RC.RPR_SUCURSAL,"
@@ -394,11 +394,11 @@ Private Sub CmdBuscAprox_Click()
         Loop
         GrdModulos.SetFocus
     Else
-        lblestado.Caption = ""
+        lblEstado.Caption = ""
         Screen.MousePointer = vbNormal
         MsgBox "No se encontraron datos...", vbExclamation, TIT_MSGBOX
     End If
-    lblestado.Caption = ""
+    lblEstado.Caption = ""
     Screen.MousePointer = vbNormal
     rec.Close
 End Sub
@@ -517,7 +517,7 @@ Private Sub Form_Load()
     cmdBuscarCli.Enabled = False
     GrdModulos.Rows = 1
     lblImpresora.Caption = "Impresora Actual: " & Printer.DeviceName
-    lblestado.Caption = ""
+    lblEstado.Caption = ""
 
     Call Centrar_pantalla(Me)
     GrdModulos.FormatString = "^Número|^Fecha|Proveedor|Domicilio|Localidad|Provincia"

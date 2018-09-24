@@ -1,7 +1,6 @@
 VERSION 5.00
-Object = "{F9043C88-F6F2-101A-A3C9-08002B2F49FB}#1.2#0"; "Comdlg32.ocx"
-Object = "{00025600-0000-0000-C000-000000000046}#5.2#0"; "Crystl32.OCX"
-Object = "{5F09B5DF-6F4D-11D2-8355-4854E82A9183}#15.0#0"; "Fecha32.ocx"
+Object = "{F9043C88-F6F2-101A-A3C9-08002B2F49FB}#1.2#0"; "comdlg32.ocx"
+Object = "{86CF1D34-0C5F-11D2-A9FC-0000F8754DA1}#2.0#0"; "mscomct2.ocx"
 Begin VB.Form frmListadoVentasPorCliente 
    BorderStyle     =   1  'Fixed Single
    Caption         =   "Listado de Ventas por Cliente"
@@ -29,14 +28,14 @@ Begin VB.Form frmListadoVentasPorCliente
       EndProperty
       Height          =   735
       Left            =   60
-      TabIndex        =   16
+      TabIndex        =   14
       Top             =   1965
       Width           =   6690
       Begin VB.OptionButton optImpresora 
          Caption         =   "Impresora"
          Height          =   195
          Left            =   2370
-         TabIndex        =   8
+         TabIndex        =   6
          Top             =   315
          Width           =   1050
       End
@@ -44,7 +43,7 @@ Begin VB.Form frmListadoVentasPorCliente
          Caption         =   "Pantalla"
          Height          =   195
          Left            =   945
-         TabIndex        =   7
+         TabIndex        =   5
          Top             =   315
          Value           =   -1  'True
          Width           =   885
@@ -54,7 +53,7 @@ Begin VB.Form frmListadoVentasPorCliente
          Height          =   435
          Left            =   4680
          Style           =   1  'Graphical
-         TabIndex        =   12
+         TabIndex        =   10
          Top             =   210
          Width           =   1665
       End
@@ -63,7 +62,7 @@ Begin VB.Form frmListadoVentasPorCliente
          Caption         =   "Destino:"
          Height          =   195
          Left            =   150
-         TabIndex        =   17
+         TabIndex        =   15
          Top             =   315
          Width           =   585
       End
@@ -74,7 +73,7 @@ Begin VB.Form frmListadoVentasPorCliente
       Left            =   4140
       Picture         =   "frmListadoVentasPorCliente.frx":0000
       Style           =   1  'Graphical
-      TabIndex        =   9
+      TabIndex        =   7
       Top             =   2775
       Width           =   855
    End
@@ -84,7 +83,7 @@ Begin VB.Form frmListadoVentasPorCliente
       Left            =   5895
       Picture         =   "frmListadoVentasPorCliente.frx":08CA
       Style           =   1  'Graphical
-      TabIndex        =   11
+      TabIndex        =   9
       Top             =   2775
       Width           =   840
    End
@@ -95,7 +94,7 @@ Begin VB.Form frmListadoVentasPorCliente
       Left            =   5010
       Picture         =   "frmListadoVentasPorCliente.frx":0EDE
       Style           =   1  'Graphical
-      TabIndex        =   10
+      TabIndex        =   8
       Top             =   2775
       Width           =   870
    End
@@ -112,14 +111,14 @@ Begin VB.Form frmListadoVentasPorCliente
       EndProperty
       Height          =   1965
       Left            =   60
-      TabIndex        =   13
+      TabIndex        =   11
       Top             =   -15
       Width           =   6690
       Begin VB.OptionButton OptGrafico 
          Caption         =   "Ver Gráfico"
          Height          =   195
          Left            =   4920
-         TabIndex        =   6
+         TabIndex        =   4
          Top             =   1560
          Width           =   1095
       End
@@ -127,7 +126,7 @@ Begin VB.Form frmListadoVentasPorCliente
          Caption         =   "Por Monto"
          Height          =   195
          Left            =   1185
-         TabIndex        =   4
+         TabIndex        =   2
          Top             =   1560
          Width           =   1305
       End
@@ -135,7 +134,7 @@ Begin VB.Form frmListadoVentasPorCliente
          Caption         =   "Por Cantidad"
          Height          =   195
          Left            =   2880
-         TabIndex        =   5
+         TabIndex        =   3
          Top             =   1560
          Width           =   1380
       End
@@ -145,7 +144,7 @@ Begin VB.Form frmListadoVentasPorCliente
          MaskColor       =   &H000000FF&
          Picture         =   "frmListadoVentasPorCliente.frx":11E8
          Style           =   1  'Graphical
-         TabIndex        =   21
+         TabIndex        =   19
          ToolTipText     =   "Buscar Cliente"
          Top             =   420
          UseMaskColor    =   -1  'True
@@ -177,36 +176,36 @@ Begin VB.Form frmListadoVentasPorCliente
          Top             =   420
          Width           =   975
       End
-      Begin FechaCtl.Fecha FechaHasta 
-         Height          =   285
-         Left            =   4050
-         TabIndex        =   3
-         Top             =   1020
-         Width           =   1185
-         _ExtentX        =   2090
-         _ExtentY        =   503
-         Separador       =   "/"
-         Text            =   ""
-         MensajeErrMin   =   "La fecha ingresada no alcanza el mínimo permitido"
-      End
-      Begin FechaCtl.Fecha FechaDesde 
-         Height          =   330
+      Begin MSComCtl2.DTPicker FechaDesde 
+         Height          =   375
          Left            =   1800
-         TabIndex        =   2
-         Top             =   1020
-         Width           =   1170
-         _ExtentX        =   2064
-         _ExtentY        =   582
-         Separador       =   "/"
-         Text            =   ""
-         MensajeErrMin   =   "La fecha ingresada no alcanza el mínimo permitido"
+         TabIndex        =   21
+         Top             =   1080
+         Width           =   1335
+         _ExtentX        =   2355
+         _ExtentY        =   661
+         _Version        =   393216
+         Format          =   53936129
+         CurrentDate     =   43367
+      End
+      Begin MSComCtl2.DTPicker FechaHasta 
+         Height          =   375
+         Left            =   4320
+         TabIndex        =   22
+         Top             =   1080
+         Width           =   1335
+         _ExtentX        =   2355
+         _ExtentY        =   661
+         _Version        =   393216
+         Format          =   53936129
+         CurrentDate     =   43367
       End
       Begin VB.Label Label1 
          AutoSize        =   -1  'True
          Caption         =   "Ver:"
          Height          =   195
          Left            =   810
-         TabIndex        =   20
+         TabIndex        =   18
          Top             =   1560
          Width           =   285
       End
@@ -220,7 +219,7 @@ Begin VB.Form frmListadoVentasPorCliente
          Height          =   195
          Index           =   3
          Left            =   180
-         TabIndex        =   18
+         TabIndex        =   16
          Top             =   465
          Width           =   525
       End
@@ -228,8 +227,8 @@ Begin VB.Form frmListadoVentasPorCliente
          AutoSize        =   -1  'True
          Caption         =   "Fecha Hasta:"
          Height          =   195
-         Left            =   3000
-         TabIndex        =   15
+         Left            =   3240
+         TabIndex        =   13
          Top             =   1050
          Width           =   960
       End
@@ -238,18 +237,19 @@ Begin VB.Form frmListadoVentasPorCliente
          Caption         =   "Fecha Desde:"
          Height          =   195
          Left            =   690
-         TabIndex        =   14
+         TabIndex        =   12
          Top             =   1080
          Width           =   1005
       End
    End
-   Begin Crystal.CrystalReport Rep 
+   Begin VB.PictureBox Rep 
+      Height          =   480
       Left            =   2760
+      ScaleHeight     =   420
+      ScaleWidth      =   1140
+      TabIndex        =   20
       Top             =   2880
-      _ExtentX        =   741
-      _ExtentY        =   741
-      _Version        =   348160
-      PrintFileLinesPerPage=   60
+      Width           =   1200
    End
    Begin MSComDlg.CommonDialog CDImpresora 
       Left            =   1680
@@ -273,7 +273,7 @@ Begin VB.Form frmListadoVentasPorCliente
       EndProperty
       Height          =   345
       Left            =   150
-      TabIndex        =   19
+      TabIndex        =   17
       Top             =   2955
       Width           =   750
    End
@@ -306,7 +306,7 @@ Private Sub cmdBuscarCliente_Click()
 End Sub
 
 Private Sub cmdListar_Click()
-    lblestado.Caption = "Buscando Listado..."
+    lblEstado.Caption = "Buscando Listado..."
     Rep.WindowBorderStyle = crptNoBorder
     Rep.Connect = "Provider=MSDASQL.1;Persist Security Info=False;Data Source=SIELECTROCENTRO"
     Rep.SelectionFormula = ""
@@ -369,7 +369,7 @@ Private Sub cmdListar_Click()
      Rep.Action = 1
      
      
-     lblestado.Caption = ""
+     lblEstado.Caption = ""
      Rep.SelectionFormula = ""
      Rep.Formulas(0) = ""
      Rep.Formulas(1) = ""
@@ -398,7 +398,7 @@ Private Sub Form_Load()
     Set rec = New ADODB.Recordset
     Call Centrar_pantalla(Me)
 '    FrameImpresora.Caption = "Impresora Actual: " & Printer.DeviceName
-    lblestado.Caption = ""
+    lblEstado.Caption = ""
     optMonto.Value = True
 End Sub
 

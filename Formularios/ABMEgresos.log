@@ -1,0 +1,6 @@
+Línea 218: la clase FechaCtl.Fecha del control txtcing_fecha no era una clase de control cargada.
+Línea 224: el nombre de la propiedad _ExtentX de txtcing_fecha no es válido.
+Línea 225: el nombre de la propiedad _ExtentY de txtcing_fecha no es válido.
+Línea 226: el nombre de la propiedad Separador de txtcing_fecha no es válido.
+Línea 227: el nombre de la propiedad Text de txtcing_fecha no es válido.
+Línea 228: el nombre de la propiedad MensajeErrMin de txtcing_fecha no es válido.

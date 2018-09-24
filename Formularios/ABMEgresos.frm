@@ -1,8 +1,7 @@
 VERSION 5.00
-Object = "{BDC217C8-ED16-11CD-956C-0000C04E4C0A}#1.1#0"; "TABCTL32.OCX"
-Object = "{5E9E78A0-531B-11CF-91F6-C2863C385E30}#1.0#0"; "MSFLXGRD.OCX"
-Object = "{5F09B5DF-6F4D-11D2-8355-4854E82A9183}#15.0#0"; "FECHA32.OCX"
-Object = "{86CF1D34-0C5F-11D2-A9FC-0000F8754DA1}#2.0#0"; "MSCOMCT2.OCX"
+Object = "{BDC217C8-ED16-11CD-956C-0000C04E4C0A}#1.1#0"; "tabctl32.ocx"
+Object = "{5E9E78A0-531B-11CF-91F6-C2863C385E30}#1.0#0"; "msflxgrd.ocx"
+Object = "{86CF1D34-0C5F-11D2-A9FC-0000F8754DA1}#2.0#0"; "mscomct2.ocx"
 Begin VB.Form ABMEgresos 
    BorderStyle     =   1  'Fixed Single
    Caption         =   "Actualización de Egresos"
@@ -91,8 +90,8 @@ Begin VB.Form ABMEgresos
       TabCaption(1)   =   "B&uscar"
       TabPicture(1)   =   "ABMEgresos.frx":186C
       Tab(1).ControlEnabled=   0   'False
-      Tab(1).Control(0)=   "Frame1"
-      Tab(1).Control(1)=   "GrdModulos"
+      Tab(1).Control(0)=   "GrdModulos"
+      Tab(1).Control(1)=   "Frame1"
       Tab(1).ControlCount=   2
       Begin VB.Frame Frame1 
          Height          =   1050
@@ -118,7 +117,7 @@ Begin VB.Form ABMEgresos
             _ExtentX        =   2566
             _ExtentY        =   582
             _Version        =   393216
-            Format          =   24444929
+            Format          =   53411841
             CurrentDate     =   37259
          End
          Begin VB.CommandButton CmdBuscAprox 
@@ -143,7 +142,7 @@ Begin VB.Form ABMEgresos
             _ExtentX        =   2566
             _ExtentY        =   582
             _Version        =   393216
-            Format          =   24444929
+            Format          =   53411841
             CurrentDate     =   37259
          End
          Begin VB.Label Label4 
@@ -215,17 +214,14 @@ Begin VB.Form ABMEgresos
             Top             =   1245
             Width           =   5160
          End
-         Begin FechaCtl.Fecha txtcing_fecha 
+         Begin VB.PictureBox txtcing_fecha 
             Height          =   315
             Left            =   1215
+            ScaleHeight     =   255
+            ScaleWidth      =   1110
             TabIndex        =   5
             Top             =   2340
             Width           =   1170
-            _ExtentX        =   2064
-            _ExtentY        =   556
-            Separador       =   "/"
-            Text            =   ""
-            MensajeErrMin   =   "La fecha ingresada no alcanza el mínimo permitido"
          End
          Begin VB.TextBox TxtCodigo 
             Height          =   315
@@ -356,7 +352,7 @@ Private Sub BuscoDatos()
     If rec.EOF = False Then ' si existe
         Call BuscaCodigoProxItemData(CInt(rec!TGT_CODIGO), CboGastos)
         Call BuscaCodigoProxItemData(CInt(rec!MON_CODIGO), cboMoneda)
-        txtcing_fecha.Text = ChkNull(rec!CEGR_FECHA)
+        txtcing_Fecha.Value = ChkNull(rec!CEGR_FECHA)
         txtImporte.Text = Valido_Importe(ChkNull(rec!CEGR_IMPORTE))
         TxtDescrip.Text = ChkNull(rec!CEGR_DESCRI)
         TxtDescrip.SetFocus
@@ -385,7 +381,7 @@ Private Sub CmdBorrar_Click()
             
             lblEstado.Caption = ""
             Screen.MousePointer = vbNormal
-            cmdNuevo_Click
+            CmdNuevo_Click
         End If
     End If
     Exit Sub
@@ -442,16 +438,16 @@ End Sub
 
 
 
-Private Sub CmdGrabar_Click()
+Private Sub cmdGrabar_Click()
     On Error GoTo CLAVOSE
     If Trim(TxtDescrip.Text) = "" Then
         MsgBox "No ha ingresado la descripción", vbExclamation, TIT_MSGBOX
         If TxtDescrip.Enabled Then TxtDescrip.SetFocus
         Exit Sub
     End If
-    If txtcing_fecha.Text = "" Then
+    If txtcing_Fecha.Value = "" Then
         MsgBox "No ha ingresado la Fecha del Gasto", vbExclamation, TIT_MSGBOX
-        If txtcing_fecha.Enabled Then txtcing_fecha.SetFocus
+        If txtcing_Fecha.Enabled Then txtcing_Fecha.SetFocus
         Exit Sub
     End If
     If txtImporte.Text = "" Then
@@ -479,7 +475,7 @@ Private Sub CmdGrabar_Click()
     If rec.EOF = False Then
         sql = "UPDATE CAJA_EGRESO SET CEGR_DESCRI = " & XS(TxtDescrip.Text)
         sql = sql & " ,TGT_CODIGO = " & XN(CboGastos.ItemData(CboGastos.ListIndex))
-        sql = sql & " ,CEGR_FECHA = " & XDQ(txtcing_fecha.Text)
+        sql = sql & " ,CEGR_FECHA = " & XDQ(txtcing_Fecha.Value)
         sql = sql & " ,CEGR_IMPORTE = " & XN(txtImporte.Text)
         sql = sql & " ,MON_CODIGO = " & XN(cboMoneda.ItemData(cboMoneda.ListIndex))
         sql = sql & " WHERE CEGR_NUMERO = " & XN(TxtCodigo.Text)
@@ -493,7 +489,7 @@ Private Sub CmdGrabar_Click()
         sql = sql & XN(TxtCodigo.Text) & ","
         sql = sql & XS(TxtDescrip.Text) & ","
         sql = sql & XN(CboGastos.ItemData(CboGastos.ListIndex)) & ","
-        sql = sql & XDQ(txtcing_fecha.Text) & ","
+        sql = sql & XDQ(txtcing_Fecha.Value) & ","
         sql = sql & XN(txtImporte.Text) & ","
         sql = sql & XN(cboMoneda.ItemData(cboMoneda.ListIndex)) & ")"
         DBConn.Execute sql
@@ -502,7 +498,7 @@ Private Sub CmdGrabar_Click()
     DBConn.CommitTrans
     lblEstado.Caption = ""
     Screen.MousePointer = vbNormal
-    cmdNuevo_Click
+    CmdNuevo_Click
     Exit Sub
     
 CLAVOSE:
@@ -513,12 +509,12 @@ CLAVOSE:
     
 End Sub
 
-Private Sub cmdNuevo_Click()
+Private Sub CmdNuevo_Click()
     TxtCodigo.Text = ""
     TxtDescrip.Text = ""
     txtImporte.Text = ""
     lblEstado.Caption = ""
-    txtcing_fecha.Text = ""
+    txtcing_Fecha.Value = ""
     GrdModulos.Rows = 1
     cboMoneda.ListIndex = 0
     CboGastos.ListIndex = 0
@@ -608,7 +604,7 @@ Private Sub LlenarComboGastos()
     rec.Close
 End Sub
 
-Private Sub GrdModulos_dblClick()
+Private Sub GrdModulos_DblClick()
     If GrdModulos.Rows > 1 Then
         'paso el item seleccionado al tab 'DATOS'
         TxtCodigo.Text = GrdModulos.TextMatrix(GrdModulos.RowSel, 0)
@@ -625,7 +621,7 @@ End Sub
 
 Private Sub GrdModulos_KeyDown(KeyCode As Integer, Shift As Integer)
     If KeyCode = vbKeyDelete Then CmdBorrar_Click
-    If KeyCode = vbKeyReturn Then GrdModulos_dblClick
+    If KeyCode = vbKeyReturn Then GrdModulos_DblClick
 End Sub
 
 Private Sub GrdModulos_LostFocus()

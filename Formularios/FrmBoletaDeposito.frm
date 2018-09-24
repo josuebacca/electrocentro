@@ -1,6 +1,5 @@
 VERSION 5.00
-Object = "{BDC217C8-ED16-11CD-956C-0000C04E4C0A}#1.1#0"; "TABCTL32.OCX"
-Object = "{5F09B5DF-6F4D-11D2-8355-4854E82A9183}#15.0#0"; "FECHA32.OCX"
+Object = "{BDC217C8-ED16-11CD-956C-0000C04E4C0A}#1.1#0"; "tabctl32.ocx"
 Begin VB.Form FrmBoletaDeposito 
    BorderStyle     =   1  'Fixed Single
    Caption         =   "Boleta de Depósito"
@@ -15,17 +14,14 @@ Begin VB.Form FrmBoletaDeposito
    ScaleHeight     =   7515
    ScaleWidth      =   9030
    StartUpPosition =   2  'CenterScreen
-   Begin FechaCtl.Fecha TxtBolFecha 
+   Begin VB.PictureBox TxtBolFecha 
       Height          =   300
       Left            =   3720
+      ScaleHeight     =   240
+      ScaleWidth      =   1095
       TabIndex        =   1
       Top             =   135
       Width           =   1155
-      _ExtentX        =   2037
-      _ExtentY        =   529
-      Separador       =   "/"
-      Text            =   ""
-      MensajeErrMin   =   "La fecha ingresada no alcanza el mínimo permitido"
    End
    Begin VB.CommandButton CmdEliminar 
       Caption         =   "&Eliminar"
@@ -1228,28 +1224,28 @@ Private Sub Imprimir_Boleta_Cheque()
 '        'FECHA DEL TALON
 '        'DIA
 '        P 0.6, PRI_RENGLON + 2.2
-'        PP Format(Day(TxtBolFecha.Text), "00")
+'        PP Format(Day(TxtBolFecha.Value), "00")
 '
 '        'MES
 '        P 1.6, PRI_RENGLON + 2.2
-'        PP Format(Month(TxtBolFecha.Text), "00")
+'        PP Format(Month(TxtBolFecha.Value), "00")
 '
 '        'AÑO
 '        P 2.5, PRI_RENGLON + 2.2
-'        PP Year(TxtBolFecha.Text)
+'        PP Year(TxtBolFecha.Value)
 '
 '        'FECHA DEL CUERPO
 '        'DIA
 '        P 4.3, PRI_RENGLON + 1
-'        PP Format(Day(TxtBolFecha.Text), "00")
+'        PP Format(Day(TxtBolFecha.Value), "00")
 '
 '        'MES
 '        P 5.3, PRI_RENGLON + 1
-'        PP Format(Month(TxtBolFecha.Text), "00")
+'        PP Format(Month(TxtBolFecha.Value), "00")
 '
 '        'AÑO
 '        P 6.1, PRI_RENGLON + 1
-'        PP Year(TxtBolFecha.Text)
+'        PP Year(TxtBolFecha.Value)
 '
 '        'Importe en Letras
 '        NroLetras = LeeNro(Trim(SumandoTODO.Text), 30, 111, "", "-", "*")
@@ -1356,15 +1352,15 @@ Private Sub Imprimir_Boleta_Efectivo()
 '        'FECHA DEL TALON
 '        'DIA
 '        P 0.6, PRI_RENGLON + 2.2
-'        PP Format(Day(TxtBolFecha.Text), "00")
+'        PP Format(Day(TxtBolFecha.Value), "00")
 '
 '        'MES
 '        P 1.6, PRI_RENGLON + 2.2
-'        PP Format(Month(TxtBolFecha.Text), "00")
+'        PP Format(Month(TxtBolFecha.Value), "00")
 '
 '        'AÑO
 '        P 2.5, PRI_RENGLON + 2.2
-'        PP Year(TxtBolFecha.Text)
+'        PP Year(TxtBolFecha.Value)
 '
 '        'CRUZ EN EL CUADRO EN EFECTIVO EN EL TALON
 '        Printer.FontSize = 14
@@ -1375,15 +1371,15 @@ Private Sub Imprimir_Boleta_Efectivo()
 '        'FECHA DEL CUERPO
 '        'DIA
 '        P 4.3, PRI_RENGLON + 1
-'        PP Format(Day(TxtBolFecha.Text), "00")
+'        PP Format(Day(TxtBolFecha.Value), "00")
 '
 '        'MES
 '        P 5.3, PRI_RENGLON + 1
-'        PP Format(Month(TxtBolFecha.Text), "00")
+'        PP Format(Month(TxtBolFecha.Value), "00")
 '
 '        'AÑO
 '        P 6.1, PRI_RENGLON + 1
-'        PP Year(TxtBolFecha.Text)
+'        PP Year(TxtBolFecha.Value)
 '
 '        'CRUZ EN EL CUADRO EN EFECTIVO EN EL CUERPO
 '        Printer.FontSize = 14
@@ -1474,7 +1470,7 @@ Private Sub CboBancoBoleta_LostFocus()
                 'Boleta Anulada
                 If Trim(snp!EBO_CODIGO) = 2 Then Me.LblAnulada.Visible = True
                 
-                TxtBolFecha.Text = snp!BOL_FECHA
+                TxtBolFecha.Value = snp!BOL_FECHA
                 TxtBolFecha.Enabled = False
                 
                 CboCuentas_GotFocus
@@ -1522,12 +1518,12 @@ Private Sub CboBancoBoleta_LostFocus()
             
             'If FormLlamado = "CtaCte" Then
             '    If UCase(Trim(Format(Date - 1, "ddd"))) <> "DOM" Then
-            '        TxtBolFecha.Text = Format(Date - 1, "dd/mm/yyyy")
+            '        TxtBolFecha.Value = Format(Date - 1, "dd/mm/yyyy")
             '    Else
-            '        TxtBolFecha.Text = Format(Date - 3, "dd/mm/yyyy")
+            '        TxtBolFecha.Value = Format(Date - 3, "dd/mm/yyyy")
             '    End If
             'ElseIf FormLlamado = "VAL" Then
-            '    TxtBolFecha.Text = Format(Date, "dd/mm/yyyy")
+            '    TxtBolFecha.Value = Format(Date, "dd/mm/yyyy")
             'End If
             Me.TxtEfvo = ""
             LblAnulada.Visible = False
@@ -1590,7 +1586,7 @@ Private Sub CboCuentas_LostFocus()
                 If Trim(snp!EBO_CODIGO) = 2 Then Me.LblAnulada.Visible = True
                    
                    
-                TxtBolFecha.Text = snp!BOL_FECHA
+                TxtBolFecha.Value = snp!BOL_FECHA
                 TxtBolFecha.Enabled = False
                 
                 TxtEfvo.Text = Format(snp!BOL_EFECVO, "0.00")
@@ -1637,12 +1633,12 @@ Private Sub CboCuentas_LostFocus()
             
             'If FormLlamado = "CtaCte" Then
             '    If UCase(Trim(Format(Date - 1, "ddd"))) <> "DOM" Then
-            '        TxtBolFecha.Text = Format(Date - 1, "dd/mm/yyyy")
+            '        TxtBolFecha.Value = Format(Date - 1, "dd/mm/yyyy")
             '    Else
-            '        TxtBolFecha.Text = Format(Date - 3, "dd/mm/yyyy")
+            '        TxtBolFecha.Value = Format(Date - 3, "dd/mm/yyyy")
             '    End If
             'ElseIf FormLlamado = "VAL" Then
-            '    TxtBolFecha.Text = Format(Date, "dd/mm/yyyy")
+            '    TxtBolFecha.Value = Format(Date, "dd/mm/yyyy")
             'End If
             
             Me.TxtEfvo = ""
@@ -1696,7 +1692,7 @@ Private Sub CmdAnular_Click()
 '            sql = sql & " AND CTA_NROCTA = " & XS(CboCuentas.List(CboCuentas.ListIndex))
 '            DBConn.Execute sql
             
-            cmdNuevo_Click
+            CmdNuevo_Click
         End If
     End If
 End Sub
@@ -1759,7 +1755,7 @@ Private Sub cmdEliminar_Click()
             
             DBConn.CommitTrans
             lblEstado.Caption = ""
-            cmdNuevo_Click
+            CmdNuevo_Click
         End If
     End If
     Exit Sub
@@ -1774,7 +1770,7 @@ Private Sub CmdEliminar_MouseMove(Button As Integer, Shift As Integer, X As Sing
     LblDetalle.Caption = " Al Eliminar la Boleta de Depósito los cheques vuelven a estar en CARTERA y la Boleta se puede volver a CARGAR"
 End Sub
 
-Private Sub CmdGrabar_Click()
+Private Sub cmdGrabar_Click()
     Dim Minuta As Integer
     Dim snp As ADODB.Recordset
     Set snp = New ADODB.Recordset
@@ -1800,8 +1796,8 @@ Private Sub CmdGrabar_Click()
              sql = sql & " VALUES ("
              sql = sql & XN(Me.TxtBoleta.Text) & ","
              sql = sql & XS(Me.CboCuentas.List(Me.CboCuentas.ListIndex)) & ","
-             sql = sql & XN(Me.TxtBanCodInt.Text) & "," & XDQ(TxtBolFecha.Text) & ","
-             sql = sql & XN(TxtEfvo) & ",1," & XDQ(TxtBolFecha.Text) & ","
+             sql = sql & XN(Me.TxtBanCodInt.Text) & "," & XDQ(TxtBolFecha.Value) & ","
+             sql = sql & XN(TxtEfvo) & ",1," & XDQ(TxtBolFecha.Value) & ","
              sql = sql & XN(SumandoTODO.Text) & ")"
              DBConn.Execute sql
              
@@ -1836,7 +1832,7 @@ Private Sub CmdGrabar_Click()
             DBConn.CommitTrans
             lblEstado.Caption = ""
         End If
-        cmdNuevo_Click
+        CmdNuevo_Click
         MousePointer = 0
     End If
     Exit Sub
@@ -1863,7 +1859,7 @@ Private Sub cmdImprimir_Click()
     End If
     If MsgBox("Verifique la Impresión. Desea GRABAR la Boleta de Depósito ?", 36, TIT_MSGBOX) = vbYes Then
        Nuevo_NRO = False
-       CmdGrabar_Click
+       cmdGrabar_Click
     Else
        Nuevo_NRO = True
        SelecTexto Me.TxtBoleta
@@ -1879,7 +1875,7 @@ Private Sub CmdImprimir_MouseMove(Button As Integer, Shift As Integer, X As Sing
     LblDetalle.Caption = "Imprime la Boleta de Depósito."
 End Sub
 
-Private Sub cmdNuevo_Click()
+Private Sub CmdNuevo_Click()
   Me.TxtBoleta.Enabled = True
   Me.CboBancoBoleta.Enabled = True
   Me.CboCuentas.Enabled = True
@@ -1892,12 +1888,12 @@ Private Sub cmdNuevo_Click()
   
 '  If FormLlamado = "CtaCte" Then
 '     If UCase(Trim(Format(Date - 1, "ddd"))) <> "DOM" Then
-'        TxtBolFecha.Text = Format(Date - 1, "dd/mm/yyyy")
+'        TxtBolFecha.Value = Format(Date - 1, "dd/mm/yyyy")
 '     Else
-'        TxtBolFecha.Text = Format(Date - 3, "dd/mm/yyyy")
+'        TxtBolFecha.Value = Format(Date - 3, "dd/mm/yyyy")
 '     End If
 '  ElseIf FormLlamado = "VAL" Then
-     TxtBolFecha.Text = Format(Date, "dd/mm/yyyy")
+     TxtBolFecha.Value = Format(Date, "dd/mm/yyyy")
 '  End If
     
   For a = 0 To 9
@@ -1968,7 +1964,7 @@ Private Sub TxtBoleta_LostFocus()
                    CboBancoBoleta_LostFocus
                    Call BuscaProx(snp!CTA_NROCTA, CboCuentas)
                    
-                   TxtBolFecha.Text = snp!BOL_FECHA
+                   TxtBolFecha.Value = snp!BOL_FECHA
                    'TxtBolFecha.Enabled = True
                 
                    TxtEfvo.Text = Format(ChkNull(snp!BOL_EFECVO), "0.00")
@@ -2012,12 +2008,12 @@ Private Sub TxtBoleta_LostFocus()
                 
                 'If FormLlamado = "CtaCte" Then
                 '    If UCase(Trim(Format(Date - 1, "ddd"))) <> "DOM" Then
-                '        TxtBolFecha.Text = Format(Date - 1, "dd/mm/yyyy")
+                '        TxtBolFecha.Value = Format(Date - 1, "dd/mm/yyyy")
                 '    Else
-                '        TxtBolFecha.Text = Format(Date - 3, "dd/mm/yyyy")
+                '        TxtBolFecha.Value = Format(Date - 3, "dd/mm/yyyy")
                 '    End If
                 'ElseIf FormLlamado = "VAL" Then
-                '    If TxtBolFecha.Text = "" Then TxtBolFecha.Text = Format(Date, "dd/mm/yyyy")
+                '    If TxtBolFecha.Value = "" Then TxtBolFecha.Value = Format(Date, "dd/mm/yyyy")
                 'End If
             
                 Me.TxtEfvo = ""
@@ -2045,7 +2041,7 @@ Private Sub TxtNumeroCh_KeyDown(Index As Integer, KeyCode As Integer, Shift As I
     End If
 End Sub
 
-Private Sub cmdSalir_Click()
+Private Sub CmdSalir_Click()
     Unload Me
     Set FrmBoletaDeposito = Nothing
 End Sub
@@ -2067,7 +2063,7 @@ Private Sub TxtBoleta_KeyPress(KeyAscii As Integer)
 End Sub
 
 Private Sub TxtBolFecha_LostFocus()
-    If Me.TxtBolFecha.Text = "" Then Me.TxtBolFecha.Text = Format(Date, "dd/mm/yyyy")
+    If Me.TxtBolFecha.Value = "" Then Me.TxtBolFecha.Value = Format(Date, "dd/mm/yyyy")
 End Sub
 
 Private Sub TxtNumeroCh_LostFocus(Index As Integer)
@@ -2173,12 +2169,12 @@ Private Sub Form_Load()
     
     If FormLlamado = "CtaCte" Then
         If UCase(Trim(Format(Date - 1, "ddd"))) <> "DOM" Then
-            TxtBolFecha.Text = Format(Date - 1, "dd/mm/yyyy")
+            TxtBolFecha.Value = Format(Date - 1, "dd/mm/yyyy")
         Else
-            TxtBolFecha.Text = Format(Date - 3, "dd/mm/yyyy")
+            TxtBolFecha.Value = Format(Date - 3, "dd/mm/yyyy")
         End If
     ElseIf FormLlamado = "VAL" Then
-        TxtBolFecha.Text = Format(Date, "dd/mm/yyyy")
+        TxtBolFecha.Value = Format(Date, "dd/mm/yyyy")
     End If
     
 End Sub

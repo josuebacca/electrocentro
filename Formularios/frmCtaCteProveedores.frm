@@ -1,8 +1,7 @@
 VERSION 5.00
-Object = "{F9043C88-F6F2-101A-A3C9-08002B2F49FB}#1.2#0"; "Comdlg32.ocx"
-Object = "{5E9E78A0-531B-11CF-91F6-C2863C385E30}#1.0#0"; "MSFLXGRD.OCX"
-Object = "{00025600-0000-0000-C000-000000000046}#5.2#0"; "Crystl32.OCX"
-Object = "{5F09B5DF-6F4D-11D2-8355-4854E82A9183}#15.0#0"; "Fecha32.ocx"
+Object = "{F9043C88-F6F2-101A-A3C9-08002B2F49FB}#1.2#0"; "comdlg32.ocx"
+Object = "{5E9E78A0-531B-11CF-91F6-C2863C385E30}#1.0#0"; "msflxgrd.ocx"
+Object = "{86CF1D34-0C5F-11D2-A9FC-0000F8754DA1}#2.0#0"; "mscomct2.ocx"
 Begin VB.Form frmCtaCteProveedores 
    BorderStyle     =   1  'Fixed Single
    Caption         =   "Cta-Cte Proveedores"
@@ -20,7 +19,7 @@ Begin VB.Form frmCtaCteProveedores
    Begin VB.Frame Frame1 
       Height          =   120
       Left            =   60
-      TabIndex        =   13
+      TabIndex        =   11
       Top             =   6555
       Width           =   8100
    End
@@ -37,7 +36,7 @@ Begin VB.Form frmCtaCteProveedores
       EndProperty
       Height          =   825
       Left            =   30
-      TabIndex        =   22
+      TabIndex        =   20
       Top             =   6705
       Width           =   5190
       Begin VB.CommandButton CBImpresora 
@@ -45,7 +44,7 @@ Begin VB.Form frmCtaCteProveedores
          Height          =   495
          Left            =   3480
          Style           =   1  'Graphical
-         TabIndex        =   26
+         TabIndex        =   24
          Top             =   225
          Width           =   1335
       End
@@ -53,7 +52,7 @@ Begin VB.Form frmCtaCteProveedores
          Caption         =   "Pantalla"
          Height          =   195
          Left            =   1140
-         TabIndex        =   24
+         TabIndex        =   22
          Top             =   405
          Value           =   -1  'True
          Width           =   885
@@ -62,7 +61,7 @@ Begin VB.Form frmCtaCteProveedores
          Caption         =   "Impresora"
          Height          =   195
          Left            =   2205
-         TabIndex        =   23
+         TabIndex        =   21
          Top             =   405
          Width           =   1050
       End
@@ -71,7 +70,7 @@ Begin VB.Form frmCtaCteProveedores
          Caption         =   "Destino:"
          Height          =   195
          Left            =   345
-         TabIndex        =   25
+         TabIndex        =   23
          Top             =   390
          Width           =   585
       End
@@ -82,7 +81,7 @@ Begin VB.Form frmCtaCteProveedores
       Left            =   5430
       Picture         =   "frmCtaCteProveedores.frx":0000
       Style           =   1  'Graphical
-      TabIndex        =   7
+      TabIndex        =   5
       Top             =   6810
       Width           =   855
    End
@@ -92,7 +91,7 @@ Begin VB.Form frmCtaCteProveedores
       Left            =   7185
       Picture         =   "frmCtaCteProveedores.frx":08CA
       Style           =   1  'Graphical
-      TabIndex        =   9
+      TabIndex        =   7
       Top             =   6810
       Width           =   870
    End
@@ -102,7 +101,7 @@ Begin VB.Form frmCtaCteProveedores
       Left            =   6300
       Picture         =   "frmCtaCteProveedores.frx":0BD4
       Style           =   1  'Graphical
-      TabIndex        =   8
+      TabIndex        =   6
       Top             =   6810
       Width           =   870
    End
@@ -119,7 +118,7 @@ Begin VB.Form frmCtaCteProveedores
       EndProperty
       Height          =   1455
       Left            =   105
-      TabIndex        =   10
+      TabIndex        =   8
       Top             =   45
       Width           =   8055
       Begin VB.ComboBox cboTipoProveedor 
@@ -171,42 +170,42 @@ Begin VB.Form frmCtaCteProveedores
          Height          =   315
          Left            =   5280
          MaskColor       =   &H00000000&
-         TabIndex        =   5
+         TabIndex        =   3
          ToolTipText     =   "Buscar "
          Top             =   1005
          UseMaskColor    =   -1  'True
          Width           =   1125
       End
-      Begin FechaCtl.Fecha FechaHasta 
-         Height          =   285
-         Left            =   3735
-         TabIndex        =   4
-         Top             =   1005
-         Width           =   1185
-         _ExtentX        =   2090
-         _ExtentY        =   503
-         Separador       =   "/"
-         Text            =   ""
-         MensajeErrMin   =   "La fecha ingresada no alcanza el mínimo permitido"
-      End
-      Begin FechaCtl.Fecha FechaDesde 
-         Height          =   330
+      Begin MSComCtl2.DTPicker FechaDesde 
+         Height          =   375
          Left            =   1230
-         TabIndex        =   3
-         Top             =   1005
-         Width           =   1170
-         _ExtentX        =   2064
-         _ExtentY        =   582
-         Separador       =   "/"
-         Text            =   ""
-         MensajeErrMin   =   "La fecha ingresada no alcanza el mínimo permitido"
+         TabIndex        =   31
+         Top             =   960
+         Width           =   1335
+         _ExtentX        =   2355
+         _ExtentY        =   661
+         _Version        =   393216
+         Format          =   58982401
+         CurrentDate     =   43367
+      End
+      Begin MSComCtl2.DTPicker FechaHasta 
+         Height          =   375
+         Left            =   3720
+         TabIndex        =   32
+         Top             =   960
+         Width           =   1335
+         _ExtentX        =   2355
+         _ExtentY        =   661
+         _Version        =   393216
+         Format          =   58982401
+         CurrentDate     =   43367
       End
       Begin VB.Label Label13 
          AutoSize        =   -1  'True
          Caption         =   "Tipo Prov.:"
          Height          =   195
          Left            =   360
-         TabIndex        =   29
+         TabIndex        =   27
          Top             =   315
          Width           =   780
       End
@@ -220,7 +219,7 @@ Begin VB.Form frmCtaCteProveedores
          Height          =   195
          Index           =   0
          Left            =   600
-         TabIndex        =   28
+         TabIndex        =   26
          Top             =   660
          Width           =   540
       End
@@ -229,7 +228,7 @@ Begin VB.Form frmCtaCteProveedores
          Caption         =   "Fecha Desde:"
          Height          =   195
          Left            =   135
-         TabIndex        =   12
+         TabIndex        =   10
          Top             =   1035
          Width           =   1005
       End
@@ -238,7 +237,7 @@ Begin VB.Form frmCtaCteProveedores
          Caption         =   "Fecha Hasta:"
          Height          =   195
          Left            =   2685
-         TabIndex        =   11
+         TabIndex        =   9
          Top             =   1050
          Width           =   960
       End
@@ -246,7 +245,7 @@ Begin VB.Form frmCtaCteProveedores
    Begin MSFlexGridLib.MSFlexGrid GrdCtaCte 
       Height          =   3480
       Left            =   75
-      TabIndex        =   6
+      TabIndex        =   4
       Top             =   2250
       Width           =   8100
       _ExtentX        =   14288
@@ -260,13 +259,14 @@ Begin VB.Form frmCtaCteProveedores
       HighLight       =   2
       SelectionMode   =   1
    End
-   Begin Crystal.CrystalReport Rep 
+   Begin VB.PictureBox Rep 
+      Height          =   480
       Left            =   5295
+      ScaleHeight     =   420
+      ScaleWidth      =   1140
+      TabIndex        =   30
       Top             =   5730
-      _ExtentX        =   741
-      _ExtentY        =   741
-      _Version        =   348160
-      PrintFileLinesPerPage=   60
+      Width           =   1200
    End
    Begin MSComDlg.CommonDialog CDImpresora 
       Left            =   4800
@@ -290,7 +290,7 @@ Begin VB.Form frmCtaCteProveedores
       ForeColor       =   &H000000FF&
       Height          =   300
       Left            =   870
-      TabIndex        =   31
+      TabIndex        =   29
       Top             =   6225
       Width           =   705
    End
@@ -309,7 +309,7 @@ Begin VB.Form frmCtaCteProveedores
       ForeColor       =   &H000000FF&
       Height          =   300
       Left            =   2565
-      TabIndex        =   30
+      TabIndex        =   28
       Top             =   6225
       Width           =   705
    End
@@ -328,7 +328,7 @@ Begin VB.Form frmCtaCteProveedores
       EndProperty
       Height          =   240
       Left            =   150
-      TabIndex        =   27
+      TabIndex        =   25
       Top             =   5805
       Width           =   750
    End
@@ -352,7 +352,7 @@ Begin VB.Form frmCtaCteProveedores
       EndProperty
       Height          =   240
       Left            =   5865
-      TabIndex        =   21
+      TabIndex        =   19
       Top             =   5760
       Width           =   585
    End
@@ -370,7 +370,7 @@ Begin VB.Form frmCtaCteProveedores
       EndProperty
       Height          =   240
       Left            =   5790
-      TabIndex        =   20
+      TabIndex        =   18
       Top             =   6030
       Width           =   660
    End
@@ -389,7 +389,7 @@ Begin VB.Form frmCtaCteProveedores
       ForeColor       =   &H0000FFFF&
       Height          =   240
       Left            =   5820
-      TabIndex        =   19
+      TabIndex        =   17
       Top             =   6345
       Width           =   630
    End
@@ -408,7 +408,7 @@ Begin VB.Form frmCtaCteProveedores
       EndProperty
       Height          =   240
       Left            =   7290
-      TabIndex        =   17
+      TabIndex        =   15
       Top             =   5775
       Width           =   585
    End
@@ -427,7 +427,7 @@ Begin VB.Form frmCtaCteProveedores
       EndProperty
       Height          =   240
       Left            =   7215
-      TabIndex        =   18
+      TabIndex        =   16
       Top             =   6045
       Width           =   660
    End
@@ -445,7 +445,7 @@ Begin VB.Form frmCtaCteProveedores
       EndProperty
       Height          =   240
       Left            =   150
-      TabIndex        =   16
+      TabIndex        =   14
       Top             =   1935
       Width           =   660
    End
@@ -463,7 +463,7 @@ Begin VB.Form frmCtaCteProveedores
       EndProperty
       Height          =   240
       Left            =   150
-      TabIndex        =   15
+      TabIndex        =   13
       Top             =   1590
       Width           =   1110
    End
@@ -483,7 +483,7 @@ Begin VB.Form frmCtaCteProveedores
       ForeColor       =   &H0000FFFF&
       Height          =   240
       Left            =   7245
-      TabIndex        =   14
+      TabIndex        =   12
       Top             =   6360
       Width           =   630
    End

@@ -1,7 +1,7 @@
 VERSION 5.00
-Object = "{BDC217C8-ED16-11CD-956C-0000C04E4C0A}#1.1#0"; "TABCTL32.OCX"
-Object = "{5E9E78A0-531B-11CF-91F6-C2863C385E30}#1.0#0"; "MSFLXGRD.OCX"
-Object = "{5F09B5DF-6F4D-11D2-8355-4854E82A9183}#15.0#0"; "Fecha32.ocx"
+Object = "{BDC217C8-ED16-11CD-956C-0000C04E4C0A}#1.1#0"; "tabctl32.ocx"
+Object = "{5E9E78A0-531B-11CF-91F6-C2863C385E30}#1.0#0"; "msflxgrd.ocx"
+Object = "{86CF1D34-0C5F-11D2-A9FC-0000F8754DA1}#2.0#0"; "mscomct2.ocx"
 Begin VB.Form frmEntradaProductos 
    BorderStyle     =   1  'Fixed Single
    Caption         =   "Recepción de Mercadería"
@@ -64,7 +64,7 @@ Begin VB.Form frmEntradaProductos
    Begin TabDlg.SSTab tabDatos 
       Height          =   6825
       Left            =   15
-      TabIndex        =   28
+      TabIndex        =   27
       Top             =   30
       Width           =   9300
       _ExtentX        =   16404
@@ -110,9 +110,21 @@ Begin VB.Form frmEntradaProductos
          EndProperty
          Height          =   2130
          Left            =   90
-         TabIndex        =   36
+         TabIndex        =   35
          Top             =   420
          Width           =   9105
+         Begin MSComCtl2.DTPicker Fecha 
+            Height          =   375
+            Left            =   3000
+            TabIndex        =   55
+            Top             =   240
+            Width           =   1335
+            _ExtentX        =   2355
+            _ExtentY        =   661
+            _Version        =   393216
+            Format          =   55377921
+            CurrentDate     =   43367
+         End
          Begin VB.TextBox txtObservaciones 
             Height          =   300
             Left            =   1245
@@ -205,36 +217,21 @@ Begin VB.Form frmEntradaProductos
             Top             =   975
             Width           =   3120
          End
-         Begin FechaCtl.Fecha fecRemito 
+         Begin VB.PictureBox fecRemito 
             Height          =   360
             Left            =   5685
+            ScaleHeight     =   300
+            ScaleWidth      =   1095
             TabIndex        =   6
             Top             =   990
             Width           =   1155
-            _ExtentX        =   2037
-            _ExtentY        =   635
-            Separador       =   "/"
-            Text            =   ""
-            MensajeErrMin   =   "La fecha ingresada no alcanza el mínimo permitido"
-         End
-         Begin FechaCtl.Fecha Fecha 
-            Height          =   360
-            Left            =   3240
-            TabIndex        =   17
-            Top             =   300
-            Width           =   1155
-            _ExtentX        =   2037
-            _ExtentY        =   635
-            Separador       =   "/"
-            Text            =   ""
-            MensajeErrMin   =   "La fecha ingresada no alcanza el mínimo permitido"
          End
          Begin VB.Label Label7 
             AutoSize        =   -1  'True
             Caption         =   "Estado:"
             Height          =   195
             Left            =   5055
-            TabIndex        =   53
+            TabIndex        =   52
             Top             =   1395
             Width           =   540
          End
@@ -253,7 +250,7 @@ Begin VB.Form frmEntradaProductos
             ForeColor       =   &H00FF0000&
             Height          =   240
             Left            =   5685
-            TabIndex        =   52
+            TabIndex        =   51
             Top             =   1380
             Width           =   2310
          End
@@ -262,7 +259,7 @@ Begin VB.Form frmEntradaProductos
             Caption         =   "Observaciones:"
             Height          =   195
             Left            =   90
-            TabIndex        =   46
+            TabIndex        =   45
             Top             =   1755
             Width           =   1110
          End
@@ -271,7 +268,7 @@ Begin VB.Form frmEntradaProductos
             Caption         =   "Transporte:"
             Height          =   195
             Left            =   375
-            TabIndex        =   45
+            TabIndex        =   44
             Top             =   1350
             Width           =   810
          End
@@ -279,8 +276,8 @@ Begin VB.Form frmEntradaProductos
             Caption         =   "Fecha:"
             Height          =   195
             Index           =   2
-            Left            =   2685
-            TabIndex        =   44
+            Left            =   2445
+            TabIndex        =   43
             Top             =   345
             Width           =   480
          End
@@ -289,7 +286,7 @@ Begin VB.Form frmEntradaProductos
             Caption         =   "Representada:"
             Height          =   195
             Left            =   4545
-            TabIndex        =   43
+            TabIndex        =   42
             Top             =   330
             Width           =   1050
          End
@@ -298,7 +295,7 @@ Begin VB.Form frmEntradaProductos
             Caption         =   "Remito Nro:"
             Height          =   195
             Left            =   4755
-            TabIndex        =   41
+            TabIndex        =   40
             Top             =   690
             Width           =   840
          End
@@ -307,7 +304,7 @@ Begin VB.Form frmEntradaProductos
             Caption         =   "Stock:"
             Height          =   195
             Left            =   720
-            TabIndex        =   40
+            TabIndex        =   39
             Top             =   690
             Width           =   465
          End
@@ -316,7 +313,7 @@ Begin VB.Form frmEntradaProductos
             Caption         =   "Número:"
             Height          =   195
             Left            =   585
-            TabIndex        =   39
+            TabIndex        =   38
             Top             =   345
             Width           =   600
          End
@@ -326,7 +323,7 @@ Begin VB.Form frmEntradaProductos
             Height          =   195
             Index           =   1
             Left            =   4575
-            TabIndex        =   38
+            TabIndex        =   37
             Top             =   1020
             Width           =   1020
          End
@@ -335,7 +332,7 @@ Begin VB.Form frmEntradaProductos
             Caption         =   "Encargado:"
             Height          =   195
             Left            =   360
-            TabIndex        =   37
+            TabIndex        =   36
             Top             =   1005
             Width           =   825
          End
@@ -353,7 +350,7 @@ Begin VB.Form frmEntradaProductos
          EndProperty
          Height          =   4140
          Left            =   90
-         TabIndex        =   34
+         TabIndex        =   33
          Top             =   2565
          Width           =   9120
          Begin VB.TextBox txtdescri 
@@ -387,7 +384,7 @@ Begin VB.Form frmEntradaProductos
             MaskColor       =   &H000000FF&
             Picture         =   "frmEntradaProductos.frx":260A
             Style           =   1  'Graphical
-            TabIndex        =   48
+            TabIndex        =   47
             ToolTipText     =   "Buscar Producto"
             Top             =   570
             UseMaskColor    =   -1  'True
@@ -405,7 +402,7 @@ Begin VB.Form frmEntradaProductos
             Left            =   8670
             Picture         =   "frmEntradaProductos.frx":2914
             Style           =   1  'Graphical
-            TabIndex        =   35
+            TabIndex        =   34
             ToolTipText     =   "Quitar Producto"
             Top             =   1290
             Width           =   360
@@ -413,7 +410,7 @@ Begin VB.Form frmEntradaProductos
          Begin MSFlexGridLib.MSFlexGrid GrdModulos 
             Height          =   2985
             Left            =   45
-            TabIndex        =   18
+            TabIndex        =   17
             Top             =   1050
             Width           =   8580
             _ExtentX        =   15134
@@ -440,7 +437,7 @@ Begin VB.Form frmEntradaProductos
             EndProperty
             Height          =   195
             Left            =   180
-            TabIndex        =   51
+            TabIndex        =   50
             Top             =   330
             Width           =   495
          End
@@ -458,7 +455,7 @@ Begin VB.Form frmEntradaProductos
             EndProperty
             Height          =   195
             Left            =   5655
-            TabIndex        =   50
+            TabIndex        =   49
             ToolTipText     =   "Agregar Producto"
             Top             =   345
             Width           =   630
@@ -477,7 +474,7 @@ Begin VB.Form frmEntradaProductos
             EndProperty
             Height          =   195
             Left            =   1125
-            TabIndex        =   49
+            TabIndex        =   48
             Top             =   330
             Width           =   840
          End
@@ -495,14 +492,14 @@ Begin VB.Form frmEntradaProductos
          EndProperty
          Height          =   1545
          Left            =   -74895
-         TabIndex        =   29
+         TabIndex        =   28
          Top             =   555
          Width           =   9045
          Begin VB.CheckBox chkEncargado 
             Caption         =   "Encargado"
             Height          =   195
             Left            =   360
-            TabIndex        =   20
+            TabIndex        =   19
             Top             =   795
             Width           =   1320
          End
@@ -510,7 +507,7 @@ Begin VB.Form frmEntradaProductos
             Height          =   315
             Left            =   3300
             Style           =   2  'Dropdown List
-            TabIndex        =   23
+            TabIndex        =   22
             Top             =   720
             Width           =   3645
          End
@@ -518,7 +515,7 @@ Begin VB.Form frmEntradaProductos
             Height          =   315
             Left            =   3300
             Style           =   2  'Dropdown List
-            TabIndex        =   22
+            TabIndex        =   21
             Top             =   360
             Width           =   3645
          End
@@ -526,7 +523,7 @@ Begin VB.Form frmEntradaProductos
             Caption         =   "Fecha"
             Height          =   195
             Left            =   360
-            TabIndex        =   21
+            TabIndex        =   20
             Top             =   1080
             Width           =   810
          End
@@ -534,7 +531,7 @@ Begin VB.Form frmEntradaProductos
             Caption         =   "Representada"
             Height          =   195
             Left            =   360
-            TabIndex        =   19
+            TabIndex        =   18
             Top             =   510
             Width           =   1320
          End
@@ -544,42 +541,36 @@ Begin VB.Form frmEntradaProductos
             MaskColor       =   &H000000FF&
             Picture         =   "frmEntradaProductos.frx":3696
             Style           =   1  'Graphical
-            TabIndex        =   26
+            TabIndex        =   25
             ToolTipText     =   "Buscar Nota de Pedido"
             Top             =   345
             UseMaskColor    =   -1  'True
             Width           =   480
          End
-         Begin FechaCtl.Fecha FechaHasta 
+         Begin VB.PictureBox FechaHasta 
             Height          =   285
             Left            =   5790
-            TabIndex        =   25
+            ScaleHeight     =   225
+            ScaleWidth      =   1125
+            TabIndex        =   24
             Top             =   1065
             Width           =   1185
-            _ExtentX        =   2090
-            _ExtentY        =   503
-            Separador       =   "/"
-            Text            =   ""
-            MensajeErrMin   =   "La fecha ingresada no alcanza el mínimo permitido"
          End
-         Begin FechaCtl.Fecha FechaDesde 
+         Begin VB.PictureBox FechaDesde 
             Height          =   330
             Left            =   3300
-            TabIndex        =   24
+            ScaleHeight     =   270
+            ScaleWidth      =   1110
+            TabIndex        =   23
             Top             =   1080
             Width           =   1170
-            _ExtentX        =   2064
-            _ExtentY        =   582
-            Separador       =   "/"
-            Text            =   ""
-            MensajeErrMin   =   "La fecha ingresada no alcanza el mínimo permitido"
          End
          Begin VB.Label Label12 
             AutoSize        =   -1  'True
             Caption         =   "Encargado:"
             Height          =   195
             Left            =   2400
-            TabIndex        =   55
+            TabIndex        =   54
             Top             =   750
             Width           =   825
          End
@@ -588,7 +579,7 @@ Begin VB.Form frmEntradaProductos
             Caption         =   "Representada:"
             Height          =   195
             Left            =   2145
-            TabIndex        =   54
+            TabIndex        =   53
             Top             =   405
             Width           =   1050
          End
@@ -597,7 +588,7 @@ Begin VB.Form frmEntradaProductos
             Caption         =   "Fecha Desde:"
             Height          =   195
             Left            =   2205
-            TabIndex        =   31
+            TabIndex        =   30
             Top             =   1110
             Width           =   1005
          End
@@ -606,7 +597,7 @@ Begin VB.Form frmEntradaProductos
             Caption         =   "Fecha Hasta:"
             Height          =   195
             Left            =   4740
-            TabIndex        =   30
+            TabIndex        =   29
             Top             =   1125
             Width           =   960
          End
@@ -614,7 +605,7 @@ Begin VB.Form frmEntradaProductos
       Begin MSFlexGridLib.MSFlexGrid MSFlexGrid1 
          Height          =   3870
          Left            =   -74655
-         TabIndex        =   32
+         TabIndex        =   31
          Top             =   2340
          Width           =   10455
          _ExtentX        =   18441
@@ -631,7 +622,7 @@ Begin VB.Form frmEntradaProductos
       Begin MSFlexGridLib.MSFlexGrid GRDGrilla 
          Height          =   4365
          Left            =   -74925
-         TabIndex        =   27
+         TabIndex        =   26
          Top             =   2160
          Width           =   9105
          _ExtentX        =   16060
@@ -650,7 +641,7 @@ Begin VB.Form frmEntradaProductos
          Height          =   195
          Index           =   0
          Left            =   -74820
-         TabIndex        =   33
+         TabIndex        =   32
          Top             =   570
          Width           =   1065
       End
@@ -669,7 +660,7 @@ Begin VB.Form frmEntradaProductos
       EndProperty
       Height          =   240
       Left            =   3060
-      TabIndex        =   47
+      TabIndex        =   46
       Top             =   7095
       Width           =   2475
    End
@@ -687,7 +678,7 @@ Begin VB.Form frmEntradaProductos
       EndProperty
       Height          =   240
       Left            =   210
-      TabIndex        =   42
+      TabIndex        =   41
       Top             =   7035
       Width           =   750
    End
@@ -785,7 +776,7 @@ Private Sub CmdBorrar_Click()
     If txtNumero.Text <> "" Then
         If GrdModulos.Rows <> 1 Then
             If MsgBox("Seguro desea Anular la Entrada de Productos Nº: " & XN(txtNumero.Text) & "? ", vbYesNo + vbDefaultButton2, TIT_MSGBOX) = vbYes Then
-                lblestado.Caption = "Borrando..."
+                lblEstado.Caption = "Borrando..."
                 Screen.MousePointer = vbHourglass
                 On Error GoTo HayError1
                 DBConn.BeginTrans
@@ -804,21 +795,21 @@ Private Sub CmdBorrar_Click()
                 Next
                 DBConn.CommitTrans
             End If
-            lblestado.Caption = ""
+            lblEstado.Caption = ""
             Screen.MousePointer = vbNormal
             CmdNuevo_Click
         End If
     End If
   Exit Sub
 HayError1:
-    lblestado.Caption = ""
+    lblEstado.Caption = ""
     Screen.MousePointer = vbNormal
     DBConn.RollbackTrans
     MsgBox Err.Description, vbCritical, TIT_MSGBOX
 End Sub
 
 Private Sub CmdBuscAprox_Click()
-    lblestado.Caption = "Buscando..."
+    lblEstado.Caption = "Buscando..."
     Screen.MousePointer = vbHourglass
     
     Set rec = New ADODB.Recordset
@@ -843,11 +834,11 @@ Private Sub CmdBuscAprox_Click()
         Loop
         grdGrilla.SetFocus
     Else
-        lblestado.Caption = ""
+        lblEstado.Caption = ""
         Screen.MousePointer = vbNormal
         MsgBox "No se encontraron datos...", vbExclamation, TIT_MSGBOX
     End If
-    lblestado.Caption = ""
+    lblEstado.Caption = ""
     Screen.MousePointer = vbNormal
     rec.Close
 End Sub
@@ -874,7 +865,7 @@ Private Sub cmdGrabar_Click()
     If ValidarEntrada = False Then Exit Sub
            
         Screen.MousePointer = vbHourglass
-        lblestado.Caption = "Guardando ..."
+        lblEstado.Caption = "Guardando ..."
         DBConn.BeginTrans
         
         sql = "SELECT EPR_FECHA FROM ENTRADA_PRODUCTO"
@@ -934,13 +925,13 @@ Private Sub cmdGrabar_Click()
         End If
         rec.Close
         Screen.MousePointer = vbNormal
-        lblestado.Caption = ""
+        lblEstado.Caption = ""
         DBConn.CommitTrans
         CmdNuevo_Click
     Exit Sub
          
 HayError2:
-         lblestado.Caption = ""
+         lblEstado.Caption = ""
          DBConn.RollbackTrans
          Screen.MousePointer = vbNormal
          MsgBox Err.Description, vbCritical, TIT_MSGBOX
@@ -953,7 +944,7 @@ Function ValidarEntrada()
         ValidarEntrada = False
         Exit Function
     End If
-    If Fecha.Text = "" Then
+    If Fecha.Value = "" Then
         MsgBox "No ha ingresado la Fecha de Entrada de Productos", vbExclamation, TIT_MSGBOX
         Fecha.SetFocus
         ValidarEntrada = False
@@ -989,7 +980,7 @@ Private Sub CmdNuevo_Click()
     cboEmpleado.ListIndex = 0
     cboRep.ListIndex = 0
     cboTransporte.ListIndex = 0
-    Fecha.Text = Date
+    Fecha.Value = Date
     TxtCodigo.Text = ""
     GrdModulos.Rows = 1
     GrdModulos.HighLight = flexHighlightNever
@@ -1005,7 +996,7 @@ Private Sub cmdQuitar_Click()
     If GrdModulos.Rows <> 1 Then
         resp = MsgBox("Seguro desea eliminar el Producto: " & Trim(GrdModulos.TextMatrix(GrdModulos.RowSel, 0)) & "? ", 36, "Eliminar:")
         If resp <> 6 Then Exit Sub
-        lblestado.Caption = "Borrando..."
+        lblEstado.Caption = "Borrando..."
         Screen.MousePointer = vbHourglass
         If GrdModulos.Rows = 2 Then
             GrdModulos.HighLight = flexHighlightNever
@@ -1015,7 +1006,7 @@ Private Sub cmdQuitar_Click()
             GrdModulos.RemoveItem (GrdModulos.RowSel)
             TxtCodigo.SetFocus
         End If
-        lblestado.Caption = ""
+        lblEstado.Caption = ""
         Screen.MousePointer = vbNormal
     End If
 End Sub
@@ -1039,7 +1030,7 @@ End Sub
 Private Sub Form_Load()
     Set rec = New ADODB.Recordset
     Set Rec1 = New ADODB.Recordset
-    lblestado.Caption = ""
+    lblEstado.Caption = ""
     
     Call Centrar_pantalla(Me)
     preparogrilla
@@ -1058,7 +1049,7 @@ Private Sub Form_Load()
     'BUSCO NUMERO DE RECEPCION DE MERCADERIA
     BuscoNumeroRecepcion
     Call BuscoEstado(1, lblEstadoRecepcion)
-    Fecha.Text = Date
+    Fecha.Value = Date
     Linea = ""
     RUBRO = ""
     REPRE = ""
@@ -1148,7 +1139,7 @@ Private Sub GRDGrilla_DblClick()
     If grdGrilla.Rows > 1 Then
         CmdNuevo_Click
         txtNumero.Text = grdGrilla.TextMatrix(grdGrilla.RowSel, 0)
-        Fecha.Text = grdGrilla.TextMatrix(grdGrilla.RowSel, 1)
+        Fecha.Value = grdGrilla.TextMatrix(grdGrilla.RowSel, 1)
         txtNumero_LostFocus
         tabDatos.Tab = 0
     End If
@@ -1357,7 +1348,7 @@ Private Sub txtNumero_LostFocus()
         sql = sql & " WHERE EPR_CODIGO=" & XN(txtNumero)
         Rec1.Open sql, DBConn, adOpenStatic, adLockOptimistic
         If Rec1.EOF = False Then
-            Fecha.Text = Rec1!EPR_FECHA
+            Fecha.Value = Rec1!EPR_FECHA
             Call BuscaCodigoProxItemData(Rec1!VEN_CODIGO, cboEmpleado)
             Call BuscaCodigoProxItemData(Rec1!STK_CODIGO, cboStock)
             If Not IsNull(Rec1!REP_CODIGO) Then
@@ -1402,7 +1393,7 @@ Private Sub CargoGrilla(Campo As Integer)
     sql = sql & " AND R.RUB_CODIGO = P.RUB_CODIGO  AND P.REP_CODIGO = RE.REP_CODIGO "
     sql = sql & " AND E.EPR_CODIGO = " & Campo & " ORDER BY E.EPR_CODIGO"
         
-    lblestado.Caption = "Buscando..."
+    lblEstado.Caption = "Buscando..."
     rec.Open sql, DBConn, adOpenStatic, adLockOptimistic
     If rec.EOF = False Then
         GrdModulos.Rows = 1
@@ -1416,13 +1407,13 @@ Private Sub CargoGrilla(Campo As Integer)
         Loop
         rec.MoveFirst
     Else
-        lblestado.Caption = ""
+        lblEstado.Caption = ""
         MsgBox "No hay coincidencias en la busqueda.", vbOKOnly + vbCritical, TIT_MSGBOX
         Me.txtNumero.SetFocus
     End If
     rec.Close
     Screen.MousePointer = vbNormal
-    lblestado.Caption = ""
+    lblEstado.Caption = ""
     
 End Sub
 

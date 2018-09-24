@@ -1,6 +1,5 @@
 VERSION 5.00
-Object = "{5E9E78A0-531B-11CF-91F6-C2863C385E30}#1.0#0"; "MSFLXGRD.OCX"
-Object = "{5F09B5DF-6F4D-11D2-8355-4854E82A9183}#15.0#0"; "FECHA32.OCX"
+Object = "{5E9E78A0-531B-11CF-91F6-C2863C385E30}#1.0#0"; "msflxgrd.ocx"
 Begin VB.Form ABMCambioEstadoChPropio 
    BorderStyle     =   1  'Fixed Single
    Caption         =   " ABM de Estado de Cheques Propios"
@@ -77,29 +76,23 @@ Begin VB.Form ABMCambioEstadoChPropio
          Top             =   570
          Width           =   5040
       End
-      Begin FechaCtl.Fecha TxtCheFecVto 
+      Begin VB.PictureBox TxtCheFecVto 
          Height          =   300
          Left            =   5370
+         ScaleHeight     =   240
+         ScaleWidth      =   1125
          TabIndex        =   3
          Top             =   945
          Width           =   1185
-         _ExtentX        =   2090
-         _ExtentY        =   529
-         Separador       =   "/"
-         Text            =   ""
-         MensajeErrMin   =   "La fecha ingresada no alcanza el mínimo permitido"
       End
-      Begin FechaCtl.Fecha TxtCheFecEmi 
+      Begin VB.PictureBox TxtCheFecEmi 
          Height          =   345
          Left            =   1635
+         ScaleHeight     =   285
+         ScaleWidth      =   1080
          TabIndex        =   2
          Top             =   945
          Width           =   1140
-         _ExtentX        =   2011
-         _ExtentY        =   609
-         Separador       =   "/"
-         Text            =   ""
-         MensajeErrMin   =   "La fecha ingresada no alcanza el mínimo permitido"
       End
       Begin VB.Label Label1 
          AutoSize        =   -1  'True
@@ -166,17 +159,14 @@ Begin VB.Form ABMCambioEstadoChPropio
       Top             =   3555
       Width           =   3180
    End
-   Begin FechaCtl.Fecha TxtCesFecha 
+   Begin VB.PictureBox TxtCesFecha 
       Height          =   315
       Left            =   1980
+      ScaleHeight     =   255
+      ScaleWidth      =   1080
       TabIndex        =   5
       Top             =   3555
       Width           =   1140
-      _ExtentX        =   2011
-      _ExtentY        =   556
-      Separador       =   "/"
-      Text            =   ""
-      MensajeErrMin   =   "La fecha ingresada no alcanza el mínimo permitido"
    End
    Begin MSFlexGridLib.MSFlexGrid Grd1 
       Height          =   1500
@@ -257,15 +247,15 @@ Attribute VB_PredeclaredId = True
 Attribute VB_Exposed = False
 Option Explicit
 
-Private Sub cboBanco_LostFocus()
+Private Sub CboBanco_LostFocus()
     Dim MtrObjetos As Variant
 
-    If cboBanco.ListIndex <> -1 Then
+    If CboBanco.ListIndex <> -1 Then
         lblEstado.Caption = "Buscando..."
        'CONSULTO SI EXISTE EL CHEQUE
         sql = "SELECT * FROM CHEQUE_PROPIO "
         sql = sql & " WHERE CHEP_NUMERO = " & XS(TxtCheNumero.Text)
-        sql = sql & " AND BAN_CODINT = " & XN(cboBanco.ItemData(cboBanco.ListIndex))
+        sql = sql & " AND BAN_CODINT = " & XN(CboBanco.ItemData(CboBanco.ListIndex))
         rec.Open sql, DBConn, adOpenStatic, adLockOptimistic
         
         If rec.EOF = False Then 'EXITE
@@ -274,15 +264,15 @@ Private Sub cboBanco_LostFocus()
             Me.TxtCheFecVto.Text = rec!CHEP_FECVTO
             Me.TxtCheImport.Text = Valido_Importe(rec!CHEP_IMPORT)
             TxtCheNumero.Enabled = False
-            cboBanco.Enabled = False
-            MtrObjetos = Array(TxtCheNumero, cboBanco)
+            CboBanco.Enabled = False
+            MtrObjetos = Array(TxtCheNumero, CboBanco)
             Call CambiarColor(MtrObjetos, 2, &H80000018, "D")
             'CARGO GRILLA
             sql = "SELECT CPES_FECHA,ECH_DESCRI,CPES_DESCRI"
             sql = sql & " FROM CHEQUE_PROPIO_ESTADO CE, ESTADO_CHEQUE EC"
             sql = sql & " WHERE CE.ECH_CODIGO=EC.ECH_CODIGO"
             sql = sql & " AND CE.CHEP_NUMERO=" & XS(TxtCheNumero.Text)
-            sql = sql & " AND CE.BAN_CODINT=" & XN(cboBanco.ItemData(cboBanco.ListIndex))
+            sql = sql & " AND CE.BAN_CODINT=" & XN(CboBanco.ItemData(CboBanco.ListIndex))
             sql = sql & " ORDER BY CPES_FECHA"
             Rec1.Open sql, DBConn, adOpenStatic, adLockOptimistic
             If Rec1.EOF = False Then
@@ -304,7 +294,7 @@ Private Sub cboBanco_LostFocus()
     End If
 End Sub
 
-Private Sub CmdGrabar_Click()
+Private Sub cmdGrabar_Click()
    
  If Me.ActiveControl.Name <> "CmdNuevo" And Me.ActiveControl.Name <> "CmdSalir" Then
     lblEstado.Caption = "Actualizando..."
@@ -317,7 +307,7 @@ Private Sub CmdGrabar_Click()
     
     Rec1.Open sql, DBConn, adOpenStatic, adLockOptimistic
     If Rec1.EOF = False Then
-       If DMY(Rec1!Maximo) = DMY(TxtCesFecha.Text) Then
+       If DMY(Rec1!Maximo) = DMY(TxtCesFecha.Value) Then
             lblEstado.Caption = ""
             MsgBox "NO se puede registrar el mismo carácter en la misma fecha.", 16, TIT_MSGBOX
             Rec1.Close
@@ -327,8 +317,8 @@ Private Sub CmdGrabar_Click()
     Rec1.Close
             
     If Trim(Me.TxtCheNumero.Text) = "" Or _
-       Trim(Me.cboBanco.ListIndex = -1) = "" Or _
-       Trim(Me.TxtCesFecha.Text) = "" Then
+       Trim(Me.CboBanco.ListIndex = -1) = "" Or _
+       Trim(Me.TxtCesFecha.Value) = "" Then
        
         If Trim(Me.TxtCheNumero.Text) = "" Then
            MsgBox "Falta el Número de Cheque.", 16, TIT_MSGBOX
@@ -336,13 +326,13 @@ Private Sub CmdGrabar_Click()
            lblEstado.Caption = ""
            Exit Sub
         End If
-        If cboBanco.ListIndex = -1 Then
+        If CboBanco.ListIndex = -1 Then
            MsgBox "Falta el BANCO", 16, TIT_MSGBOX
-           cboBanco.SetFocus
+           CboBanco.SetFocus
            lblEstado.Caption = ""
            Exit Sub
         End If
-        If Trim(Me.TxtCesFecha.Text) = "" Then
+        If Trim(Me.TxtCesFecha.Value) = "" Then
            MsgBox "Falta la Fecha.", 16, TIT_MSGBOX
            TxtCesFecha.SetFocus
            lblEstado.Caption = ""
@@ -354,33 +344,33 @@ Private Sub CmdGrabar_Click()
          sql = sql & " CHEP_NUMERO, CPES_FECHA, CPES_DESCRI)"
          sql = sql & " VALUES ("
          sql = sql & XN(CboEstado.ItemData(CboEstado.ListIndex)) & ","
-         sql = sql & XN(cboBanco.ItemData(cboBanco.ListIndex)) & ","
+         sql = sql & XN(CboBanco.ItemData(CboBanco.ListIndex)) & ","
          sql = sql & XS(Me.TxtCheNumero.Text) & ","
          sql = sql & XDQ(TxtCesFecha) & ","
          sql = sql & XS(Me.TxtCheObserv.Text) & ")"
          DBConn.Execute sql
          
-         cmdNuevo_Click
+         CmdNuevo_Click
    End If
  End If
 End Sub
 
-Private Sub cmdNuevo_Click()
+Private Sub CmdNuevo_Click()
     Dim MtrObjetos As Variant
 
    lblEstado.Caption = ""
    Me.TxtCheNumero.Enabled = True
-   Me.cboBanco.Enabled = True
+   Me.CboBanco.Enabled = True
    Me.TxtCheNumero.Text = ""
    Me.TxtCheFecEmi.Text = ""
    Me.TxtCheFecVto.Text = ""
    Me.TxtCheImport.Text = ""
    Me.Grd1.Rows = 1
-   Me.TxtCesFecha.Text = ""
+   Me.TxtCesFecha.Value = ""
    Me.CboEstado.ListIndex = 0
-   Me.cboBanco.ListIndex = 0
+   Me.CboBanco.ListIndex = 0
    Me.TxtCheObserv.Text = ""
-   MtrObjetos = Array(TxtCheNumero, cboBanco)
+   MtrObjetos = Array(TxtCheNumero, CboBanco)
    Call CambiarColor(MtrObjetos, 2, &H80000005, "E")
    Me.TxtCheNumero.SetFocus
 End Sub
@@ -441,17 +431,17 @@ Private Sub CargoBanco()
     rec.Open sql, DBConn, adOpenStatic, adLockOptimistic
     If rec.EOF = False Then
         Do While rec.EOF = False
-            cboBanco.AddItem Trim(rec!BAN_DESCRI)
-            cboBanco.ItemData(cboBanco.NewIndex) = Trim(rec!BAN_CODINT)
+            CboBanco.AddItem Trim(rec!BAN_DESCRI)
+            CboBanco.ItemData(CboBanco.NewIndex) = Trim(rec!BAN_CODINT)
             rec.MoveNext
         Loop
-        cboBanco.ListIndex = 0
+        CboBanco.ListIndex = 0
     End If
     rec.Close
 End Sub
 
 Private Sub TxtCesFecha_LostFocus()
-    If TxtCesFecha.Text = "" Then TxtCesFecha.Text = Format(Date, "dd/mm/yyyy")
+    If TxtCesFecha.Value = "" Then TxtCesFecha.Value = Format(Date, "dd/mm/yyyy")
 End Sub
 
 Private Sub TxtCheNumero_KeyPress(KeyAscii As Integer)

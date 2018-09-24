@@ -1,0 +1,24 @@
+Línea 407: la clase FechaCtl.Fecha del control FechaRemito no era una clase de control cargada.
+Línea 547: la clase FechaCtl.Fecha del control FechaHasta no era una clase de control cargada.
+Línea 559: la clase FechaCtl.Fecha del control FechaDesde no era una clase de control cargada.
+Línea 774: la clase FechaCtl.Fecha del control FechaFactura no era una clase de control cargada.
+Línea 413: el nombre de la propiedad _ExtentX de FechaRemito no es válido.
+Línea 414: el nombre de la propiedad _ExtentY de FechaRemito no es válido.
+Línea 415: el nombre de la propiedad Separador de FechaRemito no es válido.
+Línea 416: el nombre de la propiedad Text de FechaRemito no es válido.
+Línea 417: el nombre de la propiedad MensajeErrMin de FechaRemito no es válido.
+Línea 553: el nombre de la propiedad _ExtentX de FechaHasta no es válido.
+Línea 554: el nombre de la propiedad _ExtentY de FechaHasta no es válido.
+Línea 555: el nombre de la propiedad Separador de FechaHasta no es válido.
+Línea 556: el nombre de la propiedad Text de FechaHasta no es válido.
+Línea 557: el nombre de la propiedad MensajeErrMin de FechaHasta no es válido.
+Línea 565: el nombre de la propiedad _ExtentX de FechaDesde no es válido.
+Línea 566: el nombre de la propiedad _ExtentY de FechaDesde no es válido.
+Línea 567: el nombre de la propiedad Separador de FechaDesde no es válido.
+Línea 568: el nombre de la propiedad Text de FechaDesde no es válido.
+Línea 569: el nombre de la propiedad MensajeErrMin de FechaDesde no es válido.
+Línea 780: el nombre de la propiedad _ExtentX de FechaFactura no es válido.
+Línea 781: el nombre de la propiedad _ExtentY de FechaFactura no es válido.
+Línea 782: el nombre de la propiedad Separador de FechaFactura no es válido.
+Línea 783: el nombre de la propiedad Text de FechaFactura no es válido.
+Línea 784: el nombre de la propiedad MensajeErrMin de FechaFactura no es válido.

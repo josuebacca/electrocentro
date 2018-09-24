@@ -1,7 +1,6 @@
 VERSION 5.00
-Object = "{F9043C88-F6F2-101A-A3C9-08002B2F49FB}#1.2#0"; "Comdlg32.ocx"
-Object = "{00025600-0000-0000-C000-000000000046}#5.2#0"; "Crystl32.OCX"
-Object = "{5F09B5DF-6F4D-11D2-8355-4854E82A9183}#15.0#0"; "Fecha32.ocx"
+Object = "{F9043C88-F6F2-101A-A3C9-08002B2F49FB}#1.2#0"; "comdlg32.ocx"
+Object = "{86CF1D34-0C5F-11D2-A9FC-0000F8754DA1}#2.0#0"; "mscomct2.ocx"
 Begin VB.Form frmListadoPagosPorProveedor 
    BorderStyle     =   1  'Fixed Single
    Caption         =   "Listado de Recibo de Proveedores"
@@ -22,7 +21,7 @@ Begin VB.Form frmListadoPagosPorProveedor
       Left            =   4365
       Picture         =   "frmListadoPagosPorProveedor.frx":0000
       Style           =   1  'Graphical
-      TabIndex        =   7
+      TabIndex        =   5
       Top             =   2430
       Width           =   840
    End
@@ -32,7 +31,7 @@ Begin VB.Form frmListadoPagosPorProveedor
       Left            =   6090
       Picture         =   "frmListadoPagosPorProveedor.frx":08CA
       Style           =   1  'Graphical
-      TabIndex        =   9
+      TabIndex        =   7
       Top             =   2430
       Width           =   825
    End
@@ -43,7 +42,7 @@ Begin VB.Form frmListadoPagosPorProveedor
       Left            =   5220
       Picture         =   "frmListadoPagosPorProveedor.frx":0EDE
       Style           =   1  'Graphical
-      TabIndex        =   8
+      TabIndex        =   6
       Top             =   2430
       Width           =   855
    End
@@ -60,7 +59,7 @@ Begin VB.Form frmListadoPagosPorProveedor
       EndProperty
       Height          =   1635
       Left            =   60
-      TabIndex        =   11
+      TabIndex        =   9
       Top             =   -15
       Width           =   6885
       Begin VB.CommandButton cmdBuscarProveedor1 
@@ -69,7 +68,7 @@ Begin VB.Form frmListadoPagosPorProveedor
          MaskColor       =   &H000000FF&
          Picture         =   "frmListadoPagosPorProveedor.frx":11E8
          Style           =   1  'Graphical
-         TabIndex        =   19
+         TabIndex        =   17
          ToolTipText     =   "Buscar Proveedor"
          Top             =   780
          UseMaskColor    =   -1  'True
@@ -109,36 +108,36 @@ Begin VB.Form frmListadoPagosPorProveedor
          Top             =   780
          Width           =   4410
       End
-      Begin FechaCtl.Fecha FechaHasta 
-         Height          =   285
-         Left            =   4365
-         TabIndex        =   4
-         Top             =   1140
-         Width           =   1185
-         _ExtentX        =   2090
-         _ExtentY        =   503
-         Separador       =   "/"
-         Text            =   ""
-         MensajeErrMin   =   "La fecha ingresada no alcanza el mínimo permitido"
+      Begin MSComCtl2.DTPicker FechaDesde 
+         Height          =   375
+         Left            =   2040
+         TabIndex        =   19
+         Top             =   1080
+         Width           =   1335
+         _ExtentX        =   2355
+         _ExtentY        =   661
+         _Version        =   393216
+         Format          =   53870593
+         CurrentDate     =   43367
       End
-      Begin FechaCtl.Fecha FechaDesde 
-         Height          =   330
-         Left            =   2070
-         TabIndex        =   3
-         Top             =   1140
-         Width           =   1170
-         _ExtentX        =   2064
-         _ExtentY        =   582
-         Separador       =   "/"
-         Text            =   ""
-         MensajeErrMin   =   "La fecha ingresada no alcanza el mínimo permitido"
+      Begin MSComCtl2.DTPicker FechaHasta 
+         Height          =   375
+         Left            =   4560
+         TabIndex        =   20
+         Top             =   1080
+         Width           =   1335
+         _ExtentX        =   2355
+         _ExtentY        =   661
+         _Version        =   393216
+         Format          =   53870593
+         CurrentDate     =   43367
       End
       Begin VB.Label lblFechaDesde 
          AutoSize        =   -1  'True
          Caption         =   "Fecha Desde:"
          Height          =   195
          Left            =   960
-         TabIndex        =   18
+         TabIndex        =   16
          Top             =   1170
          Width           =   1005
       End
@@ -146,8 +145,8 @@ Begin VB.Form frmListadoPagosPorProveedor
          AutoSize        =   -1  'True
          Caption         =   "Fecha Hasta:"
          Height          =   195
-         Left            =   3315
-         TabIndex        =   17
+         Left            =   3555
+         TabIndex        =   15
          Top             =   1170
          Width           =   960
       End
@@ -156,7 +155,7 @@ Begin VB.Form frmListadoPagosPorProveedor
          Caption         =   "Tipo Prov.:"
          Height          =   195
          Left            =   105
-         TabIndex        =   16
+         TabIndex        =   14
          Top             =   450
          Width           =   780
       End
@@ -170,18 +169,19 @@ Begin VB.Form frmListadoPagosPorProveedor
          Height          =   195
          Index           =   0
          Left            =   345
-         TabIndex        =   15
+         TabIndex        =   13
          Top             =   795
          Width           =   540
       End
    End
-   Begin Crystal.CrystalReport Rep 
+   Begin VB.PictureBox Rep 
+      Height          =   480
       Left            =   3330
+      ScaleHeight     =   420
+      ScaleWidth      =   1140
+      TabIndex        =   18
       Top             =   2535
-      _ExtentX        =   741
-      _ExtentY        =   741
-      _Version        =   348160
-      PrintFileLinesPerPage=   60
+      Width           =   1200
    End
    Begin MSComDlg.CommonDialog CDImpresora 
       Left            =   2835
@@ -203,14 +203,14 @@ Begin VB.Form frmListadoPagosPorProveedor
       EndProperty
       Height          =   735
       Left            =   60
-      TabIndex        =   12
+      TabIndex        =   10
       Top             =   1650
       Width           =   6885
       Begin VB.OptionButton optImpresora 
          Caption         =   "Impresora"
          Height          =   195
          Left            =   2370
-         TabIndex        =   6
+         TabIndex        =   4
          Top             =   315
          Width           =   1050
       End
@@ -218,7 +218,7 @@ Begin VB.Form frmListadoPagosPorProveedor
          Caption         =   "Pantalla"
          Height          =   195
          Left            =   945
-         TabIndex        =   5
+         TabIndex        =   3
          Top             =   315
          Value           =   -1  'True
          Width           =   885
@@ -228,7 +228,7 @@ Begin VB.Form frmListadoPagosPorProveedor
          Height          =   435
          Left            =   4680
          Style           =   1  'Graphical
-         TabIndex        =   10
+         TabIndex        =   8
          Top             =   210
          Width           =   1665
       End
@@ -237,7 +237,7 @@ Begin VB.Form frmListadoPagosPorProveedor
          Caption         =   "Destino:"
          Height          =   195
          Left            =   150
-         TabIndex        =   13
+         TabIndex        =   11
          Top             =   315
          Width           =   585
       End
@@ -257,7 +257,7 @@ Begin VB.Form frmListadoPagosPorProveedor
       EndProperty
       Height          =   345
       Left            =   150
-      TabIndex        =   14
+      TabIndex        =   12
       Top             =   2610
       Width           =   750
    End
@@ -294,7 +294,7 @@ Private Sub cmdBuscarProveedor1_Click()
 End Sub
 
 Private Sub cmdListar_Click()
-    lblestado.Caption = "Buscando Listado..."
+    lblEstado.Caption = "Buscando Listado..."
     'Rep.WindowState = crptMaximized 'crptMinimized
     Rep.WindowBorderStyle = crptNoBorder
     Rep.Connect = "Provider=MSDASQL.1;Persist Security Info=False;Data Source=SIELECTROCENTRO"
@@ -342,7 +342,7 @@ Private Sub cmdListar_Click()
     End If
      Rep.Action = 1
      
-     lblestado.Caption = ""
+     lblEstado.Caption = ""
      Rep.SelectionFormula = ""
      Rep.Formulas(0) = ""
      Rep.Formulas(1) = ""
@@ -372,7 +372,7 @@ Private Sub Form_Load()
     FrameImpresora.Caption = "Impresora Actual: " & Printer.DeviceName
     'CARGO COMBO TIPO PROVEEDOR
     LlenarComboTipoProv
-    lblestado.Caption = ""
+    lblEstado.Caption = ""
 End Sub
 
 Private Sub txtCodProveedor_Change()

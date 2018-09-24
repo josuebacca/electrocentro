@@ -1,6 +1,5 @@
 VERSION 5.00
 Object = "{5E9E78A0-531B-11CF-91F6-C2863C385E30}#1.0#0"; "msflxgrd.ocx"
-Object = "{5F09B5DF-6F4D-11D2-8355-4854E82A9183}#15.0#0"; "Fecha32.ocx"
 Begin VB.Form ABMCambioEstado 
    BorderStyle     =   1  'Fixed Single
    Caption         =   " ABM de Estado de Cheques"
@@ -203,29 +202,23 @@ Begin VB.Form ABMCambioEstado
          Top             =   2160
          Width           =   1140
       End
-      Begin FechaCtl.Fecha TxtCheFecVto 
+      Begin VB.PictureBox TxtCheFecVto 
          Height          =   300
          Left            =   5370
+         ScaleHeight     =   240
+         ScaleWidth      =   1125
          TabIndex        =   6
          Top             =   1830
          Width           =   1185
-         _ExtentX        =   2090
-         _ExtentY        =   529
-         Separador       =   "/"
-         Text            =   ""
-         MensajeErrMin   =   "La fecha ingresada no alcanza el mínimo permitido"
       End
-      Begin FechaCtl.Fecha TxtCheFecEmi 
+      Begin VB.PictureBox TxtCheFecEmi 
          Height          =   345
          Left            =   1650
+         ScaleHeight     =   285
+         ScaleWidth      =   1080
          TabIndex        =   5
          Top             =   1830
          Width           =   1140
-         _ExtentX        =   2011
-         _ExtentY        =   609
-         Separador       =   "/"
-         Text            =   ""
-         MensajeErrMin   =   "La fecha ingresada no alcanza el mínimo permitido"
       End
       Begin VB.Label Label1 
          AutoSize        =   -1  'True
@@ -283,17 +276,14 @@ Begin VB.Form ABMCambioEstado
       Top             =   4380
       Width           =   3165
    End
-   Begin FechaCtl.Fecha TxtCesFecha 
+   Begin VB.PictureBox TxtCesFecha 
       Height          =   315
       Left            =   1965
+      ScaleHeight     =   255
+      ScaleWidth      =   1080
       TabIndex        =   8
       Top             =   4380
       Width           =   1140
-      _ExtentX        =   2011
-      _ExtentY        =   556
-      Separador       =   "/"
-      Text            =   ""
-      MensajeErrMin   =   "La fecha ingresada no alcanza el mínimo permitido"
    End
    Begin MSFlexGridLib.MSFlexGrid Grd1 
       Height          =   1500
@@ -378,18 +368,18 @@ Private Sub cmdBuscaCheque_Click()
     frmBuscar.Show vbModal
     'TxtCheNumero.Text = frmBuscar.grdBuscar.Col
     TxtCheNumero.Text = frmBuscar.grdBuscar.TextMatrix(frmBuscar.grdBuscar.RowSel, 1)
-    TxtBanco.Text = frmBuscar.grdBuscar.TextMatrix(frmBuscar.grdBuscar.RowSel, 5)
+    TxtBANCO.Text = frmBuscar.grdBuscar.TextMatrix(frmBuscar.grdBuscar.RowSel, 5)
     txtlocalidad.Text = frmBuscar.grdBuscar.TextMatrix(frmBuscar.grdBuscar.RowSel, 6)
-    TxtSucursal.Text = frmBuscar.grdBuscar.TextMatrix(frmBuscar.grdBuscar.RowSel, 7)
+    TxtSUCURSAL.Text = frmBuscar.grdBuscar.TextMatrix(frmBuscar.grdBuscar.RowSel, 7)
     TxtCodigo.Text = frmBuscar.grdBuscar.TextMatrix(frmBuscar.grdBuscar.RowSel, 8)
     TxtCheImport.Text = frmBuscar.grdBuscar.TextMatrix(frmBuscar.grdBuscar.RowSel, 3)
     TxtCheFecVto.Text = frmBuscar.grdBuscar.TextMatrix(frmBuscar.grdBuscar.RowSel, 2)
     'TxtBanDescri.Text = frmBuscar.grdBuscar.TextMatrix(frmBuscar.grdBuscar.RowSel, 0)
     
      If Trim(Me.TxtCheNumero.Text) <> "" And _
-       Trim(Me.TxtBanco.Text) <> "" And _
+       Trim(Me.TxtBANCO.Text) <> "" And _
        Trim(Me.txtlocalidad.Text) <> "" And _
-       Trim(Me.TxtSucursal.Text) <> "" And _
+       Trim(Me.TxtSUCURSAL.Text) <> "" And _
        Trim(Me.TxtCodigo.Text) <> "" Then
        
        If Len(Me.TxtCodigo.Text) < 6 Then Me.TxtCodigo.Text = CompletarConCeros(Me.TxtCodigo.Text, 6)
@@ -401,9 +391,9 @@ Private Sub cmdBuscaCheque_Click()
        
        'BUSCO EL CODIGO INTERNO
        sql = "SELECT BAN_CODINT,BAN_DESCRI FROM BANCO WHERE BAN_BANCO = " & _
-       XS(TxtBanco.Text) & " AND BAN_LOCALIDAD = " & _
+       XS(TxtBANCO.Text) & " AND BAN_LOCALIDAD = " & _
        XS(Me.txtlocalidad.Text) & " AND BAN_SUCURSAL = " & _
-       XS(Me.TxtSucursal.Text) & " AND BAN_CODIGO = " & XS(Me.TxtCodigo.Text)
+       XS(Me.TxtSUCURSAL.Text) & " AND BAN_CODIGO = " & XS(Me.TxtCodigo.Text)
        rec.Open sql, DBConn, adOpenStatic, adLockOptimistic
        If rec.RecordCount > 0 Then 'EXITE
             Me.TxtCodInt.Text = rec!BAN_CODINT
@@ -424,12 +414,12 @@ Private Sub cmdBuscaCheque_Click()
         If rec.RecordCount > 0 Then 'EXITE
             
             TxtCheNumero.Enabled = False
-            TxtBanco.Enabled = False
+            TxtBANCO.Enabled = False
             txtlocalidad.Enabled = False
-            TxtSucursal.Enabled = False
+            TxtSUCURSAL.Enabled = False
             TxtCodigo.Enabled = False
             
-            MtrObjetos = Array(TxtCheNumero, TxtBanco, txtlocalidad, TxtSucursal, TxtCodigo)
+            MtrObjetos = Array(TxtCheNumero, TxtBANCO, txtlocalidad, TxtSUCURSAL, TxtCodigo)
             Call CambiarColor(MtrObjetos, 5, &H80000018, "D")
             
             Me.TxtCheFecEmi.Text = rec!CHE_FECEMI
@@ -463,7 +453,7 @@ Private Sub cmdBuscaCheque_Click()
     
 End Sub
 
-Private Sub CmdGrabar_Click()
+Private Sub cmdGrabar_Click()
  Dim Rec1 As New Recordset
  If Me.ActiveControl.Name <> "CmdNuevo" And Me.ActiveControl.Name <> "CmdSalir" Then
 
@@ -476,7 +466,7 @@ Private Sub CmdGrabar_Click()
     
     Rec1.Open sql, DBConn, adOpenStatic, adLockOptimistic
     If Rec1.RecordCount > 0 Then
-       If DMY(Rec1!Maximo) = DMY(TxtCesFecha.Text) Then
+       If DMY(Rec1!Maximo) = DMY(TxtCesFecha.Value) Then
             MsgBox "NO se puede registrar el mismo carácter en la misma fecha.", 16, TIT_MSGBOX
             Rec1.Close
             Exit Sub
@@ -485,11 +475,11 @@ Private Sub CmdGrabar_Click()
     Rec1.Close
             
     If Trim(Me.TxtCheNumero.Text) = "" Or _
-       Trim(Me.TxtBanco.Text) = "" Or _
+       Trim(Me.TxtBANCO.Text) = "" Or _
        Trim(Me.txtlocalidad.Text) = "" Or _
-       Trim(Me.TxtSucursal.Text) = "" Or _
+       Trim(Me.TxtSUCURSAL.Text) = "" Or _
        Trim(Me.TxtCodigo.Text) = "" Or _
-       Trim(Me.TxtCesFecha.Text) = "" Then
+       Trim(Me.TxtCesFecha.Value) = "" Then
        
         If Trim(Me.TxtCheNumero.Text) = "" Then
            MsgBox "Falta el Número de Cheque.", 16, TIT_MSGBOX
@@ -497,9 +487,9 @@ Private Sub CmdGrabar_Click()
            Exit Sub
         End If
         
-        If Trim(Me.TxtBanco.Text) = "" Then
+        If Trim(Me.TxtBANCO.Text) = "" Then
            MsgBox "Falta el BANCO.", 16, TIT_MSGBOX
-           TxtBanco.SetFocus
+           TxtBANCO.SetFocus
            Exit Sub
         End If
         
@@ -509,9 +499,9 @@ Private Sub CmdGrabar_Click()
            Exit Sub
         End If
         
-        If Trim(Me.TxtSucursal.Text) = "" Then
+        If Trim(Me.TxtSUCURSAL.Text) = "" Then
            MsgBox "Falta la SUCURSAL.", 16, TIT_MSGBOX
-           TxtSucursal.SetFocus
+           TxtSUCURSAL.SetFocus
            Exit Sub
         End If
         
@@ -521,7 +511,7 @@ Private Sub CmdGrabar_Click()
            Exit Sub
         End If
         
-        If Trim(Me.TxtCesFecha.Text) = "" Then
+        If Trim(Me.TxtCesFecha.Value) = "" Then
            MsgBox "Falta la Fecha.", 16, TIT_MSGBOX
            TxtCesFecha.SetFocus
            Exit Sub
@@ -544,17 +534,17 @@ Private Sub CmdNuevo_Click()
    Dim MtrObjetos As Variant
    
    Me.TxtCheNumero.Enabled = True
-   Me.TxtBanco.Enabled = True
+   Me.TxtBANCO.Enabled = True
    Me.txtlocalidad.Enabled = True
-   Me.TxtSucursal.Enabled = True
+   Me.TxtSUCURSAL.Enabled = True
    Me.TxtCodigo.Enabled = True
-   MtrObjetos = Array(TxtCheNumero, TxtBanco, txtlocalidad, TxtSucursal, TxtCodigo)
+   MtrObjetos = Array(TxtCheNumero, TxtBANCO, txtlocalidad, TxtSUCURSAL, TxtCodigo)
    Call CambiarColor(MtrObjetos, 5, &H80000005, "E")
             
    Me.TxtCheNumero.Text = ""
-   Me.TxtBanco.Text = ""
+   Me.TxtBANCO.Text = ""
    Me.txtlocalidad.Text = ""
-   Me.TxtSucursal.Text = ""
+   Me.TxtSUCURSAL.Text = ""
    Me.TxtCodigo.Text = ""
    
    Me.TxtCodInt.Text = ""
@@ -562,13 +552,13 @@ Private Sub CmdNuevo_Click()
    Me.TxtCheFecVto.Text = ""
    Me.TxtCheImport.Text = ""
    Me.Grd1.Rows = 1
-   Me.TxtCesFecha.Text = ""
+   Me.TxtCesFecha.Value = ""
    Me.CboEstado.ListIndex = 0
    Me.TxtCheObserv.Text = ""
    Me.TxtCheNumero.SetFocus
 End Sub
 
-Private Sub cmdSalir_Click()
+Private Sub CmdSalir_Click()
     Unload Me
     Set ABMCambioEstado = Nothing
 End Sub
@@ -579,7 +569,7 @@ End Sub
 
 Private Sub Form_KeyPress(KeyAscii As Integer)
     'si presiono ESCAPE salgo del form
-    If KeyAscii = vbKeyEscape Then cmdSalir_Click
+    If KeyAscii = vbKeyEscape Then CmdSalir_Click
     If KeyAscii = vbKeyReturn Then 'avanza de campo
         SendKeys "{TAB}"
         KeyAscii = 0
@@ -588,7 +578,7 @@ End Sub
 
 Private Sub Form_Load()
     
-    lblestado.Caption = ""
+    lblEstado.Caption = ""
     Grd1.FormatString = "^Fecha|Estado|Observación"
     Grd1.ColWidth(0) = 1100
     Grd1.ColWidth(1) = 2500
@@ -618,11 +608,11 @@ Private Sub TxtBanco_KeyPress(KeyAscii As Integer)
 End Sub
 
 Private Sub TxtBANCO_LostFocus()
-    If TxtBanco.Text <> "" Then TxtBanco.Text = Format(TxtBanco.Text, "000")
+    If TxtBANCO.Text <> "" Then TxtBANCO.Text = Format(TxtBANCO.Text, "000")
 End Sub
 
 Private Sub TxtCesFecha_LostFocus()
-    If TxtCesFecha.Text = "" Then TxtCesFecha.Text = Format(Date, "dd/mm/yyyy")
+    If TxtCesFecha.Value = "" Then TxtCesFecha.Value = Format(Date, "dd/mm/yyyy")
 End Sub
 
 Private Sub TxtCheNumero_KeyPress(KeyAscii As Integer)
@@ -654,9 +644,9 @@ Private Sub TxtCheNumero_LostFocus()
         rec.Open sql, DBConn, adOpenStatic, adLockOptimistic
         If rec.EOF = False Then
             TxtCheNumero.Text = rec!CHE_NUMERO
-            TxtBanco.Text = rec!BAN_BANCO
+            TxtBANCO.Text = rec!BAN_BANCO
             txtlocalidad.Text = rec!BAN_LOCALIDAD
-            TxtSucursal.Text = rec!BAN_SUCURSAL
+            TxtSUCURSAL.Text = rec!BAN_SUCURSAL
             TxtCodigo.Text = rec!BAN_CODIGO
             TxtCheImport.Text = rec!che_import
             TxtCheFecVto.Text = rec!CHE_FECVTO
@@ -669,9 +659,9 @@ Private Sub TxtCheNumero_LostFocus()
         
     
      If Trim(Me.TxtCheNumero.Text) <> "" And _
-       Trim(Me.TxtBanco.Text) <> "" And _
+       Trim(Me.TxtBANCO.Text) <> "" And _
        Trim(Me.txtlocalidad.Text) <> "" And _
-       Trim(Me.TxtSucursal.Text) <> "" And _
+       Trim(Me.TxtSUCURSAL.Text) <> "" And _
        Trim(Me.TxtCodigo.Text) <> "" Then
        
        If Len(Me.TxtCodigo.Text) < 6 Then Me.TxtCodigo.Text = CompletarConCeros(Me.TxtCodigo.Text, 6)
@@ -683,9 +673,9 @@ Private Sub TxtCheNumero_LostFocus()
        
        'BUSCO EL CODIGO INTERNO
        sql = "SELECT BAN_CODINT,BAN_DESCRI FROM BANCO WHERE BAN_BANCO = " & _
-       XS(TxtBanco.Text) & " AND BAN_LOCALIDAD = " & _
+       XS(TxtBANCO.Text) & " AND BAN_LOCALIDAD = " & _
        XS(Me.txtlocalidad.Text) & " AND BAN_SUCURSAL = " & _
-       XS(Me.TxtSucursal.Text) & " AND BAN_CODIGO = " & XS(Me.TxtCodigo.Text)
+       XS(Me.TxtSUCURSAL.Text) & " AND BAN_CODIGO = " & XS(Me.TxtCodigo.Text)
        rec.Open sql, DBConn, adOpenStatic, adLockOptimistic
        If rec.RecordCount > 0 Then 'EXITE
             Me.TxtCodInt.Text = rec!BAN_CODINT
@@ -706,12 +696,12 @@ Private Sub TxtCheNumero_LostFocus()
         If rec.RecordCount > 0 Then 'EXITE
             
             TxtCheNumero.Enabled = False
-            TxtBanco.Enabled = False
+            TxtBANCO.Enabled = False
             txtlocalidad.Enabled = False
-            TxtSucursal.Enabled = False
+            TxtSUCURSAL.Enabled = False
             TxtCodigo.Enabled = False
             
-            MtrObjetos = Array(TxtCheNumero, TxtBanco, txtlocalidad, TxtSucursal, TxtCodigo)
+            MtrObjetos = Array(TxtCheNumero, TxtBANCO, txtlocalidad, TxtSUCURSAL, TxtCodigo)
             Call CambiarColor(MtrObjetos, 5, &H80000018, "D")
             
             Me.TxtCheFecEmi.Text = rec!CHE_FECEMI
@@ -852,5 +842,5 @@ KeyAscii = CarNumeroTE(KeyAscii)
 End Sub
 
 Private Sub txtSucursal_LostFocus()
-    If TxtSucursal.Text <> "" Then TxtSucursal.Text = Format(TxtSucursal.Text, "000")
+    If TxtSUCURSAL.Text <> "" Then TxtSUCURSAL.Text = Format(TxtSUCURSAL.Text, "000")
 End Sub

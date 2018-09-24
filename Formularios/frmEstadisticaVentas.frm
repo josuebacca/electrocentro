@@ -1,7 +1,6 @@
 VERSION 5.00
-Object = "{5E9E78A0-531B-11CF-91F6-C2863C385E30}#1.0#0"; "MSFLXGRD.OCX"
-Object = "{00025600-0000-0000-C000-000000000046}#5.2#0"; "Crystl32.OCX"
-Object = "{5F09B5DF-6F4D-11D2-8355-4854E82A9183}#15.0#0"; "Fecha32.ocx"
+Object = "{5E9E78A0-531B-11CF-91F6-C2863C385E30}#1.0#0"; "msflxgrd.ocx"
+Object = "{86CF1D34-0C5F-11D2-A9FC-0000F8754DA1}#2.0#0"; "mscomct2.ocx"
 Begin VB.Form frmEstadisticaVentas 
    BorderStyle     =   1  'Fixed Single
    Caption         =   "Estadisticas de Ventas"
@@ -30,7 +29,7 @@ Begin VB.Form frmEstadisticaVentas
       EndProperty
       Height          =   375
       Left            =   8160
-      TabIndex        =   18
+      TabIndex        =   16
       Top             =   4320
       Width           =   1335
    End
@@ -181,29 +180,29 @@ Begin VB.Form frmEstadisticaVentas
          Value           =   -1  'True
          Width           =   975
       End
-      Begin FechaCtl.Fecha FechaDesde 
-         Height          =   285
+      Begin MSComCtl2.DTPicker FechaDesde 
+         Height          =   375
          Left            =   5040
-         TabIndex        =   15
-         Top             =   285
-         Width           =   1155
-         _ExtentX        =   2037
-         _ExtentY        =   503
-         Separador       =   "/"
-         Text            =   ""
-         MensajeErrMin   =   "La fecha ingresada no alcanza el mínimo permitido"
+         TabIndex        =   20
+         Top             =   240
+         Width           =   1335
+         _ExtentX        =   2355
+         _ExtentY        =   661
+         _Version        =   393216
+         Format          =   58982401
+         CurrentDate     =   43367
       End
-      Begin FechaCtl.Fecha FechaHasta 
-         Height          =   285
-         Left            =   6960
-         TabIndex        =   16
-         Top             =   285
-         Width           =   1155
-         _ExtentX        =   2037
-         _ExtentY        =   503
-         Separador       =   "/"
-         Text            =   ""
-         MensajeErrMin   =   "La fecha ingresada no alcanza el mínimo permitido"
+      Begin MSComCtl2.DTPicker FechaHasta 
+         Height          =   375
+         Left            =   7080
+         TabIndex        =   21
+         Top             =   240
+         Width           =   1335
+         _ExtentX        =   2355
+         _ExtentY        =   661
+         _Version        =   393216
+         Format          =   58982401
+         CurrentDate     =   43367
       End
       Begin VB.Label Label2 
          AutoSize        =   -1  'True
@@ -250,13 +249,14 @@ Begin VB.Form frmEstadisticaVentas
          Strikethrough   =   0   'False
       EndProperty
    End
-   Begin Crystal.CrystalReport Rep 
+   Begin VB.PictureBox Rep 
+      Height          =   480
       Left            =   480
+      ScaleHeight     =   420
+      ScaleWidth      =   1140
+      TabIndex        =   19
       Top             =   4920
-      _ExtentX        =   741
-      _ExtentY        =   741
-      _Version        =   348160
-      PrintFileLinesPerPage=   60
+      Width           =   1200
    End
    Begin VB.Label lblPromedio 
       Caption         =   "Label5"
@@ -272,7 +272,7 @@ Begin VB.Form frmEstadisticaVentas
       ForeColor       =   &H000000FF&
       Height          =   255
       Left            =   3960
-      TabIndex        =   20
+      TabIndex        =   18
       Top             =   5040
       Width           =   855
    End
@@ -290,7 +290,7 @@ Begin VB.Form frmEstadisticaVentas
       EndProperty
       Height          =   195
       Left            =   2160
-      TabIndex        =   19
+      TabIndex        =   17
       Top             =   5040
       Width           =   1665
    End
@@ -308,7 +308,7 @@ Begin VB.Form frmEstadisticaVentas
       EndProperty
       Height          =   240
       Left            =   1440
-      TabIndex        =   17
+      TabIndex        =   15
       Top             =   4380
       Width           =   810
    End

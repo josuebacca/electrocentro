@@ -1,0 +1,6 @@
+Línea 18: la clase FechaCtl.Fecha del control TxtBolFecha no era una clase de control cargada.
+Línea 24: el nombre de la propiedad _ExtentX de TxtBolFecha no es válido.
+Línea 25: el nombre de la propiedad _ExtentY de TxtBolFecha no es válido.
+Línea 26: el nombre de la propiedad Separador de TxtBolFecha no es válido.
+Línea 27: el nombre de la propiedad Text de TxtBolFecha no es válido.
+Línea 28: el nombre de la propiedad MensajeErrMin de TxtBolFecha no es válido.

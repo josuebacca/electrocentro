@@ -1,6 +1,6 @@
 VERSION 5.00
-Object = "{5E9E78A0-531B-11CF-91F6-C2863C385E30}#1.0#0"; "MSFLXGRD.OCX"
-Object = "{5F09B5DF-6F4D-11D2-8355-4854E82A9183}#15.0#0"; "Fecha32.ocx"
+Object = "{5E9E78A0-531B-11CF-91F6-C2863C385E30}#1.0#0"; "msflxgrd.ocx"
+Object = "{86CF1D34-0C5F-11D2-A9FC-0000F8754DA1}#2.0#0"; "mscomct2.ocx"
 Begin VB.Form frmAnulaDocumentos 
    BorderStyle     =   1  'Fixed Single
    Caption         =   "Anulación de ...."
@@ -22,7 +22,7 @@ Begin VB.Form frmAnulaDocumentos
       Left            =   7244
       Picture         =   "frmAnulaDocumentos.frx":030A
       Style           =   1  'Graphical
-      TabIndex        =   13
+      TabIndex        =   11
       Top             =   5295
       Width           =   870
    End
@@ -33,7 +33,7 @@ Begin VB.Form frmAnulaDocumentos
       Left            =   8136
       Picture         =   "frmAnulaDocumentos.frx":0614
       Style           =   1  'Graphical
-      TabIndex        =   14
+      TabIndex        =   12
       Top             =   5295
       Width           =   870
    End
@@ -44,7 +44,7 @@ Begin VB.Form frmAnulaDocumentos
       Left            =   9030
       Picture         =   "frmAnulaDocumentos.frx":0CA8
       Style           =   1  'Graphical
-      TabIndex        =   15
+      TabIndex        =   13
       Top             =   5295
       Width           =   870
    End
@@ -55,7 +55,7 @@ Begin VB.Form frmAnulaDocumentos
       Left            =   5460
       Picture         =   "frmAnulaDocumentos.frx":12BC
       Style           =   1  'Graphical
-      TabIndex        =   11
+      TabIndex        =   9
       Top             =   5295
       Width           =   870
    End
@@ -66,14 +66,14 @@ Begin VB.Form frmAnulaDocumentos
       Left            =   6352
       Picture         =   "frmAnulaDocumentos.frx":18D0
       Style           =   1  'Graphical
-      TabIndex        =   12
+      TabIndex        =   10
       Top             =   5295
       Width           =   870
    End
    Begin MSFlexGridLib.MSFlexGrid GrdModulos 
       Height          =   3405
       Left            =   60
-      TabIndex        =   10
+      TabIndex        =   8
       Top             =   1815
       Width           =   9885
       _ExtentX        =   17436
@@ -97,18 +97,30 @@ Begin VB.Form frmAnulaDocumentos
          Italic          =   0   'False
          Strikethrough   =   0   'False
       EndProperty
-      Height          =   1740
+      Height          =   1860
       Left            =   90
-      TabIndex        =   16
+      TabIndex        =   14
       Top             =   30
       Width           =   9825
+      Begin MSComCtl2.DTPicker FechaDesde 
+         Height          =   375
+         Left            =   3120
+         TabIndex        =   29
+         Top             =   1320
+         Width           =   1335
+         _ExtentX        =   2355
+         _ExtentY        =   661
+         _Version        =   393216
+         Format          =   58785793
+         CurrentDate     =   43367
+      End
       Begin VB.CommandButton cmdBuscarVendedor 
          Height          =   300
          Left            =   4170
          MaskColor       =   &H000000FF&
          Picture         =   "frmAnulaDocumentos.frx":1BDA
          Style           =   1  'Graphical
-         TabIndex        =   29
+         TabIndex        =   27
          ToolTipText     =   "Buscar Vendedor"
          Top             =   570
          UseMaskColor    =   -1  'True
@@ -120,7 +132,7 @@ Begin VB.Form frmAnulaDocumentos
          MaskColor       =   &H000000FF&
          Picture         =   "frmAnulaDocumentos.frx":1EE4
          Style           =   1  'Graphical
-         TabIndex        =   19
+         TabIndex        =   17
          ToolTipText     =   "Buscar"
          Top             =   255
          UseMaskColor    =   -1  'True
@@ -147,7 +159,7 @@ Begin VB.Form frmAnulaDocumentos
          MaskColor       =   &H000000FF&
          Picture         =   "frmAnulaDocumentos.frx":21EE
          Style           =   1  'Graphical
-         TabIndex        =   9
+         TabIndex        =   7
          ToolTipText     =   "Buscar Nota de Pedido"
          Top             =   225
          UseMaskColor    =   -1  'True
@@ -168,7 +180,7 @@ Begin VB.Form frmAnulaDocumentos
          Height          =   300
          Left            =   4620
          MaxLength       =   50
-         TabIndex        =   17
+         TabIndex        =   15
          Tag             =   "Descripción"
          Top             =   255
          Width           =   4320
@@ -213,30 +225,6 @@ Begin VB.Form frmAnulaDocumentos
          Top             =   936
          Width           =   735
       End
-      Begin FechaCtl.Fecha FechaHasta 
-         Height          =   285
-         Left            =   5625
-         TabIndex        =   8
-         Top             =   1260
-         Width           =   1185
-         _ExtentX        =   2090
-         _ExtentY        =   503
-         Separador       =   "/"
-         Text            =   ""
-         MensajeErrMin   =   "La fecha ingresada no alcanza el mínimo permitido"
-      End
-      Begin FechaCtl.Fecha FechaDesde 
-         Height          =   330
-         Left            =   3120
-         TabIndex        =   7
-         Top             =   1260
-         Width           =   1170
-         _ExtentX        =   2064
-         _ExtentY        =   582
-         Separador       =   "/"
-         Text            =   ""
-         MensajeErrMin   =   "La fecha ingresada no alcanza el mínimo permitido"
-      End
       Begin VB.TextBox txtDesVen 
          BackColor       =   &H8000000F&
          Enabled         =   0   'False
@@ -251,16 +239,28 @@ Begin VB.Form frmAnulaDocumentos
          EndProperty
          Height          =   285
          Left            =   4605
-         TabIndex        =   18
+         TabIndex        =   16
          Top             =   585
          Width           =   4320
+      End
+      Begin MSComCtl2.DTPicker FechaHasta 
+         Height          =   375
+         Left            =   5640
+         TabIndex        =   30
+         Top             =   1320
+         Width           =   1335
+         _ExtentX        =   2355
+         _ExtentY        =   661
+         _Version        =   393216
+         Format          =   58785793
+         CurrentDate     =   43367
       End
       Begin VB.Label lblCliente 
          AutoSize        =   -1  'True
          Caption         =   "     Cliente:"
          Height          =   195
          Left            =   2160
-         TabIndex        =   30
+         TabIndex        =   28
          Top             =   360
          Width           =   750
       End
@@ -269,7 +269,7 @@ Begin VB.Form frmAnulaDocumentos
          Caption         =   "Vendedor:"
          Height          =   195
          Left            =   2175
-         TabIndex        =   23
+         TabIndex        =   21
          Top             =   675
          Width           =   735
       End
@@ -278,7 +278,7 @@ Begin VB.Form frmAnulaDocumentos
          Caption         =   "Fecha Hasta:"
          Height          =   195
          Left            =   4575
-         TabIndex        =   22
+         TabIndex        =   20
          Top             =   1320
          Width           =   960
       End
@@ -287,7 +287,7 @@ Begin VB.Form frmAnulaDocumentos
          Caption         =   "Fecha Desde:"
          Height          =   195
          Left            =   1905
-         TabIndex        =   21
+         TabIndex        =   19
          Top             =   1305
          Width           =   1005
       End
@@ -296,7 +296,7 @@ Begin VB.Form frmAnulaDocumentos
          Caption         =   "Tipo:"
          Height          =   195
          Left            =   2550
-         TabIndex        =   20
+         TabIndex        =   18
          Top             =   990
          Width           =   360
       End
@@ -306,7 +306,7 @@ Begin VB.Form frmAnulaDocumentos
       Caption         =   "Estado"
       Height          =   195
       Left            =   3795
-      TabIndex        =   28
+      TabIndex        =   26
       Top             =   5250
       Width           =   495
    End
@@ -315,7 +315,7 @@ Begin VB.Form frmAnulaDocumentos
       Caption         =   "Anulado"
       Height          =   195
       Left            =   4455
-      TabIndex        =   27
+      TabIndex        =   25
       Top             =   5850
       Width           =   585
    End
@@ -324,7 +324,7 @@ Begin VB.Form frmAnulaDocumentos
       Caption         =   "Pendiente"
       Height          =   195
       Left            =   4455
-      TabIndex        =   26
+      TabIndex        =   24
       Top             =   5640
       Width           =   720
    End
@@ -333,7 +333,7 @@ Begin VB.Form frmAnulaDocumentos
       Caption         =   "Definitivo"
       Height          =   195
       Left            =   4455
-      TabIndex        =   25
+      TabIndex        =   23
       Top             =   5445
       Width           =   660
    End
@@ -377,7 +377,7 @@ Begin VB.Form frmAnulaDocumentos
       EndProperty
       Height          =   240
       Left            =   210
-      TabIndex        =   24
+      TabIndex        =   22
       Top             =   5535
       Width           =   750
    End

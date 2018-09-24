@@ -1,7 +1,6 @@
 VERSION 5.00
-Object = "{F9043C88-F6F2-101A-A3C9-08002B2F49FB}#1.2#0"; "Comdlg32.ocx"
-Object = "{00025600-0000-0000-C000-000000000046}#5.2#0"; "Crystl32.OCX"
-Object = "{5F09B5DF-6F4D-11D2-8355-4854E82A9183}#15.0#0"; "Fecha32.ocx"
+Object = "{F9043C88-F6F2-101A-A3C9-08002B2F49FB}#1.2#0"; "comdlg32.ocx"
+Object = "{86CF1D34-0C5F-11D2-A9FC-0000F8754DA1}#2.0#0"; "mscomct2.ocx"
 Begin VB.Form frmMovimientoStock 
    BorderStyle     =   3  'Fixed Dialog
    Caption         =   "Movimiento de Stock"
@@ -29,7 +28,7 @@ Begin VB.Form frmMovimientoStock
       EndProperty
       Height          =   735
       Left            =   60
-      TabIndex        =   19
+      TabIndex        =   17
       Top             =   1830
       Width           =   6690
       Begin VB.CommandButton CBImpresora 
@@ -37,7 +36,7 @@ Begin VB.Form frmMovimientoStock
          Height          =   435
          Left            =   4680
          Style           =   1  'Graphical
-         TabIndex        =   20
+         TabIndex        =   18
          Top             =   210
          Width           =   1665
       End
@@ -45,7 +44,7 @@ Begin VB.Form frmMovimientoStock
          Caption         =   "Pantalla"
          Height          =   195
          Left            =   945
-         TabIndex        =   5
+         TabIndex        =   3
          Top             =   315
          Value           =   -1  'True
          Width           =   885
@@ -54,7 +53,7 @@ Begin VB.Form frmMovimientoStock
          Caption         =   "Impresora"
          Height          =   195
          Left            =   2385
-         TabIndex        =   6
+         TabIndex        =   4
          Top             =   315
          Width           =   1050
       End
@@ -63,18 +62,19 @@ Begin VB.Form frmMovimientoStock
          Caption         =   "Destino:"
          Height          =   195
          Left            =   150
-         TabIndex        =   21
+         TabIndex        =   19
          Top             =   315
          Width           =   585
       End
    End
-   Begin Crystal.CrystalReport Rep 
+   Begin VB.PictureBox Rep 
+      Height          =   480
       Left            =   1725
+      ScaleHeight     =   420
+      ScaleWidth      =   1140
+      TabIndex        =   20
       Top             =   2760
-      _ExtentX        =   741
-      _ExtentY        =   741
-      _Version        =   348160
-      PrintFileLinesPerPage=   60
+      Width           =   1200
    End
    Begin VB.CommandButton cmdNuevo 
       Caption         =   "&Nuevo"
@@ -83,7 +83,7 @@ Begin VB.Form frmMovimientoStock
       Left            =   5040
       Picture         =   "frmMovimientoStock.frx":030A
       Style           =   1  'Graphical
-      TabIndex        =   8
+      TabIndex        =   6
       Top             =   2625
       Width           =   855
    End
@@ -93,7 +93,7 @@ Begin VB.Form frmMovimientoStock
       Left            =   5910
       Picture         =   "frmMovimientoStock.frx":0614
       Style           =   1  'Graphical
-      TabIndex        =   9
+      TabIndex        =   7
       Top             =   2625
       Width           =   825
    End
@@ -103,7 +103,7 @@ Begin VB.Form frmMovimientoStock
       Left            =   4185
       Picture         =   "frmMovimientoStock.frx":091E
       Style           =   1  'Graphical
-      TabIndex        =   7
+      TabIndex        =   5
       Top             =   2625
       Width           =   840
    End
@@ -120,8 +120,8 @@ Begin VB.Form frmMovimientoStock
       EndProperty
       Height          =   1800
       Left            =   60
-      TabIndex        =   10
-      Top             =   30
+      TabIndex        =   8
+      Top             =   0
       Width           =   6675
       Begin VB.ComboBox cboStock 
          Height          =   315
@@ -151,35 +151,35 @@ Begin VB.Form frmMovimientoStock
          MaskColor       =   &H000000FF&
          Picture         =   "frmMovimientoStock.frx":11E8
          Style           =   1  'Graphical
-         TabIndex        =   11
+         TabIndex        =   9
          ToolTipText     =   "Buscar Producto"
          Top             =   585
          UseMaskColor    =   -1  'True
          Width           =   405
       End
-      Begin FechaCtl.Fecha FechaHasta 
-         Height          =   285
-         Left            =   3750
-         TabIndex        =   4
+      Begin MSComCtl2.DTPicker FechaDesde 
+         Height          =   375
+         Left            =   1320
+         TabIndex        =   21
          Top             =   1320
-         Width           =   1185
-         _ExtentX        =   2090
-         _ExtentY        =   503
-         Separador       =   "/"
-         Text            =   ""
-         MensajeErrMin   =   "La fecha ingresada no alcanza el mínimo permitido"
+         Width           =   1335
+         _ExtentX        =   2355
+         _ExtentY        =   661
+         _Version        =   393216
+         Format          =   53870593
+         CurrentDate     =   43367
       End
-      Begin FechaCtl.Fecha FechaDesde 
-         Height          =   330
-         Left            =   1410
-         TabIndex        =   3
+      Begin MSComCtl2.DTPicker FechaHasta 
+         Height          =   375
+         Left            =   3720
+         TabIndex        =   22
          Top             =   1320
-         Width           =   1170
-         _ExtentX        =   2064
-         _ExtentY        =   582
-         Separador       =   "/"
-         Text            =   ""
-         MensajeErrMin   =   "La fecha ingresada no alcanza el mínimo permitido"
+         Width           =   1335
+         _ExtentX        =   2355
+         _ExtentY        =   661
+         _Version        =   393216
+         Format          =   53870593
+         CurrentDate     =   43367
       End
       Begin VB.Label Label1 
          AutoSize        =   -1  'True
@@ -195,7 +195,7 @@ Begin VB.Form frmMovimientoStock
          EndProperty
          Height          =   195
          Left            =   2415
-         TabIndex        =   17
+         TabIndex        =   15
          Top             =   345
          Width           =   645
       End
@@ -204,7 +204,7 @@ Begin VB.Form frmMovimientoStock
          Caption         =   "Stock:"
          Height          =   195
          Left            =   870
-         TabIndex        =   16
+         TabIndex        =   14
          Top             =   1020
          Width           =   465
       End
@@ -213,7 +213,7 @@ Begin VB.Form frmMovimientoStock
          Caption         =   "Fecha Desde:"
          Height          =   195
          Left            =   255
-         TabIndex        =   15
+         TabIndex        =   13
          Top             =   1350
          Width           =   1005
       End
@@ -222,7 +222,7 @@ Begin VB.Form frmMovimientoStock
          Caption         =   "Fecha Hasta:"
          Height          =   195
          Left            =   2700
-         TabIndex        =   14
+         TabIndex        =   12
          Top             =   1350
          Width           =   960
       End
@@ -240,7 +240,7 @@ Begin VB.Form frmMovimientoStock
          EndProperty
          Height          =   195
          Left            =   1470
-         TabIndex        =   13
+         TabIndex        =   11
          Top             =   345
          Width           =   840
       End
@@ -258,7 +258,7 @@ Begin VB.Form frmMovimientoStock
          EndProperty
          Height          =   195
          Left            =   525
-         TabIndex        =   12
+         TabIndex        =   10
          Top             =   345
          Width           =   495
       End
@@ -284,7 +284,7 @@ Begin VB.Form frmMovimientoStock
       EndProperty
       Height          =   240
       Left            =   135
-      TabIndex        =   18
+      TabIndex        =   16
       Top             =   2850
       Width           =   750
    End
@@ -430,7 +430,7 @@ Private Sub cmdListar_Click()
 '    End If
     
     On Error GoTo Claveti
-    lblestado.Caption = "Buscando Movimiento..."
+    lblEstado.Caption = "Buscando Movimiento..."
     Screen.MousePointer = vbHourglass
     
     sql = "DELETE FROM TMP_MOVIMIENTO_STOCK"
@@ -438,12 +438,12 @@ Private Sub cmdListar_Click()
     Entrada_Deposito
     Salida_Deposito
     LlamoReporte
-    lblestado.Caption = ""
+    lblEstado.Caption = ""
     Screen.MousePointer = vbNormal
     Exit Sub
     
 Claveti:
-    lblestado.Caption = ""
+    lblEstado.Caption = ""
     Screen.MousePointer = vbNormal
     MsgBox Err.Description, vbCritical, TIT_MSGBOX
 End Sub
@@ -481,7 +481,7 @@ Private Sub LlamoReporte()
     End If
      Rep.Action = 1
      
-     lblestado.Caption = ""
+     lblEstado.Caption = ""
      Rep.Formulas(0) = ""
      Rep.Formulas(1) = ""
 End Sub
@@ -509,7 +509,7 @@ Private Sub Form_Load()
     Call Centrar_pantalla(Me)
     FrameImpresora.Caption = "Impresora Actual: " & Printer.DeviceName
     CargocboStock
-    lblestado.Caption = ""
+    lblEstado.Caption = ""
 End Sub
 
 Private Sub TxtCodigo_Change()

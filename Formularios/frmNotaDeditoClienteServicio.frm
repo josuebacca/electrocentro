@@ -1,7 +1,7 @@
 VERSION 5.00
-Object = "{BDC217C8-ED16-11CD-956C-0000C04E4C0A}#1.1#0"; "TABCTL32.OCX"
-Object = "{5E9E78A0-531B-11CF-91F6-C2863C385E30}#1.0#0"; "MSFLXGRD.OCX"
-Object = "{5F09B5DF-6F4D-11D2-8355-4854E82A9183}#15.0#0"; "Fecha32.ocx"
+Object = "{BDC217C8-ED16-11CD-956C-0000C04E4C0A}#1.1#0"; "tabctl32.ocx"
+Object = "{5E9E78A0-531B-11CF-91F6-C2863C385E30}#1.0#0"; "msflxgrd.ocx"
+Object = "{86CF1D34-0C5F-11D2-A9FC-0000F8754DA1}#2.0#0"; "mscomct2.ocx"
 Begin VB.Form frmNotaDeditoClienteServicio 
    BorderStyle     =   1  'Fixed Single
    Caption         =   "Nota de Dédito Clientes por Servicio..."
@@ -21,7 +21,7 @@ Begin VB.Form frmNotaDeditoClienteServicio
       Caption         =   "&Imprimir"
       Height          =   450
       Left            =   8535
-      TabIndex        =   13
+      TabIndex        =   12
       Top             =   7170
       Width           =   870
    End
@@ -29,7 +29,7 @@ Begin VB.Form frmNotaDeditoClienteServicio
       Caption         =   "&Salir"
       Height          =   450
       Left            =   10305
-      TabIndex        =   15
+      TabIndex        =   14
       Top             =   7170
       Width           =   870
    End
@@ -37,7 +37,7 @@ Begin VB.Form frmNotaDeditoClienteServicio
       Caption         =   "&Aceptar"
       Height          =   450
       Left            =   7650
-      TabIndex        =   12
+      TabIndex        =   11
       Top             =   7170
       Width           =   870
    End
@@ -45,14 +45,14 @@ Begin VB.Form frmNotaDeditoClienteServicio
       Caption         =   "&Nuevo"
       Height          =   450
       Left            =   9420
-      TabIndex        =   14
+      TabIndex        =   13
       Top             =   7170
       Width           =   870
    End
    Begin TabDlg.SSTab tabDatos 
       Height          =   7110
       Left            =   50
-      TabIndex        =   25
+      TabIndex        =   24
       Top             =   40
       Width           =   11160
       _ExtentX        =   19685
@@ -84,8 +84,8 @@ Begin VB.Form frmNotaDeditoClienteServicio
       TabCaption(1)   =   "&Buscar"
       TabPicture(1)   =   "frmNotaDeditoClienteServicio.frx":001C
       Tab(1).ControlEnabled=   0   'False
-      Tab(1).Control(0)=   "GrdModulos"
-      Tab(1).Control(1)=   "frameBuscar"
+      Tab(1).Control(0)=   "frameBuscar"
+      Tab(1).Control(1)=   "GrdModulos"
       Tab(1).ControlCount=   2
       Begin VB.Frame FramePara 
          Caption         =   "Para..."
@@ -100,7 +100,7 @@ Begin VB.Form frmNotaDeditoClienteServicio
          EndProperty
          Height          =   1935
          Left            =   4470
-         TabIndex        =   39
+         TabIndex        =   38
          Top             =   360
          Width           =   6585
          Begin VB.TextBox txtIngBrutos 
@@ -117,7 +117,7 @@ Begin VB.Form frmNotaDeditoClienteServicio
             EndProperty
             Height          =   285
             Left            =   5310
-            TabIndex        =   71
+            TabIndex        =   70
             Top             =   1575
             Width           =   1215
          End
@@ -135,7 +135,7 @@ Begin VB.Form frmNotaDeditoClienteServicio
             EndProperty
             Height          =   285
             Left            =   2385
-            TabIndex        =   70
+            TabIndex        =   69
             Top             =   1575
             Width           =   2895
          End
@@ -153,7 +153,7 @@ Begin VB.Form frmNotaDeditoClienteServicio
             EndProperty
             Height          =   285
             Left            =   930
-            TabIndex        =   69
+            TabIndex        =   68
             Top             =   1575
             Width           =   1455
          End
@@ -163,7 +163,7 @@ Begin VB.Form frmNotaDeditoClienteServicio
             MaskColor       =   &H000000FF&
             Picture         =   "frmNotaDeditoClienteServicio.frx":0038
             Style           =   1  'Graphical
-            TabIndex        =   63
+            TabIndex        =   62
             ToolTipText     =   "Buscar Cliente"
             Top             =   210
             UseMaskColor    =   -1  'True
@@ -184,7 +184,7 @@ Begin VB.Form frmNotaDeditoClienteServicio
             Height          =   285
             Left            =   930
             MaxLength       =   50
-            TabIndex        =   57
+            TabIndex        =   56
             Top             =   562
             Width           =   5490
          End
@@ -202,7 +202,7 @@ Begin VB.Form frmNotaDeditoClienteServicio
             EndProperty
             Height          =   315
             Left            =   930
-            TabIndex        =   56
+            TabIndex        =   55
             Top             =   1221
             Width           =   4400
          End
@@ -220,7 +220,7 @@ Begin VB.Form frmNotaDeditoClienteServicio
             EndProperty
             Height          =   300
             Left            =   930
-            TabIndex        =   55
+            TabIndex        =   54
             Top             =   884
             Width           =   4400
          End
@@ -237,7 +237,7 @@ Begin VB.Form frmNotaDeditoClienteServicio
             Height          =   315
             Left            =   2370
             MaxLength       =   50
-            TabIndex        =   5
+            TabIndex        =   4
             Tag             =   "Descripción"
             Top             =   210
             Width           =   4050
@@ -246,7 +246,7 @@ Begin VB.Form frmNotaDeditoClienteServicio
             Height          =   315
             Left            =   930
             MaxLength       =   40
-            TabIndex        =   4
+            TabIndex        =   3
             Top             =   210
             Width           =   975
          End
@@ -255,7 +255,7 @@ Begin VB.Form frmNotaDeditoClienteServicio
             Caption         =   "Ing. Brutos"
             Height          =   195
             Left            =   5490
-            TabIndex        =   73
+            TabIndex        =   72
             Top             =   1320
             Width           =   765
          End
@@ -264,7 +264,7 @@ Begin VB.Form frmNotaDeditoClienteServicio
             Caption         =   "C.U.I.T.:"
             Height          =   195
             Left            =   240
-            TabIndex        =   72
+            TabIndex        =   71
             Top             =   1575
             Width           =   600
          End
@@ -273,7 +273,7 @@ Begin VB.Form frmNotaDeditoClienteServicio
             Caption         =   "Localidad:"
             Height          =   195
             Left            =   135
-            TabIndex        =   60
+            TabIndex        =   59
             Top             =   922
             Width           =   735
          End
@@ -282,7 +282,7 @@ Begin VB.Form frmNotaDeditoClienteServicio
             Caption         =   "Domicilio:"
             Height          =   195
             Left            =   195
-            TabIndex        =   59
+            TabIndex        =   58
             Top             =   596
             Width           =   675
          End
@@ -291,7 +291,7 @@ Begin VB.Form frmNotaDeditoClienteServicio
             Caption         =   "Provincia:"
             Height          =   195
             Left            =   165
-            TabIndex        =   58
+            TabIndex        =   57
             Top             =   1248
             Width           =   705
          End
@@ -305,7 +305,7 @@ Begin VB.Form frmNotaDeditoClienteServicio
             Height          =   195
             Index           =   0
             Left            =   345
-            TabIndex        =   54
+            TabIndex        =   53
             Top             =   270
             Width           =   525
          End
@@ -323,7 +323,7 @@ Begin VB.Form frmNotaDeditoClienteServicio
          EndProperty
          Height          =   2040
          Left            =   -74610
-         TabIndex        =   30
+         TabIndex        =   29
          Top             =   540
          Width           =   10410
          Begin VB.CommandButton cmdBuscarVen 
@@ -332,7 +332,7 @@ Begin VB.Form frmNotaDeditoClienteServicio
             MaskColor       =   &H000000FF&
             Picture         =   "frmNotaDeditoClienteServicio.frx":0342
             Style           =   1  'Graphical
-            TabIndex        =   62
+            TabIndex        =   61
             ToolTipText     =   "Buscar Vendedor"
             Top             =   775
             UseMaskColor    =   -1  'True
@@ -342,7 +342,7 @@ Begin VB.Form frmNotaDeditoClienteServicio
             Height          =   315
             Left            =   3360
             Style           =   2  'Dropdown List
-            TabIndex        =   22
+            TabIndex        =   21
             Top             =   1605
             Width           =   2400
          End
@@ -350,7 +350,7 @@ Begin VB.Form frmNotaDeditoClienteServicio
             Caption         =   "Tipo"
             Height          =   195
             Left            =   300
-            TabIndex        =   19
+            TabIndex        =   18
             Top             =   1530
             Width           =   720
          End
@@ -360,7 +360,7 @@ Begin VB.Form frmNotaDeditoClienteServicio
             MaskColor       =   &H000000FF&
             Picture         =   "frmNotaDeditoClienteServicio.frx":064C
             Style           =   1  'Graphical
-            TabIndex        =   37
+            TabIndex        =   36
             ToolTipText     =   "Buscar Cliente"
             Top             =   375
             UseMaskColor    =   -1  'True
@@ -369,7 +369,7 @@ Begin VB.Form frmNotaDeditoClienteServicio
          Begin VB.TextBox txtVendedor 
             Height          =   300
             Left            =   3360
-            TabIndex        =   21
+            TabIndex        =   20
             Top             =   775
             Width           =   990
          End
@@ -387,7 +387,7 @@ Begin VB.Form frmNotaDeditoClienteServicio
             EndProperty
             Height          =   285
             Left            =   4845
-            TabIndex        =   35
+            TabIndex        =   34
             Top             =   775
             Width           =   4620
          End
@@ -395,7 +395,7 @@ Begin VB.Form frmNotaDeditoClienteServicio
             Caption         =   "Vendedor"
             Height          =   195
             Left            =   300
-            TabIndex        =   17
+            TabIndex        =   16
             Top             =   900
             Width           =   1020
          End
@@ -405,7 +405,7 @@ Begin VB.Form frmNotaDeditoClienteServicio
             MaskColor       =   &H000000FF&
             Picture         =   "frmNotaDeditoClienteServicio.frx":0956
             Style           =   1  'Graphical
-            TabIndex        =   23
+            TabIndex        =   22
             ToolTipText     =   "Buscar "
             Top             =   345
             UseMaskColor    =   -1  'True
@@ -426,7 +426,7 @@ Begin VB.Form frmNotaDeditoClienteServicio
             Height          =   300
             Left            =   4845
             MaxLength       =   50
-            TabIndex        =   31
+            TabIndex        =   30
             Tag             =   "Descripción"
             Top             =   375
             Width           =   4620
@@ -435,7 +435,7 @@ Begin VB.Form frmNotaDeditoClienteServicio
             Height          =   300
             Left            =   3360
             MaxLength       =   40
-            TabIndex        =   20
+            TabIndex        =   19
             Top             =   375
             Width           =   975
          End
@@ -443,7 +443,7 @@ Begin VB.Form frmNotaDeditoClienteServicio
             Caption         =   "Fecha"
             Height          =   195
             Left            =   300
-            TabIndex        =   18
+            TabIndex        =   17
             Top             =   1215
             Width           =   810
          End
@@ -451,40 +451,34 @@ Begin VB.Form frmNotaDeditoClienteServicio
             Caption         =   "Cliente"
             Height          =   195
             Left            =   300
-            TabIndex        =   16
+            TabIndex        =   15
             Top             =   585
             Width           =   855
          End
-         Begin FechaCtl.Fecha FechaHasta 
+         Begin VB.PictureBox FechaHasta 
             Height          =   285
             Left            =   5865
-            TabIndex        =   74
+            ScaleHeight     =   225
+            ScaleWidth      =   1125
+            TabIndex        =   73
             Top             =   1175
             Width           =   1185
-            _ExtentX        =   2090
-            _ExtentY        =   503
-            Separador       =   "/"
-            Text            =   ""
-            MensajeErrMin   =   "La fecha ingresada no alcanza el mínimo permitido"
          End
-         Begin FechaCtl.Fecha FechaDesde 
+         Begin VB.PictureBox FechaDesde 
             Height          =   330
             Left            =   3360
-            TabIndex        =   75
+            ScaleHeight     =   270
+            ScaleWidth      =   1110
+            TabIndex        =   74
             Top             =   1175
             Width           =   1170
-            _ExtentX        =   2064
-            _ExtentY        =   582
-            Separador       =   "/"
-            Text            =   ""
-            MensajeErrMin   =   "La fecha ingresada no alcanza el mínimo permitido"
          End
          Begin VB.Label lbltipoFac 
             AutoSize        =   -1  'True
             Caption         =   "Tipo:"
             Height          =   195
             Left            =   2910
-            TabIndex        =   53
+            TabIndex        =   52
             Top             =   1650
             Width           =   360
          End
@@ -494,7 +488,7 @@ Begin VB.Form frmNotaDeditoClienteServicio
             Height          =   195
             Index           =   0
             Left            =   2535
-            TabIndex        =   36
+            TabIndex        =   35
             Top             =   830
             Width           =   735
          End
@@ -503,7 +497,7 @@ Begin VB.Form frmNotaDeditoClienteServicio
             Caption         =   "Fecha Hasta:"
             Height          =   195
             Left            =   4815
-            TabIndex        =   34
+            TabIndex        =   33
             Top             =   1240
             Width           =   960
          End
@@ -512,7 +506,7 @@ Begin VB.Form frmNotaDeditoClienteServicio
             Caption         =   "Fecha Desde:"
             Height          =   195
             Left            =   2265
-            TabIndex        =   33
+            TabIndex        =   32
             Top             =   1240
             Width           =   1005
          End
@@ -526,7 +520,7 @@ Begin VB.Form frmNotaDeditoClienteServicio
             Height          =   195
             Index           =   3
             Left            =   2745
-            TabIndex        =   32
+            TabIndex        =   31
             Top             =   420
             Width           =   525
          End
@@ -544,7 +538,7 @@ Begin VB.Form frmNotaDeditoClienteServicio
          EndProperty
          Height          =   1935
          Left            =   105
-         TabIndex        =   27
+         TabIndex        =   26
          Top             =   360
          Width           =   4365
          Begin VB.ComboBox cboNotaDebito 
@@ -589,17 +583,17 @@ Begin VB.Form frmNotaDeditoClienteServicio
             Top             =   825
             Width           =   555
          End
-         Begin FechaCtl.Fecha FechaNotaDebito 
-            Height          =   285
+         Begin MSComCtl2.DTPicker FechaNotaDebito 
+            Height          =   375
             Left            =   1200
-            TabIndex        =   3
-            Top             =   1275
-            Width           =   1155
-            _ExtentX        =   2037
-            _ExtentY        =   503
-            Separador       =   "/"
-            Text            =   ""
-            MensajeErrMin   =   "La fecha ingresada no alcanza el mínimo permitido"
+            TabIndex        =   76
+            Top             =   1200
+            Width           =   1335
+            _ExtentX        =   2355
+            _ExtentY        =   661
+            _Version        =   393216
+            Format          =   53936129
+            CurrentDate     =   43367
          End
          Begin VB.Label lblEstadoNotaDebito 
             AutoSize        =   -1  'True
@@ -616,7 +610,7 @@ Begin VB.Form frmNotaDeditoClienteServicio
             ForeColor       =   &H00FF0000&
             Height          =   195
             Left            =   1200
-            TabIndex        =   68
+            TabIndex        =   67
             Top             =   1680
             Width           =   1755
          End
@@ -625,7 +619,7 @@ Begin VB.Form frmNotaDeditoClienteServicio
             Caption         =   "Estado:"
             Height          =   195
             Left            =   600
-            TabIndex        =   67
+            TabIndex        =   66
             Top             =   1665
             Width           =   540
          End
@@ -634,7 +628,7 @@ Begin VB.Form frmNotaDeditoClienteServicio
             Caption         =   "Número:"
             Height          =   195
             Left            =   540
-            TabIndex        =   66
+            TabIndex        =   65
             Top             =   835
             Width           =   600
          End
@@ -643,7 +637,7 @@ Begin VB.Form frmNotaDeditoClienteServicio
             Caption         =   "Fecha:"
             Height          =   195
             Left            =   645
-            TabIndex        =   65
+            TabIndex        =   64
             Top             =   1250
             Width           =   495
          End
@@ -652,7 +646,7 @@ Begin VB.Form frmNotaDeditoClienteServicio
             Caption         =   "Tipo:"
             Height          =   195
             Left            =   780
-            TabIndex        =   64
+            TabIndex        =   63
             Top             =   420
             Width           =   360
          End
@@ -660,7 +654,7 @@ Begin VB.Form frmNotaDeditoClienteServicio
       Begin MSFlexGridLib.MSFlexGrid GrdModulos 
          Height          =   4245
          Left            =   -74625
-         TabIndex        =   24
+         TabIndex        =   23
          Top             =   2655
          Width           =   10455
          _ExtentX        =   18441
@@ -677,7 +671,7 @@ Begin VB.Form frmNotaDeditoClienteServicio
       Begin VB.Frame Frame3 
          Height          =   4800
          Left            =   105
-         TabIndex        =   28
+         TabIndex        =   27
          Top             =   2205
          Width           =   10950
          Begin VB.CommandButton cmdAgregarProducto 
@@ -686,7 +680,7 @@ Begin VB.Form frmNotaDeditoClienteServicio
             MaskColor       =   &H8000000F&
             Picture         =   "frmNotaDeditoClienteServicio.frx":30F8
             Style           =   1  'Graphical
-            TabIndex        =   61
+            TabIndex        =   60
             TabStop         =   0   'False
             ToolTipText     =   "Agregar Producto"
             Top             =   390
@@ -698,7 +692,7 @@ Begin VB.Form frmNotaDeditoClienteServicio
             Caption         =   "Bonifica en $"
             Height          =   285
             Left            =   390
-            TabIndex        =   8
+            TabIndex        =   7
             Top             =   4035
             Width           =   1290
          End
@@ -707,7 +701,7 @@ Begin VB.Form frmNotaDeditoClienteServicio
             Caption         =   "Bonifica en % "
             Height          =   285
             Left            =   390
-            TabIndex        =   7
+            TabIndex        =   6
             Top             =   3735
             Width           =   1290
          End
@@ -725,7 +719,7 @@ Begin VB.Form frmNotaDeditoClienteServicio
             EndProperty
             Height          =   315
             Left            =   4905
-            TabIndex        =   51
+            TabIndex        =   50
             Top             =   4065
             Width           =   1155
          End
@@ -743,7 +737,7 @@ Begin VB.Form frmNotaDeditoClienteServicio
             EndProperty
             Height          =   315
             Left            =   6900
-            TabIndex        =   48
+            TabIndex        =   47
             Top             =   4065
             Width           =   1155
          End
@@ -751,7 +745,7 @@ Begin VB.Form frmNotaDeditoClienteServicio
             Alignment       =   1  'Right Justify
             Height          =   315
             Left            =   6900
-            TabIndex        =   10
+            TabIndex        =   9
             Top             =   3735
             Width           =   1155
          End
@@ -769,7 +763,7 @@ Begin VB.Form frmNotaDeditoClienteServicio
             EndProperty
             Height          =   315
             Left            =   2850
-            TabIndex        =   45
+            TabIndex        =   44
             Top             =   4065
             Width           =   1155
          End
@@ -777,7 +771,7 @@ Begin VB.Form frmNotaDeditoClienteServicio
             Alignment       =   1  'Right Justify
             Height          =   315
             Left            =   2850
-            TabIndex        =   9
+            TabIndex        =   8
             Top             =   3735
             Width           =   1155
          End
@@ -795,7 +789,7 @@ Begin VB.Form frmNotaDeditoClienteServicio
             EndProperty
             Height          =   315
             Left            =   8970
-            TabIndex        =   42
+            TabIndex        =   41
             Top             =   4065
             Width           =   1350
          End
@@ -813,7 +807,7 @@ Begin VB.Form frmNotaDeditoClienteServicio
             EndProperty
             Height          =   315
             Left            =   8970
-            TabIndex        =   41
+            TabIndex        =   40
             Top             =   3735
             Width           =   1350
          End
@@ -822,7 +816,7 @@ Begin VB.Form frmNotaDeditoClienteServicio
             Height          =   300
             Left            =   1455
             MaxLength       =   60
-            TabIndex        =   11
+            TabIndex        =   10
             Top             =   4410
             Width           =   8865
          End
@@ -831,7 +825,7 @@ Begin VB.Form frmNotaDeditoClienteServicio
             BorderStyle     =   0  'None
             Height          =   330
             Left            =   480
-            TabIndex        =   29
+            TabIndex        =   28
             Top             =   480
             Visible         =   0   'False
             Width           =   1185
@@ -839,7 +833,7 @@ Begin VB.Form frmNotaDeditoClienteServicio
          Begin MSFlexGridLib.MSFlexGrid grdGrilla 
             Height          =   3555
             Left            =   75
-            TabIndex        =   6
+            TabIndex        =   5
             Top             =   120
             Width           =   10365
             _ExtentX        =   18283
@@ -871,7 +865,7 @@ Begin VB.Form frmNotaDeditoClienteServicio
             Caption         =   "Sub-Total:"
             Height          =   195
             Left            =   4110
-            TabIndex        =   52
+            TabIndex        =   51
             Top             =   4125
             Width           =   735
          End
@@ -880,7 +874,7 @@ Begin VB.Form frmNotaDeditoClienteServicio
             Caption         =   "Importe:"
             Height          =   195
             Left            =   6270
-            TabIndex        =   50
+            TabIndex        =   49
             Top             =   4110
             Width           =   570
          End
@@ -889,7 +883,7 @@ Begin VB.Form frmNotaDeditoClienteServicio
             Caption         =   "% I.V.A.:"
             Height          =   195
             Left            =   6240
-            TabIndex        =   49
+            TabIndex        =   48
             Top             =   3765
             Width           =   600
          End
@@ -898,7 +892,7 @@ Begin VB.Form frmNotaDeditoClienteServicio
             Caption         =   "Importe:"
             Height          =   195
             Left            =   2235
-            TabIndex        =   47
+            TabIndex        =   46
             Top             =   4110
             Width           =   570
          End
@@ -907,7 +901,7 @@ Begin VB.Form frmNotaDeditoClienteServicio
             Caption         =   "Bonificación:"
             Height          =   195
             Left            =   1890
-            TabIndex        =   46
+            TabIndex        =   45
             Top             =   3765
             Width           =   915
          End
@@ -916,7 +910,7 @@ Begin VB.Form frmNotaDeditoClienteServicio
             Caption         =   "Total:"
             Height          =   195
             Left            =   8505
-            TabIndex        =   44
+            TabIndex        =   43
             Top             =   4110
             Width           =   405
          End
@@ -925,7 +919,7 @@ Begin VB.Form frmNotaDeditoClienteServicio
             Caption         =   "Sub-Total:"
             Height          =   195
             Left            =   8175
-            TabIndex        =   43
+            TabIndex        =   42
             Top             =   3765
             Width           =   735
          End
@@ -934,7 +928,7 @@ Begin VB.Form frmNotaDeditoClienteServicio
             Caption         =   "Observaciones:"
             Height          =   195
             Left            =   210
-            TabIndex        =   40
+            TabIndex        =   39
             Top             =   4455
             Width           =   1110
          End
@@ -945,7 +939,7 @@ Begin VB.Form frmNotaDeditoClienteServicio
          Height          =   195
          Index           =   0
          Left            =   -74820
-         TabIndex        =   26
+         TabIndex        =   25
          Top             =   570
          Width           =   1065
       End
@@ -965,7 +959,7 @@ Begin VB.Form frmNotaDeditoClienteServicio
       Height          =   240
       Index           =   1
       Left            =   3960
-      TabIndex        =   76
+      TabIndex        =   75
       Top             =   7320
       Width           =   2925
    End
@@ -984,7 +978,7 @@ Begin VB.Form frmNotaDeditoClienteServicio
       EndProperty
       Height          =   345
       Left            =   225
-      TabIndex        =   38
+      TabIndex        =   37
       Top             =   7230
       Width           =   750
    End
@@ -1076,7 +1070,7 @@ End Sub
 
 Private Sub CmdBuscAprox_Click()
     GrdModulos.Rows = 1
-    lblestado.Caption = "Buscando..."
+    lblEstado.Caption = "Buscando..."
     Screen.MousePointer = vbHourglass
             
     sql = "SELECT ND.*, C.CLI_RAZSOC , TC.TCO_ABREVIA"
@@ -1103,12 +1097,12 @@ Private Sub CmdBuscAprox_Click()
         Loop
         GrdModulos.SetFocus
     Else
-        lblestado.Caption = ""
+        lblEstado.Caption = ""
         Screen.MousePointer = vbNormal
         MsgBox "No se encontraron datos...", vbExclamation, TIT_MSGBOX
     End If
 
-    lblestado.Caption = ""
+    lblEstado.Caption = ""
     Screen.MousePointer = vbNormal
     rec.Close
 End Sub
@@ -1175,7 +1169,7 @@ Private Sub cmdGrabar_Click()
     rec.Open sql, DBConn, adOpenStatic, adLockOptimistic
     
     Screen.MousePointer = vbHourglass
-    lblestado.Caption = "Guardando..."
+    lblEstado.Caption = "Guardando..."
     
     If rec.EOF = True Then
         sql = "INSERT INTO NOTA_DEBITO_CLIENTE"
@@ -1255,12 +1249,12 @@ Private Sub cmdGrabar_Click()
     End If
     rec.Close
     Screen.MousePointer = vbNormal
-    lblestado.Caption = ""
+    lblEstado.Caption = ""
     CmdNuevo_Click
     Exit Sub
     
 HayErrorFactura:
-    lblestado.Caption = ""
+    lblEstado.Caption = ""
     Screen.MousePointer = vbNormal
     If rec.State = 1 Then rec.Close
     DBConn.RollbackTrans
@@ -1268,7 +1262,7 @@ HayErrorFactura:
 End Sub
 
 Private Function ValidarNotaBebito() As Boolean
-    If FechaNotaDebito.Text = "" Then
+    If FechaNotaDebito.Value = "" Then
         MsgBox "La Fecha de la Nota de Débito es requerida", vbExclamation, TIT_MSGBOX
         FechaNotaDebito.SetFocus
         ValidarNotaBebito = False
@@ -1313,7 +1307,7 @@ Public Sub ImprimirNotaDebito()
     Dim Renglon As Double
     
     Screen.MousePointer = vbHourglass
-    lblestado.Caption = "Imprimiendo..."
+    lblEstado.Caption = "Imprimiendo..."
     
     For w = 1 To 2 'SE IMPRIME POR DUPLICADO
       '-----IMPRESION DEL ENCABEZADO------------------
@@ -1360,7 +1354,7 @@ Public Sub ImprimirNotaDebito()
         Printer.EndDoc
     Next w
     Screen.MousePointer = vbNormal
-    lblestado.Caption = ""
+    lblEstado.Caption = ""
 End Sub
 
 Public Sub ImprimirEncabezado()
@@ -1413,7 +1407,7 @@ Private Sub CmdNuevo_Click()
    txtCodCliente.Text = ""
    txtNroNotaDebito.Text = ""
    txtNroSucursal.Text = ""
-   FechaNotaDebito.Text = Date
+   FechaNotaDebito.Value = Date
    lblEstadoNotaDebito.Caption = ""
    txtSubtotal.Text = ""
    txtTotal.Text = ""
@@ -1423,7 +1417,7 @@ Private Sub CmdNuevo_Click()
    txtSubTotalBoni.Text = ""
    txtImporteIva.Text = ""
    txtObservaciones.Text = ""
-   lblestado.Caption = ""
+   lblEstado.Caption = ""
    cmdGrabar.Enabled = True
    'BUSCO IVA
    BuscoIva
@@ -1507,13 +1501,13 @@ Private Sub Form_Load()
     GrdModulos.Cols = 12
     GrdModulos.Rows = 1
     '------------------------------------
-    lblestado.Caption = ""
+    lblEstado.Caption = ""
     'CARGO COMBO CON LOS TIPOS DE NOTA DE DEBITO
     LlenarComboNotaDebito
     'CARGO ESTADO
     Call BuscoEstado(1, lblEstadoNotaDebito) 'ESTADO PENDIENTE
     VEstadoNotaDebito = 1
-    FechaNotaDebito.Text = Date
+    FechaNotaDebito.Value = Date
     tabDatos.Tab = 0
     'BUSCO IVA
     BuscoIva
@@ -1644,14 +1638,14 @@ End Sub
 Private Sub GrdModulos_DblClick()
     If GrdModulos.Rows > 1 Then
         Set Rec1 = New ADODB.Recordset
-        lblestado.Caption = "Buscando..."
+        lblEstado.Caption = "Buscando..."
         Screen.MousePointer = vbHourglass
         'CABEZA NOTA DEBITO
         Call BuscaCodigoProxItemData(CInt(GrdModulos.TextMatrix(GrdModulos.RowSel, 8)), cboNotaDebito)
         
         txtNroNotaDebito.Text = Right(GrdModulos.TextMatrix(GrdModulos.RowSel, 1), 8)
         txtNroSucursal.Text = Left(GrdModulos.TextMatrix(GrdModulos.RowSel, 1), 4)
-        FechaNotaDebito.Text = GrdModulos.TextMatrix(GrdModulos.RowSel, 2)
+        FechaNotaDebito.Value = GrdModulos.TextMatrix(GrdModulos.RowSel, 2)
         Call BuscoEstado(CInt(GrdModulos.TextMatrix(GrdModulos.RowSel, 4)), lblEstadoNotaDebito)
         VEstadoNotaDebito = CInt(GrdModulos.TextMatrix(GrdModulos.RowSel, 4))
         If GrdModulos.TextMatrix(GrdModulos.RowSel, 7) <> "" Then
@@ -1722,7 +1716,7 @@ Private Sub GrdModulos_DblClick()
             txtPorcentajeIva = GrdModulos.TextMatrix(GrdModulos.RowSel, 6)
             txtPorcentajeIva_LostFocus
         End If
-        lblestado.Caption = ""
+        lblEstado.Caption = ""
         Screen.MousePointer = vbNormal
         '--------------
         FrameNotaDebito.Enabled = False
@@ -1825,7 +1819,7 @@ End Function
 Private Sub txtCliRazSoc_Change()
     If txtCliRazSoc.Text = "" Then
         txtCodCliente.Text = ""
-        txtprovincia.Text = ""
+        txtProvincia.Text = ""
         txtCliLocalidad.Text = ""
         txtDomici.Text = ""
         txtCUIT.Text = ""
@@ -1871,7 +1865,7 @@ End Sub
 Private Sub txtCodCliente_Change()
     If txtCodCliente.Text = "" Then
         txtCliRazSoc.Text = ""
-        txtprovincia.Text = ""
+        txtProvincia.Text = ""
         txtCliLocalidad.Text = ""
         txtDomici.Text = ""
         txtCUIT.Text = ""
@@ -1894,7 +1888,7 @@ Private Sub txtCodCliente_LostFocus()
         Rec1.Open BuscoCliente(txtCodCliente), DBConn, adOpenStatic, adLockOptimistic
         If Rec1.EOF = False Then
             txtCliRazSoc.Text = Rec1!CLI_RAZSOC
-            txtprovincia.Text = Rec1!PRO_DESCRI
+            txtProvincia.Text = Rec1!PRO_DESCRI
             txtCliLocalidad.Text = Rec1!LOC_DESCRI
             txtDomici.Text = Rec1!CLI_DOMICI
             txtCUIT.Text = Rec1!CLI_CUIT

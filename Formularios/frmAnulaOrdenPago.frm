@@ -1,6 +1,6 @@
 VERSION 5.00
-Object = "{5E9E78A0-531B-11CF-91F6-C2863C385E30}#1.0#0"; "MSFLXGRD.OCX"
-Object = "{5F09B5DF-6F4D-11D2-8355-4854E82A9183}#15.0#0"; "Fecha32.ocx"
+Object = "{5E9E78A0-531B-11CF-91F6-C2863C385E30}#1.0#0"; "msflxgrd.ocx"
+Object = "{86CF1D34-0C5F-11D2-A9FC-0000F8754DA1}#2.0#0"; "mscomct2.ocx"
 Begin VB.Form frmAnulaOrdenPago 
    BorderStyle     =   1  'Fixed Single
    Caption         =   "Anular Orden de Pago...."
@@ -28,7 +28,7 @@ Begin VB.Form frmAnulaOrdenPago
       EndProperty
       Height          =   1620
       Left            =   90
-      TabIndex        =   16
+      TabIndex        =   14
       Top             =   75
       Width           =   9435
       Begin VB.CommandButton CmdBuscAprox 
@@ -37,7 +37,7 @@ Begin VB.Form frmAnulaOrdenPago
          MaskColor       =   &H000000FF&
          Picture         =   "frmAnulaOrdenPago.frx":0000
          Style           =   1  'Graphical
-         TabIndex        =   7
+         TabIndex        =   5
          ToolTipText     =   "Buscar  Orden de Pago"
          Top             =   300
          UseMaskColor    =   -1  'True
@@ -54,7 +54,7 @@ Begin VB.Form frmAnulaOrdenPago
       End
       Begin VB.ComboBox cboBuscaTipoProveedor 
          Height          =   315
-         Left            =   2580
+         Left            =   2640
          Style           =   2  'Dropdown List
          TabIndex        =   3
          Top             =   405
@@ -93,14 +93,14 @@ Begin VB.Form frmAnulaOrdenPago
          Height          =   300
          Left            =   4020
          MaxLength       =   50
-         TabIndex        =   18
+         TabIndex        =   16
          Tag             =   "Descripción"
          Top             =   780
          Width           =   4440
       End
       Begin VB.TextBox txtProveedor 
          Height          =   300
-         Left            =   2580
+         Left            =   2640
          MaxLength       =   40
          TabIndex        =   4
          Top             =   780
@@ -112,42 +112,42 @@ Begin VB.Form frmAnulaOrdenPago
          MaskColor       =   &H000000FF&
          Picture         =   "frmAnulaOrdenPago.frx":27A2
          Style           =   1  'Graphical
-         TabIndex        =   17
+         TabIndex        =   15
          ToolTipText     =   "Buscar Proveedor"
          Top             =   780
          UseMaskColor    =   -1  'True
          Width           =   405
       End
-      Begin FechaCtl.Fecha FechaHasta 
-         Height          =   285
-         Left            =   5070
-         TabIndex        =   6
-         Top             =   1140
-         Width           =   1185
-         _ExtentX        =   2090
-         _ExtentY        =   503
-         Separador       =   "/"
-         Text            =   ""
-         MensajeErrMin   =   "La fecha ingresada no alcanza el mínimo permitido"
+      Begin MSComCtl2.DTPicker FechaDesde 
+         Height          =   375
+         Left            =   2640
+         TabIndex        =   21
+         Top             =   1200
+         Width           =   1335
+         _ExtentX        =   2355
+         _ExtentY        =   661
+         _Version        =   393216
+         Format          =   58720257
+         CurrentDate     =   43367
       End
-      Begin FechaCtl.Fecha FechaDesde 
-         Height          =   330
-         Left            =   2580
-         TabIndex        =   5
-         Top             =   1140
-         Width           =   1170
-         _ExtentX        =   2064
-         _ExtentY        =   582
-         Separador       =   "/"
-         Text            =   ""
-         MensajeErrMin   =   "La fecha ingresada no alcanza el mínimo permitido"
+      Begin MSComCtl2.DTPicker FechaHasta 
+         Height          =   375
+         Left            =   5040
+         TabIndex        =   22
+         Top             =   1200
+         Width           =   1335
+         _ExtentX        =   2355
+         _ExtentY        =   661
+         _Version        =   393216
+         Format          =   58720257
+         CurrentDate     =   43367
       End
       Begin VB.Label lblFechaHasta 
          AutoSize        =   -1  'True
          Caption         =   "Fecha Hasta:"
          Height          =   195
          Left            =   4020
-         TabIndex        =   22
+         TabIndex        =   20
          Top             =   1185
          Width           =   960
       End
@@ -156,7 +156,7 @@ Begin VB.Form frmAnulaOrdenPago
          Caption         =   "Fecha Desde:"
          Height          =   195
          Left            =   1470
-         TabIndex        =   21
+         TabIndex        =   19
          Top             =   1185
          Width           =   1005
       End
@@ -165,7 +165,7 @@ Begin VB.Form frmAnulaOrdenPago
          Caption         =   "Tipo Prov.:"
          Height          =   195
          Left            =   1695
-         TabIndex        =   20
+         TabIndex        =   18
          Top             =   450
          Width           =   780
       End
@@ -179,7 +179,7 @@ Begin VB.Form frmAnulaOrdenPago
          Height          =   195
          Index           =   2
          Left            =   1695
-         TabIndex        =   19
+         TabIndex        =   17
          Top             =   825
          Width           =   780
       End
@@ -191,7 +191,7 @@ Begin VB.Form frmAnulaOrdenPago
       Left            =   8625
       Picture         =   "frmAnulaOrdenPago.frx":2DB6
       Style           =   1  'Graphical
-      TabIndex        =   11
+      TabIndex        =   9
       Top             =   5295
       Width           =   870
    End
@@ -202,7 +202,7 @@ Begin VB.Form frmAnulaOrdenPago
       Left            =   6855
       Picture         =   "frmAnulaOrdenPago.frx":33CA
       Style           =   1  'Graphical
-      TabIndex        =   9
+      TabIndex        =   7
       Top             =   5295
       Width           =   870
    End
@@ -213,14 +213,14 @@ Begin VB.Form frmAnulaOrdenPago
       Left            =   7740
       Picture         =   "frmAnulaOrdenPago.frx":39DE
       Style           =   1  'Graphical
-      TabIndex        =   10
+      TabIndex        =   8
       Top             =   5295
       Width           =   870
    End
    Begin MSFlexGridLib.MSFlexGrid GrdModulos 
       Height          =   3480
       Left            =   60
-      TabIndex        =   8
+      TabIndex        =   6
       Top             =   1740
       Width           =   9480
       _ExtentX        =   16722
@@ -238,7 +238,7 @@ Begin VB.Form frmAnulaOrdenPago
       Caption         =   "Estado"
       Height          =   195
       Left            =   4410
-      TabIndex        =   15
+      TabIndex        =   13
       Top             =   5325
       Width           =   495
    End
@@ -247,7 +247,7 @@ Begin VB.Form frmAnulaOrdenPago
       Caption         =   "Anulado"
       Height          =   195
       Left            =   5055
-      TabIndex        =   14
+      TabIndex        =   12
       Top             =   5760
       Width           =   585
    End
@@ -256,7 +256,7 @@ Begin VB.Form frmAnulaOrdenPago
       Caption         =   "Definitivo"
       Height          =   195
       Left            =   5055
-      TabIndex        =   13
+      TabIndex        =   11
       Top             =   5550
       Width           =   660
    End
@@ -292,7 +292,7 @@ Begin VB.Form frmAnulaOrdenPago
       EndProperty
       Height          =   240
       Left            =   210
-      TabIndex        =   12
+      TabIndex        =   10
       Top             =   5535
       Width           =   750
    End

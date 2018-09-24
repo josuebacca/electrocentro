@@ -1,8 +1,7 @@
 VERSION 5.00
-Object = "{F9043C88-F6F2-101A-A3C9-08002B2F49FB}#1.2#0"; "Comdlg32.ocx"
-Object = "{5E9E78A0-531B-11CF-91F6-C2863C385E30}#1.0#0"; "MSFLXGRD.OCX"
-Object = "{00025600-0000-0000-C000-000000000046}#5.2#0"; "Crystl32.OCX"
-Object = "{5F09B5DF-6F4D-11D2-8355-4854E82A9183}#15.0#0"; "Fecha32.ocx"
+Object = "{F9043C88-F6F2-101A-A3C9-08002B2F49FB}#1.2#0"; "comdlg32.ocx"
+Object = "{5E9E78A0-531B-11CF-91F6-C2863C385E30}#1.0#0"; "msflxgrd.ocx"
+Object = "{86CF1D34-0C5F-11D2-A9FC-0000F8754DA1}#2.0#0"; "mscomct2.ocx"
 Begin VB.Form frmListadoReciboCliente 
    BorderStyle     =   1  'Fixed Single
    Caption         =   "Listado Recibo de Cliente"
@@ -24,7 +23,7 @@ Begin VB.Form frmListadoReciboCliente
       Left            =   8865
       Picture         =   "frmListadoReciboCliente.frx":030A
       Style           =   1  'Graphical
-      TabIndex        =   15
+      TabIndex        =   13
       Top             =   5655
       Width           =   870
    End
@@ -38,17 +37,18 @@ Begin VB.Form frmListadoReciboCliente
    Begin VB.Frame Frame2 
       Height          =   120
       Left            =   -15
-      TabIndex        =   31
+      TabIndex        =   29
       Top             =   6420
       Width           =   10650
    End
-   Begin Crystal.CrystalReport Rep 
+   Begin VB.PictureBox Rep 
+      Height          =   480
       Left            =   7290
+      ScaleHeight     =   420
+      ScaleWidth      =   1140
+      TabIndex        =   32
       Top             =   5055
-      _ExtentX        =   741
-      _ExtentY        =   741
-      _Version        =   348160
-      PrintFileLinesPerPage=   60
+      Width           =   1200
    End
    Begin VB.CommandButton cmdSalir 
       Caption         =   "&Salir"
@@ -56,7 +56,7 @@ Begin VB.Form frmListadoReciboCliente
       Left            =   9750
       Picture         =   "frmListadoReciboCliente.frx":0614
       Style           =   1  'Graphical
-      TabIndex        =   16
+      TabIndex        =   14
       Top             =   5655
       Width           =   840
    End
@@ -66,7 +66,7 @@ Begin VB.Form frmListadoReciboCliente
       Left            =   7995
       Picture         =   "frmListadoReciboCliente.frx":091E
       Style           =   1  'Graphical
-      TabIndex        =   14
+      TabIndex        =   12
       Top             =   5655
       Width           =   855
    End
@@ -83,7 +83,7 @@ Begin VB.Form frmListadoReciboCliente
       EndProperty
       Height          =   600
       Left            =   90
-      TabIndex        =   29
+      TabIndex        =   27
       Top             =   4560
       Width           =   10425
       Begin VB.OptionButton optDetallado 
@@ -91,7 +91,7 @@ Begin VB.Form frmListadoReciboCliente
          Caption         =   "... Listado Detallado"
          Height          =   255
          Left            =   5475
-         TabIndex        =   10
+         TabIndex        =   8
          Top             =   240
          Value           =   -1  'True
          Width           =   1770
@@ -101,7 +101,7 @@ Begin VB.Form frmListadoReciboCliente
          Caption         =   "... Listado General"
          Height          =   210
          Left            =   2040
-         TabIndex        =   11
+         TabIndex        =   9
          Top             =   240
          Width           =   1620
       End
@@ -119,14 +119,14 @@ Begin VB.Form frmListadoReciboCliente
       EndProperty
       Height          =   1215
       Left            =   90
-      TabIndex        =   25
+      TabIndex        =   23
       Top             =   5175
       Width           =   7845
       Begin VB.OptionButton optImpresora 
          Caption         =   "Impresora"
          Height          =   195
          Left            =   2370
-         TabIndex        =   13
+         TabIndex        =   11
          Top             =   360
          Width           =   1050
       End
@@ -134,7 +134,7 @@ Begin VB.Form frmListadoReciboCliente
          Caption         =   "Pantalla"
          Height          =   195
          Left            =   945
-         TabIndex        =   12
+         TabIndex        =   10
          Top             =   360
          Value           =   -1  'True
          Width           =   885
@@ -144,7 +144,7 @@ Begin VB.Form frmListadoReciboCliente
          Height          =   435
          Left            =   105
          Style           =   1  'Graphical
-         TabIndex        =   26
+         TabIndex        =   24
          Top             =   660
          Width           =   1665
       End
@@ -153,7 +153,7 @@ Begin VB.Form frmListadoReciboCliente
          Caption         =   "Destino:"
          Height          =   195
          Left            =   150
-         TabIndex        =   28
+         TabIndex        =   26
          Top             =   360
          Width           =   585
       End
@@ -171,7 +171,7 @@ Begin VB.Form frmListadoReciboCliente
          EndProperty
          Height          =   195
          Left            =   1965
-         TabIndex        =   27
+         TabIndex        =   25
          Top             =   840
          Width           =   840
       End
@@ -189,14 +189,14 @@ Begin VB.Form frmListadoReciboCliente
       EndProperty
       Height          =   1770
       Left            =   105
-      TabIndex        =   17
+      TabIndex        =   15
       Top             =   75
       Width           =   10395
       Begin VB.CheckBox chkCliente 
          Caption         =   "Cliente"
          Height          =   195
          Left            =   315
-         TabIndex        =   33
+         TabIndex        =   31
          Top             =   495
          Width           =   855
       End
@@ -247,7 +247,7 @@ Begin VB.Form frmListadoReciboCliente
          Height          =   300
          Left            =   4845
          MaxLength       =   50
-         TabIndex        =   20
+         TabIndex        =   18
          Tag             =   "Descripción"
          Top             =   255
          Width           =   4620
@@ -258,7 +258,7 @@ Begin VB.Form frmListadoReciboCliente
          MaskColor       =   &H000000FF&
          Picture         =   "frmListadoReciboCliente.frx":11E8
          Style           =   1  'Graphical
-         TabIndex        =   8
+         TabIndex        =   6
          ToolTipText     =   "Buscar Nota de Pedido"
          Top             =   225
          UseMaskColor    =   -1  'True
@@ -286,7 +286,7 @@ Begin VB.Form frmListadoReciboCliente
          EndProperty
          Height          =   285
          Left            =   4410
-         TabIndex        =   19
+         TabIndex        =   17
          Top             =   615
          Width           =   5055
       End
@@ -303,42 +303,42 @@ Begin VB.Form frmListadoReciboCliente
          MaskColor       =   &H000000FF&
          Picture         =   "frmListadoReciboCliente.frx":398A
          Style           =   1  'Graphical
-         TabIndex        =   18
+         TabIndex        =   16
          ToolTipText     =   "Buscar"
          Top             =   255
          UseMaskColor    =   -1  'True
          Width           =   405
       End
-      Begin FechaCtl.Fecha FechaHasta 
-         Height          =   285
-         Left            =   5865
-         TabIndex        =   7
-         Top             =   1290
-         Width           =   1185
-         _ExtentX        =   2090
-         _ExtentY        =   503
-         Separador       =   "/"
-         Text            =   ""
-         MensajeErrMin   =   "La fecha ingresada no alcanza el mínimo permitido"
-      End
-      Begin FechaCtl.Fecha FechaDesde 
-         Height          =   330
+      Begin MSComCtl2.DTPicker FechaDesde 
+         Height          =   375
          Left            =   3360
-         TabIndex        =   6
-         Top             =   1290
-         Width           =   1170
-         _ExtentX        =   2064
-         _ExtentY        =   582
-         Separador       =   "/"
-         Text            =   ""
-         MensajeErrMin   =   "La fecha ingresada no alcanza el mínimo permitido"
+         TabIndex        =   33
+         Top             =   1320
+         Width           =   1335
+         _ExtentX        =   2355
+         _ExtentY        =   661
+         _Version        =   393216
+         Format          =   53936129
+         CurrentDate     =   43367
+      End
+      Begin MSComCtl2.DTPicker FechaHasta 
+         Height          =   375
+         Left            =   5880
+         TabIndex        =   34
+         Top             =   1320
+         Width           =   1335
+         _ExtentX        =   2355
+         _ExtentY        =   661
+         _Version        =   393216
+         Format          =   53936129
+         CurrentDate     =   43367
       End
       Begin VB.Label Label8 
          AutoSize        =   -1  'True
          Caption         =   "Tipo:"
          Height          =   195
          Left            =   2910
-         TabIndex        =   32
+         TabIndex        =   30
          Top             =   960
          Width           =   360
       End
@@ -352,7 +352,7 @@ Begin VB.Form frmListadoReciboCliente
          Height          =   195
          Index           =   3
          Left            =   2745
-         TabIndex        =   24
+         TabIndex        =   22
          Top             =   300
          Width           =   525
       End
@@ -361,7 +361,7 @@ Begin VB.Form frmListadoReciboCliente
          Caption         =   "Fecha Desde:"
          Height          =   195
          Left            =   2265
-         TabIndex        =   23
+         TabIndex        =   21
          Top             =   1335
          Width           =   1005
       End
@@ -370,7 +370,7 @@ Begin VB.Form frmListadoReciboCliente
          Caption         =   "Fecha Hasta:"
          Height          =   195
          Left            =   4815
-         TabIndex        =   22
+         TabIndex        =   20
          Top             =   1350
          Width           =   960
       End
@@ -379,7 +379,7 @@ Begin VB.Form frmListadoReciboCliente
          Caption         =   "Vendedor:"
          Height          =   195
          Left            =   2535
-         TabIndex        =   21
+         TabIndex        =   19
          Top             =   645
          Width           =   735
       End
@@ -387,7 +387,7 @@ Begin VB.Form frmListadoReciboCliente
    Begin MSFlexGridLib.MSFlexGrid GrdModulos 
       Height          =   2775
       Left            =   90
-      TabIndex        =   9
+      TabIndex        =   7
       Top             =   1875
       Width           =   10425
       _ExtentX        =   18389
@@ -415,7 +415,7 @@ Begin VB.Form frmListadoReciboCliente
       EndProperty
       Height          =   240
       Left            =   165
-      TabIndex        =   30
+      TabIndex        =   28
       Top             =   6555
       Width           =   750
    End
@@ -450,7 +450,7 @@ End Sub
 Private Sub CmdBuscAprox_Click()
         
     GrdModulos.Rows = 1
-    lblestado.Caption = "Buscando..."
+    lblEstado.Caption = "Buscando..."
     Screen.MousePointer = vbHourglass
     GrdModulos.HighLight = flexHighlightNever
     
@@ -482,13 +482,13 @@ Private Sub CmdBuscAprox_Click()
         GrdModulos.HighLight = flexHighlightAlways
         GrdModulos.SetFocus
     Else
-        lblestado.Caption = ""
+        lblEstado.Caption = ""
         Screen.MousePointer = vbNormal
         MsgBox "No se encontraron Recibos...", vbExclamation, TIT_MSGBOX
         chkCliente.SetFocus
     End If
     Rec1.Close
-    lblestado.Caption = ""
+    lblEstado.Caption = ""
     Screen.MousePointer = vbNormal
 End Sub
 
@@ -622,7 +622,7 @@ Private Sub Form_Load()
     cmdBuscarCli.Enabled = False
     GrdModulos.Rows = 1
     lblImpresora.Caption = "Impresora Actual: " & Printer.DeviceName
-    lblestado.Caption = ""
+    lblEstado.Caption = ""
 
     Call Centrar_pantalla(Me)
     GrdModulos.FormatString = "Tipo Rec|^Nro Recibo|^Fecha Recibo|Cliente|Vendedor|REPRESENTADA|TIPO RECIBO"

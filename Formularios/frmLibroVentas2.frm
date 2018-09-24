@@ -1,8 +1,7 @@
 VERSION 5.00
-Object = "{6B7E6392-850A-101B-AFC0-4210102A8DA7}#1.3#0"; "COMCTL32.OCX"
-Object = "{F9043C88-F6F2-101A-A3C9-08002B2F49FB}#1.2#0"; "Comdlg32.ocx"
-Object = "{00025600-0000-0000-C000-000000000046}#5.2#0"; "Crystl32.OCX"
-Object = "{5F09B5DF-6F4D-11D2-8355-4854E82A9183}#15.0#0"; "Fecha32.ocx"
+Object = "{6B7E6392-850A-101B-AFC0-4210102A8DA7}#1.4#0"; "comctl32.ocx"
+Object = "{F9043C88-F6F2-101A-A3C9-08002B2F49FB}#1.2#0"; "comdlg32.ocx"
+Object = "{86CF1D34-0C5F-11D2-A9FC-0000F8754DA1}#2.0#0"; "mscomct2.ocx"
 Begin VB.Form frmLibroVentas2 
    BorderStyle     =   3  'Fixed Dialog
    Caption         =   "Libro IVA Ventas"
@@ -30,14 +29,14 @@ Begin VB.Form frmLibroVentas2
       EndProperty
       Height          =   735
       Left            =   0
-      TabIndex        =   13
+      TabIndex        =   11
       Top             =   2040
       Width           =   5610
       Begin VB.OptionButton optImpresora 
          Caption         =   "Impresora"
          Height          =   195
          Left            =   2370
-         TabIndex        =   16
+         TabIndex        =   14
          Top             =   315
          Width           =   1050
       End
@@ -45,7 +44,7 @@ Begin VB.Form frmLibroVentas2
          Caption         =   "Pantalla"
          Height          =   195
          Left            =   945
-         TabIndex        =   15
+         TabIndex        =   13
          Top             =   315
          Value           =   -1  'True
          Width           =   885
@@ -55,7 +54,7 @@ Begin VB.Form frmLibroVentas2
          Height          =   375
          Left            =   3810
          Style           =   1  'Graphical
-         TabIndex        =   14
+         TabIndex        =   12
          Top             =   240
          Width           =   1665
       End
@@ -64,7 +63,7 @@ Begin VB.Form frmLibroVentas2
          Caption         =   "Destino:"
          Height          =   195
          Left            =   150
-         TabIndex        =   17
+         TabIndex        =   15
          Top             =   315
          Width           =   585
       End
@@ -75,7 +74,7 @@ Begin VB.Form frmLibroVentas2
       Left            =   3045
       Picture         =   "frmLibroVentas2.frx":0000
       Style           =   1  'Graphical
-      TabIndex        =   11
+      TabIndex        =   9
       Top             =   2850
       Width           =   840
    End
@@ -85,7 +84,7 @@ Begin VB.Form frmLibroVentas2
       Left            =   4755
       Picture         =   "frmLibroVentas2.frx":030A
       Style           =   1  'Graphical
-      TabIndex        =   10
+      TabIndex        =   8
       Top             =   2850
       Width           =   840
    End
@@ -95,34 +94,10 @@ Begin VB.Form frmLibroVentas2
       TabIndex        =   1
       Top             =   0
       Width           =   5595
-      Begin FechaCtl.Fecha FechaDesde 
-         Height          =   300
-         Left            =   1440
-         TabIndex        =   2
-         Top             =   510
-         Width           =   1155
-         _ExtentX        =   2037
-         _ExtentY        =   529
-         Separador       =   "/"
-         Text            =   ""
-         MensajeErrMin   =   "La fecha ingresada no alcanza el mínimo permitido"
-      End
-      Begin FechaCtl.Fecha FechaHasta 
-         Height          =   285
-         Left            =   1440
-         TabIndex        =   3
-         Top             =   840
-         Width           =   1155
-         _ExtentX        =   2037
-         _ExtentY        =   503
-         Separador       =   "/"
-         Text            =   ""
-         MensajeErrMin   =   "La fecha ingresada no alcanza el mínimo permitido"
-      End
       Begin ComctlLib.ProgressBar ProgressBar1 
          Height          =   225
          Left            =   210
-         TabIndex        =   4
+         TabIndex        =   2
          Top             =   1395
          Width           =   4800
          _ExtentX        =   8467
@@ -130,12 +105,36 @@ Begin VB.Form frmLibroVentas2
          _Version        =   327682
          Appearance      =   1
       End
+      Begin MSComCtl2.DTPicker FechaDesde 
+         Height          =   375
+         Left            =   1440
+         TabIndex        =   17
+         Top             =   480
+         Width           =   1335
+         _ExtentX        =   2355
+         _ExtentY        =   661
+         _Version        =   393216
+         Format          =   54067201
+         CurrentDate     =   43367
+      End
+      Begin MSComCtl2.DTPicker FechaHasta 
+         Height          =   375
+         Left            =   1440
+         TabIndex        =   18
+         Top             =   840
+         Width           =   1335
+         _ExtentX        =   2355
+         _ExtentY        =   661
+         _Version        =   393216
+         Format          =   54067201
+         CurrentDate     =   43367
+      End
       Begin VB.Label Label1 
          AutoSize        =   -1  'True
          Caption         =   "Fecha Desde:"
          Height          =   195
          Left            =   360
-         TabIndex        =   9
+         TabIndex        =   7
          Top             =   525
          Width           =   1005
       End
@@ -144,7 +143,7 @@ Begin VB.Form frmLibroVentas2
          Caption         =   "Fecha Hasta:"
          Height          =   195
          Left            =   405
-         TabIndex        =   8
+         TabIndex        =   6
          Top             =   870
          Width           =   960
       End
@@ -160,8 +159,8 @@ Begin VB.Form frmLibroVentas2
             Strikethrough   =   0   'False
          EndProperty
          Height          =   285
-         Left            =   2625
-         TabIndex        =   7
+         Left            =   2865
+         TabIndex        =   5
          Top             =   510
          Width           =   1785
       End
@@ -177,8 +176,8 @@ Begin VB.Form frmLibroVentas2
             Strikethrough   =   0   'False
          EndProperty
          Height          =   285
-         Left            =   2625
-         TabIndex        =   6
+         Left            =   2865
+         TabIndex        =   4
          Top             =   840
          Width           =   1785
       End
@@ -187,7 +186,7 @@ Begin VB.Form frmLibroVentas2
          Caption         =   "100 %"
          Height          =   195
          Left            =   5085
-         TabIndex        =   5
+         TabIndex        =   3
          Top             =   1425
          Width           =   435
       End
@@ -203,13 +202,14 @@ Begin VB.Form frmLibroVentas2
       Top             =   2850
       Width           =   840
    End
-   Begin Crystal.CrystalReport Rep 
+   Begin VB.PictureBox Rep 
+      Height          =   480
       Left            =   1590
+      ScaleHeight     =   420
+      ScaleWidth      =   1140
+      TabIndex        =   16
       Top             =   3030
-      _ExtentX        =   741
-      _ExtentY        =   741
-      _Version        =   348160
-      PrintFileLinesPerPage=   60
+      Width           =   1200
    End
    Begin MSComDlg.CommonDialog CDImpresora 
       Left            =   2130
@@ -232,7 +232,7 @@ Begin VB.Form frmLibroVentas2
       EndProperty
       Height          =   240
       Left            =   90
-      TabIndex        =   12
+      TabIndex        =   10
       Top             =   3015
       Width           =   750
    End
@@ -272,7 +272,7 @@ Private Sub CmdAceptar_Click()
      On Error GoTo CLAVO
      Screen.MousePointer = vbHourglass
      DBConn.BeginTrans
-     lblestado.Caption = "Buscando Datos..."
+     lblEstado.Caption = "Buscando Datos..."
      
         'BORRO LA TABLA TEMPORAL DE IVA VENTAS
         sql = "DELETE FROM TMP_LIBRO_IVA_VENTAS"
@@ -432,7 +432,7 @@ Private Sub CmdAceptar_Click()
         End If
         rec.Close
         
-    lblestado.Caption = ""
+    lblEstado.Caption = ""
     DBConn.CommitTrans
     'cargo el reporte
     ListarLibroIVA
@@ -443,14 +443,14 @@ Private Sub CmdAceptar_Click()
 
 CLAVO:
  Screen.MousePointer = vbNormal
- lblestado.Caption = ""
+ lblEstado.Caption = ""
  DBConn.RollbackTrans
  If rec.State = 1 Then rec.Close
  MsgBox Err.Description, vbCritical, TIT_MSGBOX
 End Sub
 
 Private Sub ListarLibroIVA()
-    lblestado.Caption = "Buscando Listado..."
+    lblEstado.Caption = "Buscando Listado..."
     Rep.WindowState = crptMaximized
     Rep.WindowBorderStyle = crptNoBorder
     Rep.Connect = "Provider=MSDASQL.1;Persist Security Info=False;Data Source=SIELECTROCENTRO"
@@ -477,7 +477,7 @@ Private Sub ListarLibroIVA()
     End If
      Rep.Action = 1
      
-     lblestado.Caption = ""
+     lblEstado.Caption = ""
      Rep.Formulas(0) = ""
      Rep.Formulas(1) = ""
      Rep.Formulas(2) = ""
@@ -501,7 +501,7 @@ Private Sub Form_KeyPress(KeyAscii As Integer)
 End Sub
 
 Private Sub Form_Load()
-    lblestado.Caption = ""
+    lblEstado.Caption = ""
     lblPor.Caption = "100 %"
     Call Centrar_pantalla(Me)
     Set rec = New ADODB.Recordset

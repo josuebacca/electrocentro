@@ -1,8 +1,6 @@
 VERSION 5.00
-Object = "{F9043C88-F6F2-101A-A3C9-08002B2F49FB}#1.2#0"; "Comdlg32.ocx"
-Object = "{5E9E78A0-531B-11CF-91F6-C2863C385E30}#1.0#0"; "Msflxgrd.ocx"
-Object = "{00025600-0000-0000-C000-000000000046}#5.2#0"; "Crystl32.OCX"
-Object = "{5F09B5DF-6F4D-11D2-8355-4854E82A9183}#15.0#0"; "Fecha32.ocx"
+Object = "{F9043C88-F6F2-101A-A3C9-08002B2F49FB}#1.2#0"; "comdlg32.ocx"
+Object = "{5E9E78A0-531B-11CF-91F6-C2863C385E30}#1.0#0"; "msflxgrd.ocx"
 Begin VB.Form frmResumenCuentaBanco 
    BorderStyle     =   3  'Fixed Dialog
    Caption         =   "Resumen de Cuenta - Banco"
@@ -82,17 +80,14 @@ Begin VB.Form frmResumenCuentaBanco
          Top             =   270
          Width           =   465
       End
-      Begin FechaCtl.Fecha Fecha 
+      Begin VB.PictureBox Fecha 
          Height          =   300
          Left            =   735
+         ScaleHeight     =   240
+         ScaleWidth      =   1095
          TabIndex        =   2
          Top             =   675
          Width           =   1155
-         _ExtentX        =   2037
-         _ExtentY        =   529
-         Separador       =   "/"
-         Text            =   ""
-         MensajeErrMin   =   "La fecha ingresada no alcanza el mínimo permitido"
       End
       Begin VB.Label Label1 
          AutoSize        =   -1  'True
@@ -234,13 +229,14 @@ Begin VB.Form frmResumenCuentaBanco
          Width           =   585
       End
    End
-   Begin Crystal.CrystalReport Rep 
+   Begin VB.PictureBox Rep 
+      Height          =   480
       Left            =   5550
+      ScaleHeight     =   420
+      ScaleWidth      =   1140
+      TabIndex        =   22
       Top             =   5250
-      _ExtentX        =   741
-      _ExtentY        =   741
-      _Version        =   348160
-      PrintFileLinesPerPage=   60
+      Width           =   1200
    End
    Begin MSComDlg.CommonDialog CDImpresora 
       Left            =   5055
@@ -330,7 +326,7 @@ Private Sub cmdListar_Click()
     Rep.Connect = "Provider=MSDASQL.1;Persist Security Info=False;Data Source=SIELECTROCENTRO"
     Rep.Formulas(0) = ""
     
-    lblestado.Caption = "Buscando Listado..."
+    lblEstado.Caption = "Buscando Listado..."
     
     Rep.Formulas(0) = "SALDO='" & lblSaldoActual.Caption & "'"
         
@@ -344,7 +340,7 @@ Private Sub cmdListar_Click()
     End If
      Rep.Action = 1
      Rep.Formulas(0) = ""
-     lblestado.Caption = ""
+     lblEstado.Caption = ""
 End Sub
 
 Private Sub CmdNuevo_Click()
@@ -358,7 +354,7 @@ Private Sub CmdNuevo_Click()
     CboBancoBoleta.SetFocus
 End Sub
 
-Private Sub cmdSalir_Click()
+Private Sub CmdSalir_Click()
     Set frmResumenCuentaBanco = Nothing
     Unload Me
 End Sub
@@ -371,7 +367,7 @@ Private Sub cmdVerResumen_Click()
     FechaUltimoSaldo = ""
     Saldo = 0
     grdResumenCuenta.Rows = 1
-    lblestado.Caption = "Buscando Movimientos..."
+    lblEstado.Caption = "Buscando Movimientos..."
     'BORRO LA TEMPORAL
     sql = "DELETE FROM TMP_RESUMEN_CUENTA_BANCO"
     DBConn.Execute sql
@@ -413,8 +409,8 @@ Private Sub cmdVerResumen_Click()
     sql = sql & " WHERE BAN_CODINT=" & XN(CboBancoBoleta.ItemData(CboBancoBoleta.ListIndex))
     sql = sql & " AND CTA_NROCTA=" & XS(CboCuentas.List(CboCuentas.ListIndex))
     sql = sql & " AND EBO_CODIGO<> 2" 'BOLETAS NO ANULADAS
-    sql = sql & " AND MONTH(BOL_FECHA)=" & XN(Month(Fecha.Text))
-    sql = sql & " AND YEAR(BOL_FECHA)=" & XN(Year(Fecha.Text))
+    sql = sql & " AND MONTH(BOL_FECHA)=" & XN(Month(Fecha.Value))
+    sql = sql & " AND YEAR(BOL_FECHA)=" & XN(Year(Fecha.Value))
     rec.Open sql, DBConn, adOpenStatic, adLockOptimistic
     
     If rec.EOF = False Then
@@ -466,8 +462,8 @@ Private Sub cmdVerResumen_Click()
     sql = sql & " WHERE GB.BAN_CODINT=" & XN(CboBancoBoleta.ItemData(CboBancoBoleta.ListIndex))
     sql = sql & " AND GB.CTA_NROCTA=" & XS(CboCuentas.List(CboCuentas.ListIndex))
     sql = sql & " AND GB.TGB_CODIGO=TG.TGB_CODIGO"
-    sql = sql & " AND MONTH(GB.GBA_FECHA)=" & XN(Month(Fecha.Text))
-    sql = sql & " AND YEAR(GB.GBA_FECHA)=" & XN(Year(Fecha.Text))
+    sql = sql & " AND MONTH(GB.GBA_FECHA)=" & XN(Month(Fecha.Value))
+    sql = sql & " AND YEAR(GB.GBA_FECHA)=" & XN(Year(Fecha.Value))
     rec.Open sql, DBConn, adOpenStatic, adLockOptimistic
     
     If rec.EOF = False Then
@@ -519,8 +515,8 @@ Private Sub cmdVerResumen_Click()
     sql = sql & " WHERE BAN_CODINT=" & XN(CboBancoBoleta.ItemData(CboBancoBoleta.ListIndex))
     sql = sql & " AND CTA_NROCTA=" & XS(CboCuentas.List(CboCuentas.ListIndex))
     sql = sql & " AND ECH_CODIGO IN (7,8)" 'CHEQUES LIBRADOS O RESTITUIDOS
-    sql = sql & " AND MONTH(CHEP_FECVTO)=" & XN(Month(Fecha.Text))
-    sql = sql & " AND YEAR(CHEP_FECVTO)=" & XN(Year(Fecha.Text))
+    sql = sql & " AND MONTH(CHEP_FECVTO)=" & XN(Month(Fecha.Value))
+    sql = sql & " AND YEAR(CHEP_FECVTO)=" & XN(Year(Fecha.Value))
     rec.Open sql, DBConn, adOpenStatic, adLockOptimistic
     
     If rec.EOF = False Then
@@ -579,12 +575,12 @@ Private Sub cmdVerResumen_Click()
     End If
     rec.Close
     lblSaldoActual.Caption = "Saldo Actual: " & Valido_Importe(CStr(Saldo))
-    lblestado.Caption = ""
+    lblEstado.Caption = ""
 End Sub
 
 Private Sub Fecha_Change()
-    If Trim(Fecha.Text) <> "" Then
-        lblPeriodo1.Caption = UCase(Format(Fecha.Text, "mmmm/yyyy"))
+    If Trim(Fecha.Value) <> "" Then
+        lblPeriodo1.Caption = UCase(Format(Fecha.Value, "mmmm/yyyy"))
     Else
         lblPeriodo1.Caption = ""
     End If
@@ -592,7 +588,7 @@ End Sub
 
 Private Sub Form_KeyPress(KeyAscii As Integer)
     If KeyAscii = vbKeyReturn Then SendKeys "{TAB}"
-    If KeyAscii = vbKeyEscape Then cmdSalir_Click
+    If KeyAscii = vbKeyEscape Then CmdSalir_Click
 End Sub
 
 Private Sub Form_Load()
@@ -601,7 +597,7 @@ Private Sub Form_Load()
     'CARGO COMBO BANCO
     CargoBanco
     FrameImpresora.Caption = "Impresora Actual: " & Printer.DeviceName
-    lblestado.Caption = ""
+    lblEstado.Caption = ""
     'CONFIGURO GRILLA
     grdResumenCuenta.FormatString = "^Fecha|Descripción|^Comprob|>Débito|>Crédito|>Saldo"
     grdResumenCuenta.ColWidth(0) = 1100 'FECHA
@@ -612,7 +608,7 @@ Private Sub Form_Load()
     grdResumenCuenta.ColWidth(5) = 1100 'SALDO
     grdResumenCuenta.Cols = 6
     grdResumenCuenta.Rows = 2
-    Fecha.Text = Date
+    Fecha.Value = Date
     
     sql = "SELECT APLICA_IMPUESTO,VALOR_IMPUESTO FROM PARAMETROS"
     rec.Open sql, DBConn, adOpenStatic, adLockOptimistic
