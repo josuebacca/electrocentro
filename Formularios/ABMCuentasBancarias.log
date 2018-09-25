@@ -1,2 +1,14 @@
 Línea 149: la clase FechaCtl.Fecha del control fechaCierre no era una clase de control cargada.
 Línea 162: la clase FechaCtl.Fecha del control fechaApertura no era una clase de control cargada.
+Línea 155: el nombre de la propiedad _ExtentX de fechaCierre no es válido.
+Línea 156: el nombre de la propiedad _ExtentY de fechaCierre no es válido.
+Línea 157: el nombre de la propiedad Separador de fechaCierre no es válido.
+Línea 158: el nombre de la propiedad Text de fechaCierre no es válido.
+Línea 159: el nombre de la propiedad MensajeErrMin de fechaCierre no es válido.
+Línea 160: el nombre de la propiedad FechaMin de fechaCierre no es válido.
+Línea 177: el nombre de la propiedad _ExtentX de fechaApertura no es válido.
+Línea 178: el nombre de la propiedad _ExtentY de fechaApertura no es válido.
+Línea 179: el nombre de la propiedad Separador de fechaApertura no es válido.
+Línea 180: el nombre de la propiedad Text de fechaApertura no es válido.
+Línea 181: el nombre de la propiedad MensajeErrMin de fechaApertura no es válido.
+Línea 182: el nombre de la propiedad FechaMin de fechaApertura no es válido.

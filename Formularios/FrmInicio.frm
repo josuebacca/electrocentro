@@ -124,6 +124,9 @@ Attribute VB_GlobalNameSpace = False
 Attribute VB_Creatable = False
 Attribute VB_PredeclaredId = True
 Attribute VB_Exposed = False
+
+
+
 Option Explicit
 Dim CUANTAS_VECES As Integer
 Dim rec As ADODB.Recordset
@@ -253,7 +256,7 @@ Private Sub CmdAceptar_Click()
         MsgBox sql, vbCritical, "Error:"
         If CUANTAS_VECES = 3 Then
             'si ya pifió 3 veces salgo del Sistema
-            cmdSalir_Click
+            CmdSalir_Click
         Else
             TxtClave.SelStart = 0
             TxtClave.SelLength = Len(TxtClave)
@@ -279,7 +282,7 @@ Private Sub CmdAceptar_GotFocus()
     cmdAceptar.FontBold = True
 End Sub
 
-Private Sub cmdSalir_Click()
+Private Sub CmdSalir_Click()
     End
 End Sub
 
@@ -288,7 +291,7 @@ Private Sub CmdSalir_GotFocus()
 End Sub
 
 Private Sub Form_KeyPress(KeyAscii As Integer)
-    If KeyAscii = vbKeyEscape Then cmdSalir_Click
+    If KeyAscii = vbKeyEscape Then CmdSalir_Click
     If KeyAscii = 13 Then
         SendKeys "{TAB}"
     End If

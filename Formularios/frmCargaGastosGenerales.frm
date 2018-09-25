@@ -1,7 +1,7 @@
 VERSION 5.00
-Object = "{BDC217C8-ED16-11CD-956C-0000C04E4C0A}#1.1#0"; "TABCTL32.OCX"
-Object = "{5E9E78A0-531B-11CF-91F6-C2863C385E30}#1.0#0"; "MSFLXGRD.OCX"
-Object = "{5F09B5DF-6F4D-11D2-8355-4854E82A9183}#15.0#0"; "fecha32.ocx"
+Object = "{BDC217C8-ED16-11CD-956C-0000C04E4C0A}#1.1#0"; "tabctl32.ocx"
+Object = "{5E9E78A0-531B-11CF-91F6-C2863C385E30}#1.0#0"; "msflxgrd.ocx"
+Object = "{86CF1D34-0C5F-11D2-A9FC-0000F8754DA1}#2.0#0"; "mscomct2.ocx"
 Begin VB.Form frmCargaGastosGenerales 
    BorderStyle     =   1  'Fixed Single
    Caption         =   "Carga Gastos Generales"
@@ -27,7 +27,7 @@ Begin VB.Form frmCargaGastosGenerales
    Begin TabDlg.SSTab tabDatos 
       Height          =   6330
       Left            =   45
-      TabIndex        =   32
+      TabIndex        =   30
       Top             =   60
       Width           =   8670
       _ExtentX        =   15293
@@ -49,9 +49,9 @@ Begin VB.Form frmCargaGastosGenerales
       TabCaption(0)   =   "&Datos"
       TabPicture(0)   =   "frmCargaGastosGenerales.frx":0000
       Tab(0).ControlEnabled=   0   'False
-      Tab(0).Control(0)=   "Frame1"
+      Tab(0).Control(0)=   "FrameProveedor"
       Tab(0).Control(0).Enabled=   0   'False
-      Tab(0).Control(1)=   "FrameProveedor"
+      Tab(0).Control(1)=   "Frame1"
       Tab(0).Control(1).Enabled=   0   'False
       Tab(0).ControlCount=   2
       TabCaption(1)   =   "&Buscar"
@@ -73,9 +73,9 @@ Begin VB.Form frmCargaGastosGenerales
             Italic          =   0   'False
             Strikethrough   =   0   'False
          EndProperty
-         Height          =   1710
+         Height          =   1830
          Left            =   165
-         TabIndex        =   50
+         TabIndex        =   48
          Top             =   375
          Width           =   8355
          Begin VB.ComboBox cboBuscaTipoGasto 
@@ -134,7 +134,7 @@ Begin VB.Form frmCargaGastosGenerales
             Height          =   300
             Left            =   3825
             MaxLength       =   50
-            TabIndex        =   52
+            TabIndex        =   50
             Tag             =   "Descripción"
             Top             =   615
             Width           =   4440
@@ -153,7 +153,7 @@ Begin VB.Form frmCargaGastosGenerales
             MaskColor       =   &H00FFFFFF&
             Picture         =   "frmCargaGastosGenerales.frx":0038
             Style           =   1  'Graphical
-            TabIndex        =   29
+            TabIndex        =   27
             ToolTipText     =   "Buscar "
             Top             =   1155
             UseMaskColor    =   -1  'True
@@ -173,42 +173,42 @@ Begin VB.Form frmCargaGastosGenerales
             MaskColor       =   &H000000FF&
             Picture         =   "frmCargaGastosGenerales.frx":27DA
             Style           =   1  'Graphical
-            TabIndex        =   51
+            TabIndex        =   49
             ToolTipText     =   "Buscar Proveedor"
             Top             =   615
             UseMaskColor    =   -1  'True
             Width           =   405
          End
-         Begin FechaCtl.Fecha FechaHasta 
-            Height          =   285
-            Left            =   4905
-            TabIndex        =   28
+         Begin MSComCtl2.DTPicker FechaDesde 
+            Height          =   375
+            Left            =   2400
+            TabIndex        =   67
             Top             =   1320
-            Width           =   1185
-            _ExtentX        =   2090
-            _ExtentY        =   503
-            Separador       =   "/"
-            Text            =   ""
-            MensajeErrMin   =   "La fecha ingresada no alcanza el mínimo permitido"
+            Width           =   1335
+            _ExtentX        =   2355
+            _ExtentY        =   661
+            _Version        =   393216
+            Format          =   53280769
+            CurrentDate     =   43367
          End
-         Begin FechaCtl.Fecha FechaDesde 
-            Height          =   330
-            Left            =   2385
-            TabIndex        =   27
+         Begin MSComCtl2.DTPicker FechaHasta 
+            Height          =   375
+            Left            =   4920
+            TabIndex        =   68
             Top             =   1320
-            Width           =   1170
-            _ExtentX        =   2064
-            _ExtentY        =   582
-            Separador       =   "/"
-            Text            =   ""
-            MensajeErrMin   =   "La fecha ingresada no alcanza el mínimo permitido"
+            Width           =   1335
+            _ExtentX        =   2355
+            _ExtentY        =   661
+            _Version        =   393216
+            Format          =   53280769
+            CurrentDate     =   43367
          End
          Begin VB.Label Label9 
             AutoSize        =   -1  'True
             Caption         =   "Gasto:"
             Height          =   195
             Left            =   1860
-            TabIndex        =   57
+            TabIndex        =   55
             Top             =   990
             Width           =   465
          End
@@ -217,7 +217,7 @@ Begin VB.Form frmCargaGastosGenerales
             Caption         =   "Tipo Prov.:"
             Height          =   195
             Left            =   1545
-            TabIndex        =   56
+            TabIndex        =   54
             Top             =   315
             Width           =   780
          End
@@ -231,7 +231,7 @@ Begin VB.Form frmCargaGastosGenerales
             Height          =   195
             Index           =   2
             Left            =   1545
-            TabIndex        =   55
+            TabIndex        =   53
             Top             =   645
             Width           =   780
          End
@@ -240,7 +240,7 @@ Begin VB.Form frmCargaGastosGenerales
             Caption         =   "Fecha Desde:"
             Height          =   195
             Left            =   1320
-            TabIndex        =   54
+            TabIndex        =   52
             Top             =   1350
             Width           =   1005
          End
@@ -249,7 +249,7 @@ Begin VB.Form frmCargaGastosGenerales
             Caption         =   "Fecha Hasta:"
             Height          =   195
             Left            =   3840
-            TabIndex        =   53
+            TabIndex        =   51
             Top             =   1365
             Width           =   960
          End
@@ -267,7 +267,7 @@ Begin VB.Form frmCargaGastosGenerales
          EndProperty
          Height          =   2025
          Left            =   -74835
-         TabIndex        =   43
+         TabIndex        =   41
          Top             =   585
          Width           =   8355
          Begin VB.CommandButton cmdBuscarProveedor1 
@@ -276,7 +276,7 @@ Begin VB.Form frmCargaGastosGenerales
             MaskColor       =   &H000000FF&
             Picture         =   "frmCargaGastosGenerales.frx":2AE4
             Style           =   1  'Graphical
-            TabIndex        =   58
+            TabIndex        =   56
             ToolTipText     =   "Buscar Proveedor"
             Top             =   765
             UseMaskColor    =   -1  'True
@@ -297,7 +297,7 @@ Begin VB.Form frmCargaGastosGenerales
             Height          =   285
             Left            =   1275
             MaxLength       =   50
-            TabIndex        =   45
+            TabIndex        =   43
             Top             =   1425
             Width           =   4860
          End
@@ -315,7 +315,7 @@ Begin VB.Form frmCargaGastosGenerales
             EndProperty
             Height          =   285
             Left            =   1275
-            TabIndex        =   44
+            TabIndex        =   42
             Top             =   1110
             Width           =   4860
          End
@@ -358,7 +358,7 @@ Begin VB.Form frmCargaGastosGenerales
             Caption         =   "Dom.:"
             Height          =   195
             Left            =   765
-            TabIndex        =   49
+            TabIndex        =   47
             Top             =   1455
             Width           =   420
          End
@@ -367,7 +367,7 @@ Begin VB.Form frmCargaGastosGenerales
             Caption         =   "Loc.:"
             Height          =   180
             Left            =   825
-            TabIndex        =   48
+            TabIndex        =   46
             Top             =   1155
             Width           =   360
          End
@@ -381,7 +381,7 @@ Begin VB.Form frmCargaGastosGenerales
             Height          =   195
             Index           =   0
             Left            =   645
-            TabIndex        =   47
+            TabIndex        =   45
             Top             =   780
             Width           =   540
          End
@@ -390,7 +390,7 @@ Begin VB.Form frmCargaGastosGenerales
             Caption         =   "Tipo Prov.:"
             Height          =   195
             Left            =   405
-            TabIndex        =   46
+            TabIndex        =   44
             Top             =   435
             Width           =   780
          End
@@ -408,7 +408,7 @@ Begin VB.Form frmCargaGastosGenerales
          EndProperty
          Height          =   3615
          Left            =   -74835
-         TabIndex        =   33
+         TabIndex        =   31
          Top             =   2610
          Width           =   8355
          Begin VB.TextBox txtimp2IVA 
@@ -416,7 +416,7 @@ Begin VB.Form frmCargaGastosGenerales
             Height          =   300
             Left            =   4605
             MaxLength       =   40
-            TabIndex        =   68
+            TabIndex        =   66
             Top             =   2145
             Width           =   900
          End
@@ -425,7 +425,7 @@ Begin VB.Form frmCargaGastosGenerales
             Height          =   300
             Left            =   1995
             MaxLength       =   40
-            TabIndex        =   67
+            TabIndex        =   65
             Top             =   2160
             Width           =   780
          End
@@ -462,7 +462,7 @@ Begin VB.Form frmCargaGastosGenerales
             Height          =   300
             Left            =   3885
             MaxLength       =   40
-            TabIndex        =   61
+            TabIndex        =   59
             Top             =   2490
             Width           =   1620
          End
@@ -481,7 +481,7 @@ Begin VB.Form frmCargaGastosGenerales
             Height          =   300
             Left            =   1275
             MaxLength       =   40
-            TabIndex        =   60
+            TabIndex        =   58
             Top             =   2490
             Width           =   1500
          End
@@ -500,7 +500,7 @@ Begin VB.Form frmCargaGastosGenerales
             MaskColor       =   &H000000FF&
             Picture         =   "frmCargaGastosGenerales.frx":2DEE
             Style           =   1  'Graphical
-            TabIndex        =   59
+            TabIndex        =   57
             ToolTipText     =   "Agregar País"
             Top             =   405
             UseMaskColor    =   -1  'True
@@ -584,35 +584,29 @@ Begin VB.Form frmCargaGastosGenerales
             Top             =   405
             Width           =   3765
          End
-         Begin FechaCtl.Fecha FechaComprobante 
+         Begin VB.PictureBox FechaComprobante 
             Height          =   315
             Left            =   1275
+            ScaleHeight     =   255
+            ScaleWidth      =   1155
             TabIndex        =   7
             Top             =   1470
             Width           =   1215
-            _ExtentX        =   2143
-            _ExtentY        =   556
-            Separador       =   "/"
-            Text            =   ""
-            MensajeErrMin   =   "La fecha ingresada no alcanza el mínimo permitido"
          End
-         Begin FechaCtl.Fecha Periodo 
+         Begin VB.PictureBox Periodo 
             Height          =   300
             Left            =   3885
+            ScaleHeight     =   240
+            ScaleWidth      =   1095
             TabIndex        =   15
             Top             =   3180
             Width           =   1155
-            _ExtentX        =   2037
-            _ExtentY        =   529
-            Separador       =   "/"
-            Text            =   ""
-            MensajeErrMin   =   "La fecha ingresada no alcanza el mínimo permitido"
          End
          Begin VB.Label Label11 
             Caption         =   "Neto:"
             Height          =   195
             Left            =   3420
-            TabIndex        =   66
+            TabIndex        =   64
             Top             =   1860
             Width           =   390
          End
@@ -621,7 +615,7 @@ Begin VB.Form frmCargaGastosGenerales
             Caption         =   "Iva:"
             Height          =   195
             Left            =   3540
-            TabIndex        =   65
+            TabIndex        =   63
             Top             =   2190
             Width           =   270
          End
@@ -630,7 +624,7 @@ Begin VB.Form frmCargaGastosGenerales
             Caption         =   "Sub Total:"
             Height          =   195
             Left            =   465
-            TabIndex        =   64
+            TabIndex        =   62
             Top             =   2535
             Width           =   735
          End
@@ -639,7 +633,7 @@ Begin VB.Form frmCargaGastosGenerales
             Caption         =   "Sub Total:"
             Height          =   195
             Left            =   3075
-            TabIndex        =   63
+            TabIndex        =   61
             Top             =   2535
             Width           =   735
          End
@@ -648,7 +642,7 @@ Begin VB.Form frmCargaGastosGenerales
             Caption         =   "Impuestos:"
             Height          =   195
             Left            =   435
-            TabIndex        =   62
+            TabIndex        =   60
             Top             =   2880
             Width           =   765
          End
@@ -657,7 +651,7 @@ Begin VB.Form frmCargaGastosGenerales
             Caption         =   "Comprobante:"
             Height          =   195
             Left            =   210
-            TabIndex        =   42
+            TabIndex        =   40
             Top             =   825
             Width           =   990
          End
@@ -666,7 +660,7 @@ Begin VB.Form frmCargaGastosGenerales
             Caption         =   "Número:"
             Height          =   195
             Left            =   600
-            TabIndex        =   41
+            TabIndex        =   39
             Top             =   1170
             Width           =   600
          End
@@ -675,7 +669,7 @@ Begin VB.Form frmCargaGastosGenerales
             Caption         =   "Fecha:"
             Height          =   195
             Left            =   705
-            TabIndex        =   40
+            TabIndex        =   38
             Top             =   1515
             Width           =   495
          End
@@ -683,7 +677,7 @@ Begin VB.Form frmCargaGastosGenerales
             Caption         =   "Neto:"
             Height          =   195
             Left            =   810
-            TabIndex        =   39
+            TabIndex        =   37
             Top             =   1860
             Width           =   390
          End
@@ -692,7 +686,7 @@ Begin VB.Form frmCargaGastosGenerales
             Caption         =   "Iva:"
             Height          =   195
             Left            =   930
-            TabIndex        =   38
+            TabIndex        =   36
             Top             =   2190
             Width           =   270
          End
@@ -701,7 +695,7 @@ Begin VB.Form frmCargaGastosGenerales
             Caption         =   "Total:"
             Height          =   195
             Left            =   795
-            TabIndex        =   37
+            TabIndex        =   35
             Top             =   3210
             Width           =   405
          End
@@ -710,7 +704,7 @@ Begin VB.Form frmCargaGastosGenerales
             Caption         =   "Periodo:"
             Height          =   195
             Left            =   3225
-            TabIndex        =   36
+            TabIndex        =   34
             Top             =   3225
             Width           =   585
          End
@@ -727,7 +721,7 @@ Begin VB.Form frmCargaGastosGenerales
             EndProperty
             Height          =   285
             Left            =   5040
-            TabIndex        =   35
+            TabIndex        =   33
             Top             =   3180
             Width           =   1785
          End
@@ -736,7 +730,7 @@ Begin VB.Form frmCargaGastosGenerales
             Caption         =   "Gasto:"
             Height          =   195
             Left            =   735
-            TabIndex        =   34
+            TabIndex        =   32
             Top             =   450
             Width           =   465
          End
@@ -744,8 +738,8 @@ Begin VB.Form frmCargaGastosGenerales
       Begin MSFlexGridLib.MSFlexGrid GrdModulos 
          Height          =   3975
          Left            =   135
-         TabIndex        =   30
-         Top             =   2160
+         TabIndex        =   28
+         Top             =   2280
          Width           =   8400
          _ExtentX        =   14817
          _ExtentY        =   7011
@@ -798,7 +792,7 @@ Begin VB.Form frmCargaGastosGenerales
       EndProperty
       Height          =   240
       Left            =   150
-      TabIndex        =   31
+      TabIndex        =   29
       Top             =   6555
       Width           =   750
    End
@@ -868,7 +862,7 @@ Private Sub CmdBorrar_Click()
     
     If MsgBox("¿Seguro que desea eliminar el Gasto?", vbQuestion + vbYesNo + vbDefaultButton2, TIT_MSGBOX) = vbYes Then
         On Error GoTo Seclavose
-         lblEstado.Caption = "Eliminando..."
+         lblestado.Caption = "Eliminando..."
          Screen.MousePointer = vbHourglass
          DBConn.BeginTrans
          
@@ -881,7 +875,7 @@ Private Sub CmdBorrar_Click()
          DBConn.Execute sql
                                         
          DBConn.CommitTrans
-         lblEstado.Caption = ""
+         lblestado.Caption = ""
          Screen.MousePointer = vbNormal
          CmdNuevo_Click
     End If
@@ -890,7 +884,7 @@ Private Sub CmdBorrar_Click()
 Seclavose:
     DBConn.RollbackTrans
     Screen.MousePointer = vbNormal
-    lblEstado.Caption = ""
+    lblestado.Caption = ""
     MsgBox Err.Description, vbCritical, TIT_MSGBOX
 End Sub
 
@@ -976,7 +970,7 @@ Private Sub cmdBuscarProveedor1_Click()
     End If
 End Sub
 
-Private Sub CmdGrabar_Click()
+Private Sub cmdGrabar_Click()
     
     If ValidarGastosGenerales = False Then Exit Sub
     If MsgBox("¿Confirma Gasto?", vbQuestion + vbYesNo, TIT_MSGBOX) = vbNo Then Exit Sub
@@ -992,7 +986,7 @@ Private Sub CmdGrabar_Click()
     rec.Open sql, DBConn, adOpenStatic, adLockOptimistic
     
     Screen.MousePointer = vbHourglass
-    lblEstado.Caption = "Guardando..."
+    lblestado.Caption = "Guardando..."
     
     If rec.EOF = False Then
         If MsgBox("El gasto ya fue ingresado!!!" & Chr(13) & _
@@ -1052,13 +1046,13 @@ Private Sub CmdGrabar_Click()
     rec.Close
         
     Screen.MousePointer = vbNormal
-    lblEstado.Caption = ""
+    lblestado.Caption = ""
     DBConn.CommitTrans
     CmdNuevo_Click
     Exit Sub
     
 HayErrorCarga:
-    lblEstado.Caption = ""
+    lblestado.Caption = ""
     Screen.MousePointer = vbNormal
     DBConn.RollbackTrans
     MsgBox Err.Description, vbCritical, TIT_MSGBOX
@@ -1168,7 +1162,7 @@ Private Sub cmdNuevoGasto_Click()
     CboGastos.SetFocus
 End Sub
 
-Private Sub cmdSalir_Click()
+Private Sub CmdSalir_Click()
     Set frmCargaGastosGenerales = Nothing
     Unload Me
 End Sub
@@ -1181,7 +1175,7 @@ Private Sub Form_KeyPress(KeyAscii As Integer)
     If KeyAscii = vbKeyReturn Then
         SendKeys "{TAB}"
     End If
-    If KeyAscii = vbKeyEscape Then cmdSalir_Click
+    If KeyAscii = vbKeyEscape Then CmdSalir_Click
 End Sub
 
 Private Sub LimpiarBusqueda()
@@ -1233,7 +1227,7 @@ Private Sub Form_Load()
     cmdGrabar.Enabled = True
     cmdBorrar.Enabled = False
     Periodo.Enabled = False
-    lblEstado.Caption = ""
+    lblestado.Caption = ""
     txtNeto.Text = "0,00"
     txtNeto1.Text = "0,00"
     txtSubtotal.Text = "0,00"

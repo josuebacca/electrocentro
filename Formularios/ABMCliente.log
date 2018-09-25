@@ -1,1 +1,10 @@
 Línea 251: la clase Control_CUIT.CUIT del control txtCUIT no era una clase de control cargada.
+Línea 257: el nombre de la propiedad _ExtentX de txtCUIT no es válido.
+Línea 258: el nombre de la propiedad _ExtentY de txtCUIT no es válido.
+Línea 259: el nombre de la propiedad ConSeparador de txtCUIT no es válido.
+Línea 260: el nombre de la propiedad Text de txtCUIT no es válido.
+Línea 261: el nombre de la propiedad MensajeErr de txtCUIT no es válido.
+Línea 262: el nombre de la propiedad nacPF de txtCUIT no es válido.
+Línea 263: el nombre de la propiedad nacPJ de txtCUIT no es válido.
+Línea 264: el nombre de la propiedad extPF de txtCUIT no es válido.
+Línea 265: el nombre de la propiedad extPJ de txtCUIT no es válido.

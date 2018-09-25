@@ -154,7 +154,7 @@ Begin VB.Form frmListadoNotaDePedido
          _ExtentX        =   2355
          _ExtentY        =   661
          _Version        =   393216
-         Format          =   53870593
+         Format          =   53411841
          CurrentDate     =   43367
       End
       Begin MSComCtl2.DTPicker FechaHasta 
@@ -166,7 +166,7 @@ Begin VB.Form frmListadoNotaDePedido
          _ExtentX        =   2355
          _ExtentY        =   661
          _Version        =   393216
-         Format          =   53870593
+         Format          =   53411841
          CurrentDate     =   43367
       End
       Begin VB.Label Label1 
@@ -430,7 +430,7 @@ Private Sub CBImpresora_Click()
 End Sub
 Private Sub CmdBuscAprox_Click()
     GrdModulos.Rows = 1
-    lblEstado.Caption = "Buscando..."
+    lblestado.Caption = "Buscando..."
     Screen.MousePointer = vbHourglass
     GrdModulos.HighLight = flexHighlightNever
     sql = "SELECT NP.*, C.CLI_RAZSOC,C.CLI_DOMICI,L.LOC_DESCRI,P.PRO_DESCRI"
@@ -459,11 +459,11 @@ Private Sub CmdBuscAprox_Click()
         Loop
         GrdModulos.SetFocus
     Else
-        lblEstado.Caption = ""
+        lblestado.Caption = ""
         Screen.MousePointer = vbNormal
         MsgBox "No se encontraron datos...", vbExclamation, TIT_MSGBOX
     End If
-    lblEstado.Caption = ""
+    lblestado.Caption = ""
     Screen.MousePointer = vbNormal
     rec.Close
 End Sub
@@ -485,13 +485,13 @@ End Sub
 
 Private Sub cmdListar_Click()
     'Rep.WindowState = crptMaximized 'crptMinimized
-    Rep.WindowBorderStyle = crptNoBorder
-    Rep.Connect = "Provider=MSDASQL.1;Persist Security Info=False;Data Source=SIELECTROCENTRO"
-    Rep.SelectionFormula = ""
-    Rep.Formulas(0) = ""
-    Rep.Formulas(1) = ""
-    Rep.Formulas(2) = ""
-    Rep.Formulas(3) = ""
+    'Rep.WindowBorderStyle = crptNoBorder
+    'Rep.Connect = "Provider=MSDASQL.1;Persist Security Info=False;Data Source=SIELECTROCENTRO"
+    'Rep.SelectionFormula = ""
+    'Rep.Formulas(0) = ""
+    'Rep.Formulas(1) = ""
+    'Rep.Formulas(2) = ""
+    'Rep.Formulas(3) = ""
     
     'NOTA DE PEDIDO GENERAL
     If optGeneralTodos.Value = True Then
@@ -646,7 +646,7 @@ Private Sub Form_Load()
     cmdBuscarVendedor.Enabled = False
     GrdModulos.Rows = 1
     lblImpresora.Caption = "Impresora Actual: " & Printer.DeviceName
-    lblEstado.Caption = ""
+    lblestado.Caption = ""
 
     Call Centrar_pantalla(Me)
     GrdModulos.FormatString = ">Número|^Fecha|Cliente|Localidad|Provincia|Forma de pago"

@@ -77,8 +77,8 @@ Begin VB.Form frmReciboCliente
       TabCaption(1)   =   "&Buscar"
       TabPicture(1)   =   "frmReciboCliente.frx":001C
       Tab(1).ControlEnabled=   0   'False
-      Tab(1).Control(0)=   "GrdModulos"
-      Tab(1).Control(1)=   "frameBuscar"
+      Tab(1).Control(0)=   "frameBuscar"
+      Tab(1).Control(1)=   "GrdModulos"
       Tab(1).ControlCount=   2
       Begin TabDlg.SSTab tabComprobantes 
          Height          =   3975
@@ -1513,7 +1513,7 @@ Begin VB.Form frmReciboCliente
             _ExtentX        =   2355
             _ExtentY        =   661
             _Version        =   393216
-            Format          =   53936129
+            Format          =   53215233
             CurrentDate     =   43367
          End
          Begin VB.Label Label19 
@@ -2005,10 +2005,10 @@ Private Sub cmdAceptarMoneda_Click()
 End Sub
 
 Private Sub cmdAceptarValores_Click()
-    If cmdGrabar.Enabled = True Then
-        cmdGrabar.SetFocus
+    If CmdGrabar.Enabled = True Then
+        CmdGrabar.SetFocus
     Else
-        cmdNuevo.SetFocus
+        CmdNuevo.SetFocus
     End If
 End Sub
 
@@ -2092,11 +2092,11 @@ Private Sub cmdAgregarCheque_Click()
     'CARGO GRILLA
     GrillaCheques.AddItem txtCodBanco.Text & Chr(9) & txtDesBanco.Text & Chr(9) & _
                           "" & Chr(9) & "" & Chr(9) & _
-                          TxtCheNumero.Text & Chr(9) & TxtCheFecVto.Text & Chr(9) & _
+                          TxtCheNumero.Text & Chr(9) & TxtCheFecVto.Value & Chr(9) & _
                           Valido_Importe(TxtCheImport.Text) & Chr(9) & txtCodBanco.Text & Chr(9) & txtDesBanco.Text
     'GrillaCheques.AddItem TxtBANCO.Text & Chr(9) & TxtLOCALIDAD.Text & Chr(9) & _
                           TxtSUCURSAL.Text & Chr(9) & TxtCODIGO.Text & Chr(9) & _
-                          TxtCheNumero.Text & Chr(9) & TxtCheFecVto.Text & Chr(9) & _
+                          TxtCheNumero.Text & Chr(9) & TxtCheFecVto.Value & Chr(9) & _
                           Valido_Importe(TxtCheImport.Text) & Chr(9) & TxtCodInt.Text & Chr(9) & TxtBanDescri.Text
     
     
@@ -2121,11 +2121,11 @@ End Function
 
 Private Sub LimpiarCheques()
     TxtBANCO.Text = ""
-    txtlocalidad.Text = ""
+    TxtLOCALIDAD.Text = ""
     TxtSUCURSAL.Text = ""
-    TxtCodigo.Text = ""
+    TxtCODIGO.Text = ""
     TxtCheNumero.Text = ""
-    TxtCheFecVto.Text = ""
+    TxtCheFecVto.Value = ""
     TxtCheImport.Text = ""
     TxtCodInt.Text = ""
     TxtBanDescri.Text = ""
@@ -2335,7 +2335,7 @@ Private Sub cmdBuscaCheque_Click()
     'TxtSUCURSAL.Text = frmBuscar.grdBuscar.TextMatrix(frmBuscar.grdBuscar.RowSel, 7)
     'TxtCODIGO.Text = frmBuscar.grdBuscar.TextMatrix(frmBuscar.grdBuscar.RowSel, 8)
     TxtCheImport.Text = frmBuscar.grdBuscar.TextMatrix(frmBuscar.grdBuscar.RowSel, 3)
-    TxtCheFecVto.Text = frmBuscar.grdBuscar.TextMatrix(frmBuscar.grdBuscar.RowSel, 2)
+    TxtCheFecVto.Value = frmBuscar.grdBuscar.TextMatrix(frmBuscar.grdBuscar.RowSel, 2)
     txtDesBanco.Text = frmBuscar.grdBuscar.TextMatrix(frmBuscar.grdBuscar.RowSel, 0)
     txtCodBanco.Text = frmBuscar.grdBuscar.TextMatrix(frmBuscar.grdBuscar.RowSel, 4)
     
@@ -2728,7 +2728,7 @@ End Function
 
 Private Sub CmdNuevo_Click()
     Estado = 1
-    cmdGrabar.Enabled = True
+    CmdGrabar.Enabled = True
     FrameRecibo.Enabled = True
     FrameRemito.Enabled = True
     TxtCheNumero.Text = ""
@@ -3181,7 +3181,7 @@ Private Sub tabDatos_Click(PreviousTab As Integer)
     cboRecibo1.Enabled = False
     cmdBuscarCli.Enabled = False
     cmdBuscarVen.Enabled = False
-    cmdGrabar.Enabled = False
+    CmdGrabar.Enabled = False
     If Me.Visible = True Then chkCliente.SetFocus
   End If
 End Sub
@@ -3271,7 +3271,7 @@ Private Sub TxtCheNumero_LostFocus()
             'TxtSUCURSAL.Text = rec!BAN_SUCURSAL
             'TxtCODIGO.Text = rec!BAN_CODIGO
             TxtCheImport.Text = rec!che_import
-            TxtCheFecVto.Text = rec!CHE_FECVTO
+            TxtCheFecVto.Value = rec!CHE_FECVTO
             'TxtBanDescri.Text = rec!BAN_NOMCOR
             txtCodBanco.Text = rec!BAN_CODINT
             txtDesBanco.Text = rec!BAN_BANCO
@@ -3333,7 +3333,7 @@ End Sub
 Private Sub txtCodCliente_Change()
     If txtCodCliente.Text = "" Then
         txtCliRazSoc.Text = ""
-        txtProvincia.Text = ""
+        txtprovincia.Text = ""
         txtCliLocalidad.Text = ""
         txtDomici.Text = ""
     End If
@@ -3360,7 +3360,7 @@ Private Sub txtCodCliente_LostFocus()
         rec.Open sql, DBConn, adOpenStatic, adLockOptimistic
         If rec.EOF = False Then
             txtCliRazSoc.Text = rec!CLI_RAZSOC
-            txtProvincia.Text = rec!PRO_DESCRI
+            txtprovincia.Text = rec!PRO_DESCRI
             txtCliLocalidad.Text = rec!LOC_DESCRI
             txtDomici.Text = IIf(IsNull(rec!CLI_DOMICI), "", rec!CLI_DOMICI)
             If Estado = 1 Then
@@ -3389,7 +3389,7 @@ Private Sub txtCodCliente_LostFocus()
 End Sub
 
 Private Sub TxtCodigo_GotFocus()
-    SelecTexto TxtCodigo
+    SelecTexto TxtCODIGO
 End Sub
 
 Private Sub txtEftImporte_Change()
@@ -3499,7 +3499,7 @@ Private Sub txtImporteComprobante_LostFocus()
 End Sub
 
 Private Sub TxtLOCALIDAD_GotFocus()
-    SelecTexto txtlocalidad
+    SelecTexto TxtLOCALIDAD
 End Sub
 
 Private Sub Txtlocalidad_KeyPress(KeyAscii As Integer)
@@ -3507,7 +3507,7 @@ Private Sub Txtlocalidad_KeyPress(KeyAscii As Integer)
 End Sub
 
 Private Sub TxtLOCALIDAD_LostFocus()
-    If Len(txtlocalidad.Text) < 3 Then txtlocalidad.Text = CompletarConCeros(txtlocalidad.Text, 3)
+    If Len(TxtLOCALIDAD.Text) < 3 Then TxtLOCALIDAD.Text = CompletarConCeros(TxtLOCALIDAD.Text, 3)
 End Sub
 
 Private Sub txtNroComprobantes_Change()
@@ -3811,8 +3811,8 @@ Private Sub BuscarRecibo(TipoRec As String, NroRec As String, NroSuc As String)
         FrameRecibo.Enabled = False
         FrameRemito.Enabled = False
         rec.Close
-        cmdNuevo.SetFocus
-        cmdGrabar.Enabled = False
+        CmdNuevo.SetFocus
+        CmdGrabar.Enabled = False
     End If
     Rec2.Close
 End Sub
@@ -3896,21 +3896,21 @@ Private Sub TxtCodigo_LostFocus()
         
     'ChequeRegistrado = False
     
-    If Len(TxtCodigo.Text) < 6 Then TxtCodigo.Text = CompletarConCeros(TxtCodigo.Text, 6)
+    If Len(TxtCODIGO.Text) < 6 Then TxtCODIGO.Text = CompletarConCeros(TxtCODIGO.Text, 6)
      
     If Trim(Me.TxtCheNumero.Text) <> "" And _
        Trim(Me.TxtBANCO.Text) <> "" And _
-       Trim(Me.txtlocalidad.Text) <> "" And _
+       Trim(Me.TxtLOCALIDAD.Text) <> "" And _
        Trim(Me.TxtSUCURSAL.Text) <> "" And _
-       Trim(Me.TxtCodigo.Text) <> "" Then
+       Trim(Me.TxtCODIGO.Text) <> "" Then
        
        'BUSCO EL CODIGO INTERNO
        sql = "SELECT BAN_CODINT, BAN_DESCRI"
        sql = sql & " FROM BANCO"
        sql = sql & " WHERE BAN_BANCO = " & XS(TxtBANCO.Text)
-       sql = sql & " AND BAN_LOCALIDAD = " & XS(Me.txtlocalidad.Text)
+       sql = sql & " AND BAN_LOCALIDAD = " & XS(Me.TxtLOCALIDAD.Text)
        sql = sql & " AND BAN_SUCURSAL = " & XS(Me.TxtSUCURSAL.Text)
-       sql = sql & " AND BAN_CODIGO = " & XS(TxtCodigo.Text)
+       sql = sql & " AND BAN_CODIGO = " & XS(TxtCODIGO.Text)
        rec.Open sql, DBConn, adOpenStatic, adLockOptimistic
        If rec.RecordCount > 0 Then 'EXITE
           TxtCodInt.Text = rec!BAN_CODINT
@@ -3932,7 +3932,7 @@ Private Sub TxtCodigo_LostFocus()
                 " AND BAN_CODINT = " & XN(TxtCodInt.Text)
         rec.Open sql, DBConn, adOpenStatic, adLockOptimistic
         If rec.RecordCount > 0 Then 'EXITE
-            Me.TxtCheFecVto.Text = rec!CHE_FECVTO
+            Me.TxtCheFecVto.Value = rec!CHE_FECVTO
             Me.TxtCheImport.Text = Valido_Importe(rec!che_import)
             
             'BUSCO LOS ATRIBUTOS DE BANCO
@@ -3941,9 +3941,9 @@ Private Sub TxtCodigo_LostFocus()
             Rec1.Open sql, DBConn, adOpenStatic, adLockOptimistic
             If Rec1.RecordCount > 0 Then 'EXITE
                 Me.TxtBANCO.Text = Rec1!BAN_BANCO
-                Me.txtlocalidad.Text = Rec1!BAN_LOCALIDAD
+                Me.TxtLOCALIDAD.Text = Rec1!BAN_LOCALIDAD
                 Me.TxtSUCURSAL.Text = Rec1!BAN_SUCURSAL
-                Me.TxtCodigo.Text = Rec1!BAN_CODIGO
+                Me.TxtCODIGO.Text = Rec1!BAN_CODIGO
             End If
             Rec1.Close
         Else

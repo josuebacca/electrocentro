@@ -1,7 +1,7 @@
 VERSION 5.00
-Object = "{BDC217C8-ED16-11CD-956C-0000C04E4C0A}#1.1#0"; "TABCTL32.OCX"
-Object = "{5E9E78A0-531B-11CF-91F6-C2863C385E30}#1.0#0"; "Msflxgrd.ocx"
-Object = "{F09A78C8-7814-11D2-8355-4854E82A9183}#1.0#0"; "Cuit32.ocx"
+Object = "{BDC217C8-ED16-11CD-956C-0000C04E4C0A}#1.1#0"; "tabctl32.ocx"
+Object = "{5E9E78A0-531B-11CF-91F6-C2863C385E30}#1.0#0"; "msflxgrd.ocx"
+Object = "{C932BA88-4374-101B-A56C-00AA003668DC}#1.1#0"; "msmask32.ocx"
 Begin VB.Form ABMCliente 
    BorderStyle     =   1  'Fixed Single
    Caption         =   "ABM de Clientes"
@@ -23,7 +23,7 @@ Begin VB.Form ABMCliente
       Left            =   4875
       Picture         =   "ABMCliente.frx":030A
       Style           =   1  'Graphical
-      TabIndex        =   20
+      TabIndex        =   19
       Top             =   6915
       Width           =   840
    End
@@ -34,7 +34,7 @@ Begin VB.Form ABMCliente
       Left            =   5730
       Picture         =   "ABMCliente.frx":091E
       Style           =   1  'Graphical
-      TabIndex        =   21
+      TabIndex        =   20
       Top             =   6915
       Width           =   840
    End
@@ -45,7 +45,7 @@ Begin VB.Form ABMCliente
       Left            =   3165
       Picture         =   "ABMCliente.frx":0F32
       Style           =   1  'Graphical
-      TabIndex        =   18
+      TabIndex        =   17
       Top             =   6915
       Width           =   840
    End
@@ -56,14 +56,14 @@ Begin VB.Form ABMCliente
       Left            =   4020
       Picture         =   "ABMCliente.frx":1546
       Style           =   1  'Graphical
-      TabIndex        =   19
+      TabIndex        =   18
       Top             =   6915
       Width           =   840
    End
    Begin TabDlg.SSTab tabDatos 
       Height          =   6810
       Left            =   80
-      TabIndex        =   25
+      TabIndex        =   24
       Top             =   80
       Width           =   6510
       _ExtentX        =   11483
@@ -106,14 +106,25 @@ Begin VB.Form ABMCliente
          EndProperty
          Height          =   6165
          Left            =   150
-         TabIndex        =   29
+         TabIndex        =   28
          Top             =   540
          Width           =   6225
+         Begin MSMask.MaskEdBox txtCUIT 
+            Height          =   375
+            Left            =   1350
+            TabIndex        =   56
+            Top             =   1560
+            Width           =   2055
+            _ExtentX        =   3625
+            _ExtentY        =   661
+            _Version        =   393216
+            PromptChar      =   "_"
+         End
          Begin VB.CheckBox chkMorDias 
             Caption         =   "Si supera"
             Height          =   255
             Left            =   360
-            TabIndex        =   7
+            TabIndex        =   6
             Top             =   2543
             Width           =   975
          End
@@ -121,7 +132,7 @@ Begin VB.Form ABMCliente
             Caption         =   "Porcentaje"
             Height          =   255
             Left            =   3480
-            TabIndex        =   9
+            TabIndex        =   8
             Top             =   2543
             Width           =   1095
          End
@@ -130,7 +141,7 @@ Begin VB.Form ABMCliente
             Height          =   300
             Left            =   4590
             MaxLength       =   10
-            TabIndex        =   10
+            TabIndex        =   9
             Top             =   2520
             Width           =   1140
          End
@@ -138,7 +149,7 @@ Begin VB.Form ABMCliente
             Height          =   300
             Left            =   1350
             MaxLength       =   10
-            TabIndex        =   8
+            TabIndex        =   7
             Top             =   2520
             Width           =   1260
          End
@@ -147,7 +158,7 @@ Begin VB.Form ABMCliente
             Height          =   300
             Left            =   4800
             MaxLength       =   10
-            TabIndex        =   54
+            TabIndex        =   53
             Top             =   3960
             Width           =   1020
          End
@@ -164,7 +175,7 @@ Begin VB.Form ABMCliente
             EndProperty
             Height          =   240
             Left            =   1350
-            TabIndex        =   52
+            TabIndex        =   51
             Top             =   5850
             Width           =   2415
          End
@@ -174,7 +185,7 @@ Begin VB.Form ABMCliente
             MaskColor       =   &H000000FF&
             Picture         =   "ABMCliente.frx":1888
             Style           =   1  'Graphical
-            TabIndex        =   51
+            TabIndex        =   50
             ToolTipText     =   "Agregar Canal"
             Top             =   1905
             UseMaskColor    =   -1  'True
@@ -186,7 +197,7 @@ Begin VB.Form ABMCliente
             MaskColor       =   &H000000FF&
             Picture         =   "ABMCliente.frx":1C12
             Style           =   1  'Graphical
-            TabIndex        =   50
+            TabIndex        =   49
             ToolTipText     =   "Agregar Provincia"
             Top             =   3585
             UseMaskColor    =   -1  'True
@@ -198,7 +209,7 @@ Begin VB.Form ABMCliente
             MaskColor       =   &H000000FF&
             Picture         =   "ABMCliente.frx":1F9C
             Style           =   1  'Graphical
-            TabIndex        =   49
+            TabIndex        =   48
             ToolTipText     =   "Agregar Localidad"
             Top             =   3960
             UseMaskColor    =   -1  'True
@@ -210,7 +221,7 @@ Begin VB.Form ABMCliente
             MaskColor       =   &H000000FF&
             Picture         =   "ABMCliente.frx":2326
             Style           =   1  'Graphical
-            TabIndex        =   48
+            TabIndex        =   47
             ToolTipText     =   "Agregar País"
             Top             =   3210
             UseMaskColor    =   -1  'True
@@ -220,7 +231,7 @@ Begin VB.Form ABMCliente
             Height          =   300
             Left            =   4590
             MaxLength       =   10
-            TabIndex        =   6
+            TabIndex        =   5
             Top             =   1920
             Width           =   1140
          End
@@ -228,7 +239,7 @@ Begin VB.Form ABMCliente
             Height          =   315
             Left            =   1350
             Style           =   2  'Dropdown List
-            TabIndex        =   5
+            TabIndex        =   4
             Top             =   1913
             Width           =   1605
          End
@@ -244,31 +255,15 @@ Begin VB.Form ABMCliente
             Height          =   285
             Left            =   4590
             MaxLength       =   10
-            TabIndex        =   4
-            Top             =   1545
-            Width           =   1125
-         End
-         Begin Control_CUIT.CUIT txtCUIT 
-            Height          =   315
-            Left            =   1350
             TabIndex        =   3
             Top             =   1545
-            Width           =   1560
-            _ExtentX        =   2752
-            _ExtentY        =   556
-            ConSeparador    =   0   'False
-            Text            =   ""
-            MensajeErr      =   ""
-            nacPF           =   0   'False
-            nacPJ           =   0   'False
-            extPF           =   0   'False
-            extPJ           =   0   'False
+            Width           =   1125
          End
          Begin VB.ComboBox cboProv 
             Height          =   315
             Left            =   1350
             Style           =   2  'Dropdown List
-            TabIndex        =   12
+            TabIndex        =   11
             Top             =   3585
             Width           =   2895
          End
@@ -276,7 +271,7 @@ Begin VB.Form ABMCliente
             Height          =   315
             Left            =   1350
             Style           =   2  'Dropdown List
-            TabIndex        =   11
+            TabIndex        =   10
             Top             =   3210
             Width           =   2895
          End
@@ -284,7 +279,7 @@ Begin VB.Form ABMCliente
             Height          =   315
             Left            =   1350
             Style           =   2  'Dropdown List
-            TabIndex        =   13
+            TabIndex        =   12
             Top             =   3960
             Width           =   2895
          End
@@ -293,7 +288,7 @@ Begin VB.Form ABMCliente
             Left            =   1350
             LinkTimeout     =   0
             MaxLength       =   40
-            TabIndex        =   17
+            TabIndex        =   16
             Top             =   5430
             Width           =   4455
          End
@@ -301,7 +296,7 @@ Begin VB.Form ABMCliente
             Height          =   285
             Left            =   3975
             MaxLength       =   25
-            TabIndex        =   16
+            TabIndex        =   15
             Top             =   5085
             Width           =   1815
          End
@@ -309,7 +304,7 @@ Begin VB.Form ABMCliente
             Height          =   285
             Left            =   1350
             MaxLength       =   50
-            TabIndex        =   14
+            TabIndex        =   13
             Top             =   4350
             Width           =   4455
          End
@@ -334,7 +329,7 @@ Begin VB.Form ABMCliente
             Height          =   285
             Left            =   1350
             MaxLength       =   25
-            TabIndex        =   15
+            TabIndex        =   14
             Top             =   5085
             Width           =   1815
          End
@@ -343,7 +338,7 @@ Begin VB.Form ABMCliente
             Caption         =   "Dias"
             Height          =   195
             Left            =   2640
-            TabIndex        =   56
+            TabIndex        =   55
             Top             =   2580
             Width           =   315
          End
@@ -353,7 +348,7 @@ Begin VB.Form ABMCliente
             ForeColor       =   &H00FF0000&
             Height          =   195
             Left            =   480
-            TabIndex        =   55
+            TabIndex        =   54
             Top             =   2280
             Width           =   735
          End
@@ -369,7 +364,7 @@ Begin VB.Form ABMCliente
             Caption         =   "C.P."
             Height          =   195
             Left            =   5160
-            TabIndex        =   53
+            TabIndex        =   52
             Top             =   3720
             Width           =   300
          End
@@ -379,7 +374,7 @@ Begin VB.Form ABMCliente
             ForeColor       =   &H00FF0000&
             Height          =   195
             Left            =   480
-            TabIndex        =   47
+            TabIndex        =   46
             Top             =   4740
             Width           =   1575
          End
@@ -396,7 +391,7 @@ Begin VB.Form ABMCliente
             ForeColor       =   &H00FF0000&
             Height          =   195
             Left            =   480
-            TabIndex        =   46
+            TabIndex        =   45
             Top             =   2895
             Width           =   630
          End
@@ -412,7 +407,7 @@ Begin VB.Form ABMCliente
             Caption         =   "Crédito:"
             Height          =   195
             Left            =   3930
-            TabIndex        =   45
+            TabIndex        =   44
             Top             =   1950
             Width           =   540
          End
@@ -421,7 +416,7 @@ Begin VB.Form ABMCliente
             Caption         =   "Canal:"
             Height          =   195
             Left            =   780
-            TabIndex        =   44
+            TabIndex        =   43
             Top             =   1950
             Width           =   450
          End
@@ -430,7 +425,7 @@ Begin VB.Form ABMCliente
             Caption         =   "Cond. I.V.A.:"
             Height          =   195
             Left            =   330
-            TabIndex        =   43
+            TabIndex        =   42
             Top             =   1200
             Width           =   900
          End
@@ -439,7 +434,7 @@ Begin VB.Form ABMCliente
             Caption         =   "Ing. Brutos:"
             Height          =   195
             Left            =   3645
-            TabIndex        =   42
+            TabIndex        =   41
             Top             =   1575
             Width           =   810
          End
@@ -448,7 +443,7 @@ Begin VB.Form ABMCliente
             Caption         =   "C.U.I.T.:"
             Height          =   195
             Left            =   630
-            TabIndex        =   41
+            TabIndex        =   40
             Top             =   1590
             Width           =   600
          End
@@ -457,7 +452,7 @@ Begin VB.Form ABMCliente
             Caption         =   "País:"
             Height          =   195
             Left            =   855
-            TabIndex        =   40
+            TabIndex        =   39
             Top             =   3255
             Width           =   375
          End
@@ -466,7 +461,7 @@ Begin VB.Form ABMCliente
             Caption         =   "E-Mail:"
             Height          =   195
             Left            =   750
-            TabIndex        =   39
+            TabIndex        =   38
             Top             =   5490
             Width           =   480
          End
@@ -475,7 +470,7 @@ Begin VB.Form ABMCliente
             Caption         =   "Fax:"
             Height          =   195
             Left            =   3555
-            TabIndex        =   38
+            TabIndex        =   37
             Top             =   5130
             Width           =   300
          End
@@ -483,7 +478,7 @@ Begin VB.Form ABMCliente
             Caption         =   "Teléfono:"
             Height          =   195
             Left            =   555
-            TabIndex        =   37
+            TabIndex        =   36
             Top             =   5145
             Width           =   675
          End
@@ -492,7 +487,7 @@ Begin VB.Form ABMCliente
             Caption         =   "Provincia:"
             Height          =   195
             Left            =   525
-            TabIndex        =   36
+            TabIndex        =   35
             Top             =   3630
             Width           =   705
          End
@@ -500,7 +495,7 @@ Begin VB.Form ABMCliente
             Caption         =   "Localidad:"
             Height          =   195
             Left            =   495
-            TabIndex        =   35
+            TabIndex        =   34
             Top             =   4005
             Width           =   735
          End
@@ -509,7 +504,7 @@ Begin VB.Form ABMCliente
             Caption         =   "Domicilio:"
             Height          =   195
             Left            =   555
-            TabIndex        =   34
+            TabIndex        =   33
             Top             =   4380
             Width           =   675
          End
@@ -523,7 +518,7 @@ Begin VB.Form ABMCliente
             Height          =   195
             Index           =   7
             Left            =   480
-            TabIndex        =   31
+            TabIndex        =   30
             Top             =   840
             Width           =   750
          End
@@ -537,7 +532,7 @@ Begin VB.Form ABMCliente
             Height          =   195
             Index           =   1
             Left            =   690
-            TabIndex        =   30
+            TabIndex        =   29
             Top             =   465
             Width           =   540
          End
@@ -545,7 +540,7 @@ Begin VB.Form ABMCliente
       Begin VB.Frame Frame1 
          Height          =   735
          Left            =   -74865
-         TabIndex        =   26
+         TabIndex        =   25
          Top             =   600
          Width           =   6135
          Begin VB.CommandButton CmdBuscAprox 
@@ -554,7 +549,7 @@ Begin VB.Form ABMCliente
             MaskColor       =   &H000000FF&
             Picture         =   "ABMCliente.frx":26B0
             Style           =   1  'Graphical
-            TabIndex        =   23
+            TabIndex        =   22
             ToolTipText     =   "Buscar"
             Top             =   210
             UseMaskColor    =   -1  'True
@@ -564,7 +559,7 @@ Begin VB.Form ABMCliente
             Height          =   330
             Left            =   1275
             MaxLength       =   15
-            TabIndex        =   22
+            TabIndex        =   21
             Top             =   225
             Width           =   4215
          End
@@ -575,7 +570,7 @@ Begin VB.Form ABMCliente
             Height          =   195
             Index           =   1
             Left            =   1665
-            TabIndex        =   28
+            TabIndex        =   27
             Top             =   315
             Visible         =   0   'False
             Width           =   540
@@ -586,7 +581,7 @@ Begin VB.Form ABMCliente
             Height          =   195
             Index           =   0
             Left            =   180
-            TabIndex        =   27
+            TabIndex        =   26
             Top             =   270
             Width           =   885
          End
@@ -594,7 +589,7 @@ Begin VB.Form ABMCliente
       Begin MSFlexGridLib.MSFlexGrid GrdModulos 
          Height          =   4875
          Left            =   -74880
-         TabIndex        =   24
+         TabIndex        =   23
          Top             =   1440
          Width           =   6210
          _ExtentX        =   10954
@@ -613,7 +608,7 @@ Begin VB.Form ABMCliente
          Height          =   195
          Index           =   0
          Left            =   -74820
-         TabIndex        =   32
+         TabIndex        =   31
          Top             =   570
          Width           =   1065
       End
@@ -633,7 +628,7 @@ Begin VB.Form ABMCliente
       EndProperty
       Height          =   240
       Left            =   105
-      TabIndex        =   33
+      TabIndex        =   32
       Top             =   7035
       Width           =   750
    End
@@ -795,10 +790,10 @@ Private Sub CmdBorrar_Click()
         If resp <> 6 Then Exit Sub
         
         Screen.MousePointer = vbHourglass
-        lblestado.Caption = "Eliminando ..."
+        lblEstado.Caption = "Eliminando ..."
         
         DBConn.Execute "DELETE FROM CLIENTE WHERE CLI_CODIGO = " & XN(TxtCodigo)
-        lblestado.Caption = ""
+        lblEstado.Caption = ""
         Screen.MousePointer = vbNormal
         CmdNuevo_Click
     End If
@@ -807,7 +802,7 @@ Private Sub CmdBorrar_Click()
 CLAVOSE:
     If rec.State = 1 Then rec.Close
     Screen.MousePointer = vbNormal
-    lblestado.Caption = ""
+    lblEstado.Caption = ""
     MsgBox Err.Description, vbCritical, TIT_MSGBOX
 End Sub
 
@@ -819,7 +814,7 @@ Private Sub CmdBuscAprox_Click()
     sql = sql & " WHERE CLI_RAZSOC"
     sql = sql & " LIKE '" & TxtDescriB.Text & "%' ORDER BY CLI_RAZSOC"
         
-    lblestado.Caption = "Buscando..."
+    lblEstado.Caption = "Buscando..."
     rec.Open sql, DBConn, adOpenStatic, adLockOptimistic
     If rec.RecordCount > 0 Then
         Do While Not rec.EOF
@@ -828,22 +823,22 @@ Private Sub CmdBuscAprox_Click()
         Loop
         If GrdModulos.Enabled Then GrdModulos.SetFocus
     Else
-        lblestado.Caption = ""
+        lblEstado.Caption = ""
         MsgBox "No hay coincidencias en la busqueda.", vbOKOnly + vbCritical, TIT_MSGBOX
         TxtDescriB.SetFocus
     End If
     rec.Close
     MousePointer = vbNormal
-    lblestado.Caption = ""
+    lblEstado.Caption = ""
 End Sub
 
-Private Sub CmdGrabar_Click()
+Private Sub cmdGrabar_Click()
 
     If ValidarCliente = False Then Exit Sub
     
     On Error GoTo HayError
     Screen.MousePointer = vbHourglass
-    lblestado.Caption = "Guardando ..."
+    lblEstado.Caption = "Guardando ..."
     DBConn.BeginTrans
     If TxtCodigo.Text <> "" Then
         sql = "UPDATE CLIENTE "
@@ -856,8 +851,8 @@ Private Sub CmdGrabar_Click()
         sql = sql & " , PRO_CODIGO=" & cboProv.ItemData(cboProv.ListIndex)
         sql = sql & " , LOC_CODIGO=" & cboLocal.ItemData(cboLocal.ListIndex)
         sql = sql & " , CLI_TELEFONO=" & XS(txtTelefono)
-        sql = sql & " , CLI_FAX=" & XS(txtfax)
-        sql = sql & " , CLI_MAIL=" & XS(txtmail)
+        sql = sql & " , CLI_FAX=" & XS(txtFax)
+        sql = sql & " , CLI_MAIL=" & XS(txtMail)
         sql = sql & " , CLI_CREDITO=" & XN(txtCredito)
         sql = sql & " , CAN_CODIGO=" & cboCanal.ItemData(cboCanal.ListIndex)
         If chkBaja.Value = Checked Then
@@ -889,8 +884,8 @@ Private Sub CmdGrabar_Click()
         sql = sql & XS(txtCUIT) & ","
         sql = sql & XS(txtIngBrutos) & ","
         sql = sql & XS(txtTelefono) & ","
-        sql = sql & XS(txtfax) & ","
-        sql = sql & XS(txtmail) & ","
+        sql = sql & XS(txtFax) & ","
+        sql = sql & XS(txtMail) & ","
         sql = sql & XN(txtCredito) & ","
         sql = sql & cboCanal.ItemData(cboCanal.ListIndex) & ","
         sql = sql & cboIva.ItemData(cboIva.ListIndex) & ","
@@ -914,7 +909,7 @@ Private Sub CmdGrabar_Click()
     Exit Sub
     
 HayError:
-    lblestado.Caption = ""
+    lblEstado.Caption = ""
     DBConn.RollbackTrans
     Screen.MousePointer = vbNormal
     MsgBox Err.Description, vbCritical, TIT_MSGBOX
@@ -1070,9 +1065,9 @@ Private Sub CmdNuevo_Click()
     TxtCodigo.Text = ""
     txtRazSoc.Text = ""
     txtTelefono.Text = ""
-    txtfax.Text = ""
-    txtmail.Text = ""
-    lblestado.Caption = ""
+    txtFax.Text = ""
+    txtMail.Text = ""
+    lblEstado.Caption = ""
     txtCredito.Text = ""
     txtDomici.Text = ""
     chkBaja.Value = Unchecked
@@ -1113,7 +1108,7 @@ Private Sub cmdNuevoPais_Click()
     cboPais.SetFocus
 End Sub
 
-Private Sub cmdSalir_Click()
+Private Sub CmdSalir_Click()
     Unload Me
     Set ABMCliente = Nothing
 End Sub
@@ -1124,7 +1119,7 @@ End Sub
 
 Private Sub Form_KeyPress(KeyAscii As Integer)
     If KeyAscii = vbKeyReturn Then SendKeys "{TAB}"
-    If KeyAscii = vbKeyEscape Then cmdSalir_Click
+    If KeyAscii = vbKeyEscape Then CmdSalir_Click
 End Sub
 
 Private Sub Form_Load()
@@ -1134,7 +1129,7 @@ Private Sub Form_Load()
     
     Call Centrar_pantalla(Me)
 
-    lblestado.Caption = ""
+    lblEstado.Caption = ""
     GrdModulos.FormatString = "Código|Razón Social"
     GrdModulos.ColWidth(0) = 1000
     GrdModulos.ColWidth(1) = 5000
@@ -1228,7 +1223,7 @@ Private Sub GrdModulos_DblClick()
  If GrdModulos.row > 0 Then
         TxtCodigo = GrdModulos.TextMatrix(GrdModulos.RowSel, 0)
         cmdGrabar.Enabled = True
-        CmdBorrar.Enabled = True
+        cmdBorrar.Enabled = True
         TxtCodigo_LostFocus
         tabDatos.Tab = 0
  End If
@@ -1242,21 +1237,21 @@ Private Sub tabDatos_Click(PreviousTab As Integer)
     If tabDatos.Tab = 0 And Me.Visible Then
         txtRazSoc.SetFocus
         cmdGrabar.Enabled = True
-        CmdBorrar.Enabled = True
+        cmdBorrar.Enabled = True
     End If
     If tabDatos.Tab = 1 Then
         TxtDescriB.Text = ""
         TxtDescriB.SetFocus
         cmdGrabar.Enabled = False
-        CmdBorrar.Enabled = False
+        cmdBorrar.Enabled = False
     End If
 End Sub
 
 Private Sub TxtCodigo_Change()
-    If Trim(TxtCodigo) = "" And CmdBorrar.Enabled Then
-        CmdBorrar.Enabled = False
+    If Trim(TxtCodigo) = "" And cmdBorrar.Enabled Then
+        cmdBorrar.Enabled = False
     ElseIf Trim(TxtCodigo) <> "" Then
-        CmdBorrar.Enabled = True
+        cmdBorrar.Enabled = True
     End If
 End Sub
 
@@ -1297,7 +1292,7 @@ Private Sub txtdomici_KeyPress(KeyAscii As Integer)
 End Sub
 
 Private Sub txtfax_GotFocus()
-    SelecTexto txtfax
+    SelecTexto txtFax
 End Sub
 
 Private Sub txtIngBrutos_GotFocus()
@@ -1363,8 +1358,8 @@ Private Sub TxtCodigo_LostFocus()
             BuscoCodPostal Rec1!LOC_CODIGO
             txtDomici.Text = IIf(IsNull(Rec1!CLI_DOMICI), "", Rec1!CLI_DOMICI)
             txtTelefono.Text = IIf(IsNull(Rec1!CLI_TELEFONO), "", Rec1!CLI_TELEFONO)
-            txtfax.Text = IIf(IsNull(Rec1!CLI_FAX), "", Rec1!CLI_FAX)
-            txtmail.Text = IIf(IsNull(Rec1!CLI_MAIL), "", Rec1!CLI_MAIL)
+            txtFax.Text = IIf(IsNull(Rec1!CLI_FAX), "", Rec1!CLI_FAX)
+            txtMail.Text = IIf(IsNull(Rec1!CLI_MAIL), "", Rec1!CLI_MAIL)
             If Rec1!CLI_ESTADO = 2 Then chkBaja.Value = Checked
             txtMorDias.Text = IIf(IsNull(Rec1!CLI_MORDIAS), 0, Rec1!CLI_MORDIAS)
             If XN(txtMorDias.Text) > 0 Then
@@ -1396,7 +1391,7 @@ Function BuscoCodPostal(Codigo As Integer) As String
 End Function
 
 Private Sub txtmail_GotFocus()
-    SelecTexto txtmail
+    SelecTexto txtMail
 End Sub
 
 Private Sub txtmail_KeyPress(KeyAscii As Integer)

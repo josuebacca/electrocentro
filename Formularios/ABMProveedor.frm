@@ -1,7 +1,7 @@
 VERSION 5.00
-Object = "{BDC217C8-ED16-11CD-956C-0000C04E4C0A}#1.1#0"; "TABCTL32.OCX"
-Object = "{5E9E78A0-531B-11CF-91F6-C2863C385E30}#1.0#0"; "MSFLXGRD.OCX"
-Object = "{F09A78C8-7814-11D2-8355-4854E82A9183}#1.0#0"; "cuit32.ocx"
+Object = "{BDC217C8-ED16-11CD-956C-0000C04E4C0A}#1.1#0"; "tabctl32.ocx"
+Object = "{5E9E78A0-531B-11CF-91F6-C2863C385E30}#1.0#0"; "msflxgrd.ocx"
+Object = "{C932BA88-4374-101B-A56C-00AA003668DC}#1.1#0"; "msmask32.ocx"
 Begin VB.Form ABMProveedor 
    BorderStyle     =   1  'Fixed Single
    Caption         =   "ABM de Proveedores"
@@ -19,7 +19,7 @@ Begin VB.Form ABMProveedor
    Begin VB.TextBox Text1 
       Height          =   375
       Left            =   1680
-      TabIndex        =   48
+      TabIndex        =   47
       Top             =   6240
       Visible         =   0   'False
       Width           =   975
@@ -31,7 +31,7 @@ Begin VB.Form ABMProveedor
       Left            =   4800
       Picture         =   "ABMProveedor.frx":030A
       Style           =   1  'Graphical
-      TabIndex        =   15
+      TabIndex        =   14
       Top             =   6135
       Width           =   870
    End
@@ -42,7 +42,7 @@ Begin VB.Form ABMProveedor
       Left            =   5685
       Picture         =   "ABMProveedor.frx":091E
       Style           =   1  'Graphical
-      TabIndex        =   16
+      TabIndex        =   15
       Top             =   6135
       Width           =   870
    End
@@ -53,7 +53,7 @@ Begin VB.Form ABMProveedor
       Left            =   3030
       Picture         =   "ABMProveedor.frx":0F32
       Style           =   1  'Graphical
-      TabIndex        =   13
+      TabIndex        =   12
       Top             =   6135
       Width           =   870
    End
@@ -64,21 +64,20 @@ Begin VB.Form ABMProveedor
       Left            =   3915
       Picture         =   "ABMProveedor.frx":1546
       Style           =   1  'Graphical
-      TabIndex        =   14
+      TabIndex        =   13
       Top             =   6135
       Width           =   870
    End
    Begin TabDlg.SSTab tabDatos 
       Height          =   5970
       Left            =   75
-      TabIndex        =   17
+      TabIndex        =   16
       Top             =   105
       Width           =   6510
       _ExtentX        =   11483
       _ExtentY        =   10530
       _Version        =   393216
       Tabs            =   2
-      Tab             =   1
       TabHeight       =   529
       ForeColor       =   -2147483630
       BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
@@ -92,12 +91,13 @@ Begin VB.Form ABMProveedor
       EndProperty
       TabCaption(0)   =   "&Datos"
       TabPicture(0)   =   "ABMProveedor.frx":1850
-      Tab(0).ControlEnabled=   0   'False
+      Tab(0).ControlEnabled=   -1  'True
       Tab(0).Control(0)=   "fraDatos"
+      Tab(0).Control(0).Enabled=   0   'False
       Tab(0).ControlCount=   1
       TabCaption(1)   =   "&Buscar"
       TabPicture(1)   =   "ABMProveedor.frx":186C
-      Tab(1).ControlEnabled=   -1  'True
+      Tab(1).ControlEnabled=   0   'False
       Tab(1).Control(0)=   "GrdModulos"
       Tab(1).Control(0).Enabled=   0   'False
       Tab(1).Control(1)=   "Frame1"
@@ -115,16 +115,27 @@ Begin VB.Form ABMProveedor
             Strikethrough   =   0   'False
          EndProperty
          Height          =   5265
-         Left            =   -74850
-         TabIndex        =   23
+         Left            =   150
+         TabIndex        =   22
          Top             =   540
          Width           =   6225
+         Begin MSMask.MaskEdBox txtCUIT 
+            Height          =   375
+            Left            =   1320
+            TabIndex        =   48
+            Top             =   1800
+            Width           =   1335
+            _ExtentX        =   2355
+            _ExtentY        =   661
+            _Version        =   393216
+            PromptChar      =   "_"
+         End
          Begin VB.TextBox txtcodpostal 
             Enabled         =   0   'False
             Height          =   285
             Left            =   4800
             MaxLength       =   10
-            TabIndex        =   46
+            TabIndex        =   45
             Top             =   3360
             Width           =   1005
          End
@@ -134,7 +145,7 @@ Begin VB.Form ABMProveedor
             MaskColor       =   &H000000FF&
             Picture         =   "ABMProveedor.frx":1888
             Style           =   1  'Graphical
-            TabIndex        =   45
+            TabIndex        =   44
             ToolTipText     =   "Agregar Tipo Proveedor"
             Top             =   420
             UseMaskColor    =   -1  'True
@@ -154,7 +165,7 @@ Begin VB.Form ABMProveedor
             MaskColor       =   &H000000FF&
             Picture         =   "ABMProveedor.frx":1C12
             Style           =   1  'Graphical
-            TabIndex        =   43
+            TabIndex        =   42
             ToolTipText     =   "Agregar Provincia"
             Top             =   2955
             UseMaskColor    =   -1  'True
@@ -166,7 +177,7 @@ Begin VB.Form ABMProveedor
             MaskColor       =   &H000000FF&
             Picture         =   "ABMProveedor.frx":1F9C
             Style           =   1  'Graphical
-            TabIndex        =   42
+            TabIndex        =   41
             ToolTipText     =   "Agregar Localidad"
             Top             =   3330
             UseMaskColor    =   -1  'True
@@ -178,7 +189,7 @@ Begin VB.Form ABMProveedor
             MaskColor       =   &H000000FF&
             Picture         =   "ABMProveedor.frx":2326
             Style           =   1  'Graphical
-            TabIndex        =   41
+            TabIndex        =   40
             ToolTipText     =   "Agregar País"
             Top             =   2580
             UseMaskColor    =   -1  'True
@@ -196,31 +207,15 @@ Begin VB.Form ABMProveedor
             Height          =   285
             Left            =   3975
             MaxLength       =   10
-            TabIndex        =   5
-            Top             =   1860
-            Width           =   1005
-         End
-         Begin Control_CUIT.CUIT txtCUIT 
-            Height          =   315
-            Left            =   1350
             TabIndex        =   4
             Top             =   1860
-            Width           =   1560
-            _ExtentX        =   2752
-            _ExtentY        =   556
-            ConSeparador    =   0   'False
-            Text            =   ""
-            MensajeErr      =   ""
-            nacPF           =   0   'False
-            nacPJ           =   0   'False
-            extPF           =   0   'False
-            extPJ           =   0   'False
+            Width           =   1005
          End
          Begin VB.ComboBox cboProv 
             Height          =   315
             Left            =   1350
             Style           =   2  'Dropdown List
-            TabIndex        =   7
+            TabIndex        =   6
             Top             =   2955
             Width           =   2880
          End
@@ -228,7 +223,7 @@ Begin VB.Form ABMProveedor
             Height          =   315
             Left            =   1350
             Style           =   2  'Dropdown List
-            TabIndex        =   6
+            TabIndex        =   5
             Top             =   2580
             Width           =   2880
          End
@@ -236,7 +231,7 @@ Begin VB.Form ABMProveedor
             Height          =   315
             Left            =   1350
             Style           =   2  'Dropdown List
-            TabIndex        =   8
+            TabIndex        =   7
             Top             =   3330
             Width           =   2910
          End
@@ -245,7 +240,7 @@ Begin VB.Form ABMProveedor
             Left            =   1350
             LinkTimeout     =   0
             MaxLength       =   40
-            TabIndex        =   12
+            TabIndex        =   11
             Top             =   4830
             Width           =   4455
          End
@@ -253,7 +248,7 @@ Begin VB.Form ABMProveedor
             Height          =   285
             Left            =   3975
             MaxLength       =   25
-            TabIndex        =   11
+            TabIndex        =   10
             Top             =   4485
             Width           =   1815
          End
@@ -261,7 +256,7 @@ Begin VB.Form ABMProveedor
             Height          =   285
             Left            =   1350
             MaxLength       =   50
-            TabIndex        =   9
+            TabIndex        =   8
             Top             =   3720
             Width           =   4440
          End
@@ -286,7 +281,7 @@ Begin VB.Form ABMProveedor
             Height          =   285
             Left            =   1350
             MaxLength       =   25
-            TabIndex        =   10
+            TabIndex        =   9
             Top             =   4485
             Width           =   1815
          End
@@ -295,7 +290,7 @@ Begin VB.Form ABMProveedor
             Caption         =   "C.P."
             Height          =   195
             Left            =   5160
-            TabIndex        =   47
+            TabIndex        =   46
             Top             =   3120
             Width           =   300
          End
@@ -304,7 +299,7 @@ Begin VB.Form ABMProveedor
             Caption         =   "Tipo Prov.:"
             Height          =   195
             Left            =   450
-            TabIndex        =   44
+            TabIndex        =   43
             Top             =   450
             Width           =   780
          End
@@ -314,7 +309,7 @@ Begin VB.Form ABMProveedor
             ForeColor       =   &H00FF0000&
             Height          =   195
             Left            =   480
-            TabIndex        =   40
+            TabIndex        =   39
             Top             =   4140
             Width           =   1575
          End
@@ -331,7 +326,7 @@ Begin VB.Form ABMProveedor
             ForeColor       =   &H00FF0000&
             Height          =   195
             Left            =   480
-            TabIndex        =   39
+            TabIndex        =   38
             Top             =   2265
             Width           =   630
          End
@@ -347,7 +342,7 @@ Begin VB.Form ABMProveedor
             Caption         =   "Cond. I.V.A.:"
             Height          =   195
             Left            =   330
-            TabIndex        =   38
+            TabIndex        =   37
             Top             =   1515
             Width           =   900
          End
@@ -356,7 +351,7 @@ Begin VB.Form ABMProveedor
             Caption         =   "Ing. Brutos:"
             Height          =   195
             Left            =   3045
-            TabIndex        =   37
+            TabIndex        =   36
             Top             =   1890
             Width           =   810
          End
@@ -365,7 +360,7 @@ Begin VB.Form ABMProveedor
             Caption         =   "C.U.I.T.:"
             Height          =   195
             Left            =   630
-            TabIndex        =   36
+            TabIndex        =   35
             Top             =   1905
             Width           =   600
          End
@@ -374,7 +369,7 @@ Begin VB.Form ABMProveedor
             Caption         =   "País:"
             Height          =   195
             Left            =   855
-            TabIndex        =   35
+            TabIndex        =   34
             Top             =   2625
             Width           =   375
          End
@@ -383,7 +378,7 @@ Begin VB.Form ABMProveedor
             Caption         =   "E-Mail:"
             Height          =   195
             Left            =   750
-            TabIndex        =   34
+            TabIndex        =   33
             Top             =   4890
             Width           =   480
          End
@@ -392,7 +387,7 @@ Begin VB.Form ABMProveedor
             Caption         =   "Fax:"
             Height          =   195
             Left            =   3555
-            TabIndex        =   33
+            TabIndex        =   32
             Top             =   4530
             Width           =   300
          End
@@ -400,7 +395,7 @@ Begin VB.Form ABMProveedor
             Caption         =   "Teléfono:"
             Height          =   195
             Left            =   555
-            TabIndex        =   32
+            TabIndex        =   31
             Top             =   4545
             Width           =   675
          End
@@ -409,7 +404,7 @@ Begin VB.Form ABMProveedor
             Caption         =   "Provincia:"
             Height          =   195
             Left            =   525
-            TabIndex        =   31
+            TabIndex        =   30
             Top             =   3000
             Width           =   705
          End
@@ -417,7 +412,7 @@ Begin VB.Form ABMProveedor
             Caption         =   "Localidad:"
             Height          =   195
             Left            =   495
-            TabIndex        =   30
+            TabIndex        =   29
             Top             =   3375
             Width           =   735
          End
@@ -426,7 +421,7 @@ Begin VB.Form ABMProveedor
             Caption         =   "Domicilio:"
             Height          =   195
             Left            =   555
-            TabIndex        =   29
+            TabIndex        =   28
             Top             =   3750
             Width           =   675
          End
@@ -440,7 +435,7 @@ Begin VB.Form ABMProveedor
             Height          =   195
             Index           =   7
             Left            =   480
-            TabIndex        =   25
+            TabIndex        =   24
             Top             =   1155
             Width           =   750
          End
@@ -454,15 +449,15 @@ Begin VB.Form ABMProveedor
             Height          =   195
             Index           =   1
             Left            =   690
-            TabIndex        =   24
+            TabIndex        =   23
             Top             =   840
             Width           =   540
          End
       End
       Begin VB.Frame Frame1 
          Height          =   735
-         Left            =   135
-         TabIndex        =   18
+         Left            =   -74865
+         TabIndex        =   17
          Top             =   600
          Width           =   6135
          Begin VB.CommandButton CmdBuscAprox 
@@ -471,7 +466,7 @@ Begin VB.Form ABMProveedor
             MaskColor       =   &H000000FF&
             Picture         =   "ABMProveedor.frx":26B0
             Style           =   1  'Graphical
-            TabIndex        =   20
+            TabIndex        =   19
             ToolTipText     =   "Buscar"
             Top             =   210
             UseMaskColor    =   -1  'True
@@ -481,7 +476,7 @@ Begin VB.Form ABMProveedor
             Height          =   330
             Left            =   1275
             MaxLength       =   15
-            TabIndex        =   19
+            TabIndex        =   18
             Top             =   225
             Width           =   4215
          End
@@ -492,7 +487,7 @@ Begin VB.Form ABMProveedor
             Height          =   195
             Index           =   1
             Left            =   1665
-            TabIndex        =   22
+            TabIndex        =   21
             Top             =   315
             Visible         =   0   'False
             Width           =   540
@@ -503,15 +498,15 @@ Begin VB.Form ABMProveedor
             Height          =   195
             Index           =   0
             Left            =   180
-            TabIndex        =   21
+            TabIndex        =   20
             Top             =   270
             Width           =   885
          End
       End
       Begin MSFlexGridLib.MSFlexGrid GrdModulos 
          Height          =   4350
-         Left            =   120
-         TabIndex        =   26
+         Left            =   -74880
+         TabIndex        =   25
          Top             =   1410
          Width           =   6210
          _ExtentX        =   10954
@@ -531,7 +526,7 @@ Begin VB.Form ABMProveedor
          Height          =   195
          Index           =   0
          Left            =   -74820
-         TabIndex        =   27
+         TabIndex        =   26
          Top             =   570
          Width           =   1065
       End
@@ -551,7 +546,7 @@ Begin VB.Form ABMProveedor
       EndProperty
       Height          =   240
       Left            =   165
-      TabIndex        =   28
+      TabIndex        =   27
       Top             =   6300
       Width           =   750
    End
@@ -627,7 +622,7 @@ End Sub
 
 Private Sub CmdBorrar_Click()
     On Error GoTo CLAVOSE
-    If Trim(TxtCODIGO) <> "" Then
+    If Trim(TxtCodigo) <> "" Then
         resp = MsgBox("Seguro desea eliminar el Proveedor: " & Trim(txtRazSoc.Text) & "? ", 36, "Eliminar:")
         If resp <> 6 Then Exit Sub
         
@@ -636,7 +631,7 @@ Private Sub CmdBorrar_Click()
         
         sql = "DELETE FROM PROVEEDOR"
         sql = sql & " WHERE TPR_CODIGO=" & cboTipoProveedor.ItemData(cboTipoProveedor.ListIndex)
-        sql = sql & " AND PROV_CODIGO = " & XN(TxtCODIGO)
+        sql = sql & " AND PROV_CODIGO = " & XN(TxtCodigo)
         DBConn.Execute sql
         lblEstado.Caption = ""
         Screen.MousePointer = vbNormal
@@ -687,7 +682,7 @@ Private Sub cmdGrabar_Click()
     Screen.MousePointer = vbHourglass
     lblEstado.Caption = "Guardando ..."
     DBConn.BeginTrans
-    If TxtCODIGO.Text <> "" Then
+    If TxtCodigo.Text <> "" Then
         sql = "UPDATE PROVEEDOR "
         sql = sql & " SET PROV_RAZSOC=" & XS(txtRazSoc)
         sql = sql & " , IVA_CODIGO=" & cboIva.ItemData(cboIva.ListIndex)
@@ -698,18 +693,18 @@ Private Sub cmdGrabar_Click()
         sql = sql & " , PRO_CODIGO=" & cboProv.ItemData(cboProv.ListIndex)
         sql = sql & " , LOC_CODIGO=" & cboLocal.ItemData(cboLocal.ListIndex)
         sql = sql & " , PROV_TELEFONO=" & XS(txtTelefono)
-        sql = sql & " , PROV_FAX=" & XS(txtfax)
-        sql = sql & " , PROV_MAIL=" & XS(txtmail)
+        sql = sql & " , PROV_FAX=" & XS(txtFax)
+        sql = sql & " , PROV_MAIL=" & XS(txtMail)
         sql = sql & " , TPR_CODIGO=" & cboTipoProveedor.ItemData(cboTipoProveedor.ListIndex)
         sql = sql & " WHERE "
-        sql = sql & " PROV_CODIGO=" & XN(TxtCODIGO)
+        sql = sql & " PROV_CODIGO=" & XN(TxtCodigo)
         DBConn.Execute sql
         
     Else
-        TxtCODIGO.Text = "1"
+        TxtCodigo.Text = "1"
         sql = "SELECT MAX(PROV_CODIGO) as maximo FROM PROVEEDOR"
         rec.Open sql, DBConn, adOpenStatic, adLockOptimistic
-        If Not IsNull(rec.Fields!Maximo) Then TxtCODIGO = XN(rec.Fields!Maximo) + 1
+        If Not IsNull(rec.Fields!Maximo) Then TxtCodigo = XN(rec.Fields!Maximo) + 1
         rec.Close
         
         sql = "INSERT INTO PROVEEDOR(TPR_CODIGO,PROV_CODIGO,PROV_RAZSOC,PROV_DOMICI,"
@@ -717,14 +712,14 @@ Private Sub cmdGrabar_Click()
         sql = sql & "IVA_CODIGO,PAI_CODIGO,PRO_CODIGO,LOC_CODIGO)"
         sql = sql & " VALUES ("
         sql = sql & cboTipoProveedor.ItemData(cboTipoProveedor.ListIndex) & ","
-        sql = sql & XN(TxtCODIGO) & ","
+        sql = sql & XN(TxtCodigo) & ","
         sql = sql & XS(txtRazSoc) & ","
         sql = sql & XS(txtDomici) & ","
         sql = sql & XS(txtCUIT) & ","
         sql = sql & XS(txtIngBrutos) & ","
         sql = sql & XS(txtTelefono) & ","
-        sql = sql & XS(txtfax) & ","
-        sql = sql & XS(txtmail) & ","
+        sql = sql & XS(txtFax) & ","
+        sql = sql & XS(txtMail) & ","
         sql = sql & cboIva.ItemData(cboIva.ListIndex) & ","
         sql = sql & cboPais.ItemData(cboPais.ListIndex) & ","
         sql = sql & cboProv.ItemData(cboProv.ListIndex) & ","
@@ -822,11 +817,11 @@ End Sub
 
 Private Sub CmdNuevo_Click()
     tabDatos.Tab = 0
-    TxtCODIGO.Text = ""
+    TxtCodigo.Text = ""
     txtRazSoc.Text = ""
     txtTelefono.Text = ""
-    txtfax.Text = ""
-    txtmail.Text = ""
+    txtFax.Text = ""
+    txtMail.Text = ""
     lblEstado.Caption = ""
     txtDomici.Text = ""
     txtIngBrutos.Text = ""
@@ -861,7 +856,7 @@ Private Sub cmdNuevoTipoProveedor_Click()
     cboTipoProveedor.SetFocus
 End Sub
 
-Private Sub cmdSalir_Click()
+Private Sub CmdSalir_Click()
     Unload Me
     Set ABMProveedor = Nothing
 End Sub
@@ -872,7 +867,7 @@ End Sub
 
 Private Sub Form_KeyPress(KeyAscii As Integer)
     If KeyAscii = vbKeyReturn Then SendKeys "{TAB}"
-    If KeyAscii = vbKeyEscape Then cmdSalir_Click
+    If KeyAscii = vbKeyEscape Then CmdSalir_Click
 End Sub
 
 Private Sub Form_Load()
@@ -947,9 +942,9 @@ End Sub
 Private Sub GrdModulos_DblClick()
     If GrdModulos.Rows > 1 Then
            Call BuscaCodigoProxItemData(XN(GrdModulos.TextMatrix(GrdModulos.RowSel, 2)), cboTipoProveedor)
-           TxtCODIGO = GrdModulos.TextMatrix(GrdModulos.RowSel, 0)
+           TxtCodigo = GrdModulos.TextMatrix(GrdModulos.RowSel, 0)
            cmdGrabar.Enabled = True
-           CmdBorrar.Enabled = True
+           cmdBorrar.Enabled = True
            TxtCodigo_LostFocus
            tabDatos.Tab = 0
     End If
@@ -963,26 +958,26 @@ Private Sub tabDatos_Click(PreviousTab As Integer)
     If tabDatos.Tab = 0 And Me.Visible Then
         txtRazSoc.SetFocus
         cmdGrabar.Enabled = True
-        CmdBorrar.Enabled = True
+        cmdBorrar.Enabled = True
     End If
     If tabDatos.Tab = 1 Then
         TxtDescriB.Text = ""
         TxtDescriB.SetFocus
         cmdGrabar.Enabled = False
-        CmdBorrar.Enabled = False
+        cmdBorrar.Enabled = False
     End If
 End Sub
 
 Private Sub TxtCodigo_Change()
-    If Trim(TxtCODIGO) = "" And CmdBorrar.Enabled Then
-        CmdBorrar.Enabled = False
-    ElseIf Trim(TxtCODIGO) <> "" Then
-        CmdBorrar.Enabled = True
+    If Trim(TxtCodigo) = "" And cmdBorrar.Enabled Then
+        cmdBorrar.Enabled = False
+    ElseIf Trim(TxtCodigo) <> "" Then
+        cmdBorrar.Enabled = True
     End If
 End Sub
 
 Private Sub TxtCodigo_GotFocus()
-    SelecTexto TxtCODIGO
+    SelecTexto TxtCodigo
 End Sub
 
 Private Sub TxtCodigo_KeyPress(KeyAscii As Integer)
@@ -1006,7 +1001,7 @@ Private Sub txtdomici_KeyPress(KeyAscii As Integer)
 End Sub
 
 Private Sub txtfax_GotFocus()
-    SelecTexto txtfax
+    SelecTexto txtFax
 End Sub
 
 Private Sub txtIngBrutos_GotFocus()
@@ -1026,10 +1021,10 @@ If Trim(txtRazSoc) = "" And cmdGrabar.Enabled Then
 End Sub
 
 Private Sub TxtCodigo_LostFocus()
-    If TxtCODIGO.Text <> "" Then
+    If TxtCodigo.Text <> "" Then
         sql = "SELECT * FROM PROVEEDOR"
         sql = sql & " WHERE TPR_CODIGO=" & cboTipoProveedor.ItemData(cboTipoProveedor.ListIndex)
-        sql = sql & " AND PROV_CODIGO=" & XN(TxtCODIGO)
+        sql = sql & " AND PROV_CODIGO=" & XN(TxtCodigo)
         Rec1.Open sql, DBConn, adOpenStatic, adLockOptimistic
         
         If Rec1.EOF = False Then
@@ -1052,13 +1047,13 @@ Private Sub TxtCodigo_LostFocus()
             
             txtDomici.Text = Rec1!PROV_DOMICI
             txtTelefono.Text = IIf(IsNull(Rec1!PROV_TELEFONO), "", Rec1!PROV_TELEFONO)
-            txtfax.Text = IIf(IsNull(Rec1!PROV_FAX), "", Rec1!PROV_FAX)
-            txtmail.Text = IIf(IsNull(Rec1!PROV_MAIL), "", Rec1!PROV_MAIL)
+            txtFax.Text = IIf(IsNull(Rec1!PROV_FAX), "", Rec1!PROV_FAX)
+            txtMail.Text = IIf(IsNull(Rec1!PROV_MAIL), "", Rec1!PROV_MAIL)
             txtRazSoc.SetFocus
         Else
             MsgBox "El Código no existe", vbExclamation, TIT_MSGBOX
-            TxtCODIGO.Text = ""
-            TxtCODIGO.SetFocus
+            TxtCodigo.Text = ""
+            TxtCodigo.SetFocus
             Consulta = False
             Pais = ""
             Provincia = ""
@@ -1079,7 +1074,7 @@ Function BuscoCodPostal(Codigo As Integer) As String
 End Function
 
 Private Sub txtmail_GotFocus()
-    SelecTexto txtmail
+    SelecTexto txtMail
 End Sub
 
 Private Sub txtmail_KeyPress(KeyAscii As Integer)

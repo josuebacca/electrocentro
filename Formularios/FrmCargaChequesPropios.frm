@@ -1,5 +1,5 @@
 VERSION 5.00
-Object = "{5F09B5DF-6F4D-11D2-8355-4854E82A9183}#15.0#0"; "FECHA32.OCX"
+Object = "{86CF1D34-0C5F-11D2-A9FC-0000F8754DA1}#2.0#0"; "mscomct2.ocx"
 Begin VB.Form FrmCargaChequesPropios 
    BorderStyle     =   3  'Fixed Dialog
    Caption         =   "Carga de Cheques Propios"
@@ -23,7 +23,7 @@ Begin VB.Form FrmCargaChequesPropios
       Left            =   6180
       Picture         =   "FrmCargaChequesPropios.frx":0BD4
       Style           =   1  'Graphical
-      TabIndex        =   13
+      TabIndex        =   10
       Top             =   3555
       Width           =   900
    End
@@ -34,7 +34,7 @@ Begin VB.Form FrmCargaChequesPropios
       Left            =   5265
       Picture         =   "FrmCargaChequesPropios.frx":11E8
       Style           =   1  'Graphical
-      TabIndex        =   12
+      TabIndex        =   9
       Top             =   3555
       Width           =   900
    End
@@ -45,7 +45,7 @@ Begin VB.Form FrmCargaChequesPropios
       Left            =   4350
       Picture         =   "FrmCargaChequesPropios.frx":17FC
       Style           =   1  'Graphical
-      TabIndex        =   11
+      TabIndex        =   8
       Top             =   3555
       Width           =   900
    End
@@ -56,21 +56,33 @@ Begin VB.Form FrmCargaChequesPropios
       Left            =   3435
       Picture         =   "FrmCargaChequesPropios.frx":1E10
       Style           =   1  'Graphical
-      TabIndex        =   10
+      TabIndex        =   7
       Top             =   3555
       Width           =   900
    End
    Begin VB.Frame Frame1 
       Height          =   3450
       Left            =   120
-      TabIndex        =   14
+      TabIndex        =   11
       Top             =   15
       Width           =   6975
+      Begin MSComCtl2.DTPicker TxtCheFecEnt 
+         Height          =   375
+         Left            =   1455
+         TabIndex        =   23
+         Top             =   240
+         Width           =   1335
+         _ExtentX        =   2355
+         _ExtentY        =   661
+         _Version        =   393216
+         Format          =   53805057
+         CurrentDate     =   43367
+      End
       Begin VB.ComboBox cboCtaBancaria 
          Height          =   315
          Left            =   1455
          Style           =   2  'Dropdown List
-         TabIndex        =   3
+         TabIndex        =   2
          Top             =   1110
          Width           =   2100
       End
@@ -78,7 +90,7 @@ Begin VB.Form FrmCargaChequesPropios
          Height          =   315
          Left            =   1455
          Style           =   2  'Dropdown List
-         TabIndex        =   2
+         TabIndex        =   1
          Top             =   735
          Width           =   5040
       End
@@ -86,52 +98,15 @@ Begin VB.Form FrmCargaChequesPropios
          Height          =   315
          Left            =   5115
          MaxLength       =   10
-         TabIndex        =   1
-         Top             =   270
-         Width           =   1380
-      End
-      Begin FechaCtl.Fecha TxtCheFecVto 
-         Height          =   360
-         Left            =   5370
-         TabIndex        =   7
-         Top             =   2250
-         Width           =   1215
-         _ExtentX        =   2143
-         _ExtentY        =   635
-         Separador       =   "/"
-         Text            =   ""
-         MensajeErrMin   =   "La fecha ingresada no alcanza el mínimo permitido"
-      End
-      Begin FechaCtl.Fecha TxtCheFecEmi 
-         Height          =   285
-         Left            =   1455
-         TabIndex        =   6
-         Top             =   2250
-         Width           =   1185
-         _ExtentX        =   2090
-         _ExtentY        =   503
-         Separador       =   "/"
-         Text            =   ""
-         MensajeErrMin   =   "La fecha ingresada no alcanza el mínimo permitido"
-      End
-      Begin FechaCtl.Fecha TxtCheFecEnt 
-         Height          =   330
-         Left            =   1455
          TabIndex        =   0
          Top             =   270
-         Width           =   1170
-         _ExtentX        =   2064
-         _ExtentY        =   582
-         Separador       =   "/"
-         Text            =   ""
-         MensajeErrMin   =   "La fecha ingresada no alcanza el mínimo permitido"
-         FechaMin        =   "01/01/1900"
+         Width           =   1380
       End
       Begin VB.TextBox TxtCheMotivo 
          Height          =   315
          Left            =   1455
          MaxLength       =   40
-         TabIndex        =   5
+         TabIndex        =   4
          Top             =   1860
          Width           =   5040
       End
@@ -139,7 +114,7 @@ Begin VB.Form FrmCargaChequesPropios
          Height          =   315
          Left            =   1455
          MaxLength       =   40
-         TabIndex        =   4
+         TabIndex        =   3
          Top             =   1485
          Width           =   5040
       End
@@ -147,16 +122,40 @@ Begin VB.Form FrmCargaChequesPropios
          Height          =   315
          Left            =   1455
          MaxLength       =   60
-         TabIndex        =   9
+         TabIndex        =   6
          Top             =   2985
          Width           =   5040
       End
       Begin VB.TextBox TxtCheImport 
          Height          =   315
          Left            =   1455
-         TabIndex        =   8
+         TabIndex        =   5
          Top             =   2610
          Width           =   1125
+      End
+      Begin MSComCtl2.DTPicker TxtCheFecEmi 
+         Height          =   375
+         Left            =   1455
+         TabIndex        =   24
+         Top             =   2280
+         Width           =   1335
+         _ExtentX        =   2355
+         _ExtentY        =   661
+         _Version        =   393216
+         Format          =   53805057
+         CurrentDate     =   43367
+      End
+      Begin MSComCtl2.DTPicker TxtCheFecVto 
+         Height          =   375
+         Left            =   5160
+         TabIndex        =   25
+         Top             =   2280
+         Width           =   1335
+         _ExtentX        =   2355
+         _ExtentY        =   661
+         _Version        =   393216
+         Format          =   53805057
+         CurrentDate     =   43367
       End
       Begin VB.Label Label1 
          AutoSize        =   -1  'True
@@ -164,7 +163,7 @@ Begin VB.Form FrmCargaChequesPropios
          Height          =   195
          Index           =   4
          Left            =   495
-         TabIndex        =   25
+         TabIndex        =   22
          Top             =   1125
          Width           =   855
       End
@@ -173,7 +172,7 @@ Begin VB.Form FrmCargaChequesPropios
          Caption         =   "Banco:"
          Height          =   195
          Left            =   840
-         TabIndex        =   24
+         TabIndex        =   21
          Top             =   765
          Width           =   510
       End
@@ -183,7 +182,7 @@ Begin VB.Form FrmCargaChequesPropios
          Height          =   195
          Index           =   10
          Left            =   615
-         TabIndex        =   22
+         TabIndex        =   19
          Top             =   1905
          Width           =   735
       End
@@ -193,7 +192,7 @@ Begin VB.Form FrmCargaChequesPropios
          Height          =   195
          Index           =   9
          Left            =   375
-         TabIndex        =   21
+         TabIndex        =   18
          Top             =   1530
          Width           =   975
       End
@@ -203,7 +202,7 @@ Begin VB.Form FrmCargaChequesPropios
          Height          =   195
          Index           =   7
          Left            =   4140
-         TabIndex        =   20
+         TabIndex        =   17
          Top             =   330
          Width           =   900
       End
@@ -213,7 +212,7 @@ Begin VB.Form FrmCargaChequesPropios
          Height          =   195
          Index           =   6
          Left            =   240
-         TabIndex        =   19
+         TabIndex        =   16
          Top             =   3015
          Width           =   1110
       End
@@ -223,7 +222,7 @@ Begin VB.Form FrmCargaChequesPropios
          Height          =   195
          Index           =   0
          Left            =   855
-         TabIndex        =   18
+         TabIndex        =   15
          Top             =   315
          Width           =   495
       End
@@ -233,7 +232,7 @@ Begin VB.Form FrmCargaChequesPropios
          Height          =   195
          Index           =   1
          Left            =   780
-         TabIndex        =   17
+         TabIndex        =   14
          Top             =   2670
          Width           =   570
       End
@@ -243,8 +242,8 @@ Begin VB.Form FrmCargaChequesPropios
          Height          =   195
          Index           =   2
          Left            =   225
-         TabIndex        =   16
-         Top             =   2250
+         TabIndex        =   13
+         Top             =   2370
          Width           =   1125
       End
       Begin VB.Label Label1 
@@ -252,9 +251,9 @@ Begin VB.Form FrmCargaChequesPropios
          Caption         =   "Fecha de Pago:"
          Height          =   195
          Index           =   3
-         Left            =   4170
-         TabIndex        =   15
-         Top             =   2280
+         Left            =   3930
+         TabIndex        =   12
+         Top             =   2370
          Width           =   1140
       End
    End
@@ -273,7 +272,7 @@ Begin VB.Form FrmCargaChequesPropios
       EndProperty
       Height          =   240
       Left            =   195
-      TabIndex        =   23
+      TabIndex        =   20
       Top             =   3765
       Width           =   750
    End
@@ -295,10 +294,10 @@ Function Validar() As Boolean
         TxtCheNumero.SetFocus
         Exit Function
         
-   ElseIf cboBanco.ListIndex = -1 Then
+   ElseIf CboBanco.ListIndex = -1 Then
         Validar = False
         MsgBox "Ingrese el Banco.", 16, TIT_MSGBOX
-        cboBanco.SetFocus
+        CboBanco.SetFocus
         Exit Function
                  
    ElseIf cboCtaBancaria.ListIndex = -1 Then
@@ -319,13 +318,13 @@ Function Validar() As Boolean
         TxtCheMotivo.SetFocus
         Exit Function
         
-   ElseIf Trim(TxtCheFecEmi.Text) = "" Then
+   ElseIf Trim(TxtCheFecEmi.Value) = "" Then
         Validar = False
         MsgBox "Ingrese la Fecha de Emisión.", 16, TIT_MSGBOX
         TxtCheFecEmi.SetFocus
         Exit Function
         
-   ElseIf Trim(TxtCheFecVto.Text) = "" Then
+   ElseIf Trim(TxtCheFecVto.Value) = "" Then
         Validar = False
         MsgBox "Ingrese la Fecha de Vencimiento.", 16, TIT_MSGBOX
         TxtCheFecVto.SetFocus
@@ -343,17 +342,17 @@ Function Validar() As Boolean
 End Function
 
 
-Private Sub cboBanco_LostFocus()
+Private Sub CboBanco_LostFocus()
     Set rec = New ADODB.Recordset
     Set Rec1 = New ADODB.Recordset
     Dim MtrObjetos As Variant
         
-    If cboBanco.ListIndex <> -1 Then
+    If CboBanco.ListIndex <> -1 Then
     
        'CONSULTO SI EXISTE EL CHEQUE
         sql = "SELECT * FROM CHEQUE_PROPIO " & _
               " WHERE CHEP_NUMERO = " & XS(TxtCheNumero.Text) & _
-                " AND BAN_CODINT = " & XN(cboBanco.ItemData(cboBanco.ListIndex))
+                " AND BAN_CODINT = " & XN(CboBanco.ItemData(CboBanco.ListIndex))
         rec.Open sql, DBConn, adOpenStatic, adLockOptimistic
         If rec.EOF = False Then 'EXITE
             Me.TxtCheFecEnt.Text = rec!CHEP_FECENT
@@ -361,21 +360,21 @@ Private Sub cboBanco_LostFocus()
             
             Me.TxtCheNombre.Text = ChkNull(rec!CHEP_NOMBRE)
             Me.TxtCheMotivo.Text = rec!CHEP_MOTIVO
-            Me.TxtCheFecEmi.Text = rec!CHEP_FECEMI
-            Me.TxtCheFecVto.Text = rec!CHEP_FECVTO
+            Me.TxtCheFecEmi.Value = rec!CHEP_FECEMI
+            Me.TxtCheFecVto.Value = rec!CHEP_FECVTO
             Me.TxtCheImport.Text = Valido_Importe(rec!CHEP_IMPORT)
             ImporteCheque = rec!CHEP_IMPORT
             Me.TxtCheObserv.Text = ChkNull(rec!CHEP_OBSERV)
-            Call CargoCtaBancaria(CStr(cboBanco.ItemData(cboBanco.ListIndex)))
+            Call CargoCtaBancaria(CStr(CboBanco.ItemData(CboBanco.ListIndex)))
             Call BuscaProx(Trim(rec!CTA_NROCTA), cboCtaBancaria)
             TxtCheNumero.Enabled = False
-            cboBanco.Enabled = False
-            MtrObjetos = Array(TxtCheNumero, cboBanco)
+            CboBanco.Enabled = False
+            MtrObjetos = Array(TxtCheNumero, CboBanco)
             Call CambiarColor(MtrObjetos, 2, &H80000018, "D")
         Else
             
            rec.Close
-           Call CargoCtaBancaria(CStr(cboBanco.ItemData(cboBanco.ListIndex)))
+           Call CargoCtaBancaria(CStr(CboBanco.ItemData(CboBanco.ListIndex)))
            Exit Sub
         End If
         If rec.State = 1 Then rec.Close
@@ -402,7 +401,7 @@ End Sub
 Private Sub CmdBorrar_Click()
     On Error GoTo CLAVOSE
     
-    If Trim(TxtCheNumero.Text) <> "" And Me.cboBanco.ListIndex <> -1 Then
+    If Trim(TxtCheNumero.Text) <> "" And Me.CboBanco.ListIndex <> -1 Then
         resp = MsgBox("Seguro desea eliminar el Cheque Nº: " & Trim(Me.TxtCheNumero.Text) & "? ", 36, TIT_MSGBOX)
         If resp <> 6 Then Exit Sub
         
@@ -420,14 +419,14 @@ Private Sub CmdBorrar_Click()
 '            DBConn.Execute sql
 '        End If
         
-        DBConn.Execute "DELETE FROM CHEQUE_ESTADOS WHERE CHE_NUMERO = " & XS(Me.TxtCheNumero.Text) & " AND BAN_CODINT = " & XN(Me.cboBanco.ItemData(cboBanco.ListIndex))
+        DBConn.Execute "DELETE FROM CHEQUE_ESTADOS WHERE CHE_NUMERO = " & XS(Me.TxtCheNumero.Text) & " AND BAN_CODINT = " & XN(Me.CboBanco.ItemData(CboBanco.ListIndex))
                        
-        DBConn.Execute "DELETE FROM CHEQUE WHERE CHE_NUMERO = " & XS(Me.TxtCheNumero.Text) & " AND BAN_CODINT = " & XN(Me.cboBanco.ItemData(cboBanco.ListIndex))
+        DBConn.Execute "DELETE FROM CHEQUE WHERE CHE_NUMERO = " & XS(Me.TxtCheNumero.Text) & " AND BAN_CODINT = " & XN(Me.CboBanco.ItemData(CboBanco.ListIndex))
         
         Screen.MousePointer = vbNormal
         lblEstado.Caption = ""
         DBConn.CommitTrans
-        cmdNuevo_Click
+        CmdNuevo_Click
     End If
     Exit Sub
     
@@ -440,7 +439,7 @@ CLAVOSE:
 
 End Sub
 
-Private Sub CmdGrabar_Click()
+Private Sub cmdGrabar_Click()
     
   If Validar = True Then
   
@@ -453,18 +452,18 @@ Private Sub CmdGrabar_Click()
     Me.Refresh
     
     sql = "SELECT * FROM CHEQUE_PROPIO WHERE CHEP_NUMERO = " & XS(TxtCheNumero.Text)
-    sql = sql & " AND BAN_CODINT = " & XN(cboBanco.ItemData(cboBanco.ListIndex))
+    sql = sql & " AND BAN_CODINT = " & XN(CboBanco.ItemData(CboBanco.ListIndex))
     rec.Open sql, DBConn, adOpenStatic, adLockOptimistic
     
     If rec.EOF = True Then
          sql = "INSERT INTO CHEQUE_PROPIO(CHEP_NUMERO,BAN_CODINT,CHEP_NOMBRE,CHEP_IMPORT,CHEP_FECEMI,"
          sql = sql & "CHEP_FECVTO,CHEP_FECENT,CHEP_MOTIVO,CHEP_OBSERV,CTA_NROCTA)"
          sql = sql & " VALUES (" & XS(Me.TxtCheNumero.Text) & ","
-         sql = sql & XN(cboBanco.ItemData(cboBanco.ListIndex)) & ","
+         sql = sql & XN(CboBanco.ItemData(CboBanco.ListIndex)) & ","
          sql = sql & XS(Me.TxtCheNombre.Text) & ","
          sql = sql & XN(Me.TxtCheImport.Text) & ","
-         sql = sql & XDQ(Me.TxtCheFecEmi.Text) & ","
-         sql = sql & XDQ(Me.TxtCheFecVto.Text) & ","
+         sql = sql & XDQ(Me.TxtCheFecEmi.Value) & ","
+         sql = sql & XDQ(Me.TxtCheFecVto.Value) & ","
          sql = sql & XDQ(Me.TxtCheFecEnt.Text) & ","
          sql = sql & XS(Me.TxtCheMotivo.Text) & ","
          sql = sql & XS(Me.TxtCheObserv.Text) & ","
@@ -473,14 +472,14 @@ Private Sub CmdGrabar_Click()
     Else
          sql = "UPDATE CHEQUE_PROPIO SET CHEP_NOMBRE = " & XS(Me.TxtCheNombre.Text)
          sql = sql & ",CHEP_IMPORT = " & XN(Me.TxtCheImport.Text)
-         sql = sql & ",CHEP_FECEMI =" & XDQ(Me.TxtCheFecEmi.Text)
-         sql = sql & ",CHEP_FECVTO =" & XDQ(Me.TxtCheFecVto.Text)
+         sql = sql & ",CHEP_FECEMI =" & XDQ(Me.TxtCheFecEmi.Value)
+         sql = sql & ",CHEP_FECVTO =" & XDQ(Me.TxtCheFecVto.Value)
          sql = sql & ",CHEP_FECENT = " & XDQ(Me.TxtCheFecEnt.Text)
          sql = sql & ",CHEP_MOTIVO = " & XS(Me.TxtCheMotivo.Text)
          sql = sql & ",CHEP_OBSERV = " & XS(Me.TxtCheObserv.Text)
          sql = sql & ",CTA_NROCTA= " & XS(cboCtaBancaria.List(cboCtaBancaria.ListIndex))
          sql = sql & " WHERE CHEP_NUMERO = " & XS(Me.TxtCheNumero.Text)
-         sql = sql & " AND BAN_CODINT = " & XN(cboBanco.ItemData(cboBanco.ListIndex))
+         sql = sql & " AND BAN_CODINT = " & XN(CboBanco.ItemData(CboBanco.ListIndex))
          DBConn.Execute sql
     End If
     rec.Close
@@ -489,7 +488,7 @@ Private Sub CmdGrabar_Click()
     sql = "INSERT INTO CHEQUE_PROPIO_ESTADO (CHEP_NUMERO,BAN_CODINT,ECH_CODIGO,CPES_FECHA,CPES_DESCRI)"
     sql = sql & " VALUES ("
     sql = sql & XS(Me.TxtCheNumero.Text) & ","
-    sql = sql & XN(cboBanco.ItemData(cboBanco.ListIndex)) & "," & XN(8) & ","
+    sql = sql & XN(CboBanco.ItemData(CboBanco.ListIndex)) & "," & XN(8) & ","
     sql = sql & XDQ(Date) & ",'CHEQUE LIBRADO')"
     DBConn.Execute sql
     
@@ -513,7 +512,7 @@ Private Sub CmdGrabar_Click()
     Screen.MousePointer = vbNormal
     lblEstado.Caption = ""
     DBConn.CommitTrans
-    cmdNuevo_Click
+    CmdNuevo_Click
  End If
  Exit Sub
       
@@ -526,20 +525,20 @@ CLAVOSE:
     
 End Sub
 
-Private Sub cmdNuevo_Click()
+Private Sub CmdNuevo_Click()
     Me.TxtCheFecEnt.Text = ""
     Me.TxtCheNumero.Enabled = True
-    Me.cboBanco.Enabled = True
+    Me.CboBanco.Enabled = True
     cboCtaBancaria.Clear
     Me.TxtCheNombre.Enabled = True
-    MtrObjetos = Array(TxtCheNumero, cboBanco)
+    MtrObjetos = Array(TxtCheNumero, CboBanco)
     Call CambiarColor(MtrObjetos, 2, &H80000005, "E")
     Me.TxtCheNumero.Text = ""
-    Me.cboBanco.ListIndex = 0
+    Me.CboBanco.ListIndex = 0
     Me.TxtCheNombre.Text = ""
     Me.TxtCheMotivo.Text = ""
-    Me.TxtCheFecEmi.Text = ""
-    Me.TxtCheFecVto.Text = ""
+    Me.TxtCheFecEmi.Value = ""
+    Me.TxtCheFecVto.Value = ""
     Me.TxtCheImport.Text = ""
     Me.TxtCheObserv.Text = ""
     ImporteCheque = ""
@@ -576,29 +575,29 @@ Private Sub CargoBanco()
     rec.Open sql, DBConn, adOpenStatic, adLockOptimistic
     If rec.EOF = False Then
         Do While rec.EOF = False
-            cboBanco.AddItem Trim(rec!BAN_DESCRI)
-            cboBanco.ItemData(cboBanco.NewIndex) = Trim(rec!BAN_CODINT)
+            CboBanco.AddItem Trim(rec!BAN_DESCRI)
+            CboBanco.ItemData(CboBanco.NewIndex) = Trim(rec!BAN_CODINT)
             rec.MoveNext
         Loop
-        cboBanco.ListIndex = 0
+        CboBanco.ListIndex = 0
     End If
     rec.Close
 End Sub
 
 Private Sub TxtCheFecVto_LostFocus()
- If Trim(Me.TxtCheFecEmi.Text) <> "" And Trim(Me.TxtCheFecVto.Text) <> "" Then
+ If Trim(Me.TxtCheFecEmi.Value) <> "" And Trim(Me.TxtCheFecVto.Value) <> "" Then
  
-   If IsDate(TxtCheFecEmi.Text) And IsDate(TxtCheFecVto.Text) Then
+   If IsDate(TxtCheFecEmi.Value) And IsDate(TxtCheFecVto.Value) Then
     
-    If CVDate(TxtCheFecEmi.Text) > CVDate(TxtCheFecVto.Text) Then
+    If CVDate(TxtCheFecEmi.Value) > CVDate(TxtCheFecVto.Value) Then
         MsgBox "La Fecha de Vencimiento no puede ser anterior a la Fecha de Emisión del Cheque.! ", 16, TIT_MSGBOX
-        Me.TxtCheFecVto.Text = ""
+        Me.TxtCheFecVto.Value = ""
         Me.TxtCheFecVto.SetFocus
     Else
        If Me.TxtCheImport.Enabled = False Then 'PAGO EN CUOTAS
             Tasa = Trim(FrmComprobante.txtPmt_Tasa.Text)
             'Saco la Cantidad de Días del Cheque
-            Cant_Dias = DateDiff("d", FrmComprobante.TxtFechaComprobante.Text, Me.TxtCheFecVto.Text)
+            Cant_Dias = DateDiff("d", FrmComprobante.TxtFechaComprobante.Text, Me.TxtCheFecVto.Value)
             
             'Cálculo de Interes a Fecha del Cheque
             TxtCheImport.Text = Format(TxtCheImport.Text + (CDbl(TxtCheImport.Text) * CDbl(Chk0(Cant_Dias * Tasa)) / 100), "$ ##,##0.00")

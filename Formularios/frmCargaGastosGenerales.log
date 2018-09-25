@@ -2,3 +2,23 @@ Línea 182: la clase FechaCtl.Fecha del control FechaHasta no era una clase de co
 Línea 194: la clase FechaCtl.Fecha del control FechaDesde no era una clase de control cargada.
 Línea 587: la clase FechaCtl.Fecha del control FechaComprobante no era una clase de control cargada.
 Línea 599: la clase FechaCtl.Fecha del control Periodo no era una clase de control cargada.
+Línea 188: el nombre de la propiedad _ExtentX de FechaHasta no es válido.
+Línea 189: el nombre de la propiedad _ExtentY de FechaHasta no es válido.
+Línea 190: el nombre de la propiedad Separador de FechaHasta no es válido.
+Línea 191: el nombre de la propiedad Text de FechaHasta no es válido.
+Línea 192: el nombre de la propiedad MensajeErrMin de FechaHasta no es válido.
+Línea 200: el nombre de la propiedad _ExtentX de FechaDesde no es válido.
+Línea 201: el nombre de la propiedad _ExtentY de FechaDesde no es válido.
+Línea 202: el nombre de la propiedad Separador de FechaDesde no es válido.
+Línea 203: el nombre de la propiedad Text de FechaDesde no es válido.
+Línea 204: el nombre de la propiedad MensajeErrMin de FechaDesde no es válido.
+Línea 593: el nombre de la propiedad _ExtentX de FechaComprobante no es válido.
+Línea 594: el nombre de la propiedad _ExtentY de FechaComprobante no es válido.
+Línea 595: el nombre de la propiedad Separador de FechaComprobante no es válido.
+Línea 596: el nombre de la propiedad Text de FechaComprobante no es válido.
+Línea 597: el nombre de la propiedad MensajeErrMin de FechaComprobante no es válido.
+Línea 605: el nombre de la propiedad _ExtentX de Periodo no es válido.
+Línea 606: el nombre de la propiedad _ExtentY de Periodo no es válido.
+Línea 607: el nombre de la propiedad Separador de Periodo no es válido.
+Línea 608: el nombre de la propiedad Text de Periodo no es válido.
+Línea 609: el nombre de la propiedad MensajeErrMin de Periodo no es válido.

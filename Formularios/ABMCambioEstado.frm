@@ -1,5 +1,6 @@
 VERSION 5.00
 Object = "{5E9E78A0-531B-11CF-91F6-C2863C385E30}#1.0#0"; "msflxgrd.ocx"
+Object = "{86CF1D34-0C5F-11D2-A9FC-0000F8754DA1}#2.0#0"; "mscomct2.ocx"
 Begin VB.Form ABMCambioEstado 
    BorderStyle     =   1  'Fixed Single
    Caption         =   " ABM de Estado de Cheques"
@@ -20,7 +21,7 @@ Begin VB.Form ABMCambioEstado
       Left            =   6120
       Picture         =   "ABMCambioEstado.frx":030A
       Style           =   1  'Graphical
-      TabIndex        =   13
+      TabIndex        =   10
       Top             =   5805
       Width           =   915
    End
@@ -31,7 +32,7 @@ Begin VB.Form ABMCambioEstado
       Left            =   4260
       Picture         =   "ABMCambioEstado.frx":091E
       Style           =   1  'Graphical
-      TabIndex        =   12
+      TabIndex        =   9
       Top             =   5805
       Width           =   915
    End
@@ -42,23 +43,35 @@ Begin VB.Form ABMCambioEstado
       Left            =   5190
       Picture         =   "ABMCambioEstado.frx":0F32
       Style           =   1  'Graphical
-      TabIndex        =   11
+      TabIndex        =   8
       Top             =   5805
       Width           =   915
    End
    Begin VB.Frame Frame2 
       Height          =   2565
       Left            =   105
-      TabIndex        =   14
+      TabIndex        =   11
       Top             =   0
       Width           =   6975
+      Begin MSComCtl2.DTPicker TxtCheFecEmi 
+         Height          =   375
+         Left            =   1635
+         TabIndex        =   29
+         Top             =   1800
+         Width           =   1455
+         _ExtentX        =   2566
+         _ExtentY        =   661
+         _Version        =   393216
+         Format          =   53805057
+         CurrentDate     =   43367
+      End
       Begin VB.CommandButton cmdBuscaCheque 
          Height          =   315
          Left            =   3000
          MaskColor       =   &H000000FF&
          Picture         =   "ABMCambioEstado.frx":123C
          Style           =   1  'Graphical
-         TabIndex        =   31
+         TabIndex        =   28
          ToolTipText     =   "Buscar Cheques"
          Top             =   210
          UseMaskColor    =   -1  'True
@@ -68,7 +81,7 @@ Begin VB.Form ABMCambioEstado
          BackColor       =   &H80000018&
          Height          =   345
          Left            =   5985
-         TabIndex        =   21
+         TabIndex        =   18
          Top             =   180
          Visible         =   0   'False
          Width           =   420
@@ -86,7 +99,7 @@ Begin VB.Form ABMCambioEstado
          EndProperty
          Height          =   1125
          Left            =   420
-         TabIndex        =   15
+         TabIndex        =   12
          Top             =   570
          Width           =   6135
          Begin VB.TextBox TxtSUCURSAL 
@@ -125,7 +138,7 @@ Begin VB.Form ABMCambioEstado
             BackColor       =   &H00C0C0C0&
             Height          =   330
             Left            =   165
-            TabIndex        =   16
+            TabIndex        =   13
             Top             =   645
             Width           =   5820
          End
@@ -139,7 +152,7 @@ Begin VB.Form ABMCambioEstado
             Height          =   195
             Index           =   11
             Left            =   1470
-            TabIndex        =   20
+            TabIndex        =   17
             Top             =   315
             Width           =   735
          End
@@ -153,7 +166,7 @@ Begin VB.Form ABMCambioEstado
             Height          =   195
             Index           =   10
             Left            =   210
-            TabIndex        =   19
+            TabIndex        =   16
             Top             =   330
             Width           =   510
          End
@@ -167,7 +180,7 @@ Begin VB.Form ABMCambioEstado
             Height          =   195
             Index           =   5
             Left            =   3000
-            TabIndex        =   18
+            TabIndex        =   15
             Top             =   315
             Width           =   645
          End
@@ -181,7 +194,7 @@ Begin VB.Form ABMCambioEstado
             Height          =   195
             Index           =   0
             Left            =   4515
-            TabIndex        =   17
+            TabIndex        =   14
             Top             =   315
             Width           =   540
          End
@@ -198,27 +211,21 @@ Begin VB.Form ABMCambioEstado
          Enabled         =   0   'False
          Height          =   315
          Left            =   1635
-         TabIndex        =   7
+         TabIndex        =   5
          Top             =   2160
          Width           =   1140
       End
-      Begin VB.PictureBox TxtCheFecVto 
-         Height          =   300
-         Left            =   5370
-         ScaleHeight     =   240
-         ScaleWidth      =   1125
-         TabIndex        =   6
-         Top             =   1830
-         Width           =   1185
-      End
-      Begin VB.PictureBox TxtCheFecEmi 
-         Height          =   345
-         Left            =   1650
-         ScaleHeight     =   285
-         ScaleWidth      =   1080
-         TabIndex        =   5
-         Top             =   1830
-         Width           =   1140
+      Begin MSComCtl2.DTPicker TxtCheFecVto 
+         Height          =   375
+         Left            =   5100
+         TabIndex        =   30
+         Top             =   1800
+         Width           =   1455
+         _ExtentX        =   2566
+         _ExtentY        =   661
+         _Version        =   393216
+         Format          =   53805057
+         CurrentDate     =   43367
       End
       Begin VB.Label Label1 
          AutoSize        =   -1  'True
@@ -226,7 +233,7 @@ Begin VB.Form ABMCambioEstado
          Height          =   195
          Index           =   7
          Left            =   615
-         TabIndex        =   25
+         TabIndex        =   22
          Top             =   255
          Width           =   900
       End
@@ -236,7 +243,7 @@ Begin VB.Form ABMCambioEstado
          Height          =   195
          Index           =   2
          Left            =   945
-         TabIndex        =   24
+         TabIndex        =   21
          Top             =   2220
          Width           =   570
       End
@@ -245,8 +252,8 @@ Begin VB.Form ABMCambioEstado
          Caption         =   "Fecha  Vencimiento:"
          Height          =   195
          Index           =   5
-         Left            =   3825
-         TabIndex        =   23
+         Left            =   3585
+         TabIndex        =   20
          Top             =   1860
          Width           =   1455
       End
@@ -256,7 +263,7 @@ Begin VB.Form ABMCambioEstado
          Height          =   195
          Index           =   3
          Left            =   390
-         TabIndex        =   22
+         TabIndex        =   19
          Top             =   1860
          Width           =   1125
       End
@@ -264,31 +271,22 @@ Begin VB.Form ABMCambioEstado
    Begin VB.TextBox TxtCheObserv 
       Height          =   660
       Left            =   120
-      TabIndex        =   10
+      TabIndex        =   7
       Top             =   5010
       Width           =   6900
    End
    Begin VB.ComboBox CboEstado 
       Height          =   315
-      Left            =   3915
+      Left            =   4035
       Style           =   2  'Dropdown List
-      TabIndex        =   9
+      TabIndex        =   6
       Top             =   4380
-      Width           =   3165
-   End
-   Begin VB.PictureBox TxtCesFecha 
-      Height          =   315
-      Left            =   1965
-      ScaleHeight     =   255
-      ScaleWidth      =   1080
-      TabIndex        =   8
-      Top             =   4380
-      Width           =   1140
+      Width           =   3045
    End
    Begin MSFlexGridLib.MSFlexGrid Grd1 
       Height          =   1500
       Left            =   90
-      TabIndex        =   26
+      TabIndex        =   23
       Top             =   2700
       Width           =   6990
       _ExtentX        =   12330
@@ -304,13 +302,25 @@ Begin VB.Form ABMCambioEstado
       HighLight       =   0
       SelectionMode   =   1
    End
+   Begin MSComCtl2.DTPicker TxtCesFecha 
+      Height          =   375
+      Left            =   1920
+      TabIndex        =   31
+      Top             =   4320
+      Width           =   1455
+      _ExtentX        =   2566
+      _ExtentY        =   661
+      _Version        =   393216
+      Format          =   53805057
+      CurrentDate     =   43367
+   End
    Begin VB.Label Label1 
       AutoSize        =   -1  'True
       Caption         =   "Observaciones:"
       Height          =   195
       Index           =   6
       Left            =   120
-      TabIndex        =   30
+      TabIndex        =   27
       Top             =   4785
       Width           =   1110
    End
@@ -319,7 +329,7 @@ Begin VB.Form ABMCambioEstado
       Height          =   270
       Index           =   1
       Left            =   90
-      TabIndex        =   29
+      TabIndex        =   26
       Top             =   4395
       Width           =   1905
       WordWrap        =   -1  'True
@@ -329,8 +339,8 @@ Begin VB.Form ABMCambioEstado
       Caption         =   "Estado:"
       Height          =   195
       Index           =   0
-      Left            =   3180
-      TabIndex        =   28
+      Left            =   3300
+      TabIndex        =   25
       Top             =   4410
       Width           =   690
       WordWrap        =   -1  'True
@@ -350,7 +360,7 @@ Begin VB.Form ABMCambioEstado
       EndProperty
       Height          =   240
       Left            =   150
-      TabIndex        =   27
+      TabIndex        =   24
       Top             =   5970
       Width           =   750
    End
@@ -369,20 +379,20 @@ Private Sub cmdBuscaCheque_Click()
     'TxtCheNumero.Text = frmBuscar.grdBuscar.Col
     TxtCheNumero.Text = frmBuscar.grdBuscar.TextMatrix(frmBuscar.grdBuscar.RowSel, 1)
     TxtBANCO.Text = frmBuscar.grdBuscar.TextMatrix(frmBuscar.grdBuscar.RowSel, 5)
-    txtlocalidad.Text = frmBuscar.grdBuscar.TextMatrix(frmBuscar.grdBuscar.RowSel, 6)
+    TxtLOCALIDAD.Text = frmBuscar.grdBuscar.TextMatrix(frmBuscar.grdBuscar.RowSel, 6)
     TxtSUCURSAL.Text = frmBuscar.grdBuscar.TextMatrix(frmBuscar.grdBuscar.RowSel, 7)
-    TxtCodigo.Text = frmBuscar.grdBuscar.TextMatrix(frmBuscar.grdBuscar.RowSel, 8)
+    TxtCODIGO.Text = frmBuscar.grdBuscar.TextMatrix(frmBuscar.grdBuscar.RowSel, 8)
     TxtCheImport.Text = frmBuscar.grdBuscar.TextMatrix(frmBuscar.grdBuscar.RowSel, 3)
-    TxtCheFecVto.Text = frmBuscar.grdBuscar.TextMatrix(frmBuscar.grdBuscar.RowSel, 2)
+    TxtCheFecVto.Value = frmBuscar.grdBuscar.TextMatrix(frmBuscar.grdBuscar.RowSel, 2)
     'TxtBanDescri.Text = frmBuscar.grdBuscar.TextMatrix(frmBuscar.grdBuscar.RowSel, 0)
     
      If Trim(Me.TxtCheNumero.Text) <> "" And _
        Trim(Me.TxtBANCO.Text) <> "" And _
-       Trim(Me.txtlocalidad.Text) <> "" And _
+       Trim(Me.TxtLOCALIDAD.Text) <> "" And _
        Trim(Me.TxtSUCURSAL.Text) <> "" And _
-       Trim(Me.TxtCodigo.Text) <> "" Then
+       Trim(Me.TxtCODIGO.Text) <> "" Then
        
-       If Len(Me.TxtCodigo.Text) < 6 Then Me.TxtCodigo.Text = CompletarConCeros(Me.TxtCodigo.Text, 6)
+       If Len(Me.TxtCODIGO.Text) < 6 Then Me.TxtCODIGO.Text = CompletarConCeros(Me.TxtCODIGO.Text, 6)
            
        Dim MtrObjetos As Variant
     
@@ -392,16 +402,16 @@ Private Sub cmdBuscaCheque_Click()
        'BUSCO EL CODIGO INTERNO
        sql = "SELECT BAN_CODINT,BAN_DESCRI FROM BANCO WHERE BAN_BANCO = " & _
        XS(TxtBANCO.Text) & " AND BAN_LOCALIDAD = " & _
-       XS(Me.txtlocalidad.Text) & " AND BAN_SUCURSAL = " & _
-       XS(Me.TxtSUCURSAL.Text) & " AND BAN_CODIGO = " & XS(Me.TxtCodigo.Text)
+       XS(Me.TxtLOCALIDAD.Text) & " AND BAN_SUCURSAL = " & _
+       XS(Me.TxtSUCURSAL.Text) & " AND BAN_CODIGO = " & XS(Me.TxtCODIGO.Text)
        rec.Open sql, DBConn, adOpenStatic, adLockOptimistic
        If rec.RecordCount > 0 Then 'EXITE
             Me.TxtCodInt.Text = rec!BAN_CODINT
             TxtBanDescri.Text = rec!BAN_DESCRI
        Else
           MsgBox "NO ESTA REGISTRADO EL BANCO.", 16, TIT_MSGBOX
-          Me.TxtCodigo.Text = ""
-          Me.TxtCodigo.SetFocus
+          Me.TxtCODIGO.Text = ""
+          Me.TxtCODIGO.SetFocus
           Exit Sub
        End If
        rec.Close
@@ -415,15 +425,15 @@ Private Sub cmdBuscaCheque_Click()
             
             TxtCheNumero.Enabled = False
             TxtBANCO.Enabled = False
-            txtlocalidad.Enabled = False
+            TxtLOCALIDAD.Enabled = False
             TxtSUCURSAL.Enabled = False
-            TxtCodigo.Enabled = False
+            TxtCODIGO.Enabled = False
             
-            MtrObjetos = Array(TxtCheNumero, TxtBANCO, txtlocalidad, TxtSUCURSAL, TxtCodigo)
+            MtrObjetos = Array(TxtCheNumero, TxtBANCO, TxtLOCALIDAD, TxtSUCURSAL, TxtCODIGO)
             Call CambiarColor(MtrObjetos, 5, &H80000018, "D")
             
-            Me.TxtCheFecEmi.Text = rec!CHE_FECEMI
-            Me.TxtCheFecVto.Text = rec!CHE_FECVTO
+            Me.TxtCheFecEmi.Value = rec!CHE_FECEMI
+            Me.TxtCheFecVto.Value = rec!CHE_FECVTO
             Me.TxtCheImport.Text = Format(rec!che_import, "$ #0.00")
 
             'Cargo la Grilla
@@ -476,9 +486,9 @@ Private Sub cmdGrabar_Click()
             
     If Trim(Me.TxtCheNumero.Text) = "" Or _
        Trim(Me.TxtBANCO.Text) = "" Or _
-       Trim(Me.txtlocalidad.Text) = "" Or _
+       Trim(Me.TxtLOCALIDAD.Text) = "" Or _
        Trim(Me.TxtSUCURSAL.Text) = "" Or _
-       Trim(Me.TxtCodigo.Text) = "" Or _
+       Trim(Me.TxtCODIGO.Text) = "" Or _
        Trim(Me.TxtCesFecha.Value) = "" Then
        
         If Trim(Me.TxtCheNumero.Text) = "" Then
@@ -493,9 +503,9 @@ Private Sub cmdGrabar_Click()
            Exit Sub
         End If
         
-        If Trim(Me.txtlocalidad.Text) = "" Then
+        If Trim(Me.TxtLOCALIDAD.Text) = "" Then
            MsgBox "Falta la LOCALIDAD.", 16, TIT_MSGBOX
-           txtlocalidad.SetFocus
+           TxtLOCALIDAD.SetFocus
            Exit Sub
         End If
         
@@ -505,9 +515,9 @@ Private Sub cmdGrabar_Click()
            Exit Sub
         End If
         
-        If Trim(Me.TxtCodigo.Text) = "" Then
+        If Trim(Me.TxtCODIGO.Text) = "" Then
            MsgBox "Falta el CÓDIGO.", 16, TIT_MSGBOX
-           TxtCodigo.SetFocus
+           TxtCODIGO.SetFocus
            Exit Sub
         End If
         
@@ -535,21 +545,21 @@ Private Sub CmdNuevo_Click()
    
    Me.TxtCheNumero.Enabled = True
    Me.TxtBANCO.Enabled = True
-   Me.txtlocalidad.Enabled = True
+   Me.TxtLOCALIDAD.Enabled = True
    Me.TxtSUCURSAL.Enabled = True
-   Me.TxtCodigo.Enabled = True
-   MtrObjetos = Array(TxtCheNumero, TxtBANCO, txtlocalidad, TxtSUCURSAL, TxtCodigo)
+   Me.TxtCODIGO.Enabled = True
+   MtrObjetos = Array(TxtCheNumero, TxtBANCO, TxtLOCALIDAD, TxtSUCURSAL, TxtCODIGO)
    Call CambiarColor(MtrObjetos, 5, &H80000005, "E")
             
    Me.TxtCheNumero.Text = ""
    Me.TxtBANCO.Text = ""
-   Me.txtlocalidad.Text = ""
+   Me.TxtLOCALIDAD.Text = ""
    Me.TxtSUCURSAL.Text = ""
-   Me.TxtCodigo.Text = ""
+   Me.TxtCODIGO.Text = ""
    
    Me.TxtCodInt.Text = ""
-   Me.TxtCheFecEmi.Text = ""
-   Me.TxtCheFecVto.Text = ""
+   Me.TxtCheFecEmi.Value = ""
+   Me.TxtCheFecVto.Value = ""
    Me.TxtCheImport.Text = ""
    Me.Grd1.Rows = 1
    Me.TxtCesFecha.Value = ""
@@ -645,11 +655,11 @@ Private Sub TxtCheNumero_LostFocus()
         If rec.EOF = False Then
             TxtCheNumero.Text = rec!CHE_NUMERO
             TxtBANCO.Text = rec!BAN_BANCO
-            txtlocalidad.Text = rec!BAN_LOCALIDAD
+            TxtLOCALIDAD.Text = rec!BAN_LOCALIDAD
             TxtSUCURSAL.Text = rec!BAN_SUCURSAL
-            TxtCodigo.Text = rec!BAN_CODIGO
+            TxtCODIGO.Text = rec!BAN_CODIGO
             TxtCheImport.Text = rec!che_import
-            TxtCheFecVto.Text = rec!CHE_FECVTO
+            TxtCheFecVto.Value = rec!CHE_FECVTO
             TxtBanDescri.Text = rec!BAN_NOMCOR
             TxtCodInt.Text = rec!BAN_CODINT
         
@@ -660,11 +670,11 @@ Private Sub TxtCheNumero_LostFocus()
     
      If Trim(Me.TxtCheNumero.Text) <> "" And _
        Trim(Me.TxtBANCO.Text) <> "" And _
-       Trim(Me.txtlocalidad.Text) <> "" And _
+       Trim(Me.TxtLOCALIDAD.Text) <> "" And _
        Trim(Me.TxtSUCURSAL.Text) <> "" And _
-       Trim(Me.TxtCodigo.Text) <> "" Then
+       Trim(Me.TxtCODIGO.Text) <> "" Then
        
-       If Len(Me.TxtCodigo.Text) < 6 Then Me.TxtCodigo.Text = CompletarConCeros(Me.TxtCodigo.Text, 6)
+       If Len(Me.TxtCODIGO.Text) < 6 Then Me.TxtCODIGO.Text = CompletarConCeros(Me.TxtCODIGO.Text, 6)
            
        Dim MtrObjetos As Variant
     
@@ -674,16 +684,16 @@ Private Sub TxtCheNumero_LostFocus()
        'BUSCO EL CODIGO INTERNO
        sql = "SELECT BAN_CODINT,BAN_DESCRI FROM BANCO WHERE BAN_BANCO = " & _
        XS(TxtBANCO.Text) & " AND BAN_LOCALIDAD = " & _
-       XS(Me.txtlocalidad.Text) & " AND BAN_SUCURSAL = " & _
-       XS(Me.TxtSUCURSAL.Text) & " AND BAN_CODIGO = " & XS(Me.TxtCodigo.Text)
+       XS(Me.TxtLOCALIDAD.Text) & " AND BAN_SUCURSAL = " & _
+       XS(Me.TxtSUCURSAL.Text) & " AND BAN_CODIGO = " & XS(Me.TxtCODIGO.Text)
        rec.Open sql, DBConn, adOpenStatic, adLockOptimistic
        If rec.RecordCount > 0 Then 'EXITE
             Me.TxtCodInt.Text = rec!BAN_CODINT
             TxtBanDescri.Text = rec!BAN_DESCRI
        Else
           MsgBox "NO ESTA REGISTRADO EL BANCO.", 16, TIT_MSGBOX
-          Me.TxtCodigo.Text = ""
-          Me.TxtCodigo.SetFocus
+          Me.TxtCODIGO.Text = ""
+          Me.TxtCODIGO.SetFocus
           Exit Sub
        End If
        rec.Close
@@ -697,15 +707,15 @@ Private Sub TxtCheNumero_LostFocus()
             
             TxtCheNumero.Enabled = False
             TxtBANCO.Enabled = False
-            txtlocalidad.Enabled = False
+            TxtLOCALIDAD.Enabled = False
             TxtSUCURSAL.Enabled = False
-            TxtCodigo.Enabled = False
+            TxtCODIGO.Enabled = False
             
-            MtrObjetos = Array(TxtCheNumero, TxtBANCO, txtlocalidad, TxtSUCURSAL, TxtCodigo)
+            MtrObjetos = Array(TxtCheNumero, TxtBANCO, TxtLOCALIDAD, TxtSUCURSAL, TxtCODIGO)
             Call CambiarColor(MtrObjetos, 5, &H80000018, "D")
             
-            Me.TxtCheFecEmi.Text = rec!CHE_FECEMI
-            Me.TxtCheFecVto.Text = rec!CHE_FECVTO
+            Me.TxtCheFecEmi.Value = rec!CHE_FECEMI
+            Me.TxtCheFecVto.Value = rec!CHE_FECVTO
             Me.TxtCheImport.Text = Format(rec!che_import, "$ #0.00")
 
             'Cargo la Grilla
@@ -744,10 +754,10 @@ Private Sub TxtCheObserv_KeyPress(KeyAscii As Integer)
 End Sub
 
 Private Sub TxtCodigo_Change()
-    If Trim(TxtCodigo) = "" And cmdNuevo.Enabled Then
-        cmdNuevo.Enabled = False
-    ElseIf Trim(TxtCodigo) <> "" Then
-        cmdNuevo.Enabled = True
+    If Trim(TxtCODIGO) = "" And CmdNuevo.Enabled Then
+        CmdNuevo.Enabled = False
+    ElseIf Trim(TxtCODIGO) <> "" Then
+        CmdNuevo.Enabled = True
     End If
 End Sub
 
@@ -803,8 +813,8 @@ Private Sub TxtCodigo_LostFocus()
 '            MtrObjetos = Array(TxtCheNumero, TxtBanco, txtlocalidad, TxtSucursal, TxtCodigo)
 '            Call CambiarColor(MtrObjetos, 5, &H80000018, "D")
 '
-'            Me.TxtCheFecEmi.Text = rec!CHE_FECEMI
-'            Me.TxtCheFecVto.Text = rec!CHE_FECVTO
+'            Me.TxtCheFecEmi.Value = rec!CHE_FECEMI
+'            Me.TxtCheFecVto.Value = rec!CHE_FECVTO
 '            Me.TxtCheImport.Text = Format(rec!che_import, "$ #0.00")
 '
 '            'Cargo la Grilla
@@ -834,7 +844,7 @@ KeyAscii = CarNumeroTE(KeyAscii)
 End Sub
 
 Private Sub TxtLOCALIDAD_LostFocus()
-    If txtlocalidad.Text <> "" Then txtlocalidad.Text = Format(txtlocalidad.Text, "000")
+    If TxtLOCALIDAD.Text <> "" Then TxtLOCALIDAD.Text = Format(TxtLOCALIDAD.Text, "000")
 End Sub
 
 Private Sub TxtSucursal_KeyPress(KeyAscii As Integer)

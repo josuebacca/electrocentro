@@ -1,5 +1,6 @@
 VERSION 5.00
 Object = "{5E9E78A0-531B-11CF-91F6-C2863C385E30}#1.0#0"; "msflxgrd.ocx"
+Object = "{86CF1D34-0C5F-11D2-A9FC-0000F8754DA1}#2.0#0"; "mscomct2.ocx"
 Begin VB.Form ABMCambioEstadoChPropio 
    BorderStyle     =   1  'Fixed Single
    Caption         =   " ABM de Estado de Cheques Propios"
@@ -20,7 +21,7 @@ Begin VB.Form ABMCambioEstadoChPropio
       Left            =   6135
       Picture         =   "ABMCambioEstadoChPropio.frx":030A
       Style           =   1  'Graphical
-      TabIndex        =   10
+      TabIndex        =   7
       Top             =   4980
       Width           =   915
    End
@@ -31,7 +32,7 @@ Begin VB.Form ABMCambioEstadoChPropio
       Left            =   4275
       Picture         =   "ABMCambioEstadoChPropio.frx":091E
       Style           =   1  'Graphical
-      TabIndex        =   9
+      TabIndex        =   6
       Top             =   4980
       Width           =   915
    End
@@ -42,16 +43,28 @@ Begin VB.Form ABMCambioEstadoChPropio
       Left            =   5205
       Picture         =   "ABMCambioEstadoChPropio.frx":0F32
       Style           =   1  'Graphical
-      TabIndex        =   8
+      TabIndex        =   5
       Top             =   4980
       Width           =   915
    End
    Begin VB.Frame Frame2 
       Height          =   1845
       Left            =   120
-      TabIndex        =   11
+      TabIndex        =   8
       Top             =   30
       Width           =   6975
+      Begin MSComCtl2.DTPicker TxtCheFecEmi 
+         Height          =   375
+         Left            =   1635
+         TabIndex        =   19
+         Top             =   960
+         Width           =   1455
+         _ExtentX        =   2566
+         _ExtentY        =   661
+         _Version        =   393216
+         Format          =   53805057
+         CurrentDate     =   43367
+      End
       Begin VB.TextBox TxtCheNumero 
          Height          =   315
          Left            =   1635
@@ -64,8 +77,8 @@ Begin VB.Form ABMCambioEstadoChPropio
          Enabled         =   0   'False
          Height          =   315
          Left            =   1635
-         TabIndex        =   4
-         Top             =   1275
+         TabIndex        =   2
+         Top             =   1395
          Width           =   1140
       End
       Begin VB.ComboBox cboBanco 
@@ -76,23 +89,17 @@ Begin VB.Form ABMCambioEstadoChPropio
          Top             =   570
          Width           =   5040
       End
-      Begin VB.PictureBox TxtCheFecVto 
-         Height          =   300
-         Left            =   5370
-         ScaleHeight     =   240
-         ScaleWidth      =   1125
-         TabIndex        =   3
-         Top             =   945
-         Width           =   1185
-      End
-      Begin VB.PictureBox TxtCheFecEmi 
-         Height          =   345
-         Left            =   1635
-         ScaleHeight     =   285
-         ScaleWidth      =   1080
-         TabIndex        =   2
-         Top             =   945
-         Width           =   1140
+      Begin MSComCtl2.DTPicker TxtCheFecVto 
+         Height          =   375
+         Left            =   5220
+         TabIndex        =   20
+         Top             =   960
+         Width           =   1455
+         _ExtentX        =   2566
+         _ExtentY        =   661
+         _Version        =   393216
+         Format          =   53805057
+         CurrentDate     =   43367
       End
       Begin VB.Label Label1 
          AutoSize        =   -1  'True
@@ -100,7 +107,7 @@ Begin VB.Form ABMCambioEstadoChPropio
          Height          =   195
          Index           =   7
          Left            =   630
-         TabIndex        =   16
+         TabIndex        =   13
          Top             =   270
          Width           =   900
       End
@@ -110,8 +117,8 @@ Begin VB.Form ABMCambioEstadoChPropio
          Height          =   195
          Index           =   2
          Left            =   960
-         TabIndex        =   15
-         Top             =   1335
+         TabIndex        =   12
+         Top             =   1455
          Width           =   570
       End
       Begin VB.Label Label1 
@@ -119,8 +126,8 @@ Begin VB.Form ABMCambioEstadoChPropio
          Caption         =   "Fecha  Vencimiento:"
          Height          =   195
          Index           =   5
-         Left            =   3825
-         TabIndex        =   14
+         Left            =   3705
+         TabIndex        =   11
          Top             =   975
          Width           =   1455
       End
@@ -130,7 +137,7 @@ Begin VB.Form ABMCambioEstadoChPropio
          Height          =   195
          Index           =   3
          Left            =   405
-         TabIndex        =   13
+         TabIndex        =   10
          Top             =   975
          Width           =   1125
       End
@@ -139,7 +146,7 @@ Begin VB.Form ABMCambioEstadoChPropio
          Caption         =   "Banco:"
          Height          =   195
          Left            =   1020
-         TabIndex        =   12
+         TabIndex        =   9
          Top             =   615
          Width           =   510
       End
@@ -147,31 +154,22 @@ Begin VB.Form ABMCambioEstadoChPropio
    Begin VB.TextBox TxtCheObserv 
       Height          =   660
       Left            =   135
-      TabIndex        =   7
+      TabIndex        =   4
       Top             =   4185
       Width           =   6900
    End
    Begin VB.ComboBox CboEstado 
       Height          =   315
-      Left            =   3900
+      Left            =   4140
       Style           =   2  'Dropdown List
-      TabIndex        =   6
+      TabIndex        =   3
       Top             =   3555
-      Width           =   3180
-   End
-   Begin VB.PictureBox TxtCesFecha 
-      Height          =   315
-      Left            =   1980
-      ScaleHeight     =   255
-      ScaleWidth      =   1080
-      TabIndex        =   5
-      Top             =   3555
-      Width           =   1140
+      Width           =   2940
    End
    Begin MSFlexGridLib.MSFlexGrid Grd1 
       Height          =   1500
       Left            =   105
-      TabIndex        =   17
+      TabIndex        =   14
       Top             =   1935
       Width           =   6990
       _ExtentX        =   12330
@@ -187,13 +185,25 @@ Begin VB.Form ABMCambioEstadoChPropio
       HighLight       =   0
       SelectionMode   =   1
    End
+   Begin MSComCtl2.DTPicker TxtCesFecha 
+      Height          =   375
+      Left            =   2040
+      TabIndex        =   21
+      Top             =   3525
+      Width           =   1455
+      _ExtentX        =   2566
+      _ExtentY        =   661
+      _Version        =   393216
+      Format          =   53805057
+      CurrentDate     =   43367
+   End
    Begin VB.Label Label1 
       AutoSize        =   -1  'True
       Caption         =   "Observaciones:"
       Height          =   195
       Index           =   6
       Left            =   135
-      TabIndex        =   21
+      TabIndex        =   18
       Top             =   3960
       Width           =   1110
    End
@@ -203,8 +213,8 @@ Begin VB.Form ABMCambioEstadoChPropio
       Height          =   195
       Index           =   1
       Left            =   105
-      TabIndex        =   20
-      Top             =   3570
+      TabIndex        =   17
+      Top             =   3615
       Width           =   1905
       WordWrap        =   -1  'True
    End
@@ -214,9 +224,9 @@ Begin VB.Form ABMCambioEstadoChPropio
       Caption         =   "Estado:"
       Height          =   195
       Index           =   0
-      Left            =   3165
-      TabIndex        =   19
-      Top             =   3585
+      Left            =   3405
+      TabIndex        =   16
+      Top             =   3615
       Width           =   690
       WordWrap        =   -1  'True
    End
@@ -235,7 +245,7 @@ Begin VB.Form ABMCambioEstadoChPropio
       EndProperty
       Height          =   240
       Left            =   165
-      TabIndex        =   18
+      TabIndex        =   15
       Top             =   5145
       Width           =   750
    End
@@ -260,8 +270,8 @@ Private Sub CboBanco_LostFocus()
         
         If rec.EOF = False Then 'EXITE
             Me.TxtCheNumero.Text = Trim(rec!CHEP_NUMERO)
-            Me.TxtCheFecEmi.Text = rec!CHEP_FECEMI
-            Me.TxtCheFecVto.Text = rec!CHEP_FECVTO
+            Me.TxtCheFecEmi.Value = rec!CHEP_FECEMI
+            Me.TxtCheFecVto.Value = rec!CHEP_FECVTO
             Me.TxtCheImport.Text = Valido_Importe(rec!CHEP_IMPORT)
             TxtCheNumero.Enabled = False
             CboBanco.Enabled = False
@@ -362,8 +372,8 @@ Private Sub CmdNuevo_Click()
    Me.TxtCheNumero.Enabled = True
    Me.CboBanco.Enabled = True
    Me.TxtCheNumero.Text = ""
-   Me.TxtCheFecEmi.Text = ""
-   Me.TxtCheFecVto.Text = ""
+   Me.TxtCheFecEmi.Value = ""
+   Me.TxtCheFecVto.Value = ""
    Me.TxtCheImport.Text = ""
    Me.Grd1.Rows = 1
    Me.TxtCesFecha.Value = ""

@@ -1,3 +1,19 @@
 Línea 93: la clase FechaCtl.Fecha del control TxtCheFecVto no era una clase de control cargada.
 Línea 105: la clase FechaCtl.Fecha del control TxtCheFecEmi no era una clase de control cargada.
 Línea 117: la clase FechaCtl.Fecha del control TxtCheFecEnt no era una clase de control cargada.
+Línea 99: el nombre de la propiedad _ExtentX de TxtCheFecVto no es válido.
+Línea 100: el nombre de la propiedad _ExtentY de TxtCheFecVto no es válido.
+Línea 101: el nombre de la propiedad Separador de TxtCheFecVto no es válido.
+Línea 102: el nombre de la propiedad Text de TxtCheFecVto no es válido.
+Línea 103: el nombre de la propiedad MensajeErrMin de TxtCheFecVto no es válido.
+Línea 111: el nombre de la propiedad _ExtentX de TxtCheFecEmi no es válido.
+Línea 112: el nombre de la propiedad _ExtentY de TxtCheFecEmi no es válido.
+Línea 113: el nombre de la propiedad Separador de TxtCheFecEmi no es válido.
+Línea 114: el nombre de la propiedad Text de TxtCheFecEmi no es válido.
+Línea 115: el nombre de la propiedad MensajeErrMin de TxtCheFecEmi no es válido.
+Línea 123: el nombre de la propiedad _ExtentX de TxtCheFecEnt no es válido.
+Línea 124: el nombre de la propiedad _ExtentY de TxtCheFecEnt no es válido.
+Línea 125: el nombre de la propiedad Separador de TxtCheFecEnt no es válido.
+Línea 126: el nombre de la propiedad Text de TxtCheFecEnt no es válido.
+Línea 127: el nombre de la propiedad MensajeErrMin de TxtCheFecEnt no es válido.
+Línea 128: el nombre de la propiedad FechaMin de TxtCheFecEnt no es válido.

@@ -1,7 +1,7 @@
 VERSION 5.00
-Object = "{BDC217C8-ED16-11CD-956C-0000C04E4C0A}#1.1#0"; "TABCTL32.OCX"
-Object = "{5E9E78A0-531B-11CF-91F6-C2863C385E30}#1.0#0"; "MSFLXGRD.OCX"
-Object = "{5F09B5DF-6F4D-11D2-8355-4854E82A9183}#15.0#0"; "FECHA32.OCX"
+Object = "{BDC217C8-ED16-11CD-956C-0000C04E4C0A}#1.1#0"; "tabctl32.ocx"
+Object = "{5E9E78A0-531B-11CF-91F6-C2863C385E30}#1.0#0"; "msflxgrd.ocx"
+Object = "{86CF1D34-0C5F-11D2-A9FC-0000F8754DA1}#2.0#0"; "mscomct2.ocx"
 Begin VB.Form ABMCuentasBancarias 
    BorderStyle     =   1  'Fixed Single
    Caption         =   " ABM  de Cuentas Bancarias"
@@ -24,7 +24,7 @@ Begin VB.Form ABMCuentasBancarias
       Left            =   3855
       Picture         =   "ABMCuentasBancarias.frx":074C
       Style           =   1  'Graphical
-      TabIndex        =   8
+      TabIndex        =   6
       Top             =   4065
       Width           =   855
    End
@@ -35,7 +35,7 @@ Begin VB.Form ABMCuentasBancarias
       Left            =   2985
       Picture         =   "ABMCuentasBancarias.frx":0D60
       Style           =   1  'Graphical
-      TabIndex        =   11
+      TabIndex        =   9
       Top             =   4065
       Width           =   855
    End
@@ -46,7 +46,7 @@ Begin VB.Form ABMCuentasBancarias
       Left            =   4725
       Picture         =   "ABMCuentasBancarias.frx":1374
       Style           =   1  'Graphical
-      TabIndex        =   9
+      TabIndex        =   7
       Top             =   4065
       Width           =   855
    End
@@ -57,14 +57,14 @@ Begin VB.Form ABMCuentasBancarias
       Left            =   5595
       Picture         =   "ABMCuentasBancarias.frx":1988
       Style           =   1  'Graphical
-      TabIndex        =   10
+      TabIndex        =   8
       Top             =   4065
       Width           =   855
    End
    Begin TabDlg.SSTab TabTB 
       Height          =   3975
       Left            =   60
-      TabIndex        =   15
+      TabIndex        =   13
       Top             =   45
       Width           =   6420
       _ExtentX        =   11324
@@ -90,13 +90,13 @@ Begin VB.Form ABMCuentasBancarias
       TabCaption(1)   =   "&Buscar"
       TabPicture(1)   =   "ABMCuentasBancarias.frx":1CAE
       Tab(1).ControlEnabled=   0   'False
-      Tab(1).Control(0)=   "Frame1"
-      Tab(1).Control(1)=   "GrdModulos"
+      Tab(1).Control(0)=   "GrdModulos"
+      Tab(1).Control(1)=   "Frame1"
       Tab(1).ControlCount=   2
       Begin VB.Frame Frame1 
          Height          =   735
          Left            =   -74775
-         TabIndex        =   17
+         TabIndex        =   15
          Top             =   375
          Width           =   5910
          Begin VB.CommandButton CmdBuscAprox 
@@ -105,7 +105,7 @@ Begin VB.Form ABMCuentasBancarias
             MaskColor       =   &H000000FF&
             Picture         =   "ABMCuentasBancarias.frx":1CCA
             Style           =   1  'Graphical
-            TabIndex        =   13
+            TabIndex        =   11
             ToolTipText     =   "Buscar"
             Top             =   225
             UseMaskColor    =   -1  'True
@@ -115,7 +115,7 @@ Begin VB.Form ABMCuentasBancarias
             Height          =   300
             Left            =   1140
             MaxLength       =   15
-            TabIndex        =   12
+            TabIndex        =   10
             Top             =   225
             Width           =   4080
          End
@@ -125,7 +125,7 @@ Begin VB.Form ABMCuentasBancarias
             Height          =   195
             Index           =   0
             Left            =   180
-            TabIndex        =   18
+            TabIndex        =   16
             Top             =   270
             Width           =   900
          End
@@ -143,43 +143,20 @@ Begin VB.Form ABMCuentasBancarias
          EndProperty
          Height          =   3240
          Left            =   300
-         TabIndex        =   16
+         TabIndex        =   14
          Top             =   540
          Width           =   5775
-         Begin FechaCtl.Fecha fechaCierre 
-            Height          =   315
-            Left            =   1395
-            TabIndex        =   5
-            Top             =   2280
-            Width           =   1170
-            _ExtentX        =   2064
-            _ExtentY        =   556
-            Separador       =   "/"
-            Text            =   ""
-            MensajeErrMin   =   "La fecha ingresada no alcanza el mínimo permitido"
-            FechaMin        =   "01/01/1900"
-         End
-         Begin FechaCtl.Fecha fechaApertura 
-            BeginProperty DataFormat 
-               Type            =   0
-               Format          =   """$"" #.##0,00"
-               HaveTrueFalseNull=   0
-               FirstDayOfWeek  =   0
-               FirstWeekOfYear =   0
-               LCID            =   11274
-               SubFormatType   =   0
-            EndProperty
-            Height          =   315
-            Left            =   1380
-            TabIndex        =   3
-            Top             =   1815
-            Width           =   1155
-            _ExtentX        =   2037
-            _ExtentY        =   556
-            Separador       =   "/"
-            Text            =   ""
-            MensajeErrMin   =   "La fecha ingresada no alcanza el mínimo permitido"
-            FechaMin        =   "01/01/1900"
+         Begin MSComCtl2.DTPicker fechaApertura 
+            Height          =   375
+            Left            =   1440
+            TabIndex        =   26
+            Top             =   1800
+            Width           =   1335
+            _ExtentX        =   2355
+            _ExtentY        =   661
+            _Version        =   393216
+            Format          =   53215233
+            CurrentDate     =   43367
          End
          Begin VB.ComboBox CboTcuCodigo 
             Height          =   315
@@ -193,7 +170,7 @@ Begin VB.Form ABMCuentasBancarias
             Height          =   315
             Left            =   1395
             MaxLength       =   20
-            TabIndex        =   7
+            TabIndex        =   5
             Top             =   2760
             Width           =   3915
          End
@@ -201,7 +178,7 @@ Begin VB.Form ABMCuentasBancarias
             Height          =   315
             Left            =   4065
             MaxLength       =   30
-            TabIndex        =   6
+            TabIndex        =   4
             Top             =   2325
             Width           =   1245
          End
@@ -209,7 +186,7 @@ Begin VB.Form ABMCuentasBancarias
             Height          =   315
             Left            =   4065
             MaxLength       =   30
-            TabIndex        =   4
+            TabIndex        =   3
             Top             =   1875
             Width           =   1245
          End
@@ -230,13 +207,25 @@ Begin VB.Form ABMCuentasBancarias
             Top             =   945
             Width           =   1515
          End
+         Begin MSComCtl2.DTPicker fechaCierre 
+            Height          =   375
+            Left            =   1440
+            TabIndex        =   27
+            Top             =   2280
+            Width           =   1335
+            _ExtentX        =   2355
+            _ExtentY        =   661
+            _Version        =   393216
+            Format          =   53215233
+            CurrentDate     =   43367
+         End
          Begin VB.Label Label1 
             AutoSize        =   -1  'True
             Caption         =   "Nro Cuenta:"
             Height          =   195
             Index           =   2
             Left            =   435
-            TabIndex        =   27
+            TabIndex        =   25
             Top             =   975
             Width           =   855
          End
@@ -246,7 +235,7 @@ Begin VB.Form ABMCuentasBancarias
             Height          =   195
             Index           =   4
             Left            =   780
-            TabIndex        =   26
+            TabIndex        =   24
             Top             =   540
             Width           =   510
          End
@@ -256,7 +245,7 @@ Begin VB.Form ABMCuentasBancarias
             Height          =   195
             Index           =   3
             Left            =   150
-            TabIndex        =   25
+            TabIndex        =   23
             Top             =   1860
             Width           =   1140
          End
@@ -266,7 +255,7 @@ Begin VB.Form ABMCuentasBancarias
             Height          =   195
             Index           =   5
             Left            =   345
-            TabIndex        =   24
+            TabIndex        =   22
             Top             =   2340
             Width           =   945
          End
@@ -276,7 +265,7 @@ Begin VB.Form ABMCuentasBancarias
             Height          =   195
             Index           =   8
             Left            =   405
-            TabIndex        =   23
+            TabIndex        =   21
             Top             =   2760
             Width           =   885
          End
@@ -286,7 +275,7 @@ Begin VB.Form ABMCuentasBancarias
             Height          =   195
             Index           =   9
             Left            =   150
-            TabIndex        =   22
+            TabIndex        =   20
             Top             =   1395
             Width           =   1140
          End
@@ -296,7 +285,7 @@ Begin VB.Form ABMCuentasBancarias
             Height          =   195
             Index           =   7
             Left            =   3060
-            TabIndex        =   21
+            TabIndex        =   19
             Top             =   2370
             Width           =   945
          End
@@ -306,7 +295,7 @@ Begin VB.Form ABMCuentasBancarias
             Height          =   195
             Index           =   6
             Left            =   3105
-            TabIndex        =   20
+            TabIndex        =   18
             Top             =   1920
             Width           =   900
          End
@@ -314,7 +303,7 @@ Begin VB.Form ABMCuentasBancarias
       Begin MSFlexGridLib.MSFlexGrid GrdModulos 
          Height          =   2715
          Left            =   -74805
-         TabIndex        =   14
+         TabIndex        =   12
          Top             =   1155
          Width           =   5925
          _ExtentX        =   10451
@@ -342,7 +331,7 @@ Begin VB.Form ABMCuentasBancarias
       EndProperty
       Height          =   240
       Left            =   150
-      TabIndex        =   19
+      TabIndex        =   17
       Top             =   4230
       Width           =   750
    End
@@ -389,7 +378,7 @@ Private Sub CmdBorrar_Click()
         If TxtCuenta.Enabled Then TxtCuenta.SetFocus
         lblEstado.Caption = ""
         Screen.MousePointer = 1
-        cmdNuevo_Click
+        CmdNuevo_Click
     End If
     Exit Sub
     
@@ -432,9 +421,9 @@ Private Sub CmdBuscAprox_Click()
     Screen.MousePointer = vbNormal
 End Sub
 
-Private Sub CmdGrabar_Click()
+Private Sub cmdGrabar_Click()
     Dim Sucursal As String
-    Dim LOCALIDAD As String
+    Dim Localidad As String
     Dim Banco As String
     On Error GoTo CLAVOSE
     
@@ -442,7 +431,7 @@ Private Sub CmdGrabar_Click()
         MsgBox "No ha ingresado el Nro. de Cuenta !", vbExclamation, TIT_MSGBOX
         If TxtCuenta.Enabled Then TxtCuenta.SetFocus
         Exit Sub
-    ElseIf Trim(Me.fechaApertura.Text) = "" Then
+    ElseIf Trim(Me.fechaApertura.Value) = "" Then
         MsgBox "No ha ingresado la Fecha de Apertura !", vbExclamation, TIT_MSGBOX
         If Me.fechaApertura.Enabled Then fechaApertura.SetFocus
         Exit Sub
@@ -471,20 +460,20 @@ Private Sub CmdGrabar_Click()
         sql = sql & " CTA_SALACT,CTA_FECCIE,TCU_CODIGO,CTA_DESCRI) VALUES "
         sql = sql & "( " & XN(CboBancos.ItemData(CboBancos.ListIndex)) & ","
         sql = sql & XS(TxtCuenta.Text) & ","
-        sql = sql & XDQ(fechaApertura.Text) & ","
+        sql = sql & XDQ(fechaApertura.Value) & ","
         sql = sql & XN(CDbl(TxtSaldoIni.Text)) & ","
         sql = sql & XN(CDbl(TxtSaldoAct.Text)) & ","
-        sql = sql & XDQ(fechaCierre.Text) & ","
+        sql = sql & XDQ(fechaCierre.Value) & ","
         sql = sql & XN(CboTcuCodigo.ItemData(CboTcuCodigo.ListIndex)) & ","
-        sql = sql & XS(txtdescri.Text) & ")"
+        sql = sql & XS(TxtDescri.Text) & ")"
     Else
         sql = "UPDATE CTA_BANCARIA SET "
-        sql = sql & " CTA_FECAPE =" & XDQ(fechaApertura.Text)
+        sql = sql & " CTA_FECAPE =" & XDQ(fechaApertura.Value)
         sql = sql & ", CTA_SALINI =" & XN(CDbl(TxtSaldoIni.Text))
         sql = sql & ", CTA_SALACT =" & XN(CDbl(TxtSaldoAct.Text))
-        sql = sql & ", CTA_FECCIE =" & XDQ(Me.fechaCierre.Text)
+        sql = sql & ", CTA_FECCIE =" & XDQ(Me.fechaCierre.Value)
         sql = sql & ", TCU_CODIGO =" & XN(CboTcuCodigo.ItemData(CboTcuCodigo.ListIndex))
-        sql = sql & ", CTA_DESCRI =" & XS(Me.txtdescri.Text)
+        sql = sql & ", CTA_DESCRI =" & XS(Me.TxtDescri.Text)
         sql = sql & " Where BAN_CODINT = " & XN(CboBancos.ItemData(CboBancos.ListIndex))
         sql = sql & " And CTA_NROCTA = " & XS(TxtCuenta)
     End If
@@ -492,7 +481,7 @@ Private Sub CmdGrabar_Click()
     DBConn.Execute sql
     rec.Close
     Screen.MousePointer = 1
-    cmdNuevo_Click
+    CmdNuevo_Click
     Exit Sub
     
 CLAVOSE:
@@ -502,16 +491,16 @@ CLAVOSE:
     Mensaje 1
 End Sub
 
-Private Sub cmdNuevo_Click()
+Private Sub CmdNuevo_Click()
     TabTB.Tab = 0
     CboBancos.Enabled = True
     TxtCuenta.Enabled = True
         
-    fechaApertura.Text = ""
-    fechaCierre.Text = ""
+    fechaApertura.Value = ""
+    fechaCierre.Value = ""
     TxtSaldoAct.Text = ""
     TxtSaldoIni.Text = ""
-    txtdescri.Text = ""
+    TxtDescri.Text = ""
     TxtCuenta.Text = ""
     CboBancos.ListIndex = 0
     CboTcuCodigo.ListIndex = 0
@@ -594,7 +583,7 @@ Private Sub Form_Load()
     Screen.MousePointer = 1
 End Sub
 
-Private Sub GrdModulos_dblClick()
+Private Sub GrdModulos_DblClick()
     If GrdModulos.row > 0 Then
         'paso el item seleccionado al tab 'DATOS'
         GrdModulos.Col = 0
@@ -604,11 +593,11 @@ Private Sub GrdModulos_dblClick()
         Me.TxtCuenta.Text = GrdModulos.TextMatrix(GrdModulos.RowSel, 1)
         Me.TxtCuenta.Enabled = False
         
-        Me.fechaApertura.Text = GrdModulos.TextMatrix(GrdModulos.RowSel, 2)
+        Me.fechaApertura.Value = GrdModulos.TextMatrix(GrdModulos.RowSel, 2)
         Me.TxtSaldoIni.Text = Valido_Importe(GrdModulos.TextMatrix(GrdModulos.RowSel, 3))
         Me.TxtSaldoAct.Text = Valido_Importe(GrdModulos.TextMatrix(GrdModulos.RowSel, 4))
-        Me.fechaCierre.Text = Trim(GrdModulos.TextMatrix(GrdModulos.RowSel, 5))
-        Me.txtdescri.Text = Trim(GrdModulos.TextMatrix(GrdModulos.RowSel, 6))
+        Me.fechaCierre.Value = Trim(GrdModulos.TextMatrix(GrdModulos.RowSel, 5))
+        Me.TxtDescri.Text = Trim(GrdModulos.TextMatrix(GrdModulos.RowSel, 6))
         Call BuscaCodigoProxItemData(CInt(GrdModulos.TextMatrix(GrdModulos.RowSel, 7)), CboTcuCodigo)
         If Me.TxtDescriB.Enabled Then Me.TxtDescriB.SetFocus
         TabTB.Tab = 0
@@ -623,11 +612,11 @@ End Sub
 
 Private Sub GrdModulos_KeyDown(KeyCode As Integer, Shift As Integer)
     If KeyCode = vbKeyDelete Then CmdBorrar_Click
-    If KeyCode = vbKeyReturn Then GrdModulos_dblClick
+    If KeyCode = vbKeyReturn Then GrdModulos_DblClick
 End Sub
 
 Private Sub GrdModulos_KeyPress(KeyAscii As Integer)
-    If KeyAscii = vbKeyReturn Then GrdModulos_dblClick
+    If KeyAscii = vbKeyReturn Then GrdModulos_DblClick
 End Sub
 
 Private Sub GrdModulos_LostFocus()
@@ -663,19 +652,19 @@ Private Sub TxtCuenta_LostFocus()
             TxtSaldoIni = Valido_Importe(Trim(rec!CTA_SALINI))
             TxtSaldoAct = Valido_Importe(Trim(rec!CTA_SALACT))
             Call BuscaCodigoProxItemData(CInt(rec!TCU_CODIGO), CboTcuCodigo)
-            fechaApertura.Text = rec!CTA_FECAPE
-            fechaCierre.Text = ChkNull(rec!CTA_FECCIE)
-            Me.txtdescri.Text = Trim(ChkNull(rec!CTA_DESCRI))
+            fechaApertura.Value = rec!CTA_FECAPE
+            fechaCierre.Value = ChkNull(rec!CTA_FECCIE)
+            Me.TxtDescri.Text = Trim(ChkNull(rec!CTA_DESCRI))
             TxtCuenta.Enabled = False
             CboBancos.Enabled = False
             CboTcuCodigo.SetFocus
         Else
             Me.CboTcuCodigo.ListIndex = 0
-            fechaApertura.Text = ""
-            fechaCierre.Text = ""
+            fechaApertura.Value = ""
+            fechaCierre.Value = ""
             TxtSaldoIni.Text = ""
             TxtSaldoAct.Text = ""
-            txtdescri.Text = ""
+            TxtDescri.Text = ""
             CboTcuCodigo.SetFocus
         End If
         rec.Close

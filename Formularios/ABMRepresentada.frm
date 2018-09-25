@@ -1,7 +1,7 @@
 VERSION 5.00
-Object = "{BDC217C8-ED16-11CD-956C-0000C04E4C0A}#1.1#0"; "TABCTL32.OCX"
-Object = "{5E9E78A0-531B-11CF-91F6-C2863C385E30}#1.0#0"; "MSFLXGRD.OCX"
-Object = "{F09A78C8-7814-11D2-8355-4854E82A9183}#1.0#0"; "CUIT32.OCX"
+Object = "{BDC217C8-ED16-11CD-956C-0000C04E4C0A}#1.1#0"; "tabctl32.ocx"
+Object = "{5E9E78A0-531B-11CF-91F6-C2863C385E30}#1.0#0"; "msflxgrd.ocx"
+Object = "{C932BA88-4374-101B-A56C-00AA003668DC}#1.1#0"; "msmask32.ocx"
 Begin VB.Form ABMRepresentada 
    BorderStyle     =   1  'Fixed Single
    Caption         =   "ABM de Representada"
@@ -23,7 +23,7 @@ Begin VB.Form ABMRepresentada
       Left            =   4695
       Picture         =   "ABMRepresentada.frx":030A
       Style           =   1  'Graphical
-      TabIndex        =   14
+      TabIndex        =   13
       Top             =   5895
       Width           =   870
    End
@@ -34,7 +34,7 @@ Begin VB.Form ABMRepresentada
       Left            =   5580
       Picture         =   "ABMRepresentada.frx":091E
       Style           =   1  'Graphical
-      TabIndex        =   19
+      TabIndex        =   18
       Top             =   5895
       Width           =   870
    End
@@ -45,7 +45,7 @@ Begin VB.Form ABMRepresentada
       Left            =   2940
       Picture         =   "ABMRepresentada.frx":0F32
       Style           =   1  'Graphical
-      TabIndex        =   12
+      TabIndex        =   11
       Top             =   5895
       Width           =   870
    End
@@ -56,14 +56,14 @@ Begin VB.Form ABMRepresentada
       Left            =   3825
       Picture         =   "ABMRepresentada.frx":1546
       Style           =   1  'Graphical
-      TabIndex        =   13
+      TabIndex        =   12
       Top             =   5895
       Width           =   870
    End
    Begin TabDlg.SSTab tabDatos 
       Height          =   5760
       Left            =   60
-      TabIndex        =   15
+      TabIndex        =   14
       Top             =   90
       Width           =   6405
       _ExtentX        =   11298
@@ -90,8 +90,8 @@ Begin VB.Form ABMRepresentada
       TabCaption(1)   =   "&Buscar"
       TabPicture(1)   =   "ABMRepresentada.frx":186C
       Tab(1).ControlEnabled=   0   'False
-      Tab(1).Control(0)=   "Frame1"
-      Tab(1).Control(1)=   "GrdModulos"
+      Tab(1).Control(0)=   "GrdModulos"
+      Tab(1).Control(1)=   "Frame1"
       Tab(1).ControlCount=   2
       Begin VB.Frame fraDatos 
          Caption         =   "Datos de la Representada"
@@ -106,16 +106,27 @@ Begin VB.Form ABMRepresentada
          EndProperty
          Height          =   4980
          Left            =   150
-         TabIndex        =   23
+         TabIndex        =   22
          Top             =   555
          Width           =   6105
+         Begin MSMask.MaskEdBox txtCUIT 
+            Height          =   375
+            Left            =   1320
+            TabIndex        =   42
+            Top             =   1560
+            Width           =   1455
+            _ExtentX        =   2566
+            _ExtentY        =   661
+            _Version        =   393216
+            PromptChar      =   "_"
+         End
          Begin VB.CommandButton cmdNuevoPais 
             Height          =   315
             Left            =   4170
             MaskColor       =   &H000000FF&
             Picture         =   "ABMRepresentada.frx":1888
             Style           =   1  'Graphical
-            TabIndex        =   42
+            TabIndex        =   41
             ToolTipText     =   "Agregar País"
             Top             =   2295
             UseMaskColor    =   -1  'True
@@ -127,7 +138,7 @@ Begin VB.Form ABMRepresentada
             MaskColor       =   &H000000FF&
             Picture         =   "ABMRepresentada.frx":1C12
             Style           =   1  'Graphical
-            TabIndex        =   41
+            TabIndex        =   40
             ToolTipText     =   "Agregar Localidad"
             Top             =   3060
             UseMaskColor    =   -1  'True
@@ -139,7 +150,7 @@ Begin VB.Form ABMRepresentada
             MaskColor       =   &H000000FF&
             Picture         =   "ABMRepresentada.frx":1F9C
             Style           =   1  'Graphical
-            TabIndex        =   40
+            TabIndex        =   39
             ToolTipText     =   "Agregar Provincia"
             Top             =   2685
             UseMaskColor    =   -1  'True
@@ -149,7 +160,7 @@ Begin VB.Form ABMRepresentada
             Height          =   285
             Left            =   4005
             MaxLength       =   10
-            TabIndex        =   4
+            TabIndex        =   3
             Top             =   1575
             Width           =   1005
          End
@@ -165,7 +176,7 @@ Begin VB.Form ABMRepresentada
             Height          =   315
             Left            =   1245
             Style           =   2  'Dropdown List
-            TabIndex        =   6
+            TabIndex        =   5
             Top             =   2685
             Width           =   2880
          End
@@ -173,7 +184,7 @@ Begin VB.Form ABMRepresentada
             Height          =   315
             Left            =   1245
             Style           =   2  'Dropdown List
-            TabIndex        =   5
+            TabIndex        =   4
             Top             =   2295
             Width           =   2880
          End
@@ -181,7 +192,7 @@ Begin VB.Form ABMRepresentada
             Height          =   315
             Left            =   1245
             Style           =   2  'Dropdown List
-            TabIndex        =   7
+            TabIndex        =   6
             Top             =   3060
             Width           =   3375
          End
@@ -190,7 +201,7 @@ Begin VB.Form ABMRepresentada
             Left            =   1245
             LinkTimeout     =   0
             MaxLength       =   40
-            TabIndex        =   11
+            TabIndex        =   10
             Top             =   4560
             Width           =   4335
          End
@@ -198,7 +209,7 @@ Begin VB.Form ABMRepresentada
             Height          =   300
             Left            =   4005
             MaxLength       =   25
-            TabIndex        =   10
+            TabIndex        =   9
             Top             =   4200
             Width           =   1575
          End
@@ -206,7 +217,7 @@ Begin VB.Form ABMRepresentada
             Height          =   300
             Left            =   1245
             MaxLength       =   50
-            TabIndex        =   8
+            TabIndex        =   7
             Top             =   3450
             Width           =   4335
          End
@@ -231,32 +242,16 @@ Begin VB.Form ABMRepresentada
             Height          =   300
             Left            =   1245
             MaxLength       =   25
-            TabIndex        =   9
+            TabIndex        =   8
             Top             =   4200
             Width           =   1575
-         End
-         Begin Control_CUIT.CUIT txtCUIT 
-            Height          =   315
-            Left            =   1245
-            TabIndex        =   3
-            Top             =   1590
-            Width           =   1560
-            _ExtentX        =   2752
-            _ExtentY        =   556
-            ConSeparador    =   0   'False
-            Text            =   ""
-            MensajeErr      =   ""
-            nacPF           =   0   'False
-            nacPJ           =   0   'False
-            extPF           =   0   'False
-            extPJ           =   0   'False
          End
          Begin VB.Label Label10 
             AutoSize        =   -1  'True
             Caption         =   "C.U.I.T.:"
             Height          =   195
             Left            =   495
-            TabIndex        =   39
+            TabIndex        =   38
             Top             =   1620
             Width           =   600
          End
@@ -265,7 +260,7 @@ Begin VB.Form ABMRepresentada
             Caption         =   "Ing. Brutos:"
             Height          =   195
             Left            =   3030
-            TabIndex        =   38
+            TabIndex        =   37
             Top             =   1620
             Width           =   810
          End
@@ -274,7 +269,7 @@ Begin VB.Form ABMRepresentada
             Caption         =   "Cond. I.V.A.:"
             Height          =   195
             Left            =   195
-            TabIndex        =   37
+            TabIndex        =   36
             Top             =   1230
             Width           =   900
          End
@@ -284,7 +279,7 @@ Begin VB.Form ABMRepresentada
             ForeColor       =   &H00FF0000&
             Height          =   195
             Left            =   420
-            TabIndex        =   36
+            TabIndex        =   35
             Top             =   3855
             Width           =   1575
          End
@@ -301,7 +296,7 @@ Begin VB.Form ABMRepresentada
             ForeColor       =   &H00FF0000&
             Height          =   195
             Left            =   420
-            TabIndex        =   35
+            TabIndex        =   34
             Top             =   2010
             Width           =   630
          End
@@ -317,7 +312,7 @@ Begin VB.Form ABMRepresentada
             Caption         =   "País:"
             Height          =   195
             Left            =   720
-            TabIndex        =   34
+            TabIndex        =   33
             Top             =   2340
             Width           =   375
          End
@@ -326,7 +321,7 @@ Begin VB.Form ABMRepresentada
             Caption         =   "E-Mail:"
             Height          =   195
             Left            =   615
-            TabIndex        =   33
+            TabIndex        =   32
             Top             =   4605
             Width           =   480
          End
@@ -335,7 +330,7 @@ Begin VB.Form ABMRepresentada
             Caption         =   "Fax:"
             Height          =   210
             Left            =   3540
-            TabIndex        =   32
+            TabIndex        =   31
             Top             =   4230
             Width           =   300
          End
@@ -344,7 +339,7 @@ Begin VB.Form ABMRepresentada
             Caption         =   "Teléfono:"
             Height          =   195
             Left            =   420
-            TabIndex        =   31
+            TabIndex        =   30
             Top             =   4245
             Width           =   675
          End
@@ -353,7 +348,7 @@ Begin VB.Form ABMRepresentada
             Caption         =   "Provincia:"
             Height          =   195
             Left            =   390
-            TabIndex        =   30
+            TabIndex        =   29
             Top             =   2715
             Width           =   705
          End
@@ -362,7 +357,7 @@ Begin VB.Form ABMRepresentada
             Caption         =   "Localidad:"
             Height          =   195
             Left            =   360
-            TabIndex        =   29
+            TabIndex        =   28
             Top             =   3105
             Width           =   735
          End
@@ -371,7 +366,7 @@ Begin VB.Form ABMRepresentada
             Caption         =   "Domicilio:"
             Height          =   195
             Left            =   420
-            TabIndex        =   28
+            TabIndex        =   27
             Top             =   3480
             Width           =   675
          End
@@ -385,7 +380,7 @@ Begin VB.Form ABMRepresentada
             Height          =   195
             Index           =   7
             Left            =   345
-            TabIndex        =   25
+            TabIndex        =   24
             Top             =   870
             Width           =   750
          End
@@ -399,7 +394,7 @@ Begin VB.Form ABMRepresentada
             Height          =   195
             Index           =   1
             Left            =   555
-            TabIndex        =   24
+            TabIndex        =   23
             Top             =   480
             Width           =   540
          End
@@ -407,7 +402,7 @@ Begin VB.Form ABMRepresentada
       Begin VB.Frame Frame1 
          Height          =   735
          Left            =   -74880
-         TabIndex        =   20
+         TabIndex        =   19
          Top             =   600
          Width           =   6135
          Begin VB.CommandButton CmdBuscAprox 
@@ -416,7 +411,7 @@ Begin VB.Form ABMRepresentada
             MaskColor       =   &H000000FF&
             Picture         =   "ABMRepresentada.frx":2326
             Style           =   1  'Graphical
-            TabIndex        =   17
+            TabIndex        =   16
             ToolTipText     =   "Buscar Representada"
             Top             =   225
             UseMaskColor    =   -1  'True
@@ -426,7 +421,7 @@ Begin VB.Form ABMRepresentada
             Height          =   330
             Left            =   1290
             MaxLength       =   15
-            TabIndex        =   16
+            TabIndex        =   15
             Top             =   225
             Width           =   4215
          End
@@ -437,7 +432,7 @@ Begin VB.Form ABMRepresentada
             Height          =   195
             Index           =   1
             Left            =   1665
-            TabIndex        =   22
+            TabIndex        =   21
             Top             =   315
             Visible         =   0   'False
             Width           =   540
@@ -448,7 +443,7 @@ Begin VB.Form ABMRepresentada
             Height          =   195
             Index           =   0
             Left            =   180
-            TabIndex        =   21
+            TabIndex        =   20
             Top             =   270
             Width           =   885
          End
@@ -456,7 +451,7 @@ Begin VB.Form ABMRepresentada
       Begin MSFlexGridLib.MSFlexGrid GrdModulos 
          Height          =   4020
          Left            =   -74895
-         TabIndex        =   18
+         TabIndex        =   17
          Top             =   1440
          Width           =   6165
          _ExtentX        =   10874
@@ -475,7 +470,7 @@ Begin VB.Form ABMRepresentada
          Height          =   195
          Index           =   0
          Left            =   -74820
-         TabIndex        =   26
+         TabIndex        =   25
          Top             =   570
          Width           =   1065
       End
@@ -495,7 +490,7 @@ Begin VB.Form ABMRepresentada
       EndProperty
       Height          =   240
       Left            =   105
-      TabIndex        =   27
+      TabIndex        =   26
       Top             =   6075
       Width           =   750
    End
@@ -566,7 +561,7 @@ End Sub
 
 Private Sub CmdBorrar_Click()
     On Error GoTo CLAVOSE
-    If Trim(TxtCODIGO) <> "" Then
+    If Trim(TxtCodigo) <> "" Then
         resp = MsgBox("Seguro desea eliminar la Representada: " & Trim(txtRazSoc) & "? ", 36, "Eliminar:")
         If resp <> 6 Then Exit Sub
         
@@ -575,13 +570,13 @@ Private Sub CmdBorrar_Click()
         DBConn.BeginTrans
         
         sql = "DELETE FROM REPRESENTADA"
-        sql = sql & " WHERE REP_CODIGO = " & XN(TxtCODIGO)
+        sql = sql & " WHERE REP_CODIGO = " & XN(TxtCodigo)
         DBConn.Execute sql
          
         DBConn.CommitTrans
         lblEstado.Caption = ""
         Screen.MousePointer = 1
-        cmdNuevo_Click
+        CmdNuevo_Click
     End If
     Exit Sub
     
@@ -620,7 +615,7 @@ Private Sub CmdBuscAprox_Click()
     lblEstado.Caption = ""
 End Sub
 
-Private Sub CmdGrabar_Click()
+Private Sub cmdGrabar_Click()
     
     If ValidarRepresentada = False Then Exit Sub
     
@@ -628,39 +623,39 @@ Private Sub CmdGrabar_Click()
     Screen.MousePointer = vbHourglass
     lblEstado.Caption = "Guardando ..."
     DBConn.BeginTrans
-    If TxtCODIGO.Text <> "" Then
+    If TxtCodigo.Text <> "" Then
         sql = "UPDATE REPRESENTADA "
         sql = sql & " SET REP_RAZSOC=" & XS(txtRazSoc)
         sql = sql & " , IVA_CODIGO=" & cboIva.ItemData(cboIva.ListIndex)
         sql = sql & " , REP_CUIT=" & XS(txtCUIT)
         sql = sql & " , REP_INGBRU=" & XS(txtIngBrutos)
-        sql = sql & " , REP_DOMICI=" & XS(txtDomici)
+        sql = sql & " , REP_DOMICI=" & XS(txtdomici)
         sql = sql & " , PAI_CODIGO=" & cboPais.ItemData(cboPais.ListIndex)
         sql = sql & " , PRO_CODIGO=" & cboProv.ItemData(cboProv.ListIndex)
         sql = sql & " , LOC_CODIGO=" & cboLocal.ItemData(cboLocal.ListIndex)
-        sql = sql & " , REP_TELEFONO=" & XS(txtTelefono)
+        sql = sql & " , REP_TELEFONO=" & XS(txttelefono)
         sql = sql & " , REP_FAX=" & XS(txtfax)
         sql = sql & " , REP_MAIL=" & XS(txtmail)
-        sql = sql & " WHERE REP_CODIGO=" & XN(TxtCODIGO)
+        sql = sql & " WHERE REP_CODIGO=" & XN(TxtCodigo)
         DBConn.Execute sql
         
     Else
-        TxtCODIGO = "1"
+        TxtCodigo = "1"
         sql = "SELECT MAX(REP_CODIGO) as maximo FROM REPRESENTADA"
         rec.Open sql, DBConn, adOpenStatic, adLockOptimistic
-        If Not IsNull(rec.Fields!Maximo) Then TxtCODIGO = XN(rec.Fields!Maximo) + 1
+        If Not IsNull(rec.Fields!Maximo) Then TxtCodigo = XN(rec.Fields!Maximo) + 1
         rec.Close
         
         sql = "INSERT INTO REPRESENTADA(REP_CODIGO,REP_RAZSOC,REP_DOMICI,"
         sql = sql & "REP_CUIT,REP_INGBRU,REP_TELEFONO,REP_FAX,REP_MAIL,"
         sql = sql & "IVA_CODIGO,PAI_CODIGO,PRO_CODIGO,LOC_CODIGO)"
         sql = sql & " VALUES ("
-        sql = sql & XN(TxtCODIGO) & ","
+        sql = sql & XN(TxtCodigo) & ","
         sql = sql & XS(txtRazSoc) & ","
-        sql = sql & XS(txtDomici) & ","
+        sql = sql & XS(txtdomici) & ","
         sql = sql & XS(txtCUIT) & ","
         sql = sql & XS(txtIngBrutos) & ","
-        sql = sql & XS(txtTelefono) & ","
+        sql = sql & XS(txttelefono) & ","
         sql = sql & XS(txtfax) & ","
         sql = sql & XS(txtmail) & ","
         sql = sql & cboIva.ItemData(cboIva.ListIndex) & ","
@@ -672,7 +667,7 @@ Private Sub CmdGrabar_Click()
     End If
     Screen.MousePointer = vbNormal
     DBConn.CommitTrans
-    cmdNuevo_Click
+    CmdNuevo_Click
     Exit Sub
     
 HayError:
@@ -695,15 +690,15 @@ Private Sub cmdNuevaProvincia_Click()
     CboPais_LostFocus
 End Sub
 
-Private Sub cmdNuevo_Click()
+Private Sub CmdNuevo_Click()
     tabDatos.Tab = 0
-    TxtCODIGO.Text = ""
+    TxtCodigo.Text = ""
     txtRazSoc.Text = ""
-    txtTelefono.Text = ""
+    txttelefono.Text = ""
     txtfax.Text = ""
     txtmail.Text = ""
     lblEstado.Caption = ""
-    txtDomici.Text = ""
+    txtdomici.Text = ""
     txtIngBrutos.Text = ""
     txtCUIT.Text = ""
     'para la consulta
@@ -715,7 +710,7 @@ Private Sub cmdNuevo_Click()
     cboLocal.Clear
     cboPais.ListIndex = 0
     cboIva.ListIndex = 0
-    TxtCODIGO.SetFocus
+    TxtCodigo.SetFocus
 End Sub
 
 Private Sub cmdNuevoPais_Click()
@@ -791,9 +786,9 @@ Private Sub LlenarComboIva()
     rec.Close
 End Sub
 
-Private Sub GrdModulos_dblClick()
+Private Sub GrdModulos_DblClick()
     If GrdModulos.row > 0 Then
-        TxtCODIGO = GrdModulos.TextMatrix(GrdModulos.RowSel, 0)
+        TxtCodigo = GrdModulos.TextMatrix(GrdModulos.RowSel, 0)
         cmdGrabar.Enabled = True
         cmdBorrar.Enabled = True
         TxtCodigo_LostFocus
@@ -838,9 +833,9 @@ Private Function ValidarRepresentada() As Boolean
         ValidarRepresentada = False
         Exit Function
     End If
-    If txtDomici.Text = "" Then
+    If txtdomici.Text = "" Then
         MsgBox "No ha ingresado el Domicilio", vbExclamation, TIT_MSGBOX
-        txtDomici.SetFocus
+        txtdomici.SetFocus
         ValidarRepresentada = False
         Exit Function
     End If
@@ -848,7 +843,7 @@ Private Function ValidarRepresentada() As Boolean
 End Function
 
 Private Sub GrdModulos_KeyDown(KeyCode As Integer, Shift As Integer)
-    If KeyCode = vbKeyReturn Then GrdModulos_dblClick
+    If KeyCode = vbKeyReturn Then GrdModulos_DblClick
 End Sub
 
 Private Sub tabDatos_Click(PreviousTab As Integer)
@@ -866,15 +861,15 @@ Private Sub tabDatos_Click(PreviousTab As Integer)
 End Sub
 
 Private Sub TxtCodigo_Change()
-    If Trim(TxtCODIGO) = "" And cmdBorrar.Enabled Then
+    If Trim(TxtCodigo) = "" And cmdBorrar.Enabled Then
         cmdBorrar.Enabled = False
-    ElseIf Trim(TxtCODIGO) <> "" Then
+    ElseIf Trim(TxtCodigo) <> "" Then
         cmdBorrar.Enabled = True
     End If
 End Sub
 
 Private Sub TxtCodigo_GotFocus()
-    SelecTexto TxtCODIGO
+    SelecTexto TxtCodigo
 End Sub
 
 Private Sub TxtCodigo_KeyPress(KeyAscii As Integer)
@@ -894,7 +889,7 @@ Private Sub TxtDescriB_KeyPress(KeyAscii As Integer)
 End Sub
 
 Private Sub txtdomici_GotFocus()
-    SelecTexto txtDomici
+    SelecTexto txtdomici
 End Sub
 
 Private Sub txtdomici_KeyPress(KeyAscii As Integer)
@@ -934,9 +929,9 @@ If Trim(txtRazSoc) = "" And cmdGrabar.Enabled Then
 End Sub
 
 Private Sub TxtCodigo_LostFocus()
-    If TxtCODIGO.Text <> "" Then
+    If TxtCodigo.Text <> "" Then
         sql = "SELECT * FROM REPRESENTADA"
-        sql = sql & " WHERE REP_CODIGO=" & XN(TxtCODIGO)
+        sql = sql & " WHERE REP_CODIGO=" & XN(TxtCodigo)
         Rec1.Open sql, DBConn, adOpenStatic, adLockOptimistic
         If Rec1.EOF = False Then
             txtRazSoc.Text = Rec1!REP_RAZSOC
@@ -952,19 +947,19 @@ Private Sub TxtCodigo_LostFocus()
             Provincia = cboPais.Text
             
             Call BuscaCodigoProxItemData(Rec1!LOC_CODIGO, cboLocal)
-            txtDomici.Text = Rec1!REP_DOMICI
-            txtTelefono.Text = IIf(IsNull(Rec1!REP_TELEFONO), "", Rec1!REP_TELEFONO)
+            txtdomici.Text = Rec1!REP_DOMICI
+            txttelefono.Text = IIf(IsNull(Rec1!REP_TELEFONO), "", Rec1!REP_TELEFONO)
             txtfax.Text = IIf(IsNull(Rec1!REP_FAX), "", Rec1!REP_FAX)
             txtmail.Text = IIf(IsNull(Rec1!REP_MAIL), "", Rec1!REP_MAIL)
             txtRazSoc.SetFocus
         Else
              MsgBox "El Código no existe", vbExclamation, TIT_MSGBOX
-             TxtCODIGO.Text = ""
+             TxtCodigo.Text = ""
              'para la consulta
             Consulta = False 'no consulta true consulta
             Pais = ""
             Provincia = ""
-            TxtCODIGO.SetFocus
+            TxtCodigo.SetFocus
         End If
         Rec1.Close
     End If
@@ -979,7 +974,7 @@ Private Sub txtRazSoc_KeyPress(KeyAscii As Integer)
 End Sub
 
 Private Sub txttelefono_GotFocus()
-    SelecTexto txtTelefono
+    SelecTexto txttelefono
 End Sub
 
 Private Sub txttelefono_KeyPress(KeyAscii As Integer)
