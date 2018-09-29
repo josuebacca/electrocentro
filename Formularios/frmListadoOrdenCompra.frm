@@ -2,6 +2,7 @@ VERSION 5.00
 Object = "{F9043C88-F6F2-101A-A3C9-08002B2F49FB}#1.2#0"; "comdlg32.ocx"
 Object = "{5E9E78A0-531B-11CF-91F6-C2863C385E30}#1.0#0"; "msflxgrd.ocx"
 Object = "{86CF1D34-0C5F-11D2-A9FC-0000F8754DA1}#2.0#0"; "mscomct2.ocx"
+Object = "{00025600-0000-0000-C000-000000000046}#5.2#0"; "Crystl32.OCX"
 Begin VB.Form frmListadoOrdenCompra 
    BorderStyle     =   1  'Fixed Single
    Caption         =   "Listado de Orden de Compra"
@@ -148,7 +149,7 @@ Begin VB.Form frmListadoOrdenCompra
       Begin MSComCtl2.DTPicker FechaDesde 
          Height          =   375
          Left            =   3360
-         TabIndex        =   32
+         TabIndex        =   31
          Top             =   1320
          Width           =   1335
          _ExtentX        =   2355
@@ -160,7 +161,7 @@ Begin VB.Form frmListadoOrdenCompra
       Begin MSComCtl2.DTPicker FechaHasta 
          Height          =   375
          Left            =   5880
-         TabIndex        =   33
+         TabIndex        =   32
          Top             =   1320
          Width           =   1335
          _ExtentX        =   2355
@@ -235,15 +236,6 @@ Begin VB.Form frmListadoOrdenCompra
       TabIndex        =   21
       Top             =   6510
       Width           =   10650
-   End
-   Begin VB.PictureBox Rep 
-      Height          =   480
-      Left            =   7275
-      ScaleHeight     =   420
-      ScaleWidth      =   1140
-      TabIndex        =   31
-      Top             =   5145
-      Width           =   1200
    End
    Begin VB.CommandButton cmdSalir 
       Caption         =   "&Salir"
@@ -326,6 +318,14 @@ Begin VB.Form frmListadoOrdenCompra
       TabIndex        =   15
       Top             =   5265
       Width           =   7845
+      Begin Crystal.CrystalReport Rep 
+         Left            =   5880
+         Top             =   840
+         _ExtentX        =   741
+         _ExtentY        =   741
+         _Version        =   348160
+         PrintFileLinesPerPage=   60
+      End
       Begin VB.OptionButton optImpresora 
          Caption         =   "Impresora"
          Height          =   195
@@ -430,7 +430,7 @@ Private Sub CBImpresora_Click()
 End Sub
 Private Sub CmdBuscAprox_Click()
     GrdModulos.Rows = 1
-    lblEstado.Caption = "Buscando..."
+    lblestado.Caption = "Buscando..."
     Screen.MousePointer = vbHourglass
     GrdModulos.HighLight = flexHighlightNever
     sql = "SELECT NP.*, C.PROV_RAZSOC,C.PROV_DOMICI,L.LOC_DESCRI,P.PRO_DESCRI"
@@ -459,11 +459,11 @@ Private Sub CmdBuscAprox_Click()
         Loop
         GrdModulos.SetFocus
     Else
-        lblEstado.Caption = ""
+        lblestado.Caption = ""
         Screen.MousePointer = vbNormal
         MsgBox "No se encontraron datos...", vbExclamation, TIT_MSGBOX
     End If
-    lblEstado.Caption = ""
+    lblestado.Caption = ""
     Screen.MousePointer = vbNormal
     rec.Close
 End Sub
@@ -484,7 +484,7 @@ Private Sub cmdBuscarVendedor_Click()
 End Sub
 
 Private Sub cmdListar_Click()
-    'Rep.WindowState = crptMaximized 'crptMinimized
+    Rep.WindowState = crptMaximized 'crptMinimized
     Rep.WindowBorderStyle = crptNoBorder
     Rep.Connect = "Provider=MSDASQL.1;Persist Security Info=False;Data Source=SIELECTROCENTRO"
     Rep.SelectionFormula = ""
@@ -521,9 +521,9 @@ Private Sub cmdListar_Click()
         
         If FechaDesde.Value <> "" And FechaHasta.Value <> "" Then
             Rep.Formulas(2) = "FECHA='" & "Desde: " & FechaDesde.Value & "   Hasta: " & FechaHasta.Value & "'"
-        ElseIf FechaDesde.Value <> "" And FechaHasta.Value = "" Then
+        ElseIf FechaDesde.Value <> "" And FechaHasta.Value = Date Then
             Rep.Formulas(2) = "FECHA='" & "Desde: " & FechaDesde.Value & "   Hasta: " & Date & "'"
-        ElseIf FechaDesde.Value = "" And FechaHasta.Value <> "" Then
+        ElseIf FechaDesde.Value = Date And FechaHasta.Value <> "" Then
             Rep.Formulas(2) = "FECHA='" & "Desde: Inicio" & "   Hasta: " & FechaHasta.Value & "'"
         End If
     
@@ -578,9 +578,9 @@ Private Sub cmdListar_Click()
         
         If FechaDesde.Value <> "" And FechaHasta.Value <> "" Then
             Rep.Formulas(0) = "FECHA='" & "Desde: " & FechaDesde.Value & "   Hasta: " & FechaHasta.Value & "'"
-        ElseIf FechaDesde.Value <> "" And FechaHasta.Value = "" Then
+        ElseIf FechaDesde.Value <> "" And FechaHasta.Value = Date Then
             Rep.Formulas(0) = "FECHA='" & "Desde: " & FechaDesde.Value & "   Hasta: " & Date & "'"
-        ElseIf FechaDesde.Value = "" And FechaHasta.Value <> "" Then
+        ElseIf FechaDesde.Value = Date And FechaHasta.Value <> "" Then
             Rep.Formulas(0) = "FECHA='" & "Desde: Inicio" & "   Hasta: " & FechaHasta.Value & "'"
         End If
     
@@ -622,8 +622,8 @@ Private Sub CmdNuevo_Click()
     txtCliente.Text = ""
     txtDesCli.Text = ""
     txtVendedor.Text = ""
-    FechaDesde.Value = ""
-    FechaHasta.Value = ""
+    FechaDesde.Value = Date
+    FechaHasta.Value = Date
     GrdModulos.Rows = 1
     GrdModulos.Rows = 2
     txtCliente.Enabled = False
@@ -650,7 +650,7 @@ Private Sub Form_Load()
     cmdBuscarVendedor.Enabled = False
     GrdModulos.Rows = 1
     lblImpresora.Caption = "Impresora Actual: " & Printer.DeviceName
-    lblEstado.Caption = ""
+    lblestado.Caption = ""
 
     Call Centrar_pantalla(Me)
     GrdModulos.FormatString = ">Número|^Fecha|Proveedor|Localidad|Provincia|Forma de pago"
@@ -668,7 +668,7 @@ Private Sub Form_Load()
 End Sub
 Private Sub Form_KeyPress(KeyAscii As Integer)
     If KeyAscii = vbKeyReturn Then SendKeys "{TAB}"
-    If KeyAscii = vbKeyEscape Then CmdSalir_Click
+    If KeyAscii = vbKeyEscape Then cmdSalir_Click
 End Sub
 
 Private Sub chkCliente_Click()
@@ -733,7 +733,7 @@ Private Sub txtCliente_LostFocus()
         And chkVendedor.Value = Unchecked And ActiveControl.Name <> "cmdBuscarCli" _
         And ActiveControl.Name <> "cmdNuevo" And ActiveControl.Name <> "cmdSalir" Then CmdBuscAprox.SetFocus
 End Sub
-Private Sub CmdSalir_Click()
+Private Sub cmdSalir_Click()
     Set frmListadoOrdenCompra = Nothing
     Unload Me
 End Sub

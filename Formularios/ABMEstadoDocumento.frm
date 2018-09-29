@@ -1,6 +1,6 @@
 VERSION 5.00
-Object = "{BDC217C8-ED16-11CD-956C-0000C04E4C0A}#1.1#0"; "TABCTL32.OCX"
-Object = "{5E9E78A0-531B-11CF-91F6-C2863C385E30}#1.0#0"; "MSFLXGRD.OCX"
+Object = "{BDC217C8-ED16-11CD-956C-0000C04E4C0A}#1.1#0"; "tabctl32.ocx"
+Object = "{5E9E78A0-531B-11CF-91F6-C2863C385E30}#1.0#0"; "msflxgrd.ocx"
 Begin VB.Form ABMEstadoDocumento 
    BorderStyle     =   1  'Fixed Single
    Caption         =   " ABM Estado de Documento"
@@ -68,6 +68,7 @@ Begin VB.Form ABMEstadoDocumento
       _ExtentY        =   5583
       _Version        =   393216
       Tabs            =   2
+      Tab             =   1
       TabHeight       =   520
       BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
          Name            =   "MS Sans Serif"
@@ -80,19 +81,21 @@ Begin VB.Form ABMEstadoDocumento
       EndProperty
       TabCaption(0)   =   "&Datos"
       TabPicture(0)   =   "ABMEstadoDocumento.frx":1850
-      Tab(0).ControlEnabled=   -1  'True
+      Tab(0).ControlEnabled=   0   'False
       Tab(0).Control(0)=   "Frame3"
       Tab(0).Control(0).Enabled=   0   'False
       Tab(0).ControlCount=   1
       TabCaption(1)   =   "&Buscar"
       TabPicture(1)   =   "ABMEstadoDocumento.frx":186C
-      Tab(1).ControlEnabled=   0   'False
+      Tab(1).ControlEnabled=   -1  'True
       Tab(1).Control(0)=   "GrdModulos"
+      Tab(1).Control(0).Enabled=   0   'False
       Tab(1).Control(1)=   "Frame1"
+      Tab(1).Control(1).Enabled=   0   'False
       Tab(1).ControlCount=   2
       Begin VB.Frame Frame1 
          Height          =   735
-         Left            =   -74790
+         Left            =   210
          TabIndex        =   12
          Top             =   525
          Width           =   5280
@@ -139,7 +142,7 @@ Begin VB.Form ABMEstadoDocumento
             Strikethrough   =   0   'False
          EndProperty
          Height          =   1950
-         Left            =   345
+         Left            =   -74655
          TabIndex        =   10
          Top             =   600
          Width           =   4920
@@ -181,7 +184,7 @@ Begin VB.Form ABMEstadoDocumento
       End
       Begin MSFlexGridLib.MSFlexGrid GrdModulos 
          Height          =   1665
-         Left            =   -74820
+         Left            =   180
          TabIndex        =   8
          Top             =   1350
          Width           =   5355
@@ -225,19 +228,19 @@ Dim resp As Integer
 
 Private Sub CmdBorrar_Click()
     On Error GoTo CLAVOSE
-    If Trim(TxtCODIGO) <> "" Then
+    If Trim(TxtCodigo) <> "" Then
         resp = MsgBox("Seguro desea eliminar el Estado: " & Trim(TxtDescrip) & "? ", 36, "Eliminar:")
         If resp <> 6 Then Exit Sub
         
         DBConn.BeginTrans
         Screen.MousePointer = vbHourglass
         lblEstado.Caption = "Eliminando..."
-        DBConn.Execute "DELETE FROM ESTADO_DOCUMENTO WHERE EST_CODIGO = " & XN(TxtCODIGO)
+        DBConn.Execute "DELETE FROM ESTADO_DOCUMENTO WHERE EST_CODIGO = " & XN(TxtCodigo)
         If TxtDescrip.Enabled Then TxtDescrip.SetFocus
         lblEstado.Caption = ""
         DBConn.CommitTrans
         Screen.MousePointer = vbNormal
-        cmdNuevo_Click
+        CmdNuevo_Click
     End If
     Exit Sub
     
@@ -275,7 +278,7 @@ Private Sub CmdBuscAprox_Click()
     Screen.MousePointer = vbNormal
 End Sub
 
-Private Sub CmdGrabar_Click()
+Private Sub cmdGrabar_Click()
     On Error GoTo CLAVOSE
     
     If Trim(TxtDescrip) = "" Then
@@ -287,29 +290,29 @@ Private Sub CmdGrabar_Click()
     Screen.MousePointer = vbHourglass
     lblEstado.Caption = "Guardando ..."
     DBConn.BeginTrans
-    If TxtCODIGO.Text <> "" Then
+    If TxtCodigo.Text <> "" Then
         
         sql = "UPDATE ESTADO_DOCUMENTO "
         sql = sql & " SET EST_DESCRI =" & XS(TxtDescrip)
-        sql = sql & " WHERE EST_CODIGO = " & XN(TxtCODIGO)
+        sql = sql & " WHERE EST_CODIGO = " & XN(TxtCodigo)
         DBConn.Execute sql
     Else
-        TxtCODIGO = "1"
+        TxtCodigo = "1"
         sql = "SELECT MAX(EST_CODIGO) as maximo FROM ESTADO_DOCUMENTO"
         rec.Open sql, DBConn, adOpenStatic, adLockOptimistic
-        If Not IsNull(rec.Fields!Maximo) Then TxtCODIGO = XN(rec.Fields!Maximo) + 1
+        If Not IsNull(rec.Fields!Maximo) Then TxtCodigo = XN(rec.Fields!Maximo) + 1
         rec.Close
         
         sql = "INSERT INTO ESTADO_DOCUMENTO(EST_CODIGO,EST_DESCRI)"
         sql = sql & " VALUES ("
-        sql = sql & XN(TxtCODIGO)
+        sql = sql & XN(TxtCodigo)
         sql = sql & "," & XS(TxtDescrip)
         sql = sql & ")"
         DBConn.Execute sql
     End If
     Screen.MousePointer = vbNormal
     DBConn.CommitTrans
-    cmdNuevo_Click
+    CmdNuevo_Click
     Exit Sub
     
 CLAVOSE:
@@ -319,13 +322,13 @@ CLAVOSE:
     MsgBox Err.Description, vbCritical, TIT_MSGBOX
 End Sub
 
-Private Sub cmdNuevo_Click()
+Private Sub CmdNuevo_Click()
     TabTB.Tab = 0
-    TxtCODIGO.Text = ""
+    TxtCodigo.Text = ""
     TxtDescrip.Text = ""
     lblEstado.Caption = ""
     GrdModulos.Rows = 1
-    TxtCODIGO.SetFocus
+    TxtCodigo.SetFocus
 End Sub
 
 Private Sub CmdSalir_Click()
@@ -363,10 +366,10 @@ Private Sub Form_Load()
        
 End Sub
 
-Private Sub GrdModulos_dblClick()
+Private Sub GrdModulos_DblClick()
     If GrdModulos.row > 0 Then
         'paso el item seleccionado al tab 'DATOS'
-        TxtCODIGO.Text = GrdModulos.TextMatrix(GrdModulos.RowSel, 0)
+        TxtCodigo.Text = GrdModulos.TextMatrix(GrdModulos.RowSel, 0)
         TxtCodigo_LostFocus
         TabTB.Tab = 0
     End If
@@ -379,11 +382,11 @@ Private Sub GrdModulos_GotFocus()
 End Sub
 
 Private Sub GrdModulos_KeyDown(KeyCode As Integer, Shift As Integer)
-    If KeyCode = vbKeyReturn Then GrdModulos_dblClick
+    If KeyCode = vbKeyReturn Then GrdModulos_DblClick
 End Sub
 
 Private Sub GrdModulos_KeyPress(KeyAscii As Integer)
-    If KeyAscii = vbKeyReturn Then GrdModulos_dblClick
+    If KeyAscii = vbKeyReturn Then GrdModulos_DblClick
 End Sub
 
 Private Sub GrdModulos_LostFocus()
@@ -396,13 +399,13 @@ Private Sub tabTB_Click(PreviousTab As Integer)
     If TabTB.Tab = 0 And Me.Visible Then
      TxtDescrip.SetFocus
      cmdGrabar.Enabled = True
-     cmdBorrar.Enabled = True
+     CmdBorrar.Enabled = True
     End If
     If TabTB.Tab = 1 Then
         TxtDescriB.Text = ""
         If TxtDescriB.Enabled Then TxtDescriB.SetFocus
         cmdGrabar.Enabled = False
-        cmdBorrar.Enabled = False
+        CmdBorrar.Enabled = False
     End If
 End Sub
 
@@ -411,17 +414,17 @@ Private Sub TxtCodigo_KeyPress(KeyAscii As Integer)
 End Sub
 
 Private Sub TxtCodigo_LostFocus()
-    If TxtCODIGO.Text <> "" Then
+    If TxtCodigo.Text <> "" Then
         sql = "SELECT EST_CODIGO,EST_DESCRI "
         sql = sql & " FROM ESTADO_DOCUMENTO"
-        sql = sql & " WHERE EST_CODIGO=" & XN(TxtCODIGO)
+        sql = sql & " WHERE EST_CODIGO=" & XN(TxtCodigo)
         rec.Open sql, DBConn, adOpenStatic, adLockOptimistic
         If rec.EOF = False Then
          TxtDescrip.Text = rec!EST_DESCRI
         Else
          MsgBox "El Código no existe", vbExclamation, TIT_MSGBOX
-         TxtCODIGO.Text = ""
-         TxtCODIGO.SetFocus
+         TxtCodigo.Text = ""
+         TxtCodigo.SetFocus
         End If
         rec.Close
     End If
@@ -434,15 +437,15 @@ Private Sub TxtDescrip_GotFocus()
 End Sub
 
 Private Sub TxtDescrip_KeyPress(KeyAscii As Integer)
-    If KeyAscii = vbKeyReturn And cmdGrabar.Enabled Then CmdGrabar_Click
+    If KeyAscii = vbKeyReturn And cmdGrabar.Enabled Then cmdGrabar_Click
     KeyAscii = Mayuscula(KeyAscii)
 End Sub
 
 Private Sub TxtCodigo_Change()
-    If Trim(TxtCODIGO) = "" And cmdBorrar.Enabled Then
-        cmdBorrar.Enabled = False
-    ElseIf Trim(TxtCODIGO) <> "" Then
-        cmdBorrar.Enabled = True
+    If Trim(TxtCodigo) = "" And CmdBorrar.Enabled Then
+        CmdBorrar.Enabled = False
+    ElseIf Trim(TxtCodigo) <> "" Then
+        CmdBorrar.Enabled = True
     End If
 End Sub
 

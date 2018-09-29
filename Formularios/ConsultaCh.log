@@ -1,1 +1,6 @@
 Línea 33: la clase FechaCtl.Fecha del control FechaBusq no era una clase de control cargada.
+Línea 39: el nombre de la propiedad _ExtentX de FechaBusq no es válido.
+Línea 40: el nombre de la propiedad _ExtentY de FechaBusq no es válido.
+Línea 41: el nombre de la propiedad Separador de FechaBusq no es válido.
+Línea 42: el nombre de la propiedad Text de FechaBusq no es válido.
+Línea 43: el nombre de la propiedad MensajeErrMin de FechaBusq no es válido.

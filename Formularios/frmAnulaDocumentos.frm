@@ -111,7 +111,7 @@ Begin VB.Form frmAnulaDocumentos
          _ExtentX        =   2355
          _ExtentY        =   661
          _Version        =   393216
-         Format          =   58785793
+         Format          =   53936129
          CurrentDate     =   43367
       End
       Begin VB.CommandButton cmdBuscarVendedor 
@@ -252,7 +252,7 @@ Begin VB.Form frmAnulaDocumentos
          _ExtentX        =   2355
          _ExtentY        =   661
          _Version        =   393216
-         Format          =   58785793
+         Format          =   53936129
          CurrentDate     =   43367
       End
       Begin VB.Label lblCliente 
@@ -996,7 +996,7 @@ Private Sub cmdBuscarVendedor_Click()
     End If
 End Sub
 
-Private Sub cmdGrabar_Click()
+Private Sub CmdGrabar_Click()
     If MsgBox("¿Confirma Anular?", vbQuestion + vbYesNo, TIT_MSGBOX) = vbNo Then Exit Sub
     
     On Error GoTo SeClavo
@@ -1541,14 +1541,14 @@ Private Sub cmdRenumerar_Click()
     frmRenumerarFac.Show vbModal
 End Sub
 
-Private Sub CmdSalir_Click()
+Private Sub cmdSalir_Click()
     Set frmAnulaDocumentos = Nothing
     Unload Me
 End Sub
 
 Private Sub Form_KeyPress(KeyAscii As Integer)
     If KeyAscii = vbKeyReturn Then SendKeys "{TAB}"
-    If KeyAscii = vbKeyEscape Then CmdSalir_Click
+    If KeyAscii = vbKeyEscape Then cmdSalir_Click
 End Sub
 
 Private Sub Form_Load()
@@ -2115,8 +2115,8 @@ Private Sub CmdNuevo_Click()
     txtCliente.Text = ""
     txtDesCli.Text = ""
     txtVendedor.Text = ""
-    FechaDesde.Value = ""
-    FechaHasta.Value = ""
+    FechaDesde.Value = Date
+    FechaHasta.Value = Date
     cboDocumento.ListIndex = -1
     GrdModulos.Rows = 1
     GrdModulos.Rows = 2

@@ -261,7 +261,7 @@ Private Sub CboBanco_LostFocus()
     Dim MtrObjetos As Variant
 
     If CboBanco.ListIndex <> -1 Then
-        lblEstado.Caption = "Buscando..."
+        lblestado.Caption = "Buscando..."
        'CONSULTO SI EXISTE EL CHEQUE
         sql = "SELECT * FROM CHEQUE_PROPIO "
         sql = sql & " WHERE CHEP_NUMERO = " & XS(TxtCheNumero.Text)
@@ -295,19 +295,19 @@ Private Sub CboBanco_LostFocus()
             Rec1.Close
             Me.TxtCesFecha.SetFocus
         Else
-           lblEstado.Caption = ""
+           lblestado.Caption = ""
            MsgBox "El Cheque no Existe", vbExclamation, TIT_MSGBOX
            rec.Close
         End If
-        lblEstado.Caption = ""
+        lblestado.Caption = ""
         If rec.State = 1 Then rec.Close
     End If
 End Sub
 
-Private Sub cmdGrabar_Click()
+Private Sub CmdGrabar_Click()
    
  If Me.ActiveControl.Name <> "CmdNuevo" And Me.ActiveControl.Name <> "CmdSalir" Then
-    lblEstado.Caption = "Actualizando..."
+    lblestado.Caption = "Actualizando..."
     'Verifico que NO graben dos veces el mismo estado en el mismo día
     sql = "SELECT ECH_CODIGO, MAX(CPES_FECHA)as maximo"
     sql = sql & " FROM CHEQUE_PROPIO_ESTADO"
@@ -318,7 +318,7 @@ Private Sub cmdGrabar_Click()
     Rec1.Open sql, DBConn, adOpenStatic, adLockOptimistic
     If Rec1.EOF = False Then
        If DMY(Rec1!Maximo) = DMY(TxtCesFecha.Value) Then
-            lblEstado.Caption = ""
+            lblestado.Caption = ""
             MsgBox "NO se puede registrar el mismo carácter en la misma fecha.", 16, TIT_MSGBOX
             Rec1.Close
             Exit Sub
@@ -333,19 +333,19 @@ Private Sub cmdGrabar_Click()
         If Trim(Me.TxtCheNumero.Text) = "" Then
            MsgBox "Falta el Número de Cheque.", 16, TIT_MSGBOX
            TxtCheNumero.SetFocus
-           lblEstado.Caption = ""
+           lblestado.Caption = ""
            Exit Sub
         End If
         If CboBanco.ListIndex = -1 Then
            MsgBox "Falta el BANCO", 16, TIT_MSGBOX
            CboBanco.SetFocus
-           lblEstado.Caption = ""
+           lblestado.Caption = ""
            Exit Sub
         End If
         If Trim(Me.TxtCesFecha.Value) = "" Then
            MsgBox "Falta la Fecha.", 16, TIT_MSGBOX
            TxtCesFecha.SetFocus
-           lblEstado.Caption = ""
+           lblestado.Caption = ""
            Exit Sub
         End If
  Else
@@ -368,15 +368,15 @@ End Sub
 Private Sub CmdNuevo_Click()
     Dim MtrObjetos As Variant
 
-   lblEstado.Caption = ""
+   lblestado.Caption = ""
    Me.TxtCheNumero.Enabled = True
    Me.CboBanco.Enabled = True
    Me.TxtCheNumero.Text = ""
    Me.TxtCheFecEmi.Value = ""
-   Me.TxtCheFecVto.Value = ""
+   Me.TxtCheFecVto.Value = Date
    Me.TxtCheImport.Text = ""
    Me.Grd1.Rows = 1
-   Me.TxtCesFecha.Value = ""
+   Me.TxtCesFecha.Value = Date
    Me.CboEstado.ListIndex = 0
    Me.CboBanco.ListIndex = 0
    Me.TxtCheObserv.Text = ""
@@ -385,7 +385,7 @@ Private Sub CmdNuevo_Click()
    Me.TxtCheNumero.SetFocus
 End Sub
 
-Private Sub CmdSalir_Click()
+Private Sub cmdSalir_Click()
     Unload Me
     Set ABMCambioEstadoChPropio = Nothing
 End Sub
@@ -396,7 +396,7 @@ End Sub
 
 Private Sub Form_KeyPress(KeyAscii As Integer)
     'si presiono ESCAPE salgo del form
-    If KeyAscii = vbKeyEscape Then CmdSalir_Click
+    If KeyAscii = vbKeyEscape Then cmdSalir_Click
     If KeyAscii = vbKeyReturn Then 'avanza de campo
         SendKeys "{TAB}"
         KeyAscii = 0
@@ -404,7 +404,7 @@ Private Sub Form_KeyPress(KeyAscii As Integer)
 End Sub
 
 Private Sub Form_Load()
-    lblEstado.Caption = ""
+    lblestado.Caption = ""
     Grd1.FormatString = "^Fecha|Estado|Observación"
     Grd1.ColWidth(0) = 1100
     Grd1.ColWidth(1) = 2500
@@ -451,7 +451,7 @@ Private Sub CargoBanco()
 End Sub
 
 Private Sub TxtCesFecha_LostFocus()
-    If TxtCesFecha.Value = "" Then TxtCesFecha.Value = Format(Date, "dd/mm/yyyy")
+    If TxtCesFecha.Value = Date Then TxtCesFecha.Value = Format(Date, "dd/mm/yyyy")
 End Sub
 
 Private Sub TxtCheNumero_KeyPress(KeyAscii As Integer)

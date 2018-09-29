@@ -90,8 +90,8 @@ Begin VB.Form ABMCliente
       TabCaption(1)   =   "&Buscar"
       TabPicture(1)   =   "ABMCliente.frx":186C
       Tab(1).ControlEnabled=   0   'False
-      Tab(1).Control(0)=   "GrdModulos"
-      Tab(1).Control(1)=   "Frame1"
+      Tab(1).Control(0)=   "Frame1"
+      Tab(1).Control(1)=   "GrdModulos"
       Tab(1).ControlCount=   2
       Begin VB.Frame fraDatos 
          Caption         =   "Crédito:"
@@ -110,13 +110,13 @@ Begin VB.Form ABMCliente
          Top             =   540
          Width           =   6225
          Begin MSMask.MaskEdBox txtCUIT 
-            Height          =   375
+            Height          =   315
             Left            =   1350
             TabIndex        =   56
             Top             =   1560
             Width           =   2055
             _ExtentX        =   3625
-            _ExtentY        =   661
+            _ExtentY        =   556
             _Version        =   393216
             PromptChar      =   "_"
          End
@@ -790,10 +790,10 @@ Private Sub CmdBorrar_Click()
         If resp <> 6 Then Exit Sub
         
         Screen.MousePointer = vbHourglass
-        lblEstado.Caption = "Eliminando ..."
+        lblestado.Caption = "Eliminando ..."
         
         DBConn.Execute "DELETE FROM CLIENTE WHERE CLI_CODIGO = " & XN(TxtCodigo)
-        lblEstado.Caption = ""
+        lblestado.Caption = ""
         Screen.MousePointer = vbNormal
         CmdNuevo_Click
     End If
@@ -802,7 +802,7 @@ Private Sub CmdBorrar_Click()
 CLAVOSE:
     If rec.State = 1 Then rec.Close
     Screen.MousePointer = vbNormal
-    lblEstado.Caption = ""
+    lblestado.Caption = ""
     MsgBox Err.Description, vbCritical, TIT_MSGBOX
 End Sub
 
@@ -814,7 +814,7 @@ Private Sub CmdBuscAprox_Click()
     sql = sql & " WHERE CLI_RAZSOC"
     sql = sql & " LIKE '" & TxtDescriB.Text & "%' ORDER BY CLI_RAZSOC"
         
-    lblEstado.Caption = "Buscando..."
+    lblestado.Caption = "Buscando..."
     rec.Open sql, DBConn, adOpenStatic, adLockOptimistic
     If rec.RecordCount > 0 Then
         Do While Not rec.EOF
@@ -823,22 +823,22 @@ Private Sub CmdBuscAprox_Click()
         Loop
         If GrdModulos.Enabled Then GrdModulos.SetFocus
     Else
-        lblEstado.Caption = ""
+        lblestado.Caption = ""
         MsgBox "No hay coincidencias en la busqueda.", vbOKOnly + vbCritical, TIT_MSGBOX
         TxtDescriB.SetFocus
     End If
     rec.Close
     MousePointer = vbNormal
-    lblEstado.Caption = ""
+    lblestado.Caption = ""
 End Sub
 
-Private Sub cmdGrabar_Click()
+Private Sub CmdGrabar_Click()
 
     If ValidarCliente = False Then Exit Sub
     
     On Error GoTo HayError
     Screen.MousePointer = vbHourglass
-    lblEstado.Caption = "Guardando ..."
+    lblestado.Caption = "Guardando ..."
     DBConn.BeginTrans
     If TxtCodigo.Text <> "" Then
         sql = "UPDATE CLIENTE "
@@ -851,8 +851,8 @@ Private Sub cmdGrabar_Click()
         sql = sql & " , PRO_CODIGO=" & cboProv.ItemData(cboProv.ListIndex)
         sql = sql & " , LOC_CODIGO=" & cboLocal.ItemData(cboLocal.ListIndex)
         sql = sql & " , CLI_TELEFONO=" & XS(txtTelefono)
-        sql = sql & " , CLI_FAX=" & XS(txtFax)
-        sql = sql & " , CLI_MAIL=" & XS(txtMail)
+        sql = sql & " , CLI_FAX=" & XS(txtfax)
+        sql = sql & " , CLI_MAIL=" & XS(txtmail)
         sql = sql & " , CLI_CREDITO=" & XN(txtCredito)
         sql = sql & " , CAN_CODIGO=" & cboCanal.ItemData(cboCanal.ListIndex)
         If chkBaja.Value = Checked Then
@@ -884,8 +884,8 @@ Private Sub cmdGrabar_Click()
         sql = sql & XS(txtCUIT) & ","
         sql = sql & XS(txtIngBrutos) & ","
         sql = sql & XS(txtTelefono) & ","
-        sql = sql & XS(txtFax) & ","
-        sql = sql & XS(txtMail) & ","
+        sql = sql & XS(txtfax) & ","
+        sql = sql & XS(txtmail) & ","
         sql = sql & XN(txtCredito) & ","
         sql = sql & cboCanal.ItemData(cboCanal.ListIndex) & ","
         sql = sql & cboIva.ItemData(cboIva.ListIndex) & ","
@@ -909,7 +909,7 @@ Private Sub cmdGrabar_Click()
     Exit Sub
     
 HayError:
-    lblEstado.Caption = ""
+    lblestado.Caption = ""
     DBConn.RollbackTrans
     Screen.MousePointer = vbNormal
     MsgBox Err.Description, vbCritical, TIT_MSGBOX
@@ -1065,9 +1065,9 @@ Private Sub CmdNuevo_Click()
     TxtCodigo.Text = ""
     txtRazSoc.Text = ""
     txtTelefono.Text = ""
-    txtFax.Text = ""
-    txtMail.Text = ""
-    lblEstado.Caption = ""
+    txtfax.Text = ""
+    txtmail.Text = ""
+    lblestado.Caption = ""
     txtCredito.Text = ""
     txtDomici.Text = ""
     chkBaja.Value = Unchecked
@@ -1108,7 +1108,7 @@ Private Sub cmdNuevoPais_Click()
     cboPais.SetFocus
 End Sub
 
-Private Sub CmdSalir_Click()
+Private Sub cmdSalir_Click()
     Unload Me
     Set ABMCliente = Nothing
 End Sub
@@ -1119,7 +1119,7 @@ End Sub
 
 Private Sub Form_KeyPress(KeyAscii As Integer)
     If KeyAscii = vbKeyReturn Then SendKeys "{TAB}"
-    If KeyAscii = vbKeyEscape Then CmdSalir_Click
+    If KeyAscii = vbKeyEscape Then cmdSalir_Click
 End Sub
 
 Private Sub Form_Load()
@@ -1129,7 +1129,7 @@ Private Sub Form_Load()
     
     Call Centrar_pantalla(Me)
 
-    lblEstado.Caption = ""
+    lblestado.Caption = ""
     GrdModulos.FormatString = "Código|Razón Social"
     GrdModulos.ColWidth(0) = 1000
     GrdModulos.ColWidth(1) = 5000
@@ -1223,7 +1223,7 @@ Private Sub GrdModulos_DblClick()
  If GrdModulos.row > 0 Then
         TxtCodigo = GrdModulos.TextMatrix(GrdModulos.RowSel, 0)
         cmdGrabar.Enabled = True
-        cmdBorrar.Enabled = True
+        CmdBorrar.Enabled = True
         TxtCodigo_LostFocus
         tabDatos.Tab = 0
  End If
@@ -1237,21 +1237,21 @@ Private Sub tabDatos_Click(PreviousTab As Integer)
     If tabDatos.Tab = 0 And Me.Visible Then
         txtRazSoc.SetFocus
         cmdGrabar.Enabled = True
-        cmdBorrar.Enabled = True
+        CmdBorrar.Enabled = True
     End If
     If tabDatos.Tab = 1 Then
         TxtDescriB.Text = ""
         TxtDescriB.SetFocus
         cmdGrabar.Enabled = False
-        cmdBorrar.Enabled = False
+        CmdBorrar.Enabled = False
     End If
 End Sub
 
 Private Sub TxtCodigo_Change()
-    If Trim(TxtCodigo) = "" And cmdBorrar.Enabled Then
-        cmdBorrar.Enabled = False
+    If Trim(TxtCodigo) = "" And CmdBorrar.Enabled Then
+        CmdBorrar.Enabled = False
     ElseIf Trim(TxtCodigo) <> "" Then
-        cmdBorrar.Enabled = True
+        CmdBorrar.Enabled = True
     End If
 End Sub
 
@@ -1292,7 +1292,7 @@ Private Sub txtdomici_KeyPress(KeyAscii As Integer)
 End Sub
 
 Private Sub txtfax_GotFocus()
-    SelecTexto txtFax
+    SelecTexto txtfax
 End Sub
 
 Private Sub txtIngBrutos_GotFocus()
@@ -1358,8 +1358,8 @@ Private Sub TxtCodigo_LostFocus()
             BuscoCodPostal Rec1!LOC_CODIGO
             txtDomici.Text = IIf(IsNull(Rec1!CLI_DOMICI), "", Rec1!CLI_DOMICI)
             txtTelefono.Text = IIf(IsNull(Rec1!CLI_TELEFONO), "", Rec1!CLI_TELEFONO)
-            txtFax.Text = IIf(IsNull(Rec1!CLI_FAX), "", Rec1!CLI_FAX)
-            txtMail.Text = IIf(IsNull(Rec1!CLI_MAIL), "", Rec1!CLI_MAIL)
+            txtfax.Text = IIf(IsNull(Rec1!CLI_FAX), "", Rec1!CLI_FAX)
+            txtmail.Text = IIf(IsNull(Rec1!CLI_MAIL), "", Rec1!CLI_MAIL)
             If Rec1!CLI_ESTADO = 2 Then chkBaja.Value = Checked
             txtMorDias.Text = IIf(IsNull(Rec1!CLI_MORDIAS), 0, Rec1!CLI_MORDIAS)
             If XN(txtMorDias.Text) > 0 Then
@@ -1391,7 +1391,7 @@ Function BuscoCodPostal(Codigo As Integer) As String
 End Function
 
 Private Sub txtmail_GotFocus()
-    SelecTexto txtMail
+    SelecTexto txtmail
 End Sub
 
 Private Sub txtmail_KeyPress(KeyAscii As Integer)

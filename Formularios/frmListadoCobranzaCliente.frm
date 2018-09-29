@@ -1,5 +1,5 @@
 VERSION 5.00
-Object = "{F9043C88-F6F2-101A-A3C9-08002B2F49FB}#1.2#0"; "Comdlg32.ocx"
+Object = "{F9043C88-F6F2-101A-A3C9-08002B2F49FB}#1.2#0"; "comdlg32.ocx"
 Object = "{00025600-0000-0000-C000-000000000046}#5.2#0"; "Crystl32.OCX"
 Begin VB.Form frmListadoCobranzaCliente 
    BorderStyle     =   1  'Fixed Single
@@ -15,6 +15,14 @@ Begin VB.Form frmListadoCobranzaCliente
    ScaleHeight     =   3720
    ScaleWidth      =   6810
    StartUpPosition =   2  'CenterScreen
+   Begin Crystal.CrystalReport Rep 
+      Left            =   1320
+      Top             =   3120
+      _ExtentX        =   741
+      _ExtentY        =   741
+      _Version        =   348160
+      PrintFileLinesPerPage=   60
+   End
    Begin VB.Frame Frame2 
       Caption         =   "Ver..."
       BeginProperty Font 
@@ -217,14 +225,6 @@ Begin VB.Form frmListadoCobranzaCliente
          Width           =   1020
       End
    End
-   Begin Crystal.CrystalReport Rep 
-      Left            =   3330
-      Top             =   3030
-      _ExtentX        =   741
-      _ExtentY        =   741
-      _Version        =   348160
-      PrintFileLinesPerPage=   60
-   End
    Begin MSComDlg.CommonDialog CDImpresora 
       Left            =   2835
       Top             =   2940
@@ -292,7 +292,7 @@ Private Sub cmdListar_Click()
     On Error GoTo AlCarajo
     DBConn.BeginTrans
     
-    lblestado.Caption = "Buscando Listado..."
+    lblEstado.Caption = "Buscando Listado..."
     Screen.MousePointer = vbHourglass
     
     sql = "DELETE FROM TMP_RECIBO_CLIENTE"
@@ -332,13 +332,13 @@ Private Sub cmdListar_Click()
      Rep.Action = 1
      
      Screen.MousePointer = vbNormal
-     lblestado.Caption = ""
+     lblEstado.Caption = ""
      Rep.SelectionFormula = ""
      Rep.Formulas(0) = ""
      Exit Sub
      
 AlCarajo:
-    lblestado.Caption = ""
+    lblEstado.Caption = ""
     Screen.MousePointer = vbNormal
     DBConn.RollbackTrans
     If rec.State = 1 Then rec.Close
@@ -624,21 +624,21 @@ Private Sub CmdNuevo_Click()
     txtCliente.SetFocus
 End Sub
 
-Private Sub cmdSalir_Click()
+Private Sub CmdSalir_Click()
     Set frmListadoCobranzaCliente = Nothing
     Unload Me
 End Sub
 
 Private Sub Form_KeyPress(KeyAscii As Integer)
     If KeyAscii = vbKeyReturn Then SendKeys "{TAB}"
-    If KeyAscii = vbKeyEscape Then cmdSalir_Click
+    If KeyAscii = vbKeyEscape Then CmdSalir_Click
 End Sub
 
 Private Sub Form_Load()
     Set rec = New ADODB.Recordset
     Call Centrar_pantalla(Me)
     FrameImpresora.Caption = "Impresora Actual: " & Printer.DeviceName
-    lblestado.Caption = ""
+    lblEstado.Caption = ""
     optNuevo.Value = True
 End Sub
 Private Sub txtCliente_Change()

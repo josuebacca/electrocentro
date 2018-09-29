@@ -2,6 +2,7 @@ VERSION 5.00
 Object = "{BDC217C8-ED16-11CD-956C-0000C04E4C0A}#1.1#0"; "tabctl32.ocx"
 Object = "{F9043C88-F6F2-101A-A3C9-08002B2F49FB}#1.2#0"; "comdlg32.ocx"
 Object = "{5E9E78A0-531B-11CF-91F6-C2863C385E30}#1.0#0"; "msflxgrd.ocx"
+Object = "{00025600-0000-0000-C000-000000000046}#5.2#0"; "Crystl32.OCX"
 Begin VB.Form frmControlStock 
    BorderStyle     =   1  'Fixed Single
    Caption         =   "Control de Stock"
@@ -16,6 +17,14 @@ Begin VB.Form frmControlStock
    ScaleHeight     =   7470
    ScaleWidth      =   11190
    StartUpPosition =   3  'Windows Default
+   Begin Crystal.CrystalReport Rep 
+      Left            =   7440
+      Top             =   6720
+      _ExtentX        =   741
+      _ExtentY        =   741
+      _Version        =   348160
+      PrintFileLinesPerPage=   60
+   End
    Begin TabDlg.SSTab tabLista 
       Height          =   855
       Left            =   7320
@@ -420,15 +429,6 @@ Begin VB.Form frmControlStock
       _ExtentX        =   847
       _ExtentY        =   847
       _Version        =   393216
-   End
-   Begin VB.PictureBox Rep 
-      Height          =   480
-      Left            =   7380
-      ScaleHeight     =   420
-      ScaleWidth      =   1140
-      TabIndex        =   38
-      Top             =   6930
-      Width           =   1200
    End
    Begin MSFlexGridLib.MSFlexGrid GrdModulos 
       Height          =   3675

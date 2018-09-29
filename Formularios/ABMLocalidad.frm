@@ -63,6 +63,7 @@ Begin VB.Form ABMLocalidad
       _ExtentY        =   6191
       _Version        =   393216
       Tabs            =   2
+      Tab             =   1
       TabHeight       =   529
       ForeColor       =   -2147483630
       BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
@@ -76,13 +77,13 @@ Begin VB.Form ABMLocalidad
       EndProperty
       TabCaption(0)   =   "&Datos"
       TabPicture(0)   =   "ABMLocalidad.frx":123C
-      Tab(0).ControlEnabled=   -1  'True
+      Tab(0).ControlEnabled=   0   'False
       Tab(0).Control(0)=   "fraDatos"
       Tab(0).Control(0).Enabled=   0   'False
       Tab(0).ControlCount=   1
       TabCaption(1)   =   "&Buscar"
       TabPicture(1)   =   "ABMLocalidad.frx":1258
-      Tab(1).ControlEnabled=   0   'False
+      Tab(1).ControlEnabled=   -1  'True
       Tab(1).Control(0)=   "GrdModulos"
       Tab(1).Control(0).Enabled=   0   'False
       Tab(1).Control(1)=   "Frame1"
@@ -90,7 +91,7 @@ Begin VB.Form ABMLocalidad
       Tab(1).ControlCount=   2
       Begin VB.Frame Frame1 
          Height          =   735
-         Left            =   -74850
+         Left            =   150
          TabIndex        =   17
          Top             =   390
          Width           =   5940
@@ -147,7 +148,7 @@ Begin VB.Form ABMLocalidad
             Strikethrough   =   0   'False
          EndProperty
          Height          =   2745
-         Left            =   285
+         Left            =   -74715
          TabIndex        =   11
          Top             =   570
          Width           =   5580
@@ -264,7 +265,7 @@ Begin VB.Form ABMLocalidad
       End
       Begin MSFlexGridLib.MSFlexGrid GrdModulos 
          Height          =   2205
-         Left            =   -74865
+         Left            =   135
          TabIndex        =   21
          Top             =   1185
          Width           =   5970
@@ -328,13 +329,13 @@ Attribute VB_Exposed = False
 Function LimpiarControles()
     tabDatos.Tab = 0
     CboProvincia.Clear
-    txtcodigo.Text = ""
+    TxtCodigo.Text = ""
     txtdescri.Text = ""
     cmdBotonDatos(0).Enabled = True
     cmdBotonDatos(1).Enabled = False
     cmdBotonDatos(2).Enabled = True
     txtcodpostal.Text = ""
-    CboPais.SetFocus
+    cboPais.SetFocus
 End Function
 
 Private Sub Actualizar()
@@ -343,9 +344,9 @@ Private Sub Actualizar()
         sql = "UPDATE localidad "
         sql = sql & " SET   loc_descri = " & XS(txtdescri.Text)
         sql = sql & " , LOC_CODPOS = " & XS(txtcodpostal.Text)
-        sql = sql & " WHERE loc_codigo = " & XN(txtcodigo.Text)
+        sql = sql & " WHERE loc_codigo = " & XN(TxtCodigo.Text)
         sql = sql & " AND   pro_codigo = " & CboProvincia.ItemData(CboProvincia.ListIndex)
-        sql = sql & " AND   pai_codigo = " & CboPais.ItemData(CboPais.ListIndex)
+        sql = sql & " AND   pai_codigo = " & cboPais.ItemData(cboPais.ListIndex)
 
         DBConn.Execute sql, dbExecDirect
         DBConn.CommitTrans
@@ -363,9 +364,9 @@ Private Sub Borrar()
     DBConn.BeginTrans
     
     sql = " DELETE FROM LOCALIDAD "
-    sql = sql & " WHERE loc_codigo = " & XN(txtcodigo.Text)
+    sql = sql & " WHERE loc_codigo = " & XN(TxtCodigo.Text)
     sql = sql & " AND   pro_codigo = " & CboProvincia.ItemData(CboProvincia.ListIndex)
-    sql = sql & " AND   pai_codigo = " & CboPais.ItemData(CboPais.ListIndex)
+    sql = sql & " AND   pai_codigo = " & cboPais.ItemData(cboPais.ListIndex)
     DBConn.Execute sql, dbExecDirect
     DBConn.CommitTrans
     Exit Sub
@@ -378,7 +379,7 @@ End Sub
 
 Private Sub Insertar()
     sql = "select * from localidad "
-    sql = sql & " where pai_codigo = " & CboPais.ItemData(CboPais.ListIndex)
+    sql = sql & " where pai_codigo = " & cboPais.ItemData(cboPais.ListIndex)
     sql = sql & " and pro_codigo = " & CboProvincia.ItemData(CboProvincia.ListIndex)
     sql = sql & " and loc_descri = " & XS(Me.txtdescri)
     Rec1.Open sql, DBConn, adOpenStatic, adLockOptimistic
@@ -391,13 +392,13 @@ Private Sub Insertar()
     
     sql = " SELECT max(loc_codigo) as maximo FROM localidad"
     sql = sql & " where pro_codigo = " & CboProvincia.ItemData(CboProvincia.ListIndex)
-    sql = sql & " AND pai_codigo = " & CboPais.ItemData(CboPais.ListIndex)
+    sql = sql & " AND pai_codigo = " & cboPais.ItemData(cboPais.ListIndex)
     Rec1.Open sql, DBConn, adOpenStatic, adLockOptimistic
     If IsNull(Rec1!Maximo) Then
          Maximo = 0
-         txtcodigo.Text = Maximo + 1
+         TxtCodigo.Text = Maximo + 1
     Else
-         txtcodigo.Text = Rec1!Maximo + 1
+         TxtCodigo.Text = Rec1!Maximo + 1
     End If
     Rec1.Close
     
@@ -405,8 +406,8 @@ Private Sub Insertar()
     
     DBConn.BeginTrans
     sql = "INSERT INTO localidad (loc_codigo, loc_descri,pai_codigo,pro_codigo,loc_codpos) "
-    sql = sql & "VALUES ( " & XN(txtcodigo.Text) & ", " & XS(txtdescri.Text)
-    sql = sql & ", " & CboPais.ItemData(CboPais.ListIndex) & ", "
+    sql = sql & "VALUES ( " & XN(TxtCodigo.Text) & ", " & XS(txtdescri.Text)
+    sql = sql & ", " & cboPais.ItemData(cboPais.ListIndex) & ", "
     sql = sql & CboProvincia.ItemData(CboProvincia.ListIndex) & " ,"
     sql = sql & XS(txtcodpostal.Text) & ")"
     DBConn.Execute sql, dbExecDirect
@@ -428,7 +429,7 @@ Private Sub CboPais_LostFocus()
       CboProvincia.Clear
       sql = "SELECT PRO_CODIGO,PRO_DESCRI"
       sql = sql & " FROM PROVINCIA "
-      sql = sql & " WHERE PAI_CODIGO=" & CboPais.ItemData(CboPais.ListIndex)
+      sql = sql & " WHERE PAI_CODIGO=" & cboPais.ItemData(cboPais.ListIndex)
       sql = sql & " ORDER BY PRO_DESCRI"
       
       rec.Open sql, DBConn, adOpenStatic, adLockOptimistic
@@ -459,7 +460,7 @@ Private Sub cmdBotonDatos_Click(Index As Integer)
             End If
             lblEstado.Caption = "Grabando..."
             
-            If txtcodigo = "" Then
+            If TxtCodigo = "" Then
                 Insertar
             Else
                 Actualizar
@@ -468,7 +469,7 @@ Private Sub cmdBotonDatos_Click(Index As Integer)
             LimpiarControles
         
         Case 1 ' eliminar
-           If txtcodigo.Text <> "" Then
+           If TxtCodigo.Text <> "" Then
                 resp = MsgBox("Seguro desea eliminar la Localidad: " & Trim(txtdescri.Text) & " ?", 36, "Eliminar:")
                 If resp <> 6 Then Exit Sub
                 
@@ -490,7 +491,7 @@ Private Sub CmdBuscAprox_Click()
     GrdModulos.Rows = 1
     'Set rec = New ADODB.Recordset
            
-If Not (CboPais.ListIndex = -1) And _
+If Not (cboPais.ListIndex = -1) And _
    Not (CboProvincia.ListIndex = -1) Then
     
     MousePointer = vbHourglass
@@ -498,7 +499,7 @@ If Not (CboPais.ListIndex = -1) And _
     sql = "SELECT LOC_CODIGO,LOC_DESCRI"
     sql = sql & " FROM  LOCALIDAD"
     sql = sql & " WHERE PRO_CODIGO=" & CboProvincia.ItemData(CboProvincia.ListIndex)
-    sql = sql & " AND PAI_CODIGO=" & CboPais.ItemData(CboPais.ListIndex)
+    sql = sql & " AND PAI_CODIGO=" & cboPais.ItemData(cboPais.ListIndex)
     If TxtDescriB <> "" Then
      sql = sql & " AND LOC_DESCRI LIKE '" & TxtDescriB.Text & "%' ORDER BY LOC_DESCRI"
     End If
@@ -523,7 +524,7 @@ Else
     lblEstado.Caption = ""
     MsgBox "Seleccione la opción que falta.", vbOKOnly + vbCritical, TIT_MSGBOX
     tabDatos.Tab = 0
-    CboPais.SetFocus
+    cboPais.SetFocus
     Exit Sub
 End If
 End Sub
@@ -560,7 +561,7 @@ Private Sub Form_Load()
     KeyPreview = True
     Call Centrar_pantalla(Me)
     
-    txtcodigo.MaxLength = 3
+    TxtCodigo.MaxLength = 3
     txtdescri.MaxLength = 20
     
     lblEstado.Visible = True
@@ -569,18 +570,18 @@ Private Sub Form_Load()
       
     tabDatos.Tab = 0
     'cargo el combo de Pais
-    CboPais.Clear
+    cboPais.Clear
     
     sql = "SELECT PAI_CODIGO,PAI_DESCRI"
     sql = sql & " FROM PAIS ORDER BY PAI_DESCRI"
     rec.Open sql, DBConn, adOpenStatic, adLockOptimistic
     If (rec.BOF And rec.EOF) = 0 Then
        Do While rec.EOF = False
-          CboPais.AddItem Trim(rec!PAI_DESCRI)
-          CboPais.ItemData(CboPais.NewIndex) = rec!PAI_CODIGO
+          cboPais.AddItem Trim(rec!PAI_DESCRI)
+          cboPais.ItemData(cboPais.NewIndex) = rec!PAI_CODIGO
           rec.MoveNext
        Loop
-       CboPais.ListIndex = 0
+       cboPais.ListIndex = 0
     Else
        MsgBox "No hay cargado País.", vbOKOnly + vbCritical, TIT_MSGBOX
     End If
@@ -592,7 +593,7 @@ End Sub
 Private Sub GrdModulos_DblClick()
     If GrdModulos.row > 0 Then
         GrdModulos.Col = 0
-        txtcodigo = GrdModulos.Text
+        TxtCodigo = GrdModulos.Text
         GrdModulos.Col = 1
         txtdescri.Text = Trim(GrdModulos.Text)
         If txtdescri.Enabled Then TxtCodigo_LostFocus
@@ -607,7 +608,7 @@ Private Sub GrdModulos_KeyDown(KeyCode As Integer, Shift As Integer)
 End Sub
 
 Private Sub tabDatos_Click(PreviousTab As Integer)
-    If tabDatos.Tab = 0 And Me.Visible Then txtcodigo.SetFocus
+    If tabDatos.Tab = 0 And Me.Visible Then TxtCodigo.SetFocus
     If tabDatos.Tab = 1 Then
      TxtDescriB.SetFocus
      TxtDescriB.Text = ""
@@ -617,21 +618,21 @@ Private Sub tabDatos_Click(PreviousTab As Integer)
     End If
 End Sub
 Private Sub TxtCodigo_LostFocus()
-    If txtcodigo.Text <> "" Then
+    If TxtCodigo.Text <> "" Then
         sql = "SELECT LOC_DESCRI,LOC_CODPOS"
         sql = sql & " FROM LOCALIDAD"
         sql = sql & " WHERE PRO_CODIGO=" & CboProvincia.ItemData(CboProvincia.ListIndex)
-        sql = sql & " AND PAI_CODIGO=" & CboPais.ItemData(CboPais.ListIndex)
-        sql = sql & " AND LOC_CODIGO=" & XN(txtcodigo)
+        sql = sql & " AND PAI_CODIGO=" & cboPais.ItemData(cboPais.ListIndex)
+        sql = sql & " AND LOC_CODIGO=" & XN(TxtCodigo)
         rec.Open sql, DBConn, adOpenStatic, adLockOptimistic
         If rec.EOF = False Then
-         txtdescri.Text = rec!loc_descri
+         txtdescri.Text = rec!LOC_DESCRI
          txtcodpostal.Text = IIf(IsNull(rec!LOC_CODPOS), "", rec!LOC_CODPOS)
          cmdBotonDatos(1).Enabled = True
         Else
          MsgBox "El Código no existe", vbExclamation, TIT_MSGBOX
-         txtcodigo.Text = ""
-         txtcodigo.SetFocus
+         TxtCodigo.Text = ""
+         TxtCodigo.SetFocus
         End If
         rec.Close
     End If

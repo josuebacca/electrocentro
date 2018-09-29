@@ -72,6 +72,7 @@ Begin VB.Form ABMFormaPago
       _ExtentY        =   6033
       _Version        =   393216
       Tabs            =   2
+      Tab             =   1
       TabHeight       =   529
       ForeColor       =   -2147483630
       BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
@@ -85,19 +86,21 @@ Begin VB.Form ABMFormaPago
       EndProperty
       TabCaption(0)   =   "&Datos"
       TabPicture(0)   =   "ABMFormaPago.frx":1850
-      Tab(0).ControlEnabled=   -1  'True
+      Tab(0).ControlEnabled=   0   'False
       Tab(0).Control(0)=   "fraDatos"
       Tab(0).Control(0).Enabled=   0   'False
       Tab(0).ControlCount=   1
       TabCaption(1)   =   "&Buscar"
       TabPicture(1)   =   "ABMFormaPago.frx":186C
-      Tab(1).ControlEnabled=   0   'False
+      Tab(1).ControlEnabled=   -1  'True
       Tab(1).Control(0)=   "GrdModulos"
+      Tab(1).Control(0).Enabled=   0   'False
       Tab(1).Control(1)=   "Frame1"
+      Tab(1).Control(1).Enabled=   0   'False
       Tab(1).ControlCount=   2
       Begin VB.Frame Frame1 
          Height          =   735
-         Left            =   -74865
+         Left            =   135
          TabIndex        =   15
          Top             =   405
          Width           =   6135
@@ -166,7 +169,7 @@ Begin VB.Form ABMFormaPago
             Strikethrough   =   0   'False
          EndProperty
          Height          =   2235
-         Left            =   345
+         Left            =   -74655
          TabIndex        =   9
          Top             =   720
          Width           =   5625
@@ -218,7 +221,7 @@ Begin VB.Form ABMFormaPago
       End
       Begin MSFlexGridLib.MSFlexGrid GrdModulos 
          Height          =   2070
-         Left            =   -74910
+         Left            =   90
          TabIndex        =   8
          Top             =   1215
          Width           =   6210
@@ -335,7 +338,7 @@ Function LimpiarControles()
     txtdescri.Enabled = True
     TxtCodigo.SetFocus
     cmdGrabar.Enabled = False
-    cmdBorrar.Enabled = False
+    CmdBorrar.Enabled = False
     cmdNuevo.Enabled = True
     lblEstado.Caption = ""
 End Function
@@ -418,7 +421,7 @@ Private Sub CmdNuevo_Click()
     GrdModulos.Rows = 1
 End Sub
 
-Private Sub cmdSalir_Click()
+Private Sub CmdSalir_Click()
         Unload Me
         Set ABMFormaPago = Nothing
 End Sub
@@ -475,7 +478,7 @@ End Sub
 
 Private Sub Form_KeyPress(KeyAscii As Integer)
     If KeyAscii = vbKeyReturn Then SendKeys "{TAB}"
-    If KeyAscii = vbKeyEscape Then cmdSalir_Click
+    If KeyAscii = vbKeyEscape Then CmdSalir_Click
 End Sub
 
 Private Sub Form_Load()
@@ -496,7 +499,7 @@ Private Sub GrdModulos_DblClick()
         TxtCodigo.Text = GrdModulos.Text
         GrdModulos.Col = 1
         txtdescri.Text = Trim(GrdModulos.Text)
-        cmdBorrar.Enabled = True
+        CmdBorrar.Enabled = True
         If txtdescri.Enabled Then txtdescri.SetFocus
         tabDatos.Tab = 0
     End If
@@ -523,10 +526,10 @@ Private Sub tabDatos_Click(PreviousTab As Integer)
        GrdModulos.Refresh
        TxtDescriB.SetFocus
        cmdGrabar.Enabled = False
-       cmdBorrar.Enabled = False
+       CmdBorrar.Enabled = False
     Else
        cmdGrabar.Enabled = True
-       cmdBorrar.Enabled = True
+       CmdBorrar.Enabled = True
     End If
 End Sub
 
@@ -545,7 +548,7 @@ Private Sub TxtCodigo_LostFocus()
         rec.Open sql, DBConn, adOpenStatic, adLockOptimistic
         If rec.EOF = False Then
            txtdescri.Text = Trim(rec!FPG_DESCRI)
-           cmdBorrar.Enabled = True
+           CmdBorrar.Enabled = True
         Else
            MsgBox "El Código no existe", vbExclamation, TIT_MSGBOX
            TxtCodigo.SetFocus

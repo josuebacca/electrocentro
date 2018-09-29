@@ -1,7 +1,7 @@
 VERSION 5.00
-Object = "{BDC217C8-ED16-11CD-956C-0000C04E4C0A}#1.1#0"; "TABCTL32.OCX"
-Object = "{5E9E78A0-531B-11CF-91F6-C2863C385E30}#1.0#0"; "MSFLXGRD.OCX"
-Object = "{5F09B5DF-6F4D-11D2-8355-4854E82A9183}#15.0#0"; "FECHA32.OCX"
+Object = "{BDC217C8-ED16-11CD-956C-0000C04E4C0A}#1.1#0"; "tabctl32.ocx"
+Object = "{5E9E78A0-531B-11CF-91F6-C2863C385E30}#1.0#0"; "msflxgrd.ocx"
+Object = "{86CF1D34-0C5F-11D2-A9FC-0000F8754DA1}#2.0#0"; "mscomct2.ocx"
 Begin VB.Form frmNotaCreditoProveedores 
    BorderStyle     =   1  'Fixed Single
    Caption         =   "Nota de Crédito de Proveedores..."
@@ -20,14 +20,14 @@ Begin VB.Form frmNotaCreditoProveedores
       Caption         =   "&Eliminar"
       Height          =   450
       Left            =   6960
-      TabIndex        =   14
+      TabIndex        =   12
       Top             =   6180
       Width           =   870
    End
    Begin TabDlg.SSTab tabDatos 
       Height          =   6060
       Left            =   45
-      TabIndex        =   26
+      TabIndex        =   22
       Top             =   60
       Width           =   8670
       _ExtentX        =   15293
@@ -56,8 +56,8 @@ Begin VB.Form frmNotaCreditoProveedores
       TabCaption(1)   =   "&Buscar"
       TabPicture(1)   =   "frmNotaCreditoProveedores.frx":001C
       Tab(1).ControlEnabled=   0   'False
-      Tab(1).Control(0)=   "Frame4"
-      Tab(1).Control(1)=   "GrdModulos"
+      Tab(1).Control(0)=   "GrdModulos"
+      Tab(1).Control(1)=   "Frame4"
       Tab(1).ControlCount=   2
       Begin VB.Frame Frame4 
          Caption         =   "Buscar por..."
@@ -72,14 +72,14 @@ Begin VB.Form frmNotaCreditoProveedores
          EndProperty
          Height          =   1590
          Left            =   -74835
-         TabIndex        =   43
+         TabIndex        =   39
          Top             =   375
          Width           =   8355
          Begin VB.ComboBox cboBuscaTipoProveedor 
             Height          =   315
             Left            =   2385
             Style           =   2  'Dropdown List
-            TabIndex        =   19
+            TabIndex        =   17
             Top             =   330
             Width           =   3750
          End
@@ -87,7 +87,7 @@ Begin VB.Form frmNotaCreditoProveedores
             Caption         =   "Tipo Prov"
             Height          =   195
             Left            =   120
-            TabIndex        =   16
+            TabIndex        =   14
             Top             =   450
             Width           =   1050
          End
@@ -95,7 +95,7 @@ Begin VB.Form frmNotaCreditoProveedores
             Caption         =   "Proveedor"
             Height          =   195
             Left            =   120
-            TabIndex        =   17
+            TabIndex        =   15
             Top             =   705
             Width           =   1125
          End
@@ -103,7 +103,7 @@ Begin VB.Form frmNotaCreditoProveedores
             Caption         =   "Fecha"
             Height          =   195
             Left            =   120
-            TabIndex        =   18
+            TabIndex        =   16
             Top             =   960
             Width           =   810
          End
@@ -122,7 +122,7 @@ Begin VB.Form frmNotaCreditoProveedores
             Height          =   300
             Left            =   3825
             MaxLength       =   50
-            TabIndex        =   45
+            TabIndex        =   41
             Tag             =   "Descripción"
             Top             =   675
             Width           =   4440
@@ -131,7 +131,7 @@ Begin VB.Form frmNotaCreditoProveedores
             Height          =   300
             Left            =   2385
             MaxLength       =   40
-            TabIndex        =   20
+            TabIndex        =   18
             Top             =   675
             Width           =   975
          End
@@ -141,7 +141,7 @@ Begin VB.Form frmNotaCreditoProveedores
             MaskColor       =   &H00FFFFFF&
             Picture         =   "frmNotaCreditoProveedores.frx":0038
             Style           =   1  'Graphical
-            TabIndex        =   23
+            TabIndex        =   19
             ToolTipText     =   "Buscar "
             Top             =   1065
             UseMaskColor    =   -1  'True
@@ -153,42 +153,42 @@ Begin VB.Form frmNotaCreditoProveedores
             MaskColor       =   &H000000FF&
             Picture         =   "frmNotaCreditoProveedores.frx":27DA
             Style           =   1  'Graphical
-            TabIndex        =   44
+            TabIndex        =   40
             ToolTipText     =   "Buscar Proveedor"
             Top             =   675
             UseMaskColor    =   -1  'True
             Width           =   405
          End
-         Begin FechaCtl.Fecha FechaHasta 
-            Height          =   285
-            Left            =   4905
-            TabIndex        =   22
-            Top             =   1020
-            Width           =   1185
-            _ExtentX        =   2090
-            _ExtentY        =   503
-            Separador       =   "/"
-            Text            =   ""
-            MensajeErrMin   =   "La fecha ingresada no alcanza el mínimo permitido"
+         Begin MSComCtl2.DTPicker FechaDesde 
+            Height          =   315
+            Left            =   2400
+            TabIndex        =   49
+            Top             =   1080
+            Width           =   1335
+            _ExtentX        =   2355
+            _ExtentY        =   556
+            _Version        =   393216
+            Format          =   53936129
+            CurrentDate     =   43367
          End
-         Begin FechaCtl.Fecha FechaDesde 
-            Height          =   330
-            Left            =   2385
-            TabIndex        =   21
-            Top             =   1020
-            Width           =   1170
-            _ExtentX        =   2064
-            _ExtentY        =   582
-            Separador       =   "/"
-            Text            =   ""
-            MensajeErrMin   =   "La fecha ingresada no alcanza el mínimo permitido"
+         Begin MSComCtl2.DTPicker FechaHasta 
+            Height          =   315
+            Left            =   4920
+            TabIndex        =   50
+            Top             =   1080
+            Width           =   1335
+            _ExtentX        =   2355
+            _ExtentY        =   556
+            _Version        =   393216
+            Format          =   53936129
+            CurrentDate     =   43367
          End
          Begin VB.Label Label10 
             AutoSize        =   -1  'True
             Caption         =   "Tipo Prov.:"
             Height          =   195
             Left            =   1545
-            TabIndex        =   49
+            TabIndex        =   45
             Top             =   375
             Width           =   780
          End
@@ -202,7 +202,7 @@ Begin VB.Form frmNotaCreditoProveedores
             Height          =   195
             Index           =   2
             Left            =   1545
-            TabIndex        =   48
+            TabIndex        =   44
             Top             =   705
             Width           =   780
          End
@@ -211,8 +211,8 @@ Begin VB.Form frmNotaCreditoProveedores
             Caption         =   "Fecha Desde:"
             Height          =   195
             Left            =   1320
-            TabIndex        =   47
-            Top             =   1050
+            TabIndex        =   43
+            Top             =   1140
             Width           =   1005
          End
          Begin VB.Label lblFechaHasta 
@@ -220,8 +220,8 @@ Begin VB.Form frmNotaCreditoProveedores
             Caption         =   "Fecha Hasta:"
             Height          =   195
             Left            =   3840
-            TabIndex        =   46
-            Top             =   1065
+            TabIndex        =   42
+            Top             =   1140
             Width           =   960
          End
       End
@@ -238,7 +238,7 @@ Begin VB.Form frmNotaCreditoProveedores
          EndProperty
          Height          =   2025
          Left            =   165
-         TabIndex        =   36
+         TabIndex        =   32
          Top             =   585
          Width           =   8355
          Begin VB.CommandButton cmdBuscarProveedor1 
@@ -247,7 +247,7 @@ Begin VB.Form frmNotaCreditoProveedores
             MaskColor       =   &H000000FF&
             Picture         =   "frmNotaCreditoProveedores.frx":2AE4
             Style           =   1  'Graphical
-            TabIndex        =   51
+            TabIndex        =   47
             ToolTipText     =   "Buscar Proveedor"
             Top             =   765
             UseMaskColor    =   -1  'True
@@ -268,7 +268,7 @@ Begin VB.Form frmNotaCreditoProveedores
             Height          =   285
             Left            =   1275
             MaxLength       =   50
-            TabIndex        =   38
+            TabIndex        =   34
             Top             =   1425
             Width           =   4860
          End
@@ -286,7 +286,7 @@ Begin VB.Form frmNotaCreditoProveedores
             EndProperty
             Height          =   285
             Left            =   1275
-            TabIndex        =   37
+            TabIndex        =   33
             Top             =   1110
             Width           =   4860
          End
@@ -329,7 +329,7 @@ Begin VB.Form frmNotaCreditoProveedores
             Caption         =   "Dom.:"
             Height          =   195
             Left            =   765
-            TabIndex        =   42
+            TabIndex        =   38
             Top             =   1455
             Width           =   420
          End
@@ -338,7 +338,7 @@ Begin VB.Form frmNotaCreditoProveedores
             Caption         =   "Loc.:"
             Height          =   180
             Left            =   825
-            TabIndex        =   41
+            TabIndex        =   37
             Top             =   1155
             Width           =   360
          End
@@ -352,7 +352,7 @@ Begin VB.Form frmNotaCreditoProveedores
             Height          =   195
             Index           =   0
             Left            =   645
-            TabIndex        =   40
+            TabIndex        =   36
             Top             =   780
             Width           =   540
          End
@@ -361,7 +361,7 @@ Begin VB.Form frmNotaCreditoProveedores
             Caption         =   "Tipo Prov.:"
             Height          =   195
             Left            =   405
-            TabIndex        =   39
+            TabIndex        =   35
             Top             =   435
             Width           =   780
          End
@@ -379,14 +379,14 @@ Begin VB.Form frmNotaCreditoProveedores
          EndProperty
          Height          =   3330
          Left            =   165
-         TabIndex        =   27
+         TabIndex        =   23
          Top             =   2610
          Width           =   8355
          Begin VB.TextBox txtConcepto 
             Height          =   300
             Left            =   1275
             MaxLength       =   40
-            TabIndex        =   11
+            TabIndex        =   9
             Top             =   2850
             Width           =   6825
          End
@@ -418,7 +418,7 @@ Begin VB.Form frmNotaCreditoProveedores
             Height          =   300
             Left            =   1275
             MaxLength       =   40
-            TabIndex        =   9
+            TabIndex        =   8
             Top             =   2175
             Width           =   1140
          End
@@ -426,7 +426,7 @@ Begin VB.Form frmNotaCreditoProveedores
             Height          =   300
             Left            =   1275
             MaxLength       =   40
-            TabIndex        =   8
+            TabIndex        =   7
             Top             =   1830
             Width           =   660
          End
@@ -434,40 +434,40 @@ Begin VB.Form frmNotaCreditoProveedores
             Height          =   300
             Left            =   1275
             MaxLength       =   40
-            TabIndex        =   7
+            TabIndex        =   6
             Top             =   1485
             Width           =   1140
          End
-         Begin FechaCtl.Fecha FechaComprobante 
+         Begin MSComCtl2.DTPicker FechaComprobante 
             Height          =   315
             Left            =   1275
-            TabIndex        =   6
-            Top             =   1155
-            Width           =   1215
-            _ExtentX        =   2143
+            TabIndex        =   48
+            Top             =   1200
+            Width           =   1335
+            _ExtentX        =   2355
             _ExtentY        =   556
-            Separador       =   "/"
-            Text            =   ""
-            MensajeErrMin   =   "La fecha ingresada no alcanza el mínimo permitido"
+            _Version        =   393216
+            Format          =   53936129
+            CurrentDate     =   43367
          End
-         Begin FechaCtl.Fecha Periodo 
-            Height          =   300
+         Begin MSComCtl2.DTPicker Periodo 
+            Height          =   315
             Left            =   1275
-            TabIndex        =   10
+            TabIndex        =   51
             Top             =   2520
-            Width           =   1155
-            _ExtentX        =   2037
-            _ExtentY        =   529
-            Separador       =   "/"
-            Text            =   ""
-            MensajeErrMin   =   "La fecha ingresada no alcanza el mínimo permitido"
+            Width           =   1335
+            _ExtentX        =   2355
+            _ExtentY        =   556
+            _Version        =   393216
+            Format          =   53936129
+            CurrentDate     =   43367
          End
          Begin VB.Label Label8 
             AutoSize        =   -1  'True
             Caption         =   "Concepto:"
             Height          =   195
             Left            =   465
-            TabIndex        =   50
+            TabIndex        =   46
             Top             =   2895
             Width           =   735
          End
@@ -476,7 +476,7 @@ Begin VB.Form frmNotaCreditoProveedores
             Caption         =   "Comprobante:"
             Height          =   195
             Left            =   210
-            TabIndex        =   35
+            TabIndex        =   31
             Top             =   510
             Width           =   990
          End
@@ -485,7 +485,7 @@ Begin VB.Form frmNotaCreditoProveedores
             Caption         =   "Número:"
             Height          =   195
             Left            =   600
-            TabIndex        =   34
+            TabIndex        =   30
             Top             =   855
             Width           =   600
          End
@@ -494,7 +494,7 @@ Begin VB.Form frmNotaCreditoProveedores
             Caption         =   "Fecha:"
             Height          =   195
             Left            =   705
-            TabIndex        =   33
+            TabIndex        =   29
             Top             =   1200
             Width           =   495
          End
@@ -502,7 +502,7 @@ Begin VB.Form frmNotaCreditoProveedores
             Caption         =   "Neto:"
             Height          =   195
             Left            =   810
-            TabIndex        =   32
+            TabIndex        =   28
             Top             =   1545
             Width           =   390
          End
@@ -511,7 +511,7 @@ Begin VB.Form frmNotaCreditoProveedores
             Caption         =   "Iva:"
             Height          =   195
             Left            =   930
-            TabIndex        =   31
+            TabIndex        =   27
             Top             =   1875
             Width           =   270
          End
@@ -520,7 +520,7 @@ Begin VB.Form frmNotaCreditoProveedores
             Caption         =   "Total:"
             Height          =   195
             Left            =   795
-            TabIndex        =   30
+            TabIndex        =   26
             Top             =   2220
             Width           =   405
          End
@@ -529,7 +529,7 @@ Begin VB.Form frmNotaCreditoProveedores
             Caption         =   "Periodo:"
             Height          =   195
             Left            =   615
-            TabIndex        =   29
+            TabIndex        =   25
             Top             =   2550
             Width           =   585
          End
@@ -545,8 +545,8 @@ Begin VB.Form frmNotaCreditoProveedores
                Strikethrough   =   0   'False
             EndProperty
             Height          =   285
-            Left            =   2430
-            TabIndex        =   28
+            Left            =   2790
+            TabIndex        =   24
             Top             =   2520
             Width           =   1785
          End
@@ -554,7 +554,7 @@ Begin VB.Form frmNotaCreditoProveedores
       Begin MSFlexGridLib.MSFlexGrid GrdModulos 
          Height          =   3825
          Left            =   -74865
-         TabIndex        =   24
+         TabIndex        =   20
          Top             =   2025
          Width           =   8400
          _ExtentX        =   14817
@@ -573,7 +573,7 @@ Begin VB.Form frmNotaCreditoProveedores
       Caption         =   "&Nuevo"
       Height          =   450
       Left            =   6075
-      TabIndex        =   13
+      TabIndex        =   11
       Top             =   6180
       Width           =   870
    End
@@ -581,7 +581,7 @@ Begin VB.Form frmNotaCreditoProveedores
       Caption         =   "&Aceptar"
       Height          =   450
       Left            =   5190
-      TabIndex        =   12
+      TabIndex        =   10
       Top             =   6180
       Width           =   870
    End
@@ -589,7 +589,7 @@ Begin VB.Form frmNotaCreditoProveedores
       Caption         =   "&Salir"
       Height          =   450
       Left            =   7845
-      TabIndex        =   15
+      TabIndex        =   13
       Top             =   6180
       Width           =   870
    End
@@ -608,7 +608,7 @@ Begin VB.Form frmNotaCreditoProveedores
       EndProperty
       Height          =   240
       Left            =   120
-      TabIndex        =   25
+      TabIndex        =   21
       Top             =   6225
       Width           =   750
    End
@@ -655,7 +655,7 @@ Private Sub CmdBorrar_Click()
     
     If MsgBox("¿Seguro que desea eliminar la Nota de Crédito?", vbQuestion + vbYesNo + vbDefaultButton2, TIT_MSGBOX) = vbYes Then
         On Error GoTo Seclavose
-         lblEstado.Caption = "Eliminando..."
+         lblestado.Caption = "Eliminando..."
          Screen.MousePointer = vbHourglass
          DBConn.BeginTrans
          
@@ -672,16 +672,16 @@ Private Sub CmdBorrar_Click()
                                           CStr(cboComprobante.ItemData(cboComprobante.ListIndex)), txtNroSucursal, txtNroComprobante)
                                           
          DBConn.CommitTrans
-         lblEstado.Caption = ""
+         lblestado.Caption = ""
          Screen.MousePointer = vbNormal
-         cmdNuevo_Click
+         CmdNuevo_Click
     End If
     Exit Sub
     
 Seclavose:
     DBConn.RollbackTrans
     Screen.MousePointer = vbNormal
-    lblEstado.Caption = ""
+    lblestado.Caption = ""
     MsgBox Err.Description, vbCritical, TIT_MSGBOX, vbCritical, TIT_MSGBOX
 End Sub
 
@@ -777,7 +777,7 @@ Private Sub CmdGrabar_Click()
     rec.Open sql, DBConn, adOpenStatic, adLockOptimistic
     
     Screen.MousePointer = vbHourglass
-    lblEstado.Caption = "Guardando..."
+    lblestado.Caption = "Guardando..."
     
     If rec.EOF = False Then
         If MsgBox("La Nota de Crédito ya fue ingresada!!!" & Chr(13) & _
@@ -830,13 +830,13 @@ Private Sub CmdGrabar_Click()
                                         , txtNroSucursal, txtNroComprobante, FechaComprobante, txtTotal, "H", CStr(Date))
     
     Screen.MousePointer = vbNormal
-    lblEstado.Caption = ""
+    lblestado.Caption = ""
     DBConn.CommitTrans
-    cmdNuevo_Click
+    CmdNuevo_Click
     Exit Sub
     
 HayErrorCarga:
-    lblEstado.Caption = ""
+    lblestado.Caption = ""
     Screen.MousePointer = vbNormal
     DBConn.RollbackTrans
     MsgBox Err.Description, vbCritical, TIT_MSGBOX, vbCritical, TIT_MSGBOX
@@ -868,7 +868,7 @@ Private Function ValidarGastosProveedor() As Boolean
         ValidarGastosProveedor = False
         Exit Function
     End If
-    If FechaComprobante.Text = "" Then
+    If FechaComprobante.Value = Date Then
         MsgBox "La Fecha del comprobate es requerida", vbExclamation, TIT_MSGBOX
         FechaComprobante.SetFocus
         ValidarGastosProveedor = False
@@ -892,7 +892,7 @@ Private Function ValidarGastosProveedor() As Boolean
         ValidarGastosProveedor = False
         Exit Function
     End If
-    If Periodo.Text = "" Then
+    If Periodo.Value = "" Then
         MsgBox "El Periodo es requerido (Libro I.V.A. Compras)", vbExclamation, TIT_MSGBOX
         Periodo.SetFocus
         ValidarGastosProveedor = False
@@ -907,7 +907,7 @@ Private Function ValidarGastosProveedor() As Boolean
     ValidarGastosProveedor = True
 End Function
 
-Private Sub cmdNuevo_Click()
+Private Sub CmdNuevo_Click()
     LimpiarBusqueda
     Call CambioEstado(True)
     cboTipoProveedor.ListIndex = 0
@@ -915,19 +915,19 @@ Private Sub cmdNuevo_Click()
     cboComprobante.ListIndex = 0
     txtNroSucursal.Text = ""
     txtNroComprobante.Text = ""
-    FechaComprobante.Text = ""
+    FechaComprobante.Value = Date
     txtNeto.Text = ""
     txtIva.Text = ""
     txtTotal.Text = ""
-    Periodo.Text = ""
+    Periodo.Value = ""
     txtConcepto.Text = ""
-    cmdBorrar.Enabled = False
+    CmdBorrar.Enabled = False
     cmdGrabar.Enabled = True
     cboTipoProveedor.SetFocus
     tabDatos.Tab = 0
 End Sub
 
-Private Sub CmdSalir_Click()
+Private Sub cmdSalir_Click()
     Set frmNotaCreditoProveedores = Nothing
     Unload Me
 End Sub
@@ -940,7 +940,7 @@ Private Sub Form_KeyPress(KeyAscii As Integer)
     If KeyAscii = vbKeyReturn Then
         SendKeys "{TAB}"
     End If
-    If KeyAscii = vbKeyEscape Then CmdSalir_Click
+    If KeyAscii = vbKeyEscape Then cmdSalir_Click
 End Sub
 
 Private Sub LimpiarBusqueda()
@@ -982,8 +982,8 @@ Private Sub Form_Load()
     GrdModulos.Rows = 1
     tabDatos.Tab = 0
     cmdGrabar.Enabled = True
-    cmdBorrar.Enabled = False
-    lblEstado.Caption = ""
+    CmdBorrar.Enabled = False
+    lblestado.Caption = ""
 End Sub
 
 Private Sub LlenarComboComprobante()
@@ -1021,7 +1021,7 @@ Private Sub LlenarComboTipoProv()
     rec.Close
 End Sub
 
-Private Sub GrdModulos_dblClick()
+Private Sub GrdModulos_DblClick()
     If GrdModulos.Rows > 1 Then
         Call BuscaCodigoProxItemData(CInt(GrdModulos.TextMatrix(GrdModulos.RowSel, 4)), cboTipoProveedor)
         txtCodProveedor.Text = GrdModulos.TextMatrix(GrdModulos.RowSel, 5)
@@ -1032,18 +1032,18 @@ Private Sub GrdModulos_dblClick()
         txtNroSucursal_LostFocus
         txtNroComprobante.Text = GrdModulos.TextMatrix(GrdModulos.RowSel, 9)
         txtNroComprobante_LostFocus
-        FechaComprobante.Text = GrdModulos.TextMatrix(GrdModulos.RowSel, 3)
+        FechaComprobante.Value = GrdModulos.TextMatrix(GrdModulos.RowSel, 3)
         txtNeto.Text = Valido_Importe(GrdModulos.TextMatrix(GrdModulos.RowSel, 10))
         txtIva.Text = Format(GrdModulos.TextMatrix(GrdModulos.RowSel, 11), "0.00")
         txtTotal.Text = Valido_Importe(GrdModulos.TextMatrix(GrdModulos.RowSel, 12))
-        Periodo.Text = GrdModulos.TextMatrix(GrdModulos.RowSel, 13)
+        Periodo.Value = GrdModulos.TextMatrix(GrdModulos.RowSel, 13)
         Periodo_LostFocus
         FrameProveedor.Enabled = False
         cboComprobante.Enabled = False
         'pongo enable falso (los campos clave) ya que consulto
         Call CambioEstado(False)
         'CboGastos.SetFocus
-        cmdBorrar.Enabled = True
+        CmdBorrar.Enabled = True
         cmdGrabar.Enabled = False
         tabDatos.Tab = 0
     End If
@@ -1058,19 +1058,19 @@ End Sub
 
 Private Sub GrdModulos_KeyDown(KeyCode As Integer, Shift As Integer)
     If KeyCode = vbKeyReturn Then
-        GrdModulos_dblClick
+        GrdModulos_DblClick
     End If
 End Sub
 
 Private Sub Periodo_Change()
-    If Periodo.Text = "" Then
+    If Periodo.Value = "" Then
         lblPeriodo1.Caption = ""
     End If
 End Sub
 
 Private Sub Periodo_LostFocus()
-    If Trim(Periodo.Text) <> "" Then
-        lblPeriodo1.Caption = UCase(Format(Periodo.Text, "mmmm/yyyy"))
+    If Trim(Periodo.Value) <> "" Then
+        lblPeriodo1.Caption = UCase(Format(Periodo.Value, "mmmm/yyyy"))
     Else
         lblPeriodo1.Caption = ""
     End If
@@ -1084,7 +1084,7 @@ Private Sub tabDatos_Click(PreviousTab As Integer)
       FechaDesde.Enabled = False
       FechaHasta.Enabled = False
       cmdGrabar.Enabled = False
-      cmdBorrar.Enabled = False
+      CmdBorrar.Enabled = False
       cmdBuscarProveedor.Enabled = False
       If Me.Visible = True Then chkTipoProveedor.SetFocus
     Else

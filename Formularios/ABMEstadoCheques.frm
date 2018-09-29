@@ -1,6 +1,6 @@
 VERSION 5.00
-Object = "{BDC217C8-ED16-11CD-956C-0000C04E4C0A}#1.1#0"; "TABCTL32.OCX"
-Object = "{5E9E78A0-531B-11CF-91F6-C2863C385E30}#1.0#0"; "MSFLXGRD.OCX"
+Object = "{BDC217C8-ED16-11CD-956C-0000C04E4C0A}#1.1#0"; "tabctl32.ocx"
+Object = "{5E9E78A0-531B-11CF-91F6-C2863C385E30}#1.0#0"; "msflxgrd.ocx"
 Begin VB.Form ABMEstadoCheques 
    BorderStyle     =   1  'Fixed Single
    Caption         =   " ABM de Estado de Cheques"
@@ -70,6 +70,7 @@ Begin VB.Form ABMEstadoCheques
       _ExtentY        =   5583
       _Version        =   393216
       Tabs            =   2
+      Tab             =   1
       TabHeight       =   520
       BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
          Name            =   "MS Sans Serif"
@@ -82,19 +83,21 @@ Begin VB.Form ABMEstadoCheques
       EndProperty
       TabCaption(0)   =   "&Datos"
       TabPicture(0)   =   "ABMEstadoCheques.frx":1C92
-      Tab(0).ControlEnabled=   -1  'True
+      Tab(0).ControlEnabled=   0   'False
       Tab(0).Control(0)=   "Frame3"
       Tab(0).Control(0).Enabled=   0   'False
       Tab(0).ControlCount=   1
       TabCaption(1)   =   "&Buscar"
       TabPicture(1)   =   "ABMEstadoCheques.frx":1CAE
-      Tab(1).ControlEnabled=   0   'False
-      Tab(1).Control(0)=   "Frame1"
-      Tab(1).Control(1)=   "GrdModulos"
+      Tab(1).ControlEnabled=   -1  'True
+      Tab(1).Control(0)=   "GrdModulos"
+      Tab(1).Control(0).Enabled=   0   'False
+      Tab(1).Control(1)=   "Frame1"
+      Tab(1).Control(1).Enabled=   0   'False
       Tab(1).ControlCount=   2
       Begin VB.Frame Frame1 
          Height          =   735
-         Left            =   -74865
+         Left            =   135
          TabIndex        =   13
          Top             =   375
          Width           =   5475
@@ -151,7 +154,7 @@ Begin VB.Form ABMEstadoCheques
             Strikethrough   =   0   'False
          EndProperty
          Height          =   1770
-         Left            =   360
+         Left            =   -74640
          TabIndex        =   11
          Top             =   675
          Width           =   4920
@@ -193,7 +196,7 @@ Begin VB.Form ABMEstadoCheques
       End
       Begin MSFlexGridLib.MSFlexGrid GrdModulos 
          Height          =   1920
-         Left            =   -74910
+         Left            =   90
          TabIndex        =   8
          Top             =   1125
          Width           =   5565
@@ -237,8 +240,8 @@ Dim rec As ADODB.Recordset
 Dim sql As String
 Dim resp As Integer
 
-Private Sub cmdBorrar_Click()
-    On Error GoTo clavose
+Private Sub CmdBorrar_Click()
+    On Error GoTo CLAVOSE
     If Trim(TxtCodigo) <> "" Then
     
         sql = "SELECT ECH_CODIGO FROM CHEQUE WHERE ECH_CODIGO = " & XN(TxtCodigo)
@@ -264,7 +267,7 @@ Private Sub cmdBorrar_Click()
     End If
     Exit Sub
     
-clavose:
+CLAVOSE:
     If rec.State = 1 Then rec.Close
     Screen.MousePointer = 1
     Mensaje 2
@@ -299,7 +302,7 @@ Private Sub CmdBuscAprox_Click()
 End Sub
 
 Private Sub cmdGrabar_Click()
-    On Error GoTo clavose
+    On Error GoTo CLAVOSE
     
     If Trim(TxtDescrip) = "" Then
         MsgBox "No ha ingresado la descripción !", vbExclamation, TIT_MSGBOX
@@ -321,7 +324,7 @@ Private Sub cmdGrabar_Click()
         TxtCodigo = "1"
         sql = "SELECT MAX(ECH_CODIGO) as maximo FROM ESTADO_CHEQUE"
         Rec2.Open sql, DBConn, adOpenStatic, adLockOptimistic
-        If Not IsNull(Rec2.Fields!MAXIMO) Then TxtCodigo = XN(Rec2.Fields!MAXIMO) + 1
+        If Not IsNull(Rec2.Fields!Maximo) Then TxtCodigo = XN(Rec2.Fields!Maximo) + 1
         Rec2.Close
         DBConn.Execute "INSERT INTO ESTADO_CHEQUE(ECH_CODIGO,ECH_DESCRI) VALUES " & _
         "(" & XN(TxtCodigo) & "," & XS(TxtDescrip) & ")"
@@ -331,7 +334,7 @@ Private Sub cmdGrabar_Click()
     CmdNuevo_Click
     Exit Sub
     
-clavose:
+CLAVOSE:
     Screen.MousePointer = 1
     Mensaje 1
     
@@ -399,7 +402,7 @@ Private Sub GrdModulos_GotFocus()
 End Sub
 
 Private Sub GrdModulos_KeyDown(KeyCode As Integer, Shift As Integer)
-    If KeyCode = vbKeyDelete Then cmdBorrar_Click
+    If KeyCode = vbKeyDelete Then CmdBorrar_Click
     If KeyCode = vbKeyReturn Then GrdModulos_DblClick
 End Sub
 
@@ -411,20 +414,20 @@ Private Sub GrdModulos_LostFocus()
     GrdModulos.HighLight = flexHighlightNever
 End Sub
 
-Private Sub TABTB_Click(PreviousTab As Integer)
+Private Sub tabTB_Click(PreviousTab As Integer)
     'Si cambio de 'Pestaña' en el tab
     'pongo el foco en el primer campo de la misma
     If TabTB.Tab = 0 And Me.Visible Then
      TxtDescrip.SetFocus
      cmdGrabar.Enabled = True
-     cmdBorrar.Enabled = True
+     CmdBorrar.Enabled = True
     End If
     If TabTB.Tab = 1 Then
         TxtCodigoB.Text = ""
         TxtDescriB.Text = ""
         If TxtDescriB.Enabled Then TxtDescriB.SetFocus
         cmdGrabar.Enabled = False
-        cmdBorrar.Enabled = False
+        CmdBorrar.Enabled = False
     End If
 End Sub
 
@@ -432,7 +435,7 @@ Private Sub TxtCodigo_KeyPress(KeyAscii As Integer)
     KeyAscii = CarNumeroEntero(KeyAscii)
 End Sub
 
-Private Sub txtCodigo_LostFocus()
+Private Sub TxtCodigo_LostFocus()
     If TxtCodigo.Text <> "" Then
         sql = "SELECT ECH_CODIGO,ECH_DESCRI "
         sql = sql & " FROM ESTADO_CHEQUE "
@@ -471,10 +474,10 @@ Private Sub TxtDescrip_KeyPress(KeyAscii As Integer)
 End Sub
 
 Private Sub TxtCodigo_Change()
-    If Trim(TxtCodigo) = "" And cmdBorrar.Enabled Then
-        cmdBorrar.Enabled = False
+    If Trim(TxtCodigo) = "" And CmdBorrar.Enabled Then
+        CmdBorrar.Enabled = False
     ElseIf Trim(TxtCodigo) <> "" Then
-        cmdBorrar.Enabled = True
+        CmdBorrar.Enabled = True
     End If
 End Sub
 

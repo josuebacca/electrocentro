@@ -23,7 +23,7 @@ Begin VB.Form ABMEgresos
       Left            =   5010
       Picture         =   "ABMEgresos.frx":030A
       Style           =   1  'Graphical
-      TabIndex        =   7
+      TabIndex        =   6
       Top             =   3765
       Width           =   915
    End
@@ -34,7 +34,7 @@ Begin VB.Form ABMEgresos
       Left            =   4080
       Picture         =   "ABMEgresos.frx":091E
       Style           =   1  'Graphical
-      TabIndex        =   6
+      TabIndex        =   5
       Top             =   3765
       Width           =   915
    End
@@ -45,7 +45,7 @@ Begin VB.Form ABMEgresos
       Left            =   6870
       Picture         =   "ABMEgresos.frx":0F32
       Style           =   1  'Graphical
-      TabIndex        =   9
+      TabIndex        =   8
       Top             =   3765
       Width           =   915
    End
@@ -56,14 +56,14 @@ Begin VB.Form ABMEgresos
       Left            =   5940
       Picture         =   "ABMEgresos.frx":1546
       Style           =   1  'Graphical
-      TabIndex        =   8
+      TabIndex        =   7
       Top             =   3765
       Width           =   915
    End
    Begin TabDlg.SSTab TabTB 
       Height          =   3660
       Left            =   60
-      TabIndex        =   15
+      TabIndex        =   14
       Top             =   60
       Width           =   7755
       _ExtentX        =   13679
@@ -96,7 +96,7 @@ Begin VB.Form ABMEgresos
       Begin VB.Frame Frame1 
          Height          =   1050
          Left            =   -74820
-         TabIndex        =   18
+         TabIndex        =   17
          Top             =   360
          Width           =   7380
          Begin VB.ComboBox cboBuscaTipoGasto 
@@ -104,20 +104,20 @@ Begin VB.Form ABMEgresos
             Left            =   1305
             Sorted          =   -1  'True
             Style           =   2  'Dropdown List
-            TabIndex        =   12
+            TabIndex        =   11
             Top             =   570
             Width           =   4425
          End
          Begin MSComCtl2.DTPicker mFechaD 
             Height          =   330
             Left            =   1305
-            TabIndex        =   10
+            TabIndex        =   9
             Top             =   180
             Width           =   1455
             _ExtentX        =   2566
             _ExtentY        =   582
             _Version        =   393216
-            Format          =   53411841
+            Format          =   53673985
             CurrentDate     =   37259
          End
          Begin VB.CommandButton CmdBuscAprox 
@@ -127,7 +127,7 @@ Begin VB.Form ABMEgresos
             MaskColor       =   &H000000FF&
             Picture         =   "ABMEgresos.frx":1888
             Style           =   1  'Graphical
-            TabIndex        =   13
+            TabIndex        =   12
             ToolTipText     =   "Buscar"
             Top             =   240
             UseMaskColor    =   -1  'True
@@ -136,20 +136,20 @@ Begin VB.Form ABMEgresos
          Begin MSComCtl2.DTPicker mFechaH 
             Height          =   330
             Left            =   3420
-            TabIndex        =   11
+            TabIndex        =   10
             Top             =   180
             Width           =   1455
             _ExtentX        =   2566
             _ExtentY        =   582
             _Version        =   393216
-            Format          =   53411841
+            Format          =   53673985
             CurrentDate     =   37259
          End
          Begin VB.Label Label4 
             Caption         =   "al"
             Height          =   240
             Left            =   3015
-            TabIndex        =   25
+            TabIndex        =   24
             Top             =   270
             Width           =   285
          End
@@ -159,7 +159,7 @@ Begin VB.Form ABMEgresos
             Height          =   195
             Index           =   8
             Left            =   135
-            TabIndex        =   24
+            TabIndex        =   23
             Top             =   615
             Width           =   825
          End
@@ -168,7 +168,7 @@ Begin VB.Form ABMEgresos
             Caption         =   "Periodo"
             Height          =   195
             Left            =   135
-            TabIndex        =   23
+            TabIndex        =   22
             Top             =   270
             Width           =   540
          End
@@ -186,9 +186,21 @@ Begin VB.Form ABMEgresos
          EndProperty
          Height          =   2760
          Left            =   180
-         TabIndex        =   16
+         TabIndex        =   15
          Top             =   630
          Width           =   7365
+         Begin MSComCtl2.DTPicker txtcing_fecha 
+            Height          =   315
+            Left            =   1215
+            TabIndex        =   27
+            Top             =   2280
+            Width           =   1335
+            _ExtentX        =   2355
+            _ExtentY        =   556
+            _Version        =   393216
+            Format          =   53673985
+            CurrentDate     =   43371
+         End
          Begin VB.ComboBox cboMoneda 
             Height          =   315
             Left            =   1215
@@ -214,15 +226,6 @@ Begin VB.Form ABMEgresos
             Top             =   1245
             Width           =   5160
          End
-         Begin VB.PictureBox txtcing_fecha 
-            Height          =   315
-            Left            =   1215
-            ScaleHeight     =   255
-            ScaleWidth      =   1110
-            TabIndex        =   5
-            Top             =   2340
-            Width           =   1170
-         End
          Begin VB.TextBox TxtCodigo 
             Height          =   315
             Left            =   1215
@@ -243,7 +246,7 @@ Begin VB.Form ABMEgresos
             Caption         =   "Moneda:"
             Height          =   195
             Left            =   495
-            TabIndex        =   27
+            TabIndex        =   26
             Top             =   1650
             Width           =   630
          End
@@ -254,7 +257,7 @@ Begin VB.Form ABMEgresos
             Height          =   195
             Index           =   4
             Left            =   555
-            TabIndex        =   22
+            TabIndex        =   21
             Top             =   2010
             Width           =   570
          End
@@ -264,7 +267,7 @@ Begin VB.Form ABMEgresos
             Caption         =   "Fecha:"
             Height          =   195
             Left            =   630
-            TabIndex        =   21
+            TabIndex        =   20
             Top             =   2385
             Width           =   495
          End
@@ -275,7 +278,7 @@ Begin VB.Form ABMEgresos
             Caption         =   "Tipo Gasto:"
             Height          =   195
             Left            =   300
-            TabIndex        =   20
+            TabIndex        =   19
             Top             =   1320
             Width           =   825
          End
@@ -285,7 +288,7 @@ Begin VB.Form ABMEgresos
             Height          =   195
             Index           =   3
             Left            =   240
-            TabIndex        =   19
+            TabIndex        =   18
             Top             =   540
             Width           =   885
          End
@@ -295,7 +298,7 @@ Begin VB.Form ABMEgresos
             Height          =   195
             Index           =   2
             Left            =   240
-            TabIndex        =   17
+            TabIndex        =   16
             Top             =   960
             Width           =   885
          End
@@ -303,7 +306,7 @@ Begin VB.Form ABMEgresos
       Begin MSFlexGridLib.MSFlexGrid GrdModulos 
          Height          =   1980
          Left            =   -74835
-         TabIndex        =   14
+         TabIndex        =   13
          Top             =   1455
          Width           =   7425
          _ExtentX        =   13097
@@ -332,7 +335,7 @@ Begin VB.Form ABMEgresos
       EndProperty
       Height          =   240
       Left            =   120
-      TabIndex        =   26
+      TabIndex        =   25
       Top             =   3915
       Width           =   750
    End
@@ -352,7 +355,7 @@ Private Sub BuscoDatos()
     If rec.EOF = False Then ' si existe
         Call BuscaCodigoProxItemData(CInt(rec!TGT_CODIGO), CboGastos)
         Call BuscaCodigoProxItemData(CInt(rec!MON_CODIGO), cboMoneda)
-        txtcing_Fecha.Value = ChkNull(rec!CEGR_FECHA)
+        txtcing_fecha.Value = ChkNull(rec!CEGR_FECHA)
         txtImporte.Text = Valido_Importe(ChkNull(rec!CEGR_IMPORTE))
         TxtDescrip.Text = ChkNull(rec!CEGR_DESCRI)
         TxtDescrip.SetFocus
@@ -373,13 +376,13 @@ Private Sub CmdBorrar_Click()
     If Trim(TxtCodigo.Text) <> "" Then
         If MsgBox("Seguro desea eliminar el Egreso '" & Trim(TxtDescrip.Text) & "' ?", vbQuestion + vbYesNo, TIT_MSGBOX) = vbYes Then
             Screen.MousePointer = vbHourglass
-            lblEstado.Caption = "Eliminando ..."
+            lblestado.Caption = "Eliminando ..."
             DBConn.BeginTrans
             DBConn.Execute "DELETE FROM CAJA_EGRESO WHERE CEGR_NUMERO = " & XN(TxtCodigo.Text)
             DBConn.CommitTrans
             If TxtDescrip.Enabled Then TxtDescrip.SetFocus
             
-            lblEstado.Caption = ""
+            lblestado.Caption = ""
             Screen.MousePointer = vbNormal
             CmdNuevo_Click
         End If
@@ -388,7 +391,7 @@ Private Sub CmdBorrar_Click()
     
 CLAVOSE:
     If rec.State = 1 Then rec.Close
-    lblEstado.Caption = ""
+    lblestado.Caption = ""
     Screen.MousePointer = vbNormal
     DBConn.RollbackTrans
     MsgBox Err.Description, vbCritical, TIT_MSGBOX
@@ -398,7 +401,7 @@ End Sub
 Private Sub CmdBuscAprox_Click()
     Set rec = New ADODB.Recordset
     GrdModulos.Rows = 1
-    lblEstado.Caption = "Buscando..."
+    lblestado.Caption = "Buscando..."
     Screen.MousePointer = vbHourglass
     Me.Refresh
     sql = "SELECT C.*, T.TGT_DESCRI"
@@ -423,13 +426,13 @@ Private Sub CmdBuscAprox_Click()
             rec.MoveNext
         Loop
         If GrdModulos.Enabled Then GrdModulos.SetFocus
-        lblEstado.Caption = ""
+        lblestado.Caption = ""
     Else
-        lblEstado.Caption = ""
+        lblestado.Caption = ""
         MsgBox "No se encontraron items con este Criterio", vbExclamation, TIT_MSGBOX
         If mFechaD.Enabled Then mFechaD.SetFocus
     End If
-    lblEstado.Caption = ""
+    lblestado.Caption = ""
     rec.Close
     Screen.MousePointer = vbNormal
 End Sub
@@ -438,16 +441,16 @@ End Sub
 
 
 
-Private Sub cmdGrabar_Click()
+Private Sub CmdGrabar_Click()
     On Error GoTo CLAVOSE
     If Trim(TxtDescrip.Text) = "" Then
         MsgBox "No ha ingresado la descripción", vbExclamation, TIT_MSGBOX
         If TxtDescrip.Enabled Then TxtDescrip.SetFocus
         Exit Sub
     End If
-    If txtcing_Fecha.Value = "" Then
+    If txtcing_fecha.Value = Date Then
         MsgBox "No ha ingresado la Fecha del Gasto", vbExclamation, TIT_MSGBOX
-        If txtcing_Fecha.Enabled Then txtcing_Fecha.SetFocus
+        If txtcing_fecha.Enabled Then txtcing_fecha.SetFocus
         Exit Sub
     End If
     If txtImporte.Text = "" Then
@@ -457,7 +460,7 @@ Private Sub cmdGrabar_Click()
     End If
     
     Screen.MousePointer = vbHourglass
-    lblEstado.Caption = "Guardando ..."
+    lblestado.Caption = "Guardando ..."
     
     Set rec = New ADODB.Recordset
     If TxtCodigo.Text = "" Then
@@ -475,7 +478,7 @@ Private Sub cmdGrabar_Click()
     If rec.EOF = False Then
         sql = "UPDATE CAJA_EGRESO SET CEGR_DESCRI = " & XS(TxtDescrip.Text)
         sql = sql & " ,TGT_CODIGO = " & XN(CboGastos.ItemData(CboGastos.ListIndex))
-        sql = sql & " ,CEGR_FECHA = " & XDQ(txtcing_Fecha.Value)
+        sql = sql & " ,CEGR_FECHA = " & XDQ(txtcing_fecha.Value)
         sql = sql & " ,CEGR_IMPORTE = " & XN(txtImporte.Text)
         sql = sql & " ,MON_CODIGO = " & XN(cboMoneda.ItemData(cboMoneda.ListIndex))
         sql = sql & " WHERE CEGR_NUMERO = " & XN(TxtCodigo.Text)
@@ -489,20 +492,20 @@ Private Sub cmdGrabar_Click()
         sql = sql & XN(TxtCodigo.Text) & ","
         sql = sql & XS(TxtDescrip.Text) & ","
         sql = sql & XN(CboGastos.ItemData(CboGastos.ListIndex)) & ","
-        sql = sql & XDQ(txtcing_Fecha.Value) & ","
+        sql = sql & XDQ(txtcing_fecha.Value) & ","
         sql = sql & XN(txtImporte.Text) & ","
         sql = sql & XN(cboMoneda.ItemData(cboMoneda.ListIndex)) & ")"
         DBConn.Execute sql
     End If
     rec.Close
     DBConn.CommitTrans
-    lblEstado.Caption = ""
+    lblestado.Caption = ""
     Screen.MousePointer = vbNormal
     CmdNuevo_Click
     Exit Sub
     
 CLAVOSE:
-    lblEstado.Caption = ""
+    lblestado.Caption = ""
     Screen.MousePointer = vbNormal
     DBConn.RollbackTrans
     MsgBox Err.Description, vbCritical, TIT_MSGBOX
@@ -513,15 +516,15 @@ Private Sub CmdNuevo_Click()
     TxtCodigo.Text = ""
     TxtDescrip.Text = ""
     txtImporte.Text = ""
-    lblEstado.Caption = ""
-    txtcing_Fecha.Value = ""
+    lblestado.Caption = ""
+    txtcing_fecha.Value = Date
     GrdModulos.Rows = 1
     cboMoneda.ListIndex = 0
     CboGastos.ListIndex = 0
     If TxtDescrip.Enabled And Me.Visible Then TxtDescrip.SetFocus
 End Sub
 
-Private Sub CmdSalir_Click()
+Private Sub cmdSalir_Click()
     Unload Me
     Set ABMEgresos = Nothing
 End Sub
@@ -535,7 +538,7 @@ End Sub
 
 Private Sub Form_KeyPress(KeyAscii As Integer)
     'si presiono ESCAPE salgo del form
-    If KeyAscii = vbKeyEscape Then CmdSalir_Click
+    If KeyAscii = vbKeyEscape Then cmdSalir_Click
     'If KeyAscii = vbKeyReturn And _
         Me.ActiveControl.Name <> "TxtDescriB" And _
         Me.ActiveControl.Name <> "GrdContactos" Then  'avanza de campo
@@ -552,10 +555,10 @@ Private Sub Form_Load()
     'CARGO COMBO MONEDA
     LLenarComboMoneda
     
-    lblEstado.Caption = ""
+    lblestado.Caption = ""
     cmdGrabar.Enabled = True
     cmdNuevo.Enabled = True
-    cmdBorrar.Enabled = False
+    CmdBorrar.Enabled = False
     
     GrdModulos.FormatString = "Número|Descripción|^Fecha|>Importe|Tipo de Ingreso|CODIGO Tipo de Ingreso"
     GrdModulos.ColWidth(0) = 1000
@@ -663,7 +666,7 @@ Private Sub TxtCodigo_LostFocus()
     Else
         cmdGrabar.Enabled = True
         cmdNuevo.Enabled = True
-        cmdBorrar.Enabled = False
+        CmdBorrar.Enabled = False
     End If
 End Sub
 
@@ -678,10 +681,10 @@ Private Sub TxtDescrip_KeyPress(KeyAscii As Integer)
 End Sub
 
 Private Sub TxtCodigo_Change()
-    If Trim(TxtCodigo.Text) = "" And cmdBorrar.Enabled Then
-        cmdBorrar.Enabled = False
+    If Trim(TxtCodigo.Text) = "" And CmdBorrar.Enabled Then
+        CmdBorrar.Enabled = False
     ElseIf Trim(TxtCodigo.Text) <> "" Then
-        cmdBorrar.Enabled = True
+        CmdBorrar.Enabled = True
     End If
 End Sub
 

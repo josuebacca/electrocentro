@@ -1,6 +1,6 @@
 VERSION 5.00
-Object = "{BDC217C8-ED16-11CD-956C-0000C04E4C0A}#1.1#0"; "TABCTL32.OCX"
-Object = "{5E9E78A0-531B-11CF-91F6-C2863C385E30}#1.0#0"; "Msflxgrd.ocx"
+Object = "{BDC217C8-ED16-11CD-956C-0000C04E4C0A}#1.1#0"; "tabctl32.ocx"
+Object = "{5E9E78A0-531B-11CF-91F6-C2863C385E30}#1.0#0"; "msflxgrd.ocx"
 Begin VB.Form ABMProducto 
    BorderStyle     =   1  'Fixed Single
    Caption         =   "ABM de Productos"
@@ -57,7 +57,9 @@ Begin VB.Form ABMProducto
       TabPicture(1)   =   "ABMProducto.frx":0630
       Tab(1).ControlEnabled=   0   'False
       Tab(1).Control(0)=   "GrdModulos"
+      Tab(1).Control(0).Enabled=   0   'False
       Tab(1).Control(1)=   "Frame1"
+      Tab(1).Control(1).Enabled=   0   'False
       Tab(1).ControlCount=   2
       Begin VB.Frame fraDatos 
          Caption         =   " Datos del Producto"
@@ -494,12 +496,12 @@ Private Sub CmdBorrar_Click()
         If resp <> 6 Then Exit Sub
         
         Screen.MousePointer = vbHourglass
-        lblestado.Caption = "Eliminando ..."
+        lblEstado.Caption = "Eliminando ..."
         
         DBConn.Execute "DELETE FROM PRODUCTO WHERE PTO_CODIGO LIKE '" & TxtCodigo & "'"
         ' ,PTO_CODIGO
         DBConn.Execute "DELETE FROM DETALLE_STOCK WHERE PTO_CODIGO LIKE '" & TxtCodigo & "' AND STK_CODIGO =1"
-        lblestado.Caption = ""
+        lblEstado.Caption = ""
         Screen.MousePointer = vbNormal
         CmdNuevo_Click
     End If
@@ -508,7 +510,7 @@ Private Sub CmdBorrar_Click()
 CLAVOSE:
     If rec.State = 1 Then rec.Close
     Screen.MousePointer = vbNormal
-    lblestado.Caption = ""
+    lblEstado.Caption = ""
     MsgBox Err.Description, vbCritical, TIT_MSGBOX
 End Sub
 
@@ -526,7 +528,7 @@ Private Sub CmdBuscAprox_Click()
     'sql = sql & " AND P.PTO_ESTADO <> 1"
     sql = sql & " ORDER BY PTO_DESCRI"
         
-    lblestado.Caption = "Buscando..."
+    lblEstado.Caption = "Buscando..."
     rec.Open sql, DBConn, adOpenStatic, adLockOptimistic
     If rec.RecordCount > 0 Then
         Do While Not rec.EOF
@@ -536,21 +538,21 @@ Private Sub CmdBuscAprox_Click()
         Loop
         If GrdModulos.Enabled Then GrdModulos.SetFocus
     Else
-        lblestado.Caption = ""
+        lblEstado.Caption = ""
         MsgBox "No hay coincidencias en la busqueda.", vbOKOnly + vbCritical, TIT_MSGBOX
         TxtDescriB.SetFocus
     End If
     rec.Close
     MousePointer = vbNormal
-    lblestado.Caption = ""
+    lblEstado.Caption = ""
 End Sub
 
-Private Sub CmdGrabar_Click()
+Private Sub cmdGrabar_Click()
     If validarProuducto = False Then Exit Sub
     
     On Error GoTo HayError
     Screen.MousePointer = vbHourglass
-    lblestado.Caption = "Guardando ..."
+    lblEstado.Caption = "Guardando ..."
     DBConn.BeginTrans
     sql = "SELECT * FROM PRODUCTO WHERE PTO_CODIGO LIKE '" & TxtCodigo.Text & "'"
     rec.Open sql, DBConn, adOpenStatic, adLockOptimistic
@@ -666,7 +668,7 @@ Private Sub CmdGrabar_Click()
     MsgBox "El producto se guardo correctamente", vbInformation, TIT_MSGBOX
     TxtCodigo.Text = ""
     txtdescri.SetFocus
-    lblestado.Caption = ""
+    lblEstado.Caption = ""
     Screen.MousePointer = vbNormal
     DBConn.CommitTrans
     rec.Close
@@ -682,7 +684,7 @@ Private Sub CmdGrabar_Click()
     
     
 HayError:
-    lblestado.Caption = ""
+    lblEstado.Caption = ""
     DBConn.RollbackTrans
     Screen.MousePointer = vbNormal
     MsgBox Err.Description, vbCritical, TIT_MSGBOX
@@ -714,7 +716,7 @@ Private Sub CmdNuevo_Click()
     tabDatos.Tab = 0
     TxtCodigo.Text = ""
     txtdescri.Text = ""
-    lblestado.Caption = ""
+    lblEstado.Caption = ""
     txtPrecio.Text = "0,00"
     txtpCpra.Text = "0,00"
     txtStock.Text = ""
@@ -740,7 +742,7 @@ Private Sub cmdNuevoRubro_Click()
     cargocboRubro
 End Sub
 
-Private Sub cmdSalir_Click()
+Private Sub CmdSalir_Click()
     If Consulta = 3 Then
         Consulta = 4
     End If
@@ -760,7 +762,7 @@ End Sub
 
 Private Sub Form_KeyPress(KeyAscii As Integer)
     If KeyAscii = vbKeyReturn Then SendKeys "{TAB}"
-    If KeyAscii = vbKeyEscape Then cmdSalir_Click
+    If KeyAscii = vbKeyEscape Then CmdSalir_Click
 End Sub
 
 Private Sub Form_Load()
@@ -769,7 +771,7 @@ Set Rec1 = New ADODB.Recordset
     
     Call Centrar_pantalla(Me)
 
-    lblestado.Caption = ""
+    lblEstado.Caption = ""
     GrdModulos.FormatString = "Código|Descripción|Rubro|Linea"
     GrdModulos.ColWidth(0) = 1000
     GrdModulos.ColWidth(1) = 4000
@@ -895,7 +897,7 @@ Private Sub GrdModulos_DblClick()
     If GrdModulos.row > 0 Then
            TxtCodigo = GrdModulos.TextMatrix(GrdModulos.RowSel, 0)
            cmdGrabar.Enabled = True
-           CmdBorrar.Enabled = True
+           cmdBorrar.Enabled = True
            Consulta = True
            TxtCodigo_LostFocus
            tabDatos.Tab = 0
@@ -915,13 +917,13 @@ Private Sub tabDatos_Click(PreviousTab As Integer)
     If tabDatos.Tab = 0 And Me.Visible Then
         txtdescri.SetFocus
         cmdGrabar.Enabled = True
-        CmdBorrar.Enabled = True
+        cmdBorrar.Enabled = True
     End If
     If tabDatos.Tab = 1 Then
         'TxtDescriB.Text = ""
         TxtDescriB.SetFocus
         cmdGrabar.Enabled = False
-        CmdBorrar.Enabled = False
+        cmdBorrar.Enabled = False
         If TxtDescriB.Text <> "" Then
             CmdBuscAprox_Click
         End If
@@ -929,10 +931,10 @@ Private Sub tabDatos_Click(PreviousTab As Integer)
 End Sub
 
 Private Sub TxtCodigo_Change()
-    If Trim(TxtCodigo) = "" And CmdBorrar.Enabled Then
-        CmdBorrar.Enabled = False
+    If Trim(TxtCodigo) = "" And cmdBorrar.Enabled Then
+        cmdBorrar.Enabled = False
     ElseIf Trim(TxtCodigo) <> "" Then
-        CmdBorrar.Enabled = True
+        cmdBorrar.Enabled = True
     End If
     
 End Sub

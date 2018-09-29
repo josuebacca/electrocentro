@@ -70,6 +70,7 @@ Begin VB.Form ABMRepresentada
       _ExtentY        =   10160
       _Version        =   393216
       Tabs            =   2
+      Tab             =   1
       TabHeight       =   529
       ForeColor       =   -2147483630
       BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
@@ -83,15 +84,17 @@ Begin VB.Form ABMRepresentada
       EndProperty
       TabCaption(0)   =   "&Datos"
       TabPicture(0)   =   "ABMRepresentada.frx":1850
-      Tab(0).ControlEnabled=   -1  'True
+      Tab(0).ControlEnabled=   0   'False
       Tab(0).Control(0)=   "fraDatos"
       Tab(0).Control(0).Enabled=   0   'False
       Tab(0).ControlCount=   1
       TabCaption(1)   =   "&Buscar"
       TabPicture(1)   =   "ABMRepresentada.frx":186C
-      Tab(1).ControlEnabled=   0   'False
+      Tab(1).ControlEnabled=   -1  'True
       Tab(1).Control(0)=   "GrdModulos"
+      Tab(1).Control(0).Enabled=   0   'False
       Tab(1).Control(1)=   "Frame1"
+      Tab(1).Control(1).Enabled=   0   'False
       Tab(1).ControlCount=   2
       Begin VB.Frame fraDatos 
          Caption         =   "Datos de la Representada"
@@ -105,7 +108,7 @@ Begin VB.Form ABMRepresentada
             Strikethrough   =   0   'False
          EndProperty
          Height          =   4980
-         Left            =   150
+         Left            =   -74850
          TabIndex        =   22
          Top             =   555
          Width           =   6105
@@ -401,7 +404,7 @@ Begin VB.Form ABMRepresentada
       End
       Begin VB.Frame Frame1 
          Height          =   735
-         Left            =   -74880
+         Left            =   120
          TabIndex        =   19
          Top             =   600
          Width           =   6135
@@ -450,7 +453,7 @@ Begin VB.Form ABMRepresentada
       End
       Begin MSFlexGridLib.MSFlexGrid GrdModulos 
          Height          =   4020
-         Left            =   -74895
+         Left            =   105
          TabIndex        =   17
          Top             =   1440
          Width           =   6165
@@ -629,13 +632,13 @@ Private Sub cmdGrabar_Click()
         sql = sql & " , IVA_CODIGO=" & cboIva.ItemData(cboIva.ListIndex)
         sql = sql & " , REP_CUIT=" & XS(txtCUIT)
         sql = sql & " , REP_INGBRU=" & XS(txtIngBrutos)
-        sql = sql & " , REP_DOMICI=" & XS(txtdomici)
+        sql = sql & " , REP_DOMICI=" & XS(txtDomici)
         sql = sql & " , PAI_CODIGO=" & cboPais.ItemData(cboPais.ListIndex)
         sql = sql & " , PRO_CODIGO=" & cboProv.ItemData(cboProv.ListIndex)
         sql = sql & " , LOC_CODIGO=" & cboLocal.ItemData(cboLocal.ListIndex)
-        sql = sql & " , REP_TELEFONO=" & XS(txttelefono)
-        sql = sql & " , REP_FAX=" & XS(txtfax)
-        sql = sql & " , REP_MAIL=" & XS(txtmail)
+        sql = sql & " , REP_TELEFONO=" & XS(txtTelefono)
+        sql = sql & " , REP_FAX=" & XS(txtFax)
+        sql = sql & " , REP_MAIL=" & XS(txtMail)
         sql = sql & " WHERE REP_CODIGO=" & XN(TxtCodigo)
         DBConn.Execute sql
         
@@ -652,12 +655,12 @@ Private Sub cmdGrabar_Click()
         sql = sql & " VALUES ("
         sql = sql & XN(TxtCodigo) & ","
         sql = sql & XS(txtRazSoc) & ","
-        sql = sql & XS(txtdomici) & ","
+        sql = sql & XS(txtDomici) & ","
         sql = sql & XS(txtCUIT) & ","
         sql = sql & XS(txtIngBrutos) & ","
-        sql = sql & XS(txttelefono) & ","
-        sql = sql & XS(txtfax) & ","
-        sql = sql & XS(txtmail) & ","
+        sql = sql & XS(txtTelefono) & ","
+        sql = sql & XS(txtFax) & ","
+        sql = sql & XS(txtMail) & ","
         sql = sql & cboIva.ItemData(cboIva.ListIndex) & ","
         sql = sql & cboPais.ItemData(cboPais.ListIndex) & ","
         sql = sql & cboProv.ItemData(cboProv.ListIndex) & ","
@@ -694,11 +697,11 @@ Private Sub CmdNuevo_Click()
     tabDatos.Tab = 0
     TxtCodigo.Text = ""
     txtRazSoc.Text = ""
-    txttelefono.Text = ""
-    txtfax.Text = ""
-    txtmail.Text = ""
+    txtTelefono.Text = ""
+    txtFax.Text = ""
+    txtMail.Text = ""
     lblEstado.Caption = ""
-    txtdomici.Text = ""
+    txtDomici.Text = ""
     txtIngBrutos.Text = ""
     txtCUIT.Text = ""
     'para la consulta
@@ -833,9 +836,9 @@ Private Function ValidarRepresentada() As Boolean
         ValidarRepresentada = False
         Exit Function
     End If
-    If txtdomici.Text = "" Then
+    If txtDomici.Text = "" Then
         MsgBox "No ha ingresado el Domicilio", vbExclamation, TIT_MSGBOX
-        txtdomici.SetFocus
+        txtDomici.SetFocus
         ValidarRepresentada = False
         Exit Function
     End If
@@ -889,7 +892,7 @@ Private Sub TxtDescriB_KeyPress(KeyAscii As Integer)
 End Sub
 
 Private Sub txtdomici_GotFocus()
-    SelecTexto txtdomici
+    SelecTexto txtDomici
 End Sub
 
 Private Sub txtdomici_KeyPress(KeyAscii As Integer)
@@ -897,7 +900,7 @@ Private Sub txtdomici_KeyPress(KeyAscii As Integer)
 End Sub
 
 Private Sub txtfax_GotFocus()
-    SelecTexto txtfax
+    SelecTexto txtFax
 End Sub
 
 Private Sub txtfax_KeyPress(KeyAscii As Integer)
@@ -913,7 +916,7 @@ Private Sub txtIngBrutos_KeyPress(KeyAscii As Integer)
 End Sub
 
 Private Sub txtmail_GotFocus()
-    SelecTexto txtmail
+    SelecTexto txtMail
 End Sub
 
 Private Sub txtmail_KeyPress(KeyAscii As Integer)
@@ -947,10 +950,10 @@ Private Sub TxtCodigo_LostFocus()
             Provincia = cboPais.Text
             
             Call BuscaCodigoProxItemData(Rec1!LOC_CODIGO, cboLocal)
-            txtdomici.Text = Rec1!REP_DOMICI
-            txttelefono.Text = IIf(IsNull(Rec1!REP_TELEFONO), "", Rec1!REP_TELEFONO)
-            txtfax.Text = IIf(IsNull(Rec1!REP_FAX), "", Rec1!REP_FAX)
-            txtmail.Text = IIf(IsNull(Rec1!REP_MAIL), "", Rec1!REP_MAIL)
+            txtDomici.Text = Rec1!REP_DOMICI
+            txtTelefono.Text = IIf(IsNull(Rec1!REP_TELEFONO), "", Rec1!REP_TELEFONO)
+            txtFax.Text = IIf(IsNull(Rec1!REP_FAX), "", Rec1!REP_FAX)
+            txtMail.Text = IIf(IsNull(Rec1!REP_MAIL), "", Rec1!REP_MAIL)
             txtRazSoc.SetFocus
         Else
              MsgBox "El Código no existe", vbExclamation, TIT_MSGBOX
@@ -974,7 +977,7 @@ Private Sub txtRazSoc_KeyPress(KeyAscii As Integer)
 End Sub
 
 Private Sub txttelefono_GotFocus()
-    SelecTexto txttelefono
+    SelecTexto txtTelefono
 End Sub
 
 Private Sub txttelefono_KeyPress(KeyAscii As Integer)

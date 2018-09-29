@@ -1,6 +1,7 @@
 VERSION 5.00
 Object = "{5E9E78A0-531B-11CF-91F6-C2863C385E30}#1.0#0"; "msflxgrd.ocx"
 Object = "{86CF1D34-0C5F-11D2-A9FC-0000F8754DA1}#2.0#0"; "mscomct2.ocx"
+Object = "{00025600-0000-0000-C000-000000000046}#5.2#0"; "Crystl32.OCX"
 Begin VB.Form frmEstadisticaVentas 
    BorderStyle     =   1  'Fixed Single
    Caption         =   "Estadisticas de Ventas"
@@ -15,6 +16,14 @@ Begin VB.Form frmEstadisticaVentas
    ScaleHeight     =   5580
    ScaleWidth      =   9915
    StartUpPosition =   3  'Windows Default
+   Begin Crystal.CrystalReport Rep 
+      Left            =   360
+      Top             =   4680
+      _ExtentX        =   741
+      _ExtentY        =   741
+      _Version        =   348160
+      PrintFileLinesPerPage=   60
+   End
    Begin VB.TextBox txtTotPorGan 
       Alignment       =   1  'Right Justify
       Enabled         =   0   'False
@@ -183,25 +192,25 @@ Begin VB.Form frmEstadisticaVentas
       Begin MSComCtl2.DTPicker FechaDesde 
          Height          =   375
          Left            =   5040
+         TabIndex        =   19
+         Top             =   240
+         Width           =   1335
+         _ExtentX        =   2355
+         _ExtentY        =   661
+         _Version        =   393216
+         Format          =   53673985
+         CurrentDate     =   43367
+      End
+      Begin MSComCtl2.DTPicker FechaHasta 
+         Height          =   375
+         Left            =   7080
          TabIndex        =   20
          Top             =   240
          Width           =   1335
          _ExtentX        =   2355
          _ExtentY        =   661
          _Version        =   393216
-         Format          =   58982401
-         CurrentDate     =   43367
-      End
-      Begin MSComCtl2.DTPicker FechaHasta 
-         Height          =   375
-         Left            =   7080
-         TabIndex        =   21
-         Top             =   240
-         Width           =   1335
-         _ExtentX        =   2355
-         _ExtentY        =   661
-         _Version        =   393216
-         Format          =   58982401
+         Format          =   53673985
          CurrentDate     =   43367
       End
       Begin VB.Label Label2 
@@ -248,15 +257,6 @@ Begin VB.Form frmEstadisticaVentas
          Italic          =   0   'False
          Strikethrough   =   0   'False
       EndProperty
-   End
-   Begin VB.PictureBox Rep 
-      Height          =   480
-      Left            =   480
-      ScaleHeight     =   420
-      ScaleWidth      =   1140
-      TabIndex        =   19
-      Top             =   4920
-      Width           =   1200
    End
    Begin VB.Label lblPromedio 
       Caption         =   "Label5"
@@ -544,10 +544,6 @@ End Sub
 
 Private Sub CmdSalir_Click()
     Unload Me
-End Sub
-
-Private Sub FechaDesde_CallbackKeyDown(ByVal KeyCode As Integer, ByVal Shift As Integer, ByVal CallbackField As String, CallbackDate As Date)
-
 End Sub
 
 Private Sub Form_KeyPress(KeyAscii As Integer)

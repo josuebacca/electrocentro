@@ -2,6 +2,7 @@ VERSION 5.00
 Object = "{F9043C88-F6F2-101A-A3C9-08002B2F49FB}#1.2#0"; "comdlg32.ocx"
 Object = "{5E9E78A0-531B-11CF-91F6-C2863C385E30}#1.0#0"; "msflxgrd.ocx"
 Object = "{86CF1D34-0C5F-11D2-A9FC-0000F8754DA1}#2.0#0"; "mscomct2.ocx"
+Object = "{00025600-0000-0000-C000-000000000046}#5.2#0"; "Crystl32.OCX"
 Begin VB.Form frmListadoComprasProveedores 
    BorderStyle     =   1  'Fixed Single
    Caption         =   "Listado de Compras a Proveedores...."
@@ -16,6 +17,14 @@ Begin VB.Form frmListadoComprasProveedores
    ScaleHeight     =   6750
    ScaleWidth      =   11745
    StartUpPosition =   2  'CenterScreen
+   Begin Crystal.CrystalReport Rep 
+      Left            =   1680
+      Top             =   6120
+      _ExtentX        =   741
+      _ExtentY        =   741
+      _Version        =   348160
+      PrintFileLinesPerPage=   60
+   End
    Begin VB.Frame Frame3 
       Caption         =   "Impresora"
       BeginProperty Font 
@@ -248,25 +257,25 @@ Begin VB.Form frmListadoComprasProveedores
       Begin MSComCtl2.DTPicker FechaDesde 
          Height          =   375
          Left            =   3480
+         TabIndex        =   29
+         Top             =   1320
+         Width           =   1335
+         _ExtentX        =   2355
+         _ExtentY        =   661
+         _Version        =   393216
+         Format          =   53673985
+         CurrentDate     =   43367
+      End
+      Begin MSComCtl2.DTPicker FechaHasta 
+         Height          =   375
+         Left            =   5880
          TabIndex        =   30
          Top             =   1320
          Width           =   1335
          _ExtentX        =   2355
          _ExtentY        =   661
          _Version        =   393216
-         Format          =   53936129
-         CurrentDate     =   43367
-      End
-      Begin MSComCtl2.DTPicker FechaHasta 
-         Height          =   375
-         Left            =   5880
-         TabIndex        =   31
-         Top             =   1320
-         Width           =   1335
-         _ExtentX        =   2355
-         _ExtentY        =   661
-         _Version        =   393216
-         Format          =   53936129
+         Format          =   53673985
          CurrentDate     =   43367
       End
       Begin VB.Label lblFechaHasta 
@@ -332,15 +341,6 @@ Begin VB.Form frmListadoComprasProveedores
       FocusRect       =   0
       SelectionMode   =   1
    End
-   Begin VB.PictureBox Rep 
-      Height          =   480
-      Left            =   3720
-      ScaleHeight     =   420
-      ScaleWidth      =   1140
-      TabIndex        =   29
-      Top             =   6045
-      Width           =   1200
-   End
    Begin VB.Label Label3 
       AutoSize        =   -1  'True
       Caption         =   "Total Gastos:"
@@ -396,13 +396,13 @@ Private Sub chkFecha_Click()
     If chkFecha.Value = Checked Then
         FechaDesde.Enabled = True
         FechaHasta.Enabled = True
-        FechaDesde.Value = ""
-        FechaHasta.Value = ""
+        FechaDesde.Value = Date
+        FechaHasta.Value = Date
     Else
         FechaDesde.Enabled = False
         FechaHasta.Enabled = False
-        FechaDesde.Value = ""
-        FechaHasta.Value = ""
+        FechaDesde.Value = Date
+        FechaHasta.Value = Date
     End If
 End Sub
 
@@ -436,7 +436,7 @@ End Sub
 
 Private Sub cmdBusProv_Click()
     Screen.MousePointer = vbHourglass
-    Me.lblEstado.Caption = "Buscando Proveedores...."
+    Me.lblestado.Caption = "Buscando Proveedores...."
     Me.Refresh
     
     fgBuscaProv.Rows = 1
@@ -474,11 +474,11 @@ Private Sub cmdBusProv_Click()
          
         fgBuscaProv.SetFocus
         Screen.MousePointer = vbNormal
-        Me.lblEstado.Caption = ""
+        Me.lblestado.Caption = ""
     
    Else ' SI NO ENCONTRO NINGUNO
         Screen.MousePointer = vbNormal
-        Me.lblEstado.Caption = ""
+        Me.lblestado.Caption = ""
         fgBuscaProv.HighLight = flexHighlightNever
         fgBuscaProv.Rows = 1
         MsgBox "No se han encontrado Compras...", vbExclamation, TIT_MSGBOX
@@ -488,7 +488,7 @@ Private Sub cmdBusProv_Click()
 End Sub
 
 Private Sub cmdListar_Click()
-    lblEstado.Caption = "Buscando Listado..."
+    lblestado.Caption = "Buscando Listado..."
     Rep.WindowState = crptNormal
     Rep.WindowBorderStyle = crptNoBorder
     Rep.Connect = "Provider=MSDASQL.1;Persist Security Info=False;Data Source=SIELECTROCENTRO"
@@ -528,11 +528,11 @@ Private Sub cmdListar_Click()
     
     If FechaDesde.Value <> "" And FechaHasta.Value <> "" Then
         Rep.Formulas(0) = "FECHA='" & "Desde: " & FechaDesde.Value & "   Hasta: " & FechaHasta.Value & "'"
-    ElseIf FechaDesde.Value <> "" And FechaHasta.Value = "" Then
+    ElseIf FechaDesde.Value <> "" And FechaHasta.Value = Date Then
         Rep.Formulas(0) = "FECHA='" & "Desde: " & FechaDesde.Value & "   Hasta: " & Date & "'"
-    ElseIf FechaDesde.Value = "" And FechaHasta.Value <> "" Then
+    ElseIf FechaDesde.Value = Date And FechaHasta.Value <> "" Then
         Rep.Formulas(0) = "FECHA='" & "Desde: Inicio" & "   Hasta: " & FechaHasta.Value & "'"
-    ElseIf FechaDesde.Value = "" And FechaHasta.Value = "" Then
+    ElseIf FechaDesde.Value = Date And FechaHasta.Value = Date Then
         Rep.Formulas(0) = "FECHA='" & "Desde: Inicio" & "   Hasta: " & Date & "'"
     End If
     
@@ -551,7 +551,7 @@ Private Sub cmdListar_Click()
     Rep.Action = 1
     Rep.SelectionFormula = ""
     Rep.Formulas(0) = ""
-    lblEstado.Caption = ""
+    lblestado.Caption = ""
 End Sub
 
 Private Sub CmdNuevo_Click()
@@ -566,7 +566,7 @@ Private Sub CmdNuevo_Click()
     chkPorTipo.SetFocus
 End Sub
 
-Private Sub CmdSalir_Click()
+Private Sub cmdSalir_Click()
     Set frmListadoComprasProveedores = Nothing
     Unload Me
 End Sub
@@ -581,7 +581,7 @@ End Sub
 
 Private Sub Form_Load()
     Set rec = New ADODB.Recordset
-    lblEstado.Caption = ""
+    lblestado.Caption = ""
     txtBuscaProv.Text = ""
     
     fgBuscaProv.FormatString = "Tipo Prov.|Proveedor|Gasto|^Comp.|^Fecha|>Total|nro proveedor|codigo tipo_proveedor|COD GASTO"

@@ -72,6 +72,7 @@ Begin VB.Form ABMTipoComprobante
       _ExtentY        =   6033
       _Version        =   393216
       Tabs            =   2
+      Tab             =   1
       TabHeight       =   529
       ForeColor       =   -2147483630
       BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
@@ -85,13 +86,13 @@ Begin VB.Form ABMTipoComprobante
       EndProperty
       TabCaption(0)   =   "&Datos"
       TabPicture(0)   =   "ABMTipoComprobante.frx":1850
-      Tab(0).ControlEnabled=   -1  'True
+      Tab(0).ControlEnabled=   0   'False
       Tab(0).Control(0)=   "fraDatos"
       Tab(0).Control(0).Enabled=   0   'False
       Tab(0).ControlCount=   1
       TabCaption(1)   =   "&Buscar"
       TabPicture(1)   =   "ABMTipoComprobante.frx":186C
-      Tab(1).ControlEnabled=   0   'False
+      Tab(1).ControlEnabled=   -1  'True
       Tab(1).Control(0)=   "GrdModulos"
       Tab(1).Control(0).Enabled=   0   'False
       Tab(1).Control(1)=   "Frame1"
@@ -99,7 +100,7 @@ Begin VB.Form ABMTipoComprobante
       Tab(1).ControlCount=   2
       Begin VB.Frame Frame1 
          Height          =   735
-         Left            =   -74865
+         Left            =   135
          TabIndex        =   16
          Top             =   405
          Width           =   6135
@@ -168,7 +169,7 @@ Begin VB.Form ABMTipoComprobante
             Strikethrough   =   0   'False
          EndProperty
          Height          =   2115
-         Left            =   315
+         Left            =   -74685
          TabIndex        =   10
          Top             =   720
          Width           =   5625
@@ -243,7 +244,7 @@ Begin VB.Form ABMTipoComprobante
       End
       Begin MSFlexGridLib.MSFlexGrid GrdModulos 
          Height          =   2070
-         Left            =   -74910
+         Left            =   90
          TabIndex        =   9
          Top             =   1215
          Width           =   6210
@@ -388,7 +389,7 @@ Private Sub CmdNuevo_Click()
     GrdModulos.Rows = 1
 End Sub
 
-Private Sub cmdSalir_Click()
+Private Sub CmdSalir_Click()
         Unload Me
         Set ABMTipoComprobante = Nothing
 End Sub
@@ -451,7 +452,7 @@ End Sub
 
 Private Sub Form_KeyPress(KeyAscii As Integer)
   If KeyAscii = vbKeyReturn Then SendKeys "{TAB}"
-  If KeyAscii = vbKeyEscape Then cmdSalir_Click
+  If KeyAscii = vbKeyEscape Then CmdSalir_Click
 End Sub
 
 Private Sub Form_Load()

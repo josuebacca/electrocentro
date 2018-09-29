@@ -1,6 +1,7 @@
 VERSION 5.00
 Object = "{F9043C88-F6F2-101A-A3C9-08002B2F49FB}#1.2#0"; "comdlg32.ocx"
 Object = "{86CF1D34-0C5F-11D2-A9FC-0000F8754DA1}#2.0#0"; "mscomct2.ocx"
+Object = "{00025600-0000-0000-C000-000000000046}#5.2#0"; "Crystl32.OCX"
 Begin VB.Form frmListadoCantidadesVendidas 
    BorderStyle     =   1  'Fixed Single
    Caption         =   "Listado de Cantidades Vendidas"
@@ -15,6 +16,14 @@ Begin VB.Form frmListadoCantidadesVendidas
    ScaleHeight     =   3330
    ScaleWidth      =   6555
    StartUpPosition =   2  'CenterScreen
+   Begin Crystal.CrystalReport Rep 
+      Left            =   1320
+      Top             =   2640
+      _ExtentX        =   741
+      _ExtentY        =   741
+      _Version        =   348160
+      PrintFileLinesPerPage=   60
+   End
    Begin VB.Frame FrameImpresora 
       Caption         =   "impresora"
       BeginProperty Font 
@@ -131,27 +140,27 @@ Begin VB.Form frmListadoCantidadesVendidas
          Width           =   3420
       End
       Begin MSComCtl2.DTPicker FechaDesde 
-         Height          =   375
+         Height          =   315
          Left            =   1680
+         TabIndex        =   16
+         Top             =   1320
+         Width           =   1335
+         _ExtentX        =   2355
+         _ExtentY        =   556
+         _Version        =   393216
+         Format          =   55443457
+         CurrentDate     =   43367
+      End
+      Begin MSComCtl2.DTPicker FechaHasta 
+         Height          =   315
+         Left            =   4200
          TabIndex        =   17
          Top             =   1320
          Width           =   1335
          _ExtentX        =   2355
-         _ExtentY        =   661
+         _ExtentY        =   556
          _Version        =   393216
-         Format          =   53870593
-         CurrentDate     =   43367
-      End
-      Begin MSComCtl2.DTPicker FechaHasta 
-         Height          =   375
-         Left            =   4200
-         TabIndex        =   18
-         Top             =   1320
-         Width           =   1335
-         _ExtentX        =   2355
-         _ExtentY        =   661
-         _Version        =   393216
-         Format          =   53870593
+         Format          =   55443457
          CurrentDate     =   43367
       End
       Begin VB.Label Label13 
@@ -190,15 +199,6 @@ Begin VB.Form frmListadoCantidadesVendidas
          Top             =   1410
          Width           =   1005
       End
-   End
-   Begin VB.PictureBox Rep 
-      Height          =   480
-      Left            =   3330
-      ScaleHeight     =   420
-      ScaleWidth      =   1140
-      TabIndex        =   16
-      Top             =   2670
-      Width           =   1200
    End
    Begin MSComDlg.CommonDialog CDImpresora 
       Left            =   2850
@@ -255,8 +255,8 @@ Private Sub cboLinea_LostFocus()
 End Sub
 
 Private Sub cmdListar_Click()
-    lblEstado.Caption = "Buscando Listado..."
-    'Rep.WindowState = crptNormal
+    lblestado.Caption = "Buscando Listado..."
+    Rep.WindowState = crptNormal
     Rep.WindowBorderStyle = crptNoBorder
     Rep.Connect = "Provider=MSDASQL.1;Persist Security Info=False;Data Source=SIELECTROCENTRO"
     Rep.SelectionFormula = ""
@@ -298,11 +298,11 @@ Private Sub cmdListar_Click()
     
     If FechaDesde.Value <> "" And FechaHasta.Value <> "" Then
         Rep.Formulas(0) = "FECHA='" & "Desde: " & FechaDesde.Value & "   Hasta: " & FechaHasta.Value & "'"
-    ElseIf FechaDesde.Value <> "" And FechaHasta.Value = "" Then
+    ElseIf FechaDesde.Value <> "" And FechaHasta.Value = Date Then
         Rep.Formulas(0) = "FECHA='" & "Desde: " & FechaDesde.Value & "   Hasta: " & Date & "'"
-    ElseIf FechaDesde.Value = "" And FechaHasta.Value <> "" Then
+    ElseIf FechaDesde.Value = Date And FechaHasta.Value <> "" Then
         Rep.Formulas(0) = "FECHA='" & "Desde: Inicio" & "   Hasta: " & FechaHasta.Value & "'"
-    ElseIf FechaDesde.Value = "" And FechaHasta.Value = "" Then
+    ElseIf FechaDesde.Value = Date And FechaHasta.Value = Date Then
         Rep.Formulas(0) = "FECHA='" & "Desde: Inicio" & "   Hasta: " & Date & "'"
     End If
     Rep.WindowTitle = "Listado de Cantidades Vendidas"
@@ -316,7 +316,7 @@ Private Sub cmdListar_Click()
      Rep.WindowState = crptMaximized
      Rep.Action = 1
      
-     lblEstado.Caption = ""
+     lblestado.Caption = ""
      Rep.SelectionFormula = ""
      Rep.Formulas(0) = ""
 End Sub
@@ -324,18 +324,18 @@ End Sub
 Private Sub CmdNuevo_Click()
     cboLinea.ListIndex = 0
     cboRubro.Clear
-    FechaDesde.Value = ""
-    FechaHasta.Value = ""
+    FechaDesde.Value = Date
+    FechaHasta.Value = Date
 End Sub
 
-Private Sub CmdSalir_Click()
+Private Sub cmdSalir_Click()
     Set frmListadoCantidadesVendidas = Nothing
     Unload Me
 End Sub
 
 Private Sub Form_KeyPress(KeyAscii As Integer)
     If KeyAscii = vbKeyReturn Then SendKeys "{TAB}"
-    If KeyAscii = vbKeyEscape Then CmdSalir_Click
+    If KeyAscii = vbKeyEscape Then cmdSalir_Click
 End Sub
 
 Private Sub Form_Load()
@@ -348,7 +348,7 @@ Private Sub Form_Load()
 End Sub
 
 Private Sub cargocboLinea()
-    lblEstado.Caption = ""
+    lblestado.Caption = ""
     sql = "SELECT * FROM LINEAS  ORDER BY LNA_DESCRI"
     rec.Open sql, DBConn, adOpenStatic, adLockOptimistic
     If rec.EOF = False Then

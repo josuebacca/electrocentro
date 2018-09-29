@@ -59,6 +59,7 @@ Begin VB.Form frmNotaDeditoClienteServicio
       _ExtentY        =   12541
       _Version        =   393216
       Tabs            =   2
+      Tab             =   1
       TabsPerRow      =   5
       TabHeight       =   512
       ForeColor       =   -2147483630
@@ -73,19 +74,21 @@ Begin VB.Form frmNotaDeditoClienteServicio
       EndProperty
       TabCaption(0)   =   "&Datos"
       TabPicture(0)   =   "frmNotaDeditoClienteServicio.frx":0000
-      Tab(0).ControlEnabled=   -1  'True
-      Tab(0).Control(0)=   "Frame3"
+      Tab(0).ControlEnabled=   0   'False
+      Tab(0).Control(0)=   "FramePara"
       Tab(0).Control(0).Enabled=   0   'False
       Tab(0).Control(1)=   "FrameNotaDebito"
       Tab(0).Control(1).Enabled=   0   'False
-      Tab(0).Control(2)=   "FramePara"
+      Tab(0).Control(2)=   "Frame3"
       Tab(0).Control(2).Enabled=   0   'False
       Tab(0).ControlCount=   3
       TabCaption(1)   =   "&Buscar"
       TabPicture(1)   =   "frmNotaDeditoClienteServicio.frx":001C
-      Tab(1).ControlEnabled=   0   'False
-      Tab(1).Control(0)=   "frameBuscar"
-      Tab(1).Control(1)=   "GrdModulos"
+      Tab(1).ControlEnabled=   -1  'True
+      Tab(1).Control(0)=   "GrdModulos"
+      Tab(1).Control(0).Enabled=   0   'False
+      Tab(1).Control(1)=   "frameBuscar"
+      Tab(1).Control(1).Enabled=   0   'False
       Tab(1).ControlCount=   2
       Begin VB.Frame FramePara 
          Caption         =   "Para..."
@@ -99,7 +102,7 @@ Begin VB.Form frmNotaDeditoClienteServicio
             Strikethrough   =   0   'False
          EndProperty
          Height          =   1935
-         Left            =   4470
+         Left            =   -70530
          TabIndex        =   38
          Top             =   360
          Width           =   6585
@@ -322,7 +325,7 @@ Begin VB.Form frmNotaDeditoClienteServicio
             Strikethrough   =   0   'False
          EndProperty
          Height          =   2040
-         Left            =   -74610
+         Left            =   390
          TabIndex        =   29
          Top             =   540
          Width           =   10410
@@ -455,23 +458,29 @@ Begin VB.Form frmNotaDeditoClienteServicio
             Top             =   585
             Width           =   855
          End
-         Begin VB.PictureBox FechaHasta 
-            Height          =   285
-            Left            =   5865
-            ScaleHeight     =   225
-            ScaleWidth      =   1125
-            TabIndex        =   73
-            Top             =   1175
-            Width           =   1185
-         End
-         Begin VB.PictureBox FechaDesde 
-            Height          =   330
+         Begin MSComCtl2.DTPicker FechaDesde 
+            Height          =   315
             Left            =   3360
-            ScaleHeight     =   270
-            ScaleWidth      =   1110
-            TabIndex        =   74
-            Top             =   1175
-            Width           =   1170
+            TabIndex        =   75
+            Top             =   1200
+            Width           =   1335
+            _ExtentX        =   2355
+            _ExtentY        =   556
+            _Version        =   393216
+            Format          =   53936129
+            CurrentDate     =   43367
+         End
+         Begin MSComCtl2.DTPicker FechaHasta 
+            Height          =   315
+            Left            =   5880
+            TabIndex        =   76
+            Top             =   1200
+            Width           =   1335
+            _ExtentX        =   2355
+            _ExtentY        =   556
+            _Version        =   393216
+            Format          =   53936129
+            CurrentDate     =   43367
          End
          Begin VB.Label lbltipoFac 
             AutoSize        =   -1  'True
@@ -537,7 +546,7 @@ Begin VB.Form frmNotaDeditoClienteServicio
             Strikethrough   =   0   'False
          EndProperty
          Height          =   1935
-         Left            =   105
+         Left            =   -74895
          TabIndex        =   26
          Top             =   360
          Width           =   4365
@@ -586,7 +595,7 @@ Begin VB.Form frmNotaDeditoClienteServicio
          Begin MSComCtl2.DTPicker FechaNotaDebito 
             Height          =   375
             Left            =   1200
-            TabIndex        =   76
+            TabIndex        =   74
             Top             =   1200
             Width           =   1335
             _ExtentX        =   2355
@@ -653,7 +662,7 @@ Begin VB.Form frmNotaDeditoClienteServicio
       End
       Begin MSFlexGridLib.MSFlexGrid GrdModulos 
          Height          =   4245
-         Left            =   -74625
+         Left            =   375
          TabIndex        =   23
          Top             =   2655
          Width           =   10455
@@ -670,7 +679,7 @@ Begin VB.Form frmNotaDeditoClienteServicio
       End
       Begin VB.Frame Frame3 
          Height          =   4800
-         Left            =   105
+         Left            =   -74895
          TabIndex        =   27
          Top             =   2205
          Width           =   10950
@@ -959,7 +968,7 @@ Begin VB.Form frmNotaDeditoClienteServicio
       Height          =   240
       Index           =   1
       Left            =   3960
-      TabIndex        =   75
+      TabIndex        =   73
       Top             =   7320
       Width           =   2925
    End
@@ -1070,7 +1079,7 @@ End Sub
 
 Private Sub CmdBuscAprox_Click()
     GrdModulos.Rows = 1
-    lblEstado.Caption = "Buscando..."
+    lblestado.Caption = "Buscando..."
     Screen.MousePointer = vbHourglass
             
     sql = "SELECT ND.*, C.CLI_RAZSOC , TC.TCO_ABREVIA"
@@ -1097,12 +1106,12 @@ Private Sub CmdBuscAprox_Click()
         Loop
         GrdModulos.SetFocus
     Else
-        lblEstado.Caption = ""
+        lblestado.Caption = ""
         Screen.MousePointer = vbNormal
         MsgBox "No se encontraron datos...", vbExclamation, TIT_MSGBOX
     End If
 
-    lblEstado.Caption = ""
+    lblestado.Caption = ""
     Screen.MousePointer = vbNormal
     rec.Close
 End Sub
@@ -1152,7 +1161,7 @@ Private Sub cmdBuscarVen_Click()
     End If
 End Sub
 
-Private Sub cmdGrabar_Click()
+Private Sub CmdGrabar_Click()
     Dim VStockFisico As String
     
     If ValidarNotaBebito = False Then Exit Sub
@@ -1169,7 +1178,7 @@ Private Sub cmdGrabar_Click()
     rec.Open sql, DBConn, adOpenStatic, adLockOptimistic
     
     Screen.MousePointer = vbHourglass
-    lblEstado.Caption = "Guardando..."
+    lblestado.Caption = "Guardando..."
     
     If rec.EOF = True Then
         sql = "INSERT INTO NOTA_DEBITO_CLIENTE"
@@ -1249,12 +1258,12 @@ Private Sub cmdGrabar_Click()
     End If
     rec.Close
     Screen.MousePointer = vbNormal
-    lblEstado.Caption = ""
+    lblestado.Caption = ""
     CmdNuevo_Click
     Exit Sub
     
 HayErrorFactura:
-    lblEstado.Caption = ""
+    lblestado.Caption = ""
     Screen.MousePointer = vbNormal
     If rec.State = 1 Then rec.Close
     DBConn.RollbackTrans
@@ -1307,7 +1316,7 @@ Public Sub ImprimirNotaDebito()
     Dim Renglon As Double
     
     Screen.MousePointer = vbHourglass
-    lblEstado.Caption = "Imprimiendo..."
+    lblestado.Caption = "Imprimiendo..."
     
     For w = 1 To 2 'SE IMPRIME POR DUPLICADO
       '-----IMPRESION DEL ENCABEZADO------------------
@@ -1354,7 +1363,7 @@ Public Sub ImprimirNotaDebito()
         Printer.EndDoc
     Next w
     Screen.MousePointer = vbNormal
-    lblEstado.Caption = ""
+    lblestado.Caption = ""
 End Sub
 
 Public Sub ImprimirEncabezado()
@@ -1417,7 +1426,7 @@ Private Sub CmdNuevo_Click()
    txtSubTotalBoni.Text = ""
    txtImporteIva.Text = ""
    txtObservaciones.Text = ""
-   lblEstado.Caption = ""
+   lblestado.Caption = ""
    cmdGrabar.Enabled = True
    'BUSCO IVA
    BuscoIva
@@ -1434,7 +1443,7 @@ Private Sub CmdNuevo_Click()
    cboNotaDebito.SetFocus
 End Sub
 
-Private Sub CmdSalir_Click()
+Private Sub cmdSalir_Click()
     If MsgBox("Seguro que desea Salir", vbQuestion + vbYesNo, TIT_MSGBOX) = vbYes Then
         Set frmNotaDeditoClienteServicio = Nothing
         Unload Me
@@ -1455,7 +1464,7 @@ Private Sub Form_KeyPress(KeyAscii As Integer)
         KeyAscii = vbKeyReturn Then
         SendKeys "{TAB}"
     End If
-    If KeyAscii = vbKeyEscape Then CmdSalir_Click
+    If KeyAscii = vbKeyEscape Then cmdSalir_Click
 End Sub
 
 Private Sub Form_Load()
@@ -1501,7 +1510,7 @@ Private Sub Form_Load()
     GrdModulos.Cols = 12
     GrdModulos.Rows = 1
     '------------------------------------
-    lblEstado.Caption = ""
+    lblestado.Caption = ""
     'CARGO COMBO CON LOS TIPOS DE NOTA DE DEBITO
     LlenarComboNotaDebito
     'CARGO ESTADO
@@ -1638,7 +1647,7 @@ End Sub
 Private Sub GrdModulos_DblClick()
     If GrdModulos.Rows > 1 Then
         Set Rec1 = New ADODB.Recordset
-        lblEstado.Caption = "Buscando..."
+        lblestado.Caption = "Buscando..."
         Screen.MousePointer = vbHourglass
         'CABEZA NOTA DEBITO
         Call BuscaCodigoProxItemData(CInt(GrdModulos.TextMatrix(GrdModulos.RowSel, 8)), cboNotaDebito)
@@ -1716,7 +1725,7 @@ Private Sub GrdModulos_DblClick()
             txtPorcentajeIva = GrdModulos.TextMatrix(GrdModulos.RowSel, 6)
             txtPorcentajeIva_LostFocus
         End If
-        lblEstado.Caption = ""
+        lblestado.Caption = ""
         Screen.MousePointer = vbNormal
         '--------------
         FrameNotaDebito.Enabled = False
@@ -1755,8 +1764,8 @@ End Sub
 Private Sub LimpiarBusqueda()
     txtCliente.Text = ""
     txtDesCli.Text = ""
-    FechaDesde.Value = ""
-    FechaHasta.Value = ""
+    FechaDesde.Value = Date
+    FechaHasta.Value = Date
     txtVendedor.Text = ""
     txtDesVen.Text = ""
     GrdModulos.Rows = 1
@@ -1819,7 +1828,7 @@ End Function
 Private Sub txtCliRazSoc_Change()
     If txtCliRazSoc.Text = "" Then
         txtCodCliente.Text = ""
-        txtProvincia.Text = ""
+        txtprovincia.Text = ""
         txtCliLocalidad.Text = ""
         txtDomici.Text = ""
         txtCUIT.Text = ""
@@ -1865,7 +1874,7 @@ End Sub
 Private Sub txtCodCliente_Change()
     If txtCodCliente.Text = "" Then
         txtCliRazSoc.Text = ""
-        txtProvincia.Text = ""
+        txtprovincia.Text = ""
         txtCliLocalidad.Text = ""
         txtDomici.Text = ""
         txtCUIT.Text = ""
@@ -1888,7 +1897,7 @@ Private Sub txtCodCliente_LostFocus()
         Rec1.Open BuscoCliente(txtCodCliente), DBConn, adOpenStatic, adLockOptimistic
         If Rec1.EOF = False Then
             txtCliRazSoc.Text = Rec1!CLI_RAZSOC
-            txtProvincia.Text = Rec1!PRO_DESCRI
+            txtprovincia.Text = Rec1!PRO_DESCRI
             txtCliLocalidad.Text = Rec1!LOC_DESCRI
             txtDomici.Text = Rec1!CLI_DOMICI
             txtCUIT.Text = Rec1!CLI_CUIT

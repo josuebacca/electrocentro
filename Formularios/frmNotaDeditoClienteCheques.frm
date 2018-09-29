@@ -52,7 +52,7 @@ Begin VB.Form frmNotaDeditoClienteCheques
    Begin TabDlg.SSTab tabDatos 
       Height          =   7125
       Left            =   60
-      TabIndex        =   25
+      TabIndex        =   23
       Top             =   15
       Width           =   11160
       _ExtentX        =   19685
@@ -84,8 +84,8 @@ Begin VB.Form frmNotaDeditoClienteCheques
       TabCaption(1)   =   "&Buscar"
       TabPicture(1)   =   "frmNotaDeditoClienteCheques.frx":001C
       Tab(1).ControlEnabled=   0   'False
-      Tab(1).Control(0)=   "GrdModulos"
-      Tab(1).Control(1)=   "frameBuscar"
+      Tab(1).Control(0)=   "frameBuscar"
+      Tab(1).Control(1)=   "GrdModulos"
       Tab(1).ControlCount=   2
       Begin VB.Frame FramePara 
          Caption         =   "Para..."
@@ -100,7 +100,7 @@ Begin VB.Form frmNotaDeditoClienteCheques
          EndProperty
          Height          =   1935
          Left            =   4455
-         TabIndex        =   41
+         TabIndex        =   39
          Top             =   375
          Width           =   6585
          Begin VB.TextBox txtCUIT 
@@ -117,7 +117,7 @@ Begin VB.Form frmNotaDeditoClienteCheques
             EndProperty
             Height          =   285
             Left            =   840
-            TabIndex        =   69
+            TabIndex        =   67
             Top             =   1570
             Width           =   1455
          End
@@ -135,7 +135,7 @@ Begin VB.Form frmNotaDeditoClienteCheques
             EndProperty
             Height          =   285
             Left            =   2325
-            TabIndex        =   68
+            TabIndex        =   66
             Top             =   1570
             Width           =   2895
          End
@@ -153,7 +153,7 @@ Begin VB.Form frmNotaDeditoClienteCheques
             EndProperty
             Height          =   285
             Left            =   5250
-            TabIndex        =   67
+            TabIndex        =   65
             Top             =   1570
             Width           =   1215
          End
@@ -163,7 +163,7 @@ Begin VB.Form frmNotaDeditoClienteCheques
             MaskColor       =   &H000000FF&
             Picture         =   "frmNotaDeditoClienteCheques.frx":0038
             Style           =   1  'Graphical
-            TabIndex        =   66
+            TabIndex        =   64
             ToolTipText     =   "Buscar Cliente"
             Top             =   300
             UseMaskColor    =   -1  'True
@@ -184,7 +184,7 @@ Begin VB.Form frmNotaDeditoClienteCheques
             Height          =   285
             Left            =   840
             MaxLength       =   50
-            TabIndex        =   61
+            TabIndex        =   59
             Top             =   645
             Width           =   4400
          End
@@ -202,7 +202,7 @@ Begin VB.Form frmNotaDeditoClienteCheques
             EndProperty
             Height          =   285
             Left            =   840
-            TabIndex        =   60
+            TabIndex        =   58
             Top             =   1260
             Width           =   4400
          End
@@ -220,7 +220,7 @@ Begin VB.Form frmNotaDeditoClienteCheques
             EndProperty
             Height          =   285
             Left            =   840
-            TabIndex        =   59
+            TabIndex        =   57
             Top             =   952
             Width           =   4400
          End
@@ -255,7 +255,7 @@ Begin VB.Form frmNotaDeditoClienteCheques
             Caption         =   "C.U.I.T.:"
             Height          =   195
             Left            =   180
-            TabIndex        =   71
+            TabIndex        =   69
             Top             =   1575
             Width           =   600
          End
@@ -264,7 +264,7 @@ Begin VB.Form frmNotaDeditoClienteCheques
             Caption         =   "Ing. Brutos"
             Height          =   195
             Left            =   5430
-            TabIndex        =   70
+            TabIndex        =   68
             Top             =   1320
             Width           =   765
          End
@@ -273,7 +273,7 @@ Begin VB.Form frmNotaDeditoClienteCheques
             Caption         =   "Localidad:"
             Height          =   195
             Left            =   45
-            TabIndex        =   64
+            TabIndex        =   62
             Top             =   980
             Width           =   735
          End
@@ -282,7 +282,7 @@ Begin VB.Form frmNotaDeditoClienteCheques
             Caption         =   "Domicilio:"
             Height          =   180
             Left            =   105
-            TabIndex        =   63
+            TabIndex        =   61
             Top             =   670
             Width           =   675
          End
@@ -291,7 +291,7 @@ Begin VB.Form frmNotaDeditoClienteCheques
             Caption         =   "Provincia:"
             Height          =   195
             Left            =   75
-            TabIndex        =   62
+            TabIndex        =   60
             Top             =   1305
             Width           =   705
          End
@@ -305,7 +305,7 @@ Begin VB.Form frmNotaDeditoClienteCheques
             Height          =   180
             Index           =   0
             Left            =   255
-            TabIndex        =   58
+            TabIndex        =   56
             Top             =   360
             Width           =   525
          End
@@ -323,7 +323,7 @@ Begin VB.Form frmNotaDeditoClienteCheques
          EndProperty
          Height          =   1935
          Left            =   105
-         TabIndex        =   27
+         TabIndex        =   25
          Top             =   375
          Width           =   4350
          Begin VB.TextBox txtNroSucursal 
@@ -369,13 +369,13 @@ Begin VB.Form frmNotaDeditoClienteCheques
             Width           =   2400
          End
          Begin MSComCtl2.DTPicker FechaNotaDebito 
-            Height          =   375
+            Height          =   315
             Left            =   1200
-            TabIndex        =   75
+            TabIndex        =   73
             Top             =   1200
             Width           =   1335
             _ExtentX        =   2355
-            _ExtentY        =   661
+            _ExtentY        =   556
             _Version        =   393216
             Format          =   53936129
             CurrentDate     =   43367
@@ -385,7 +385,7 @@ Begin VB.Form frmNotaDeditoClienteCheques
             Caption         =   "Tipo:"
             Height          =   195
             Left            =   765
-            TabIndex        =   44
+            TabIndex        =   42
             Top             =   420
             Width           =   360
          End
@@ -394,7 +394,7 @@ Begin VB.Form frmNotaDeditoClienteCheques
             Caption         =   "Fecha:"
             Height          =   195
             Left            =   630
-            TabIndex        =   42
+            TabIndex        =   40
             Top             =   1250
             Width           =   495
          End
@@ -403,7 +403,7 @@ Begin VB.Form frmNotaDeditoClienteCheques
             Caption         =   "Número:"
             Height          =   195
             Left            =   525
-            TabIndex        =   40
+            TabIndex        =   38
             Top             =   835
             Width           =   600
          End
@@ -412,7 +412,7 @@ Begin VB.Form frmNotaDeditoClienteCheques
             Caption         =   "Estado:"
             Height          =   195
             Left            =   585
-            TabIndex        =   39
+            TabIndex        =   37
             Top             =   1665
             Width           =   540
          End
@@ -431,7 +431,7 @@ Begin VB.Form frmNotaDeditoClienteCheques
             ForeColor       =   &H00FF0000&
             Height          =   195
             Left            =   1185
-            TabIndex        =   38
+            TabIndex        =   36
             Top             =   1680
             Width           =   1755
          End
@@ -449,7 +449,7 @@ Begin VB.Form frmNotaDeditoClienteCheques
          EndProperty
          Height          =   2130
          Left            =   -74610
-         TabIndex        =   30
+         TabIndex        =   28
          Top             =   540
          Width           =   10410
          Begin VB.TextBox txtDesVen 
@@ -466,14 +466,14 @@ Begin VB.Form frmNotaDeditoClienteCheques
             EndProperty
             Height          =   285
             Left            =   4845
-            TabIndex        =   73
+            TabIndex        =   71
             Top             =   775
             Width           =   4620
          End
          Begin VB.TextBox txtVendedor 
             Height          =   300
             Left            =   3360
-            TabIndex        =   72
+            TabIndex        =   70
             Top             =   775
             Width           =   990
          End
@@ -483,7 +483,7 @@ Begin VB.Form frmNotaDeditoClienteCheques
             MaskColor       =   &H000000FF&
             Picture         =   "frmNotaDeditoClienteCheques.frx":0342
             Style           =   1  'Graphical
-            TabIndex        =   65
+            TabIndex        =   63
             ToolTipText     =   "Buscar Vendedor"
             Top             =   775
             UseMaskColor    =   -1  'True
@@ -493,7 +493,7 @@ Begin VB.Form frmNotaDeditoClienteCheques
             Height          =   315
             Left            =   3360
             Style           =   2  'Dropdown List
-            TabIndex        =   22
+            TabIndex        =   20
             Top             =   1605
             Width           =   2400
          End
@@ -511,7 +511,7 @@ Begin VB.Form frmNotaDeditoClienteCheques
             MaskColor       =   &H000000FF&
             Picture         =   "frmNotaDeditoClienteCheques.frx":064C
             Style           =   1  'Graphical
-            TabIndex        =   36
+            TabIndex        =   34
             ToolTipText     =   "Buscar Cliente"
             Top             =   375
             UseMaskColor    =   -1  'True
@@ -531,29 +531,11 @@ Begin VB.Form frmNotaDeditoClienteCheques
             MaskColor       =   &H000000FF&
             Picture         =   "frmNotaDeditoClienteCheques.frx":0956
             Style           =   1  'Graphical
-            TabIndex        =   23
+            TabIndex        =   21
             ToolTipText     =   "Buscar "
             Top             =   225
             UseMaskColor    =   -1  'True
             Width           =   555
-         End
-         Begin VB.PictureBox FechaHasta 
-            Height          =   285
-            Left            =   5865
-            ScaleHeight     =   225
-            ScaleWidth      =   1125
-            TabIndex        =   21
-            Top             =   1175
-            Width           =   1185
-         End
-         Begin VB.PictureBox FechaDesde 
-            Height          =   330
-            Left            =   3360
-            ScaleHeight     =   270
-            ScaleWidth      =   1110
-            TabIndex        =   20
-            Top             =   1175
-            Width           =   1170
          End
          Begin VB.TextBox txtDesCli 
             BackColor       =   &H8000000F&
@@ -570,7 +552,7 @@ Begin VB.Form frmNotaDeditoClienteCheques
             Height          =   300
             Left            =   4845
             MaxLength       =   50
-            TabIndex        =   31
+            TabIndex        =   29
             Tag             =   "Descripción"
             Top             =   375
             Width           =   4620
@@ -599,12 +581,36 @@ Begin VB.Form frmNotaDeditoClienteCheques
             Top             =   495
             Width           =   855
          End
+         Begin MSComCtl2.DTPicker FechaDesde 
+            Height          =   315
+            Left            =   3360
+            TabIndex        =   74
+            Top             =   1200
+            Width           =   1335
+            _ExtentX        =   2355
+            _ExtentY        =   556
+            _Version        =   393216
+            Format          =   53936129
+            CurrentDate     =   43367
+         End
+         Begin MSComCtl2.DTPicker FechaHasta 
+            Height          =   315
+            Left            =   5880
+            TabIndex        =   75
+            Top             =   1200
+            Width           =   1335
+            _ExtentX        =   2355
+            _ExtentY        =   556
+            _Version        =   393216
+            Format          =   53936129
+            CurrentDate     =   43367
+         End
          Begin VB.Label lbltipoFac 
             AutoSize        =   -1  'True
             Caption         =   "Tipo:"
             Height          =   195
             Left            =   2910
-            TabIndex        =   57
+            TabIndex        =   55
             Top             =   1650
             Width           =   360
          End
@@ -614,7 +620,7 @@ Begin VB.Form frmNotaDeditoClienteCheques
             Height          =   195
             Index           =   0
             Left            =   2535
-            TabIndex        =   35
+            TabIndex        =   33
             Top             =   830
             Width           =   735
          End
@@ -623,7 +629,7 @@ Begin VB.Form frmNotaDeditoClienteCheques
             Caption         =   "Fecha Hasta:"
             Height          =   195
             Left            =   4815
-            TabIndex        =   34
+            TabIndex        =   32
             Top             =   1240
             Width           =   960
          End
@@ -632,7 +638,7 @@ Begin VB.Form frmNotaDeditoClienteCheques
             Caption         =   "Fecha Desde:"
             Height          =   195
             Left            =   2265
-            TabIndex        =   33
+            TabIndex        =   31
             Top             =   1240
             Width           =   1005
          End
@@ -646,7 +652,7 @@ Begin VB.Form frmNotaDeditoClienteCheques
             Height          =   195
             Index           =   3
             Left            =   2745
-            TabIndex        =   32
+            TabIndex        =   30
             Top             =   420
             Width           =   525
          End
@@ -654,7 +660,7 @@ Begin VB.Form frmNotaDeditoClienteCheques
       Begin MSFlexGridLib.MSFlexGrid GrdModulos 
          Height          =   4170
          Left            =   -74625
-         TabIndex        =   24
+         TabIndex        =   22
          Top             =   2745
          Width           =   10455
          _ExtentX        =   18441
@@ -671,7 +677,7 @@ Begin VB.Form frmNotaDeditoClienteCheques
       Begin VB.Frame Frame3 
          Height          =   4800
          Left            =   105
-         TabIndex        =   28
+         TabIndex        =   26
          Top             =   2235
          Width           =   10950
          Begin VB.CheckBox chkBonificaEnPesos 
@@ -706,7 +712,7 @@ Begin VB.Form frmNotaDeditoClienteCheques
             EndProperty
             Height          =   315
             Left            =   4905
-            TabIndex        =   55
+            TabIndex        =   53
             Top             =   4065
             Width           =   1155
          End
@@ -724,7 +730,7 @@ Begin VB.Form frmNotaDeditoClienteCheques
             EndProperty
             Height          =   315
             Left            =   6900
-            TabIndex        =   52
+            TabIndex        =   50
             Top             =   4065
             Width           =   1155
          End
@@ -750,7 +756,7 @@ Begin VB.Form frmNotaDeditoClienteCheques
             EndProperty
             Height          =   315
             Left            =   2850
-            TabIndex        =   49
+            TabIndex        =   47
             Top             =   4065
             Width           =   1155
          End
@@ -776,7 +782,7 @@ Begin VB.Form frmNotaDeditoClienteCheques
             EndProperty
             Height          =   315
             Left            =   8970
-            TabIndex        =   46
+            TabIndex        =   44
             Top             =   4065
             Width           =   1350
          End
@@ -794,7 +800,7 @@ Begin VB.Form frmNotaDeditoClienteCheques
             EndProperty
             Height          =   315
             Left            =   8970
-            TabIndex        =   45
+            TabIndex        =   43
             Top             =   3735
             Width           =   1350
          End
@@ -812,7 +818,7 @@ Begin VB.Form frmNotaDeditoClienteCheques
             BorderStyle     =   0  'None
             Height          =   330
             Left            =   945
-            TabIndex        =   29
+            TabIndex        =   27
             Top             =   480
             Visible         =   0   'False
             Width           =   1185
@@ -852,7 +858,7 @@ Begin VB.Form frmNotaDeditoClienteCheques
             Caption         =   "Sub-Total:"
             Height          =   195
             Left            =   4110
-            TabIndex        =   56
+            TabIndex        =   54
             Top             =   4125
             Width           =   735
          End
@@ -861,7 +867,7 @@ Begin VB.Form frmNotaDeditoClienteCheques
             Caption         =   "Importe:"
             Height          =   195
             Left            =   6270
-            TabIndex        =   54
+            TabIndex        =   52
             Top             =   4110
             Width           =   570
          End
@@ -870,7 +876,7 @@ Begin VB.Form frmNotaDeditoClienteCheques
             Caption         =   "% I.V.A.:"
             Height          =   195
             Left            =   6240
-            TabIndex        =   53
+            TabIndex        =   51
             Top             =   3765
             Width           =   600
          End
@@ -879,7 +885,7 @@ Begin VB.Form frmNotaDeditoClienteCheques
             Caption         =   "Importe:"
             Height          =   195
             Left            =   2235
-            TabIndex        =   51
+            TabIndex        =   49
             Top             =   4110
             Width           =   570
          End
@@ -888,7 +894,7 @@ Begin VB.Form frmNotaDeditoClienteCheques
             Caption         =   "Bonificación:"
             Height          =   195
             Left            =   1890
-            TabIndex        =   50
+            TabIndex        =   48
             Top             =   3765
             Width           =   915
          End
@@ -897,7 +903,7 @@ Begin VB.Form frmNotaDeditoClienteCheques
             Caption         =   "Total:"
             Height          =   195
             Left            =   8505
-            TabIndex        =   48
+            TabIndex        =   46
             Top             =   4110
             Width           =   405
          End
@@ -906,7 +912,7 @@ Begin VB.Form frmNotaDeditoClienteCheques
             Caption         =   "Sub-Total:"
             Height          =   195
             Left            =   8175
-            TabIndex        =   47
+            TabIndex        =   45
             Top             =   3765
             Width           =   735
          End
@@ -915,7 +921,7 @@ Begin VB.Form frmNotaDeditoClienteCheques
             Caption         =   "Observaciones:"
             Height          =   195
             Left            =   210
-            TabIndex        =   43
+            TabIndex        =   41
             Top             =   4455
             Width           =   1110
          End
@@ -926,7 +932,7 @@ Begin VB.Form frmNotaDeditoClienteCheques
          Height          =   195
          Index           =   0
          Left            =   -74820
-         TabIndex        =   26
+         TabIndex        =   24
          Top             =   570
          Width           =   1065
       End
@@ -946,7 +952,7 @@ Begin VB.Form frmNotaDeditoClienteCheques
       Height          =   240
       Index           =   1
       Left            =   3960
-      TabIndex        =   74
+      TabIndex        =   72
       Top             =   7320
       Width           =   2925
    End
@@ -965,7 +971,7 @@ Begin VB.Form frmNotaDeditoClienteCheques
       EndProperty
       Height          =   240
       Left            =   225
-      TabIndex        =   37
+      TabIndex        =   35
       Top             =   7260
       Width           =   750
    End
@@ -1057,7 +1063,7 @@ End Sub
 
 Private Sub CmdBuscAprox_Click()
     GrdModulos.Rows = 1
-    lblEstado.Caption = "Buscando..."
+    lblestado.Caption = "Buscando..."
     Screen.MousePointer = vbHourglass
             
     sql = "SELECT ND.*, C.CLI_RAZSOC , TC.TCO_ABREVIA"
@@ -1084,12 +1090,12 @@ Private Sub CmdBuscAprox_Click()
         Loop
         GrdModulos.SetFocus
     Else
-        lblEstado.Caption = ""
+        lblestado.Caption = ""
         Screen.MousePointer = vbNormal
         MsgBox "No se encontraron datos...", vbExclamation, TIT_MSGBOX
     End If
 
-    lblEstado.Caption = ""
+    lblestado.Caption = ""
     Screen.MousePointer = vbNormal
     rec.Close
 End Sub
@@ -1138,7 +1144,7 @@ Private Sub cmdBuscarVen_Click()
     End If
 End Sub
 
-Private Sub cmdGrabar_Click()
+Private Sub CmdGrabar_Click()
     Dim VStockFisico As String
     
     If ValidarNotaBebito = False Then Exit Sub
@@ -1154,7 +1160,7 @@ Private Sub cmdGrabar_Click()
     rec.Open sql, DBConn, adOpenStatic, adLockOptimistic
     
     Screen.MousePointer = vbHourglass
-    lblEstado.Caption = "Guardando..."
+    lblestado.Caption = "Guardando..."
     
     If rec.EOF = True Then
         sql = "INSERT INTO NOTA_DEBITO_CLIENTE"
@@ -1235,12 +1241,12 @@ Private Sub cmdGrabar_Click()
     End If
     rec.Close
     Screen.MousePointer = vbNormal
-    lblEstado.Caption = ""
+    lblestado.Caption = ""
     CmdNuevo_Click
     Exit Sub
     
 HayErrorFactura:
-    lblEstado.Caption = ""
+    lblestado.Caption = ""
     Screen.MousePointer = vbNormal
     If rec.State = 1 Then rec.Close
     DBConn.RollbackTrans
@@ -1293,7 +1299,7 @@ Public Sub ImprimirNotaDebito()
     Dim Renglon As Double
     
     Screen.MousePointer = vbHourglass
-    lblEstado.Caption = "Imprimiendo..."
+    lblestado.Caption = "Imprimiendo..."
     
     For w = 1 To 2 'SE IMPRIME POR DUPLICADO
       '-----IMPRESION DEL ENCABEZADO------------------
@@ -1339,7 +1345,7 @@ Public Sub ImprimirNotaDebito()
         Printer.EndDoc
     Next w
     Screen.MousePointer = vbNormal
-    lblEstado.Caption = ""
+    lblestado.Caption = ""
 End Sub
 
 Public Sub ImprimirEncabezado()
@@ -1406,7 +1412,7 @@ Private Sub CmdNuevo_Click()
    txtSubTotalBoni.Text = ""
    txtImporteIva.Text = ""
    txtObservaciones.Text = ""
-   lblEstado.Caption = ""
+   lblestado.Caption = ""
    cmdGrabar.Enabled = True
    'BUSCO IVA
    BuscoIva
@@ -1423,7 +1429,7 @@ Private Sub CmdNuevo_Click()
    cboNotaDebito.SetFocus
 End Sub
 
-Private Sub CmdSalir_Click()
+Private Sub cmdSalir_Click()
     If MsgBox("Seguro que desea Salir", vbQuestion + vbYesNo, TIT_MSGBOX) = vbYes Then
         Set frmNotaDeditoClienteCheques = Nothing
         Unload Me
@@ -1444,7 +1450,7 @@ Private Sub Form_KeyPress(KeyAscii As Integer)
         KeyAscii = vbKeyReturn Then
         SendKeys "{TAB}"
     End If
-    If KeyAscii = vbKeyEscape Then CmdSalir_Click
+    If KeyAscii = vbKeyEscape Then cmdSalir_Click
 End Sub
 
 Private Sub Form_Load()
@@ -1496,7 +1502,7 @@ Private Sub Form_Load()
     GrdModulos.Cols = 12
     GrdModulos.Rows = 1
     '------------------------------------
-    lblEstado.Caption = ""
+    lblestado.Caption = ""
     'CARGO COMBO CON LOS TIPOS DE NOTA DE DEBITO
     LlenarComboNotaDebito
     'CARGO ESTADO
@@ -1633,7 +1639,7 @@ End Sub
 Private Sub GrdModulos_DblClick()
     If GrdModulos.Rows > 1 Then
         Set Rec1 = New ADODB.Recordset
-        lblEstado.Caption = "Buscando..."
+        lblestado.Caption = "Buscando..."
         Screen.MousePointer = vbHourglass
         'CABEZA NOTA DEBITO
         Call BuscaCodigoProxItemData(CInt(GrdModulos.TextMatrix(GrdModulos.RowSel, 8)), cboNotaDebito)
@@ -1713,7 +1719,7 @@ Private Sub GrdModulos_DblClick()
             txtPorcentajeIva = GrdModulos.TextMatrix(GrdModulos.RowSel, 6)
             txtPorcentajeIva_LostFocus
         End If
-        lblEstado.Caption = ""
+        lblestado.Caption = ""
         Screen.MousePointer = vbNormal
         '--------------
         FrameNotaDebito.Enabled = False
@@ -1752,8 +1758,8 @@ End Sub
 Private Sub LimpiarBusqueda()
     txtCliente.Text = ""
     txtDesCli.Text = ""
-    FechaDesde.Value = ""
-    FechaHasta.Value = ""
+    FechaDesde.Value = Date
+    FechaHasta.Value = Date
     txtVendedor.Text = ""
     txtDesVen.Text = ""
     GrdModulos.Rows = 1
@@ -1816,7 +1822,7 @@ End Function
 Private Sub txtCliRazSoc_Change()
     If txtCliRazSoc.Text = "" Then
         txtCodCliente.Text = ""
-        txtProvincia.Text = ""
+        txtprovincia.Text = ""
         txtCliLocalidad.Text = ""
         txtDomici.Text = ""
         txtCUIT.Text = ""
@@ -1866,7 +1872,7 @@ End Sub
 Private Sub txtCodCliente_Change()
     If txtCodCliente.Text = "" Then
         txtCliRazSoc.Text = ""
-        txtProvincia.Text = ""
+        txtprovincia.Text = ""
         txtCliLocalidad.Text = ""
         txtDomici.Text = ""
         txtCUIT.Text = ""
@@ -1889,7 +1895,7 @@ Private Sub txtCodCliente_LostFocus()
         Rec1.Open BuscoCliente(txtCodCliente), DBConn, adOpenStatic, adLockOptimistic
         If Rec1.EOF = False Then
             txtCliRazSoc.Text = Rec1!CLI_RAZSOC
-            txtProvincia.Text = Rec1!PRO_DESCRI
+            txtprovincia.Text = Rec1!PRO_DESCRI
             txtCliLocalidad.Text = Rec1!LOC_DESCRI
             txtDomici.Text = Rec1!CLI_DOMICI
             txtCUIT.Text = Rec1!CLI_CUIT

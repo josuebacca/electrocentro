@@ -1,3 +1,18 @@
 Línea 120: la clase FechaCtl.Fecha del control mFechaD no era una clase de control cargada.
 Línea 144: la clase FechaCtl.Fecha del control mFechaH no era una clase de control cargada.
 Línea 259: la clase FechaCtl.Fecha del control FechaGasto no era una clase de control cargada.
+Línea 126: el nombre de la propiedad _ExtentX de mFechaD no es válido.
+Línea 127: el nombre de la propiedad _ExtentY de mFechaD no es válido.
+Línea 128: el nombre de la propiedad Separador de mFechaD no es válido.
+Línea 129: el nombre de la propiedad Text de mFechaD no es válido.
+Línea 130: el nombre de la propiedad MensajeErrMin de mFechaD no es válido.
+Línea 150: el nombre de la propiedad _ExtentX de mFechaH no es válido.
+Línea 151: el nombre de la propiedad _ExtentY de mFechaH no es válido.
+Línea 152: el nombre de la propiedad Separador de mFechaH no es válido.
+Línea 153: el nombre de la propiedad Text de mFechaH no es válido.
+Línea 154: el nombre de la propiedad MensajeErrMin de mFechaH no es válido.
+Línea 265: el nombre de la propiedad _ExtentX de FechaGasto no es válido.
+Línea 266: el nombre de la propiedad _ExtentY de FechaGasto no es válido.
+Línea 267: el nombre de la propiedad Separador de FechaGasto no es válido.
+Línea 268: el nombre de la propiedad Text de FechaGasto no es válido.
+Línea 269: el nombre de la propiedad MensajeErrMin de FechaGasto no es válido.

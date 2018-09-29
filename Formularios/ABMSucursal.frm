@@ -1,6 +1,6 @@
 VERSION 5.00
-Object = "{BDC217C8-ED16-11CD-956C-0000C04E4C0A}#1.1#0"; "TABCTL32.OCX"
-Object = "{5E9E78A0-531B-11CF-91F6-C2863C385E30}#1.0#0"; "MSFLXGRD.OCX"
+Object = "{BDC217C8-ED16-11CD-956C-0000C04E4C0A}#1.1#0"; "tabctl32.ocx"
+Object = "{5E9E78A0-531B-11CF-91F6-C2863C385E30}#1.0#0"; "msflxgrd.ocx"
 Begin VB.Form ABMSucursal 
    BorderStyle     =   1  'Fixed Single
    Caption         =   "ABM de Sucursales"
@@ -69,6 +69,7 @@ Begin VB.Form ABMSucursal
       _ExtentY        =   11218
       _Version        =   393216
       Tabs            =   2
+      Tab             =   1
       TabHeight       =   529
       ForeColor       =   -2147483630
       BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
@@ -82,13 +83,13 @@ Begin VB.Form ABMSucursal
       EndProperty
       TabCaption(0)   =   "&Datos"
       TabPicture(0)   =   "ABMSucursal.frx":1850
-      Tab(0).ControlEnabled=   -1  'True
+      Tab(0).ControlEnabled=   0   'False
       Tab(0).Control(0)=   "fraDatos"
       Tab(0).Control(0).Enabled=   0   'False
       Tab(0).ControlCount=   1
       TabCaption(1)   =   "&Buscar"
       TabPicture(1)   =   "ABMSucursal.frx":186C
-      Tab(1).ControlEnabled=   0   'False
+      Tab(1).ControlEnabled=   -1  'True
       Tab(1).Control(0)=   "GrdModulos"
       Tab(1).Control(0).Enabled=   0   'False
       Tab(1).Control(1)=   "Frame1"
@@ -96,7 +97,7 @@ Begin VB.Form ABMSucursal
       Tab(1).ControlCount=   2
       Begin VB.Frame Frame1 
          Height          =   735
-         Left            =   -74865
+         Left            =   135
          TabIndex        =   20
          Top             =   600
          Width           =   6135
@@ -145,7 +146,7 @@ Begin VB.Form ABMSucursal
       End
       Begin MSFlexGridLib.MSFlexGrid GrdModulos 
          Height          =   4695
-         Left            =   -74880
+         Left            =   120
          TabIndex        =   18
          Top             =   1440
          Width           =   6210
@@ -172,7 +173,7 @@ Begin VB.Form ABMSucursal
             Strikethrough   =   0   'False
          EndProperty
          Height          =   5685
-         Left            =   150
+         Left            =   -74850
          TabIndex        =   23
          Top             =   540
          Width           =   6225
@@ -612,7 +613,7 @@ Private Sub CmdBorrar_Click()
         
         lblEstado.Caption = ""
         Screen.MousePointer = vbNormal
-        cmdNuevo_Click
+        CmdNuevo_Click
     End If
     Exit Sub
     
@@ -664,7 +665,7 @@ Private Sub cmdBuscarCliente_Click()
     End If
 End Sub
 
-Private Sub CmdGrabar_Click()
+Private Sub cmdGrabar_Click()
 
     If ValidarCliente = False Then Exit Sub
     
@@ -716,7 +717,7 @@ Private Sub CmdGrabar_Click()
     End If
     Screen.MousePointer = vbNormal
     DBConn.CommitTrans
-    cmdNuevo_Click
+    CmdNuevo_Click
     Exit Sub
     
 HayError:
@@ -786,7 +787,7 @@ Private Sub cmdNuevaProvincia_Click()
     CboPais_LostFocus
 End Sub
 
-Private Sub cmdNuevo_Click()
+Private Sub CmdNuevo_Click()
     tabDatos.Tab = 0
     TxtCodigo.Text = ""
     txtCodigoCli.Text = ""
@@ -889,7 +890,7 @@ Private Sub LlenarComboPais()
     rec.Close
 End Sub
 
-Private Sub GrdModulos_dblClick()
+Private Sub GrdModulos_DblClick()
  If GrdModulos.row > 0 Then
         TxtCodigo = GrdModulos.TextMatrix(GrdModulos.RowSel, 0)
         txtCodigoCli.Text = GrdModulos.TextMatrix(GrdModulos.RowSel, 2)
@@ -901,7 +902,7 @@ Private Sub GrdModulos_dblClick()
 End Sub
 
 Private Sub GrdModulos_KeyDown(KeyCode As Integer, Shift As Integer)
-    If KeyCode = vbKeyReturn Then GrdModulos_dblClick
+    If KeyCode = vbKeyReturn Then GrdModulos_DblClick
 End Sub
 
 Private Sub tabDatos_Click(PreviousTab As Integer)

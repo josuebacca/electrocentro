@@ -2,6 +2,7 @@ VERSION 5.00
 Object = "{BDC217C8-ED16-11CD-956C-0000C04E4C0A}#1.1#0"; "tabctl32.ocx"
 Object = "{5E9E78A0-531B-11CF-91F6-C2863C385E30}#1.0#0"; "msflxgrd.ocx"
 Object = "{86CF1D34-0C5F-11D2-A9FC-0000F8754DA1}#2.0#0"; "mscomct2.ocx"
+Object = "{00025600-0000-0000-C000-000000000046}#5.2#0"; "Crystl32.OCX"
 Begin VB.Form frmPagoProveedores 
    BorderStyle     =   1  'Fixed Single
    Caption         =   "Recibo de Proveedores"
@@ -16,11 +17,19 @@ Begin VB.Form frmPagoProveedores
    ScaleHeight     =   6825
    ScaleWidth      =   11865
    StartUpPosition =   2  'CenterScreen
+   Begin Crystal.CrystalReport Rep 
+      Left            =   7320
+      Top             =   6360
+      _ExtentX        =   741
+      _ExtentY        =   741
+      _Version        =   348160
+      PrintFileLinesPerPage=   60
+   End
    Begin VB.CommandButton cmdImprimir 
       Caption         =   "&Imprimir"
       Height          =   450
       Left            =   9135
-      TabIndex        =   129
+      TabIndex        =   125
       Top             =   6345
       Width           =   870
    End
@@ -28,7 +37,7 @@ Begin VB.Form frmPagoProveedores
       Caption         =   "&Nuevo"
       Height          =   450
       Left            =   10020
-      TabIndex        =   48
+      TabIndex        =   47
       Top             =   6345
       Width           =   870
    End
@@ -36,7 +45,7 @@ Begin VB.Form frmPagoProveedores
       Caption         =   "&Aceptar"
       Height          =   450
       Left            =   8250
-      TabIndex        =   47
+      TabIndex        =   46
       Top             =   6345
       Width           =   870
    End
@@ -44,14 +53,14 @@ Begin VB.Form frmPagoProveedores
       Caption         =   "&Salir"
       Height          =   450
       Left            =   10890
-      TabIndex        =   49
+      TabIndex        =   48
       Top             =   6345
       Width           =   870
    End
    Begin TabDlg.SSTab tabDatos 
       Height          =   6255
       Left            =   60
-      TabIndex        =   60
+      TabIndex        =   57
       Top             =   45
       Width           =   11730
       _ExtentX        =   20690
@@ -101,7 +110,7 @@ Begin VB.Form frmPagoProveedores
          EndProperty
          Height          =   1815
          Left            =   2925
-         TabIndex        =   115
+         TabIndex        =   111
          Top             =   375
          Width           =   8655
          Begin VB.CommandButton cmdBuscarProveedor1 
@@ -110,7 +119,7 @@ Begin VB.Form frmPagoProveedores
             MaskColor       =   &H000000FF&
             Picture         =   "frmPagoProveedores.frx":0038
             Style           =   1  'Graphical
-            TabIndex        =   130
+            TabIndex        =   126
             ToolTipText     =   "Buscar Proveedor"
             Top             =   660
             UseMaskColor    =   -1  'True
@@ -164,7 +173,7 @@ Begin VB.Form frmPagoProveedores
             EndProperty
             Height          =   285
             Left            =   1275
-            TabIndex        =   117
+            TabIndex        =   113
             Top             =   990
             Width           =   4860
          End
@@ -183,7 +192,7 @@ Begin VB.Form frmPagoProveedores
             Height          =   285
             Left            =   1275
             MaxLength       =   50
-            TabIndex        =   116
+            TabIndex        =   112
             Top             =   1305
             Width           =   4860
          End
@@ -192,7 +201,7 @@ Begin VB.Form frmPagoProveedores
             Caption         =   "Tipo Prov.:"
             Height          =   195
             Left            =   405
-            TabIndex        =   121
+            TabIndex        =   117
             Top             =   315
             Width           =   780
          End
@@ -206,7 +215,7 @@ Begin VB.Form frmPagoProveedores
             Height          =   195
             Index           =   1
             Left            =   645
-            TabIndex        =   120
+            TabIndex        =   116
             Top             =   660
             Width           =   540
          End
@@ -215,7 +224,7 @@ Begin VB.Form frmPagoProveedores
             Caption         =   "Loc.:"
             Height          =   180
             Left            =   825
-            TabIndex        =   119
+            TabIndex        =   115
             Top             =   1035
             Width           =   360
          End
@@ -224,7 +233,7 @@ Begin VB.Form frmPagoProveedores
             Caption         =   "Dom.:"
             Height          =   195
             Left            =   765
-            TabIndex        =   118
+            TabIndex        =   114
             Top             =   1335
             Width           =   420
          End
@@ -232,7 +241,7 @@ Begin VB.Form frmPagoProveedores
       Begin TabDlg.SSTab tabComprobantes 
          Height          =   3975
          Left            =   120
-         TabIndex        =   75
+         TabIndex        =   72
          Top             =   2295
          Width           =   5700
          _ExtentX        =   10054
@@ -265,7 +274,7 @@ Begin VB.Form frmPagoProveedores
             EndProperty
             Height          =   3435
             Left            =   -74940
-            TabIndex        =   102
+            TabIndex        =   98
             Top             =   480
             Width           =   5535
             Begin VB.CommandButton cmdAceptarComprobantes 
@@ -341,7 +350,7 @@ Begin VB.Form frmPagoProveedores
                Caption         =   "Importe a pagar:"
                Height          =   195
                Left            =   195
-               TabIndex        =   104
+               TabIndex        =   100
                Top             =   3045
                Width           =   1155
             End
@@ -350,7 +359,7 @@ Begin VB.Form frmPagoProveedores
                Caption         =   "Saldo:"
                Height          =   195
                Left            =   900
-               TabIndex        =   103
+               TabIndex        =   99
                Top             =   2670
                Width           =   450
             End
@@ -368,7 +377,7 @@ Begin VB.Form frmPagoProveedores
             EndProperty
             Height          =   3405
             Left            =   60
-            TabIndex        =   98
+            TabIndex        =   94
             Top             =   480
             Width           =   5565
             Begin VB.CommandButton cmdAceptarFacturas 
@@ -410,14 +419,14 @@ Begin VB.Form frmPagoProveedores
                EndProperty
                Height          =   315
                Left            =   1050
-               TabIndex        =   99
+               TabIndex        =   95
                Top             =   2880
                Width           =   1170
             End
             Begin MSFlexGridLib.MSFlexGrid GrillaAplicar1 
                Height          =   1860
                Left            =   75
-               TabIndex        =   100
+               TabIndex        =   96
                Top             =   915
                Width           =   5430
                _ExtentX        =   9578
@@ -436,7 +445,7 @@ Begin VB.Form frmPagoProveedores
                Caption         =   "Total:"
                Height          =   195
                Left            =   570
-               TabIndex        =   105
+               TabIndex        =   101
                Top             =   2925
                Width           =   405
             End
@@ -445,7 +454,7 @@ Begin VB.Form frmPagoProveedores
                Caption         =   "Total Valores Recibidos:"
                Height          =   195
                Left            =   360
-               TabIndex        =   101
+               TabIndex        =   97
                Top             =   3420
                Width           =   1725
             End
@@ -454,7 +463,7 @@ Begin VB.Form frmPagoProveedores
       Begin TabDlg.SSTab tabValores 
          Height          =   3975
          Left            =   5865
-         TabIndex        =   50
+         TabIndex        =   49
          Top             =   2295
          Width           =   5700
          _ExtentX        =   10054
@@ -462,6 +471,7 @@ Begin VB.Form frmPagoProveedores
          _Version        =   393216
          Style           =   1
          Tabs            =   5
+         Tab             =   1
          TabsPerRow      =   5
          TabHeight       =   520
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
@@ -475,14 +485,14 @@ Begin VB.Form frmPagoProveedores
          EndProperty
          TabCaption(0)   =   "&Valores"
          TabPicture(0)   =   "frmPagoProveedores.frx":037A
-         Tab(0).ControlEnabled=   -1  'True
+         Tab(0).ControlEnabled=   0   'False
          Tab(0).Control(0)=   "Frame2"
-         Tab(0).Control(0).Enabled=   0   'False
          Tab(0).ControlCount=   1
          TabCaption(1)   =   "&Cheques"
          TabPicture(1)   =   "frmPagoProveedores.frx":0396
-         Tab(1).ControlEnabled=   0   'False
+         Tab(1).ControlEnabled=   -1  'True
          Tab(1).Control(0)=   "Frame3"
+         Tab(1).Control(0).Enabled=   0   'False
          Tab(1).ControlCount=   1
          TabCaption(2)   =   "&Moneda"
          TabPicture(2)   =   "frmPagoProveedores.frx":03B2
@@ -512,14 +522,14 @@ Begin VB.Form frmPagoProveedores
             EndProperty
             Height          =   3435
             Left            =   -74940
-            TabIndex        =   124
+            TabIndex        =   120
             Top             =   480
             Width           =   5535
             Begin VB.CommandButton cmaAceptarACta 
                Caption         =   "A&ceptar"
                Height          =   360
                Left            =   4500
-               TabIndex        =   46
+               TabIndex        =   45
                Top             =   2970
                Width           =   900
             End
@@ -536,7 +546,7 @@ Begin VB.Form frmPagoProveedores
                EndProperty
                Height          =   315
                Left            =   1410
-               TabIndex        =   44
+               TabIndex        =   43
                Top             =   2985
                Width           =   1185
             End
@@ -554,7 +564,7 @@ Begin VB.Form frmPagoProveedores
                EndProperty
                Height          =   315
                Left            =   1410
-               TabIndex        =   43
+               TabIndex        =   42
                Top             =   2610
                Width           =   1185
             End
@@ -562,14 +572,14 @@ Begin VB.Form frmPagoProveedores
                Caption         =   "A&gregar"
                Height          =   360
                Left            =   3585
-               TabIndex        =   45
+               TabIndex        =   44
                Top             =   2970
                Width           =   900
             End
             Begin MSFlexGridLib.MSFlexGrid GrillaAFavor 
                Height          =   2205
                Left            =   90
-               TabIndex        =   42
+               TabIndex        =   41
                Top             =   285
                Width           =   5310
                _ExtentX        =   9366
@@ -588,7 +598,7 @@ Begin VB.Form frmPagoProveedores
                Caption         =   "Importe:"
                Height          =   195
                Left            =   795
-               TabIndex        =   126
+               TabIndex        =   122
                Top             =   3030
                Width           =   570
             End
@@ -597,7 +607,7 @@ Begin VB.Form frmPagoProveedores
                Caption         =   "Saldo:"
                Height          =   195
                Left            =   915
-               TabIndex        =   125
+               TabIndex        =   121
                Top             =   2655
                Width           =   450
             End
@@ -605,14 +615,14 @@ Begin VB.Form frmPagoProveedores
          Begin VB.Frame Frame7 
             Height          =   3405
             Left            =   -74940
-            TabIndex        =   107
+            TabIndex        =   103
             Top             =   480
             Width           =   5535
             Begin VB.CommandButton cmdCancelarComprobante 
                Caption         =   "Cancelar"
                Height          =   360
                Left            =   1305
-               TabIndex        =   41
+               TabIndex        =   40
                Top             =   2970
                Width           =   960
             End
@@ -620,7 +630,7 @@ Begin VB.Form frmPagoProveedores
                Caption         =   "Aceptar"
                Height          =   360
                Left            =   330
-               TabIndex        =   40
+               TabIndex        =   39
                Top             =   2970
                Width           =   960
             End
@@ -628,7 +638,7 @@ Begin VB.Form frmPagoProveedores
                Height          =   315
                Left            =   3165
                MaxLength       =   8
-               TabIndex        =   38
+               TabIndex        =   37
                Top             =   990
                Width           =   1140
             End
@@ -645,7 +655,7 @@ Begin VB.Form frmPagoProveedores
                Height          =   315
                Left            =   1335
                MaxLength       =   8
-               TabIndex        =   37
+               TabIndex        =   36
                Top             =   990
                Width           =   1140
             End
@@ -661,7 +671,7 @@ Begin VB.Form frmPagoProveedores
                Caption         =   "Agregar"
                Height          =   345
                Left            =   4485
-               TabIndex        =   39
+               TabIndex        =   38
                Top             =   990
                Width           =   720
             End
@@ -680,23 +690,14 @@ Begin VB.Form frmPagoProveedores
                EndProperty
                Height          =   315
                Left            =   3975
-               TabIndex        =   108
+               TabIndex        =   104
                Top             =   2940
                Width           =   1035
-            End
-            Begin VB.PictureBox fechaComprobantes 
-               Height          =   360
-               Left            =   1335
-               ScaleHeight     =   300
-               ScaleWidth      =   1095
-               TabIndex        =   36
-               Top             =   660
-               Width           =   1155
             End
             Begin MSFlexGridLib.MSFlexGrid GrillaComp 
                Height          =   1455
                Left            =   315
-               TabIndex        =   109
+               TabIndex        =   105
                Top             =   1410
                Width           =   4950
                _ExtentX        =   8731
@@ -710,12 +711,24 @@ Begin VB.Form frmPagoProveedores
                HighLight       =   2
                SelectionMode   =   1
             End
+            Begin MSComCtl2.DTPicker fechaComprobantes 
+               Height          =   315
+               Left            =   1320
+               TabIndex        =   147
+               Top             =   600
+               Width           =   1335
+               _ExtentX        =   2355
+               _ExtentY        =   556
+               _Version        =   393216
+               Format          =   53673985
+               CurrentDate     =   43367
+            End
             Begin VB.Label Label21 
                AutoSize        =   -1  'True
                Caption         =   "Importe:"
                Height          =   195
                Left            =   2550
-               TabIndex        =   114
+               TabIndex        =   110
                Top             =   1050
                Width           =   570
             End
@@ -724,7 +737,7 @@ Begin VB.Form frmPagoProveedores
                Caption         =   "Comprobante:"
                Height          =   195
                Left            =   300
-               TabIndex        =   113
+               TabIndex        =   109
                Top             =   1050
                Width           =   990
             End
@@ -733,7 +746,7 @@ Begin VB.Form frmPagoProveedores
                Caption         =   "Tipo:"
                Height          =   195
                Left            =   930
-               TabIndex        =   112
+               TabIndex        =   108
                Top             =   330
                Width           =   360
             End
@@ -743,7 +756,7 @@ Begin VB.Form frmPagoProveedores
                Height          =   195
                Index           =   3
                Left            =   795
-               TabIndex        =   111
+               TabIndex        =   107
                Top             =   705
                Width           =   495
             End
@@ -752,7 +765,7 @@ Begin VB.Form frmPagoProveedores
                Caption         =   "Total:"
                Height          =   195
                Left            =   3525
-               TabIndex        =   110
+               TabIndex        =   106
                Top             =   3000
                Width           =   405
             End
@@ -760,7 +773,7 @@ Begin VB.Form frmPagoProveedores
          Begin VB.Frame Frame4 
             Height          =   3390
             Left            =   -74940
-            TabIndex        =   92
+            TabIndex        =   88
             Top             =   480
             Width           =   5535
             Begin VB.CommandButton cmdCancelarMoneda 
@@ -794,7 +807,7 @@ Begin VB.Form frmPagoProveedores
                EndProperty
                Height          =   315
                Left            =   3030
-               TabIndex        =   96
+               TabIndex        =   92
                Top             =   2505
                Width           =   1035
             End
@@ -824,7 +837,7 @@ Begin VB.Form frmPagoProveedores
             Begin MSFlexGridLib.MSFlexGrid GrillaEfectivo 
                Height          =   1095
                Left            =   1095
-               TabIndex        =   93
+               TabIndex        =   89
                Top             =   1350
                Width           =   3285
                _ExtentX        =   5794
@@ -843,7 +856,7 @@ Begin VB.Form frmPagoProveedores
                Caption         =   "Total:"
                Height          =   195
                Left            =   2580
-               TabIndex        =   97
+               TabIndex        =   93
                Top             =   2565
                Width           =   405
             End
@@ -852,7 +865,7 @@ Begin VB.Form frmPagoProveedores
                Caption         =   "Moneda:"
                Height          =   195
                Left            =   480
-               TabIndex        =   95
+               TabIndex        =   91
                Top             =   525
                Width           =   630
             End
@@ -862,7 +875,7 @@ Begin VB.Form frmPagoProveedores
                Height          =   195
                Index           =   2
                Left            =   540
-               TabIndex        =   94
+               TabIndex        =   90
                Top             =   975
                Width           =   570
             End
@@ -878,8 +891,8 @@ Begin VB.Form frmPagoProveedores
                Strikethrough   =   0   'False
             EndProperty
             Height          =   3435
-            Left            =   -74940
-            TabIndex        =   76
+            Left            =   60
+            TabIndex        =   73
             Top             =   465
             Width           =   5535
             Begin VB.Frame frameBanco 
@@ -895,7 +908,7 @@ Begin VB.Form frmPagoProveedores
                EndProperty
                Height          =   1095
                Left            =   120
-               TabIndex        =   82
+               TabIndex        =   78
                Top             =   720
                Width           =   4635
                Begin VB.TextBox TxtSUCURSAL 
@@ -944,7 +957,7 @@ Begin VB.Form frmPagoProveedores
                   EndProperty
                   Height          =   315
                   Left            =   60
-                  TabIndex        =   85
+                  TabIndex        =   81
                   Top             =   615
                   Width           =   4500
                End
@@ -952,7 +965,7 @@ Begin VB.Form frmPagoProveedores
                   BackColor       =   &H80000018&
                   Height          =   300
                   Left            =   2745
-                  TabIndex        =   84
+                  TabIndex        =   80
                   Top             =   240
                   Visible         =   0   'False
                   Width           =   420
@@ -972,7 +985,7 @@ Begin VB.Form frmPagoProveedores
                   Left            =   4170
                   Picture         =   "frmPagoProveedores.frx":0710
                   Style           =   1  'Graphical
-                  TabIndex        =   83
+                  TabIndex        =   79
                   Top             =   225
                   Width           =   375
                End
@@ -986,7 +999,7 @@ Begin VB.Form frmPagoProveedores
                   Height          =   195
                   Index           =   11
                   Left            =   1035
-                  TabIndex        =   89
+                  TabIndex        =   85
                   Top             =   270
                   Width           =   315
                End
@@ -1000,7 +1013,7 @@ Begin VB.Form frmPagoProveedores
                   Height          =   195
                   Index           =   10
                   Left            =   150
-                  TabIndex        =   88
+                  TabIndex        =   84
                   Top             =   270
                   Width           =   330
                End
@@ -1014,7 +1027,7 @@ Begin VB.Form frmPagoProveedores
                   Height          =   195
                   Index           =   5
                   Left            =   1935
-                  TabIndex        =   87
+                  TabIndex        =   83
                   Top             =   270
                   Width           =   330
                End
@@ -1028,7 +1041,7 @@ Begin VB.Form frmPagoProveedores
                   Height          =   195
                   Index           =   0
                   Left            =   2790
-                  TabIndex        =   86
+                  TabIndex        =   82
                   Top             =   285
                   Width           =   540
                End
@@ -1089,7 +1102,7 @@ Begin VB.Form frmPagoProveedores
                MaskColor       =   &H000000FF&
                Picture         =   "frmPagoProveedores.frx":085A
                Style           =   1  'Graphical
-               TabIndex        =   131
+               TabIndex        =   127
                ToolTipText     =   "Buscar Cheques en Cartera"
                Top             =   330
                UseMaskColor    =   -1  'True
@@ -1125,7 +1138,7 @@ Begin VB.Form frmPagoProveedores
                MaskColor       =   &H000000FF&
                Picture         =   "frmPagoProveedores.frx":0B64
                Style           =   1  'Graphical
-               TabIndex        =   81
+               TabIndex        =   77
                ToolTipText     =   "Cargar Cheques"
                Top             =   330
                UseMaskColor    =   -1  'True
@@ -1154,32 +1167,22 @@ Begin VB.Form frmPagoProveedores
                EndProperty
                Height          =   315
                Left            =   4305
-               TabIndex        =   80
+               TabIndex        =   76
                Top             =   3045
                Width           =   1035
             End
             Begin VB.TextBox TxtCheImport 
                Height          =   330
                Left            =   3300
-               TabIndex        =   78
+               TabIndex        =   74
                Top             =   315
                Visible         =   0   'False
                Width           =   900
             End
-            Begin VB.PictureBox TxtCheFecVto 
-               Height          =   285
-               Left            =   4050
-               ScaleHeight     =   225
-               ScaleWidth      =   1185
-               TabIndex        =   77
-               Top             =   330
-               Visible         =   0   'False
-               Width           =   1245
-            End
             Begin MSFlexGridLib.MSFlexGrid GrillaCheques 
                Height          =   1170
                Left            =   75
-               TabIndex        =   79
+               TabIndex        =   75
                Top             =   1815
                Width           =   5385
                _ExtentX        =   9499
@@ -1193,13 +1196,25 @@ Begin VB.Form frmPagoProveedores
                HighLight       =   2
                SelectionMode   =   1
             End
+            Begin MSComCtl2.DTPicker TxtCheFecVto 
+               Height          =   315
+               Left            =   4200
+               TabIndex        =   148
+               Top             =   323
+               Width           =   1335
+               _ExtentX        =   2355
+               _ExtentY        =   556
+               _Version        =   393216
+               Format          =   53673985
+               CurrentDate     =   43367
+            End
             Begin VB.Label Label2 
                AutoSize        =   -1  'True
                Caption         =   "Banco:"
                Height          =   195
                Index           =   1
                Left            =   510
-               TabIndex        =   133
+               TabIndex        =   129
                Top             =   870
                Width           =   510
             End
@@ -1209,7 +1224,7 @@ Begin VB.Form frmPagoProveedores
                Height          =   195
                Index           =   4
                Left            =   165
-               TabIndex        =   132
+               TabIndex        =   128
                Top             =   1215
                Width           =   855
             End
@@ -1219,7 +1234,7 @@ Begin VB.Form frmPagoProveedores
                Height          =   195
                Index           =   7
                Left            =   120
-               TabIndex        =   91
+               TabIndex        =   87
                Top             =   375
                Width           =   900
             End
@@ -1228,7 +1243,7 @@ Begin VB.Form frmPagoProveedores
                Caption         =   "Total:"
                Height          =   195
                Left            =   3840
-               TabIndex        =   90
+               TabIndex        =   86
                Top             =   3105
                Width           =   405
             End
@@ -1245,8 +1260,8 @@ Begin VB.Form frmPagoProveedores
                Strikethrough   =   0   'False
             EndProperty
             Height          =   3405
-            Left            =   60
-            TabIndex        =   71
+            Left            =   -74940
+            TabIndex        =   68
             Top             =   480
             Width           =   5565
             Begin VB.CommandButton cmdAgregarCHE 
@@ -1312,14 +1327,14 @@ Begin VB.Form frmPagoProveedores
                EndProperty
                Height          =   315
                Left            =   840
-               TabIndex        =   72
+               TabIndex        =   69
                Top             =   2895
                Width           =   1170
             End
             Begin MSFlexGridLib.MSFlexGrid grillaValores 
                Height          =   1860
                Left            =   75
-               TabIndex        =   73
+               TabIndex        =   70
                Top             =   915
                Width           =   5415
                _ExtentX        =   9551
@@ -1338,7 +1353,7 @@ Begin VB.Form frmPagoProveedores
                Caption         =   "Total:"
                Height          =   195
                Left            =   360
-               TabIndex        =   106
+               TabIndex        =   102
                Top             =   2940
                Width           =   405
             End
@@ -1347,7 +1362,7 @@ Begin VB.Form frmPagoProveedores
                Caption         =   "Total Valores Recibidos:"
                Height          =   195
                Left            =   360
-               TabIndex        =   74
+               TabIndex        =   71
                Top             =   3420
                Width           =   1725
             End
@@ -1366,7 +1381,7 @@ Begin VB.Form frmPagoProveedores
          EndProperty
          Height          =   1815
          Left            =   105
-         TabIndex        =   64
+         TabIndex        =   61
          Top             =   375
          Width           =   2805
          Begin VB.ComboBox cboOrdPag 
@@ -1374,7 +1389,7 @@ Begin VB.Form frmPagoProveedores
             Height          =   315
             Left            =   840
             Style           =   2  'Dropdown List
-            TabIndex        =   127
+            TabIndex        =   123
             Top             =   300
             Width           =   1680
          End
@@ -1397,15 +1412,15 @@ Begin VB.Form frmPagoProveedores
             Width           =   1140
          End
          Begin MSComCtl2.DTPicker FechaOrdenPago 
-            Height          =   375
+            Height          =   315
             Left            =   840
-            TabIndex        =   149
+            TabIndex        =   144
             Top             =   1080
             Width           =   1335
             _ExtentX        =   2355
-            _ExtentY        =   661
+            _ExtentY        =   556
             _Version        =   393216
-            Format          =   53346305
+            Format          =   53673985
             CurrentDate     =   43367
          End
          Begin VB.Label Label8 
@@ -1413,7 +1428,7 @@ Begin VB.Form frmPagoProveedores
             Caption         =   "Tipo:"
             Height          =   195
             Left            =   420
-            TabIndex        =   128
+            TabIndex        =   124
             Top             =   360
             Width           =   360
          End
@@ -1432,7 +1447,7 @@ Begin VB.Form frmPagoProveedores
             ForeColor       =   &H00FF0000&
             Height          =   195
             Left            =   840
-            TabIndex        =   68
+            TabIndex        =   65
             Top             =   1530
             Width           =   1470
          End
@@ -1441,7 +1456,7 @@ Begin VB.Form frmPagoProveedores
             Caption         =   "Estado:"
             Height          =   195
             Left            =   240
-            TabIndex        =   67
+            TabIndex        =   64
             Top             =   1515
             Width           =   540
          End
@@ -1450,7 +1465,7 @@ Begin VB.Form frmPagoProveedores
             Caption         =   "Número:"
             Height          =   195
             Left            =   180
-            TabIndex        =   66
+            TabIndex        =   63
             Top             =   705
             Width           =   600
          End
@@ -1459,7 +1474,7 @@ Begin VB.Form frmPagoProveedores
             Caption         =   "Fecha:"
             Height          =   195
             Left            =   285
-            TabIndex        =   65
+            TabIndex        =   62
             Top             =   1065
             Width           =   495
          End
@@ -1477,14 +1492,14 @@ Begin VB.Form frmPagoProveedores
          EndProperty
          Height          =   2340
          Left            =   -74835
-         TabIndex        =   61
+         TabIndex        =   58
          Top             =   420
          Width           =   11355
          Begin VB.TextBox txtImpChe2 
             Enabled         =   0   'False
             Height          =   315
             Left            =   4080
-            TabIndex        =   145
+            TabIndex        =   141
             Top             =   1560
             Width           =   1095
          End
@@ -1492,7 +1507,7 @@ Begin VB.Form frmPagoProveedores
             Enabled         =   0   'False
             Height          =   315
             Left            =   4080
-            TabIndex        =   144
+            TabIndex        =   140
             Top             =   1200
             Width           =   1095
          End
@@ -1500,7 +1515,7 @@ Begin VB.Form frmPagoProveedores
             BackColor       =   &H80000018&
             Height          =   300
             Left            =   9960
-            TabIndex        =   143
+            TabIndex        =   139
             Top             =   1200
             Visible         =   0   'False
             Width           =   420
@@ -1509,7 +1524,7 @@ Begin VB.Form frmPagoProveedores
             BackColor       =   &H8000000F&
             Height          =   330
             Left            =   5640
-            TabIndex        =   142
+            TabIndex        =   138
             Top             =   1200
             Width           =   4860
          End
@@ -1517,7 +1532,7 @@ Begin VB.Form frmPagoProveedores
             Height          =   315
             Left            =   2160
             MaxLength       =   10
-            TabIndex        =   141
+            TabIndex        =   137
             Top             =   1215
             Width           =   1380
          End
@@ -1528,7 +1543,7 @@ Begin VB.Form frmPagoProveedores
             MaskColor       =   &H000000FF&
             Picture         =   "frmPagoProveedores.frx":0EEE
             Style           =   1  'Graphical
-            TabIndex        =   140
+            TabIndex        =   136
             ToolTipText     =   "Buscar Cheques"
             Top             =   1215
             UseMaskColor    =   -1  'True
@@ -1538,7 +1553,7 @@ Begin VB.Form frmPagoProveedores
             BackColor       =   &H80000018&
             Height          =   300
             Left            =   9960
-            TabIndex        =   139
+            TabIndex        =   135
             Top             =   1560
             Visible         =   0   'False
             Width           =   420
@@ -1547,7 +1562,7 @@ Begin VB.Form frmPagoProveedores
             BackColor       =   &H8000000F&
             Height          =   330
             Left            =   5640
-            TabIndex        =   138
+            TabIndex        =   134
             Top             =   1560
             Width           =   4860
          End
@@ -1556,7 +1571,7 @@ Begin VB.Form frmPagoProveedores
             Height          =   315
             Left            =   2160
             MaxLength       =   10
-            TabIndex        =   137
+            TabIndex        =   133
             Top             =   1575
             Width           =   1380
          End
@@ -1567,7 +1582,7 @@ Begin VB.Form frmPagoProveedores
             MaskColor       =   &H000000FF&
             Picture         =   "frmPagoProveedores.frx":11F8
             Style           =   1  'Graphical
-            TabIndex        =   136
+            TabIndex        =   132
             ToolTipText     =   "Buscar Cheques"
             Top             =   1575
             UseMaskColor    =   -1  'True
@@ -1577,7 +1592,7 @@ Begin VB.Form frmPagoProveedores
             Caption         =   "Cheque Terceros"
             Height          =   195
             Left            =   390
-            TabIndex        =   135
+            TabIndex        =   131
             Top             =   1581
             Width           =   1575
          End
@@ -1585,7 +1600,7 @@ Begin VB.Form frmPagoProveedores
             Caption         =   "Cheque Propio"
             Height          =   195
             Left            =   390
-            TabIndex        =   134
+            TabIndex        =   130
             Top             =   1229
             Width           =   1455
          End
@@ -1595,7 +1610,7 @@ Begin VB.Form frmPagoProveedores
             MaskColor       =   &H000000FF&
             Picture         =   "frmPagoProveedores.frx":1502
             Style           =   1  'Graphical
-            TabIndex        =   123
+            TabIndex        =   119
             ToolTipText     =   "Buscar Proveedor"
             Top             =   780
             UseMaskColor    =   -1  'True
@@ -1605,7 +1620,7 @@ Begin VB.Form frmPagoProveedores
             Height          =   300
             Left            =   2160
             MaxLength       =   40
-            TabIndex        =   55
+            TabIndex        =   54
             Top             =   780
             Width           =   975
          End
@@ -1624,7 +1639,7 @@ Begin VB.Form frmPagoProveedores
             Height          =   300
             Left            =   3600
             MaxLength       =   50
-            TabIndex        =   122
+            TabIndex        =   118
             Tag             =   "Descripción"
             Top             =   780
             Width           =   6360
@@ -1633,7 +1648,7 @@ Begin VB.Form frmPagoProveedores
             Caption         =   "Proveedor"
             Height          =   195
             Left            =   390
-            TabIndex        =   52
+            TabIndex        =   51
             Top             =   877
             Width           =   1125
          End
@@ -1641,7 +1656,7 @@ Begin VB.Form frmPagoProveedores
             Caption         =   "Tipo Prov"
             Height          =   195
             Left            =   390
-            TabIndex        =   51
+            TabIndex        =   50
             Top             =   525
             Width           =   1050
          End
@@ -1649,7 +1664,7 @@ Begin VB.Form frmPagoProveedores
             Height          =   315
             Left            =   2160
             Style           =   2  'Dropdown List
-            TabIndex        =   54
+            TabIndex        =   53
             Top             =   405
             Width           =   3900
          End
@@ -1657,7 +1672,7 @@ Begin VB.Form frmPagoProveedores
             Caption         =   "Fecha"
             Height          =   195
             Left            =   390
-            TabIndex        =   53
+            TabIndex        =   52
             Top             =   1935
             Width           =   810
          End
@@ -1667,36 +1682,42 @@ Begin VB.Form frmPagoProveedores
             MaskColor       =   &H000000FF&
             Picture         =   "frmPagoProveedores.frx":180C
             Style           =   1  'Graphical
-            TabIndex        =   58
+            TabIndex        =   55
             ToolTipText     =   "Buscar "
             Top             =   600
             UseMaskColor    =   -1  'True
             Width           =   555
          End
-         Begin VB.PictureBox FechaHasta 
-            Height          =   285
-            Left            =   5490
-            ScaleHeight     =   225
-            ScaleWidth      =   1125
-            TabIndex        =   57
-            Top             =   1980
-            Width           =   1185
+         Begin MSComCtl2.DTPicker FechaDesde 
+            Height          =   315
+            Left            =   2760
+            TabIndex        =   145
+            Top             =   1920
+            Width           =   1335
+            _ExtentX        =   2355
+            _ExtentY        =   556
+            _Version        =   393216
+            Format          =   53673985
+            CurrentDate     =   43367
          End
-         Begin VB.PictureBox FechaDesde 
-            Height          =   330
-            Left            =   2880
-            ScaleHeight     =   270
-            ScaleWidth      =   1110
-            TabIndex        =   56
-            Top             =   1980
-            Width           =   1170
+         Begin MSComCtl2.DTPicker FechaHasta 
+            Height          =   315
+            Left            =   5640
+            TabIndex        =   146
+            Top             =   1920
+            Width           =   1335
+            _ExtentX        =   2355
+            _ExtentY        =   556
+            _Version        =   393216
+            Format          =   53673985
+            CurrentDate     =   43367
          End
          Begin VB.Label Label10 
             AutoSize        =   -1  'True
             Caption         =   "Bco:"
             Height          =   195
             Left            =   5280
-            TabIndex        =   147
+            TabIndex        =   143
             Top             =   1560
             Width           =   330
          End
@@ -1705,7 +1726,7 @@ Begin VB.Form frmPagoProveedores
             Caption         =   "Bco:"
             Height          =   195
             Left            =   5280
-            TabIndex        =   146
+            TabIndex        =   142
             Top             =   1200
             Width           =   330
          End
@@ -1714,8 +1735,8 @@ Begin VB.Form frmPagoProveedores
             Caption         =   "Fecha Desde:"
             Height          =   195
             Left            =   1650
-            TabIndex        =   63
-            Top             =   2025
+            TabIndex        =   60
+            Top             =   1980
             Width           =   1005
          End
          Begin VB.Label lblFechaHasta 
@@ -1723,15 +1744,15 @@ Begin VB.Form frmPagoProveedores
             Caption         =   "Fecha Hasta:"
             Height          =   195
             Left            =   4440
-            TabIndex        =   62
-            Top             =   2025
+            TabIndex        =   59
+            Top             =   1980
             Width           =   960
          End
       End
       Begin MSFlexGridLib.MSFlexGrid GrdModulos 
          Height          =   3405
          Left            =   -74850
-         TabIndex        =   59
+         TabIndex        =   56
          Top             =   2760
          Width           =   11385
          _ExtentX        =   20082
@@ -1750,19 +1771,10 @@ Begin VB.Form frmPagoProveedores
          Height          =   195
          Index           =   0
          Left            =   -74820
-         TabIndex        =   69
+         TabIndex        =   66
          Top             =   570
          Width           =   1065
       End
-   End
-   Begin VB.PictureBox Rep 
-      Height          =   480
-      Left            =   7440
-      ScaleHeight     =   420
-      ScaleWidth      =   1140
-      TabIndex        =   148
-      Top             =   6330
-      Width           =   1200
    End
    Begin VB.Label lblEstado 
       AutoSize        =   -1  'True
@@ -1779,7 +1791,7 @@ Begin VB.Form frmPagoProveedores
       EndProperty
       Height          =   240
       Left            =   180
-      TabIndex        =   70
+      TabIndex        =   67
       Top             =   6420
       Width           =   750
    End
@@ -1960,10 +1972,10 @@ Private Sub cmdAceptarMoneda_Click()
 End Sub
 
 Private Sub cmdAceptarValores_Click()
-    If CmdGrabar.Enabled = True Then
-        CmdGrabar.SetFocus
+    If cmdGrabar.Enabled = True Then
+        cmdGrabar.SetFocus
     Else
-        CmdNuevo.SetFocus
+        cmdNuevo.SetFocus
     End If
 End Sub
 
@@ -2040,28 +2052,28 @@ Private Sub cmdAgregarCheque_Click()
                       CboBanco.List(CboBanco.ListIndex) & Chr(9) & "P"
     Else
         
-        If TxtBANCO.Text = "" Then
+        If TxtBanco.Text = "" Then
             MsgBox "Debe ingresar el código del banco", vbExclamation, TIT_MSGBOX
-            TxtBANCO.SetFocus
+            TxtBanco.SetFocus
             Exit Sub
         End If
-        If TxtLOCALIDAD.Text = "" Then
+        If txtlocalidad.Text = "" Then
             MsgBox "Debe ingresar el código del banco", vbExclamation, TIT_MSGBOX
-            TxtLOCALIDAD.SetFocus
+            txtlocalidad.SetFocus
             Exit Sub
         End If
-        If TxtSUCURSAL.Text = "" Then
+        If TxtSucursal.Text = "" Then
             MsgBox "Debe ingresar el código del banco", vbExclamation, TIT_MSGBOX
-            TxtSUCURSAL.SetFocus
+            TxtSucursal.SetFocus
             Exit Sub
         End If
-        If TxtCODIGO.Text = "" Then
+        If TxtCodigo.Text = "" Then
             MsgBox "Debe ingresar el código del banco", vbExclamation, TIT_MSGBOX
-            TxtCODIGO.SetFocus
+            TxtCodigo.SetFocus
             Exit Sub
         End If
-        GrillaCheques.AddItem TxtBANCO.Text & Chr(9) & TxtLOCALIDAD.Text & Chr(9) & _
-                          TxtSUCURSAL.Text & Chr(9) & TxtCODIGO.Text & Chr(9) & _
+        GrillaCheques.AddItem TxtBanco.Text & Chr(9) & txtlocalidad.Text & Chr(9) & _
+                          TxtSucursal.Text & Chr(9) & TxtCodigo.Text & Chr(9) & _
                           TxtCheNumero.Text & Chr(9) & TxtCheFecVto.Value & Chr(9) & _
                           TxtCheImport.Text & Chr(9) & TxtCodInt.Text & Chr(9) & _
                           TxtBanDescri.Text & Chr(9) & "T"
@@ -2087,12 +2099,12 @@ Private Function ValidoIngCheques() As Boolean
 End Function
 
 Private Sub LimpiarCheques()
-    TxtBANCO.Text = ""
-    TxtLOCALIDAD.Text = ""
-    TxtSUCURSAL.Text = ""
-    TxtCODIGO.Text = ""
+    TxtBanco.Text = ""
+    txtlocalidad.Text = ""
+    TxtSucursal.Text = ""
+    TxtCodigo.Text = ""
     TxtCheNumero.Text = ""
-    TxtCheFecVto.Value = ""
+    TxtCheFecVto.Value = Date
     TxtCheImport.Text = ""
     TxtCodInt.Text = ""
     TxtBanDescri.Text = ""
@@ -2114,7 +2126,7 @@ Private Sub cmdAgregarComprobante_Click()
         cboComprobantes.SetFocus
         Exit Sub
     End If
-    If fechaComprobantes.Text = "" Then
+    If fechaComprobantes.Value = Date Then
         MsgBox "Debe ingresar la fecha del Documento", vbCritical, TIT_MSGBOX
         fechaComprobantes.SetFocus
         Exit Sub
@@ -2279,7 +2291,7 @@ End Sub
 
 Private Sub CmdBuscAprox_Click()
     GrdModulos.Rows = 1
-    lblEstado.Caption = "Buscando..."
+    lblestado.Caption = "Buscando..."
     Screen.MousePointer = vbHourglass
     
     Set Rec1 = New ADODB.Recordset
@@ -2310,13 +2322,13 @@ Private Sub CmdBuscAprox_Click()
         Loop
         GrdModulos.SetFocus
     Else
-        lblEstado.Caption = ""
+        lblestado.Caption = ""
         Screen.MousePointer = vbNormal
         MsgBox "No se encontraron datos...", vbExclamation, TIT_MSGBOX
         chkTipoProveedor.SetFocus
     End If
     Rec1.Close
-    lblEstado.Caption = ""
+    lblestado.Caption = ""
     Screen.MousePointer = vbNormal
 End Sub
 
@@ -2335,13 +2347,13 @@ Private Sub cmdBuscarCheques_Click()
             frmBuscar.grdBuscar.Col = 4
             TxtCodInt.Text = frmBuscar.grdBuscar.Text
             frmBuscar.grdBuscar.Col = 5
-            TxtBANCO.Text = frmBuscar.grdBuscar.Text
+            TxtBanco.Text = frmBuscar.grdBuscar.Text
             frmBuscar.grdBuscar.Col = 6
-            TxtLOCALIDAD.Text = frmBuscar.grdBuscar.Text
+            txtlocalidad.Text = frmBuscar.grdBuscar.Text
             frmBuscar.grdBuscar.Col = 7
-            TxtSUCURSAL.Text = frmBuscar.grdBuscar.Text
+            TxtSucursal.Text = frmBuscar.grdBuscar.Text
             frmBuscar.grdBuscar.Col = 8
-            TxtCODIGO.Text = frmBuscar.grdBuscar.Text
+            TxtCodigo.Text = frmBuscar.grdBuscar.Text
             cmdAgregarCheque_Click
         Else
             TxtCheNumero.SetFocus
@@ -2415,14 +2427,14 @@ Private Sub cmdCancelarMoneda_Click()
     tabValores.Tab = 0
 End Sub
 
-Private Sub cmdGrabar_Click()
+Private Sub CmdGrabar_Click()
     If ValidarOrdenPago = False Then Exit Sub
     If MsgBox("¿Confirma Orden de Pago?", vbQuestion + vbYesNo, TIT_MSGBOX) = vbNo Then Exit Sub
     
     On Error GoTo HayError
     DBConn.BeginTrans
     Screen.MousePointer = vbHourglass
-    lblEstado.Caption = "Guardando..."
+    lblestado.Caption = "Guardando..."
     
     sql = "SELECT EST_CODIGO"
     sql = sql & " FROM ORDEN_PAGO"
@@ -2593,13 +2605,13 @@ Private Sub cmdGrabar_Click()
     End If
     DBConn.CommitTrans
     Screen.MousePointer = vbNormal
-    lblEstado.Caption = ""
+    lblestado.Caption = ""
     rec.Close
     CmdNuevo_Click
     Exit Sub
     
 HayError:
-    lblEstado.Caption = ""
+    lblestado.Caption = ""
     Screen.MousePointer = vbNormal
     If rec.State = 1 Then rec.Close
     DBConn.RollbackTrans
@@ -2614,7 +2626,7 @@ Private Function ValidarOrdenPago() As Boolean
         ValidarOrdenPago = False
         Exit Function
     End If
-    If FechaOrdenPago.Value = "" Then
+    If FechaOrdenPago.Value = Date Then
         MsgBox "Debe ingresar la fecha de la Orden de Pago", vbCritical, TIT_MSGBOX
         FechaOrdenPago.SetFocus
         ValidarOrdenPago = False
@@ -2660,7 +2672,7 @@ End Function
 Private Sub cmdImprimir_Click()
     If txtCodProveedor.Text = "" Or GrillaAplicar1.Rows = 1 Then Exit Sub
     Screen.MousePointer = vbHourglass
-    lblEstado.Caption = "Buscando Orden de Pago..."
+    lblestado.Caption = "Buscando Orden de Pago..."
     
     sql = "DELETE FROM TMP_ORDEN_PAGO"
     DBConn.Execute sql
@@ -2680,7 +2692,7 @@ Private Sub cmdImprimir_Click()
     
     Rep.Destination = crptToWindow
     Rep.Action = 1
-    lblEstado.Caption = ""
+    lblestado.Caption = ""
     Screen.MousePointer = vbNormal
     Rep.SelectionFormula = ""
 End Sub
@@ -2947,7 +2959,7 @@ End Sub
 
 Private Sub CmdNuevo_Click()
     Estado = 1
-    CmdGrabar.Enabled = True
+    cmdGrabar.Enabled = True
     txtNroOrdenPago.Enabled = True
     FrameRecibo.Enabled = True
     FrameProveedor.Enabled = True
@@ -2967,7 +2979,7 @@ Private Sub CmdNuevo_Click()
     grillaValores.HighLight = flexHighlightNever
     
     txtNroOrdenPago.Text = ""
-    FechaOrdenPago.Value = ""
+    FechaOrdenPago.Value = Date
     txtTotalCheques.Text = ""
     txtTotalEfectivo.Text = ""
     txtTotalValores.Text = ""
@@ -3025,7 +3037,7 @@ Private Sub cmdQuitarVal_Click()
     End If
 End Sub
 
-Private Sub CmdSalir_Click()
+Private Sub cmdSalir_Click()
     If MsgBox("Seguro que desea Salir", vbQuestion + vbYesNo, TIT_MSGBOX) = vbYes Then
         Set frmPagoProveedores = Nothing
         Unload Me
@@ -3038,7 +3050,7 @@ Private Sub Command1_Click()
 End Sub
 
 Private Sub FechaOrdenPago_LostFocus()
-    If FechaOrdenPago.Value = "" Then FechaOrdenPago.Value = Date
+    If FechaOrdenPago.Value = Date Then FechaOrdenPago.Value = Date
 End Sub
 
 Private Sub Form_KeyDown(KeyCode As Integer, Shift As Integer)
@@ -3047,7 +3059,7 @@ End Sub
 
 Private Sub Form_KeyPress(KeyAscii As Integer)
     If KeyAscii = vbKeyReturn Then SendKeys "{TAB}"
-    If KeyAscii = vbKeyEscape Then CmdSalir_Click
+    If KeyAscii = vbKeyEscape Then cmdSalir_Click
 End Sub
 
 Private Sub Form_Load()
@@ -3080,7 +3092,7 @@ Private Sub Form_Load()
     cmdAgregarEfectivo.Enabled = False
     txtNroOrdenPago.Enabled = True
     cmdAgregarFacturas.Enabled = False
-    lblEstado.Caption = ""
+    lblestado.Caption = ""
 End Sub
 
 Private Sub CargoBanco()
@@ -3363,14 +3375,14 @@ Private Sub tabDatos_Click(PreviousTab As Integer)
     FechaHasta.Enabled = False
     txtProveedor.Enabled = False
     cmdBuscarProveedor.Enabled = False
-    CmdGrabar.Enabled = False
+    cmdGrabar.Enabled = False
     If Me.Visible = True Then chkTipoProveedor.SetFocus
   End If
 End Sub
 
 Private Sub LimpiarBusqueda()
-    FechaDesde.Value = ""
-    FechaHasta.Value = ""
+    FechaDesde.Value = Date
+    FechaHasta.Value = Date
     txtProveedor.Text = ""
     cboTipoProveedor.ListIndex = -1
     GrdModulos.Rows = 1
@@ -3399,11 +3411,11 @@ Private Sub tabValores_Click(PreviousTab As Integer)
 End Sub
 
 Private Sub TxtBANCO_GotFocus()
-    SelecTexto TxtBANCO
+    SelecTexto TxtBanco
 End Sub
 
 Private Sub TxtBANCO_LostFocus()
-    If Len(TxtBANCO.Text) < 3 Then TxtBANCO.Text = CompletarConCeros(TxtBANCO.Text, 3)
+    If Len(TxtBanco.Text) < 3 Then TxtBanco.Text = CompletarConCeros(TxtBanco.Text, 3)
 End Sub
 
 Private Sub TxtCheNumero_Change()
@@ -3435,7 +3447,7 @@ Private Sub TxtCheNumero_LostFocus()
 End Sub
 
 Private Sub TxtCodigo_GotFocus()
-    SelecTexto TxtCODIGO
+    SelecTexto TxtCodigo
 End Sub
 
 Private Sub txtCodProveedor_Change()
@@ -3577,7 +3589,7 @@ Private Sub txtImporteComprobante_LostFocus()
 End Sub
 
 Private Sub TxtLOCALIDAD_GotFocus()
-    SelecTexto TxtLOCALIDAD
+    SelecTexto txtlocalidad
 End Sub
 
 Private Sub Txtlocalidad_KeyPress(KeyAscii As Integer)
@@ -3585,13 +3597,13 @@ Private Sub Txtlocalidad_KeyPress(KeyAscii As Integer)
 End Sub
 
 Private Sub TxtLOCALIDAD_LostFocus()
-    If Len(TxtLOCALIDAD.Text) < 3 Then TxtLOCALIDAD.Text = CompletarConCeros(TxtLOCALIDAD.Text, 3)
+    If Len(txtlocalidad.Text) < 3 Then txtlocalidad.Text = CompletarConCeros(txtlocalidad.Text, 3)
 End Sub
 
 Private Sub txtNroComprobantes_Change()
     If txtNroComprobantes.Text = "" Then
         txtImporteComprobante.Text = ""
-        fechaComprobantes.Text = ""
+        fechaComprobantes.Value = Date
         txtImporteComprobante.Enabled = False
         cmdAgregarComprobante.Enabled = False
     Else
@@ -3679,8 +3691,8 @@ Private Function BuscoComprobanteEnRecibo() As Boolean
     sql = sql & " FROM DETALLE_ORDEN_PAGO"
     sql = sql & " WHERE"
     sql = sql & " DOP_TCO_CODIGO=" & cboComprobantes.ItemData(cboComprobantes.ListIndex)
-    If fechaComprobantes.Text <> "" Then
-        sql = sql & " AND DOP_COMFECHA=" & XDQ(fechaComprobantes.Text)
+    If fechaComprobantes.Value <> "" Then
+        sql = sql & " AND DOP_COMFECHA=" & XDQ(fechaComprobantes.Value)
     End If
     sql = sql & " AND DOP_COMNUMERO=" & XN(txtNroComprobantes)
     Rec2.Open sql, DBConn, adOpenStatic, adLockOptimistic
@@ -3782,8 +3794,8 @@ Private Sub txtNroOrdenPago_LostFocus()
             FrameRecibo.Enabled = False
             FrameProveedor.Enabled = False
             rec.Close
-            CmdNuevo.SetFocus
-            CmdGrabar.Enabled = False
+            cmdNuevo.SetFocus
+            cmdGrabar.Enabled = False
         End If
         Rec2.Close
     Else  'SI NO INGRESO UN NUMERO BUSCO EL MAYOR
@@ -3950,7 +3962,7 @@ Private Function BuscoProveedor(Pro As String) As String
 End Function
 
 Private Sub txtSucursal_GotFocus()
-    SelecTexto TxtSUCURSAL
+    SelecTexto TxtSucursal
 End Sub
 
 Private Sub TxtSucursal_KeyPress(KeyAscii As Integer)
@@ -3973,21 +3985,21 @@ Private Sub TxtCodigo_LostFocus()
         
     'ChequeRegistrado = False
     
-    If Len(TxtCODIGO.Text) < 6 Then TxtCODIGO.Text = CompletarConCeros(TxtCODIGO.Text, 6)
+    If Len(TxtCodigo.Text) < 6 Then TxtCodigo.Text = CompletarConCeros(TxtCodigo.Text, 6)
      
     If Trim(Me.TxtCheNumero.Text) <> "" And _
-       Trim(Me.TxtBANCO.Text) <> "" And _
-       Trim(Me.TxtLOCALIDAD.Text) <> "" And _
-       Trim(Me.TxtSUCURSAL.Text) <> "" And _
-       Trim(Me.TxtCODIGO.Text) <> "" Then
+       Trim(Me.TxtBanco.Text) <> "" And _
+       Trim(Me.txtlocalidad.Text) <> "" And _
+       Trim(Me.TxtSucursal.Text) <> "" And _
+       Trim(Me.TxtCodigo.Text) <> "" Then
        
        'BUSCO EL CODIGO INTERNO
        sql = "SELECT BAN_CODINT, BAN_DESCRI"
        sql = sql & " FROM BANCO"
-       sql = sql & " WHERE BAN_BANCO = " & XS(TxtBANCO.Text)
-       sql = sql & " AND BAN_LOCALIDAD = " & XS(Me.TxtLOCALIDAD.Text)
-       sql = sql & " AND BAN_SUCURSAL = " & XS(Me.TxtSUCURSAL.Text)
-       sql = sql & " AND BAN_CODIGO = " & XS(TxtCODIGO.Text)
+       sql = sql & " WHERE BAN_BANCO = " & XS(TxtBanco.Text)
+       sql = sql & " AND BAN_LOCALIDAD = " & XS(Me.txtlocalidad.Text)
+       sql = sql & " AND BAN_SUCURSAL = " & XS(Me.TxtSucursal.Text)
+       sql = sql & " AND BAN_CODIGO = " & XS(TxtCodigo.Text)
        rec.Open sql, DBConn, adOpenStatic, adLockOptimistic
        If rec.RecordCount > 0 Then 'EXITE
           TxtCodInt.Text = rec!BAN_CODINT
@@ -3996,7 +4008,7 @@ Private Sub TxtCodigo_LostFocus()
        Else
           If Me.ActiveControl.Name <> "CmdSalir" And Me.ActiveControl.Name <> "CmdNuevo" Then
             MsgBox "Banco NO Registrado.", 16, TIT_MSGBOX
-            TxtBANCO.SetFocus
+            TxtBanco.SetFocus
             Me.CmdBanco.SetFocus
           End If
           rec.Close
@@ -4035,10 +4047,10 @@ Private Sub TxtCodigo_LostFocus()
                    "WHERE BAN_CODINT = " & XN(Me.TxtCodInt.Text)
             Rec1.Open sql, DBConn, adOpenStatic, adLockOptimistic
             If Rec1.RecordCount > 0 Then 'EXITE
-                Me.TxtBANCO.Text = Rec1!BAN_BANCO
-                Me.TxtLOCALIDAD.Text = Rec1!BAN_LOCALIDAD
-                Me.TxtSUCURSAL.Text = Rec1!BAN_SUCURSAL
-                Me.TxtCODIGO.Text = Rec1!BAN_CODIGO
+                Me.TxtBanco.Text = Rec1!BAN_BANCO
+                Me.txtlocalidad.Text = Rec1!BAN_LOCALIDAD
+                Me.TxtSucursal.Text = Rec1!BAN_SUCURSAL
+                Me.TxtCodigo.Text = Rec1!BAN_CODIGO
             End If
             Rec1.Close
         Else
@@ -4051,6 +4063,6 @@ Private Sub TxtCodigo_LostFocus()
 End Sub
 
 Private Sub txtSucursal_LostFocus()
-    If Len(TxtSUCURSAL.Text) < 3 Then TxtSUCURSAL.Text = CompletarConCeros(TxtSUCURSAL.Text, 3)
+    If Len(TxtSucursal.Text) < 3 Then TxtSucursal.Text = CompletarConCeros(TxtSucursal.Text, 3)
 End Sub
 

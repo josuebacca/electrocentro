@@ -20,21 +20,20 @@ Begin VB.Form frmCargaGastosGenerales
       Caption         =   "&Eliminar"
       Height          =   450
       Left            =   6960
-      TabIndex        =   18
+      TabIndex        =   16
       Top             =   6435
       Width           =   870
    End
    Begin TabDlg.SSTab tabDatos 
       Height          =   6330
       Left            =   45
-      TabIndex        =   30
+      TabIndex        =   28
       Top             =   60
       Width           =   8670
       _ExtentX        =   15293
       _ExtentY        =   11165
       _Version        =   393216
       Tabs            =   2
-      Tab             =   1
       TabsPerRow      =   4
       TabHeight       =   520
       BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
@@ -48,19 +47,17 @@ Begin VB.Form frmCargaGastosGenerales
       EndProperty
       TabCaption(0)   =   "&Datos"
       TabPicture(0)   =   "frmCargaGastosGenerales.frx":0000
-      Tab(0).ControlEnabled=   0   'False
-      Tab(0).Control(0)=   "FrameProveedor"
+      Tab(0).ControlEnabled=   -1  'True
+      Tab(0).Control(0)=   "Frame1"
       Tab(0).Control(0).Enabled=   0   'False
-      Tab(0).Control(1)=   "Frame1"
+      Tab(0).Control(1)=   "FrameProveedor"
       Tab(0).Control(1).Enabled=   0   'False
       Tab(0).ControlCount=   2
       TabCaption(1)   =   "&Buscar"
       TabPicture(1)   =   "frmCargaGastosGenerales.frx":001C
-      Tab(1).ControlEnabled=   -1  'True
-      Tab(1).Control(0)=   "GrdModulos"
-      Tab(1).Control(0).Enabled=   0   'False
-      Tab(1).Control(1)=   "Frame4"
-      Tab(1).Control(1).Enabled=   0   'False
+      Tab(1).ControlEnabled=   0   'False
+      Tab(1).Control(0)=   "Frame4"
+      Tab(1).Control(1)=   "GrdModulos"
       Tab(1).ControlCount=   2
       Begin VB.Frame Frame4 
          Caption         =   "Buscar por..."
@@ -74,8 +71,8 @@ Begin VB.Form frmCargaGastosGenerales
             Strikethrough   =   0   'False
          EndProperty
          Height          =   1830
-         Left            =   165
-         TabIndex        =   48
+         Left            =   -74835
+         TabIndex        =   46
          Top             =   375
          Width           =   8355
          Begin VB.ComboBox cboBuscaTipoGasto 
@@ -83,7 +80,7 @@ Begin VB.Form frmCargaGastosGenerales
             Left            =   2385
             Sorted          =   -1  'True
             Style           =   2  'Dropdown List
-            TabIndex        =   26
+            TabIndex        =   24
             Top             =   960
             Width           =   3765
          End
@@ -91,7 +88,7 @@ Begin VB.Form frmCargaGastosGenerales
             Height          =   315
             Left            =   2385
             Style           =   2  'Dropdown List
-            TabIndex        =   24
+            TabIndex        =   22
             Top             =   270
             Width           =   3750
          End
@@ -99,7 +96,7 @@ Begin VB.Form frmCargaGastosGenerales
             Caption         =   "Tipo Prov"
             Height          =   195
             Left            =   120
-            TabIndex        =   20
+            TabIndex        =   18
             Top             =   450
             Width           =   1050
          End
@@ -107,7 +104,7 @@ Begin VB.Form frmCargaGastosGenerales
             Caption         =   "Proveedor"
             Height          =   195
             Left            =   120
-            TabIndex        =   21
+            TabIndex        =   19
             Top             =   705
             Width           =   1125
          End
@@ -115,7 +112,7 @@ Begin VB.Form frmCargaGastosGenerales
             Caption         =   "Fecha"
             Height          =   195
             Left            =   120
-            TabIndex        =   23
+            TabIndex        =   21
             Top             =   1230
             Width           =   810
          End
@@ -134,7 +131,7 @@ Begin VB.Form frmCargaGastosGenerales
             Height          =   300
             Left            =   3825
             MaxLength       =   50
-            TabIndex        =   50
+            TabIndex        =   48
             Tag             =   "Descripción"
             Top             =   615
             Width           =   4440
@@ -143,7 +140,7 @@ Begin VB.Form frmCargaGastosGenerales
             Height          =   300
             Left            =   2385
             MaxLength       =   40
-            TabIndex        =   25
+            TabIndex        =   23
             Top             =   615
             Width           =   975
          End
@@ -153,7 +150,7 @@ Begin VB.Form frmCargaGastosGenerales
             MaskColor       =   &H00FFFFFF&
             Picture         =   "frmCargaGastosGenerales.frx":0038
             Style           =   1  'Graphical
-            TabIndex        =   27
+            TabIndex        =   25
             ToolTipText     =   "Buscar "
             Top             =   1155
             UseMaskColor    =   -1  'True
@@ -163,7 +160,7 @@ Begin VB.Form frmCargaGastosGenerales
             Caption         =   "Tipo Gasto"
             Height          =   195
             Left            =   120
-            TabIndex        =   22
+            TabIndex        =   20
             Top             =   960
             Width           =   1155
          End
@@ -173,7 +170,7 @@ Begin VB.Form frmCargaGastosGenerales
             MaskColor       =   &H000000FF&
             Picture         =   "frmCargaGastosGenerales.frx":27DA
             Style           =   1  'Graphical
-            TabIndex        =   49
+            TabIndex        =   47
             ToolTipText     =   "Buscar Proveedor"
             Top             =   615
             UseMaskColor    =   -1  'True
@@ -182,25 +179,25 @@ Begin VB.Form frmCargaGastosGenerales
          Begin MSComCtl2.DTPicker FechaDesde 
             Height          =   375
             Left            =   2400
-            TabIndex        =   67
+            TabIndex        =   65
             Top             =   1320
             Width           =   1335
             _ExtentX        =   2355
             _ExtentY        =   661
             _Version        =   393216
-            Format          =   53280769
+            Format          =   53936129
             CurrentDate     =   43367
          End
          Begin MSComCtl2.DTPicker FechaHasta 
             Height          =   375
             Left            =   4920
-            TabIndex        =   68
+            TabIndex        =   66
             Top             =   1320
             Width           =   1335
             _ExtentX        =   2355
             _ExtentY        =   661
             _Version        =   393216
-            Format          =   53280769
+            Format          =   53936129
             CurrentDate     =   43367
          End
          Begin VB.Label Label9 
@@ -208,7 +205,7 @@ Begin VB.Form frmCargaGastosGenerales
             Caption         =   "Gasto:"
             Height          =   195
             Left            =   1860
-            TabIndex        =   55
+            TabIndex        =   53
             Top             =   990
             Width           =   465
          End
@@ -217,7 +214,7 @@ Begin VB.Form frmCargaGastosGenerales
             Caption         =   "Tipo Prov.:"
             Height          =   195
             Left            =   1545
-            TabIndex        =   54
+            TabIndex        =   52
             Top             =   315
             Width           =   780
          End
@@ -231,7 +228,7 @@ Begin VB.Form frmCargaGastosGenerales
             Height          =   195
             Index           =   2
             Left            =   1545
-            TabIndex        =   53
+            TabIndex        =   51
             Top             =   645
             Width           =   780
          End
@@ -240,7 +237,7 @@ Begin VB.Form frmCargaGastosGenerales
             Caption         =   "Fecha Desde:"
             Height          =   195
             Left            =   1320
-            TabIndex        =   52
+            TabIndex        =   50
             Top             =   1350
             Width           =   1005
          End
@@ -249,7 +246,7 @@ Begin VB.Form frmCargaGastosGenerales
             Caption         =   "Fecha Hasta:"
             Height          =   195
             Left            =   3840
-            TabIndex        =   51
+            TabIndex        =   49
             Top             =   1365
             Width           =   960
          End
@@ -266,8 +263,8 @@ Begin VB.Form frmCargaGastosGenerales
             Strikethrough   =   0   'False
          EndProperty
          Height          =   2025
-         Left            =   -74835
-         TabIndex        =   41
+         Left            =   165
+         TabIndex        =   39
          Top             =   585
          Width           =   8355
          Begin VB.CommandButton cmdBuscarProveedor1 
@@ -276,7 +273,7 @@ Begin VB.Form frmCargaGastosGenerales
             MaskColor       =   &H000000FF&
             Picture         =   "frmCargaGastosGenerales.frx":2AE4
             Style           =   1  'Graphical
-            TabIndex        =   56
+            TabIndex        =   54
             ToolTipText     =   "Buscar Proveedor"
             Top             =   765
             UseMaskColor    =   -1  'True
@@ -297,7 +294,7 @@ Begin VB.Form frmCargaGastosGenerales
             Height          =   285
             Left            =   1275
             MaxLength       =   50
-            TabIndex        =   43
+            TabIndex        =   41
             Top             =   1425
             Width           =   4860
          End
@@ -315,7 +312,7 @@ Begin VB.Form frmCargaGastosGenerales
             EndProperty
             Height          =   285
             Left            =   1275
-            TabIndex        =   42
+            TabIndex        =   40
             Top             =   1110
             Width           =   4860
          End
@@ -358,7 +355,7 @@ Begin VB.Form frmCargaGastosGenerales
             Caption         =   "Dom.:"
             Height          =   195
             Left            =   765
-            TabIndex        =   47
+            TabIndex        =   45
             Top             =   1455
             Width           =   420
          End
@@ -367,7 +364,7 @@ Begin VB.Form frmCargaGastosGenerales
             Caption         =   "Loc.:"
             Height          =   180
             Left            =   825
-            TabIndex        =   46
+            TabIndex        =   44
             Top             =   1155
             Width           =   360
          End
@@ -381,7 +378,7 @@ Begin VB.Form frmCargaGastosGenerales
             Height          =   195
             Index           =   0
             Left            =   645
-            TabIndex        =   45
+            TabIndex        =   43
             Top             =   780
             Width           =   540
          End
@@ -390,7 +387,7 @@ Begin VB.Form frmCargaGastosGenerales
             Caption         =   "Tipo Prov.:"
             Height          =   195
             Left            =   405
-            TabIndex        =   44
+            TabIndex        =   42
             Top             =   435
             Width           =   780
          End
@@ -407,8 +404,8 @@ Begin VB.Form frmCargaGastosGenerales
             Strikethrough   =   0   'False
          EndProperty
          Height          =   3615
-         Left            =   -74835
-         TabIndex        =   31
+         Left            =   165
+         TabIndex        =   29
          Top             =   2610
          Width           =   8355
          Begin VB.TextBox txtimp2IVA 
@@ -416,7 +413,7 @@ Begin VB.Form frmCargaGastosGenerales
             Height          =   300
             Left            =   4605
             MaxLength       =   40
-            TabIndex        =   66
+            TabIndex        =   64
             Top             =   2145
             Width           =   900
          End
@@ -425,7 +422,7 @@ Begin VB.Form frmCargaGastosGenerales
             Height          =   300
             Left            =   1995
             MaxLength       =   40
-            TabIndex        =   65
+            TabIndex        =   63
             Top             =   2160
             Width           =   780
          End
@@ -434,7 +431,7 @@ Begin VB.Form frmCargaGastosGenerales
             Height          =   300
             Left            =   3885
             MaxLength       =   40
-            TabIndex        =   11
+            TabIndex        =   10
             Top             =   2145
             Width           =   660
          End
@@ -443,7 +440,7 @@ Begin VB.Form frmCargaGastosGenerales
             Height          =   300
             Left            =   3885
             MaxLength       =   40
-            TabIndex        =   10
+            TabIndex        =   9
             Top             =   1800
             Width           =   1620
          End
@@ -462,7 +459,7 @@ Begin VB.Form frmCargaGastosGenerales
             Height          =   300
             Left            =   3885
             MaxLength       =   40
-            TabIndex        =   59
+            TabIndex        =   57
             Top             =   2490
             Width           =   1620
          End
@@ -481,7 +478,7 @@ Begin VB.Form frmCargaGastosGenerales
             Height          =   300
             Left            =   1275
             MaxLength       =   40
-            TabIndex        =   58
+            TabIndex        =   56
             Top             =   2490
             Width           =   1500
          End
@@ -490,7 +487,7 @@ Begin VB.Form frmCargaGastosGenerales
             Height          =   300
             Left            =   1275
             MaxLength       =   40
-            TabIndex        =   12
+            TabIndex        =   11
             Top             =   2835
             Width           =   1500
          End
@@ -500,7 +497,7 @@ Begin VB.Form frmCargaGastosGenerales
             MaskColor       =   &H000000FF&
             Picture         =   "frmCargaGastosGenerales.frx":2DEE
             Style           =   1  'Graphical
-            TabIndex        =   57
+            TabIndex        =   55
             ToolTipText     =   "Agregar País"
             Top             =   405
             UseMaskColor    =   -1  'True
@@ -510,7 +507,7 @@ Begin VB.Form frmCargaGastosGenerales
             Caption         =   "Genera Crédito Fiscal"
             Height          =   210
             Left            =   3885
-            TabIndex        =   14
+            TabIndex        =   13
             Top             =   2940
             Width           =   1815
          End
@@ -553,7 +550,7 @@ Begin VB.Form frmCargaGastosGenerales
             Height          =   300
             Left            =   1275
             MaxLength       =   40
-            TabIndex        =   13
+            TabIndex        =   12
             Top             =   3180
             Width           =   1500
          End
@@ -562,7 +559,7 @@ Begin VB.Form frmCargaGastosGenerales
             Height          =   300
             Left            =   1275
             MaxLength       =   40
-            TabIndex        =   9
+            TabIndex        =   8
             Top             =   2160
             Width           =   660
          End
@@ -571,7 +568,7 @@ Begin VB.Form frmCargaGastosGenerales
             Height          =   300
             Left            =   1275
             MaxLength       =   40
-            TabIndex        =   8
+            TabIndex        =   7
             Top             =   1800
             Width           =   1500
          End
@@ -584,29 +581,35 @@ Begin VB.Form frmCargaGastosGenerales
             Top             =   405
             Width           =   3765
          End
-         Begin VB.PictureBox FechaComprobante 
+         Begin MSComCtl2.DTPicker FechaComprobante 
             Height          =   315
             Left            =   1275
-            ScaleHeight     =   255
-            ScaleWidth      =   1155
-            TabIndex        =   7
-            Top             =   1470
-            Width           =   1215
+            TabIndex        =   67
+            Top             =   1440
+            Width           =   1335
+            _ExtentX        =   2355
+            _ExtentY        =   556
+            _Version        =   393216
+            Format          =   53936129
+            CurrentDate     =   43371
          End
-         Begin VB.PictureBox Periodo 
-            Height          =   300
-            Left            =   3885
-            ScaleHeight     =   240
-            ScaleWidth      =   1095
-            TabIndex        =   15
-            Top             =   3180
-            Width           =   1155
+         Begin MSComCtl2.DTPicker Periodo 
+            Height          =   315
+            Left            =   3840
+            TabIndex        =   68
+            Top             =   3165
+            Width           =   1335
+            _ExtentX        =   2355
+            _ExtentY        =   556
+            _Version        =   393216
+            Format          =   53936129
+            CurrentDate     =   43371
          End
          Begin VB.Label Label11 
             Caption         =   "Neto:"
             Height          =   195
             Left            =   3420
-            TabIndex        =   64
+            TabIndex        =   62
             Top             =   1860
             Width           =   390
          End
@@ -615,7 +618,7 @@ Begin VB.Form frmCargaGastosGenerales
             Caption         =   "Iva:"
             Height          =   195
             Left            =   3540
-            TabIndex        =   63
+            TabIndex        =   61
             Top             =   2190
             Width           =   270
          End
@@ -624,7 +627,7 @@ Begin VB.Form frmCargaGastosGenerales
             Caption         =   "Sub Total:"
             Height          =   195
             Left            =   465
-            TabIndex        =   62
+            TabIndex        =   60
             Top             =   2535
             Width           =   735
          End
@@ -633,7 +636,7 @@ Begin VB.Form frmCargaGastosGenerales
             Caption         =   "Sub Total:"
             Height          =   195
             Left            =   3075
-            TabIndex        =   61
+            TabIndex        =   59
             Top             =   2535
             Width           =   735
          End
@@ -642,7 +645,7 @@ Begin VB.Form frmCargaGastosGenerales
             Caption         =   "Impuestos:"
             Height          =   195
             Left            =   435
-            TabIndex        =   60
+            TabIndex        =   58
             Top             =   2880
             Width           =   765
          End
@@ -651,7 +654,7 @@ Begin VB.Form frmCargaGastosGenerales
             Caption         =   "Comprobante:"
             Height          =   195
             Left            =   210
-            TabIndex        =   40
+            TabIndex        =   38
             Top             =   825
             Width           =   990
          End
@@ -660,7 +663,7 @@ Begin VB.Form frmCargaGastosGenerales
             Caption         =   "Número:"
             Height          =   195
             Left            =   600
-            TabIndex        =   39
+            TabIndex        =   37
             Top             =   1170
             Width           =   600
          End
@@ -669,7 +672,7 @@ Begin VB.Form frmCargaGastosGenerales
             Caption         =   "Fecha:"
             Height          =   195
             Left            =   705
-            TabIndex        =   38
+            TabIndex        =   36
             Top             =   1515
             Width           =   495
          End
@@ -677,7 +680,7 @@ Begin VB.Form frmCargaGastosGenerales
             Caption         =   "Neto:"
             Height          =   195
             Left            =   810
-            TabIndex        =   37
+            TabIndex        =   35
             Top             =   1860
             Width           =   390
          End
@@ -686,7 +689,7 @@ Begin VB.Form frmCargaGastosGenerales
             Caption         =   "Iva:"
             Height          =   195
             Left            =   930
-            TabIndex        =   36
+            TabIndex        =   34
             Top             =   2190
             Width           =   270
          End
@@ -695,7 +698,7 @@ Begin VB.Form frmCargaGastosGenerales
             Caption         =   "Total:"
             Height          =   195
             Left            =   795
-            TabIndex        =   35
+            TabIndex        =   33
             Top             =   3210
             Width           =   405
          End
@@ -704,7 +707,7 @@ Begin VB.Form frmCargaGastosGenerales
             Caption         =   "Periodo:"
             Height          =   195
             Left            =   3225
-            TabIndex        =   34
+            TabIndex        =   32
             Top             =   3225
             Width           =   585
          End
@@ -720,8 +723,8 @@ Begin VB.Form frmCargaGastosGenerales
                Strikethrough   =   0   'False
             EndProperty
             Height          =   285
-            Left            =   5040
-            TabIndex        =   33
+            Left            =   5160
+            TabIndex        =   31
             Top             =   3180
             Width           =   1785
          End
@@ -730,15 +733,15 @@ Begin VB.Form frmCargaGastosGenerales
             Caption         =   "Gasto:"
             Height          =   195
             Left            =   735
-            TabIndex        =   32
+            TabIndex        =   30
             Top             =   450
             Width           =   465
          End
       End
       Begin MSFlexGridLib.MSFlexGrid GrdModulos 
          Height          =   3975
-         Left            =   135
-         TabIndex        =   28
+         Left            =   -74865
+         TabIndex        =   26
          Top             =   2280
          Width           =   8400
          _ExtentX        =   14817
@@ -757,7 +760,7 @@ Begin VB.Form frmCargaGastosGenerales
       Caption         =   "&Nuevo"
       Height          =   450
       Left            =   6075
-      TabIndex        =   17
+      TabIndex        =   15
       Top             =   6435
       Width           =   870
    End
@@ -765,7 +768,7 @@ Begin VB.Form frmCargaGastosGenerales
       Caption         =   "&Aceptar"
       Height          =   450
       Left            =   5190
-      TabIndex        =   16
+      TabIndex        =   14
       Top             =   6435
       Width           =   870
    End
@@ -773,7 +776,7 @@ Begin VB.Form frmCargaGastosGenerales
       Caption         =   "&Salir"
       Height          =   450
       Left            =   7845
-      TabIndex        =   19
+      TabIndex        =   17
       Top             =   6435
       Width           =   870
    End
@@ -792,7 +795,7 @@ Begin VB.Form frmCargaGastosGenerales
       EndProperty
       Height          =   240
       Left            =   150
-      TabIndex        =   29
+      TabIndex        =   27
       Top             =   6555
       Width           =   750
    End
@@ -970,7 +973,7 @@ Private Sub cmdBuscarProveedor1_Click()
     End If
 End Sub
 
-Private Sub cmdGrabar_Click()
+Private Sub CmdGrabar_Click()
     
     If ValidarGastosGenerales = False Then Exit Sub
     If MsgBox("¿Confirma Gasto?", vbQuestion + vbYesNo, TIT_MSGBOX) = vbNo Then Exit Sub
@@ -1090,7 +1093,7 @@ Private Function ValidarGastosGenerales() As Boolean
         ValidarGastosGenerales = False
         Exit Function
     End If
-    If FechaComprobante.Text = "" Then
+    If FechaComprobante.Value = Date Then
         MsgBox "La Fecha del comprobate es requerida", vbExclamation, TIT_MSGBOX
         FechaComprobante.SetFocus
         ValidarGastosGenerales = False
@@ -1115,7 +1118,7 @@ Private Function ValidarGastosGenerales() As Boolean
         Exit Function
     End If
     If chkCreditoFiscal.Value = Checked Then
-        If Periodo.Text = "" Then
+        If Periodo.Value = "" Then
             MsgBox "El Periodo es requerido (Libro I.V.A. Compras)", vbExclamation, TIT_MSGBOX
             Periodo.SetFocus
             ValidarGastosGenerales = False
@@ -1135,7 +1138,7 @@ Private Sub CmdNuevo_Click()
     cboComprobante.ListIndex = 0
     txtNroSucursal.Text = ""
     txtNroComprobante.Text = ""
-    FechaComprobante.Text = ""
+    FechaComprobante.Value = Date
     txtNeto.Text = "0,00"
     txtIva.Text = ""
     txtNeto1.Text = "0,00"
@@ -1144,9 +1147,9 @@ Private Sub CmdNuevo_Click()
     txtSubTotal1.Text = "0,00"
     txtImpuestos.Text = "0,00"
     txtTotal.Text = "0,00"
-    Periodo.Text = ""
+    Periodo.Value = ""
     chkCreditoFiscal.Value = Unchecked
-    cmdBorrar.Enabled = False
+    CmdBorrar.Enabled = False
     cmdGrabar.Enabled = True
     cboTipoProveedor.SetFocus
     tabDatos.Tab = 0
@@ -1162,7 +1165,7 @@ Private Sub cmdNuevoGasto_Click()
     CboGastos.SetFocus
 End Sub
 
-Private Sub CmdSalir_Click()
+Private Sub cmdSalir_Click()
     Set frmCargaGastosGenerales = Nothing
     Unload Me
 End Sub
@@ -1175,7 +1178,7 @@ Private Sub Form_KeyPress(KeyAscii As Integer)
     If KeyAscii = vbKeyReturn Then
         SendKeys "{TAB}"
     End If
-    If KeyAscii = vbKeyEscape Then CmdSalir_Click
+    If KeyAscii = vbKeyEscape Then cmdSalir_Click
 End Sub
 
 Private Sub LimpiarBusqueda()
@@ -1225,7 +1228,7 @@ Private Sub Form_Load()
     GrdModulos.Rows = 1
     tabDatos.Tab = 0
     cmdGrabar.Enabled = True
-    cmdBorrar.Enabled = False
+    CmdBorrar.Enabled = False
     Periodo.Enabled = False
     lblestado.Caption = ""
     txtNeto.Text = "0,00"
@@ -1298,7 +1301,7 @@ Private Sub GrdModulos_DblClick()
         txtNroSucursal_LostFocus
         txtNroComprobante.Text = GrdModulos.TextMatrix(GrdModulos.RowSel, 9)
         txtNroComprobante_LostFocus
-        FechaComprobante.Text = GrdModulos.TextMatrix(GrdModulos.RowSel, 3)
+        FechaComprobante.Value = GrdModulos.TextMatrix(GrdModulos.RowSel, 3)
         txtNeto.Text = Valido_Importe(GrdModulos.TextMatrix(GrdModulos.RowSel, 10))
         txtIva.Text = Format(GrdModulos.TextMatrix(GrdModulos.RowSel, 11), "0.00")
         txtIva_LostFocus
@@ -1309,7 +1312,7 @@ Private Sub GrdModulos_DblClick()
         txtImpuestos_LostFocus
         If GrdModulos.TextMatrix(GrdModulos.RowSel, 16) = "S" Then
             chkCreditoFiscal.Value = Checked
-            Periodo.Text = GrdModulos.TextMatrix(GrdModulos.RowSel, 15)
+            Periodo.Value = GrdModulos.TextMatrix(GrdModulos.RowSel, 15)
             Periodo_LostFocus
         Else
             chkCreditoFiscal.Value = Unchecked
@@ -1319,7 +1322,7 @@ Private Sub GrdModulos_DblClick()
         'pongo enable falso (los campos clave) ya que consulto
         Call CambioEstado(False)
         CboGastos.SetFocus
-        cmdBorrar.Enabled = True
+        CmdBorrar.Enabled = True
         cmdGrabar.Enabled = False
         tabDatos.Tab = 0
     End If
@@ -1339,14 +1342,14 @@ Private Sub GrdModulos_KeyDown(KeyCode As Integer, Shift As Integer)
 End Sub
 
 Private Sub Periodo_Change()
-    If Periodo.Text = "" Then
+    If Periodo.Value = "" Then
         lblPeriodo1.Caption = ""
     End If
 End Sub
 
 Private Sub Periodo_LostFocus()
-    If Trim(Periodo.Text) <> "" Then
-        lblPeriodo1.Caption = UCase(Format(Periodo.Text, "mmmm/yyyy"))
+    If Trim(Periodo.Value) <> "" Then
+        lblPeriodo1.Caption = UCase(Format(Periodo.Value, "mmmm/yyyy"))
     Else
         lblPeriodo1.Caption = ""
     End If
@@ -1362,7 +1365,7 @@ Private Sub tabDatos_Click(PreviousTab As Integer)
       FechaHasta.Enabled = False
       cboBuscaTipoGasto.Enabled = False
       cmdGrabar.Enabled = False
-      cmdBorrar.Enabled = False
+      CmdBorrar.Enabled = False
       cmdBuscarProveedor.Enabled = False
       If Me.Visible = True Then chkTipoProveedor.SetFocus
     Else

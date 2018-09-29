@@ -69,6 +69,7 @@ Begin VB.Form ABMTipoGasto
       _ExtentY        =   5106
       _Version        =   393216
       Tabs            =   2
+      Tab             =   1
       TabHeight       =   520
       BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
          Name            =   "MS Sans Serif"
@@ -81,13 +82,13 @@ Begin VB.Form ABMTipoGasto
       EndProperty
       TabCaption(0)   =   "&Datos"
       TabPicture(0)   =   "ABMTipoGasto.frx":1850
-      Tab(0).ControlEnabled=   -1  'True
+      Tab(0).ControlEnabled=   0   'False
       Tab(0).Control(0)=   "Frame3"
       Tab(0).Control(0).Enabled=   0   'False
       Tab(0).ControlCount=   1
       TabCaption(1)   =   "&Buscar"
       TabPicture(1)   =   "ABMTipoGasto.frx":186C
-      Tab(1).ControlEnabled=   0   'False
+      Tab(1).ControlEnabled=   -1  'True
       Tab(1).Control(0)=   "GrdModulos"
       Tab(1).Control(0).Enabled=   0   'False
       Tab(1).Control(1)=   "Frame1"
@@ -95,7 +96,7 @@ Begin VB.Form ABMTipoGasto
       Tab(1).ControlCount=   2
       Begin VB.Frame Frame1 
          Height          =   735
-         Left            =   -74865
+         Left            =   135
          TabIndex        =   13
          Top             =   375
          Width           =   5475
@@ -152,7 +153,7 @@ Begin VB.Form ABMTipoGasto
             Strikethrough   =   0   'False
          EndProperty
          Height          =   1815
-         Left            =   135
+         Left            =   -74865
          TabIndex        =   11
          Top             =   750
          Width           =   5490
@@ -194,7 +195,7 @@ Begin VB.Form ABMTipoGasto
       End
       Begin MSFlexGridLib.MSFlexGrid GrdModulos 
          Height          =   1635
-         Left            =   -74895
+         Left            =   105
          TabIndex        =   8
          Top             =   1125
          Width           =   5550
@@ -255,7 +256,7 @@ Private Sub CmdBorrar_Click()
             If TxtDescrip.Enabled Then TxtDescrip.SetFocus
             lblEstado.Caption = ""
             Screen.MousePointer = 1
-            cmdNuevo_Click
+            CmdNuevo_Click
         End If
     End If
     Exit Sub
@@ -293,7 +294,7 @@ Private Sub CmdBuscAprox_Click()
     Me.MousePointer = 1
 End Sub
 
-Private Sub CmdGrabar_Click()
+Private Sub cmdGrabar_Click()
     On Error GoTo CLAVOSE
     
     If Trim(TxtDescrip) = "" Then
@@ -322,7 +323,7 @@ Private Sub CmdGrabar_Click()
     End If
     rec.Close
     Screen.MousePointer = 1
-    cmdNuevo_Click
+    CmdNuevo_Click
     Exit Sub
     
 CLAVOSE:
@@ -330,7 +331,7 @@ CLAVOSE:
     MsgBox Err.Description, vbCritical, TIT_MSGBOX
 End Sub
 
-Private Sub cmdNuevo_Click()
+Private Sub CmdNuevo_Click()
     TxtCodigo.Text = ""
     TxtDescrip.Text = ""
     lblEstado.Caption = ""
@@ -338,7 +339,7 @@ Private Sub cmdNuevo_Click()
     If TxtCodigo.Enabled And Me.Visible Then TxtCodigo.SetFocus
 End Sub
 
-Private Sub cmdSalir_Click()
+Private Sub CmdSalir_Click()
     Unload Me
     Set ABMTipoGasto = Nothing
 End Sub
@@ -349,7 +350,7 @@ End Sub
 
 Private Sub Form_KeyPress(KeyAscii As Integer)
     'si presiono ESCAPE salgo del form
-    If KeyAscii = vbKeyEscape Then cmdSalir_Click
+    If KeyAscii = vbKeyEscape Then CmdSalir_Click
     If KeyAscii = vbKeyReturn Then 'avanza de campo
         SendKeys "{TAB}"
         KeyAscii = 0
@@ -369,7 +370,7 @@ Private Sub Form_Load()
     TabTB.Tab = 0
 End Sub
 
-Private Sub GrdModulos_dblClick()
+Private Sub GrdModulos_DblClick()
     If GrdModulos.row > 0 Then
         'paso el item seleccionado al tab 'DATOS'
         TxtCodigo.Text = GrdModulos.TextMatrix(GrdModulos.RowSel, 0)
@@ -385,7 +386,7 @@ Private Sub GrdModulos_GotFocus()
 End Sub
 
 Private Sub GrdModulos_KeyDown(KeyCode As Integer, Shift As Integer)
-    If KeyCode = vbKeyReturn Then GrdModulos_dblClick
+    If KeyCode = vbKeyReturn Then GrdModulos_DblClick
 End Sub
 
 Private Sub GrdModulos_LostFocus()
@@ -444,7 +445,7 @@ Private Sub TxtDescrip_GotFocus()
 End Sub
 
 Private Sub TxtDescrip_KeyPress(KeyAscii As Integer)
-    If KeyAscii = vbKeyReturn And cmdGrabar.Enabled Then CmdGrabar_Click
+    If KeyAscii = vbKeyReturn And cmdGrabar.Enabled Then cmdGrabar_Click
     KeyAscii = Mayuscula(KeyAscii)
 End Sub
 

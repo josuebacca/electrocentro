@@ -2,6 +2,7 @@ VERSION 5.00
 Object = "{F9043C88-F6F2-101A-A3C9-08002B2F49FB}#1.2#0"; "comdlg32.ocx"
 Object = "{5E9E78A0-531B-11CF-91F6-C2863C385E30}#1.0#0"; "msflxgrd.ocx"
 Object = "{86CF1D34-0C5F-11D2-A9FC-0000F8754DA1}#2.0#0"; "mscomct2.ocx"
+Object = "{00025600-0000-0000-C000-000000000046}#5.2#0"; "Crystl32.OCX"
 Begin VB.Form frmCtaCteProveedores 
    BorderStyle     =   1  'Fixed Single
    Caption         =   "Cta-Cte Proveedores"
@@ -16,6 +17,14 @@ Begin VB.Form frmCtaCteProveedores
    ScaleHeight     =   7545
    ScaleWidth      =   8235
    StartUpPosition =   2  'CenterScreen
+   Begin Crystal.CrystalReport Rep 
+      Left            =   3480
+      Top             =   5760
+      _ExtentX        =   741
+      _ExtentY        =   741
+      _Version        =   348160
+      PrintFileLinesPerPage=   60
+   End
    Begin VB.Frame Frame1 
       Height          =   120
       Left            =   60
@@ -179,25 +188,25 @@ Begin VB.Form frmCtaCteProveedores
       Begin MSComCtl2.DTPicker FechaDesde 
          Height          =   375
          Left            =   1230
+         TabIndex        =   30
+         Top             =   960
+         Width           =   1335
+         _ExtentX        =   2355
+         _ExtentY        =   661
+         _Version        =   393216
+         Format          =   53936129
+         CurrentDate     =   43367
+      End
+      Begin MSComCtl2.DTPicker FechaHasta 
+         Height          =   375
+         Left            =   3720
          TabIndex        =   31
          Top             =   960
          Width           =   1335
          _ExtentX        =   2355
          _ExtentY        =   661
          _Version        =   393216
-         Format          =   58982401
-         CurrentDate     =   43367
-      End
-      Begin MSComCtl2.DTPicker FechaHasta 
-         Height          =   375
-         Left            =   3720
-         TabIndex        =   32
-         Top             =   960
-         Width           =   1335
-         _ExtentX        =   2355
-         _ExtentY        =   661
-         _Version        =   393216
-         Format          =   58982401
+         Format          =   53936129
          CurrentDate     =   43367
       End
       Begin VB.Label Label13 
@@ -258,15 +267,6 @@ Begin VB.Form frmCtaCteProveedores
       FocusRect       =   0
       HighLight       =   2
       SelectionMode   =   1
-   End
-   Begin VB.PictureBox Rep 
-      Height          =   480
-      Left            =   5295
-      ScaleHeight     =   420
-      ScaleWidth      =   1140
-      TabIndex        =   30
-      Top             =   5730
-      Width           =   1200
    End
    Begin MSComDlg.CommonDialog CDImpresora 
       Left            =   4800
@@ -548,11 +548,11 @@ Private Sub CmdBuscAprox_Click()
         lblProveedor.Caption = "Cta-Cte del Proveedor  " & txtProvRazSoc.Text
         If FechaDesde.Value <> "" And FechaHasta.Value <> "" Then
             lblFecha.Caption = "Desde  " & FechaDesde.Value & "  al  " & FechaHasta.Value
-        ElseIf FechaDesde.Value <> "" And FechaHasta.Value = "" Then
+        ElseIf FechaDesde.Value <> "" And FechaHasta.Value = Date Then
             lblFecha.Caption = "Desde  " & FechaDesde.Value & "  al  " & Date
-        ElseIf FechaDesde.Value = "" And FechaHasta.Value <> "" Then
+        ElseIf FechaDesde.Value = Date And FechaHasta.Value <> "" Then
             lblFecha.Caption = "Al  " & FechaHasta.Value
-        ElseIf FechaDesde.Value = "" And FechaHasta.Value = "" Then
+        ElseIf FechaDesde.Value = Date And FechaHasta.Value = Date Then
             lblFecha.Caption = "Al  " & Date
         End If
         rec.Close
@@ -580,7 +580,7 @@ Private Sub CmdBuscAprox_Click()
 End Sub
 
 Private Sub cmdListar_Click()
-     'Rep.WindowState = crptMaximized 'crptMinimized
+     Rep.WindowState = crptMaximized 'crptMinimized
     Rep.WindowBorderStyle = crptNoBorder
     Rep.Connect = "Provider=MSDASQL.1;Persist Security Info=False;Data Source=SIELECTROCENTRO"
     Rep.SelectionFormula = ""
@@ -610,11 +610,11 @@ Private Sub cmdListar_Click()
     End If
     If FechaDesde.Value <> "" And FechaHasta.Value <> "" Then
         Rep.Formulas(0) = "FECHA='" & "Desde: " & FechaDesde.Value & "   Hasta: " & FechaHasta.Value & "'"
-    ElseIf FechaDesde.Value <> "" And FechaHasta.Value = "" Then
+    ElseIf FechaDesde.Value <> "" And FechaHasta.Value = Date Then
         Rep.Formulas(0) = "FECHA='" & "Desde: " & FechaDesde.Value & "   Hasta: " & Date & "'"
-    ElseIf FechaDesde.Value = "" And FechaHasta.Value <> "" Then
+    ElseIf FechaDesde.Value = Date And FechaHasta.Value <> "" Then
         Rep.Formulas(0) = "FECHA='" & "Desde: Inicio" & "   Hasta: " & FechaHasta.Value & "'"
-    ElseIf FechaDesde.Value = "" And FechaHasta.Value = "" Then
+    ElseIf FechaDesde.Value = Date And FechaHasta.Value = Date Then
         Rep.Formulas(0) = "FECHA='" & "Desde: Inicio" & "   Hasta: " & Date & "'"
     End If
         Rep.Formulas(1) = "SALDOACTUAL='" & Valido_Importe(lblSaldoActual) & "'"
@@ -720,8 +720,8 @@ End Sub
 
 Private Sub CmdNuevo_Click()
     txtCodProveedor.Text = ""
-    FechaDesde.Value = ""
-    FechaHasta.Value = ""
+    FechaDesde.Value = Date
+    FechaHasta.Value = Date
     lblProveedor.Caption = "Proveedor"
     lblFecha.Caption = "Fecha"
     lblSaldo.Caption = "0,00"
@@ -735,7 +735,7 @@ Private Sub CmdNuevo_Click()
     cboTipoProveedor.SetFocus
 End Sub
 
-Private Sub CmdSalir_Click()
+Private Sub cmdSalir_Click()
     Set frmCtaCteProveedores = Nothing
     Unload Me
 End Sub

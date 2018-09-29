@@ -1,6 +1,6 @@
 VERSION 5.00
-Object = "{BDC217C8-ED16-11CD-956C-0000C04E4C0A}#1.1#0"; "TABCTL32.OCX"
-Object = "{5E9E78A0-531B-11CF-91F6-C2863C385E30}#1.0#0"; "MSFLXGRD.OCX"
+Object = "{BDC217C8-ED16-11CD-956C-0000C04E4C0A}#1.1#0"; "tabctl32.ocx"
+Object = "{5E9E78A0-531B-11CF-91F6-C2863C385E30}#1.0#0"; "msflxgrd.ocx"
 Begin VB.Form ABMLinea 
    BorderStyle     =   1  'Fixed Single
    Caption         =   " ABM de Familias"
@@ -69,6 +69,7 @@ Begin VB.Form ABMLinea
       _ExtentY        =   5715
       _Version        =   393216
       Tabs            =   2
+      Tab             =   1
       TabHeight       =   520
       BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
          Name            =   "MS Sans Serif"
@@ -81,19 +82,21 @@ Begin VB.Form ABMLinea
       EndProperty
       TabCaption(0)   =   "&Datos"
       TabPicture(0)   =   "ABMLinea.frx":123C
-      Tab(0).ControlEnabled=   -1  'True
+      Tab(0).ControlEnabled=   0   'False
       Tab(0).Control(0)=   "Frame3"
       Tab(0).Control(0).Enabled=   0   'False
       Tab(0).ControlCount=   1
       TabCaption(1)   =   "&Buscar"
       TabPicture(1)   =   "ABMLinea.frx":1258
-      Tab(1).ControlEnabled=   0   'False
+      Tab(1).ControlEnabled=   -1  'True
       Tab(1).Control(0)=   "GrdModulos"
+      Tab(1).Control(0).Enabled=   0   'False
       Tab(1).Control(1)=   "Frame1"
+      Tab(1).Control(1).Enabled=   0   'False
       Tab(1).ControlCount=   2
       Begin VB.Frame Frame1 
          Height          =   735
-         Left            =   -74790
+         Left            =   210
          TabIndex        =   13
          Top             =   360
          Width           =   5340
@@ -162,7 +165,7 @@ Begin VB.Form ABMLinea
             Strikethrough   =   0   'False
          EndProperty
          Height          =   1950
-         Left            =   225
+         Left            =   -74775
          TabIndex        =   11
          Top             =   615
          Width           =   5295
@@ -204,7 +207,7 @@ Begin VB.Form ABMLinea
       End
       Begin MSFlexGridLib.MSFlexGrid GrdModulos 
          Height          =   1980
-         Left            =   -74820
+         Left            =   180
          TabIndex        =   8
          Top             =   1140
          Width           =   5385
@@ -345,7 +348,7 @@ Private Sub CmdNuevo_Click()
     TxtCodigo.SetFocus
 End Sub
 
-Private Sub cmdSalir_Click()
+Private Sub CmdSalir_Click()
     Unload Me
     Set ABMLinea = Nothing
 End Sub
@@ -356,7 +359,7 @@ End Sub
 
 Private Sub Form_KeyPress(KeyAscii As Integer)
     'si presiono ESCAPE salgo del form
-    If KeyAscii = vbKeyEscape Then cmdSalir_Click
+    If KeyAscii = vbKeyEscape Then CmdSalir_Click
     If KeyAscii = vbKeyReturn Then 'avanza de campo
         SendKeys "{TAB}"
         KeyAscii = 0
@@ -413,11 +416,11 @@ Private Sub tabTB_Click(PreviousTab As Integer)
         TxtCodigoB.Text = ""
         TxtDescriB.Text = ""
         If TxtDescriB.Enabled Then TxtDescriB.SetFocus
-        CmdGrabar.Enabled = False
-        CmdBorrar.Enabled = False
+        cmdGrabar.Enabled = False
+        cmdBorrar.Enabled = False
     Else
-        CmdGrabar.Enabled = True
-        CmdBorrar.Enabled = True
+        cmdGrabar.Enabled = True
+        cmdBorrar.Enabled = True
     End If
 End Sub
 
@@ -463,22 +466,22 @@ Private Sub TxtDescrip_GotFocus()
 End Sub
 
 Private Sub TxtDescrip_KeyPress(KeyAscii As Integer)
-    If KeyAscii = vbKeyReturn And CmdGrabar.Enabled Then cmdGrabar_Click
+    If KeyAscii = vbKeyReturn And cmdGrabar.Enabled Then cmdGrabar_Click
     KeyAscii = Mayuscula(KeyAscii)
 End Sub
 
 Private Sub TxtCodigo_Change()
-    If Trim(TxtCodigo) = "" And CmdBorrar.Enabled Then
-        CmdBorrar.Enabled = False
+    If Trim(TxtCodigo) = "" And cmdBorrar.Enabled Then
+        cmdBorrar.Enabled = False
     ElseIf Trim(TxtCodigo) <> "" Then
-        CmdBorrar.Enabled = True
+        cmdBorrar.Enabled = True
     End If
 End Sub
 
 Private Sub TxtDescrip_Change()
-    If Trim(TxtDescrip) = "" And CmdGrabar.Enabled Then
-        CmdGrabar.Enabled = False
+    If Trim(TxtDescrip) = "" And cmdGrabar.Enabled Then
+        cmdGrabar.Enabled = False
     Else
-        CmdGrabar.Enabled = True
+        cmdGrabar.Enabled = True
     End If
 End Sub

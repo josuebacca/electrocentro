@@ -20,7 +20,7 @@ Begin VB.Form frmReciboCliente
       Caption         =   "&Nuevo"
       Height          =   450
       Left            =   10020
-      TabIndex        =   48
+      TabIndex        =   47
       Top             =   6555
       Width           =   870
    End
@@ -28,7 +28,7 @@ Begin VB.Form frmReciboCliente
       Caption         =   "&Aceptar"
       Height          =   450
       Left            =   9135
-      TabIndex        =   47
+      TabIndex        =   46
       Top             =   6555
       Width           =   870
    End
@@ -36,14 +36,14 @@ Begin VB.Form frmReciboCliente
       Caption         =   "&Salir"
       Height          =   450
       Left            =   10890
-      TabIndex        =   49
+      TabIndex        =   48
       Top             =   6555
       Width           =   870
    End
    Begin TabDlg.SSTab tabDatos 
       Height          =   6465
       Left            =   30
-      TabIndex        =   50
+      TabIndex        =   49
       Top             =   15
       Width           =   12090
       _ExtentX        =   21325
@@ -77,13 +77,13 @@ Begin VB.Form frmReciboCliente
       TabCaption(1)   =   "&Buscar"
       TabPicture(1)   =   "frmReciboCliente.frx":001C
       Tab(1).ControlEnabled=   0   'False
-      Tab(1).Control(0)=   "frameBuscar"
-      Tab(1).Control(1)=   "GrdModulos"
+      Tab(1).Control(0)=   "GrdModulos"
+      Tab(1).Control(1)=   "frameBuscar"
       Tab(1).ControlCount=   2
       Begin TabDlg.SSTab tabComprobantes 
          Height          =   3975
          Left            =   120
-         TabIndex        =   93
+         TabIndex        =   89
          Top             =   2490
          Width           =   5940
          _ExtentX        =   10478
@@ -91,19 +91,18 @@ Begin VB.Form frmReciboCliente
          _Version        =   393216
          Style           =   1
          Tabs            =   2
-         Tab             =   1
          TabsPerRow      =   2
          TabHeight       =   520
          TabCaption(0)   =   "&Aplicar a"
          TabPicture(0)   =   "frmReciboCliente.frx":0038
-         Tab(0).ControlEnabled=   0   'False
+         Tab(0).ControlEnabled=   -1  'True
          Tab(0).Control(0)=   "Frame1"
+         Tab(0).Control(0).Enabled=   0   'False
          Tab(0).ControlCount=   1
          TabCaption(1)   =   "C&omprobantes Pendientes"
          TabPicture(1)   =   "frmReciboCliente.frx":0054
-         Tab(1).ControlEnabled=   -1  'True
+         Tab(1).ControlEnabled=   0   'False
          Tab(1).Control(0)=   "Frame5"
-         Tab(1).Control(0).Enabled=   0   'False
          Tab(1).ControlCount=   1
          Begin VB.Frame Frame5 
             Caption         =   "Recibo de Cliente"
@@ -117,8 +116,8 @@ Begin VB.Form frmReciboCliente
                Strikethrough   =   0   'False
             EndProperty
             Height          =   3555
-            Left            =   90
-            TabIndex        =   122
+            Left            =   -74910
+            TabIndex        =   117
             Top             =   360
             Width           =   5535
             Begin VB.TextBox txtResta 
@@ -136,7 +135,7 @@ Begin VB.Form frmReciboCliente
                Height          =   315
                Left            =   840
                Locked          =   -1  'True
-               TabIndex        =   143
+               TabIndex        =   138
                Top             =   3120
                Width           =   1065
             End
@@ -230,7 +229,7 @@ Begin VB.Form frmReciboCliente
                Caption         =   "Resta:"
                Height          =   195
                Left            =   300
-               TabIndex        =   144
+               TabIndex        =   139
                Top             =   3120
                Width           =   465
             End
@@ -239,7 +238,7 @@ Begin VB.Form frmReciboCliente
                Caption         =   "Entrega:"
                Height          =   195
                Left            =   165
-               TabIndex        =   142
+               TabIndex        =   137
                Top             =   2805
                Width           =   600
             End
@@ -258,7 +257,7 @@ Begin VB.Form frmReciboCliente
                ForeColor       =   &H000000FF&
                Height          =   195
                Left            =   4680
-               TabIndex        =   141
+               TabIndex        =   136
                Top             =   2400
                Width           =   75
             End
@@ -267,7 +266,7 @@ Begin VB.Form frmReciboCliente
                Caption         =   "Importe a pagar:"
                Height          =   195
                Left            =   1995
-               TabIndex        =   124
+               TabIndex        =   119
                Top             =   3165
                Width           =   1155
             End
@@ -276,7 +275,7 @@ Begin VB.Form frmReciboCliente
                Caption         =   "Saldo:"
                Height          =   195
                Left            =   2700
-               TabIndex        =   123
+               TabIndex        =   118
                Top             =   2790
                Width           =   450
             End
@@ -293,8 +292,8 @@ Begin VB.Form frmReciboCliente
                Strikethrough   =   0   'False
             EndProperty
             Height          =   3405
-            Left            =   -74940
-            TabIndex        =   118
+            Left            =   60
+            TabIndex        =   113
             Top             =   480
             Width           =   5565
             Begin VB.CommandButton cmdAceptarFacturas 
@@ -336,14 +335,14 @@ Begin VB.Form frmReciboCliente
                EndProperty
                Height          =   315
                Left            =   1050
-               TabIndex        =   119
+               TabIndex        =   114
                Top             =   2880
                Width           =   1170
             End
             Begin MSFlexGridLib.MSFlexGrid GrillaAplicar1 
                Height          =   1860
                Left            =   105
-               TabIndex        =   120
+               TabIndex        =   115
                Top             =   915
                Width           =   5415
                _ExtentX        =   9551
@@ -362,7 +361,7 @@ Begin VB.Form frmReciboCliente
                Caption         =   "Total:"
                Height          =   195
                Left            =   570
-               TabIndex        =   125
+               TabIndex        =   120
                Top             =   2925
                Width           =   405
             End
@@ -371,7 +370,7 @@ Begin VB.Form frmReciboCliente
                Caption         =   "Total Valores Recibidos:"
                Height          =   195
                Left            =   360
-               TabIndex        =   121
+               TabIndex        =   116
                Top             =   3420
                Width           =   1725
             End
@@ -388,6 +387,7 @@ Begin VB.Form frmReciboCliente
          _Version        =   393216
          Style           =   1
          Tabs            =   5
+         Tab             =   3
          TabsPerRow      =   5
          TabHeight       =   520
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
@@ -401,9 +401,8 @@ Begin VB.Form frmReciboCliente
          EndProperty
          TabCaption(0)   =   "&Valores"
          TabPicture(0)   =   "frmReciboCliente.frx":0070
-         Tab(0).ControlEnabled=   -1  'True
+         Tab(0).ControlEnabled=   0   'False
          Tab(0).Control(0)=   "Frame2"
-         Tab(0).Control(0).Enabled=   0   'False
          Tab(0).ControlCount=   1
          TabCaption(1)   =   "&Cheques"
          TabPicture(1)   =   "frmReciboCliente.frx":008C
@@ -417,8 +416,9 @@ Begin VB.Form frmReciboCliente
          Tab(2).ControlCount=   1
          TabCaption(3)   =   "&Comprobantes"
          TabPicture(3)   =   "frmReciboCliente.frx":00C4
-         Tab(3).ControlEnabled=   0   'False
+         Tab(3).ControlEnabled=   -1  'True
          Tab(3).Control(0)=   "Frame7"
+         Tab(3).Control(0).Enabled=   0   'False
          Tab(3).ControlCount=   1
          TabCaption(4)   =   "Va&lores a Cuenta"
          TabPicture(4)   =   "frmReciboCliente.frx":00E0
@@ -438,14 +438,14 @@ Begin VB.Form frmReciboCliente
             EndProperty
             Height          =   3435
             Left            =   -74940
-            TabIndex        =   136
+            TabIndex        =   131
             Top             =   480
             Width           =   5535
             Begin VB.CommandButton cmdAgregarACta 
                Caption         =   "A&gregar"
                Height          =   360
                Left            =   3585
-               TabIndex        =   45
+               TabIndex        =   44
                Top             =   2970
                Width           =   900
             End
@@ -463,7 +463,7 @@ Begin VB.Form frmReciboCliente
                EndProperty
                Height          =   315
                Left            =   1410
-               TabIndex        =   43
+               TabIndex        =   42
                Top             =   2610
                Width           =   1185
             End
@@ -480,7 +480,7 @@ Begin VB.Form frmReciboCliente
                EndProperty
                Height          =   315
                Left            =   1410
-               TabIndex        =   44
+               TabIndex        =   43
                Top             =   2985
                Width           =   1185
             End
@@ -488,14 +488,14 @@ Begin VB.Form frmReciboCliente
                Caption         =   "A&ceptar"
                Height          =   360
                Left            =   4500
-               TabIndex        =   46
+               TabIndex        =   45
                Top             =   2970
                Width           =   900
             End
             Begin MSFlexGridLib.MSFlexGrid GrillaAFavor 
                Height          =   2205
                Left            =   90
-               TabIndex        =   42
+               TabIndex        =   41
                Top             =   285
                Width           =   5310
                _ExtentX        =   9366
@@ -514,7 +514,7 @@ Begin VB.Form frmReciboCliente
                Caption         =   "Saldo:"
                Height          =   195
                Left            =   915
-               TabIndex        =   138
+               TabIndex        =   133
                Top             =   2655
                Width           =   450
             End
@@ -523,7 +523,7 @@ Begin VB.Form frmReciboCliente
                Caption         =   "Importe:"
                Height          =   195
                Left            =   795
-               TabIndex        =   137
+               TabIndex        =   132
                Top             =   3030
                Width           =   570
             End
@@ -540,15 +540,15 @@ Begin VB.Form frmReciboCliente
                Strikethrough   =   0   'False
             EndProperty
             Height          =   3435
-            Left            =   -74940
-            TabIndex        =   127
+            Left            =   60
+            TabIndex        =   122
             Top             =   480
             Width           =   5535
             Begin VB.TextBox txtImporteComprobante 
                Height          =   315
                Left            =   1335
                MaxLength       =   8
-               TabIndex        =   38
+               TabIndex        =   37
                Top             =   1320
                Width           =   1140
             End
@@ -565,7 +565,7 @@ Begin VB.Form frmReciboCliente
                Height          =   315
                Left            =   1335
                MaxLength       =   4
-               TabIndex        =   36
+               TabIndex        =   35
                Top             =   975
                Width           =   555
             End
@@ -573,7 +573,7 @@ Begin VB.Form frmReciboCliente
                Caption         =   "Cancelar"
                Height          =   360
                Left            =   1305
-               TabIndex        =   41
+               TabIndex        =   40
                Top             =   2970
                Width           =   960
             End
@@ -581,7 +581,7 @@ Begin VB.Form frmReciboCliente
                Caption         =   "Aceptar"
                Height          =   360
                Left            =   330
-               TabIndex        =   40
+               TabIndex        =   39
                Top             =   2970
                Width           =   960
             End
@@ -598,7 +598,7 @@ Begin VB.Form frmReciboCliente
                Height          =   315
                Left            =   1905
                MaxLength       =   8
-               TabIndex        =   37
+               TabIndex        =   36
                Top             =   975
                Width           =   1065
             End
@@ -614,7 +614,7 @@ Begin VB.Form frmReciboCliente
                Caption         =   "Agregar"
                Height          =   345
                Left            =   4485
-               TabIndex        =   39
+               TabIndex        =   38
                Top             =   1290
                Width           =   720
             End
@@ -633,23 +633,14 @@ Begin VB.Form frmReciboCliente
                EndProperty
                Height          =   315
                Left            =   3975
-               TabIndex        =   128
+               TabIndex        =   123
                Top             =   2940
                Width           =   1035
-            End
-            Begin VB.PictureBox fechaComprobantes 
-               Height          =   360
-               Left            =   1335
-               ScaleHeight     =   300
-               ScaleWidth      =   1095
-               TabIndex        =   35
-               Top             =   660
-               Width           =   1155
             End
             Begin MSFlexGridLib.MSFlexGrid GrillaComp 
                Height          =   1245
                Left            =   315
-               TabIndex        =   129
+               TabIndex        =   124
                Top             =   1665
                Width           =   4950
                _ExtentX        =   8731
@@ -663,12 +654,24 @@ Begin VB.Form frmReciboCliente
                HighLight       =   2
                SelectionMode   =   1
             End
+            Begin MSComCtl2.DTPicker fechaComprobantes 
+               Height          =   315
+               Left            =   1320
+               TabIndex        =   150
+               Top             =   600
+               Width           =   1335
+               _ExtentX        =   2355
+               _ExtentY        =   556
+               _Version        =   393216
+               Format          =   53673985
+               CurrentDate     =   43367
+            End
             Begin VB.Label Label21 
                AutoSize        =   -1  'True
                Caption         =   "Importe:"
                Height          =   195
                Left            =   720
-               TabIndex        =   134
+               TabIndex        =   129
                Top             =   1380
                Width           =   570
             End
@@ -677,7 +680,7 @@ Begin VB.Form frmReciboCliente
                Caption         =   "Comprobante:"
                Height          =   195
                Left            =   300
-               TabIndex        =   133
+               TabIndex        =   128
                Top             =   1050
                Width           =   990
             End
@@ -686,7 +689,7 @@ Begin VB.Form frmReciboCliente
                Caption         =   "Tipo:"
                Height          =   195
                Left            =   930
-               TabIndex        =   132
+               TabIndex        =   127
                Top             =   330
                Width           =   360
             End
@@ -696,7 +699,7 @@ Begin VB.Form frmReciboCliente
                Height          =   195
                Index           =   3
                Left            =   795
-               TabIndex        =   131
+               TabIndex        =   126
                Top             =   690
                Width           =   495
             End
@@ -705,7 +708,7 @@ Begin VB.Form frmReciboCliente
                Caption         =   "Total:"
                Height          =   195
                Left            =   3525
-               TabIndex        =   130
+               TabIndex        =   125
                Top             =   3000
                Width           =   405
             End
@@ -723,7 +726,7 @@ Begin VB.Form frmReciboCliente
             EndProperty
             Height          =   3435
             Left            =   -74940
-            TabIndex        =   112
+            TabIndex        =   107
             Top             =   480
             Width           =   5532
             Begin VB.CommandButton cmdCancelarMoneda 
@@ -757,7 +760,7 @@ Begin VB.Form frmReciboCliente
                EndProperty
                Height          =   315
                Left            =   3030
-               TabIndex        =   116
+               TabIndex        =   111
                Top             =   2505
                Width           =   1035
             End
@@ -787,7 +790,7 @@ Begin VB.Form frmReciboCliente
             Begin MSFlexGridLib.MSFlexGrid GrillaEfectivo 
                Height          =   1095
                Left            =   1095
-               TabIndex        =   113
+               TabIndex        =   108
                Top             =   1350
                Width           =   3285
                _ExtentX        =   5794
@@ -806,7 +809,7 @@ Begin VB.Form frmReciboCliente
                Caption         =   "Total:"
                Height          =   195
                Left            =   2580
-               TabIndex        =   117
+               TabIndex        =   112
                Top             =   2565
                Width           =   405
             End
@@ -815,7 +818,7 @@ Begin VB.Form frmReciboCliente
                Caption         =   "Moneda:"
                Height          =   195
                Left            =   480
-               TabIndex        =   115
+               TabIndex        =   110
                Top             =   525
                Width           =   630
             End
@@ -825,7 +828,7 @@ Begin VB.Form frmReciboCliente
                Height          =   195
                Index           =   2
                Left            =   540
-               TabIndex        =   114
+               TabIndex        =   109
                Top             =   975
                Width           =   570
             End
@@ -843,14 +846,14 @@ Begin VB.Form frmReciboCliente
             EndProperty
             Height          =   3435
             Left            =   -74940
-            TabIndex        =   94
+            TabIndex        =   90
             Top             =   480
             Width           =   5535
             Begin VB.TextBox TxtCheImport 
                Enabled         =   0   'False
                Height          =   315
                Left            =   1000
-               TabIndex        =   148
+               TabIndex        =   143
                Top             =   1100
                Width           =   900
             End
@@ -859,7 +862,7 @@ Begin VB.Form frmReciboCliente
                Height          =   315
                Left            =   1970
                MaxLength       =   100
-               TabIndex        =   146
+               TabIndex        =   141
                Top             =   720
                Width           =   3420
             End
@@ -868,7 +871,7 @@ Begin VB.Form frmReciboCliente
                Height          =   315
                Left            =   1000
                MaxLength       =   10
-               TabIndex        =   145
+               TabIndex        =   140
                Top             =   720
                Width           =   900
             End
@@ -878,7 +881,7 @@ Begin VB.Form frmReciboCliente
                MaskColor       =   &H000000FF&
                Picture         =   "frmReciboCliente.frx":00FC
                Style           =   1  'Graphical
-               TabIndex        =   140
+               TabIndex        =   135
                ToolTipText     =   "Buscar Cheques"
                Top             =   330
                UseMaskColor    =   -1  'True
@@ -913,7 +916,7 @@ Begin VB.Form frmReciboCliente
                EndProperty
                Height          =   375
                Left            =   3360
-               TabIndex        =   102
+               TabIndex        =   97
                Top             =   240
                Visible         =   0   'False
                Width           =   315
@@ -963,7 +966,7 @@ Begin VB.Form frmReciboCliente
                   EndProperty
                   Height          =   315
                   Left            =   60
-                  TabIndex        =   105
+                  TabIndex        =   100
                   Top             =   615
                   Width           =   4500
                End
@@ -971,7 +974,7 @@ Begin VB.Form frmReciboCliente
                   BackColor       =   &H80000018&
                   Height          =   300
                   Left            =   2670
-                  TabIndex        =   104
+                  TabIndex        =   99
                   Top             =   120
                   Visible         =   0   'False
                   Width           =   420
@@ -991,7 +994,7 @@ Begin VB.Form frmReciboCliente
                   Left            =   4170
                   Picture         =   "frmReciboCliente.frx":0710
                   Style           =   1  'Graphical
-                  TabIndex        =   103
+                  TabIndex        =   98
                   Top             =   225
                   Width           =   375
                End
@@ -1005,7 +1008,7 @@ Begin VB.Form frmReciboCliente
                   Height          =   195
                   Index           =   11
                   Left            =   1035
-                  TabIndex        =   109
+                  TabIndex        =   104
                   Top             =   270
                   Width           =   315
                End
@@ -1019,7 +1022,7 @@ Begin VB.Form frmReciboCliente
                   Height          =   195
                   Index           =   10
                   Left            =   150
-                  TabIndex        =   108
+                  TabIndex        =   103
                   Top             =   270
                   Width           =   330
                End
@@ -1033,7 +1036,7 @@ Begin VB.Form frmReciboCliente
                   Height          =   195
                   Index           =   5
                   Left            =   1935
-                  TabIndex        =   107
+                  TabIndex        =   102
                   Top             =   270
                   Width           =   330
                End
@@ -1047,7 +1050,7 @@ Begin VB.Form frmReciboCliente
                   Height          =   195
                   Index           =   0
                   Left            =   2790
-                  TabIndex        =   106
+                  TabIndex        =   101
                   Top             =   285
                   Width           =   540
                End
@@ -1066,7 +1069,7 @@ Begin VB.Form frmReciboCliente
                MaskColor       =   &H000000FF&
                Picture         =   "frmReciboCliente.frx":085A
                Style           =   1  'Graphical
-               TabIndex        =   100
+               TabIndex        =   95
                ToolTipText     =   "Cargar Cheques"
                Top             =   330
                UseMaskColor    =   -1  'True
@@ -1095,24 +1098,14 @@ Begin VB.Form frmReciboCliente
                EndProperty
                Height          =   315
                Left            =   4305
-               TabIndex        =   98
+               TabIndex        =   93
                Top             =   3045
                Width           =   1035
-            End
-            Begin VB.PictureBox TxtCheFecVto 
-               Enabled         =   0   'False
-               Height          =   285
-               Left            =   3360
-               ScaleHeight     =   225
-               ScaleWidth      =   1185
-               TabIndex        =   95
-               Top             =   1100
-               Width           =   1245
             End
             Begin MSFlexGridLib.MSFlexGrid GrillaCheques 
                Height          =   1410
                Left            =   75
-               TabIndex        =   96
+               TabIndex        =   91
                Top             =   1575
                Width           =   5385
                _ExtentX        =   9499
@@ -1127,13 +1120,25 @@ Begin VB.Form frmReciboCliente
                SelectionMode   =   1
                AllowUserResizing=   3
             End
+            Begin MSComCtl2.DTPicker TxtCheFecVto 
+               Height          =   315
+               Left            =   3360
+               TabIndex        =   151
+               Top             =   1080
+               Width           =   1335
+               _ExtentX        =   2355
+               _ExtentY        =   556
+               _Version        =   393216
+               Format          =   53673985
+               CurrentDate     =   43367
+            End
             Begin VB.Label Label1 
                AutoSize        =   -1  'True
                Caption         =   "Fecha Vto:"
                Height          =   195
                Index           =   5
                Left            =   2520
-               TabIndex        =   150
+               TabIndex        =   145
                Top             =   1125
                Width           =   780
             End
@@ -1143,7 +1148,7 @@ Begin VB.Form frmReciboCliente
                Height          =   195
                Index           =   4
                Left            =   360
-               TabIndex        =   149
+               TabIndex        =   144
                Top             =   1125
                Width           =   570
             End
@@ -1153,7 +1158,7 @@ Begin VB.Form frmReciboCliente
                Height          =   195
                Index           =   1
                Left            =   420
-               TabIndex        =   147
+               TabIndex        =   142
                Top             =   750
                Width           =   510
             End
@@ -1163,7 +1168,7 @@ Begin VB.Form frmReciboCliente
                Height          =   195
                Index           =   7
                Left            =   30
-               TabIndex        =   111
+               TabIndex        =   106
                Top             =   375
                Width           =   900
             End
@@ -1172,7 +1177,7 @@ Begin VB.Form frmReciboCliente
                Caption         =   "Total:"
                Height          =   195
                Left            =   3840
-               TabIndex        =   110
+               TabIndex        =   105
                Top             =   3105
                Width           =   405
             End
@@ -1189,8 +1194,8 @@ Begin VB.Form frmReciboCliente
                Strikethrough   =   0   'False
             EndProperty
             Height          =   3405
-            Left            =   60
-            TabIndex        =   89
+            Left            =   -74940
+            TabIndex        =   85
             Top             =   480
             Width           =   5565
             Begin VB.CommandButton cmdAgregarVALCTA 
@@ -1256,14 +1261,14 @@ Begin VB.Form frmReciboCliente
                EndProperty
                Height          =   315
                Left            =   840
-               TabIndex        =   90
+               TabIndex        =   86
                Top             =   2895
                Width           =   1170
             End
             Begin MSFlexGridLib.MSFlexGrid grillaValores 
                Height          =   1875
                Left            =   105
-               TabIndex        =   91
+               TabIndex        =   87
                Top             =   915
                Width           =   5415
                _ExtentX        =   9551
@@ -1282,7 +1287,7 @@ Begin VB.Form frmReciboCliente
                Caption         =   "Total:"
                Height          =   195
                Left            =   360
-               TabIndex        =   126
+               TabIndex        =   121
                Top             =   2940
                Width           =   405
             End
@@ -1291,7 +1296,7 @@ Begin VB.Form frmReciboCliente
                Caption         =   "Total Valores Recibidos:"
                Height          =   195
                Left            =   360
-               TabIndex        =   92
+               TabIndex        =   88
                Top             =   3420
                Width           =   1725
             End
@@ -1309,14 +1314,14 @@ Begin VB.Form frmReciboCliente
          EndProperty
          Height          =   2055
          Left            =   5040
-         TabIndex        =   62
+         TabIndex        =   59
          Top             =   360
          Width           =   6900
          Begin VB.TextBox txtCliLocalidad 
             Enabled         =   0   'False
             Height          =   300
             Left            =   3825
-            TabIndex        =   85
+            TabIndex        =   82
             Top             =   720
             Width           =   2925
          End
@@ -1362,7 +1367,7 @@ Begin VB.Form frmReciboCliente
             MaskColor       =   &H000000FF&
             Picture         =   "frmReciboCliente.frx":0BE4
             Style           =   1  'Graphical
-            TabIndex        =   84
+            TabIndex        =   81
             ToolTipText     =   "Buscar Cliente"
             Top             =   383
             UseMaskColor    =   -1  'True
@@ -1390,7 +1395,7 @@ Begin VB.Form frmReciboCliente
             Caption         =   "Provincia:"
             Height          =   195
             Left            =   390
-            TabIndex        =   83
+            TabIndex        =   80
             Top             =   750
             Width           =   705
          End
@@ -1399,7 +1404,7 @@ Begin VB.Form frmReciboCliente
             Caption         =   "Domicilio:"
             Height          =   195
             Left            =   420
-            TabIndex        =   82
+            TabIndex        =   79
             Top             =   1080
             Width           =   675
          End
@@ -1408,7 +1413,7 @@ Begin VB.Form frmReciboCliente
             Caption         =   "Loc.:"
             Height          =   195
             Left            =   3420
-            TabIndex        =   81
+            TabIndex        =   78
             Top             =   765
             Width           =   360
          End
@@ -1422,7 +1427,7 @@ Begin VB.Form frmReciboCliente
             Height          =   195
             Index           =   1
             Left            =   360
-            TabIndex        =   80
+            TabIndex        =   77
             Top             =   1410
             Width           =   735
          End
@@ -1431,7 +1436,7 @@ Begin VB.Form frmReciboCliente
             Caption         =   "Recibimos de:"
             Height          =   195
             Left            =   90
-            TabIndex        =   79
+            TabIndex        =   76
             Top             =   420
             Width           =   1005
          End
@@ -1449,7 +1454,7 @@ Begin VB.Form frmReciboCliente
          EndProperty
          Height          =   2055
          Left            =   105
-         TabIndex        =   72
+         TabIndex        =   69
          Top             =   360
          Width           =   4845
          Begin VB.TextBox txtNroSucursal 
@@ -1465,7 +1470,7 @@ Begin VB.Form frmReciboCliente
             Height          =   330
             Left            =   1230
             MaxLength       =   4
-            TabIndex        =   99
+            TabIndex        =   94
             Top             =   825
             Width           =   555
          End
@@ -1483,7 +1488,7 @@ Begin VB.Form frmReciboCliente
             Height          =   330
             Left            =   1815
             MaxLength       =   8
-            TabIndex        =   101
+            TabIndex        =   96
             Top             =   825
             Width           =   1065
          End
@@ -1491,29 +1496,32 @@ Begin VB.Form frmReciboCliente
             Height          =   315
             Left            =   1230
             Style           =   2  'Dropdown List
-            TabIndex        =   97
+            TabIndex        =   92
             Top             =   360
             Width           =   2400
          End
-         Begin VB.PictureBox FechaRendicion 
-            Height          =   285
-            Left            =   3495
-            ScaleHeight     =   225
-            ScaleWidth      =   1095
-            TabIndex        =   86
-            Top             =   1320
-            Width           =   1155
-         End
          Begin MSComCtl2.DTPicker FechaRecibo 
-            Height          =   375
+            Height          =   315
             Left            =   1200
-            TabIndex        =   151
+            TabIndex        =   146
             Top             =   1320
             Width           =   1335
             _ExtentX        =   2355
-            _ExtentY        =   661
+            _ExtentY        =   556
             _Version        =   393216
-            Format          =   53215233
+            Format          =   53673985
+            CurrentDate     =   43367
+         End
+         Begin MSComCtl2.DTPicker FechaRendicion 
+            Height          =   315
+            Left            =   3480
+            TabIndex        =   149
+            Top             =   1320
+            Width           =   1335
+            _ExtentX        =   2355
+            _ExtentY        =   556
+            _Version        =   393216
+            Format          =   53673985
             CurrentDate     =   43367
          End
          Begin VB.Label Label19 
@@ -1521,7 +1529,7 @@ Begin VB.Form frmReciboCliente
             Caption         =   "Rendición:"
             Height          =   195
             Left            =   2670
-            TabIndex        =   87
+            TabIndex        =   83
             Top             =   1335
             Width           =   765
          End
@@ -1540,7 +1548,7 @@ Begin VB.Form frmReciboCliente
             ForeColor       =   &H00FF0000&
             Height          =   195
             Left            =   1230
-            TabIndex        =   77
+            TabIndex        =   74
             Top             =   1785
             Width           =   1185
          End
@@ -1549,7 +1557,7 @@ Begin VB.Form frmReciboCliente
             Caption         =   "Estado:"
             Height          =   195
             Left            =   630
-            TabIndex        =   76
+            TabIndex        =   73
             Top             =   1770
             Width           =   540
          End
@@ -1558,7 +1566,7 @@ Begin VB.Form frmReciboCliente
             Caption         =   "Número:"
             Height          =   195
             Left            =   570
-            TabIndex        =   75
+            TabIndex        =   72
             Top             =   870
             Width           =   600
          End
@@ -1567,7 +1575,7 @@ Begin VB.Form frmReciboCliente
             Caption         =   "Fecha:"
             Height          =   195
             Left            =   675
-            TabIndex        =   74
+            TabIndex        =   71
             Top             =   1335
             Width           =   495
          End
@@ -1576,7 +1584,7 @@ Begin VB.Form frmReciboCliente
             Caption         =   "Tipo:"
             Height          =   195
             Left            =   810
-            TabIndex        =   73
+            TabIndex        =   70
             Top             =   390
             Width           =   360
          End
@@ -1594,7 +1602,7 @@ Begin VB.Form frmReciboCliente
          EndProperty
          Height          =   1845
          Left            =   -74715
-         TabIndex        =   63
+         TabIndex        =   60
          Top             =   540
          Width           =   11115
          Begin VB.CommandButton cmdBuscarVen 
@@ -1603,7 +1611,7 @@ Begin VB.Form frmReciboCliente
             MaskColor       =   &H000000FF&
             Picture         =   "frmReciboCliente.frx":0EEE
             Style           =   1  'Graphical
-            TabIndex        =   135
+            TabIndex        =   130
             ToolTipText     =   "Buscar Vendedor"
             Top             =   600
             UseMaskColor    =   -1  'True
@@ -1613,7 +1621,7 @@ Begin VB.Form frmReciboCliente
             Caption         =   "Cliente"
             Height          =   195
             Left            =   300
-            TabIndex        =   51
+            TabIndex        =   50
             Top             =   465
             Width           =   855
          End
@@ -1621,7 +1629,7 @@ Begin VB.Form frmReciboCliente
             Caption         =   "Fecha"
             Height          =   195
             Left            =   300
-            TabIndex        =   53
+            TabIndex        =   52
             Top             =   989
             Width           =   810
          End
@@ -1629,7 +1637,7 @@ Begin VB.Form frmReciboCliente
             Height          =   300
             Left            =   3360
             MaxLength       =   40
-            TabIndex        =   55
+            TabIndex        =   54
             Top             =   255
             Width           =   975
          End
@@ -1648,7 +1656,7 @@ Begin VB.Form frmReciboCliente
             Height          =   300
             Left            =   4845
             MaxLength       =   50
-            TabIndex        =   66
+            TabIndex        =   63
             Tag             =   "Descripción"
             Top             =   255
             Width           =   4620
@@ -1659,7 +1667,7 @@ Begin VB.Form frmReciboCliente
             MaskColor       =   &H000000FF&
             Picture         =   "frmReciboCliente.frx":11F8
             Style           =   1  'Graphical
-            TabIndex        =   60
+            TabIndex        =   57
             ToolTipText     =   "Buscar "
             Top             =   240
             UseMaskColor    =   -1  'True
@@ -1669,7 +1677,7 @@ Begin VB.Form frmReciboCliente
             Caption         =   "Vendedor"
             Height          =   195
             Left            =   300
-            TabIndex        =   52
+            TabIndex        =   51
             Top             =   727
             Width           =   1035
          End
@@ -1687,14 +1695,14 @@ Begin VB.Form frmReciboCliente
             EndProperty
             Height          =   285
             Left            =   4845
-            TabIndex        =   65
+            TabIndex        =   62
             Top             =   600
             Width           =   4620
          End
          Begin VB.TextBox txtVendedor 
             Height          =   300
             Left            =   3360
-            TabIndex        =   56
+            TabIndex        =   55
             Top             =   585
             Width           =   990
          End
@@ -1704,7 +1712,7 @@ Begin VB.Form frmReciboCliente
             MaskColor       =   &H000000FF&
             Picture         =   "frmReciboCliente.frx":399A
             Style           =   1  'Graphical
-            TabIndex        =   64
+            TabIndex        =   61
             ToolTipText     =   "Buscar Cliente"
             Top             =   255
             UseMaskColor    =   -1  'True
@@ -1714,7 +1722,7 @@ Begin VB.Form frmReciboCliente
             Caption         =   "Tipo de Recibo"
             Height          =   195
             Left            =   300
-            TabIndex        =   54
+            TabIndex        =   53
             Top             =   1251
             Width           =   1485
          End
@@ -1722,27 +1730,33 @@ Begin VB.Form frmReciboCliente
             Height          =   315
             Left            =   3360
             Style           =   2  'Dropdown List
-            TabIndex        =   59
+            TabIndex        =   56
             Top             =   1260
             Width           =   2400
          End
-         Begin VB.PictureBox FechaHasta 
-            Height          =   285
-            Left            =   5865
-            ScaleHeight     =   225
-            ScaleWidth      =   1125
-            TabIndex        =   58
-            Top             =   930
-            Width           =   1185
-         End
-         Begin VB.PictureBox FechaDesde 
-            Height          =   330
+         Begin MSComCtl2.DTPicker FechaDesde 
+            Height          =   315
             Left            =   3360
-            ScaleHeight     =   270
-            ScaleWidth      =   1110
-            TabIndex        =   57
-            Top             =   930
-            Width           =   1170
+            TabIndex        =   147
+            Top             =   960
+            Width           =   1335
+            _ExtentX        =   2355
+            _ExtentY        =   556
+            _Version        =   393216
+            Format          =   53673985
+            CurrentDate     =   43367
+         End
+         Begin MSComCtl2.DTPicker FechaHasta 
+            Height          =   315
+            Left            =   5880
+            TabIndex        =   148
+            Top             =   960
+            Width           =   1335
+            _ExtentX        =   2355
+            _ExtentY        =   556
+            _Version        =   393216
+            Format          =   53673985
+            CurrentDate     =   43367
          End
          Begin VB.Label lbl 
             Appearance      =   0  'Flat
@@ -1754,7 +1768,7 @@ Begin VB.Form frmReciboCliente
             Height          =   195
             Index           =   3
             Left            =   2745
-            TabIndex        =   71
+            TabIndex        =   68
             Top             =   300
             Width           =   525
          End
@@ -1763,7 +1777,7 @@ Begin VB.Form frmReciboCliente
             Caption         =   "Fecha Desde:"
             Height          =   195
             Left            =   2265
-            TabIndex        =   70
+            TabIndex        =   67
             Top             =   960
             Width           =   1005
          End
@@ -1772,7 +1786,7 @@ Begin VB.Form frmReciboCliente
             Caption         =   "Fecha Hasta:"
             Height          =   195
             Left            =   4815
-            TabIndex        =   69
+            TabIndex        =   66
             Top             =   975
             Width           =   960
          End
@@ -1782,7 +1796,7 @@ Begin VB.Form frmReciboCliente
             Height          =   195
             Index           =   0
             Left            =   2535
-            TabIndex        =   68
+            TabIndex        =   65
             Top             =   615
             Width           =   735
          End
@@ -1791,7 +1805,7 @@ Begin VB.Form frmReciboCliente
             Caption         =   "Tipo Recibo:"
             Height          =   195
             Left            =   2355
-            TabIndex        =   67
+            TabIndex        =   64
             Top             =   1305
             Width           =   915
          End
@@ -1799,7 +1813,7 @@ Begin VB.Form frmReciboCliente
       Begin MSFlexGridLib.MSFlexGrid GrdModulos 
          Height          =   3780
          Left            =   -74730
-         TabIndex        =   61
+         TabIndex        =   58
          Top             =   2475
          Width           =   11160
          _ExtentX        =   19685
@@ -1819,7 +1833,7 @@ Begin VB.Form frmReciboCliente
          Height          =   195
          Index           =   0
          Left            =   -74820
-         TabIndex        =   78
+         TabIndex        =   75
          Top             =   570
          Width           =   1065
       End
@@ -1838,7 +1852,7 @@ Begin VB.Form frmReciboCliente
       EndProperty
       Height          =   240
       Left            =   6090
-      TabIndex        =   139
+      TabIndex        =   134
       Top             =   6630
       Width           =   2100
    End
@@ -1857,7 +1871,7 @@ Begin VB.Form frmReciboCliente
       EndProperty
       Height          =   240
       Left            =   180
-      TabIndex        =   88
+      TabIndex        =   84
       Top             =   6630
       Width           =   750
    End
@@ -1970,7 +1984,7 @@ Private Sub cmdAceptarComprobante_Click()
         GrillaComp.Rows = 1
         txtNroComprobantes.Text = ""
         txtNroCompSuc.Text = ""
-        fechaComprobantes.Text = ""
+        fechaComprobantes.Value = Date
         cboComprobantes.ListIndex = 0
         txtTotalComprobante.Text = ""
         tabValores.Tab = 0
@@ -2005,10 +2019,10 @@ Private Sub cmdAceptarMoneda_Click()
 End Sub
 
 Private Sub cmdAceptarValores_Click()
-    If CmdGrabar.Enabled = True Then
-        CmdGrabar.SetFocus
+    If cmdGrabar.Enabled = True Then
+        cmdGrabar.SetFocus
     Else
-        CmdNuevo.SetFocus
+        cmdNuevo.SetFocus
     End If
 End Sub
 
@@ -2120,12 +2134,12 @@ Private Function ValidoIngCheques() As Boolean
 End Function
 
 Private Sub LimpiarCheques()
-    TxtBANCO.Text = ""
-    TxtLOCALIDAD.Text = ""
-    TxtSUCURSAL.Text = ""
-    TxtCODIGO.Text = ""
+    TxtBanco.Text = ""
+    txtlocalidad.Text = ""
+    TxtSucursal.Text = ""
+    TxtCodigo.Text = ""
     TxtCheNumero.Text = ""
-    TxtCheFecVto.Value = ""
+    TxtCheFecVto.Value = Date
     TxtCheImport.Text = ""
     TxtCodInt.Text = ""
     TxtBanDescri.Text = ""
@@ -2151,7 +2165,7 @@ Private Sub cmdAgregarComprobante_Click()
         txtNroCompSuc.SetFocus
         Exit Sub
     End If
-    If fechaComprobantes.Text = "" Then
+    If fechaComprobantes.Value = Date Then
         MsgBox "Debe ingresar la fecha del Documento", vbCritical, TIT_MSGBOX
         fechaComprobantes.SetFocus
         Exit Sub
@@ -2168,7 +2182,7 @@ Private Sub cmdAgregarComprobante_Click()
             MsgBox "El Documento ya fue ingresado", vbCritical, TIT_MSGBOX
             txtNroComprobantes.Text = ""
             txtNroCompSuc.Text = ""
-            fechaComprobantes.Text = ""
+            fechaComprobantes.Value = Date
             cboComprobantes.SetFocus
             Exit Sub
         End If
@@ -2184,7 +2198,7 @@ Private Sub cmdAgregarComprobante_Click()
                    MsgBox "El Documento ya fue ingresado", vbCritical, TIT_MSGBOX
                    txtNroComprobantes.Text = ""
                    txtNroCompSuc.Text = ""
-                   fechaComprobantes.Text = ""
+                   fechaComprobantes.Value = Date
                    cboComprobantes.SetFocus
                    Exit Sub
                 End If
@@ -2203,7 +2217,7 @@ Private Sub cmdAgregarComprobante_Click()
     txtTotalComprobante.Text = Valido_Importe(CStr(SumaGrilla(GrillaComp, 3)))
     txtNroComprobantes.Text = ""
     txtNroCompSuc.Text = ""
-    fechaComprobantes.Text = ""
+    fechaComprobantes.Value = Date
     cboComprobantes.SetFocus
 End Sub
 
@@ -2343,7 +2357,7 @@ End Sub
 
 Private Sub CmdBuscAprox_Click()
     GrdModulos.Rows = 1
-    lblEstado.Caption = "Buscando..."
+    lblestado.Caption = "Buscando..."
     Screen.MousePointer = vbHourglass
     
     Set Rec1 = New ADODB.Recordset
@@ -2372,13 +2386,13 @@ Private Sub CmdBuscAprox_Click()
         Loop
         GrdModulos.SetFocus
     Else
-        lblEstado.Caption = ""
+        lblestado.Caption = ""
         Screen.MousePointer = vbNormal
         MsgBox "No se encontraron datos...", vbExclamation, TIT_MSGBOX
         chkCliente.SetFocus
     End If
     Rec1.Close
-    lblEstado.Caption = ""
+    lblestado.Caption = ""
     Screen.MousePointer = vbNormal
 End Sub
 
@@ -2423,7 +2437,7 @@ Private Sub cmdCancelarComprobante_Click()
     GrillaComp.Rows = 1
     txtNroComprobantes.Text = ""
     txtNroCompSuc.Text = ""
-    fechaComprobantes.Text = ""
+    fechaComprobantes.Value = Date
     cboComprobantes.ListIndex = 0
     txtTotalComprobante.Text = ""
     tabValores.Tab = 0
@@ -2435,7 +2449,7 @@ Private Sub cmdCancelarMoneda_Click()
     tabValores.Tab = 0
 End Sub
 
-Private Sub cmdGrabar_Click()
+Private Sub CmdGrabar_Click()
     'Dim vuelto As String
     Set Rec1 = New ADODB.Recordset
     If ValidarRecibo = False Then Exit Sub
@@ -2444,7 +2458,7 @@ Private Sub cmdGrabar_Click()
     On Error GoTo HayError
     DBConn.BeginTrans
     Screen.MousePointer = vbHourglass
-    lblEstado.Caption = "Guardando..."
+    lblestado.Caption = "Guardando..."
     
     sql = "SELECT EST_CODIGO"
     sql = sql & " FROM RECIBO_CLIENTE"
@@ -2468,7 +2482,7 @@ Private Sub cmdGrabar_Click()
         sql = sql & "3," 'ESTADO DEFINITIVO
         sql = sql & XN(txtCodCliente.Text) & ","
         sql = sql & CboVend.ItemData(CboVend.ListIndex) & ","
-        sql = sql & XDQ(FechaRendicion.Text) & ","
+        sql = sql & XDQ(FechaRendicion.Value) & ","
         sql = sql & XS(Format(txtNroRecibo.Text, "00000000")) & ","
         sql = sql & XN(txtTotalAplicar) & ")"
         DBConn.Execute sql
@@ -2642,13 +2656,13 @@ Private Sub cmdGrabar_Click()
         DBConn.CommitTrans
     End If
     Screen.MousePointer = vbNormal
-    lblEstado.Caption = ""
+    lblestado.Caption = ""
     rec.Close
     CmdNuevo_Click
     Exit Sub
     
 HayError:
-    lblEstado.Caption = ""
+    lblestado.Caption = ""
     Screen.MousePointer = vbNormal
     If rec.State = 1 Then rec.Close
     DBConn.RollbackTrans
@@ -2669,7 +2683,7 @@ Dim vuelto As String
         ValidarRecibo = False
         Exit Function
     End If
-    If FechaRendicion.Text = "" Then
+    If FechaRendicion.Value = "" Then
         MsgBox "Debe ingresar la fecha de rendicion del Recibo", vbCritical, TIT_MSGBOX
         FechaRendicion.SetFocus
         ValidarRecibo = False
@@ -2728,7 +2742,7 @@ End Function
 
 Private Sub CmdNuevo_Click()
     Estado = 1
-    CmdGrabar.Enabled = True
+    cmdGrabar.Enabled = True
     FrameRecibo.Enabled = True
     FrameRemito.Enabled = True
     TxtCheNumero.Text = ""
@@ -2749,7 +2763,7 @@ Private Sub CmdNuevo_Click()
     txtCodCliente.Text = ""
     txtNroRecibo.Text = ""
     txtNroSucursal.Text = ""
-    FechaRendicion.Text = Date
+    FechaRendicion.Value = Date
     cboRecibo.ListIndex = 0
     CboVend.ListIndex = 0
     txtTotalCheques.Text = ""
@@ -2820,7 +2834,7 @@ Private Sub QuitoDineroACta()
     Next
 End Sub
 
-Private Sub CmdSalir_Click()
+Private Sub cmdSalir_Click()
     If MsgBox("Seguro que desea Salir", vbQuestion + vbYesNo, TIT_MSGBOX) = vbYes Then
         Set frmReciboCliente = Nothing
         Unload Me
@@ -2838,8 +2852,8 @@ Private Sub FechaRecibo_LostFocus()
 End Sub
 
 Private Sub FechaRendicion_LostFocus()
-    If FechaRendicion.Text = "" Then
-        FechaRendicion.Text = Date
+    If FechaRendicion.Value = "" Then
+        FechaRendicion.Value = Date
     End If
 End Sub
 
@@ -2850,7 +2864,7 @@ End Sub
 
 Private Sub Form_KeyPress(KeyAscii As Integer)
     If KeyAscii = vbKeyReturn Then SendKeys "{TAB}"
-    If KeyAscii = vbKeyEscape Then CmdSalir_Click
+    If KeyAscii = vbKeyEscape Then cmdSalir_Click
 End Sub
 
 Private Sub Form_Load()
@@ -2881,10 +2895,10 @@ Private Sub Form_Load()
     frameBanco.Enabled = False
     cmdAgregarCheque.Enabled = False
     cmdAgregarEfectivo.Enabled = False
-    FechaRendicion.Text = Date
+    FechaRendicion.Value = Date
     txtNroRecibo.Enabled = True
     cmdAgregarFacturas.Enabled = False
-    lblEstado.Caption = ""
+    lblestado.Caption = ""
     txtEntrega.Text = "0,00"
     txtResta.Text = "0,00"
     
@@ -3181,7 +3195,7 @@ Private Sub tabDatos_Click(PreviousTab As Integer)
     cboRecibo1.Enabled = False
     cmdBuscarCli.Enabled = False
     cmdBuscarVen.Enabled = False
-    CmdGrabar.Enabled = False
+    cmdGrabar.Enabled = False
     If Me.Visible = True Then chkCliente.SetFocus
   End If
 End Sub
@@ -3189,8 +3203,8 @@ End Sub
 Private Sub LimpiarBusqueda()
     txtCliente.Text = ""
     txtDesCli.Text = ""
-    FechaDesde.Value = ""
-    FechaHasta.Value = ""
+    FechaDesde.Value = Date
+    FechaHasta.Value = Date
     txtVendedor.Text = ""
     txtDesVen.Text = ""
     GrdModulos.Rows = 1
@@ -3224,11 +3238,11 @@ Private Sub Text1_Change()
 End Sub
 
 Private Sub TxtBANCO_GotFocus()
-    SelecTexto TxtBANCO
+    SelecTexto TxtBanco
 End Sub
 
 Private Sub TxtBANCO_LostFocus()
-    If Len(TxtBANCO.Text) < 3 Then TxtBANCO.Text = CompletarConCeros(TxtBANCO.Text, 3)
+    If Len(TxtBanco.Text) < 3 Then TxtBanco.Text = CompletarConCeros(TxtBanco.Text, 3)
 End Sub
 
 Private Sub TxtCheNumero_Change()
@@ -3389,7 +3403,7 @@ Private Sub txtCodCliente_LostFocus()
 End Sub
 
 Private Sub TxtCodigo_GotFocus()
-    SelecTexto TxtCODIGO
+    SelecTexto TxtCodigo
 End Sub
 
 Private Sub txtEftImporte_Change()
@@ -3499,7 +3513,7 @@ Private Sub txtImporteComprobante_LostFocus()
 End Sub
 
 Private Sub TxtLOCALIDAD_GotFocus()
-    SelecTexto TxtLOCALIDAD
+    SelecTexto txtlocalidad
 End Sub
 
 Private Sub Txtlocalidad_KeyPress(KeyAscii As Integer)
@@ -3507,7 +3521,7 @@ Private Sub Txtlocalidad_KeyPress(KeyAscii As Integer)
 End Sub
 
 Private Sub TxtLOCALIDAD_LostFocus()
-    If Len(TxtLOCALIDAD.Text) < 3 Then TxtLOCALIDAD.Text = CompletarConCeros(TxtLOCALIDAD.Text, 3)
+    If Len(txtlocalidad.Text) < 3 Then txtlocalidad.Text = CompletarConCeros(txtlocalidad.Text, 3)
 End Sub
 
 Private Sub txtNroComprobantes_Change()
@@ -3665,8 +3679,8 @@ End Sub
 '    sql = sql & " FROM NOTA_CREDITO_CLIENTE"
 '    sql = sql & " WHERE"
 '    sql = sql & " TCO_CODIGO=" & cboComprobantes.ItemData(cboComprobantes.ListIndex)
-'    If fechaComprobantes.Text <> "" Then
-'        sql = sql & " AND NCC_FECHA=" & XDQ(fechaComprobantes.Text)
+'    If fechaComprobantes.Value <> "" Then
+'        sql = sql & " AND NCC_FECHA=" & XDQ(fechaComprobantes.Value)
 '    End If
 '    sql = sql & " AND NCC_NUMERO=" & XN(txtNroComprobantes)
 '    sql = sql & " AND CLI_CODIGO=" & XN(txtCodCliente)
@@ -3677,7 +3691,7 @@ End Sub
 '            txtNroComprobantes.Text = ""
 '            txtNroComprobantes.SetFocus
 '        Else
-'            fechaComprobantes.Text = rec!NCC_FECHA
+'            fechaComprobantes.Value = rec!NCC_FECHA
 '            txtImporteComprobante.Text = Valido_Importe(rec!NCC_TOTAL)
 '            txtImporteComprobante.SetFocus
 '        End If
@@ -3734,7 +3748,7 @@ Private Sub BuscarRecibo(TipoRec As String, NroRec As String, NroSuc As String)
         End If
         'CABEZA DEL RECIDO
         FechaRecibo.Value = Rec2!REC_FECHA
-        FechaRendicion.Text = Rec2!REC_FECHA_RENDICION
+        FechaRendicion.Value = Rec2!REC_FECHA_RENDICION
         'CARGO ESTADO
         Call BuscoEstado(CInt(Rec2!EST_CODIGO), lblEstadoRecibo)
         Estado = CInt(Rec2!EST_CODIGO)
@@ -3811,8 +3825,8 @@ Private Sub BuscarRecibo(TipoRec As String, NroRec As String, NroSuc As String)
         FrameRecibo.Enabled = False
         FrameRemito.Enabled = False
         rec.Close
-        CmdNuevo.SetFocus
-        CmdGrabar.Enabled = False
+        cmdNuevo.SetFocus
+        cmdGrabar.Enabled = False
     End If
     Rec2.Close
 End Sub
@@ -3873,7 +3887,7 @@ Private Sub txtResta_KeyPress(KeyAscii As Integer)
 End Sub
 
 Private Sub txtSucursal_GotFocus()
-    SelecTexto TxtSUCURSAL
+    SelecTexto TxtSucursal
 End Sub
 
 Private Sub TxtSucursal_KeyPress(KeyAscii As Integer)
@@ -3896,21 +3910,21 @@ Private Sub TxtCodigo_LostFocus()
         
     'ChequeRegistrado = False
     
-    If Len(TxtCODIGO.Text) < 6 Then TxtCODIGO.Text = CompletarConCeros(TxtCODIGO.Text, 6)
+    If Len(TxtCodigo.Text) < 6 Then TxtCodigo.Text = CompletarConCeros(TxtCodigo.Text, 6)
      
     If Trim(Me.TxtCheNumero.Text) <> "" And _
-       Trim(Me.TxtBANCO.Text) <> "" And _
-       Trim(Me.TxtLOCALIDAD.Text) <> "" And _
-       Trim(Me.TxtSUCURSAL.Text) <> "" And _
-       Trim(Me.TxtCODIGO.Text) <> "" Then
+       Trim(Me.TxtBanco.Text) <> "" And _
+       Trim(Me.txtlocalidad.Text) <> "" And _
+       Trim(Me.TxtSucursal.Text) <> "" And _
+       Trim(Me.TxtCodigo.Text) <> "" Then
        
        'BUSCO EL CODIGO INTERNO
        sql = "SELECT BAN_CODINT, BAN_DESCRI"
        sql = sql & " FROM BANCO"
-       sql = sql & " WHERE BAN_BANCO = " & XS(TxtBANCO.Text)
-       sql = sql & " AND BAN_LOCALIDAD = " & XS(Me.TxtLOCALIDAD.Text)
-       sql = sql & " AND BAN_SUCURSAL = " & XS(Me.TxtSUCURSAL.Text)
-       sql = sql & " AND BAN_CODIGO = " & XS(TxtCODIGO.Text)
+       sql = sql & " WHERE BAN_BANCO = " & XS(TxtBanco.Text)
+       sql = sql & " AND BAN_LOCALIDAD = " & XS(Me.txtlocalidad.Text)
+       sql = sql & " AND BAN_SUCURSAL = " & XS(Me.TxtSucursal.Text)
+       sql = sql & " AND BAN_CODIGO = " & XS(TxtCodigo.Text)
        rec.Open sql, DBConn, adOpenStatic, adLockOptimistic
        If rec.RecordCount > 0 Then 'EXITE
           TxtCodInt.Text = rec!BAN_CODINT
@@ -3919,7 +3933,7 @@ Private Sub TxtCodigo_LostFocus()
        Else
           If Me.ActiveControl.Name <> "CmdSalir" And Me.ActiveControl.Name <> "CmdNuevo" Then
             MsgBox "Banco NO Registrado.", 16, TIT_MSGBOX
-            TxtBANCO.SetFocus
+            TxtBanco.SetFocus
             Me.CmdBanco.SetFocus
           End If
           rec.Close
@@ -3940,10 +3954,10 @@ Private Sub TxtCodigo_LostFocus()
                    "WHERE BAN_CODINT = " & XN(Me.TxtCodInt.Text)
             Rec1.Open sql, DBConn, adOpenStatic, adLockOptimistic
             If Rec1.RecordCount > 0 Then 'EXITE
-                Me.TxtBANCO.Text = Rec1!BAN_BANCO
-                Me.TxtLOCALIDAD.Text = Rec1!BAN_LOCALIDAD
-                Me.TxtSUCURSAL.Text = Rec1!BAN_SUCURSAL
-                Me.TxtCODIGO.Text = Rec1!BAN_CODIGO
+                Me.TxtBanco.Text = Rec1!BAN_BANCO
+                Me.txtlocalidad.Text = Rec1!BAN_LOCALIDAD
+                Me.TxtSucursal.Text = Rec1!BAN_SUCURSAL
+                Me.TxtCodigo.Text = Rec1!BAN_CODIGO
             End If
             Rec1.Close
         Else
@@ -3956,7 +3970,7 @@ Private Sub TxtCodigo_LostFocus()
 End Sub
 
 Private Sub txtSucursal_LostFocus()
-    If Len(TxtSUCURSAL.Text) < 3 Then TxtSUCURSAL.Text = CompletarConCeros(TxtSUCURSAL.Text, 3)
+    If Len(TxtSucursal.Text) < 3 Then TxtSucursal.Text = CompletarConCeros(TxtSucursal.Text, 3)
 End Sub
 
 Private Sub txtVendedor_Change()

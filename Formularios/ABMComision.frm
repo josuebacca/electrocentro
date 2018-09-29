@@ -1,6 +1,6 @@
 VERSION 5.00
-Object = "{BDC217C8-ED16-11CD-956C-0000C04E4C0A}#1.1#0"; "TABCTL32.OCX"
-Object = "{5E9E78A0-531B-11CF-91F6-C2863C385E30}#1.0#0"; "MSFLXGRD.OCX"
+Object = "{BDC217C8-ED16-11CD-956C-0000C04E4C0A}#1.1#0"; "tabctl32.ocx"
+Object = "{5E9E78A0-531B-11CF-91F6-C2863C385E30}#1.0#0"; "msflxgrd.ocx"
 Begin VB.Form ABMComision 
    BorderStyle     =   1  'Fixed Single
    Caption         =   "ABM de Comisiones"
@@ -69,7 +69,6 @@ Begin VB.Form ABMComision
       _ExtentY        =   6191
       _Version        =   393216
       Tabs            =   2
-      Tab             =   1
       TabHeight       =   529
       ForeColor       =   -2147483630
       BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
@@ -83,12 +82,13 @@ Begin VB.Form ABMComision
       EndProperty
       TabCaption(0)   =   "&Datos"
       TabPicture(0)   =   "ABMComision.frx":1850
-      Tab(0).ControlEnabled=   0   'False
+      Tab(0).ControlEnabled=   -1  'True
       Tab(0).Control(0)=   "fraDatos"
+      Tab(0).Control(0).Enabled=   0   'False
       Tab(0).ControlCount=   1
       TabCaption(1)   =   "&Buscar"
       TabPicture(1)   =   "ABMComision.frx":186C
-      Tab(1).ControlEnabled=   -1  'True
+      Tab(1).ControlEnabled=   0   'False
       Tab(1).Control(0)=   "GrdModulos"
       Tab(1).Control(0).Enabled=   0   'False
       Tab(1).Control(1)=   "Frame1"
@@ -106,7 +106,7 @@ Begin VB.Form ABMComision
             Strikethrough   =   0   'False
          EndProperty
          Height          =   2745
-         Left            =   -74715
+         Left            =   285
          TabIndex        =   11
          Top             =   570
          Width           =   5580
@@ -205,7 +205,7 @@ Begin VB.Form ABMComision
       End
       Begin VB.Frame Frame1 
          Height          =   735
-         Left            =   150
+         Left            =   -74850
          TabIndex        =   13
          Top             =   390
          Width           =   5940
@@ -242,7 +242,7 @@ Begin VB.Form ABMComision
       End
       Begin MSFlexGridLib.MSFlexGrid GrdModulos 
          Height          =   2205
-         Left            =   135
+         Left            =   -74865
          TabIndex        =   10
          Top             =   1155
          Width           =   5970
@@ -309,7 +309,7 @@ Private Sub CmdBorrar_Click()
          DBConn.Execute sql
         lblEstado.Caption = ""
         Screen.MousePointer = vbNormal
-        cmdNuevo_Click
+        CmdNuevo_Click
     
     Exit Sub
 CLAVOSE:
@@ -349,7 +349,7 @@ Private Sub CmdBuscAprox_Click()
     lblEstado.Caption = ""
 End Sub
 
-Private Sub CmdGrabar_Click()
+Private Sub cmdGrabar_Click()
     
     If ValidarComision = False Then Exit Sub
     
@@ -384,7 +384,7 @@ Private Sub CmdGrabar_Click()
     lblEstado.Caption = ""
     Screen.MousePointer = vbNormal
     DBConn.CommitTrans
-    cmdNuevo_Click
+    CmdNuevo_Click
     Exit Sub
     
 HayError:
@@ -395,7 +395,7 @@ HayError:
     MsgBox Err.Description, vbCritical, TIT_MSGBOX
 End Sub
 
-Private Sub cmdNuevo_Click()
+Private Sub CmdNuevo_Click()
     txtPorVta.Text = "0,00"
     txtPorCob.Text = "0,00"
     lblEstado.Caption = ""
@@ -477,14 +477,14 @@ Function llenarComboRepresentada()
     rec.Close
 End Function
 
-Private Sub GrdModulos_dblClick()
+Private Sub GrdModulos_DblClick()
     If GrdModulos.row > 0 Then
            Call BuscaCodigoProxItemData(GrdModulos.TextMatrix(GrdModulos.RowSel, 4), CboVend)
            Call BuscaCodigoProxItemData(GrdModulos.TextMatrix(GrdModulos.RowSel, 5), cboRep)
            txtPorVta.Text = Format(GrdModulos.TextMatrix(GrdModulos.RowSel, 2), "0.00")
            txtPorCob.Text = Format(GrdModulos.TextMatrix(GrdModulos.RowSel, 3), "0.00")
            cmdGrabar.Enabled = True
-           cmdBorrar.Enabled = True
+           CmdBorrar.Enabled = True
            CboVend.Enabled = False
            cboRep.Enabled = False
            txtPorVta.SetFocus
@@ -493,19 +493,19 @@ Private Sub GrdModulos_dblClick()
 End Sub
 
 Private Sub GrdModulos_KeyDown(KeyCode As Integer, Shift As Integer)
-    If KeyCode = vbKeyReturn Then GrdModulos_dblClick
+    If KeyCode = vbKeyReturn Then GrdModulos_DblClick
 End Sub
 
 Private Sub tabDatos_Click(PreviousTab As Integer)
     If tabDatos.Tab = 0 And Me.Visible Then
         cmdGrabar.Enabled = True
-        cmdBorrar.Enabled = True
+        CmdBorrar.Enabled = True
     End If
     If tabDatos.Tab = 1 Then
         TxtDescriB.Text = ""
         If TxtDescriB.Enabled Then TxtDescriB.SetFocus
         cmdGrabar.Enabled = False
-        cmdBorrar.Enabled = False
+        CmdBorrar.Enabled = False
     End If
 End Sub
 

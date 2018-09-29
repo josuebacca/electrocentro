@@ -1,5 +1,5 @@
 VERSION 5.00
-Object = "{BDC217C8-ED16-11CD-956C-0000C04E4C0A}#1.1#0"; "TABCTL32.OCX"
+Object = "{BDC217C8-ED16-11CD-956C-0000C04E4C0A}#1.1#0"; "tabctl32.ocx"
 Object = "{5E9E78A0-531B-11CF-91F6-C2863C385E30}#1.0#0"; "msflxgrd.ocx"
 Begin VB.Form ABMVendedor 
    BorderStyle     =   1  'Fixed Single
@@ -69,6 +69,7 @@ Begin VB.Form ABMVendedor
       _ExtentY        =   8811
       _Version        =   393216
       Tabs            =   2
+      Tab             =   1
       TabHeight       =   529
       ForeColor       =   -2147483630
       BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
@@ -82,15 +83,17 @@ Begin VB.Form ABMVendedor
       EndProperty
       TabCaption(0)   =   "&Datos"
       TabPicture(0)   =   "ABMVendedor.frx":1850
-      Tab(0).ControlEnabled=   -1  'True
+      Tab(0).ControlEnabled=   0   'False
       Tab(0).Control(0)=   "fraDatos"
       Tab(0).Control(0).Enabled=   0   'False
       Tab(0).ControlCount=   1
       TabCaption(1)   =   "&Buscar"
       TabPicture(1)   =   "ABMVendedor.frx":186C
-      Tab(1).ControlEnabled=   0   'False
+      Tab(1).ControlEnabled=   -1  'True
       Tab(1).Control(0)=   "GrdModulos"
+      Tab(1).Control(0).Enabled=   0   'False
       Tab(1).Control(1)=   "Frame1"
+      Tab(1).Control(1).Enabled=   0   'False
       Tab(1).ControlCount=   2
       Begin VB.Frame fraDatos 
          Caption         =   " Datos del Vendedor"
@@ -104,7 +107,7 @@ Begin VB.Form ABMVendedor
             Strikethrough   =   0   'False
          EndProperty
          Height          =   4245
-         Left            =   150
+         Left            =   -74850
          TabIndex        =   20
          Top             =   555
          Width           =   6105
@@ -347,7 +350,7 @@ Begin VB.Form ABMVendedor
       End
       Begin VB.Frame Frame1 
          Height          =   735
-         Left            =   -74865
+         Left            =   135
          TabIndex        =   17
          Top             =   600
          Width           =   6135
@@ -396,7 +399,7 @@ Begin VB.Form ABMVendedor
       End
       Begin MSFlexGridLib.MSFlexGrid GrdModulos 
          Height          =   3060
-         Left            =   -74895
+         Left            =   105
          TabIndex        =   15
          Top             =   1530
          Width           =   6210
@@ -584,8 +587,8 @@ Private Sub cmdGrabar_Click()
         sql = sql & " , PRO_CODIGO= " & cboProv.ItemData(cboProv.ListIndex)
         sql = sql & " , LOC_CODIGO= " & cboLocal.ItemData(cboLocal.ListIndex)
         sql = sql & " , VEN_TELEFONO= " & XS(txtTelefono)
-        sql = sql & " , VEN_FAX= " & XS(txtfax)
-        sql = sql & " , VEN_MAIL= " & XS(txtmail)
+        sql = sql & " , VEN_FAX= " & XS(txtFax)
+        sql = sql & " , VEN_MAIL= " & XS(txtMail)
         sql = sql & " WHERE VEN_CODIGO = " & XN(TxtCodigo)
         DBConn.Execute sql
         
@@ -606,8 +609,8 @@ Private Sub cmdGrabar_Click()
         sql = sql & cboProv.ItemData(cboProv.ListIndex) & ","
         sql = sql & cboLocal.ItemData(cboLocal.ListIndex) & ","
         sql = sql & XS(txtTelefono) & ","
-        sql = sql & XS(txtfax) & ","
-        sql = sql & XS(txtmail) & ")"
+        sql = sql & XS(txtFax) & ","
+        sql = sql & XS(txtMail) & ")"
         DBConn.Execute sql
     End If
     Screen.MousePointer = vbNormal
@@ -642,8 +645,8 @@ Private Sub CmdNuevo_Click()
     txtnombre.Text = ""
     txtDomici.Text = ""
     txtTelefono.Text = ""
-    txtfax.Text = ""
-    txtmail.Text = ""
+    txtFax.Text = ""
+    txtMail.Text = ""
     lblEstado.Caption = ""
     'para la consulta
     Consulta = False 'no consulta true consulta
@@ -667,7 +670,7 @@ Private Sub cmdNuevoPais_Click()
     cboPais.SetFocus
 End Sub
 
-Private Sub cmdSalir_Click()
+Private Sub CmdSalir_Click()
     Unload Me
     Set ABMVendedor = Nothing
 End Sub
@@ -678,7 +681,7 @@ End Sub
 
 Private Sub Form_KeyPress(KeyAscii As Integer)
     If KeyAscii = vbKeyReturn Then SendKeys "{TAB}"
-    If KeyAscii = vbKeyEscape Then cmdSalir_Click
+    If KeyAscii = vbKeyEscape Then CmdSalir_Click
 End Sub
 
 Private Sub LlenarComboPais()
@@ -767,7 +770,7 @@ Private Sub txtdomici_KeyPress(KeyAscii As Integer)
 End Sub
 
 Private Sub txtfax_GotFocus()
-    SelecTexto txtfax
+    SelecTexto txtFax
 End Sub
 
 Private Sub txtfax_KeyPress(KeyAscii As Integer)
@@ -775,7 +778,7 @@ Private Sub txtfax_KeyPress(KeyAscii As Integer)
 End Sub
 
 Private Sub txtmail_GotFocus()
-    SelecTexto txtmail
+    SelecTexto txtMail
 End Sub
 
 Private Sub txtnombre_Change()
@@ -843,8 +846,8 @@ Private Sub TxtCodigo_LostFocus()
             Call BuscaCodigoProxItemData(Rec1!LOC_CODIGO, cboLocal)
             
             txtTelefono.Text = IIf(IsNull(Rec1!VEN_TELEFONO), "", Rec1!VEN_TELEFONO)
-            txtfax.Text = IIf(IsNull(Rec1!VEN_FAX), "", Rec1!VEN_FAX)
-            txtmail.Text = IIf(IsNull(Rec1!VEN_MAIL), "", Rec1!VEN_MAIL)
+            txtFax.Text = IIf(IsNull(Rec1!VEN_FAX), "", Rec1!VEN_FAX)
+            txtMail.Text = IIf(IsNull(Rec1!VEN_MAIL), "", Rec1!VEN_MAIL)
             txtnombre.SetFocus
         Else
             MsgBox "El Código no existe", vbExclamation, TIT_MSGBOX

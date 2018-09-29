@@ -1,6 +1,7 @@
 VERSION 5.00
 Object = "{F9043C88-F6F2-101A-A3C9-08002B2F49FB}#1.2#0"; "comdlg32.ocx"
 Object = "{86CF1D34-0C5F-11D2-A9FC-0000F8754DA1}#2.0#0"; "mscomct2.ocx"
+Object = "{00025600-0000-0000-C000-000000000046}#5.2#0"; "Crystl32.OCX"
 Begin VB.Form frmListadoPagosPorCliente 
    BorderStyle     =   1  'Fixed Single
    Caption         =   "Listado de Pagos por Cliente"
@@ -15,6 +16,14 @@ Begin VB.Form frmListadoPagosPorCliente
    ScaleHeight     =   3540
    ScaleWidth      =   6810
    StartUpPosition =   2  'CenterScreen
+   Begin Crystal.CrystalReport Rep 
+      Left            =   1680
+      Top             =   3000
+      _ExtentX        =   741
+      _ExtentY        =   741
+      _Version        =   348160
+      PrintFileLinesPerPage=   60
+   End
    Begin VB.Frame FrameImpresora 
       Caption         =   "impresora"
       BeginProperty Font 
@@ -180,7 +189,7 @@ Begin VB.Form frmListadoPagosPorCliente
       Begin MSComCtl2.DTPicker FechaDesde 
          Height          =   375
          Left            =   1800
-         TabIndex        =   21
+         TabIndex        =   20
          Top             =   1320
          Width           =   1335
          _ExtentX        =   2355
@@ -192,7 +201,7 @@ Begin VB.Form frmListadoPagosPorCliente
       Begin MSComCtl2.DTPicker FechaHasta 
          Height          =   375
          Left            =   4320
-         TabIndex        =   22
+         TabIndex        =   21
          Top             =   1320
          Width           =   1335
          _ExtentX        =   2355
@@ -252,15 +261,6 @@ Begin VB.Form frmListadoPagosPorCliente
          Top             =   1410
          Width           =   1005
       End
-   End
-   Begin VB.PictureBox Rep 
-      Height          =   480
-      Left            =   3330
-      ScaleHeight     =   420
-      ScaleWidth      =   1140
-      TabIndex        =   20
-      Top             =   2865
-      Width           =   1200
    End
    Begin MSComDlg.CommonDialog CDImpresora 
       Left            =   2835
@@ -323,8 +323,8 @@ Private Sub cmdListar_Click()
         txtCliente.SetFocus
         Exit Sub
     End If
-    lblEstado.Caption = "Buscando Listado..."
-    'Rep.WindowState = crptNormal
+    lblestado.Caption = "Buscando Listado..."
+    Rep.WindowState = crptNormal
     Rep.WindowBorderStyle = crptNoBorder
     Rep.Connect = "Provider=MSDASQL.1;Persist Security Info=False;Data Source=SIELECTROCENTRO"
     Rep.SelectionFormula = ""
@@ -365,11 +365,11 @@ Private Sub cmdListar_Click()
     
     If FechaDesde.Value <> "" And FechaHasta.Value <> "" Then
         Rep.Formulas(0) = "FECHA='" & "Desde: " & FechaDesde.Value & "   Hasta: " & FechaHasta.Value & "'"
-    ElseIf FechaDesde.Value <> "" And FechaHasta.Value = "" Then
+    ElseIf FechaDesde.Value <> "" And FechaHasta.Value = Date Then
         Rep.Formulas(0) = "FECHA='" & "Desde: " & FechaDesde.Value & "   Hasta: " & Date & "'"
-    ElseIf FechaDesde.Value = "" And FechaHasta.Value <> "" Then
+    ElseIf FechaDesde.Value = Date And FechaHasta.Value <> "" Then
         Rep.Formulas(0) = "FECHA='" & "Desde: Inicio" & "   Hasta: " & FechaHasta.Value & "'"
-    ElseIf FechaDesde.Value = "" And FechaHasta.Value = "" Then
+    ElseIf FechaDesde.Value = Date And FechaHasta.Value = Date Then
         Rep.Formulas(0) = "FECHA='" & "Desde: Inicio" & "   Hasta: " & Date & "'"
     End If
     
@@ -384,7 +384,7 @@ Private Sub cmdListar_Click()
      Rep.WindowState = crptMaximized
      Rep.Action = 1
      
-     lblEstado.Caption = ""
+     lblestado.Caption = ""
      Rep.SelectionFormula = ""
      Rep.Formulas(0) = ""
      Rep.Formulas(1) = ""
@@ -395,19 +395,19 @@ Private Sub CmdNuevo_Click()
     cboFactura.ListIndex = 0
     txtNroFactura.Text = ""
     txtDesCli.Text = ""
-    FechaDesde.Value = ""
-    FechaHasta.Value = ""
+    FechaDesde.Value = Date
+    FechaHasta.Value = Date
     txtCliente.SetFocus
 End Sub
 
-Private Sub CmdSalir_Click()
+Private Sub cmdSalir_Click()
     Set frmListadoPagosPorCliente = Nothing
     Unload Me
 End Sub
 
 Private Sub Form_KeyPress(KeyAscii As Integer)
     If KeyAscii = vbKeyReturn Then SendKeys "{TAB}"
-    If KeyAscii = vbKeyEscape Then CmdSalir_Click
+    If KeyAscii = vbKeyEscape Then cmdSalir_Click
 End Sub
 
 Private Sub Form_Load()
@@ -416,7 +416,7 @@ Private Sub Form_Load()
     'CARGO COMBOS
     LlenarComboFactura
 '    FrameImpresora.Caption = "Impresora Actual: " & Printer.DeviceName
-    lblEstado.Caption = ""
+    lblestado.Caption = ""
 End Sub
 Private Sub LlenarComboFactura()
     sql = "SELECT * FROM TIPO_COMPROBANTE"

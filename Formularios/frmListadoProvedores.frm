@@ -1,6 +1,6 @@
 VERSION 5.00
-Object = "{F9043C88-F6F2-101A-A3C9-08002B2F49FB}#1.2#0"; "Comdlg32.ocx"
-Object = "{5E9E78A0-531B-11CF-91F6-C2863C385E30}#1.0#0"; "Msflxgrd.ocx"
+Object = "{F9043C88-F6F2-101A-A3C9-08002B2F49FB}#1.2#0"; "comdlg32.ocx"
+Object = "{5E9E78A0-531B-11CF-91F6-C2863C385E30}#1.0#0"; "msflxgrd.ocx"
 Object = "{00025600-0000-0000-C000-000000000046}#5.2#0"; "Crystl32.OCX"
 Begin VB.Form frmListadoProvedores 
    BorderStyle     =   1  'Fixed Single
@@ -334,7 +334,7 @@ End Sub
 
 Private Sub cmdBusProv_Click()
     Screen.MousePointer = vbHourglass
-    Me.lblestado.Caption = "Buscando Proveedores...."
+    Me.lblEstado.Caption = "Buscando Proveedores...."
     Me.Refresh
     
     fgBuscaProv.Rows = 1
@@ -364,11 +364,11 @@ Private Sub cmdBusProv_Click()
          
         fgBuscaProv.SetFocus
         Screen.MousePointer = vbNormal
-        Me.lblestado.Caption = ""
+        Me.lblEstado.Caption = ""
     
    Else ' SI NO ENCONTRO NINGUNO
         Screen.MousePointer = vbNormal
-        Me.lblestado.Caption = ""
+        Me.lblEstado.Caption = ""
         fgBuscaProv.HighLight = flexHighlightNever
         fgBuscaProv.Rows = 1
         MsgBox "No se han encontrado Proveedores", vbExclamation, TIT_MSGBOX
@@ -378,8 +378,8 @@ Private Sub cmdBusProv_Click()
 End Sub
 
 Private Sub cmdListar_Click()
-    lblestado.Caption = "Buscando Listado..."
-     'Rep.WindowState = crptMaximized 'crptMinimized
+    lblEstado.Caption = "Buscando Listado..."
+     Rep.WindowState = crptMaximized 'crptMinimized
     Rep.WindowBorderStyle = crptNoBorder
     Rep.Connect = "Provider=MSDASQL.1;Persist Security Info=False;Data Source=SIELECTROCENTRO"
     Rep.SelectionFormula = ""
@@ -398,7 +398,7 @@ Private Sub cmdListar_Click()
             Rep.ReportFileName = DRIVE & DirReport & "MaestroProveedores.rpt"
         Else
             MsgBox "Debe seleccionar un Tipo de Proveedor", vbExclamation, TIT_MSGBOX
-            lblestado.Caption = ""
+            lblEstado.Caption = ""
             chkPorTipo.SetFocus
             Exit Sub
         End If
@@ -421,12 +421,12 @@ Private Sub cmdListar_Click()
             Else
                 Rep.SelectionFormula = ""
                 Rep.Formulas(0) = ""
-                lblestado.Caption = ""
+                lblEstado.Caption = ""
                 Exit Sub
             End If
         Else
             MsgBox "Debe seleccionar un Proveedor", vbExclamation, TIT_MSGBOX
-            lblestado.Caption = ""
+            lblEstado.Caption = ""
             chkPorTipo.SetFocus
             Exit Sub
         End If
@@ -445,7 +445,7 @@ Private Sub cmdListar_Click()
     Rep.Action = 1
     Rep.SelectionFormula = ""
     Rep.Formulas(0) = ""
-    lblestado.Caption = ""
+    lblEstado.Caption = ""
 End Sub
 
 Private Sub CmdNuevo_Click()
@@ -458,7 +458,7 @@ Private Sub CmdNuevo_Click()
     chkPorTipo.SetFocus
 End Sub
 
-Private Sub cmdSalir_Click()
+Private Sub CmdSalir_Click()
     Set frmListadoProvedores = Nothing
     Unload Me
 End Sub
@@ -473,7 +473,7 @@ End Sub
 
 Private Sub Form_Load()
     Set rec = New ADODB.Recordset
-    lblestado.Caption = ""
+    lblEstado.Caption = ""
     fgBuscaProv.Clear
     fgBuscaProv.Rows = 2
     txtBuscaProv.Text = ""

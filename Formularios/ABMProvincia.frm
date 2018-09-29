@@ -75,6 +75,7 @@ Begin VB.Form ABMProvincia
       _ExtentY        =   6059
       _Version        =   393216
       Tabs            =   2
+      Tab             =   1
       TabHeight       =   529
       ForeColor       =   -2147483630
       BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
@@ -88,19 +89,21 @@ Begin VB.Form ABMProvincia
       EndProperty
       TabCaption(0)   =   "&Datos"
       TabPicture(0)   =   "ABMProvincia.frx":1850
-      Tab(0).ControlEnabled=   -1  'True
+      Tab(0).ControlEnabled=   0   'False
       Tab(0).Control(0)=   "fraDatos"
       Tab(0).Control(0).Enabled=   0   'False
       Tab(0).ControlCount=   1
       TabCaption(1)   =   "&Buscar"
       TabPicture(1)   =   "ABMProvincia.frx":186C
-      Tab(1).ControlEnabled=   0   'False
+      Tab(1).ControlEnabled=   -1  'True
       Tab(1).Control(0)=   "GrdModulos"
+      Tab(1).Control(0).Enabled=   0   'False
       Tab(1).Control(1)=   "Frame1"
+      Tab(1).Control(1).Enabled=   0   'False
       Tab(1).ControlCount=   2
       Begin VB.Frame Frame1 
          Height          =   735
-         Left            =   -74775
+         Left            =   225
          TabIndex        =   16
          Top             =   480
          Width           =   5235
@@ -157,7 +160,7 @@ Begin VB.Form ABMProvincia
             Strikethrough   =   0   'False
          EndProperty
          Height          =   2130
-         Left            =   405
+         Left            =   -74595
          TabIndex        =   10
          Top             =   690
          Width           =   4740
@@ -232,7 +235,7 @@ Begin VB.Form ABMProvincia
       End
       Begin MSFlexGridLib.MSFlexGrid GrdModulos 
          Height          =   1875
-         Left            =   -74835
+         Left            =   165
          TabIndex        =   9
          Top             =   1335
          Width           =   5385

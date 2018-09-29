@@ -1,6 +1,6 @@
 VERSION 5.00
-Object = "{BDC217C8-ED16-11CD-956C-0000C04E4C0A}#1.1#0"; "TABCTL32.OCX"
-Object = "{5E9E78A0-531B-11CF-91F6-C2863C385E30}#1.0#0"; "MSFLXGRD.OCX"
+Object = "{BDC217C8-ED16-11CD-956C-0000C04E4C0A}#1.1#0"; "tabctl32.ocx"
+Object = "{5E9E78A0-531B-11CF-91F6-C2863C385E30}#1.0#0"; "msflxgrd.ocx"
 Begin VB.Form ABMMoneda 
    BorderStyle     =   1  'Fixed Single
    Caption         =   " ABM de Moneda"
@@ -69,7 +69,6 @@ Begin VB.Form ABMMoneda
       _ExtentY        =   5424
       _Version        =   393216
       Tabs            =   2
-      Tab             =   1
       TabHeight       =   520
       BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
          Name            =   "MS Sans Serif"
@@ -82,12 +81,13 @@ Begin VB.Form ABMMoneda
       EndProperty
       TabCaption(0)   =   "&Datos"
       TabPicture(0)   =   "ABMMoneda.frx":1850
-      Tab(0).ControlEnabled=   0   'False
+      Tab(0).ControlEnabled=   -1  'True
       Tab(0).Control(0)=   "Frame3"
+      Tab(0).Control(0).Enabled=   0   'False
       Tab(0).ControlCount=   1
       TabCaption(1)   =   "&Buscar"
       TabPicture(1)   =   "ABMMoneda.frx":186C
-      Tab(1).ControlEnabled=   -1  'True
+      Tab(1).ControlEnabled=   0   'False
       Tab(1).Control(0)=   "GrdModulos"
       Tab(1).Control(0).Enabled=   0   'False
       Tab(1).Control(1)=   "Frame1"
@@ -95,7 +95,7 @@ Begin VB.Form ABMMoneda
       Tab(1).ControlCount=   2
       Begin VB.Frame Frame1 
          Height          =   735
-         Left            =   195
+         Left            =   -74805
          TabIndex        =   13
          Top             =   465
          Width           =   5295
@@ -164,7 +164,7 @@ Begin VB.Form ABMMoneda
             Strikethrough   =   0   'False
          EndProperty
          Height          =   1950
-         Left            =   -74595
+         Left            =   405
          TabIndex        =   11
          Top             =   660
          Width           =   4920
@@ -206,7 +206,7 @@ Begin VB.Form ABMMoneda
       End
       Begin MSFlexGridLib.MSFlexGrid GrdModulos 
          Height          =   1710
-         Left            =   180
+         Left            =   -74820
          TabIndex        =   8
          Top             =   1230
          Width           =   5355
@@ -252,9 +252,9 @@ Dim resp As Integer
 
 Private Sub CmdBorrar_Click()
     On Error GoTo CLAVOSE
-    If Trim(TxtCODIGO) <> "" Then
+    If Trim(TxtCodigo) <> "" Then
     
-        sql = "SELECT MON_CODIGO FROM MOVIMIENTO WHERE MON_CODIGO = " & XN(TxtCODIGO)
+        sql = "SELECT MON_CODIGO FROM MOVIMIENTO WHERE MON_CODIGO = " & XN(TxtCodigo)
         rec.Open sql, DBConn, adOpenStatic, adLockOptimistic
         If rec.RecordCount > 0 Then
             MsgBox "No se puede eliminar esta Moneda ya que tiene Movimientos asociados !", vbExclamation, TIT_MSGBOX
@@ -269,11 +269,11 @@ Private Sub CmdBorrar_Click()
         Screen.MousePointer = 11
         lblEstado.Caption = "Eliminando ..."
         
-        DBConn.Execute "DELETE FROM MONEDA WHERE MON_CODIGO = " & XN(TxtCODIGO)
+        DBConn.Execute "DELETE FROM MONEDA WHERE MON_CODIGO = " & XN(TxtCodigo)
         If TxtDescrip.Enabled Then TxtDescrip.SetFocus
         lblEstado.Caption = ""
         Screen.MousePointer = 1
-        cmdNuevo_Click
+        CmdNuevo_Click
     End If
     Exit Sub
     
@@ -312,7 +312,7 @@ Private Sub CmdBuscAprox_Click()
     Screen.MousePointer = 1
 End Sub
 
-Private Sub CmdGrabar_Click()
+Private Sub cmdGrabar_Click()
     On Error GoTo CLAVOSE
     
     If Trim(TxtDescrip) = "" Then
@@ -324,24 +324,24 @@ Private Sub CmdGrabar_Click()
     Screen.MousePointer = 11
     lblEstado.Caption = "Guardando ..."
     
-    sql = "SELECT MON_CODIGO FROM MONEDA WHERE MON_CODIGO = " & XN(TxtCODIGO)
+    sql = "SELECT MON_CODIGO FROM MONEDA WHERE MON_CODIGO = " & XN(TxtCodigo)
     rec.Open sql, DBConn, adOpenStatic, adLockOptimistic
     If rec.RecordCount > 0 Then
         DBConn.Execute "UPDATE MONEDA SET MON_DESCRI = '" & Trim(TxtDescrip) & "' " & _
-        "WHERE MON_CODIGO = " & XN(TxtCODIGO)
+        "WHERE MON_CODIGO = " & XN(TxtCodigo)
     Else
-        TxtCODIGO = "1"
+        TxtCodigo = "1"
         sql = "SELECT MAX(MON_CODIGO) as maximo FROM MONEDA"
         Rec2.Open sql, DBConn, adOpenStatic, adLockOptimistic
-        If Not IsNull(Rec2.Fields!Maximo) Then TxtCODIGO = XN(Rec2.Fields!Maximo) + 1
+        If Not IsNull(Rec2.Fields!Maximo) Then TxtCodigo = XN(Rec2.Fields!Maximo) + 1
         Rec2.Close
         
         DBConn.Execute "INSERT INTO MONEDA (MON_CODIGO,MON_DESCRI) VALUES " & _
-        "(" & XN(TxtCODIGO) & "," & XS(TxtDescrip) & ")"
+        "(" & XN(TxtCodigo) & "," & XS(TxtDescrip) & ")"
     End If
     rec.Close
     Screen.MousePointer = 1
-    cmdNuevo_Click
+    CmdNuevo_Click
     Exit Sub
     
 CLAVOSE:
@@ -350,13 +350,13 @@ CLAVOSE:
     MsgBox Err.Description, vbCritical, TIT_MSGBOX
 End Sub
 
-Private Sub cmdNuevo_Click()
+Private Sub CmdNuevo_Click()
     TabTB.Tab = 0
-    TxtCODIGO.Text = ""
+    TxtCodigo.Text = ""
     TxtDescrip.Text = ""
     lblEstado.Caption = ""
     GrdModulos.Rows = 1
-    TxtCODIGO.SetFocus
+    TxtCodigo.SetFocus
 End Sub
 
 Private Sub CmdSalir_Click()
@@ -391,11 +391,11 @@ Private Sub Form_Load()
     TabTB.Tab = 0
 End Sub
 
-Private Sub GrdModulos_dblClick()
+Private Sub GrdModulos_DblClick()
     If GrdModulos.row > 0 Then
         'paso el item seleccionado al tab 'DATOS'
         GrdModulos.Col = 0
-        TxtCODIGO.Text = GrdModulos.Text
+        TxtCodigo.Text = GrdModulos.Text
         GrdModulos.Col = 1
         TxtDescrip.Text = Trim(GrdModulos.Text)
         
@@ -412,11 +412,11 @@ End Sub
 
 Private Sub GrdModulos_KeyDown(KeyCode As Integer, Shift As Integer)
     If KeyCode = vbKeyDelete Then CmdBorrar_Click
-    If KeyCode = vbKeyReturn Then GrdModulos_dblClick
+    If KeyCode = vbKeyReturn Then GrdModulos_DblClick
 End Sub
 
 Private Sub GrdModulos_KeyPress(KeyAscii As Integer)
-    If KeyAscii = vbKeyReturn Then GrdModulos_dblClick
+    If KeyAscii = vbKeyReturn Then GrdModulos_DblClick
 End Sub
 
 Private Sub GrdModulos_LostFocus()
@@ -427,7 +427,7 @@ Private Sub tabTB_Click(PreviousTab As Integer)
     'Si cambio de 'Pestaña' en el tab
     'pongo el foco en el primer campo de la misma
     If TabTB.Tab = 0 And Me.Visible Then
-     TxtCODIGO.SetFocus
+     TxtCodigo.SetFocus
      cmdGrabar.Enabled = True
      cmdBorrar.Enabled = True
     End If
@@ -445,16 +445,16 @@ Private Sub TxtCodigo_KeyPress(KeyAscii As Integer)
 End Sub
 
 Private Sub TxtCodigo_LostFocus()
-    If TxtCODIGO.Text <> "" Then
+    If TxtCodigo.Text <> "" Then
         sql = "SELECT MON_CODIGO,MON_DESCRI FROM MONEDA "
-        sql = sql & " WHERE MON_CODIGO=" & XN(TxtCODIGO)
+        sql = sql & " WHERE MON_CODIGO=" & XN(TxtCodigo)
         rec.Open sql, DBConn, adOpenStatic, adLockOptimistic
         If rec.EOF = False Then
          TxtDescrip.Text = rec!MON_DESCRI
         Else
          MsgBox "El Código no existe", vbExclamation, TIT_MSGBOX
-         TxtCODIGO.Text = ""
-         TxtCODIGO.SetFocus
+         TxtCodigo.Text = ""
+         TxtCodigo.SetFocus
         End If
         rec.Close
     End If
@@ -477,14 +477,14 @@ Private Sub TxtDescrip_GotFocus()
 End Sub
 
 Private Sub TxtDescrip_KeyPress(KeyAscii As Integer)
-    If KeyAscii = vbKeyReturn And cmdGrabar.Enabled Then CmdGrabar_Click
+    If KeyAscii = vbKeyReturn And cmdGrabar.Enabled Then cmdGrabar_Click
     KeyAscii = Mayuscula(KeyAscii)
 End Sub
 
 Private Sub TxtCodigo_Change()
-    If Trim(TxtCODIGO) = "" And cmdBorrar.Enabled Then
+    If Trim(TxtCodigo) = "" And cmdBorrar.Enabled Then
         cmdBorrar.Enabled = False
-    ElseIf Trim(TxtCODIGO) <> "" Then
+    ElseIf Trim(TxtCodigo) <> "" Then
         cmdBorrar.Enabled = True
     End If
 End Sub

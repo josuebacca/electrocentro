@@ -1,6 +1,6 @@
 VERSION 5.00
-Object = "{BDC217C8-ED16-11CD-956C-0000C04E4C0A}#1.1#0"; "TABCTL32.OCX"
-Object = "{5E9E78A0-531B-11CF-91F6-C2863C385E30}#1.0#0"; "MSFLXGRD.OCX"
+Object = "{BDC217C8-ED16-11CD-956C-0000C04E4C0A}#1.1#0"; "tabctl32.ocx"
+Object = "{5E9E78A0-531B-11CF-91F6-C2863C385E30}#1.0#0"; "msflxgrd.ocx"
 Begin VB.Form ABMTipoCuenta 
    BorderStyle     =   1  'Fixed Single
    Caption         =   " ABM de Tipo de Cuenta"
@@ -69,6 +69,7 @@ Begin VB.Form ABMTipoCuenta
       _ExtentY        =   5106
       _Version        =   393216
       Tabs            =   2
+      Tab             =   1
       TabHeight       =   520
       BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
          Name            =   "MS Sans Serif"
@@ -81,19 +82,21 @@ Begin VB.Form ABMTipoCuenta
       EndProperty
       TabCaption(0)   =   "&Datos"
       TabPicture(0)   =   "ABMTipoCuenta.frx":1850
-      Tab(0).ControlEnabled=   -1  'True
+      Tab(0).ControlEnabled=   0   'False
       Tab(0).Control(0)=   "Frame3"
       Tab(0).Control(0).Enabled=   0   'False
       Tab(0).ControlCount=   1
       TabCaption(1)   =   "&Buscar"
       TabPicture(1)   =   "ABMTipoCuenta.frx":186C
-      Tab(1).ControlEnabled=   0   'False
-      Tab(1).Control(0)=   "Frame1"
-      Tab(1).Control(1)=   "GrdModulos"
+      Tab(1).ControlEnabled=   -1  'True
+      Tab(1).Control(0)=   "GrdModulos"
+      Tab(1).Control(0).Enabled=   0   'False
+      Tab(1).Control(1)=   "Frame1"
+      Tab(1).Control(1).Enabled=   0   'False
       Tab(1).ControlCount=   2
       Begin VB.Frame Frame1 
          Height          =   735
-         Left            =   -74865
+         Left            =   135
          TabIndex        =   13
          Top             =   375
          Width           =   5475
@@ -150,7 +153,7 @@ Begin VB.Form ABMTipoCuenta
             Strikethrough   =   0   'False
          EndProperty
          Height          =   1815
-         Left            =   270
+         Left            =   -74730
          TabIndex        =   11
          Top             =   750
          Width           =   5220
@@ -192,7 +195,7 @@ Begin VB.Form ABMTipoCuenta
       End
       Begin MSFlexGridLib.MSFlexGrid GrdModulos 
          Height          =   1635
-         Left            =   -74895
+         Left            =   105
          TabIndex        =   8
          Top             =   1125
          Width           =   5550
@@ -239,9 +242,9 @@ Dim resp As Integer
 Private Sub CmdBorrar_Click()
 
     On Error GoTo CLAVOSE
-    If Trim(TxtCODIGO) <> "" Then
+    If Trim(TxtCodigo) <> "" Then
     
-        sql = "SELECT TCU_CODIGO FROM CTA_BANCARIA WHERE TCU_CODIGO = " & XN(TxtCODIGO)
+        sql = "SELECT TCU_CODIGO FROM CTA_BANCARIA WHERE TCU_CODIGO = " & XN(TxtCodigo)
         rec.Open sql, DBConn, adOpenStatic, adLockOptimistic
         If rec.RecordCount > 0 Then
             MsgBox "No se puede eliminar este Tipo de Cuenta ya que tiene Cuentas Bancarias asociadas !", vbExclamation, TIT_MSGBOX
@@ -256,11 +259,11 @@ Private Sub CmdBorrar_Click()
         Screen.MousePointer = 11
         lblEstado.Caption = "Eliminando ..."
         
-        DBConn.Execute "DELETE FROM TIPO_CUENTA WHERE TCU_CODIGO = " & XN(TxtCODIGO)
+        DBConn.Execute "DELETE FROM TIPO_CUENTA WHERE TCU_CODIGO = " & XN(TxtCodigo)
         If TxtDescrip.Enabled Then TxtDescrip.SetFocus
         lblEstado.Caption = ""
         Screen.MousePointer = 1
-        cmdNuevo_Click
+        CmdNuevo_Click
     End If
     Exit Sub
     
@@ -297,7 +300,7 @@ Private Sub CmdBuscAprox_Click()
     Me.MousePointer = 1
 End Sub
 
-Private Sub CmdGrabar_Click()
+Private Sub cmdGrabar_Click()
     On Error GoTo CLAVOSE
     
     If Trim(TxtDescrip) = "" Then
@@ -310,23 +313,23 @@ Private Sub CmdGrabar_Click()
     Set rec = New ADODB.Recordset
     lblEstado.Caption = "Guardando ..."
 
-    sql = "SELECT TCU_CODIGO FROM TIPO_CUENTA WHERE TCU_CODIGO = " & XN(TxtCODIGO)
+    sql = "SELECT TCU_CODIGO FROM TIPO_CUENTA WHERE TCU_CODIGO = " & XN(TxtCodigo)
     rec.Open sql, DBConn, adOpenStatic, adLockOptimistic
     If rec.EOF = False Then
         DBConn.Execute "UPDATE TIPO_CUENTA SET TCU_DESCRI = " & XS(TxtDescrip) & _
-                       " WHERE TCU_CODIGO = " & XN(TxtCODIGO)
+                       " WHERE TCU_CODIGO = " & XN(TxtCodigo)
     Else
         Set Rec2 = New ADODB.Recordset
-        TxtCODIGO = "1"
+        TxtCodigo = "1"
         sql = "SELECT MAX(TCU_CODIGO) as maximo FROM TIPO_CUENTA"
         Rec2.Open sql, DBConn, adOpenStatic, adLockOptimistic
-        If Not IsNull(Rec2.Fields!Maximo) Then TxtCODIGO = XN(Rec2.Fields!Maximo) + 1
+        If Not IsNull(Rec2.Fields!Maximo) Then TxtCodigo = XN(Rec2.Fields!Maximo) + 1
         Rec2.Close
-        DBConn.Execute "INSERT INTO TIPO_CUENTA(TCU_CODIGO,TCU_DESCRI) VALUES(" & XN(TxtCODIGO) & "," & XS(TxtDescrip) & ")"
+        DBConn.Execute "INSERT INTO TIPO_CUENTA(TCU_CODIGO,TCU_DESCRI) VALUES(" & XN(TxtCodigo) & "," & XS(TxtDescrip) & ")"
     End If
     rec.Close
     Screen.MousePointer = 1
-    cmdNuevo_Click
+    CmdNuevo_Click
     Exit Sub
     
 CLAVOSE:
@@ -334,12 +337,12 @@ CLAVOSE:
     MsgBox Err.Description, vbCritical, TIT_MSGBOX
 End Sub
 
-Private Sub cmdNuevo_Click()
-    TxtCODIGO.Text = ""
+Private Sub CmdNuevo_Click()
+    TxtCodigo.Text = ""
     TxtDescrip.Text = ""
     lblEstado.Caption = ""
     GrdModulos.Rows = 1
-    If TxtCODIGO.Enabled And Me.Visible Then TxtCODIGO.SetFocus
+    If TxtCodigo.Enabled And Me.Visible Then TxtCodigo.SetFocus
 End Sub
 
 Private Sub CmdSalir_Click()
@@ -373,10 +376,10 @@ Private Sub Form_Load()
     TabTB.Tab = 0
 End Sub
 
-Private Sub GrdModulos_dblClick()
+Private Sub GrdModulos_DblClick()
     If GrdModulos.row > 0 Then
         'paso el item seleccionado al tab 'DATOS'
-        TxtCODIGO.Text = GrdModulos.TextMatrix(GrdModulos.RowSel, 0)
+        TxtCodigo.Text = GrdModulos.TextMatrix(GrdModulos.RowSel, 0)
         TxtCodigo_LostFocus
         TabTB.Tab = 0
     End If
@@ -389,7 +392,7 @@ Private Sub GrdModulos_GotFocus()
 End Sub
 
 Private Sub GrdModulos_KeyDown(KeyCode As Integer, Shift As Integer)
-    If KeyCode = vbKeyReturn Then GrdModulos_dblClick
+    If KeyCode = vbKeyReturn Then GrdModulos_DblClick
 End Sub
 
 Private Sub GrdModulos_LostFocus()
@@ -399,7 +402,7 @@ End Sub
 Private Sub tabTB_Click(PreviousTab As Integer)
     'Si cambio de 'Pestaña' en el tab
     'pongo el foco en el primer campo de la misma
-    If TabTB.Tab = 0 And Me.Visible Then TxtCODIGO.SetFocus
+    If TabTB.Tab = 0 And Me.Visible Then TxtCodigo.SetFocus
     If TabTB.Tab = 1 Then
         TxtCodigoB.Text = ""
         TxtDescriB.Text = ""
@@ -408,7 +411,7 @@ Private Sub tabTB_Click(PreviousTab As Integer)
 End Sub
 
 Private Sub TxtCodigo_GotFocus()
-    SelecTexto TxtCODIGO
+    SelecTexto TxtCodigo
 End Sub
 
 Private Sub TxtCodigo_KeyPress(KeyAscii As Integer)
@@ -416,16 +419,16 @@ Private Sub TxtCodigo_KeyPress(KeyAscii As Integer)
 End Sub
 
 Private Sub TxtCodigo_LostFocus()
-    If TxtCODIGO.Text <> "" Then
+    If TxtCodigo.Text <> "" Then
         sql = "SELECT * FROM TIPO_CUENTA"
-        sql = sql & " WHERE TCU_CODIGO=" & XN(TxtCODIGO.Text)
+        sql = sql & " WHERE TCU_CODIGO=" & XN(TxtCodigo.Text)
         rec.Open sql, DBConn, adOpenStatic, adLockOptimistic
         If rec.EOF = False Then
             TxtDescrip.Text = rec!TCU_DESCRI
-            CmdBorrar.Enabled = True
+            cmdBorrar.Enabled = True
         Else
             MsgBox "El Código no existe", vbExclamation, TIT_MSGBOX
-            TxtCODIGO.SetFocus
+            TxtCodigo.SetFocus
         End If
         rec.Close
     End If
@@ -448,22 +451,22 @@ Private Sub TxtDescrip_GotFocus()
 End Sub
 
 Private Sub TxtDescrip_KeyPress(KeyAscii As Integer)
-    If KeyAscii = vbKeyReturn And CmdGrabar.Enabled Then CmdGrabar_Click
+    If KeyAscii = vbKeyReturn And cmdGrabar.Enabled Then cmdGrabar_Click
     KeyAscii = Mayuscula(KeyAscii)
 End Sub
 
 Private Sub TxtCodigo_Change()
-    If Trim(TxtCODIGO) = "" And CmdBorrar.Enabled Then
-        CmdBorrar.Enabled = False
-    ElseIf Trim(TxtCODIGO) <> "" Then
-        CmdBorrar.Enabled = True
+    If Trim(TxtCodigo) = "" And cmdBorrar.Enabled Then
+        cmdBorrar.Enabled = False
+    ElseIf Trim(TxtCodigo) <> "" Then
+        cmdBorrar.Enabled = True
     End If
 End Sub
 
 Private Sub TxtDescrip_Change()
-    If Trim(TxtDescrip) = "" And CmdGrabar.Enabled Then
-        CmdGrabar.Enabled = False
+    If Trim(TxtDescrip) = "" And cmdGrabar.Enabled Then
+        cmdGrabar.Enabled = False
     Else
-        CmdGrabar.Enabled = True
+        cmdGrabar.Enabled = True
     End If
 End Sub

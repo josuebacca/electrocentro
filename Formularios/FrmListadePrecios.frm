@@ -1,8 +1,8 @@
 VERSION 5.00
-Object = "{BDC217C8-ED16-11CD-956C-0000C04E4C0A}#1.1#0"; "TABCTL32.OCX"
-Object = "{5E9E78A0-531B-11CF-91F6-C2863C385E30}#1.0#0"; "Msflxgrd.ocx"
+Object = "{BDC217C8-ED16-11CD-956C-0000C04E4C0A}#1.1#0"; "tabctl32.ocx"
+Object = "{5E9E78A0-531B-11CF-91F6-C2863C385E30}#1.0#0"; "msflxgrd.ocx"
+Object = "{86CF1D34-0C5F-11D2-A9FC-0000F8754DA1}#2.0#0"; "mscomct2.ocx"
 Object = "{00025600-0000-0000-C000-000000000046}#5.2#0"; "Crystl32.OCX"
-Object = "{5F09B5DF-6F4D-11D2-8355-4854E82A9183}#15.0#0"; "Fecha32.ocx"
 Begin VB.Form FrmListadePrecios 
    Caption         =   "Lista de Precios"
    ClientHeight    =   7395
@@ -22,7 +22,7 @@ Begin VB.Form FrmListadePrecios
       Left            =   11400
       Picture         =   "FrmListadePrecios.frx":22A2
       Style           =   1  'Graphical
-      TabIndex        =   53
+      TabIndex        =   52
       ToolTipText     =   "Importar Lista de Precios"
       Top             =   5160
       Width           =   450
@@ -40,14 +40,14 @@ Begin VB.Form FrmListadePrecios
       EndProperty
       Height          =   495
       Left            =   11400
-      TabIndex        =   51
+      TabIndex        =   50
       Top             =   4560
       Width           =   450
    End
    Begin VB.TextBox Text1 
       Height          =   375
       Left            =   2040
-      TabIndex        =   47
+      TabIndex        =   46
       Text            =   "Text1"
       Top             =   6720
       Visible         =   0   'False
@@ -57,7 +57,7 @@ Begin VB.Form FrmListadePrecios
       Caption         =   "LISTA"
       Height          =   495
       Left            =   3840
-      TabIndex        =   46
+      TabIndex        =   45
       Top             =   6720
       Visible         =   0   'False
       Width           =   855
@@ -69,7 +69,7 @@ Begin VB.Form FrmListadePrecios
       Left            =   9255
       Picture         =   "FrmListadePrecios.frx":28B6
       Style           =   1  'Graphical
-      TabIndex        =   43
+      TabIndex        =   42
       Top             =   6600
       Width           =   870
    End
@@ -80,7 +80,7 @@ Begin VB.Form FrmListadePrecios
       Left            =   10125
       Picture         =   "FrmListadePrecios.frx":2ECA
       Style           =   1  'Graphical
-      TabIndex        =   42
+      TabIndex        =   41
       Top             =   6600
       Width           =   870
    End
@@ -91,7 +91,7 @@ Begin VB.Form FrmListadePrecios
       Left            =   8370
       Picture         =   "FrmListadePrecios.frx":5976
       Style           =   1  'Graphical
-      TabIndex        =   41
+      TabIndex        =   40
       Top             =   6600
       Width           =   870
    End
@@ -102,7 +102,7 @@ Begin VB.Form FrmListadePrecios
       Left            =   10995
       Picture         =   "FrmListadePrecios.frx":5F8A
       Style           =   1  'Graphical
-      TabIndex        =   40
+      TabIndex        =   39
       Top             =   6600
       Width           =   870
    End
@@ -113,7 +113,7 @@ Begin VB.Form FrmListadePrecios
       Left            =   6630
       Picture         =   "FrmListadePrecios.frx":70D6
       Style           =   1  'Graphical
-      TabIndex        =   38
+      TabIndex        =   37
       Top             =   6600
       Width           =   870
    End
@@ -124,28 +124,28 @@ Begin VB.Form FrmListadePrecios
       Left            =   7500
       Picture         =   "FrmListadePrecios.frx":8D5A
       Style           =   1  'Graphical
-      TabIndex        =   37
+      TabIndex        =   36
       Top             =   6600
       Width           =   870
    End
    Begin VB.TextBox txtObservaciones2 
       Height          =   315
       Left            =   1500
-      TabIndex        =   16
+      TabIndex        =   15
       Top             =   6120
       Width           =   9870
    End
    Begin VB.TextBox txtObservaciones1 
       Height          =   315
       Left            =   1500
-      TabIndex        =   15
+      TabIndex        =   14
       Top             =   5790
       Width           =   9870
    End
    Begin VB.Frame frebotopc 
       Height          =   2445
       Left            =   11350
-      TabIndex        =   34
+      TabIndex        =   33
       Top             =   2025
       Width           =   495
       Begin VB.CommandButton cmdAgregar 
@@ -153,7 +153,7 @@ Begin VB.Form FrmListadePrecios
          Left            =   0
          Picture         =   "FrmListadePrecios.frx":90E4
          Style           =   1  'Graphical
-         TabIndex        =   18
+         TabIndex        =   17
          ToolTipText     =   "Agegar producto"
          Top             =   1260
          Width           =   465
@@ -163,7 +163,7 @@ Begin VB.Form FrmListadePrecios
          Left            =   0
          Picture         =   "FrmListadePrecios.frx":93EE
          Style           =   1  'Graphical
-         TabIndex        =   19
+         TabIndex        =   18
          ToolTipText     =   "Quitar Producto"
          Top             =   1860
          Width           =   465
@@ -174,7 +174,7 @@ Begin VB.Form FrmListadePrecios
          Left            =   15
          Picture         =   "FrmListadePrecios.frx":96F8
          Style           =   1  'Graphical
-         TabIndex        =   17
+         TabIndex        =   16
          ToolTipText     =   "Modificar Precios"
          Top             =   105
          Width           =   465
@@ -183,7 +183,7 @@ Begin VB.Form FrmListadePrecios
    Begin TabDlg.SSTab TabPrecios 
       Height          =   2265
       Left            =   3060
-      TabIndex        =   30
+      TabIndex        =   29
       Top             =   3060
       Width           =   4035
       _ExtentX        =   7117
@@ -201,14 +201,14 @@ Begin VB.Form FrmListadePrecios
       Begin VB.Frame Frame2 
          Height          =   2160
          Left            =   120
-         TabIndex        =   31
+         TabIndex        =   30
          Top             =   15
          Width           =   3825
          Begin VB.OptionButton optPVenta 
             Caption         =   "Precio Venta"
             Height          =   225
             Left            =   480
-            TabIndex        =   45
+            TabIndex        =   44
             Top             =   240
             Value           =   -1  'True
             Width           =   1335
@@ -217,7 +217,7 @@ Begin VB.Form FrmListadePrecios
             Caption         =   "Precio Compra"
             Height          =   240
             Left            =   1875
-            TabIndex        =   44
+            TabIndex        =   43
             Top             =   240
             Width           =   1440
          End
@@ -225,14 +225,14 @@ Begin VB.Form FrmListadePrecios
             Caption         =   "&Cancelar"
             Height          =   465
             Left            =   2100
-            TabIndex        =   23
+            TabIndex        =   22
             Top             =   1545
             Width           =   900
          End
          Begin VB.TextBox txtActual 
             Height          =   300
             Left            =   1590
-            TabIndex        =   21
+            TabIndex        =   20
             Top             =   1050
             Width           =   1140
          End
@@ -240,7 +240,7 @@ Begin VB.Form FrmListadePrecios
             Caption         =   "&Aceptar"
             Height          =   465
             Left            =   1155
-            TabIndex        =   22
+            TabIndex        =   21
             Top             =   1545
             Width           =   900
          End
@@ -248,7 +248,7 @@ Begin VB.Form FrmListadePrecios
             Enabled         =   0   'False
             Height          =   315
             Left            =   1605
-            TabIndex        =   20
+            TabIndex        =   19
             Top             =   585
             Width           =   1125
          End
@@ -257,7 +257,7 @@ Begin VB.Form FrmListadePrecios
             Caption         =   "Precio Actual:"
             Height          =   195
             Left            =   225
-            TabIndex        =   33
+            TabIndex        =   32
             Top             =   1080
             Width           =   990
          End
@@ -266,7 +266,7 @@ Begin VB.Form FrmListadePrecios
             Caption         =   "Precio Anterior:"
             Height          =   195
             Left            =   135
-            TabIndex        =   32
+            TabIndex        =   31
             Top             =   600
             Width           =   1080
          End
@@ -285,28 +285,28 @@ Begin VB.Form FrmListadePrecios
       EndProperty
       Height          =   1035
       Left            =   30
-      TabIndex        =   24
+      TabIndex        =   23
       Top             =   0
       Width           =   11820
       Begin TabDlg.SSTab tabLista 
          Height          =   855
          Left            =   6720
-         TabIndex        =   48
+         TabIndex        =   47
          Top             =   120
          Width           =   4815
          _ExtentX        =   8493
          _ExtentY        =   1508
          _Version        =   393216
-         Tab             =   1
          TabHeight       =   520
          TabCaption(0)   =   "Maquinarias"
          TabPicture(0)   =   "FrmListadePrecios.frx":9FDE
-         Tab(0).ControlEnabled=   0   'False
+         Tab(0).ControlEnabled=   -1  'True
          Tab(0).Control(0)=   "cboListaPrecio"
+         Tab(0).Control(0).Enabled=   0   'False
          Tab(0).ControlCount=   1
          TabCaption(1)   =   "Repuestos"
          TabPicture(1)   =   "FrmListadePrecios.frx":9FFA
-         Tab(1).ControlEnabled=   -1  'True
+         Tab(1).ControlEnabled=   0   'False
          Tab(1).Control(0)=   "cboLPrecioRep"
          Tab(1).Control(0).Enabled=   0   'False
          Tab(1).ControlCount=   1
@@ -314,28 +314,29 @@ Begin VB.Form FrmListadePrecios
          TabPicture(2)   =   "FrmListadePrecios.frx":A016
          Tab(2).ControlEnabled=   0   'False
          Tab(2).Control(0)=   "cboAdicionales"
+         Tab(2).Control(0).Enabled=   0   'False
          Tab(2).ControlCount=   1
          Begin VB.ComboBox cboAdicionales 
             Height          =   315
             Left            =   -74760
             Style           =   2  'Dropdown List
-            TabIndex        =   52
+            TabIndex        =   51
             Top             =   420
             Width           =   4305
          End
          Begin VB.ComboBox cboListaPrecio 
             Height          =   315
-            Left            =   -74740
+            Left            =   260
             Style           =   2  'Dropdown List
-            TabIndex        =   50
+            TabIndex        =   49
             Top             =   400
             Width           =   4185
          End
          Begin VB.ComboBox cboLPrecioRep 
             Height          =   315
-            Left            =   260
+            Left            =   -74740
             Style           =   2  'Dropdown List
-            TabIndex        =   49
+            TabIndex        =   48
             Top             =   400
             Width           =   4185
          End
@@ -344,22 +345,10 @@ Begin VB.Form FrmListadePrecios
          Height          =   315
          Left            =   6735
          Style           =   2  'Dropdown List
-         TabIndex        =   2
+         TabIndex        =   1
          Top             =   240
          Visible         =   0   'False
          Width           =   4185
-      End
-      Begin FechaCtl.Fecha Fecha1 
-         Height          =   285
-         Left            =   2505
-         TabIndex        =   1
-         Top             =   615
-         Width           =   1155
-         _ExtentX        =   2037
-         _ExtentY        =   503
-         Separador       =   "/"
-         Text            =   ""
-         MensajeErrMin   =   "La fecha ingresada no alcanza el mínimo permitido"
       End
       Begin VB.TextBox txtcodigo 
          Enabled         =   0   'False
@@ -373,7 +362,7 @@ Begin VB.Form FrmListadePrecios
          Height          =   285
          Left            =   6735
          MaxLength       =   40
-         TabIndex        =   3
+         TabIndex        =   2
          Top             =   255
          Width           =   3660
       End
@@ -383,18 +372,30 @@ Begin VB.Form FrmListadePrecios
          MaskColor       =   &H000000FF&
          Picture         =   "FrmListadePrecios.frx":A032
          Style           =   1  'Graphical
-         TabIndex        =   4
+         TabIndex        =   3
          ToolTipText     =   "Buscar"
          Top             =   240
          UseMaskColor    =   -1  'True
          Width           =   1005
+      End
+      Begin MSComCtl2.DTPicker Fecha1 
+         Height          =   315
+         Left            =   2520
+         TabIndex        =   53
+         Top             =   600
+         Width           =   1335
+         _ExtentX        =   2355
+         _ExtentY        =   556
+         _Version        =   393216
+         Format          =   53936129
+         CurrentDate     =   43367
       End
       Begin VB.Label Label3 
          AutoSize        =   -1  'True
          Caption         =   "Número:"
          Height          =   195
          Left            =   1755
-         TabIndex        =   29
+         TabIndex        =   28
          Top             =   285
          Width           =   600
       End
@@ -403,7 +404,7 @@ Begin VB.Form FrmListadePrecios
          Caption         =   "Vigencia desde:"
          Height          =   195
          Left            =   1215
-         TabIndex        =   28
+         TabIndex        =   27
          Top             =   660
          Width           =   1140
       End
@@ -422,7 +423,7 @@ Begin VB.Form FrmListadePrecios
          Height          =   195
          Index           =   0
          Left            =   5160
-         TabIndex        =   27
+         TabIndex        =   26
          Top             =   300
          Width           =   1380
       End
@@ -440,14 +441,14 @@ Begin VB.Form FrmListadePrecios
       EndProperty
       Height          =   975
       Left            =   30
-      TabIndex        =   25
+      TabIndex        =   24
       Top             =   1050
       Width           =   11820
       Begin VB.CheckBox chkRubro 
          Caption         =   "Rubro"
          Height          =   285
          Left            =   6015
-         TabIndex        =   7
+         TabIndex        =   6
          Top             =   240
          Width           =   825
       End
@@ -455,7 +456,7 @@ Begin VB.Form FrmListadePrecios
          Caption         =   "Línea"
          Height          =   255
          Left            =   360
-         TabIndex        =   6
+         TabIndex        =   5
          Top             =   615
          Width           =   780
       End
@@ -463,7 +464,7 @@ Begin VB.Form FrmListadePrecios
          Caption         =   "Producto"
          Height          =   225
          Left            =   360
-         TabIndex        =   5
+         TabIndex        =   4
          Top             =   270
          Width           =   990
       End
@@ -473,7 +474,7 @@ Begin VB.Form FrmListadePrecios
          Left            =   11085
          Picture         =   "FrmListadePrecios.frx":A33C
          Style           =   1  'Graphical
-         TabIndex        =   9
+         TabIndex        =   8
          Top             =   225
          Width           =   570
       End
@@ -481,7 +482,7 @@ Begin VB.Form FrmListadePrecios
          Height          =   315
          Left            =   7005
          Style           =   2  'Dropdown List
-         TabIndex        =   12
+         TabIndex        =   11
          Top             =   585
          Width           =   3870
       End
@@ -489,7 +490,7 @@ Begin VB.Form FrmListadePrecios
          Height          =   315
          Left            =   1485
          Style           =   2  'Dropdown List
-         TabIndex        =   11
+         TabIndex        =   10
          Top             =   585
          Width           =   4020
       End
@@ -497,7 +498,7 @@ Begin VB.Form FrmListadePrecios
          Height          =   315
          Left            =   6990
          Style           =   2  'Dropdown List
-         TabIndex        =   13
+         TabIndex        =   12
          Top             =   225
          Width           =   3870
       End
@@ -505,14 +506,14 @@ Begin VB.Form FrmListadePrecios
          Caption         =   "Marca"
          Height          =   255
          Left            =   6015
-         TabIndex        =   8
+         TabIndex        =   7
          Top             =   615
          Width           =   1380
       End
       Begin VB.TextBox txtproducto 
          Height          =   315
          Left            =   1485
-         TabIndex        =   10
+         TabIndex        =   9
          Top             =   225
          Width           =   4005
       End
@@ -520,7 +521,7 @@ Begin VB.Form FrmListadePrecios
    Begin MSFlexGridLib.MSFlexGrid GrdModulos 
       Height          =   3735
       Left            =   0
-      TabIndex        =   14
+      TabIndex        =   13
       Top             =   2025
       Width           =   11355
       _ExtentX        =   20029
@@ -549,7 +550,7 @@ Begin VB.Form FrmListadePrecios
       Left            =   5760
       Picture         =   "FrmListadePrecios.frx":CDE8
       Style           =   1  'Graphical
-      TabIndex        =   39
+      TabIndex        =   38
       Top             =   6600
       Width           =   870
    End
@@ -558,7 +559,7 @@ Begin VB.Form FrmListadePrecios
       Caption         =   "2 - Observaciones:"
       Height          =   195
       Left            =   60
-      TabIndex        =   36
+      TabIndex        =   35
       Top             =   6165
       Width           =   1335
    End
@@ -567,7 +568,7 @@ Begin VB.Form FrmListadePrecios
       Caption         =   "1 - Observaciones:"
       Height          =   195
       Left            =   60
-      TabIndex        =   35
+      TabIndex        =   34
       Top             =   5835
       Width           =   1335
    End
@@ -585,7 +586,7 @@ Begin VB.Form FrmListadePrecios
       EndProperty
       Height          =   240
       Left            =   105
-      TabIndex        =   26
+      TabIndex        =   25
       Top             =   6930
       Width           =   750
    End
@@ -641,10 +642,10 @@ Dim BAND As Integer
         Rec1.MoveFirst
         If BAND = 0 Then
             TxtCodigo.Text = Rec1.Fields(6)
-            Fecha1.Text = Rec1.Fields(7)
+            Fecha1.Value = Rec1.Fields(7)
         Else
             TxtCodigo.Text = ""
-            Fecha1.Text = ""
+            Fecha1.Value = Date
         End If
     Else
         lblestado.Caption = ""
@@ -712,10 +713,10 @@ Private Sub cbodescri_Click()
 '        Rec1.MoveFirst
 '        If BAND = 0 Then
 '            TxtCodigo.Text = Rec1.Fields(6)
-'            Fecha1.Text = Rec1.Fields(7)
+'            Fecha1.Value = Rec1.Fields(7)
 '        Else
 '            TxtCodigo.Text = ""
-'            Fecha1.Text = ""
+'            Fecha1.Value= date
 '        End If
 '    Else
 '        lblEstado.Caption = ""
@@ -787,10 +788,10 @@ Dim BAND As Integer
         Rec1.MoveFirst
         If BAND = 0 Then
             TxtCodigo.Text = Rec1.Fields(6)
-            Fecha1.Text = Rec1.Fields(7)
+            Fecha1.Value = Rec1.Fields(7)
         Else
             TxtCodigo.Text = ""
-            Fecha1.Text = ""
+            Fecha1.Value = Date
         End If
     Else
         lblestado.Caption = ""
@@ -845,10 +846,10 @@ Dim BAND As Integer
         Rec1.MoveFirst
         If BAND = 0 Then
             TxtCodigo.Text = Rec1.Fields(6)
-            Fecha1.Text = Rec1.Fields(7)
+            Fecha1.Value = Rec1.Fields(7)
         Else
             TxtCodigo.Text = ""
-            Fecha1.Text = ""
+            Fecha1.Value = Date
         End If
     Else
         lblestado.Caption = ""
@@ -1208,7 +1209,7 @@ Private Sub CmdBuscAprox_Click()
         Loop
         rec.MoveFirst
         TxtCodigo.Text = rec.Fields(6)
-        Fecha1.Text = rec.Fields(7)
+        Fecha1.Value = rec.Fields(7)
          
     Else
         lblestado.Caption = ""
@@ -1290,10 +1291,10 @@ Function Cancelando()
 '            rec.MoveFirst
 '            If BAND = 0 Then
 '                TxtCodigo.Text = rec.Fields(6)
-'                Fecha1.Text = rec.Fields(7)
+'                Fecha1.Value = rec.Fields(7)
 '            Else
 '                TxtCodigo.Text = ""
-'                Fecha1.Text = ""
+'                Fecha1.Value= date
 '            End If
 '
 '        Else
@@ -1419,7 +1420,7 @@ Function ValidarLista()
         ValidarLista = False
         Exit Function
     End If
-    If Fecha1.Text = "" Then
+    If Fecha1.Value = Date Then
         MsgBox "No ha ingresado la Fecha de Vigencia", vbExclamation, TIT_MSGBOX
         Fecha1.SetFocus
         ValidarLista = False
@@ -1615,7 +1616,7 @@ End Sub
 Private Sub CmdNuevo_Click()
     cmdGrabar.Enabled = True
     CmdBorrar.Enabled = False
-    Fecha1.Text = Date
+    Fecha1.Value = Date
     TxtCodigo.Text = ""
     TxtDescriB.Text = ""
     TxtDescriB.Visible = True
@@ -2041,10 +2042,10 @@ Function cargocboLista()
     End If
 '    Rec2.MoveFirst
 '    txtcodigo.Text = Rec2!LIS_CODIGO
-'    Fecha1.Text = Rec2!LIS_FECHA
+'    Fecha1.Value = Rec2!LIS_FECHA
 '    Rec2.MoveFirst
     TxtCodigo.Text = ""
-    Fecha1.Text = ""
+    Fecha1.Value = Date
     Rec2.Close
     
 End Function

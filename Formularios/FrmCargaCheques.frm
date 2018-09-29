@@ -92,7 +92,9 @@ Begin VB.Form FrmCargaCheques
       TabPicture(1)   =   "FrmCargaCheques.frx":2136
       Tab(1).ControlEnabled=   0   'False
       Tab(1).Control(0)=   "grdModulos"
+      Tab(1).Control(0).Enabled=   0   'False
       Tab(1).Control(1)=   "Frame4"
+      Tab(1).Control(1).Enabled=   0   'False
       Tab(1).ControlCount=   2
       Begin VB.Frame Frame4 
          Caption         =   " Buscar por "
@@ -414,39 +416,39 @@ Begin VB.Form FrmCargaCheques
             Width           =   405
          End
          Begin MSComCtl2.DTPicker TxtCheFecEnt 
-            Height          =   375
+            Height          =   315
             Left            =   1350
             TabIndex        =   58
             Top             =   360
             Width           =   1335
             _ExtentX        =   2355
-            _ExtentY        =   661
+            _ExtentY        =   556
             _Version        =   393216
-            Format          =   53936129
+            Format          =   53673985
             CurrentDate     =   43367
          End
          Begin MSComCtl2.DTPicker TxtCheFecEmi 
-            Height          =   375
+            Height          =   315
             Left            =   1350
             TabIndex        =   59
             Top             =   2400
             Width           =   1335
             _ExtentX        =   2355
-            _ExtentY        =   661
+            _ExtentY        =   556
             _Version        =   393216
-            Format          =   53936129
+            Format          =   53673985
             CurrentDate     =   43367
          End
          Begin MSComCtl2.DTPicker TxtCheFecVto 
-            Height          =   375
+            Height          =   315
             Left            =   5640
             TabIndex        =   60
             Top             =   2400
             Width           =   1335
             _ExtentX        =   2355
-            _ExtentY        =   661
+            _ExtentY        =   556
             _Version        =   393216
-            Format          =   53936129
+            Format          =   53673985
             CurrentDate     =   43367
          End
          Begin VB.Label Label1 
@@ -824,7 +826,7 @@ Private Sub CmdBorrar_Click()
         
         
         Screen.MousePointer = vbHourglass
-        lblEstado.Caption = "Borrando..."
+        lblestado.Caption = "Borrando..."
         
         sql = "SELECT BOL_NUMERO "
         sql = sql & " FROM ChequeEstadoVigente "
@@ -836,7 +838,7 @@ Private Sub CmdBorrar_Click()
                MsgBox "No se puede eliminar este Cheque porque fue depositado", vbExclamation, TIT_MSGBOX
                rec.Close
                Screen.MousePointer = vbNormal
-               lblEstado.Caption = ""
+               lblestado.Caption = ""
                Exit Sub
              End If
         End If
@@ -848,7 +850,7 @@ Private Sub CmdBorrar_Click()
         DBConn.Execute "DELETE FROM CHEQUE WHERE CHE_NUMERO = " & XS(Me.TxtCheNumero.Text) & " AND BAN_CODINT = " & XN(Me.TxtCodInt.Text)
         
         Screen.MousePointer = vbNormal
-        lblEstado.Caption = ""
+        lblestado.Caption = ""
         DBConn.CommitTrans
         CmdNuevo_Click
     End If
@@ -856,7 +858,7 @@ Private Sub CmdBorrar_Click()
     
 CLAVOSE:
     DBConn.RollbackTrans
-    lblEstado.Caption = ""
+    lblestado.Caption = ""
     If rec.State = 1 Then rec.Close
     Screen.MousePointer = vbNormal
     MsgBox Err.Description, vbCritical, TIT_MSGBOX
@@ -885,18 +887,18 @@ Private Sub cmdBuscaAprox_Click()
     End If
     sql = sql & " ORDER BY C.CHE_FECVTO"
     rec.Open sql, DBConn, adOpenStatic, adLockOptimistic
-    grdModulos.Rows = 1
+    GrdModulos.Rows = 1
     If rec.EOF = False Then
         Do While rec.EOF = False
         'Nro Cheque|Banco|Responsable|Fecha Vto|Importe|CodBanco|Fecha|FechaEmision
-            grdModulos.AddItem rec!CHE_NUMERO & Chr(9) & rec!BAN_DESCRI & Chr(9) & _
+            GrdModulos.AddItem rec!CHE_NUMERO & Chr(9) & rec!BAN_DESCRI & Chr(9) & _
                                rec!CHE_NOMBRE & Chr(9) & rec!CHE_FECVTO & Chr(9) & _
                                rec!che_import & Chr(9) & rec!BAN_CODINT & Chr(9) & _
                                rec!CHE_FECENT & Chr(9) & rec!CHE_FECEMI & Chr(9) & _
                                rec!CHE_MOTIVO & Chr(9) & rec!CHE_OBSERV
             rec.MoveNext
         Loop
-        grdModulos.SetFocus
+        GrdModulos.SetFocus
     Else
         MsgBox "No hay coincidencias en la busqueda.", vbOKOnly + vbCritical, TIT_MSGBOX
         txtBusNroCheque.SetFocus
@@ -934,11 +936,11 @@ Private Sub cmdBuscaCheque_Click()
         
         If rec!ECH_CODIGO = 1 Then 'EN CARTERA
             TxtBanDescri.Text = rec!BAN_DESCRI
-            TxtBANCO.Text = frmBuscar.grdBuscar.TextMatrix(frmBuscar.grdBuscar.RowSel, 5)
-            TxtCODIGO.Text = frmBuscar.grdBuscar.TextMatrix(frmBuscar.grdBuscar.RowSel, 8)
-            TxtLOCALIDAD.Text = frmBuscar.grdBuscar.TextMatrix(frmBuscar.grdBuscar.RowSel, 6)
-            TxtSUCURSAL.Text = frmBuscar.grdBuscar.TextMatrix(frmBuscar.grdBuscar.RowSel, 7)
-            TxtCODIGO.Text = frmBuscar.grdBuscar.TextMatrix(frmBuscar.grdBuscar.RowSel, 8)
+            TxtBanco.Text = frmBuscar.grdBuscar.TextMatrix(frmBuscar.grdBuscar.RowSel, 5)
+            TxtCodigo.Text = frmBuscar.grdBuscar.TextMatrix(frmBuscar.grdBuscar.RowSel, 8)
+            txtlocalidad.Text = frmBuscar.grdBuscar.TextMatrix(frmBuscar.grdBuscar.RowSel, 6)
+            TxtSucursal.Text = frmBuscar.grdBuscar.TextMatrix(frmBuscar.grdBuscar.RowSel, 7)
+            TxtCodigo.Text = frmBuscar.grdBuscar.TextMatrix(frmBuscar.grdBuscar.RowSel, 8)
             TxtCheImport.Text = frmBuscar.grdBuscar.TextMatrix(frmBuscar.grdBuscar.RowSel, 3)
             TxtCheFecVto.Value = frmBuscar.grdBuscar.TextMatrix(frmBuscar.grdBuscar.RowSel, 2)
             TxtCodInt.Text = frmBuscar.grdBuscar.TextMatrix(frmBuscar.grdBuscar.RowSel, 4)
@@ -957,7 +959,7 @@ Private Sub cmdBuscaCheque_Click()
     
 End Sub
 
-Private Sub cmdGrabar_Click()
+Private Sub CmdGrabar_Click()
     
   If Validar = True Then
   
@@ -966,7 +968,7 @@ Private Sub cmdGrabar_Click()
     DBConn.BeginTrans
     
     Screen.MousePointer = vbHourglass
-    lblEstado.Caption = "Guardando..."
+    lblestado.Caption = "Guardando..."
     Me.Refresh
     
     sql = "SELECT * FROM CHEQUE WHERE CHE_NUMERO LIKE '" & TxtCheNumero.Text & "' "
@@ -1007,7 +1009,7 @@ Private Sub cmdGrabar_Click()
     
     '************* PREGUNTAR POR SI DESEA IMPRIMIR ***************
     Screen.MousePointer = vbNormal
-    lblEstado.Caption = ""
+    lblestado.Caption = ""
     DBConn.CommitTrans
     CmdNuevo_Click
  End If
@@ -1015,7 +1017,7 @@ Private Sub cmdGrabar_Click()
       
 CLAVOSE:
     DBConn.RollbackTrans
-    lblEstado.Caption = ""
+    lblestado.Caption = ""
     If rec.State = 1 Then rec.Close
     Screen.MousePointer = vbNormal
     MsgBox Err.Description, vbCritical, TIT_MSGBOX
@@ -1023,37 +1025,37 @@ CLAVOSE:
 End Sub
 
 Private Sub CmdNuevo_Click()
-    Me.TxtCheFecEnt.Value = ""
+    Me.TxtCheFecEnt.Value = Date
     Me.TxtCheNumero.Enabled = True
-    Me.TxtBANCO.Enabled = True
-    Me.TxtLOCALIDAD.Enabled = True
-    Me.TxtSUCURSAL.Enabled = True
-    Me.TxtCODIGO.Enabled = True
+    Me.TxtBanco.Enabled = True
+    Me.txtlocalidad.Enabled = True
+    Me.TxtSucursal.Enabled = True
+    Me.TxtCodigo.Enabled = True
     Me.TxtCheNombre.Enabled = True
    ' MtrObjetos = Array(TxtCheNumero, TxtBANCO, TxtLOCALIDAD, TxtSUCURSAL, TxtCODIGO, TxtCheNombre)
    ' Call CambiarColor(MtrObjetos, 6, &H80000005, "E")
     Me.TxtCheNumero.Text = ""
-    Me.TxtBANCO.Text = ""
-    Me.TxtLOCALIDAD.Text = ""
-    Me.TxtSUCURSAL.Text = ""
+    Me.TxtBanco.Text = ""
+    Me.txtlocalidad.Text = ""
+    Me.TxtSucursal.Text = ""
     TxtBanDescri.Text = ""
-    Me.TxtCODIGO.Text = ""
+    Me.TxtCodigo.Text = ""
     Me.TxtCodInt.Text = ""
     Me.TxtCheNombre.Text = ""
     Me.TxtCheMotivo.Text = ""
     Me.TxtCheFecEmi.Value = ""
-    Me.TxtCheFecVto.Value = ""
+    Me.TxtCheFecVto.Value = Date
     Me.TxtCheImport.Text = ""
     Me.TxtCheObserv.Text = ""
     Me.TxtCheFecEnt.SetFocus
     'TxtCheNombre.ForeColor = &H80000005
-    lblEstado.Caption = ""
+    lblestado.Caption = ""
     Me.txtCodBanco = ""
     Me.txtDesBanco = ""
-    TabDatos.Tab = 0
+    tabDatos.Tab = 0
 End Sub
 
-Private Sub CmdSalir_Click()
+Private Sub cmdSalir_Click()
     Unload Me
     Set FrmCargaCheques = Nothing
 End Sub
@@ -1063,37 +1065,37 @@ Private Sub Command1_Click()
 End Sub
 
 Private Sub Form_KeyDown(KeyCode As Integer, Shift As Integer)
-    If KeyCode = vbKeyF1 Then TabDatos.Tab = 1
+    If KeyCode = vbKeyF1 Then tabDatos.Tab = 1
 End Sub
 Private Sub Form_KeyPress(KeyAscii As Integer)
     If KeyAscii = vbKeyReturn Then SendKeys "{tab}"
-    If KeyAscii = vbKeyEscape Then CmdSalir_Click
+    If KeyAscii = vbKeyEscape Then cmdSalir_Click
 End Sub
 
 Private Sub Form_Load()
     Set rec = New ADODB.Recordset
     
     TxtCheFecEnt.Value = Date
-    lblEstado.Caption = ""
-    TabDatos.Tab = 0
+    lblestado.Caption = ""
+    tabDatos.Tab = 0
     preparogrilla
 End Sub
 Private Function preparogrilla()
-    lblEstado.Caption = ""
+    lblestado.Caption = ""
 'ACA LLEGUE, CONFIGURAR LA GRILLA Y ARMAR LA SQL
     
-    grdModulos.FormatString = "Nro Cheque|Banco|Responsable|Fecha Vto|Importe|CODBANCO|FECHA ENT|FechaEmision|Motivo|Obser"
-    grdModulos.ColWidth(0) = 1000
-    grdModulos.ColWidth(1) = 1900
-    grdModulos.ColWidth(2) = 1900
-    grdModulos.ColWidth(3) = 1000
-    grdModulos.ColWidth(4) = 1000
-    grdModulos.ColWidth(5) = 0
-    grdModulos.ColWidth(6) = 0
-    grdModulos.ColWidth(7) = 0
-    grdModulos.ColWidth(8) = 0
-    grdModulos.ColWidth(9) = 0
-    grdModulos.Rows = 2
+    GrdModulos.FormatString = "Nro Cheque|Banco|Responsable|Fecha Vto|Importe|CODBANCO|FECHA ENT|FechaEmision|Motivo|Obser"
+    GrdModulos.ColWidth(0) = 1000
+    GrdModulos.ColWidth(1) = 1900
+    GrdModulos.ColWidth(2) = 1900
+    GrdModulos.ColWidth(3) = 1000
+    GrdModulos.ColWidth(4) = 1000
+    GrdModulos.ColWidth(5) = 0
+    GrdModulos.ColWidth(6) = 0
+    GrdModulos.ColWidth(7) = 0
+    GrdModulos.ColWidth(8) = 0
+    GrdModulos.ColWidth(9) = 0
+    GrdModulos.Rows = 2
     
 End Function
 
@@ -1105,39 +1107,39 @@ Private Sub GrdModulos_KeyDown(KeyCode As Integer, Shift As Integer)
     If KeyCode = vbKeyReturn Then GrdModulos_DblClick
 End Sub
 Private Sub GrdModulos_DblClick()
-    If grdModulos.Rows > 1 Then
-        TabDatos.Tab = 0
+    If GrdModulos.Rows > 1 Then
+        tabDatos.Tab = 0
         '"Nro Cheque|Banco|Responsable|Fecha Vto|Importe|CodBanco|Fecha|FechaEmision"
-        TxtCheFecEnt.Value = grdModulos.TextMatrix(grdModulos.RowSel, 6)
-        TxtCheNumero.Text = grdModulos.TextMatrix(grdModulos.RowSel, 0)
-        txtCodBanco.Text = grdModulos.TextMatrix(grdModulos.RowSel, 5)
+        TxtCheFecEnt.Value = GrdModulos.TextMatrix(GrdModulos.RowSel, 6)
+        TxtCheNumero.Text = GrdModulos.TextMatrix(GrdModulos.RowSel, 0)
+        txtCodBanco.Text = GrdModulos.TextMatrix(GrdModulos.RowSel, 5)
         txtCodBanco_LostFocus
-        TxtCheNombre.Text = grdModulos.TextMatrix(grdModulos.RowSel, 2)
-        TxtCheMotivo = grdModulos.TextMatrix(grdModulos.RowSel, 8)
-        TxtCheFecEmi.Value = grdModulos.TextMatrix(grdModulos.RowSel, 7)
-        TxtCheFecVto.Value = grdModulos.TextMatrix(grdModulos.RowSel, 3)
-        TxtCheImport.Text = Valido_Importe(grdModulos.TextMatrix(grdModulos.RowSel, 4))
-        TxtCheObserv.Text = grdModulos.TextMatrix(grdModulos.RowSel, 9)
+        TxtCheNombre.Text = GrdModulos.TextMatrix(GrdModulos.RowSel, 2)
+        TxtCheMotivo = GrdModulos.TextMatrix(GrdModulos.RowSel, 8)
+        TxtCheFecEmi.Value = GrdModulos.TextMatrix(GrdModulos.RowSel, 7)
+        TxtCheFecVto.Value = GrdModulos.TextMatrix(GrdModulos.RowSel, 3)
+        TxtCheImport.Text = Valido_Importe(GrdModulos.TextMatrix(GrdModulos.RowSel, 4))
+        TxtCheObserv.Text = GrdModulos.TextMatrix(GrdModulos.RowSel, 9)
     End If
 End Sub
 
 Private Sub tabDatos_Click(PreviousTab As Integer)
-    If TabDatos.Tab = 0 And Me.Visible Then
+    If tabDatos.Tab = 0 And Me.Visible Then
         TxtCheNumero.SetFocus
-        CmdGrabar.Enabled = True
+        cmdGrabar.Enabled = True
         CmdBorrar.Enabled = True
     End If
-    If TabDatos.Tab = 1 Then
+    If tabDatos.Tab = 1 Then
         txtBusNroCheque.Text = ""
         txtBusBanco.Text = ""
         txtBusNroCheque.SetFocus
-        CmdGrabar.Enabled = False
+        cmdGrabar.Enabled = False
         CmdBorrar.Enabled = False
     End If
 End Sub
 
 Private Sub TxtBANCO_LostFocus()
-    If Len(TxtBANCO.Text) < 3 Then TxtBANCO.Text = CompletarConCeros(TxtBANCO.Text, 3)
+    If Len(TxtBanco.Text) < 3 Then TxtBanco.Text = CompletarConCeros(TxtBanco.Text, 3)
 End Sub
 
 Private Sub txtBusBanco_GotFocus()
@@ -1165,13 +1167,13 @@ Private Sub TxtCheFecVto_LostFocus()
     
     If CVDate(TxtCheFecEmi.Value) > CVDate(TxtCheFecVto.Value) Then
         MsgBox "La Fecha de Vencimiento no puede ser anterior a la Fecha de Emisión del Cheque.! ", 16, TIT_MSGBOX
-        Me.TxtCheFecVto.Value = ""
+        Me.TxtCheFecVto.Value = Date
         Me.TxtCheFecVto.SetFocus
     Else
        If Me.TxtCheImport.Enabled = False Then 'PAGO EN CUOTAS
             Tasa = Trim(FrmComprobante.txtPmt_Tasa.Text)
             'Saco la Cantidad de Días del Cheque
-            Cant_Dias = DateDiff("d", FrmComprobante.TxtFechaComprobante.Text, Me.TxtCheFecVto.Value)
+            Cant_Dias = DateDiff("d", FrmComprobante.TxtFechaComprobante.Value, Me.TxtCheFecVto.Value)
             
             'Cálculo de Interes a Fecha del Cheque
             TxtCheImport.Text = Format(TxtCheImport.Text + (CDbl(TxtCheImport.Text) * CDbl(Chk0(Cant_Dias * Tasa)) / 100), "$ ##,##0.00")
@@ -1212,7 +1214,7 @@ Private Sub TxtCheNumero_KeyPress(KeyAscii As Integer)
 End Sub
 
 Private Sub TxtCheFecEnt_LostFocus()
-    If TxtCheFecEnt.Value = "" Then
+    If TxtCheFecEnt.Value = Date Then
         TxtCheFecEnt.Value = Format(Date, "dd/mm/yyyy")
     End If
 End Sub
@@ -1272,19 +1274,19 @@ Private Sub TxtCodigo_LostFocus()
         
     'ChequeRegistrado = False
     
-    If Len(TxtCODIGO.Text) < 6 Then TxtCODIGO.Text = CompletarConCeros(TxtCODIGO.Text, 6)
+    If Len(TxtCodigo.Text) < 6 Then TxtCodigo.Text = CompletarConCeros(TxtCodigo.Text, 6)
      
     If Trim(Me.TxtCheNumero.Text) <> "" And _
-       Trim(Me.TxtBANCO.Text) <> "" And _
-       Trim(Me.TxtLOCALIDAD.Text) <> "" And _
-       Trim(Me.TxtSUCURSAL.Text) <> "" And _
-       Trim(Me.TxtCODIGO.Text) <> "" Then
+       Trim(Me.TxtBanco.Text) <> "" And _
+       Trim(Me.txtlocalidad.Text) <> "" And _
+       Trim(Me.TxtSucursal.Text) <> "" And _
+       Trim(Me.TxtCodigo.Text) <> "" Then
        
        'BUSCO EL CODIGO INTERNO
        sql = "SELECT BAN_CODINT, BAN_DESCRI FROM BANCO WHERE BAN_BANCO = " & _
-       XS(TxtBANCO.Text) & " AND BAN_LOCALIDAD = " & _
-       XS(Me.TxtLOCALIDAD.Text) & " AND BAN_SUCURSAL = " & _
-       XS(Me.TxtSUCURSAL.Text) & " AND BAN_CODIGO = " & XS(TxtCODIGO.Text)
+       XS(TxtBanco.Text) & " AND BAN_LOCALIDAD = " & _
+       XS(Me.txtlocalidad.Text) & " AND BAN_SUCURSAL = " & _
+       XS(Me.TxtSucursal.Text) & " AND BAN_CODIGO = " & XS(TxtCodigo.Text)
        rec.Open sql, DBConn, adOpenStatic, adLockOptimistic
        If rec.RecordCount > 0 Then 'EXITE
           TxtCodInt.Text = rec!BAN_CODINT
@@ -1313,10 +1315,10 @@ Private Sub TxtCodigo_LostFocus()
                    "WHERE BAN_CODINT = " & XN(Me.TxtCodInt.Text)
             Rec1.Open sql, DBConn, adOpenStatic, adLockOptimistic
             If Rec1.RecordCount > 0 Then 'EXITE
-                Me.TxtBANCO.Text = Rec1!BAN_BANCO
-                Me.TxtLOCALIDAD.Text = Rec1!BAN_LOCALIDAD
-                Me.TxtSUCURSAL.Text = Rec1!BAN_SUCURSAL
-                Me.TxtCODIGO.Text = Rec1!BAN_CODIGO
+                Me.TxtBanco.Text = Rec1!BAN_BANCO
+                Me.txtlocalidad.Text = Rec1!BAN_LOCALIDAD
+                Me.TxtSucursal.Text = Rec1!BAN_SUCURSAL
+                Me.TxtCodigo.Text = Rec1!BAN_CODIGO
             End If
             Rec1.Close
             Me.TxtCheNombre.Text = ChkNull(rec!CHE_NOMBRE)
@@ -1327,12 +1329,12 @@ Private Sub TxtCodigo_LostFocus()
             Me.TxtCheObserv.Text = ChkNull(rec!CHE_OBSERV)
             
             TxtCheNumero.Enabled = False
-            TxtBANCO.Enabled = False
-            TxtLOCALIDAD.Enabled = False
-            TxtSUCURSAL.Enabled = False
-            TxtCODIGO.Enabled = False
+            TxtBanco.Enabled = False
+            txtlocalidad.Enabled = False
+            TxtSucursal.Enabled = False
+            TxtCodigo.Enabled = False
             
-            MtrObjetos = Array(TxtCheNumero, TxtBANCO, TxtLOCALIDAD, TxtSUCURSAL, TxtCODIGO)
+            MtrObjetos = Array(TxtCheNumero, TxtBanco, txtlocalidad, TxtSucursal, TxtCodigo)
             Call CambiarColor(MtrObjetos, 5, &H80000018, "D")
             
         Else
@@ -1349,7 +1351,7 @@ Private Sub Txtlocalidad_KeyPress(KeyAscii As Integer)
 End Sub
 
 Private Sub TxtLOCALIDAD_LostFocus()
-    If Len(TxtLOCALIDAD.Text) < 3 Then TxtLOCALIDAD.Text = CompletarConCeros(TxtLOCALIDAD.Text, 3)
+    If Len(txtlocalidad.Text) < 3 Then txtlocalidad.Text = CompletarConCeros(txtlocalidad.Text, 3)
 End Sub
 
 Private Sub TxtSucursal_KeyPress(KeyAscii As Integer)
@@ -1357,5 +1359,5 @@ Private Sub TxtSucursal_KeyPress(KeyAscii As Integer)
 End Sub
 
 Private Sub txtSucursal_LostFocus()
-    If Len(TxtSUCURSAL.Text) < 3 Then TxtSUCURSAL.Text = CompletarConCeros(TxtSUCURSAL.Text, 3)
+    If Len(TxtSucursal.Text) < 3 Then TxtSucursal.Text = CompletarConCeros(TxtSucursal.Text, 3)
 End Sub

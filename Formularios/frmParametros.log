@@ -1,2 +1,16 @@
 Línea 367: la clase FechaCtl.Fecha del control fechaInicio no era una clase de control cargada.
 Línea 379: la clase Control_CUIT.CUIT del control CUIT1 no era una clase de control cargada.
+Línea 373: el nombre de la propiedad _ExtentX de fechaInicio no es válido.
+Línea 374: el nombre de la propiedad _ExtentY de fechaInicio no es válido.
+Línea 375: el nombre de la propiedad Separador de fechaInicio no es válido.
+Línea 376: el nombre de la propiedad Text de fechaInicio no es válido.
+Línea 377: el nombre de la propiedad MensajeErrMin de fechaInicio no es válido.
+Línea 385: el nombre de la propiedad _ExtentX de CUIT1 no es válido.
+Línea 386: el nombre de la propiedad _ExtentY de CUIT1 no es válido.
+Línea 387: el nombre de la propiedad ConSeparador de CUIT1 no es válido.
+Línea 388: el nombre de la propiedad Text de CUIT1 no es válido.
+Línea 389: el nombre de la propiedad MensajeErr de CUIT1 no es válido.
+Línea 390: el nombre de la propiedad nacPF de CUIT1 no es válido.
+Línea 391: el nombre de la propiedad nacPJ de CUIT1 no es válido.
+Línea 392: el nombre de la propiedad extPF de CUIT1 no es válido.
+Línea 393: el nombre de la propiedad extPJ de CUIT1 no es válido.

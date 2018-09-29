@@ -71,6 +71,7 @@ Begin VB.Form ABMCuentasBancarias
       _ExtentY        =   7011
       _Version        =   393216
       Tabs            =   2
+      Tab             =   1
       TabHeight       =   520
       BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
          Name            =   "MS Sans Serif"
@@ -83,19 +84,21 @@ Begin VB.Form ABMCuentasBancarias
       EndProperty
       TabCaption(0)   =   "&Datos"
       TabPicture(0)   =   "ABMCuentasBancarias.frx":1C92
-      Tab(0).ControlEnabled=   -1  'True
+      Tab(0).ControlEnabled=   0   'False
       Tab(0).Control(0)=   "Frame3"
       Tab(0).Control(0).Enabled=   0   'False
       Tab(0).ControlCount=   1
       TabCaption(1)   =   "&Buscar"
       TabPicture(1)   =   "ABMCuentasBancarias.frx":1CAE
-      Tab(1).ControlEnabled=   0   'False
+      Tab(1).ControlEnabled=   -1  'True
       Tab(1).Control(0)=   "GrdModulos"
+      Tab(1).Control(0).Enabled=   0   'False
       Tab(1).Control(1)=   "Frame1"
+      Tab(1).Control(1).Enabled=   0   'False
       Tab(1).ControlCount=   2
       Begin VB.Frame Frame1 
          Height          =   735
-         Left            =   -74775
+         Left            =   225
          TabIndex        =   15
          Top             =   375
          Width           =   5910
@@ -142,7 +145,7 @@ Begin VB.Form ABMCuentasBancarias
             Strikethrough   =   0   'False
          EndProperty
          Height          =   3240
-         Left            =   300
+         Left            =   -74700
          TabIndex        =   14
          Top             =   540
          Width           =   5775
@@ -155,7 +158,7 @@ Begin VB.Form ABMCuentasBancarias
             _ExtentX        =   2355
             _ExtentY        =   661
             _Version        =   393216
-            Format          =   53215233
+            Format          =   53805057
             CurrentDate     =   43367
          End
          Begin VB.ComboBox CboTcuCodigo 
@@ -216,7 +219,7 @@ Begin VB.Form ABMCuentasBancarias
             _ExtentX        =   2355
             _ExtentY        =   661
             _Version        =   393216
-            Format          =   53215233
+            Format          =   53805057
             CurrentDate     =   43367
          End
          Begin VB.Label Label1 
@@ -302,7 +305,7 @@ Begin VB.Form ABMCuentasBancarias
       End
       Begin MSFlexGridLib.MSFlexGrid GrdModulos 
          Height          =   2715
-         Left            =   -74805
+         Left            =   195
          TabIndex        =   12
          Top             =   1155
          Width           =   5925
@@ -368,7 +371,7 @@ Private Sub CmdBorrar_Click()
         If resp <> 6 Then Exit Sub
         
         Screen.MousePointer = 11
-        lblEstado.Caption = "Eliminando ..."
+        lblestado.Caption = "Eliminando ..."
         
         sql = "DELETE FROM CTA_BANCARIA "
         sql = sql & " WHERE BAN_CODINT = " & XN(CboBancos.ItemData(CboBancos.ListIndex))
@@ -376,7 +379,7 @@ Private Sub CmdBorrar_Click()
         DBConn.Execute sql
         
         If TxtCuenta.Enabled Then TxtCuenta.SetFocus
-        lblEstado.Caption = ""
+        lblestado.Caption = ""
         Screen.MousePointer = 1
         CmdNuevo_Click
     End If
@@ -421,7 +424,7 @@ Private Sub CmdBuscAprox_Click()
     Screen.MousePointer = vbNormal
 End Sub
 
-Private Sub cmdGrabar_Click()
+Private Sub CmdGrabar_Click()
     Dim Sucursal As String
     Dim Localidad As String
     Dim Banco As String
@@ -447,7 +450,7 @@ Private Sub cmdGrabar_Click()
     
     Screen.MousePointer = 11
     
-    lblEstado.Caption = "Guardando ..."
+    lblestado.Caption = "Guardando ..."
     
     'Busco los datos de la cuenta bancaria
     sql = "SELECT CTA_NROCTA FROM CTA_BANCARIA WHERE "
@@ -465,7 +468,7 @@ Private Sub cmdGrabar_Click()
         sql = sql & XN(CDbl(TxtSaldoAct.Text)) & ","
         sql = sql & XDQ(fechaCierre.Value) & ","
         sql = sql & XN(CboTcuCodigo.ItemData(CboTcuCodigo.ListIndex)) & ","
-        sql = sql & XS(TxtDescri.Text) & ")"
+        sql = sql & XS(txtdescri.Text) & ")"
     Else
         sql = "UPDATE CTA_BANCARIA SET "
         sql = sql & " CTA_FECAPE =" & XDQ(fechaApertura.Value)
@@ -473,7 +476,7 @@ Private Sub cmdGrabar_Click()
         sql = sql & ", CTA_SALACT =" & XN(CDbl(TxtSaldoAct.Text))
         sql = sql & ", CTA_FECCIE =" & XDQ(Me.fechaCierre.Value)
         sql = sql & ", TCU_CODIGO =" & XN(CboTcuCodigo.ItemData(CboTcuCodigo.ListIndex))
-        sql = sql & ", CTA_DESCRI =" & XS(Me.TxtDescri.Text)
+        sql = sql & ", CTA_DESCRI =" & XS(Me.txtdescri.Text)
         sql = sql & " Where BAN_CODINT = " & XN(CboBancos.ItemData(CboBancos.ListIndex))
         sql = sql & " And CTA_NROCTA = " & XS(TxtCuenta)
     End If
@@ -486,7 +489,7 @@ Private Sub cmdGrabar_Click()
     
 CLAVOSE:
     If rec.State = 1 Then rec.Close
-    lblEstado = ""
+    lblestado = ""
     Screen.MousePointer = 1
     Mensaje 1
 End Sub
@@ -496,22 +499,22 @@ Private Sub CmdNuevo_Click()
     CboBancos.Enabled = True
     TxtCuenta.Enabled = True
         
-    fechaApertura.Value = ""
-    fechaCierre.Value = ""
+    fechaApertura.Value = Date
+    fechaCierre.Value = Date
     TxtSaldoAct.Text = ""
     TxtSaldoIni.Text = ""
-    TxtDescri.Text = ""
+    txtdescri.Text = ""
     TxtCuenta.Text = ""
     CboBancos.ListIndex = 0
     CboTcuCodigo.ListIndex = 0
-    CmdGrabar.Enabled = True
+    cmdGrabar.Enabled = True
     CmdBorrar.Enabled = True
-    lblEstado.Caption = ""
+    lblestado.Caption = ""
     GrdModulos.Rows = 1
     CboBancos.SetFocus
 End Sub
 
-Private Sub CmdSalir_Click()
+Private Sub cmdSalir_Click()
     Unload Me
     Set ABMCuentasBancarias = Nothing
 End Sub
@@ -526,7 +529,7 @@ End Sub
 
 Private Sub Form_KeyPress(KeyAscii As Integer)
     'si presiono ESCAPE salgo del form
-    If KeyAscii = vbKeyEscape Then CmdSalir_Click
+    If KeyAscii = vbKeyEscape Then cmdSalir_Click
     If KeyAscii = vbKeyReturn Then   'avanza de campo
         SendKeys "{TAB}"
         KeyAscii = 0
@@ -535,7 +538,7 @@ End Sub
 
 Private Sub Form_Load()
     
-    lblEstado.Caption = ""
+    lblestado.Caption = ""
     GrdModulos.FormatString = "Banco|Nº Cta.|Fecha de Apertura|Saldo Inicial" _
                              & "|Saldo Actual|Fecha de Cierre|Descripción|" _
                              & "tipo cuenta|CODIGO BANCO"
@@ -597,7 +600,7 @@ Private Sub GrdModulos_DblClick()
         Me.TxtSaldoIni.Text = Valido_Importe(GrdModulos.TextMatrix(GrdModulos.RowSel, 3))
         Me.TxtSaldoAct.Text = Valido_Importe(GrdModulos.TextMatrix(GrdModulos.RowSel, 4))
         Me.fechaCierre.Value = Trim(GrdModulos.TextMatrix(GrdModulos.RowSel, 5))
-        Me.TxtDescri.Text = Trim(GrdModulos.TextMatrix(GrdModulos.RowSel, 6))
+        Me.txtdescri.Text = Trim(GrdModulos.TextMatrix(GrdModulos.RowSel, 6))
         Call BuscaCodigoProxItemData(CInt(GrdModulos.TextMatrix(GrdModulos.RowSel, 7)), CboTcuCodigo)
         If Me.TxtDescriB.Enabled Then Me.TxtDescriB.SetFocus
         TabTB.Tab = 0
@@ -632,13 +635,13 @@ Private Sub tabTB_Click(PreviousTab As Integer)
         Else
             Me.CboTcuCodigo.SetFocus
         End If
-        CmdGrabar.Enabled = True
+        cmdGrabar.Enabled = True
         CmdBorrar.Enabled = True
     End If
     If TabTB.Tab = 1 Then
         TxtDescriB.Text = ""
         If TxtDescriB.Enabled Then TxtDescriB.SetFocus
-        CmdGrabar.Enabled = False
+        cmdGrabar.Enabled = False
         CmdBorrar.Enabled = False
     End If
 End Sub
@@ -654,17 +657,17 @@ Private Sub TxtCuenta_LostFocus()
             Call BuscaCodigoProxItemData(CInt(rec!TCU_CODIGO), CboTcuCodigo)
             fechaApertura.Value = rec!CTA_FECAPE
             fechaCierre.Value = ChkNull(rec!CTA_FECCIE)
-            Me.TxtDescri.Text = Trim(ChkNull(rec!CTA_DESCRI))
+            Me.txtdescri.Text = Trim(ChkNull(rec!CTA_DESCRI))
             TxtCuenta.Enabled = False
             CboBancos.Enabled = False
             CboTcuCodigo.SetFocus
         Else
             Me.CboTcuCodigo.ListIndex = 0
-            fechaApertura.Value = ""
-            fechaCierre.Value = ""
+            fechaApertura.Value = Date
+            fechaCierre.Value = Date
             TxtSaldoIni.Text = ""
             TxtSaldoAct.Text = ""
-            TxtDescri.Text = ""
+            txtdescri.Text = ""
             CboTcuCodigo.SetFocus
         End If
         rec.Close

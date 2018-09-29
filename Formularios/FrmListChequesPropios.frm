@@ -1,7 +1,7 @@
 VERSION 5.00
-Object = "{F9043C88-F6F2-101A-A3C9-08002B2F49FB}#1.2#0"; "Comdlg32.ocx"
+Object = "{F9043C88-F6F2-101A-A3C9-08002B2F49FB}#1.2#0"; "comdlg32.ocx"
+Object = "{86CF1D34-0C5F-11D2-A9FC-0000F8754DA1}#2.0#0"; "mscomct2.ocx"
 Object = "{00025600-0000-0000-C000-000000000046}#5.2#0"; "Crystl32.OCX"
-Object = "{5F09B5DF-6F4D-11D2-8355-4854E82A9183}#15.0#0"; "Fecha32.ocx"
 Begin VB.Form FrmListChequesPropios 
    BorderStyle     =   1  'Fixed Single
    Caption         =   "Consulta de Cheques Propios"
@@ -29,119 +29,119 @@ Begin VB.Form FrmListChequesPropios
       EndProperty
       Height          =   5835
       Left            =   105
-      TabIndex        =   21
+      TabIndex        =   15
       Top             =   75
       Width           =   8595
       Begin VB.Frame Frame1 
          Height          =   3330
          Left            =   3885
-         TabIndex        =   25
+         TabIndex        =   19
          Top             =   390
          Width           =   4590
          Begin VB.ComboBox cboCtaBancaria 
             Height          =   315
-            Left            =   1530
+            Left            =   1560
             Style           =   2  'Dropdown List
-            TabIndex        =   7
+            TabIndex        =   5
             Top             =   1140
             Width           =   2100
          End
-         Begin FechaCtl.Fecha TxtFecIngresoD 
-            Height          =   300
-            Left            =   1530
-            TabIndex        =   9
-            Top             =   1965
-            Width           =   1215
-            _ExtentX        =   2143
-            _ExtentY        =   529
-            Separador       =   "/"
-            Text            =   ""
-            MensajeErrMin   =   "La fecha ingresada no alcanza el mínimo permitido"
-         End
          Begin VB.ComboBox CboEstado 
             Height          =   315
-            Left            =   1530
+            Left            =   1560
             Style           =   2  'Dropdown List
-            TabIndex        =   11
+            TabIndex        =   7
             Top             =   2385
             Width           =   2985
          End
          Begin VB.TextBox TxtNroCheque 
             Enabled         =   0   'False
             Height          =   330
-            Left            =   1530
-            TabIndex        =   8
+            Left            =   1560
+            TabIndex        =   6
             Top             =   1545
             Width           =   1080
          End
          Begin VB.ComboBox CboBanco 
             Enabled         =   0   'False
             Height          =   315
-            Left            =   1530
+            Left            =   1560
             Style           =   2  'Dropdown List
-            TabIndex        =   6
+            TabIndex        =   4
             Top             =   735
             Width           =   2985
          End
-         Begin FechaCtl.Fecha TxtFecIngresoH 
-            Height          =   300
-            Left            =   3060
-            TabIndex        =   10
-            Top             =   1965
-            Width           =   1215
-            _ExtentX        =   2143
-            _ExtentY        =   529
-            Separador       =   "/"
-            Text            =   ""
-            MensajeErrMin   =   "La fecha ingresada no alcanza el mínimo permitido"
+         Begin MSComCtl2.DTPicker TxtFecVtoD 
+            Height          =   315
+            Left            =   1560
+            TabIndex        =   35
+            Top             =   360
+            Width           =   1335
+            _ExtentX        =   2355
+            _ExtentY        =   556
+            _Version        =   393216
+            Format          =   54067201
+            CurrentDate     =   43367
          End
-         Begin FechaCtl.Fecha Fecha2 
-            Height          =   300
-            Left            =   3060
-            TabIndex        =   13
-            Top             =   2790
-            Width           =   1215
-            _ExtentX        =   2143
-            _ExtentY        =   529
-            Separador       =   "/"
-            Text            =   ""
-            MensajeErrMin   =   "La fecha ingresada no alcanza el mínimo permitido"
+         Begin MSComCtl2.DTPicker TxtFecVtoH 
+            Height          =   315
+            Left            =   3000
+            TabIndex        =   36
+            Top             =   360
+            Width           =   1335
+            _ExtentX        =   2355
+            _ExtentY        =   556
+            _Version        =   393216
+            Format          =   54067201
+            CurrentDate     =   43367
          End
-         Begin FechaCtl.Fecha Fecha1 
-            Height          =   300
-            Left            =   1530
-            TabIndex        =   12
-            Top             =   2790
-            Width           =   1215
-            _ExtentX        =   2143
-            _ExtentY        =   529
-            Separador       =   "/"
-            Text            =   ""
-            MensajeErrMin   =   "La fecha ingresada no alcanza el mínimo permitido"
+         Begin MSComCtl2.DTPicker TxtFecIngresoD 
+            Height          =   315
+            Left            =   1560
+            TabIndex        =   37
+            Top             =   1920
+            Width           =   1335
+            _ExtentX        =   2355
+            _ExtentY        =   556
+            _Version        =   393216
+            Format          =   54067201
+            CurrentDate     =   43367
          End
-         Begin FechaCtl.Fecha TxtFecVtoD 
-            Height          =   300
-            Left            =   1530
-            TabIndex        =   4
-            Top             =   345
-            Width           =   1215
-            _ExtentX        =   2143
-            _ExtentY        =   529
-            Separador       =   "/"
-            Text            =   ""
-            MensajeErrMin   =   "La fecha ingresada no alcanza el mínimo permitido"
+         Begin MSComCtl2.DTPicker TxtFecIngresoH 
+            Height          =   315
+            Left            =   3120
+            TabIndex        =   38
+            Top             =   1920
+            Width           =   1335
+            _ExtentX        =   2355
+            _ExtentY        =   556
+            _Version        =   393216
+            Format          =   54067201
+            CurrentDate     =   43367
          End
-         Begin FechaCtl.Fecha TxtFecVtoH 
-            Height          =   300
-            Left            =   3060
-            TabIndex        =   5
-            Top             =   345
-            Width           =   1215
-            _ExtentX        =   2143
-            _ExtentY        =   529
-            Separador       =   "/"
-            Text            =   ""
-            MensajeErrMin   =   "La fecha ingresada no alcanza el mínimo permitido"
+         Begin MSComCtl2.DTPicker Fecha1 
+            Height          =   315
+            Left            =   1560
+            TabIndex        =   33
+            Top             =   2760
+            Width           =   1335
+            _ExtentX        =   2355
+            _ExtentY        =   556
+            _Version        =   393216
+            Format          =   54067201
+            CurrentDate     =   43367
+         End
+         Begin MSComCtl2.DTPicker Fecha2 
+            Height          =   315
+            Left            =   3240
+            TabIndex        =   34
+            Top             =   2760
+            Width           =   1335
+            _ExtentX        =   2355
+            _ExtentY        =   556
+            _Version        =   393216
+            Format          =   54067201
+            CurrentDate     =   43367
          End
          Begin VB.Label Label1 
             AutoSize        =   -1  'True
@@ -149,7 +149,7 @@ Begin VB.Form FrmListChequesPropios
             Height          =   195
             Index           =   4
             Left            =   525
-            TabIndex        =   38
+            TabIndex        =   32
             Top             =   1170
             Width           =   855
          End
@@ -158,7 +158,7 @@ Begin VB.Form FrmListChequesPropios
             Caption         =   "Desde:"
             Height          =   195
             Left            =   870
-            TabIndex        =   34
+            TabIndex        =   28
             Top             =   2850
             Width           =   510
          End
@@ -167,8 +167,8 @@ Begin VB.Form FrmListChequesPropios
             Caption         =   "al"
             Height          =   195
             Index           =   2
-            Left            =   2775
-            TabIndex        =   33
+            Left            =   3015
+            TabIndex        =   27
             Top             =   2835
             Width           =   120
          End
@@ -178,7 +178,7 @@ Begin VB.Form FrmListChequesPropios
             Height          =   195
             Index           =   1
             Left            =   2790
-            TabIndex        =   32
+            TabIndex        =   26
             Top             =   390
             Width           =   120
          End
@@ -187,8 +187,8 @@ Begin VB.Form FrmListChequesPropios
             Caption         =   "al"
             Height          =   195
             Index           =   0
-            Left            =   2790
-            TabIndex        =   31
+            Left            =   2910
+            TabIndex        =   25
             Top             =   1980
             Width           =   120
          End
@@ -197,7 +197,7 @@ Begin VB.Form FrmListChequesPropios
             Caption         =   "Estado:"
             Height          =   195
             Left            =   840
-            TabIndex        =   30
+            TabIndex        =   24
             Top             =   2460
             Width           =   540
          End
@@ -206,7 +206,7 @@ Begin VB.Form FrmListChequesPropios
             Caption         =   "Banco:"
             Height          =   195
             Left            =   870
-            TabIndex        =   29
+            TabIndex        =   23
             Top             =   795
             Width           =   510
          End
@@ -215,7 +215,7 @@ Begin VB.Form FrmListChequesPropios
             Caption         =   "Nro de Cheque:"
             Height          =   195
             Left            =   255
-            TabIndex        =   28
+            TabIndex        =   22
             Top             =   1575
             Width           =   1125
          End
@@ -224,7 +224,7 @@ Begin VB.Form FrmListChequesPropios
             Caption         =   "Fecha de Emisión:"
             Height          =   195
             Left            =   75
-            TabIndex        =   27
+            TabIndex        =   21
             Top             =   2010
             Width           =   1305
          End
@@ -234,7 +234,7 @@ Begin VB.Form FrmListChequesPropios
             Height          =   195
             Index           =   0
             Left            =   240
-            TabIndex        =   26
+            TabIndex        =   20
             Top             =   375
             Width           =   1140
          End
@@ -246,7 +246,7 @@ Begin VB.Form FrmListChequesPropios
          Left            =   7500
          Picture         =   "FrmListChequesPropios.frx":2BEC
          Style           =   1  'Graphical
-         TabIndex        =   20
+         TabIndex        =   14
          Top             =   5025
          Width           =   915
       End
@@ -257,7 +257,7 @@ Begin VB.Form FrmListChequesPropios
          Left            =   5640
          Picture         =   "FrmListChequesPropios.frx":37C0
          Style           =   1  'Graphical
-         TabIndex        =   18
+         TabIndex        =   12
          Top             =   5025
          Width           =   915
       End
@@ -268,7 +268,7 @@ Begin VB.Form FrmListChequesPropios
          Left            =   6570
          Picture         =   "FrmListChequesPropios.frx":4394
          Style           =   1  'Graphical
-         TabIndex        =   19
+         TabIndex        =   13
          Top             =   5025
          Width           =   915
       End
@@ -285,14 +285,14 @@ Begin VB.Form FrmListChequesPropios
          EndProperty
          Height          =   960
          Left            =   165
-         TabIndex        =   24
+         TabIndex        =   18
          Top             =   2760
          Width           =   3660
          Begin VB.OptionButton oDescendente 
             Caption         =   "Descendente"
             Height          =   255
             Left            =   1965
-            TabIndex        =   15
+            TabIndex        =   9
             Top             =   435
             Width           =   1335
          End
@@ -300,7 +300,7 @@ Begin VB.Form FrmListChequesPropios
             Caption         =   "Ascendente"
             Height          =   255
             Left            =   210
-            TabIndex        =   14
+            TabIndex        =   8
             Top             =   435
             Value           =   -1  'True
             Width           =   1335
@@ -309,7 +309,7 @@ Begin VB.Form FrmListChequesPropios
       Begin VB.Frame fraOrden 
          Height          =   2355
          Left            =   165
-         TabIndex        =   23
+         TabIndex        =   17
          Top             =   390
          Width           =   3660
          Begin VB.OptionButton Option0 
@@ -363,14 +363,14 @@ Begin VB.Form FrmListChequesPropios
          EndProperty
          Height          =   1185
          Left            =   165
-         TabIndex        =   22
+         TabIndex        =   16
          Top             =   3765
          Width           =   8310
          Begin VB.CommandButton CmdCambiarImp 
             Caption         =   "&Configurar Impresora"
             Height          =   495
             Left            =   195
-            TabIndex        =   36
+            TabIndex        =   30
             Top             =   600
             Width           =   1890
          End
@@ -378,7 +378,7 @@ Begin VB.Form FrmListChequesPropios
             Caption         =   "Impresora"
             Height          =   255
             Left            =   2220
-            TabIndex        =   17
+            TabIndex        =   11
             Top             =   270
             Width           =   990
          End
@@ -386,7 +386,7 @@ Begin VB.Form FrmListChequesPropios
             Caption         =   "Pantalla"
             Height          =   255
             Left            =   1185
-            TabIndex        =   16
+            TabIndex        =   10
             Top             =   270
             Value           =   -1  'True
             Width           =   975
@@ -406,7 +406,7 @@ Begin VB.Form FrmListChequesPropios
             EndProperty
             Height          =   195
             Left            =   2235
-            TabIndex        =   37
+            TabIndex        =   31
             Top             =   840
             Width           =   1440
          End
@@ -415,7 +415,7 @@ Begin VB.Form FrmListChequesPropios
             Caption         =   "Destino:"
             Height          =   195
             Left            =   480
-            TabIndex        =   35
+            TabIndex        =   29
             Top             =   270
             Width           =   585
          End
@@ -449,16 +449,16 @@ Attribute VB_PredeclaredId = True
 Attribute VB_Exposed = False
 
 Private Sub Limpio_Campos()
-   Me.TxtFecVtoD.Text = ""
-   Me.TxtFecVtoH.Text = ""
+   Me.TxtFecVtoD.Value = Date
+   Me.TxtFecVtoH.Value = Date
    Me.CboBanco.ListIndex = -1
    Me.cboCtaBancaria.ListIndex = -1
    Me.TxtNroCheque.Text = ""
-   Me.TxtFecIngresoD.Text = ""
-   Me.TxtFecIngresoH.Text = ""
+   Me.TxtFecIngresoD.Value = Date
+   Me.TxtFecIngresoH.Value = Date
    Me.CboEstado.ListIndex = -1
-   Me.Fecha1.Text = ""
-   Me.Fecha2.Text = ""
+   Me.Fecha1.Value = Date
+   Me.Fecha2.Value = Date
 End Sub
 
 Private Sub CboBanco_LostFocus()
@@ -489,19 +489,19 @@ Private Sub CmdAgregar_Click()
     sql = ""
     'VALIDO LAS FECHAS
     If Option0.Value = True Then
-        If TxtFecVtoD.Text = "" Then
+        If TxtFecVtoD.Value = Date Then
             MsgBox "Falta ingresar la fecha desde la cual quiere consultar", vbExclamation, TIT_MSGBOX
             TxtFecVtoD.SetFocus
             Exit Sub
         End If
     ElseIf Option3.Value = True Then
-        If TxtFecIngresoD.Text = "" Then
+        If TxtFecIngresoD.Value = Date Then
             MsgBox "Falta ingresar la fecha desde la cual quiere consultar", vbExclamation, TIT_MSGBOX
             TxtFecIngresoD.SetFocus
             Exit Sub
         End If
     ElseIf Option4.Value = True Then
-        If Fecha1.Text = "" Then
+        If Fecha1.Value = Date Then
             MsgBox "Falta ingresar la fecha desde la cual quiere consultar", vbExclamation, TIT_MSGBOX
             Fecha1.SetFocus
             Exit Sub
@@ -523,21 +523,21 @@ Private Sub CmdAgregar_Click()
    
    If Me.Option0.Value = True Then 'Por Fecha de Vencimiento
        
-       If Me.TxtFecVtoD.Text = "" Or Me.TxtFecVtoH.Text = "" Then
-          If Me.TxtFecVtoD.Text = "" Then
-            Me.TxtFecVtoD.Text = Format(Date, "dd/mm/yyyy")
-          ElseIf Me.TxtFecVtoH.Text = "" Then
-            Me.TxtFecVtoH.Text = Format(Date, "dd/mm/yyyy")
+       If Me.TxtFecVtoD.Value = Date Or Me.TxtFecVtoH.Value = Date Then
+          If Me.TxtFecVtoD.Value = Date Then
+            Me.TxtFecVtoD.Value = Format(Date, "dd/mm/yyyy")
+          ElseIf Me.TxtFecVtoH.Value = Date Then
+            Me.TxtFecVtoH.Value = Format(Date, "dd/mm/yyyy")
           End If
        End If
        
        '{ChequePropioEstadoVigente.ECH_CODIGO} = 1 Unicamente Cheques en Cartera
-        sql = sql & " {ChequePropioEstadoVigente.CHEP_FECVTO} >= DATE(" & Mid(TxtFecVtoD.Text, 7, 4) & "," & _
-                                                            Mid(TxtFecVtoD.Text, 4, 2) & "," & _
-                                                            Mid(TxtFecVtoD.Text, 1, 2) & ") and " & _
-                      "{ChequePropioEstadoVigente.CHEP_FECVTO} <= DATE(" & Mid(TxtFecVtoH.Text, 7, 4) & "," & _
-                                                                    Mid(TxtFecVtoH.Text, 4, 2) & "," & _
-                                                                    Mid(TxtFecVtoH.Text, 1, 2) & ")"
+        sql = sql & " {ChequePropioEstadoVigente.CHEP_FECVTO} >= DATE(" & Mid(TxtFecVtoD.Value, 7, 4) & "," & _
+                                                            Mid(TxtFecVtoD.Value, 4, 2) & "," & _
+                                                            Mid(TxtFecVtoD.Value, 1, 2) & ") and " & _
+                      "{ChequePropioEstadoVigente.CHEP_FECVTO} <= DATE(" & Mid(TxtFecVtoH.Value, 7, 4) & "," & _
+                                                                    Mid(TxtFecVtoH.Value, 4, 2) & "," & _
+                                                                    Mid(TxtFecVtoH.Value, 1, 2) & ")"
        wCondicion = wSentido & " {ChequePropioEstadoVigente.CHEP_FECVTO}"
        wCondicion1 = wSentido & " {ChequePropioEstadoVigente.CHEP_NUMERO}"
        Rep.Formulas(0) = "orden ='Ordenado por: FECHA DE PAGO. Y NRO DE CHEQUE'"
@@ -556,20 +556,20 @@ Private Sub CmdAgregar_Click()
           
    ElseIf Me.Option3.Value = True Then 'por Fecha de Ingreso
    
-       If Me.TxtFecIngresoD.Text = "" Or Me.TxtFecIngresoH.Text = "" Then
-          If Me.TxtFecIngresoD.Text = "" Then
-            Me.TxtFecIngresoD.Text = Format(Date, "dd/mm/yyyy")
-          ElseIf Me.TxtFecIngresoH.Text = "" Then
-            Me.TxtFecIngresoH.Text = Format(Date, "dd/mm/yyyy")
+       If Me.TxtFecIngresoD.Value = Date Or Me.TxtFecIngresoH.Value = Date Then
+          If Me.TxtFecIngresoD.Value = Date Then
+            Me.TxtFecIngresoD.Value = Format(Date, "dd/mm/yyyy")
+          ElseIf Me.TxtFecIngresoH.Value = Date Then
+            Me.TxtFecIngresoH.Value = Format(Date, "dd/mm/yyyy")
           End If
        End If
        
-       sql = sql & "{ChequePropioEstadoVigente.CHEP_FECENT} >= DATE(" & Mid(TxtFecIngresoD.Text, 7, 4) & _
-                                                      "," & Mid(TxtFecIngresoD.Text, 4, 2) & _
-                                                      "," & Mid(TxtFecIngresoD.Text, 1, 2) & ")and " & _
-                   "{ChequePropioEstadoVigente.CHEP_FECENT} <= DATE(" & Mid(TxtFecIngresoH.Text, 7, 4) & "," & _
-                                                            Mid(TxtFecIngresoH.Text, 4, 2) & "," & _
-                                                            Mid(TxtFecIngresoH.Text, 1, 2) & ")"
+       sql = sql & "{ChequePropioEstadoVigente.CHEP_FECENT} >= DATE(" & Mid(TxtFecIngresoD.Value, 7, 4) & _
+                                                      "," & Mid(TxtFecIngresoD.Value, 4, 2) & _
+                                                      "," & Mid(TxtFecIngresoD.Value, 1, 2) & ")and " & _
+                   "{ChequePropioEstadoVigente.CHEP_FECENT} <= DATE(" & Mid(TxtFecIngresoH.Value, 7, 4) & "," & _
+                                                            Mid(TxtFecIngresoH.Value, 4, 2) & "," & _
+                                                            Mid(TxtFecIngresoH.Value, 1, 2) & ")"
        
        wCondicion = wSentido & " {ChequePropioEstadoVigente.CHEP_FECENT}"
        wCondicion1 = wSentido & " {ChequePropioEstadoVigente.CHEP_FECVTO}"
@@ -578,20 +578,20 @@ Private Sub CmdAgregar_Click()
    
    ElseIf Me.Option4.Value = True Then 'por Estado y Fecha de Ingreso
    
-       If Fecha1.Text = "" Or Fecha2.Text = "" Then
-          If Fecha1.Text = "" Then
-            Fecha1.Text = Format(Date, "dd/mm/yyyy")
-          ElseIf Fecha2.Text = "" Then
-            Fecha2.Text = Format(Date, "dd/mm/yyyy")
+       If Fecha1.Value = Date Or Fecha2.Value = Date Then
+          If Fecha1.Value = Date Then
+            Fecha1.Value = Format(Date, "dd/mm/yyyy")
+          ElseIf Fecha2.Value = Date Then
+            Fecha2.Value = Format(Date, "dd/mm/yyyy")
           End If
        End If
     
-       sql = sql & " {ChequePropioEstadoVigente.CHEP_FECENT} >= DATE(" & Mid(Fecha1.Text, 7, 4) & "," & _
-                                                                    Mid(Fecha1.Text, 4, 2) & "," & _
-                                                                    Mid(Fecha1.Text, 1, 2) & ") and " & _
-                   "{ChequePropioEstadoVigente.CHEP_FECENT} <= DATE(" & Mid(Fecha2.Text, 7, 4) & "," & _
-                                                                    Mid(Fecha2.Text, 4, 2) & "," & _
-                                                                    Mid(Fecha2.Text, 1, 2) & ")"
+       sql = sql & " {ChequePropioEstadoVigente.CHEP_FECENT} >= DATE(" & Mid(Fecha1.Value, 7, 4) & "," & _
+                                                                    Mid(Fecha1.Value, 4, 2) & "," & _
+                                                                    Mid(Fecha1.Value, 1, 2) & ") and " & _
+                   "{ChequePropioEstadoVigente.CHEP_FECENT} <= DATE(" & Mid(Fecha2.Value, 7, 4) & "," & _
+                                                                    Mid(Fecha2.Value, 4, 2) & "," & _
+                                                                    Mid(Fecha2.Value, 1, 2) & ")"
        'por Estado
        If Me.CboEstado.List(Me.CboEstado.ListIndex) <> "(Todos)" Then
            If Me.CboEstado.List(Me.CboEstado.ListIndex) = "RECHAZADOS TODOS" Then
@@ -796,40 +796,40 @@ Private Sub Option4_Click()
 End Sub
 
 Private Sub TxtFecIngresoD_LostFocus()
-   'If Me.Option3.Value = True And TxtFecIngresoD.Text = "" Then TxtFecIngresoD.Text = Format(Date, "dd/mm/yyyy")
+   'If Me.Option3.Value = True And TxtFecIngresoD.Value = date Then TxtFecIngresoD.Value = Format(Date, "dd/mm/yyyy")
 End Sub
 
 Private Sub TxtFecIngresoH_LostFocus()
-'If Me.Option3.Value = True And TxtFecIngresoH.Text = "" Then TxtFecIngresoH.Text = Format(Date, "dd/mm/yyyy")
+'If Me.Option3.Value = True And TxtFecIngresoH.Value = date Then TxtFecIngresoH.Value = Format(Date, "dd/mm/yyyy")
 
-  If IsDate(TxtFecIngresoD.Text) And IsDate(TxtFecIngresoH.Text) Then
+  If IsDate(TxtFecIngresoD.Value) And IsDate(TxtFecIngresoH.Value) Then
     
-    If CVDate(TxtFecIngresoD.Text) > CVDate(TxtFecIngresoH.Text) Then
+    If CVDate(TxtFecIngresoD.Value) > CVDate(TxtFecIngresoH.Value) Then
       MsgBox "La Fecha Hasta no puede ser inferior a la Fecha Desde. Verifique!", 16, TIT_MSGBOX
-      TxtFecIngresoH.Text = ""
+      TxtFecIngresoH.Value = Date
       TxtFecIngresoH.SetFocus
       Exit Sub
     Else
-      If Not IsDate(TxtFecIngresoD.Text) Then TxtFecIngresoD.Text = ""
-      If Not IsDate(TxtFecIngresoH.Text) Then TxtFecIngresoH.Text = ""
+      If Not IsDate(TxtFecIngresoD.Value) Then TxtFecIngresoD.Value = Date
+      If Not IsDate(TxtFecIngresoH.Value) Then TxtFecIngresoH.Value = Date
     End If
     
  End If
 End Sub
 
 Private Sub TxtFecVtoD_LostFocus()
-  'If Me.Option0.Value = True And TxtFecVtoD.Text = "" Then TxtFecVtoD.Text = Format(Date, "dd/mm/yyyy")
+  'If Me.Option0.Value = True And TxtFecVtoD.Value = date Then TxtFecVtoD.Value = Format(Date, "dd/mm/yyyy")
 End Sub
 
 Private Sub TxtFecVtoH_LostFocus()
 
-  'If Me.Option0.Value = True And TxtFecVtoH.Text = "" Then TxtFecVtoH.Text = Format(Date, "dd/mm/yyyy")
+  'If Me.Option0.Value = True And TxtFecVtoH.Value = date Then TxtFecVtoH.Value = Format(Date, "dd/mm/yyyy")
   
-  If IsDate(TxtFecVtoD.Text) And IsDate(TxtFecVtoH.Text) Then
+  If IsDate(TxtFecVtoD.Value) And IsDate(TxtFecVtoH.Value) Then
   
-    If CVDate(TxtFecVtoD.Text) > CVDate(TxtFecVtoH.Text) Then
+    If CVDate(TxtFecVtoD.Value) > CVDate(TxtFecVtoH.Value) Then
       MsgBox "La Fecha Hasta no puede ser inferior a la Fecha Desde. Verifique!", 16, TIT_MSGBOX
-      TxtFecVtoH.Text = ""
+      TxtFecVtoH.Value = Date
       TxtFecVtoD.SetFocus
       Exit Sub
     Else

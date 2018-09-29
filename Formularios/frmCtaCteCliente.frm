@@ -2,6 +2,7 @@ VERSION 5.00
 Object = "{F9043C88-F6F2-101A-A3C9-08002B2F49FB}#1.2#0"; "comdlg32.ocx"
 Object = "{5E9E78A0-531B-11CF-91F6-C2863C385E30}#1.0#0"; "msflxgrd.ocx"
 Object = "{86CF1D34-0C5F-11D2-A9FC-0000F8754DA1}#2.0#0"; "mscomct2.ocx"
+Object = "{00025600-0000-0000-C000-000000000046}#5.2#0"; "Crystl32.OCX"
 Begin VB.Form frmCtaCteCliente 
    BorderStyle     =   1  'Fixed Single
    Caption         =   "Cta-Cte Clientes"
@@ -16,6 +17,14 @@ Begin VB.Form frmCtaCteCliente
    ScaleHeight     =   7785
    ScaleWidth      =   8070
    StartUpPosition =   2  'CenterScreen
+   Begin Crystal.CrystalReport Rep 
+      Left            =   3360
+      Top             =   5880
+      _ExtentX        =   741
+      _ExtentY        =   741
+      _Version        =   348160
+      PrintFileLinesPerPage=   60
+   End
    Begin VB.Frame Frame1 
       Height          =   120
       Left            =   60
@@ -183,25 +192,25 @@ Begin VB.Form frmCtaCteCliente
       Begin MSComCtl2.DTPicker FechaDesde 
          Height          =   375
          Left            =   1440
+         TabIndex        =   29
+         Top             =   720
+         Width           =   1335
+         _ExtentX        =   2355
+         _ExtentY        =   661
+         _Version        =   393216
+         Format          =   53936129
+         CurrentDate     =   43367
+      End
+      Begin MSComCtl2.DTPicker FechaHasta 
+         Height          =   375
+         Left            =   3960
          TabIndex        =   30
          Top             =   720
          Width           =   1335
          _ExtentX        =   2355
          _ExtentY        =   661
          _Version        =   393216
-         Format          =   58851329
-         CurrentDate     =   43367
-      End
-      Begin MSComCtl2.DTPicker FechaHasta 
-         Height          =   375
-         Left            =   3960
-         TabIndex        =   31
-         Top             =   720
-         Width           =   1335
-         _ExtentX        =   2355
-         _ExtentY        =   661
-         _Version        =   393216
-         Format          =   58851329
+         Format          =   53936129
          CurrentDate     =   43367
       End
       Begin VB.Label lbl 
@@ -253,15 +262,6 @@ Begin VB.Form frmCtaCteCliente
       FocusRect       =   0
       HighLight       =   2
       SelectionMode   =   1
-   End
-   Begin VB.PictureBox Rep 
-      Height          =   480
-      Left            =   4890
-      ScaleHeight     =   420
-      ScaleWidth      =   1140
-      TabIndex        =   29
-      Top             =   5805
-      Width           =   1200
    End
    Begin MSComDlg.CommonDialog CDImpresora 
       Left            =   4395
@@ -544,11 +544,11 @@ Private Sub CmdBuscAprox_Click()
         lblCliente.Caption = "Cta-Cte del Cliente  " & txtDesCli.Text
         If FechaDesde.Value <> "" And FechaHasta.Value <> "" Then
             lblFecha.Caption = "Desde  " & FechaDesde.Value & "  al  " & FechaHasta.Value
-        ElseIf FechaDesde.Value <> "" And FechaHasta.Value = "" Then
+        ElseIf FechaDesde.Value <> "" And FechaHasta.Value = Date Then
             lblFecha.Caption = "Desde  " & FechaDesde.Value & "  al  " & Date
-        ElseIf FechaDesde.Value = "" And FechaHasta.Value <> "" Then
+        ElseIf FechaDesde.Value = Date And FechaHasta.Value <> "" Then
             lblFecha.Caption = "Al  " & FechaHasta.Value
-        ElseIf FechaDesde.Value = "" And FechaHasta.Value = "" Then
+        ElseIf FechaDesde.Value = Date And FechaHasta.Value = Date Then
             lblFecha.Caption = "Al  " & Date
         End If
         rec.Close
@@ -565,7 +565,7 @@ Private Sub CmdBuscAprox_Click()
             lblSaldoActual1.Visible = True
             lblSaldoActual1.Caption = "Saldo Actual:"
             lblSaldoActual.Visible = True
-            lblSaldoActual.Caption = Valido_Importe(rec!Saldo)
+            lblSaldoActual.Caption = Valido_Importe(Chk0(rec!Saldo))
         End If
         rec.Close
         GrdCtaCte.SetFocus
@@ -623,11 +623,11 @@ Private Sub cmdListar_Click()
     End If
     If FechaDesde.Value <> "" And FechaHasta.Value <> "" Then
         Rep.Formulas(0) = "FECHA='" & "Desde: " & FechaDesde.Value & "   Hasta: " & FechaHasta.Value & "'"
-    ElseIf FechaDesde.Value <> "" And FechaHasta.Value = "" Then
+    ElseIf FechaDesde.Value <> "" And FechaHasta.Value = Date Then
         Rep.Formulas(0) = "FECHA='" & "Desde: " & FechaDesde.Value & "   Hasta: " & Date & "'"
-    ElseIf FechaDesde.Value = "" And FechaHasta.Value <> "" Then
+    ElseIf FechaDesde.Value = Date And FechaHasta.Value <> "" Then
         Rep.Formulas(0) = "FECHA='" & "Desde: Inicio" & "   Hasta: " & FechaHasta.Value & "'"
-    ElseIf FechaDesde.Value = "" And FechaHasta.Value = "" Then
+    ElseIf FechaDesde.Value = Date And FechaHasta.Value = Date Then
         Rep.Formulas(0) = "FECHA='" & "Desde: Inicio" & "   Hasta: " & Date & "'"
     End If
         Rep.Formulas(1) = "SALDOACTUAL='" & Valido_Importe(lblSaldoActual) & "'"
@@ -650,8 +650,8 @@ End Sub
 
 Private Sub CmdNuevo_Click()
     txtCliente.Text = ""
-    FechaDesde.Value = ""
-    FechaHasta.Value = ""
+    FechaDesde.Value = Date
+    FechaHasta.Value = Date
     lblCliente.Caption = "Cliente"
     lblFecha.Caption = "Fecha"
     lblSaldo.Caption = "0,00"
@@ -664,7 +664,7 @@ Private Sub CmdNuevo_Click()
     txtCliente.SetFocus
 End Sub
 
-Private Sub CmdSalir_Click()
+Private Sub cmdSalir_Click()
     Set frmCtaCteCliente = Nothing
     Unload Me
 End Sub

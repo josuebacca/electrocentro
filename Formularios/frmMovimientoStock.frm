@@ -1,6 +1,7 @@
 VERSION 5.00
 Object = "{F9043C88-F6F2-101A-A3C9-08002B2F49FB}#1.2#0"; "comdlg32.ocx"
 Object = "{86CF1D34-0C5F-11D2-A9FC-0000F8754DA1}#2.0#0"; "mscomct2.ocx"
+Object = "{00025600-0000-0000-C000-000000000046}#5.2#0"; "Crystl32.OCX"
 Begin VB.Form frmMovimientoStock 
    BorderStyle     =   3  'Fixed Dialog
    Caption         =   "Movimiento de Stock"
@@ -15,6 +16,14 @@ Begin VB.Form frmMovimientoStock
    ScaleHeight     =   3375
    ScaleWidth      =   6825
    ShowInTaskbar   =   0   'False
+   Begin Crystal.CrystalReport Rep 
+      Left            =   3120
+      Top             =   2760
+      _ExtentX        =   741
+      _ExtentY        =   741
+      _Version        =   348160
+      PrintFileLinesPerPage=   60
+   End
    Begin VB.Frame FrameImpresora 
       Caption         =   "impresora"
       BeginProperty Font 
@@ -66,15 +75,6 @@ Begin VB.Form frmMovimientoStock
          Top             =   315
          Width           =   585
       End
-   End
-   Begin VB.PictureBox Rep 
-      Height          =   480
-      Left            =   1725
-      ScaleHeight     =   420
-      ScaleWidth      =   1140
-      TabIndex        =   20
-      Top             =   2760
-      Width           =   1200
    End
    Begin VB.CommandButton cmdNuevo 
       Caption         =   "&Nuevo"
@@ -160,25 +160,25 @@ Begin VB.Form frmMovimientoStock
       Begin MSComCtl2.DTPicker FechaDesde 
          Height          =   375
          Left            =   1320
+         TabIndex        =   20
+         Top             =   1320
+         Width           =   1335
+         _ExtentX        =   2355
+         _ExtentY        =   661
+         _Version        =   393216
+         Format          =   53936129
+         CurrentDate     =   43367
+      End
+      Begin MSComCtl2.DTPicker FechaHasta 
+         Height          =   375
+         Left            =   3720
          TabIndex        =   21
          Top             =   1320
          Width           =   1335
          _ExtentX        =   2355
          _ExtentY        =   661
          _Version        =   393216
-         Format          =   53870593
-         CurrentDate     =   43367
-      End
-      Begin MSComCtl2.DTPicker FechaHasta 
-         Height          =   375
-         Left            =   3720
-         TabIndex        =   22
-         Top             =   1320
-         Width           =   1335
-         _ExtentX        =   2355
-         _ExtentY        =   661
-         _Version        =   393216
-         Format          =   53870593
+         Format          =   53936129
          CurrentDate     =   43367
       End
       Begin VB.Label Label1 
@@ -430,7 +430,7 @@ Private Sub cmdListar_Click()
 '    End If
     
     On Error GoTo Claveti
-    lblEstado.Caption = "Buscando Movimiento..."
+    lblestado.Caption = "Buscando Movimiento..."
     Screen.MousePointer = vbHourglass
     
     sql = "DELETE FROM TMP_MOVIMIENTO_STOCK"
@@ -438,12 +438,12 @@ Private Sub cmdListar_Click()
     Entrada_Deposito
     Salida_Deposito
     LlamoReporte
-    lblEstado.Caption = ""
+    lblestado.Caption = ""
     Screen.MousePointer = vbNormal
     Exit Sub
     
 Claveti:
-    lblEstado.Caption = ""
+    lblestado.Caption = ""
     Screen.MousePointer = vbNormal
     MsgBox Err.Description, vbCritical, TIT_MSGBOX
 End Sub
@@ -457,11 +457,11 @@ Private Sub LlamoReporte()
     
     If FechaDesde.Value <> "" And FechaHasta.Value <> "" Then
         Rep.Formulas(0) = "FECHA='" & "Periodo  Desde: " & FechaDesde.Value & "   Hasta: " & FechaHasta.Value & "'"
-    ElseIf FechaDesde.Value <> "" And FechaHasta.Value = "" Then
+    ElseIf FechaDesde.Value <> "" And FechaHasta.Value = Date Then
         Rep.Formulas(0) = "FECHA='" & "Periodo  Desde: " & FechaDesde.Value & "   Hasta: " & Date & "'"
-    ElseIf FechaDesde.Value = "" And FechaHasta.Value <> "" Then
+    ElseIf FechaDesde.Value = Date And FechaHasta.Value <> "" Then
         Rep.Formulas(0) = "FECHA='" & "Periodo  Desde: Inicio" & "   Hasta: " & FechaHasta.Value & "'"
-    ElseIf FechaDesde.Value = "" And FechaHasta.Value = "" Then
+    ElseIf FechaDesde.Value = Date And FechaHasta.Value = Date Then
         Rep.Formulas(0) = "FECHA='" & "Periodo  Desde: Inicio" & "   Hasta: " & Date & "'"
     End If
     If cboStock.List(cboStock.ListIndex) <> "<Todos>" Then
@@ -481,20 +481,20 @@ Private Sub LlamoReporte()
     End If
      Rep.Action = 1
      
-     lblEstado.Caption = ""
+     lblestado.Caption = ""
      Rep.Formulas(0) = ""
      Rep.Formulas(1) = ""
 End Sub
 
 Private Sub CmdNuevo_Click()
     TxtCodigo.Text = ""
-    FechaDesde.Value = ""
-    FechaHasta.Value = ""
+    FechaDesde.Value = Date
+    FechaHasta.Value = Date
     cboStock.ListIndex = 0
     TxtCodigo.SetFocus
 End Sub
 
-Private Sub CmdSalir_Click()
+Private Sub cmdSalir_Click()
     Set frmMovimientoStock = Nothing
     Unload Me
 End Sub
@@ -509,7 +509,7 @@ Private Sub Form_Load()
     Call Centrar_pantalla(Me)
     FrameImpresora.Caption = "Impresora Actual: " & Printer.DeviceName
     CargocboStock
-    lblEstado.Caption = ""
+    lblestado.Caption = ""
 End Sub
 
 Private Sub TxtCodigo_Change()

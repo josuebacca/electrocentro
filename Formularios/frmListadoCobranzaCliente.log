@@ -1,1 +1,5 @@
 Línea 220: la clase Crystal.CrystalReport del control Rep no era una clase de control cargada.
+Línea 223: el nombre de la propiedad _ExtentX de Rep no es válido.
+Línea 224: el nombre de la propiedad _ExtentY de Rep no es válido.
+Línea 225: el nombre de la propiedad _Version de Rep no es válido.
+Línea 226: el nombre de la propiedad PrintFileLinesPerPage de Rep no es válido.

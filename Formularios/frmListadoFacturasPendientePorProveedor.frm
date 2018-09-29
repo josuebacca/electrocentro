@@ -1,6 +1,7 @@
 VERSION 5.00
 Object = "{F9043C88-F6F2-101A-A3C9-08002B2F49FB}#1.2#0"; "comdlg32.ocx"
 Object = "{5E9E78A0-531B-11CF-91F6-C2863C385E30}#1.0#0"; "msflxgrd.ocx"
+Object = "{00025600-0000-0000-C000-000000000046}#5.2#0"; "Crystl32.OCX"
 Begin VB.Form frmListadoFacturasPendientePorProveedor 
    BorderStyle     =   1  'Fixed Single
    Caption         =   "Facturas Pendientes de Pago a Proveedores"
@@ -15,6 +16,14 @@ Begin VB.Form frmListadoFacturasPendientePorProveedor
    ScaleHeight     =   5880
    ScaleWidth      =   9450
    StartUpPosition =   2  'CenterScreen
+   Begin Crystal.CrystalReport Rep 
+      Left            =   3720
+      Top             =   5520
+      _ExtentX        =   741
+      _ExtentY        =   741
+      _Version        =   348160
+      PrintFileLinesPerPage=   60
+   End
    Begin VB.CommandButton cmdListar 
       Caption         =   "&Listar"
       Height          =   720
@@ -152,15 +161,6 @@ Begin VB.Form frmListadoFacturasPendientePorProveedor
          Top             =   735
          Width           =   540
       End
-   End
-   Begin VB.PictureBox Rep 
-      Height          =   480
-      Left            =   3330
-      ScaleHeight     =   420
-      ScaleWidth      =   1140
-      TabIndex        =   21
-      Top             =   5235
-      Width           =   1200
    End
    Begin MSComDlg.CommonDialog CDImpresora 
       Left            =   2835
@@ -377,8 +377,8 @@ Private Sub cmdBuscarProveedor1_Click()
 End Sub
 
 Private Sub cmdListar_Click()
-    lblestado.Caption = "Buscando Listado..."
-    'Rep.WindowState = crptMaximized 'crptMinimized
+    lblEstado.Caption = "Buscando Listado..."
+    Rep.WindowState = crptMaximized 'crptMinimized
     Rep.WindowBorderStyle = crptNoBorder
     Rep.Connect = "Provider=MSDASQL.1;Persist Security Info=False;Data Source=SIELECTROCENTRO"
     Rep.SelectionFormula = ""
@@ -401,7 +401,7 @@ Private Sub cmdListar_Click()
     End If
      Rep.Action = 1
      
-     lblestado.Caption = ""
+     lblEstado.Caption = ""
      Rep.SelectionFormula = ""
      Rep.Formulas(0) = ""
      Rep.Formulas(1) = ""
@@ -446,7 +446,7 @@ Private Sub Form_Load()
     GrdModulos.HighLight = flexHighlightAlways
     '-----------------------------------
     txtTotalSaldo.Text = ""
-    lblestado.Caption = ""
+    lblEstado.Caption = ""
 End Sub
 
 Private Sub txtCodProveedor_Change()

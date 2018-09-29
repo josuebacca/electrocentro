@@ -1,6 +1,6 @@
 VERSION 5.00
-Object = "{BDC217C8-ED16-11CD-956C-0000C04E4C0A}#1.1#0"; "TABCTL32.OCX"
-Object = "{5E9E78A0-531B-11CF-91F6-C2863C385E30}#1.0#0"; "MSFLXGRD.OCX"
+Object = "{BDC217C8-ED16-11CD-956C-0000C04E4C0A}#1.1#0"; "tabctl32.ocx"
+Object = "{5E9E78A0-531B-11CF-91F6-C2863C385E30}#1.0#0"; "msflxgrd.ocx"
 Begin VB.Form ABMBanco 
    BorderStyle     =   1  'Fixed Single
    Caption         =   " ABM  de Banco"
@@ -471,12 +471,12 @@ Private Sub CmdBorrar_Click()
         If resp <> 6 Then Exit Sub
         
         Screen.MousePointer = 11
-        lblestado.Caption = "Eliminando ..."
+        lblEstado.Caption = "Eliminando ..."
         
         DBConn.Execute "DELETE FROM BANCO " & _
                        " WHERE BAN_CODINT = " & XS(TxtCodInt.Text)
         If TxtBanDescri.Enabled Then TxtBanDescri.SetFocus
-        lblestado.Caption = ""
+        lblEstado.Caption = ""
         Screen.MousePointer = 1
         CmdNuevo_Click
     End If
@@ -485,7 +485,7 @@ Private Sub CmdBorrar_Click()
 CLAVOSE:
     If rec.State = 1 Then rec.Close
     Screen.MousePointer = 1
-    lblestado.Caption = ""
+    lblEstado.Caption = ""
     MsgBox Err.Description, vbCritical, TIT_MSGBOX
 End Sub
 
@@ -512,7 +512,7 @@ Private Sub CmdBuscAprox_Click()
     
     rec.Open sql, DBConn, adOpenStatic, adLockOptimistic
     If rec.RecordCount > 0 Then
-        lblestado.Caption = "Buscando..."
+        lblEstado.Caption = "Buscando..."
         rec.MoveFirst
         Do While Not rec.EOF
             GrdBancos.AddItem Trim(rec!BAN_CODINT) & Chr(9) & _
@@ -523,7 +523,7 @@ Private Sub CmdBuscAprox_Click()
             rec.MoveNext
         Loop
         If GrdBancos.Enabled Then GrdBancos.SetFocus
-        lblestado.Caption = ""
+        lblEstado.Caption = ""
     Else
         MsgBox "No se encontraron items con esta descripción !", vbExclamation, TIT_MSGBOX
         'TxtBANCO.SelStart = 0
@@ -535,11 +535,11 @@ Private Sub CmdBuscAprox_Click()
     Screen.MousePointer = vbNormal
 End Sub
 
-Private Sub CmdGrabar_Click()
+Private Sub cmdGrabar_Click()
     If buscobanco = 1 Then
-        FrmCargaCheques.TxtBANCO.Text = TxtBanBanco.Text
+        FrmCargaCheques.TxtBanco.Text = TxtBanBanco.Text
         FrmCargaCheques.txtlocalidad.Text = TxtBanLocalidad.Text
-        FrmCargaCheques.TxtSUCURSAL.Text = TxtBanSucursal.Text
+        FrmCargaCheques.TxtSucursal.Text = TxtBanSucursal.Text
         FrmCargaCheques.TxtCodigo.Text = TxtBanCodigo.Text
         FrmCargaCheques.TxtBanDescri.Text = TxtBanDescri.Text
         FrmCargaCheques.TxtCodInt.Text = TxtCodInt.Text
@@ -591,7 +591,7 @@ Private Sub CmdGrabar_Click()
     Set rec = New ADODB.Recordset
     Set Rec2 = New ADODB.Recordset
     
-    lblestado.Caption = "Guardando ..."
+    lblEstado.Caption = "Guardando ..."
     'sql = "SELECT BAN_DESCRI FROM BANCO " & _
           "WHERE BAN_BANCO = " & XS(TxtBanBanco.Text) & _
        " AND BAN_LOCALIDAD = " & XS(Me.TxtBanLocalidad.Text) & _
@@ -655,12 +655,12 @@ Private Sub CmdNuevo_Click()
     Me.TxtCodInt.Text = ""
     Me.TxtBanDescri.Text = ""
     Me.TxtBanNomCor.Text = ""
-    lblestado.Caption = ""
+    lblEstado.Caption = ""
     GrdBancos.Rows = 1
     'Me.TxtBanBanco.SetFocus
 End Sub
 
-Private Sub cmdSalir_Click()
+Private Sub CmdSalir_Click()
     Unload Me
     Set ABMBanco = Nothing
 End Sub
@@ -671,7 +671,7 @@ End Sub
 
 Private Sub Form_KeyPress(KeyAscii As Integer)
     'si presiono ESCAPE salgo del form
-    If KeyAscii = vbKeyEscape Then cmdSalir_Click
+    If KeyAscii = vbKeyEscape Then CmdSalir_Click
     If KeyAscii = vbKeyReturn Then 'avanza de campo
         SendKeys "{TAB}"
         KeyAscii = 0
@@ -682,7 +682,7 @@ Private Sub Form_Load()
 
     Call Centrar_pantalla(Me)
 
-    lblestado.Caption = ""
+    lblEstado.Caption = ""
     GrdBancos.FormatString = "Código|Descripción|Nombre Corto"
     GrdBancos.ColWidth(0) = 1200
     GrdBancos.ColWidth(1) = 3200
@@ -736,16 +736,16 @@ Private Sub tabTB_Click(PreviousTab As Integer)
     If TabTB.Tab = 0 And Me.Visible Then
      'Me.TxtBanBanco.SetFocus
      cmdGrabar.Enabled = True
-     cmdBorrar.Enabled = True
+     CmdBorrar.Enabled = True
     End If
     If TabTB.Tab = 1 Then
-        TxtBANCO.Text = ""
+        TxtBanco.Text = ""
         txtlocalidad.Text = ""
-        TxtSUCURSAL.Text = ""
+        TxtSucursal.Text = ""
         TxtCodigo.Text = ""
         txtdescri.SetFocus
         cmdGrabar.Enabled = False
-        cmdBorrar.Enabled = False
+        CmdBorrar.Enabled = False
     End If
 End Sub
 
@@ -844,9 +844,9 @@ Private Sub TxtBanSucursal_KeyPress(KeyAscii As Integer)
 End Sub
 
 Private Sub TxtCodigo_Change()
-    If Trim(TxtCodigo) = "" And cmdBorrar.Enabled Then
-        cmdBorrar.Enabled = False
+    If Trim(TxtCodigo) = "" And CmdBorrar.Enabled Then
+        CmdBorrar.Enabled = False
     ElseIf Trim(TxtCodigo) <> "" Then
-        cmdBorrar.Enabled = True
+        CmdBorrar.Enabled = True
     End If
 End Sub

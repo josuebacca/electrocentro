@@ -1,5 +1,5 @@
 VERSION 5.00
-Object = "{BDC217C8-ED16-11CD-956C-0000C04E4C0A}#1.1#0"; "TABCTL32.OCX"
+Object = "{BDC217C8-ED16-11CD-956C-0000C04E4C0A}#1.1#0"; "tabctl32.ocx"
 Object = "{5E9E78A0-531B-11CF-91F6-C2863C385E30}#1.0#0"; "msflxgrd.ocx"
 Begin VB.Form ABMPais 
    BorderStyle     =   3  'Fixed Dialog
@@ -75,7 +75,6 @@ Begin VB.Form ABMPais
       _ExtentY        =   5371
       _Version        =   393216
       Tabs            =   2
-      Tab             =   1
       TabHeight       =   529
       ForeColor       =   -2147483630
       BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
@@ -89,12 +88,13 @@ Begin VB.Form ABMPais
       EndProperty
       TabCaption(0)   =   "&Datos"
       TabPicture(0)   =   "ABMPais.frx":1850
-      Tab(0).ControlEnabled=   0   'False
+      Tab(0).ControlEnabled=   -1  'True
       Tab(0).Control(0)=   "fraDatos"
+      Tab(0).Control(0).Enabled=   0   'False
       Tab(0).ControlCount=   1
       TabCaption(1)   =   "&Buscar"
       TabPicture(1)   =   "ABMPais.frx":186C
-      Tab(1).ControlEnabled=   -1  'True
+      Tab(1).ControlEnabled=   0   'False
       Tab(1).Control(0)=   "GrdModulos"
       Tab(1).Control(0).Enabled=   0   'False
       Tab(1).Control(1)=   "Frame1"
@@ -102,7 +102,7 @@ Begin VB.Form ABMPais
       Tab(1).ControlCount=   2
       Begin VB.Frame Frame1 
          Height          =   735
-         Left            =   270
+         Left            =   -74730
          TabIndex        =   14
          Top             =   360
          Width           =   5775
@@ -171,7 +171,7 @@ Begin VB.Form ABMPais
             Strikethrough   =   0   'False
          EndProperty
          Height          =   1950
-         Left            =   -74580
+         Left            =   420
          TabIndex        =   9
          Top             =   600
          Width           =   5430
@@ -223,7 +223,7 @@ Begin VB.Form ABMPais
       End
       Begin MSFlexGridLib.MSFlexGrid GrdModulos 
          Height          =   1755
-         Left            =   255
+         Left            =   -74745
          TabIndex        =   8
          Top             =   1125
          Width           =   5805
@@ -286,8 +286,8 @@ End Sub
 
 Function LimpiarControles()
     TxtCodigo.Text = ""
-    txtDescri.Text = ""
-    txtDescri.Enabled = True
+    txtdescri.Text = ""
+    txtdescri.Enabled = True
     TxtCodigo.SetFocus
     cmdBotonDatos(0).Enabled = True
     cmdBotonDatos(1).Enabled = False
@@ -304,9 +304,9 @@ Private Sub cmdBotonDatos_Click(Index As Integer)
     Select Case Index
          Case 0 ' GRABAR
             On Error GoTo ErrorTrans
-            If txtDescri.Text = "" Then
+            If txtdescri.Text = "" Then
              MsgBox "Debe ingresar la descripción", vbExclamation, TIT_MSGBOX
-             txtDescri.SetFocus
+             txtdescri.SetFocus
              Exit Sub
             End If
             lblEstado.Caption = "Grabando..."
@@ -319,13 +319,13 @@ Private Sub cmdBotonDatos_Click(Index As Integer)
                 
                 DBConn.BeginTrans
                 sql = "INSERT INTO PAIS (PAI_CODIGO,PAI_DESCRI) " & _
-                       "VALUES ( " & XN(TxtCodigo.Text) & " ," & XS(txtDescri.Text) & ")"
+                       "VALUES ( " & XN(TxtCodigo.Text) & " ," & XS(txtdescri.Text) & ")"
                 DBConn.Execute sql, dbExecDirect
                 DBConn.CommitTrans
             Else
                 DBConn.BeginTrans
                 sql = " UPDATE PAIS "
-                sql = sql & " SET   PAI_DESCRI = " & XS(txtDescri.Text)
+                sql = sql & " SET   PAI_DESCRI = " & XS(txtdescri.Text)
                 sql = sql & " WHERE PAI_CODIGO = " & XN(TxtCodigo.Text)
               
                 DBConn.Execute sql, dbExecDirect
@@ -345,14 +345,14 @@ Private Sub cmdBotonDatos_Click(Index As Integer)
                 End If
                 rec.Close
                 
-                resp = MsgBox("Seguro desea eliminar el Pais: " & Trim(txtDescri.Text) & " ?", 36, "Eliminar:")
+                resp = MsgBox("Seguro desea eliminar el Pais: " & Trim(txtdescri.Text) & " ?", 36, "Eliminar:")
                 If resp <> 6 Then Exit Sub
                 
                 Screen.MousePointer = 11
                 lblEstado.Caption = "Eliminando ..."
                 
                 DBConn.Execute "DELETE FROM PAIS WHERE PAI_CODIGO = " & XN(TxtCodigo.Text)
-                If txtDescri.Enabled Then
+                If txtdescri.Enabled Then
                     LimpiarControles
                 End If
                 lblEstado.Caption = ""
@@ -426,8 +426,8 @@ Private Sub GrdModulos_DblClick()
         GrdModulos.Col = 0
         TxtCodigo = GrdModulos.Text
         GrdModulos.Col = 1
-        txtDescri.Text = Trim(GrdModulos.Text)
-        If txtDescri.Enabled Then txtDescri.SetFocus
+        txtdescri.Text = Trim(GrdModulos.Text)
+        If txtdescri.Enabled Then txtdescri.SetFocus
         cmdBotonDatos(1).Enabled = True
         cmdBotonDatos(0).Enabled = True
         tabDatos.Tab = 0
@@ -472,7 +472,7 @@ Private Sub TxtCodigo_LostFocus()
         sql = sql & " WHERE PAI_CODIGO=" & XN(TxtCodigo)
         rec.Open sql, DBConn, adOpenStatic, adLockOptimistic
         If rec.EOF = False Then
-         txtDescri.Text = rec!PAI_DESCRI
+         txtdescri.Text = rec!PAI_DESCRI
          cmdBotonDatos(1).Enabled = True
         Else
          MsgBox "El Código no existe", vbExclamation, TIT_MSGBOX
@@ -484,7 +484,7 @@ Private Sub TxtCodigo_LostFocus()
 End Sub
 
 Private Sub txtDescri_Change()
-    If Trim(txtDescri) = "" Then
+    If Trim(txtdescri) = "" Then
         cmdBotonDatos(0).Enabled = False
     Else
         cmdBotonDatos(0).Enabled = True
@@ -492,7 +492,7 @@ Private Sub txtDescri_Change()
 End Sub
 
 Private Sub txtdescri_GotFocus()
-   SelecTexto txtDescri
+   SelecTexto txtdescri
 End Sub
 
 Private Sub txtdescri_KeyPress(KeyAscii As Integer)
@@ -522,6 +522,6 @@ Next Control
 If MensCampos <> "" Then ' si hay mensaje es que hay campos incompletos
     Beep
     MsgBox "Debe completar los siguientes campos:" & MensCampos, vbOKOnly + vbInformation, TIT_MSGBOX
-    txtDescri.SetFocus
+    txtdescri.SetFocus
 End If
 End Function

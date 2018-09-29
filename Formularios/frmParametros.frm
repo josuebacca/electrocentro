@@ -1,6 +1,6 @@
 VERSION 5.00
-Object = "{5F09B5DF-6F4D-11D2-8355-4854E82A9183}#15.0#0"; "Fecha32.ocx"
-Object = "{F09A78C8-7814-11D2-8355-4854E82A9183}#1.0#0"; "Cuit32.ocx"
+Object = "{C932BA88-4374-101B-A56C-00AA003668DC}#1.1#0"; "msmask32.ocx"
+Object = "{86CF1D34-0C5F-11D2-A9FC-0000F8754DA1}#2.0#0"; "mscomct2.ocx"
 Begin VB.Form frmParametros 
    BorderStyle     =   1  'Fixed Single
    Caption         =   "Parametros"
@@ -28,7 +28,7 @@ Begin VB.Form frmParametros
       EndProperty
       Height          =   855
       Left            =   6600
-      TabIndex        =   54
+      TabIndex        =   52
       Top             =   4028
       Width           =   3015
       Begin VB.TextBox txtPorGan 
@@ -36,7 +36,7 @@ Begin VB.Form frmParametros
          Height          =   315
          Left            =   1320
          MaxLength       =   5
-         TabIndex        =   52
+         TabIndex        =   50
          Top             =   360
          Width           =   825
       End
@@ -45,7 +45,7 @@ Begin VB.Form frmParametros
          Caption         =   "Valor"
          Height          =   195
          Left            =   840
-         TabIndex        =   56
+         TabIndex        =   54
          Top             =   420
          Width           =   360
       End
@@ -54,7 +54,7 @@ Begin VB.Form frmParametros
          Caption         =   "%"
          Height          =   195
          Left            =   2205
-         TabIndex        =   55
+         TabIndex        =   53
          Top             =   435
          Width           =   120
       End
@@ -72,7 +72,7 @@ Begin VB.Form frmParametros
       EndProperty
       Height          =   870
       Left            =   30
-      TabIndex        =   48
+      TabIndex        =   46
       Top             =   4020
       Width           =   6510
       Begin VB.CheckBox chkAplicoImpuesto 
@@ -88,7 +88,7 @@ Begin VB.Form frmParametros
          EndProperty
          Height          =   300
          Left            =   2340
-         TabIndex        =   51
+         TabIndex        =   49
          Top             =   375
          Width           =   1815
       End
@@ -97,7 +97,7 @@ Begin VB.Form frmParametros
          Height          =   315
          Left            =   705
          MaxLength       =   5
-         TabIndex        =   50
+         TabIndex        =   48
          Top             =   345
          Width           =   825
       End
@@ -106,7 +106,7 @@ Begin VB.Form frmParametros
          Caption         =   "%"
          Height          =   195
          Left            =   1590
-         TabIndex        =   53
+         TabIndex        =   51
          Top             =   420
          Width           =   120
       End
@@ -115,7 +115,7 @@ Begin VB.Form frmParametros
          Caption         =   "Valor"
          Height          =   195
          Left            =   225
-         TabIndex        =   49
+         TabIndex        =   47
          Top             =   405
          Width           =   360
       End
@@ -133,14 +133,14 @@ Begin VB.Form frmParametros
       EndProperty
       Height          =   2565
       Left            =   4590
-      TabIndex        =   25
+      TabIndex        =   23
       Top             =   1470
       Width           =   5070
       Begin VB.TextBox txtSalidaDeposito 
          Alignment       =   1  'Right Justify
          Height          =   315
          Left            =   3885
-         TabIndex        =   36
+         TabIndex        =   34
          Top             =   795
          Width           =   1080
       End
@@ -148,7 +148,7 @@ Begin VB.Form frmParametros
          Alignment       =   1  'Right Justify
          Height          =   315
          Left            =   1470
-         TabIndex        =   35
+         TabIndex        =   33
          Top             =   420
          Width           =   1080
       End
@@ -156,7 +156,7 @@ Begin VB.Form frmParametros
          Alignment       =   1  'Right Justify
          Height          =   315
          Left            =   3885
-         TabIndex        =   34
+         TabIndex        =   32
          Top             =   1125
          Width           =   1080
       End
@@ -164,7 +164,7 @@ Begin VB.Form frmParametros
          Alignment       =   1  'Right Justify
          Height          =   315
          Left            =   3885
-         TabIndex        =   33
+         TabIndex        =   31
          Top             =   1470
          Width           =   1080
       End
@@ -172,7 +172,7 @@ Begin VB.Form frmParametros
          Alignment       =   1  'Right Justify
          Height          =   315
          Left            =   3885
-         TabIndex        =   32
+         TabIndex        =   30
          Top             =   1815
          Width           =   1080
       End
@@ -180,7 +180,7 @@ Begin VB.Form frmParametros
          Alignment       =   1  'Right Justify
          Height          =   315
          Left            =   3885
-         TabIndex        =   31
+         TabIndex        =   29
          Top             =   2160
          Width           =   1080
       End
@@ -188,7 +188,7 @@ Begin VB.Form frmParametros
          Alignment       =   1  'Right Justify
          Height          =   315
          Left            =   1470
-         TabIndex        =   30
+         TabIndex        =   28
          Top             =   2145
          Width           =   1080
       End
@@ -196,7 +196,7 @@ Begin VB.Form frmParametros
          Alignment       =   1  'Right Justify
          Height          =   315
          Left            =   1470
-         TabIndex        =   29
+         TabIndex        =   27
          Top             =   1800
          Width           =   1080
       End
@@ -204,7 +204,7 @@ Begin VB.Form frmParametros
          Alignment       =   1  'Right Justify
          Height          =   315
          Left            =   1470
-         TabIndex        =   28
+         TabIndex        =   26
          Top             =   1110
          Width           =   1080
       End
@@ -212,7 +212,7 @@ Begin VB.Form frmParametros
          Alignment       =   1  'Right Justify
          Height          =   315
          Left            =   1470
-         TabIndex        =   27
+         TabIndex        =   25
          Top             =   765
          Width           =   1080
       End
@@ -220,7 +220,7 @@ Begin VB.Form frmParametros
          Alignment       =   1  'Right Justify
          Height          =   315
          Left            =   1470
-         TabIndex        =   26
+         TabIndex        =   24
          Top             =   1455
          Width           =   1080
       End
@@ -229,7 +229,7 @@ Begin VB.Form frmParametros
          Caption         =   "Salida Depósito:"
          Height          =   195
          Left            =   2655
-         TabIndex        =   47
+         TabIndex        =   45
          Top             =   825
          Width           =   1155
       End
@@ -238,7 +238,7 @@ Begin VB.Form frmParametros
          Caption         =   "Entrada Depósito:"
          Height          =   195
          Left            =   120
-         TabIndex        =   46
+         TabIndex        =   44
          Top             =   465
          Width           =   1275
       End
@@ -247,7 +247,7 @@ Begin VB.Form frmParametros
          Caption         =   "Nro. Recibo A:"
          Height          =   195
          Left            =   2760
-         TabIndex        =   45
+         TabIndex        =   43
          Top             =   1170
          Width           =   1050
       End
@@ -256,7 +256,7 @@ Begin VB.Form frmParametros
          Caption         =   "Nro. Recibo B:"
          Height          =   195
          Left            =   2760
-         TabIndex        =   44
+         TabIndex        =   42
          Top             =   1515
          Width           =   1050
       End
@@ -265,7 +265,7 @@ Begin VB.Form frmParametros
          Caption         =   "Nota Débito B:"
          Height          =   195
          Left            =   2760
-         TabIndex        =   43
+         TabIndex        =   41
          Top             =   1845
          Width           =   1050
       End
@@ -274,7 +274,7 @@ Begin VB.Form frmParametros
          Caption         =   "Nota Débito A:"
          Height          =   195
          Left            =   2760
-         TabIndex        =   42
+         TabIndex        =   40
          Top             =   2190
          Width           =   1050
       End
@@ -283,7 +283,7 @@ Begin VB.Form frmParametros
          Caption         =   "Nota Crédito B:"
          Height          =   195
          Left            =   315
-         TabIndex        =   41
+         TabIndex        =   39
          Top             =   2190
          Width           =   1080
       End
@@ -292,7 +292,7 @@ Begin VB.Form frmParametros
          Caption         =   "Nota Crédito A:"
          Height          =   195
          Left            =   315
-         TabIndex        =   40
+         TabIndex        =   38
          Top             =   1845
          Width           =   1080
       End
@@ -301,7 +301,7 @@ Begin VB.Form frmParametros
          Caption         =   "Nro. Factura A:"
          Height          =   195
          Left            =   315
-         TabIndex        =   39
+         TabIndex        =   37
          Top             =   1155
          Width           =   1080
       End
@@ -310,7 +310,7 @@ Begin VB.Form frmParametros
          Caption         =   "Nro. Remito:"
          Height          =   195
          Left            =   510
-         TabIndex        =   38
+         TabIndex        =   36
          Top             =   810
          Width           =   885
       End
@@ -319,7 +319,7 @@ Begin VB.Form frmParametros
          Caption         =   "Nro. Factura B:"
          Height          =   195
          Left            =   315
-         TabIndex        =   37
+         TabIndex        =   35
          Top             =   1500
          Width           =   1080
       End
@@ -340,6 +340,29 @@ Begin VB.Form frmParametros
       TabIndex        =   14
       Top             =   1470
       Width           =   4560
+      Begin MSComCtl2.DTPicker fechaInicio 
+         Height          =   315
+         Left            =   1320
+         TabIndex        =   56
+         Top             =   1440
+         Width           =   1335
+         _ExtentX        =   2355
+         _ExtentY        =   556
+         _Version        =   393216
+         Format          =   53673985
+         CurrentDate     =   43371
+      End
+      Begin MSMask.MaskEdBox CUIT1 
+         Height          =   315
+         Left            =   1320
+         TabIndex        =   55
+         Top             =   720
+         Width           =   1335
+         _ExtentX        =   2355
+         _ExtentY        =   556
+         _Version        =   393216
+         PromptChar      =   "_"
+      End
       Begin VB.TextBox txtIva 
          Alignment       =   1  'Right Justify
          Height          =   315
@@ -364,40 +387,12 @@ Begin VB.Form frmParametros
          Top             =   360
          Width           =   1350
       End
-      Begin FechaCtl.Fecha fechaInicio 
-         Height          =   315
-         Left            =   1290
-         TabIndex        =   18
-         Top             =   1440
-         Width           =   1170
-         _ExtentX        =   2064
-         _ExtentY        =   556
-         Separador       =   "/"
-         Text            =   ""
-         MensajeErrMin   =   "La fecha ingresada no alcanza el mínimo permitido"
-      End
-      Begin Control_CUIT.CUIT CUIT1 
-         Height          =   330
-         Left            =   1290
-         TabIndex        =   19
-         Top             =   720
-         Width           =   1575
-         _ExtentX        =   2778
-         _ExtentY        =   582
-         ConSeparador    =   0   'False
-         Text            =   ""
-         MensajeErr      =   ""
-         nacPF           =   0   'False
-         nacPJ           =   0   'False
-         extPF           =   0   'False
-         extPJ           =   0   'False
-      End
       Begin VB.Label Label14 
          AutoSize        =   -1  'True
          Caption         =   "I.V.A.:"
          Height          =   195
          Left            =   780
-         TabIndex        =   24
+         TabIndex        =   22
          Top             =   1830
          Width           =   435
       End
@@ -406,7 +401,7 @@ Begin VB.Form frmParametros
          Caption         =   "Inicio Actividad:"
          Height          =   195
          Left            =   90
-         TabIndex        =   23
+         TabIndex        =   21
          Top             =   1470
          Width           =   1125
       End
@@ -415,7 +410,7 @@ Begin VB.Form frmParametros
          Caption         =   "IVA Condición:"
          Height          =   195
          Left            =   165
-         TabIndex        =   22
+         TabIndex        =   20
          Top             =   1125
          Width           =   1050
       End
@@ -424,7 +419,7 @@ Begin VB.Form frmParametros
          Caption         =   "Ing. Brutos:"
          Height          =   210
          Left            =   420
-         TabIndex        =   21
+         TabIndex        =   19
          Top             =   405
          Width           =   810
       End
@@ -433,7 +428,7 @@ Begin VB.Form frmParametros
          Caption         =   "C.U.I.T.:"
          Height          =   195
          Left            =   615
-         TabIndex        =   20
+         TabIndex        =   18
          Top             =   765
          Width           =   600
       End
@@ -585,7 +580,7 @@ Attribute VB_PredeclaredId = True
 Attribute VB_Exposed = False
 Option Explicit
 
-Private Sub CmdGrabar_Click()
+Private Sub cmdGrabar_Click()
     If Validar_Parametros = False Then Exit Sub
     
     If MsgBox("¿Confirma los valores de Parámetros?", vbQuestion + vbYesNo, TIT_MSGBOX) = vbNo Then Exit Sub
@@ -593,7 +588,7 @@ Private Sub CmdGrabar_Click()
     On Error GoTo HayError
     
     Screen.MousePointer = vbHourglass
-    lblEstado.Caption = "Actualizando..."
+    lblestado.Caption = "Actualizando..."
     
     DBConn.BeginTrans
     sql = "UPDATE PARAMETROS"
@@ -603,7 +598,7 @@ Private Sub CmdGrabar_Click()
     sql = sql & " ,CUIT=" & XS(CUIT1.Text)
     sql = sql & " ,ING_BRUTOS=" & XS(txtIngBrutos.Text)
     sql = sql & " ,IVA_CODIGO=" & cboIva.ItemData(cboIva.ListIndex)
-    sql = sql & " ,INICIO_ACTIVIDAD=" & XDQ(fechaInicio.Text)
+    sql = sql & " ,INICIO_ACTIVIDAD=" & XDQ(fechaInicio.Value)
     sql = sql & " ,NRO_REMITO=" & XN(txtNroRemito.Text)
     sql = sql & " ,FACTURA_A=" & XN(txtNroFacturaA.Text)
     sql = sql & " ,FACTURA_B=" & XN(txtNroFacturaB.Text)
@@ -612,7 +607,7 @@ Private Sub CmdGrabar_Click()
     sql = sql & " ,NOTA_DEBITO_A=" & XN(txtNotaDebitoA.Text)
     sql = sql & " ,NOTA_DEBITO_B=" & XN(txtNotaDebitoB.Text)
     sql = sql & " ,IVA=" & XN(txtIva.Text)
-    sql = sql & " ,SUCURSAL=" & XN(txtSucursal.Text)
+    sql = sql & " ,SUCURSAL=" & XN(TxtSucursal.Text)
     sql = sql & " ,RECIBO_A=" & XN(txtNroReciboA.Text)
     sql = sql & " ,RECIBO_B=" & XN(txtNroReciboB.Text)
     sql = sql & " ,RECEPCION_MERCADERIA=" & XN(txtRecepcionMerca.Text)
@@ -628,21 +623,21 @@ Private Sub CmdGrabar_Click()
     DBConn.Execute sql
     DBConn.CommitTrans
     Screen.MousePointer = vbNormal
-    lblEstado.Caption = ""
+    lblestado.Caption = ""
     MsgBox "Los cambios se registraron correctamente", vbInformation, TIT_MSGBOX
     Exit Sub
     
 HayError:
     Screen.MousePointer = vbNormal
-    lblEstado.Caption = ""
+    lblestado.Caption = ""
     DBConn.RollbackTrans
     MsgBox Err.Description, vbCritical, TIT_MSGBOX
 End Sub
 
 Private Function Validar_Parametros() As Boolean
-    If txtSucursal.Text = "" Then
+    If TxtSucursal.Text = "" Then
         MsgBox "Debe Ingresar el número de Sucursal", vbExclamation, TIT_MSGBOX
-        txtSucursal.SetFocus
+        TxtSucursal.SetFocus
         Validar_Parametros = False
         Exit Function
     End If
@@ -697,7 +692,7 @@ Private Function Validar_Parametros() As Boolean
       Validar_Parametros = True
 End Function
 
-Private Sub cmdSalir_Click()
+Private Sub CmdSalir_Click()
     Set frmParametros = Nothing
     Unload Me
 End Sub
@@ -712,7 +707,7 @@ End Sub
 
 Private Sub Form_KeyPress(KeyAscii As Integer)
     If KeyAscii = vbKeyReturn Then SendKeys "{TAB}"
-    If KeyAscii = vbKeyEscape Then cmdSalir_Click
+    If KeyAscii = vbKeyEscape Then CmdSalir_Click
 End Sub
 
 Private Sub Form_Load()
@@ -722,7 +717,7 @@ Private Sub Form_Load()
     'busco datos
     BuscarDatos
  
-    lblEstado.Caption = ""
+    lblestado.Caption = ""
 End Sub
 
 Private Sub BuscarDatos()
@@ -735,9 +730,9 @@ Private Sub BuscarDatos()
         CUIT1.Text = IIf(IsNull(rec!cuit), "", rec!cuit)
         txtIngBrutos.Text = IIf(IsNull(rec!ING_BRUTOS), "", rec!ING_BRUTOS)
         Call BuscaCodigoProxItemData(IIf(IsNull(rec!IVA_CODIGO), 1, rec!IVA_CODIGO), cboIva)
-        fechaInicio.Text = IIf(IsNull(rec!INICIO_ACTIVIDAD), "", rec!INICIO_ACTIVIDAD)
+        fechaInicio.Value = IIf(IsNull(rec!INICIO_ACTIVIDAD), "", rec!INICIO_ACTIVIDAD)
         txtIva.Text = IIf(IsNull(rec!IVA), "", rec!IVA)
-        txtSucursal.Text = IIf(IsNull(rec!Sucursal), 1, rec!Sucursal)
+        TxtSucursal.Text = IIf(IsNull(rec!Sucursal), 1, rec!Sucursal)
         txtNroRemito.Text = IIf(IsNull(rec!NRO_REMITO), 1, rec!NRO_REMITO)
         txtNroFacturaA.Text = IIf(IsNull(rec!FACTURA_A), 1, rec!FACTURA_A)
         txtNroFacturaB.Text = IIf(IsNull(rec!FACTURA_B), 1, rec!FACTURA_B)

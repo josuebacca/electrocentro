@@ -1,6 +1,6 @@
 VERSION 5.00
-Object = "{BDC217C8-ED16-11CD-956C-0000C04E4C0A}#1.1#0"; "TABCTL32.OCX"
-Object = "{5E9E78A0-531B-11CF-91F6-C2863C385E30}#1.0#0"; "Msflxgrd.ocx"
+Object = "{BDC217C8-ED16-11CD-956C-0000C04E4C0A}#1.1#0"; "tabctl32.ocx"
+Object = "{5E9E78A0-531B-11CF-91F6-C2863C385E30}#1.0#0"; "msflxgrd.ocx"
 Begin VB.Form ABMRubro 
    BorderStyle     =   1  'Fixed Single
    Caption         =   " ABM de Rubros"
@@ -69,6 +69,7 @@ Begin VB.Form ABMRubro
       _ExtentY        =   5715
       _Version        =   393216
       Tabs            =   2
+      Tab             =   1
       TabHeight       =   520
       BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
          Name            =   "MS Sans Serif"
@@ -81,19 +82,21 @@ Begin VB.Form ABMRubro
       EndProperty
       TabCaption(0)   =   "&Datos"
       TabPicture(0)   =   "ABMRubro.frx":123C
-      Tab(0).ControlEnabled=   -1  'True
+      Tab(0).ControlEnabled=   0   'False
       Tab(0).Control(0)=   "Frame3"
       Tab(0).Control(0).Enabled=   0   'False
       Tab(0).ControlCount=   1
       TabCaption(1)   =   "&Buscar"
       TabPicture(1)   =   "ABMRubro.frx":1258
-      Tab(1).ControlEnabled=   0   'False
+      Tab(1).ControlEnabled=   -1  'True
       Tab(1).Control(0)=   "GrdModulos"
+      Tab(1).Control(0).Enabled=   0   'False
       Tab(1).Control(1)=   "Frame1"
+      Tab(1).Control(1).Enabled=   0   'False
       Tab(1).ControlCount=   2
       Begin VB.Frame Frame1 
          Height          =   735
-         Left            =   -74790
+         Left            =   210
          TabIndex        =   14
          Top             =   360
          Width           =   5340
@@ -162,7 +165,7 @@ Begin VB.Form ABMRubro
             Strikethrough   =   0   'False
          EndProperty
          Height          =   1950
-         Left            =   225
+         Left            =   -74775
          TabIndex        =   12
          Top             =   630
          Width           =   5295
@@ -221,7 +224,7 @@ Begin VB.Form ABMRubro
       End
       Begin MSFlexGridLib.MSFlexGrid GrdModulos 
          Height          =   1980
-         Left            =   -74820
+         Left            =   180
          TabIndex        =   9
          Top             =   1140
          Width           =   5385
@@ -272,14 +275,14 @@ Private Sub CmdBorrar_Click()
         If resp <> 6 Then Exit Sub
         
         Screen.MousePointer = 11
-        lblestado.Caption = "Eliminando ..."
+        lblEstado.Caption = "Eliminando ..."
     
         sql = "DELETE FROM RUBROS"
         sql = sql & " WHERE RUB_CODIGO = " & XN(TxtCodigo)
         sql = sql & " AND LNA_CODIGO=" & cboLineas.ItemData(cboLineas.ListIndex)
         DBConn.Execute sql
         
-        lblestado.Caption = ""
+        lblEstado.Caption = ""
         Screen.MousePointer = 1
         CmdNuevo_Click
     End If
@@ -288,7 +291,7 @@ Private Sub CmdBorrar_Click()
 CLAVOSE:
     If rec.State = 1 Then rec.Close
     Screen.MousePointer = 1
-    lblestado.Caption = ""
+    lblEstado.Caption = ""
     MsgBox Err.Description, vbCritical, TIT_MSGBOX
 End Sub
 
@@ -317,7 +320,7 @@ Private Sub CmdBuscAprox_Click()
     Screen.MousePointer = 1
 End Sub
 
-Private Sub CmdGrabar_Click()
+Private Sub cmdGrabar_Click()
     On Error GoTo CLAVOSE
     
     If Trim(TxtDescrip) = "" Then
@@ -327,7 +330,7 @@ Private Sub CmdGrabar_Click()
     End If
     
     Screen.MousePointer = 11
-    lblestado.Caption = "Guardando ..."
+    lblEstado.Caption = "Guardando ..."
     
     If TxtCodigo.Text <> "" Then
         sql = "UPDATE RUBROS "
@@ -355,7 +358,7 @@ Private Sub CmdGrabar_Click()
     Exit Sub
     
 CLAVOSE:
-    lblestado.Caption = ""
+    lblEstado.Caption = ""
     Screen.MousePointer = 1
     MsgBox Err.Description, vbCritical, TIT_MSGBOX
 End Sub
@@ -364,13 +367,13 @@ Private Sub CmdNuevo_Click()
     TabTB.Tab = 0
     TxtCodigo.Text = ""
     TxtDescrip.Text = ""
-    lblestado.Caption = ""
+    lblEstado.Caption = ""
     GrdModulos.Rows = 1
     cboLineas.ListIndex = 0
     cboLineas.SetFocus
 End Sub
 
-Private Sub cmdSalir_Click()
+Private Sub CmdSalir_Click()
     Unload Me
     Set ABMRubro = Nothing
 End Sub
@@ -381,7 +384,7 @@ End Sub
 
 Private Sub Form_KeyPress(KeyAscii As Integer)
     'si presiono ESCAPE salgo del form
-    If KeyAscii = vbKeyEscape Then cmdSalir_Click
+    If KeyAscii = vbKeyEscape Then CmdSalir_Click
     If KeyAscii = vbKeyReturn Then 'avanza de campo
         SendKeys "{TAB}"
         KeyAscii = 0
@@ -392,7 +395,7 @@ Private Sub Form_Load()
     Call Centrar_pantalla(Me)
     Set rec = New ADODB.Recordset
     
-    lblestado.Caption = ""
+    lblEstado.Caption = ""
     GrdModulos.FormatString = "Código|Descripción"
     GrdModulos.ColWidth(0) = 1000
     GrdModulos.ColWidth(1) = 4000
@@ -452,10 +455,10 @@ Private Sub tabTB_Click(PreviousTab As Integer)
         TxtDescriB.Text = ""
         If TxtDescriB.Enabled Then TxtDescriB.SetFocus
         cmdGrabar.Enabled = False
-        CmdBorrar.Enabled = False
+        cmdBorrar.Enabled = False
     Else
         cmdGrabar.Enabled = True
-        CmdBorrar.Enabled = True
+        cmdBorrar.Enabled = True
     End If
 End Sub
 
@@ -503,15 +506,15 @@ Private Sub TxtDescrip_GotFocus()
 End Sub
 
 Private Sub TxtDescrip_KeyPress(KeyAscii As Integer)
-    If KeyAscii = vbKeyReturn And cmdGrabar.Enabled Then CmdGrabar_Click
+    If KeyAscii = vbKeyReturn And cmdGrabar.Enabled Then cmdGrabar_Click
     KeyAscii = Mayuscula(KeyAscii)
 End Sub
 
 Private Sub TxtCodigo_Change()
-    If Trim(TxtCodigo) = "" And CmdBorrar.Enabled Then
-        CmdBorrar.Enabled = False
+    If Trim(TxtCodigo) = "" And cmdBorrar.Enabled Then
+        cmdBorrar.Enabled = False
     ElseIf Trim(TxtCodigo) <> "" Then
-        CmdBorrar.Enabled = True
+        cmdBorrar.Enabled = True
     End If
 End Sub
 

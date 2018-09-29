@@ -23,7 +23,7 @@ Begin VB.Form frmOrdenesCompra
       Enabled         =   0   'False
       Height          =   555
       Left            =   7125
-      TabIndex        =   77
+      TabIndex        =   75
       Top             =   7335
       Width           =   990
    End
@@ -66,13 +66,14 @@ Begin VB.Form frmOrdenesCompra
    Begin TabDlg.SSTab tabDatos 
       Height          =   7155
       Left            =   0
-      TabIndex        =   24
+      TabIndex        =   22
       Top             =   120
       Width           =   11145
       _ExtentX        =   19659
       _ExtentY        =   12621
       _Version        =   393216
       Tabs            =   2
+      Tab             =   1
       TabsPerRow      =   5
       TabHeight       =   512
       ForeColor       =   -2147483630
@@ -87,26 +88,26 @@ Begin VB.Form frmOrdenesCompra
       EndProperty
       TabCaption(0)   =   "&Datos"
       TabPicture(0)   =   "frmOrdenesCompra.frx":0000
-      Tab(0).ControlEnabled=   -1  'True
-      Tab(0).Control(0)=   "Frame1"
+      Tab(0).ControlEnabled=   0   'False
+      Tab(0).Control(0)=   "Frame8"
       Tab(0).Control(0).Enabled=   0   'False
-      Tab(0).Control(1)=   "Frame3"
+      Tab(0).Control(1)=   "Frame2"
       Tab(0).Control(1).Enabled=   0   'False
-      Tab(0).Control(2)=   "FramePedido"
+      Tab(0).Control(2)=   "fraDatos"
       Tab(0).Control(2).Enabled=   0   'False
-      Tab(0).Control(3)=   "fraDatos"
+      Tab(0).Control(3)=   "FramePedido"
       Tab(0).Control(3).Enabled=   0   'False
-      Tab(0).Control(4)=   "Frame2"
+      Tab(0).Control(4)=   "Frame3"
       Tab(0).Control(4).Enabled=   0   'False
-      Tab(0).Control(5)=   "Frame8"
+      Tab(0).Control(5)=   "Frame1"
       Tab(0).Control(5).Enabled=   0   'False
       Tab(0).ControlCount=   6
       TabCaption(1)   =   "&Buscar"
       TabPicture(1)   =   "frmOrdenesCompra.frx":001C
-      Tab(1).ControlEnabled=   0   'False
-      Tab(1).Control(0)=   "Frame4"
+      Tab(1).ControlEnabled=   -1  'True
+      Tab(1).Control(0)=   "GrdModulos"
       Tab(1).Control(0).Enabled=   0   'False
-      Tab(1).Control(1)=   "GrdModulos"
+      Tab(1).Control(1)=   "Frame4"
       Tab(1).Control(1).Enabled=   0   'False
       Tab(1).ControlCount=   2
       Begin VB.Frame Frame8 
@@ -121,8 +122,8 @@ Begin VB.Form frmOrdenesCompra
             Strikethrough   =   0   'False
          EndProperty
          Height          =   735
-         Left            =   8280
-         TabIndex        =   78
+         Left            =   -66720
+         TabIndex        =   76
          Top             =   2425
          Width           =   2745
          Begin VB.TextBox txttransporte 
@@ -156,8 +157,8 @@ Begin VB.Form frmOrdenesCompra
             Strikethrough   =   0   'False
          EndProperty
          Height          =   855
-         Left            =   3840
-         TabIndex        =   63
+         Left            =   -71160
+         TabIndex        =   61
          Top             =   2425
          Width           =   4425
          Begin VB.CommandButton cmdNuevoVendedor 
@@ -166,7 +167,7 @@ Begin VB.Form frmOrdenesCompra
             MaskColor       =   &H000000FF&
             Picture         =   "frmOrdenesCompra.frx":0038
             Style           =   1  'Graphical
-            TabIndex        =   66
+            TabIndex        =   64
             ToolTipText     =   "Agregar Vendedor"
             Top             =   240
             UseMaskColor    =   -1  'True
@@ -178,7 +179,7 @@ Begin VB.Form frmOrdenesCompra
             MaskColor       =   &H000000FF&
             Picture         =   "frmOrdenesCompra.frx":03C2
             Style           =   1  'Graphical
-            TabIndex        =   65
+            TabIndex        =   63
             ToolTipText     =   "Buscar Vendedor"
             Top             =   240
             UseMaskColor    =   -1  'True
@@ -198,7 +199,7 @@ Begin VB.Form frmOrdenesCompra
             EndProperty
             Height          =   330
             Left            =   1680
-            TabIndex        =   64
+            TabIndex        =   62
             Top             =   240
             Width           =   2685
          End
@@ -222,15 +223,15 @@ Begin VB.Form frmOrdenesCompra
             Strikethrough   =   0   'False
          EndProperty
          Height          =   2070
-         Left            =   -74625
-         TabIndex        =   43
+         Left            =   375
+         TabIndex        =   41
          Top             =   330
          Width           =   10395
          Begin VB.OptionButton optDef 
             Caption         =   "Definitivos"
             Height          =   195
             Left            =   7920
-            TabIndex        =   20
+            TabIndex        =   18
             Top             =   1800
             Width           =   1575
          End
@@ -238,7 +239,7 @@ Begin VB.Form frmOrdenesCompra
             Caption         =   "Pendientes"
             Height          =   195
             Left            =   5280
-            TabIndex        =   19
+            TabIndex        =   17
             Top             =   1800
             Value           =   -1  'True
             Width           =   1575
@@ -247,7 +248,7 @@ Begin VB.Form frmOrdenesCompra
             Caption         =   "Todos"
             Height          =   195
             Left            =   3360
-            TabIndex        =   18
+            TabIndex        =   16
             Top             =   1800
             Width           =   1575
          End
@@ -257,7 +258,7 @@ Begin VB.Form frmOrdenesCompra
             MaskColor       =   &H000000FF&
             Picture         =   "frmOrdenesCompra.frx":06CC
             Style           =   1  'Graphical
-            TabIndex        =   55
+            TabIndex        =   53
             ToolTipText     =   "Buscar Vendedor"
             Top             =   840
             UseMaskColor    =   -1  'True
@@ -269,7 +270,7 @@ Begin VB.Form frmOrdenesCompra
             MaskColor       =   &H000000FF&
             Picture         =   "frmOrdenesCompra.frx":09D6
             Style           =   1  'Graphical
-            TabIndex        =   50
+            TabIndex        =   48
             ToolTipText     =   "Buscar Cliente"
             Top             =   375
             UseMaskColor    =   -1  'True
@@ -296,7 +297,7 @@ Begin VB.Form frmOrdenesCompra
             EndProperty
             Height          =   285
             Left            =   4845
-            TabIndex        =   48
+            TabIndex        =   46
             Top             =   855
             Width           =   4635
          End
@@ -314,29 +315,11 @@ Begin VB.Form frmOrdenesCompra
             MaskColor       =   &H000000FF&
             Picture         =   "frmOrdenesCompra.frx":0CE0
             Style           =   1  'Graphical
-            TabIndex        =   21
+            TabIndex        =   19
             ToolTipText     =   "Buscar "
             Top             =   225
             UseMaskColor    =   -1  'True
             Width           =   555
-         End
-         Begin VB.PictureBox FechaHasta 
-            Height          =   285
-            Left            =   5865
-            ScaleHeight     =   225
-            ScaleWidth      =   1125
-            TabIndex        =   17
-            Top             =   1320
-            Width           =   1185
-         End
-         Begin VB.PictureBox FechaDesde 
-            Height          =   330
-            Left            =   3360
-            ScaleHeight     =   270
-            ScaleWidth      =   1110
-            TabIndex        =   16
-            Top             =   1320
-            Width           =   1170
          End
          Begin VB.TextBox txtDesCli 
             BackColor       =   &H8000000F&
@@ -353,7 +336,7 @@ Begin VB.Form frmOrdenesCompra
             Height          =   300
             Left            =   4845
             MaxLength       =   50
-            TabIndex        =   44
+            TabIndex        =   42
             Tag             =   "Descripción"
             Top             =   375
             Width           =   4620
@@ -382,12 +365,36 @@ Begin VB.Form frmOrdenesCompra
             Top             =   435
             Width           =   1095
          End
+         Begin MSComCtl2.DTPicker FechaDesde 
+            Height          =   315
+            Left            =   3360
+            TabIndex        =   79
+            Top             =   1320
+            Width           =   1335
+            _ExtentX        =   2355
+            _ExtentY        =   556
+            _Version        =   393216
+            Format          =   53673985
+            CurrentDate     =   43367
+         End
+         Begin MSComCtl2.DTPicker FechaHasta 
+            Height          =   315
+            Left            =   5880
+            TabIndex        =   80
+            Top             =   1320
+            Width           =   1335
+            _ExtentX        =   2355
+            _ExtentY        =   556
+            _Version        =   393216
+            Format          =   53673985
+            CurrentDate     =   43367
+         End
          Begin VB.Label Label8 
             AutoSize        =   -1  'True
             Caption         =   "Estado:"
             Height          =   195
             Left            =   2760
-            TabIndex        =   79
+            TabIndex        =   77
             Top             =   1800
             Width           =   540
          End
@@ -397,7 +404,7 @@ Begin VB.Form frmOrdenesCompra
             Height          =   195
             Index           =   0
             Left            =   2535
-            TabIndex        =   49
+            TabIndex        =   47
             Top             =   885
             Width           =   735
          End
@@ -406,7 +413,7 @@ Begin VB.Form frmOrdenesCompra
             Caption         =   "Fecha Hasta:"
             Height          =   195
             Left            =   4815
-            TabIndex        =   47
+            TabIndex        =   45
             Top             =   1380
             Width           =   960
          End
@@ -415,8 +422,8 @@ Begin VB.Form frmOrdenesCompra
             Caption         =   "Fecha Desde:"
             Height          =   195
             Left            =   2265
-            TabIndex        =   46
-            Top             =   1365
+            TabIndex        =   44
+            Top             =   1380
             Width           =   1005
          End
          Begin VB.Label lbl 
@@ -429,7 +436,7 @@ Begin VB.Form frmOrdenesCompra
             Height          =   195
             Index           =   3
             Left            =   2505
-            TabIndex        =   45
+            TabIndex        =   43
             Top             =   420
             Width           =   780
          End
@@ -446,8 +453,8 @@ Begin VB.Form frmOrdenesCompra
             Strikethrough   =   0   'False
          EndProperty
          Height          =   2085
-         Left            =   3840
-         TabIndex        =   29
+         Left            =   -71160
+         TabIndex        =   27
          Top             =   360
          Width           =   7185
          Begin VB.TextBox txtcodpos 
@@ -464,7 +471,7 @@ Begin VB.Form frmOrdenesCompra
             EndProperty
             Height          =   285
             Left            =   960
-            TabIndex        =   61
+            TabIndex        =   59
             Top             =   960
             Width           =   1215
          End
@@ -483,7 +490,7 @@ Begin VB.Form frmOrdenesCompra
             Height          =   285
             Left            =   960
             MaxLength       =   50
-            TabIndex        =   58
+            TabIndex        =   56
             Top             =   1320
             Width           =   4620
          End
@@ -502,7 +509,7 @@ Begin VB.Form frmOrdenesCompra
             Height          =   285
             Left            =   2280
             MaxLength       =   50
-            TabIndex        =   56
+            TabIndex        =   54
             Top             =   960
             Width           =   4860
          End
@@ -520,7 +527,7 @@ Begin VB.Form frmOrdenesCompra
             EndProperty
             Height          =   300
             Left            =   960
-            TabIndex        =   54
+            TabIndex        =   52
             Top             =   1665
             Width           =   1455
          End
@@ -530,7 +537,7 @@ Begin VB.Form frmOrdenesCompra
             MaskColor       =   &H000000FF&
             Picture         =   "frmOrdenesCompra.frx":3482
             Style           =   1  'Graphical
-            TabIndex        =   38
+            TabIndex        =   36
             ToolTipText     =   "Agregar Cliente"
             Top             =   270
             UseMaskColor    =   -1  'True
@@ -542,7 +549,7 @@ Begin VB.Form frmOrdenesCompra
             MaskColor       =   &H000000FF&
             Picture         =   "frmOrdenesCompra.frx":380C
             Style           =   1  'Graphical
-            TabIndex        =   37
+            TabIndex        =   35
             ToolTipText     =   "Buscar Cliente"
             Top             =   270
             UseMaskColor    =   -1  'True
@@ -562,7 +569,7 @@ Begin VB.Form frmOrdenesCompra
             EndProperty
             Height          =   300
             Left            =   2445
-            TabIndex        =   36
+            TabIndex        =   34
             Top             =   1665
             Width           =   3135
          End
@@ -589,7 +596,7 @@ Begin VB.Form frmOrdenesCompra
             Height          =   300
             Left            =   2865
             MaxLength       =   50
-            TabIndex        =   23
+            TabIndex        =   21
             Tag             =   "Descripción"
             Top             =   270
             Width           =   4230
@@ -609,7 +616,7 @@ Begin VB.Form frmOrdenesCompra
             Height          =   285
             Left            =   960
             MaxLength       =   50
-            TabIndex        =   31
+            TabIndex        =   29
             Top             =   615
             Width           =   4620
          End
@@ -627,7 +634,7 @@ Begin VB.Form frmOrdenesCompra
             EndProperty
             Height          =   285
             Left            =   5640
-            TabIndex        =   30
+            TabIndex        =   28
             Top             =   1680
             Width           =   1455
          End
@@ -636,7 +643,7 @@ Begin VB.Form frmOrdenesCompra
             Caption         =   "Provincia:"
             Height          =   195
             Left            =   180
-            TabIndex        =   59
+            TabIndex        =   57
             Top             =   1350
             Width           =   705
          End
@@ -645,7 +652,7 @@ Begin VB.Form frmOrdenesCompra
             Caption         =   "Localidad:"
             Height          =   195
             Left            =   150
-            TabIndex        =   57
+            TabIndex        =   55
             Top             =   990
             Width           =   735
          End
@@ -659,7 +666,7 @@ Begin VB.Form frmOrdenesCompra
             Height          =   195
             Index           =   1
             Left            =   120
-            TabIndex        =   35
+            TabIndex        =   33
             Top             =   315
             Width           =   780
          End
@@ -668,7 +675,7 @@ Begin VB.Form frmOrdenesCompra
             Caption         =   "Domicilio:"
             Height          =   195
             Left            =   210
-            TabIndex        =   34
+            TabIndex        =   32
             Top             =   645
             Width           =   675
          End
@@ -677,7 +684,7 @@ Begin VB.Form frmOrdenesCompra
             Caption         =   "C.U.I.T.:"
             Height          =   195
             Left            =   285
-            TabIndex        =   33
+            TabIndex        =   31
             Top             =   1710
             Width           =   600
          End
@@ -686,7 +693,7 @@ Begin VB.Form frmOrdenesCompra
             Caption         =   "Ing. Brutos"
             Height          =   195
             Left            =   5760
-            TabIndex        =   32
+            TabIndex        =   30
             Top             =   1455
             Width           =   765
          End
@@ -703,8 +710,8 @@ Begin VB.Form frmOrdenesCompra
             Strikethrough   =   0   'False
          EndProperty
          Height          =   2925
-         Left            =   120
-         TabIndex        =   26
+         Left            =   -74880
+         TabIndex        =   24
          Top             =   360
          Width           =   3720
          Begin VB.TextBox txtNroNotaPedido 
@@ -754,14 +761,14 @@ Begin VB.Form frmOrdenesCompra
                ForeColor       =   &H8000000D&
                Height          =   735
                Left            =   120
-               TabIndex        =   75
+               TabIndex        =   73
                Top             =   360
                Width           =   3255
                Begin VB.ComboBox cboLPrecioC 
                   Height          =   315
                   Left            =   120
                   Style           =   2  'Dropdown List
-                  TabIndex        =   76
+                  TabIndex        =   74
                   Top             =   240
                   Width           =   2985
                End
@@ -771,14 +778,14 @@ Begin VB.Form frmOrdenesCompra
                ForeColor       =   &H8000000D&
                Height          =   735
                Left            =   -74880
-               TabIndex        =   73
+               TabIndex        =   71
                Top             =   360
                Width           =   3255
                Begin VB.ComboBox cboListaPrecio 
                   Height          =   315
                   Left            =   120
                   Style           =   2  'Dropdown List
-                  TabIndex        =   74
+                  TabIndex        =   72
                   Top             =   240
                   Width           =   2985
                End
@@ -788,14 +795,14 @@ Begin VB.Form frmOrdenesCompra
                ForeColor       =   &H8000000D&
                Height          =   735
                Left            =   -74880
-               TabIndex        =   71
+               TabIndex        =   69
                Top             =   360
                Width           =   3495
                Begin VB.ComboBox cboLPrecioRep 
                   Height          =   315
                   Left            =   120
                   Style           =   2  'Dropdown List
-                  TabIndex        =   72
+                  TabIndex        =   70
                   Top             =   240
                   Width           =   3225
                End
@@ -804,13 +811,13 @@ Begin VB.Form frmOrdenesCompra
          Begin MSComCtl2.DTPicker FechaNotaPedido 
             Height          =   375
             Left            =   1080
-            TabIndex        =   80
+            TabIndex        =   78
             Top             =   720
             Width           =   1335
             _ExtentX        =   2355
             _ExtentY        =   661
             _Version        =   393216
-            Format          =   53936129
+            Format          =   53673985
             CurrentDate     =   43367
          End
          Begin VB.Label Label5 
@@ -818,7 +825,7 @@ Begin VB.Form frmOrdenesCompra
             Caption         =   "Estado:"
             Height          =   195
             Left            =   420
-            TabIndex        =   53
+            TabIndex        =   51
             Top             =   1185
             Width           =   540
          End
@@ -837,7 +844,7 @@ Begin VB.Form frmOrdenesCompra
             ForeColor       =   &H00FF0000&
             Height          =   195
             Left            =   1020
-            TabIndex        =   52
+            TabIndex        =   50
             Top             =   1200
             Width           =   1965
          End
@@ -846,7 +853,7 @@ Begin VB.Form frmOrdenesCompra
             Caption         =   "Fecha:"
             Height          =   195
             Left            =   465
-            TabIndex        =   28
+            TabIndex        =   26
             Top             =   690
             Width           =   495
          End
@@ -855,15 +862,15 @@ Begin VB.Form frmOrdenesCompra
             Caption         =   "Número:"
             Height          =   195
             Left            =   360
-            TabIndex        =   27
+            TabIndex        =   25
             Top             =   345
             Width           =   600
          End
       End
       Begin MSFlexGridLib.MSFlexGrid GrdModulos 
          Height          =   4440
-         Left            =   -74640
-         TabIndex        =   22
+         Left            =   360
+         TabIndex        =   20
          Top             =   2520
          Width           =   10455
          _ExtentX        =   18441
@@ -879,8 +886,8 @@ Begin VB.Form frmOrdenesCompra
       End
       Begin VB.Frame Frame3 
          Height          =   3870
-         Left            =   120
-         TabIndex        =   39
+         Left            =   -74880
+         TabIndex        =   37
          Top             =   3240
          Width           =   10920
          Begin VB.CommandButton cmdBuscarProducto 
@@ -889,7 +896,7 @@ Begin VB.Form frmOrdenesCompra
             MaskColor       =   &H8000000F&
             Picture         =   "frmOrdenesCompra.frx":3B4E
             Style           =   1  'Graphical
-            TabIndex        =   42
+            TabIndex        =   40
             TabStop         =   0   'False
             ToolTipText     =   "Buscar Producto"
             Top             =   195
@@ -902,7 +909,7 @@ Begin VB.Form frmOrdenesCompra
             MaskColor       =   &H8000000F&
             Picture         =   "frmOrdenesCompra.frx":3E58
             Style           =   1  'Graphical
-            TabIndex        =   41
+            TabIndex        =   39
             TabStop         =   0   'False
             ToolTipText     =   "Agregar Producto"
             Top             =   540
@@ -915,7 +922,7 @@ Begin VB.Form frmOrdenesCompra
             MaskColor       =   &H8000000F&
             Picture         =   "frmOrdenesCompra.frx":4162
             Style           =   1  'Graphical
-            TabIndex        =   40
+            TabIndex        =   38
             TabStop         =   0   'False
             ToolTipText     =   "Eliminar Producto"
             Top             =   885
@@ -965,8 +972,8 @@ Begin VB.Form frmOrdenesCompra
       End
       Begin VB.Frame Frame1 
          Height          =   780
-         Left            =   105
-         TabIndex        =   62
+         Left            =   -74895
+         TabIndex        =   60
          Top             =   1920
          Visible         =   0   'False
          Width           =   3720
@@ -976,7 +983,7 @@ Begin VB.Form frmOrdenesCompra
             MaskColor       =   &H000000FF&
             Picture         =   "frmOrdenesCompra.frx":4EE4
             Style           =   1  'Graphical
-            TabIndex        =   69
+            TabIndex        =   67
             ToolTipText     =   "Agregar Condición de Venta"
             Top             =   0
             UseMaskColor    =   -1  'True
@@ -987,7 +994,7 @@ Begin VB.Form frmOrdenesCompra
             Height          =   315
             Left            =   2100
             Style           =   2  'Dropdown List
-            TabIndex        =   68
+            TabIndex        =   66
             Top             =   0
             Visible         =   0   'False
             Width           =   825
@@ -997,7 +1004,7 @@ Begin VB.Form frmOrdenesCompra
             Caption         =   "NP Detallada"
             Height          =   195
             Left            =   0
-            TabIndex        =   67
+            TabIndex        =   65
             Top             =   60
             Visible         =   0   'False
             Width           =   1260
@@ -1007,7 +1014,7 @@ Begin VB.Form frmOrdenesCompra
             Caption         =   "Condición:"
             Height          =   195
             Left            =   1320
-            TabIndex        =   70
+            TabIndex        =   68
             Top             =   45
             Visible         =   0   'False
             Width           =   810
@@ -1019,7 +1026,7 @@ Begin VB.Form frmOrdenesCompra
          Height          =   195
          Index           =   0
          Left            =   -74820
-         TabIndex        =   25
+         TabIndex        =   23
          Top             =   570
          Width           =   1065
       End
@@ -1039,7 +1046,7 @@ Begin VB.Form frmOrdenesCompra
       Height          =   240
       Index           =   1
       Left            =   2040
-      TabIndex        =   60
+      TabIndex        =   58
       Top             =   7440
       Width           =   3195
    End
@@ -1058,7 +1065,7 @@ Begin VB.Form frmOrdenesCompra
       EndProperty
       Height          =   240
       Left            =   210
-      TabIndex        =   51
+      TabIndex        =   49
       Top             =   7440
       Width           =   750
    End
@@ -1102,8 +1109,8 @@ Private Sub chkFecha_Click()
         FechaDesde.Enabled = True
         FechaHasta.Enabled = True
     Else
-        FechaDesde.Value = ""
-        FechaHasta.Value = ""
+        FechaDesde.Value = Date
+        FechaHasta.Value = Date
         FechaDesde.Enabled = False
         FechaHasta.Enabled = False
     End If
@@ -1155,7 +1162,7 @@ Private Sub CmdBorrar_Click()
                 End If
            End If
            rec.Close
-            lblEstado.Caption = "Eliminando..."
+            lblestado.Caption = "Eliminando..."
             Screen.MousePointer = vbHourglass
             
             sql = "DELETE FROM DETALLE_ORDEN_COMPRA"
@@ -1168,7 +1175,7 @@ Private Sub CmdBorrar_Click()
             sql = sql & " AND OC_FECHA=" & XDQ(FechaNotaPedido)
             DBConn.Execute sql
             
-            lblEstado.Caption = ""
+            lblestado.Caption = ""
             Screen.MousePointer = vbNormal
             CmdNuevo_Click
         End If
@@ -1178,13 +1185,13 @@ Private Sub CmdBorrar_Click()
 Seclavose:
     DBConn.RollbackTrans
     Screen.MousePointer = vbNormal
-    lblEstado.Caption = ""
+    lblestado.Caption = ""
     MsgBox Err.Description, vbCritical, TIT_MSGBOX
 End Sub
 
 Private Sub CmdBuscAprox_Click()
     GrdModulos.Rows = 1
-    lblEstado.Caption = "Buscando..."
+    lblestado.Caption = "Buscando..."
     Screen.MousePointer = vbHourglass
     
     sql = "SELECT NP.*, C.PROV_RAZSOC,C.PROV_DOMICI,L.LOC_DESCRI"
@@ -1213,11 +1220,11 @@ Private Sub CmdBuscAprox_Click()
         Loop
         GrdModulos.SetFocus
     Else
-        lblEstado.Caption = ""
+        lblestado.Caption = ""
         Screen.MousePointer = vbNormal
         MsgBox "No se encontraron datos...", vbExclamation, TIT_MSGBOX
     End If
-    lblEstado.Caption = ""
+    lblestado.Caption = ""
     Screen.MousePointer = vbNormal
     rec.Close
 End Sub
@@ -1299,7 +1306,7 @@ Private Sub cmdBuscarVendedor_Click()
     End If
 End Sub
 
-Private Sub cmdGrabar_Click()
+Private Sub CmdGrabar_Click()
     If ValidarNotaPedido = False Then Exit Sub
     If MsgBox("¿Confirma Orden de Compra?", vbQuestion + vbYesNo, TIT_MSGBOX) = vbNo Then Exit Sub
     On Error GoTo HayErrorNota
@@ -1311,7 +1318,7 @@ Private Sub cmdGrabar_Click()
     rec.Open sql, DBConn, adOpenStatic, adLockOptimistic
     
     Screen.MousePointer = vbHourglass
-    lblEstado.Caption = "Guardando..."
+    lblestado.Caption = "Guardando..."
     
     If rec.EOF = False Then
         If MsgBox("Seguro que modificar la Nota de Pedido Nro.: " & Trim(txtNroNotaPedido), vbQuestion + vbYesNo, TIT_MSGBOX) = vbYes Then
@@ -1387,13 +1394,13 @@ Private Sub cmdGrabar_Click()
     End If
     rec.Close
     Screen.MousePointer = vbNormal
-    lblEstado.Caption = ""
+    lblestado.Caption = ""
     cmdImprimir_Click
     CmdNuevo_Click
     Exit Sub
     
 HayErrorNota:
-    lblEstado.Caption = ""
+    lblestado.Caption = ""
     Screen.MousePointer = vbNormal
     DBConn.RollbackTrans
     MsgBox Err.Description, vbCritical, TIT_MSGBOX
@@ -1406,7 +1413,7 @@ Private Function ValidarNotaPedido() As Boolean
         ValidarNotaPedido = False
         Exit Function
     End If
-    If FechaNotaPedido.Value = "" Then
+    If FechaNotaPedido.Value = Date Then
         MsgBox "La Fecha de la Orden de Compra es requerida", vbExclamation, TIT_MSGBOX
         FechaNotaPedido.SetFocus
         ValidarNotaPedido = False
@@ -1468,7 +1475,7 @@ Public Sub ImprimirOC()
     Dim canttxt As Integer
     Dim w As Integer
     Screen.MousePointer = vbHourglass
-    lblEstado.Caption = "Imprimiendo..."
+    lblestado.Caption = "Imprimiendo..."
     
     For w = 1 To 1 'SE IMPRIME POR una sola
       '-----IMPRESION DEL ENCABEZADO------------------
@@ -1501,7 +1508,7 @@ Public Sub ImprimirOC()
         Printer.EndDoc
     Next w
     Screen.MousePointer = vbNormal
-    lblEstado.Caption = ""
+    lblestado.Caption = ""
 End Sub
 Private Function FechaLarga(Fecha As String) As String
 Dim DIA As Integer
@@ -1577,14 +1584,14 @@ Private Sub CmdNuevo_Click()
    txtRazSocCli.Text = ""
    txtNombreVendedor.Text = ""
    txtNroVendedor.Text = ""
-   FechaNotaPedido.Value = ""
+   FechaNotaPedido.Value = Date
    txtNroNotaPedido.Text = ""
    lblEstadoNota.Caption = ""
-   lblEstado.Caption = ""
+   lblestado.Caption = ""
    tabDatos.Tab = 0
    Call BuscoEstado(1, lblEstadoNota)
    cmdGrabar.Enabled = True
-   cmdBorrar.Enabled = True
+   CmdBorrar.Enabled = True
    txtNroNotaPedido.Text = BuscoUltimoRenito
    If txtNroNotaPedido.Text = "" Then
         txtNroNotaPedido.Text = "00000001"
@@ -1626,7 +1633,7 @@ Private Sub cmdQuitarProducto_Click()
     End If
 End Sub
 
-Private Sub CmdSalir_Click()
+Private Sub cmdSalir_Click()
     If MsgBox("Seguro que desea Salir", vbQuestion + vbYesNo, TIT_MSGBOX) = vbYes Then
         Set frmOrdenesCompra = Nothing
         Unload Me
@@ -1634,7 +1641,7 @@ Private Sub CmdSalir_Click()
 End Sub
 
 Private Sub FechaNotaPedido_LostFocus()
-    If FechaNotaPedido.Value = "" Then
+    If FechaNotaPedido.Value = Date Then
         FechaNotaPedido.Value = Date
         'If txtNroNotaPedido.Text = "" Then txtNroNotaPedido.SetFocus
     End If
@@ -1651,7 +1658,7 @@ Private Sub Form_KeyPress(KeyAscii As Integer)
         KeyAscii = vbKeyReturn Then
         SendKeys "{TAB}"
     End If
-    If KeyAscii = vbKeyEscape Then CmdSalir_Click
+    If KeyAscii = vbKeyEscape Then cmdSalir_Click
 End Sub
 Private Function BuscoUltimoRenito() As String
     'ACA BUSCA EL NUMERO DE ORDEN DE COMPRA SIGUIENTE AL ULTIMO CARGADO
@@ -1729,7 +1736,7 @@ Private Sub Form_Load()
     cboCondicion.ListIndex = -1
     cboCondicion.Enabled = False
     cmdNuevoRubro.Enabled = False
-    lblEstado.Caption = ""
+    lblestado.Caption = ""
     Call BuscoEstado(1, lblEstadoNota)
     tabDatos.Tab = 0
     tabLista.Tab = 1
@@ -1876,7 +1883,7 @@ Private Sub tabDatos_Click(PreviousTab As Integer)
     FechaHasta.Enabled = False
     txtVendedor.Enabled = False
     cmdGrabar.Enabled = False
-    cmdBorrar.Enabled = False
+    CmdBorrar.Enabled = False
     cmdBuscarCli.Enabled = False
     cmdBuscarVen.Enabled = False
     LimpiarBusqueda
@@ -1884,15 +1891,15 @@ Private Sub tabDatos_Click(PreviousTab As Integer)
   Else
     'If Me.Visible = True Then txtNroNotaPedido.SetFocus
     cmdGrabar.Enabled = True
-    cmdBorrar.Enabled = True
+    CmdBorrar.Enabled = True
   End If
 End Sub
 
 Private Sub LimpiarBusqueda()
     txtCliente.Text = ""
     txtDesCli.Text = ""
-    FechaDesde.Value = ""
-    FechaHasta.Value = ""
+    FechaDesde.Value = Date
+    FechaHasta.Value = Date
     txtVendedor.Text = ""
     txtDesVen.Text = ""
     GrdModulos.Rows = 1
@@ -1945,7 +1952,7 @@ Private Sub TxtCodigoCli_Change()
         txtCondicionIVA.Text = ""
         txtDomici.Text = ""
         txtlocalidad.Text = ""
-        txtProvincia.Text = ""
+        txtprovincia.Text = ""
         txtcodpos.Text = ""
     End If
 End Sub
@@ -1988,7 +1995,7 @@ Private Sub TxtCodigoCli_LostFocus()
             txtRazSocCli.Text = rec!PROV_RAZSOC
             txtDomici.Text = rec!PROV_DOMICI
             txtlocalidad.Text = rec!LOC_DESCRI
-            txtProvincia.Text = rec!PRO_DESCRI
+            txtprovincia.Text = rec!PRO_DESCRI
             txtCondicionIVA.Text = BuscoCondicionIVA(rec!IVA_CODIGO)
             txtCUIT.Text = IIf(IsNull(rec!PROV_CUIT), "NO INFORMADO", Format(rec!PROV_CUIT, "##-########-#"))
             txtIngBrutos.Text = IIf(IsNull(rec!PROV_INGBRU), "NO INFORMADO", Format(rec!PROV_INGBRU, "###-#####-##"))
@@ -2212,12 +2219,12 @@ End Function
 
 Private Sub txtNroNotaPedido_Change()
     If txtNroNotaPedido.Text = "" Then
-        FechaNotaPedido.Value = ""
+        FechaNotaPedido.Value = Date
     End If
 End Sub
 
 Private Sub txtNroNotaPedido_GotFocus()
-     FechaNotaPedido.Value = ""
+     FechaNotaPedido.Value = Date
 End Sub
 
 Private Sub txtNroNotaPedido_KeyPress(KeyAscii As Integer)
@@ -2248,7 +2255,7 @@ Set Rec1 = New ADODB.Recordset
                 Exit Sub
             End If
             Screen.MousePointer = vbHourglass
-            lblEstado.Caption = "Buscando..."
+            lblestado.Caption = "Buscando..."
             
             'CARGO CABECERA DE LA NOTA DE PEDIDO
             FechaNotaPedido.Value = Rec2!OC_FECHA
@@ -2278,7 +2285,7 @@ Set Rec1 = New ADODB.Recordset
                 'cmdImprimir.Enabled = False
             Else
                 cmdGrabar.Enabled = True
-                cmdBorrar.Enabled = True
+                CmdBorrar.Enabled = True
                 FramePedido.Enabled = True
                 fraDatos.Enabled = True
             End If
@@ -2329,7 +2336,7 @@ Set Rec1 = New ADODB.Recordset
             End If
             Rec1.Close
             Screen.MousePointer = vbNormal
-            lblEstado.Caption = ""
+            lblestado.Caption = ""
         Else
             Call BuscoEstado(1, lblEstadoNota)
         End If

@@ -1,6 +1,6 @@
 VERSION 5.00
-Object = "{5E9E78A0-531B-11CF-91F6-C2863C385E30}#1.0#0"; "MSFLXGRD.OCX"
-Object = "{5F09B5DF-6F4D-11D2-8355-4854E82A9183}#15.0#0"; "FECHA32.OCX"
+Object = "{5E9E78A0-531B-11CF-91F6-C2863C385E30}#1.0#0"; "msflxgrd.ocx"
+Object = "{86CF1D34-0C5F-11D2-A9FC-0000F8754DA1}#2.0#0"; "mscomct2.ocx"
 Begin VB.Form ConsultaCheque 
    BorderStyle     =   3  'Fixed Dialog
    Caption         =   "Consulta Cheque"
@@ -16,31 +16,23 @@ Begin VB.Form ConsultaCheque
    ScaleHeight     =   5685
    ScaleWidth      =   8820
    ShowInTaskbar   =   0   'False
-   Begin VB.CommandButton cmbSalirConsContra 
-      Caption         =   "&Salir"
-      Height          =   375
-      Left            =   7170
-      TabIndex        =   12
-      Top             =   5175
-      Width           =   1455
-   End
    Begin VB.Frame Frame1 
       Height          =   1215
       Left            =   150
-      TabIndex        =   9
+      TabIndex        =   8
       Top             =   90
       Width           =   8490
-      Begin FechaCtl.Fecha FechaBusq 
+      Begin MSComCtl2.DTPicker FechaBusq 
          Height          =   315
-         Left            =   3030
-         TabIndex        =   3
-         Top             =   750
-         Width           =   1155
-         _ExtentX        =   2037
+         Left            =   3000
+         TabIndex        =   13
+         Top             =   720
+         Width           =   1335
+         _ExtentX        =   2355
          _ExtentY        =   556
-         Separador       =   "/"
-         Text            =   ""
-         MensajeErrMin   =   "La fecha ingresada no alcanza el mínimo permitido"
+         _Version        =   393216
+         Format          =   53739521
+         CurrentDate     =   43371
       End
       Begin VB.ComboBox cboOrden 
          Height          =   315
@@ -56,7 +48,7 @@ Begin VB.Form ConsultaCheque
          Caption         =   "&Buscar"
          Height          =   315
          Left            =   6450
-         TabIndex        =   4
+         TabIndex        =   3
          Top             =   765
          Width           =   1110
       End
@@ -82,7 +74,7 @@ Begin VB.Form ConsultaCheque
          Caption         =   "Ordenado por:"
          Height          =   255
          Left            =   4545
-         TabIndex        =   13
+         TabIndex        =   12
          Top             =   330
          Width           =   1065
       End
@@ -90,7 +82,7 @@ Begin VB.Form ConsultaCheque
          Caption         =   "Búsqueda por:"
          Height          =   255
          Left            =   495
-         TabIndex        =   11
+         TabIndex        =   10
          Top             =   330
          Width           =   1065
       End
@@ -101,23 +93,31 @@ Begin VB.Form ConsultaCheque
          Caption         =   "Ingrese la condición de Búsqueda:"
          Height          =   225
          Left            =   510
-         TabIndex        =   10
+         TabIndex        =   9
          Top             =   780
          Width           =   2460
       End
+   End
+   Begin VB.CommandButton cmbSalirConsContra 
+      Caption         =   "&Salir"
+      Height          =   375
+      Left            =   7170
+      TabIndex        =   11
+      Top             =   5175
+      Width           =   1455
    End
    Begin VB.CommandButton cmdAceptar 
       Caption         =   "&Aceptar"
       Height          =   375
       Left            =   5595
-      TabIndex        =   6
+      TabIndex        =   5
       Top             =   5175
       Width           =   1455
    End
    Begin MSFlexGridLib.MSFlexGrid GrdCheques 
       Height          =   3645
       Left            =   150
-      TabIndex        =   5
+      TabIndex        =   4
       Top             =   1425
       Width           =   8490
       _ExtentX        =   14975
@@ -133,7 +133,7 @@ Begin VB.Form ConsultaCheque
       Height          =   285
       Left            =   195
       Locked          =   -1  'True
-      TabIndex        =   7
+      TabIndex        =   6
       Top             =   4680
       Width           =   8430
    End
@@ -145,7 +145,7 @@ Begin VB.Form ConsultaCheque
       ForeColor       =   &H80000008&
       Height          =   255
       Left            =   330
-      TabIndex        =   8
+      TabIndex        =   7
       Top             =   4410
       Width           =   1935
    End
@@ -159,9 +159,9 @@ Option Explicit
 Dim CerrarSnapConsulta As Boolean
 Dim snpConsulta As Recordset
 Dim ventana As Form
-Dim CrtlCodigo As CONTROL
+Dim CrtlCodigo As Control
 
-Public Function Parametros(auxVentana As Form, auxCrtlCodigo As CONTROL)
+Public Function Parametros(auxVentana As Form, auxCrtlCodigo As Control)
     Set ventana = auxVentana 'Objeto ventana que llama a la ayuda
     Set CrtlCodigo = auxCrtlCodigo 'Objeto Control del form ventana al que se asigna el codigo
 End Function
@@ -197,8 +197,8 @@ Private Sub CmdAceptar_Click()
 End Sub
 
 Private Sub cmdBuscar_Click()
-    Dim Rec As ADODB.Recordset
-    Set Rec = New ADODB.Recordset
+    Dim rec As ADODB.Recordset
+    Set rec = New ADODB.Recordset
     
     Screen.MousePointer = 11
     
@@ -222,7 +222,7 @@ Private Sub cmdBuscar_Click()
               sql = sql & " WHERE c.ban_codint = b.ban_codint and c.ech_codigo = 1 And "
               sql = sql & " c.che_fecvto <= " & XDQ(Date)
               If Trim(txtCond_Busqueda.Text) <> "" Then
-                sql = sql & " and c.che_fecvto = " & XDQ(Me.FechaBusq.Text)
+                sql = sql & " and c.che_fecvto = " & XDQ(Me.FechaBusq.Value)
               End If
     End Select
     
@@ -233,23 +233,23 @@ Private Sub cmdBuscar_Click()
             sql = sql & " ORDER BY c.che_fecvto"
     End Select
     
-    Rec.Open sql, DBConn, adOpenStatic, adLockOptimistic
-    If Rec.RecordCount > 0 Then
+    rec.Open sql, DBConn, adOpenStatic, adLockOptimistic
+    If rec.RecordCount > 0 Then
         GrdCheques.Rows = 1
-        Rec.MoveFirst
-        Do While Not Rec.EOF()
+        rec.MoveFirst
+        Do While Not rec.EOF()
         
-           GrdCheques.AddItem Trim(Rec.Fields(0)) & Chr(9) & _
-                              Format(Rec.Fields(1), "$ #0.00") & Chr(9) & _
-                              Trim(Rec.Fields(2)) & Chr(9) & _
-                              Trim(Rec.Fields(3)) & Chr(9) & _
-                              Trim(Rec.Fields(4)) & Chr(9) & _
-                              Trim(Rec.Fields(5)) & Chr(9) & _
-                              Trim(Rec.Fields(6)) & Chr(9) & _
-                              Trim(Rec.Fields(7)) & Chr(9) & _
-                              Trim(Rec.Fields(8)) & Chr(9) & _
-                              Trim(Rec.Fields(9))
-            Rec.MoveNext
+           GrdCheques.AddItem Trim(rec.Fields(0)) & Chr(9) & _
+                              Format(rec.Fields(1), "$ #0.00") & Chr(9) & _
+                              Trim(rec.Fields(2)) & Chr(9) & _
+                              Trim(rec.Fields(3)) & Chr(9) & _
+                              Trim(rec.Fields(4)) & Chr(9) & _
+                              Trim(rec.Fields(5)) & Chr(9) & _
+                              Trim(rec.Fields(6)) & Chr(9) & _
+                              Trim(rec.Fields(7)) & Chr(9) & _
+                              Trim(rec.Fields(8)) & Chr(9) & _
+                              Trim(rec.Fields(9))
+            rec.MoveNext
         Loop
         If Me.GrdCheques.Enabled Then
            Me.GrdCheques.row = 1
@@ -260,7 +260,7 @@ Private Sub cmdBuscar_Click()
         MsgBox "No se encontraron registros.", 16, TIT_MSGBOX
         txtDes_Cons.Text = ""
     End If
-    Rec.Close
+    rec.Close
     Screen.MousePointer = 1
     
 End Sub

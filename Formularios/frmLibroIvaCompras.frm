@@ -2,6 +2,7 @@ VERSION 5.00
 Object = "{6B7E6392-850A-101B-AFC0-4210102A8DA7}#1.4#0"; "comctl32.ocx"
 Object = "{F9043C88-F6F2-101A-A3C9-08002B2F49FB}#1.2#0"; "comdlg32.ocx"
 Object = "{86CF1D34-0C5F-11D2-A9FC-0000F8754DA1}#2.0#0"; "mscomct2.ocx"
+Object = "{00025600-0000-0000-C000-000000000046}#5.2#0"; "Crystl32.OCX"
 Begin VB.Form frmLibroIvaCompras 
    BorderStyle     =   1  'Fixed Single
    Caption         =   "Libro IVA Compras"
@@ -16,6 +17,14 @@ Begin VB.Form frmLibroIvaCompras
    MinButton       =   0   'False
    ScaleHeight     =   3210
    ScaleWidth      =   5685
+   Begin Crystal.CrystalReport Rep 
+      Left            =   1080
+      Top             =   2640
+      _ExtentX        =   741
+      _ExtentY        =   741
+      _Version        =   348160
+      PrintFileLinesPerPage=   60
+   End
    Begin VB.CommandButton cmdNuevo 
       Caption         =   "&Nuevo"
       DisabledPicture =   "frmLibroIvaCompras.frx":0000
@@ -99,25 +108,25 @@ Begin VB.Form frmLibroIvaCompras
       Begin MSComCtl2.DTPicker FechaDesde 
          Height          =   375
          Left            =   1320
-         TabIndex        =   17
+         TabIndex        =   16
          Top             =   240
          Width           =   1335
          _ExtentX        =   2355
          _ExtentY        =   661
          _Version        =   393216
-         Format          =   54067201
+         Format          =   53936129
          CurrentDate     =   43367
       End
       Begin MSComCtl2.DTPicker FechaHasta 
          Height          =   375
          Left            =   1320
-         TabIndex        =   18
+         TabIndex        =   17
          Top             =   600
          Width           =   1335
          _ExtentX        =   2355
          _ExtentY        =   661
          _Version        =   393216
-         Format          =   54067201
+         Format          =   53936129
          CurrentDate     =   43367
       End
       Begin VB.Label lblPor 
@@ -202,15 +211,6 @@ Begin VB.Form frmLibroIvaCompras
       Top             =   2445
       Width           =   840
    End
-   Begin VB.PictureBox Rep 
-      Height          =   480
-      Left            =   1605
-      ScaleHeight     =   420
-      ScaleWidth      =   1140
-      TabIndex        =   16
-      Top             =   2625
-      Width           =   1200
-   End
    Begin MSComDlg.CommonDialog CDImpresora 
       Left            =   2145
       Top             =   2595
@@ -258,12 +258,12 @@ Private Sub CmdAceptar_Click()
      Tamanio = 0
      TotIva = 0
      
-     If FechaDesde.Value = "" Then
+     If FechaDesde.Value = Date Then
         MsgBox "Debe ingresar el periodo", vbExclamation, TIT_MSGBOX
         FechaDesde.SetFocus
         Exit Sub
      End If
-     If FechaHasta.Value = "" Then
+     If FechaHasta.Value = Date Then
         MsgBox "Debe ingresar el periodo", vbExclamation, TIT_MSGBOX
         FechaHasta.SetFocus
         Exit Sub
@@ -272,7 +272,7 @@ Private Sub CmdAceptar_Click()
      On Error GoTo CLAVO
      Screen.MousePointer = vbHourglass
      DBConn.BeginTrans
-     lblEstado.Caption = "Buscando Datos..."
+     lblestado.Caption = "Buscando Datos..."
      
         'BORRO LA TABLA TMP_LIBRO_IVA_COMPRAS
         sql = "DELETE FROM TMP_LIBRO_IVA_COMPRAS"
@@ -485,7 +485,7 @@ Private Sub CmdAceptar_Click()
         End If
         rec.Close
         
-    lblEstado.Caption = ""
+    lblestado.Caption = ""
     DBConn.CommitTrans
     'cargo el reporte
     ListarLibroIVA
@@ -496,14 +496,14 @@ Private Sub CmdAceptar_Click()
 
 CLAVO:
  Screen.MousePointer = vbNormal
- lblEstado.Caption = ""
+ lblestado.Caption = ""
  DBConn.RollbackTrans
  If rec.State = 1 Then rec.Close
  MsgBox Err.Description, vbCritical, TIT_MSGBOX
 End Sub
 
 Private Sub ListarLibroIVA()
-    lblEstado.Caption = "Buscando Listado..."
+    lblestado.Caption = "Buscando Listado..."
     Rep.WindowState = crptNormal
     Rep.WindowBorderStyle = crptNoBorder
     Rep.Connect = "Provider=MSDASQL.1;Persist Security Info=False;Data Source=SIELECTROCENTRO"
@@ -531,21 +531,21 @@ Private Sub ListarLibroIVA()
     End If
      Rep.Action = 1
      
-     lblEstado.Caption = ""
+     lblestado.Caption = ""
      Rep.Formulas(0) = ""
      Rep.Formulas(1) = ""
      Rep.Formulas(2) = ""
 End Sub
 
 Private Sub CmdNuevo_Click()
-    FechaDesde.Value = ""
+    FechaDesde.Value = Date
     lblPeriodo1.Caption = ""
-    FechaHasta.Value = ""
+    FechaHasta.Value = Date
     lblPeriodo2.Caption = ""
     FechaDesde.SetFocus
 End Sub
 
-Private Sub CmdSalir_Click()
+Private Sub cmdSalir_Click()
     Set frmLibroIvaCompras = Nothing
     Unload Me
 End Sub
@@ -555,7 +555,7 @@ Private Sub Form_KeyPress(KeyAscii As Integer)
 End Sub
 
 Private Sub Form_Load()
-    lblEstado.Caption = ""
+    lblestado.Caption = ""
     lblPor.Caption = "100 %"
     Set rec = New ADODB.Recordset
     FrameImpresora.Caption = "Impresora Actual: " & Printer.DeviceName
@@ -578,6 +578,3 @@ Private Sub FechaHasta_LostFocus()
     End If
 End Sub
 
-Private Sub lblPeriodo2_Click()
-
-End Sub

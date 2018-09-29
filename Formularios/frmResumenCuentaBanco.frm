@@ -1,6 +1,8 @@
 VERSION 5.00
 Object = "{F9043C88-F6F2-101A-A3C9-08002B2F49FB}#1.2#0"; "comdlg32.ocx"
 Object = "{5E9E78A0-531B-11CF-91F6-C2863C385E30}#1.0#0"; "msflxgrd.ocx"
+Object = "{86CF1D34-0C5F-11D2-A9FC-0000F8754DA1}#2.0#0"; "mscomct2.ocx"
+Object = "{00025600-0000-0000-C000-000000000046}#5.2#0"; "Crystl32.OCX"
 Begin VB.Form frmResumenCuentaBanco 
    BorderStyle     =   3  'Fixed Dialog
    Caption         =   "Resumen de Cuenta - Banco"
@@ -16,10 +18,18 @@ Begin VB.Form frmResumenCuentaBanco
    ScaleWidth      =   9015
    ShowInTaskbar   =   0   'False
    StartUpPosition =   3  'Windows Default
+   Begin Crystal.CrystalReport Rep 
+      Left            =   4560
+      Top             =   4680
+      _ExtentX        =   741
+      _ExtentY        =   741
+      _Version        =   348160
+      PrintFileLinesPerPage=   60
+   End
    Begin MSFlexGridLib.MSFlexGrid grdResumenCuenta 
       Height          =   2985
       Left            =   75
-      TabIndex        =   4
+      TabIndex        =   3
       Top             =   1260
       Width           =   8805
       _ExtentX        =   15531
@@ -34,7 +44,7 @@ Begin VB.Form frmResumenCuentaBanco
    Begin VB.Frame Frame1 
       Height          =   1155
       Left            =   75
-      TabIndex        =   13
+      TabIndex        =   12
       Top             =   15
       Width           =   8760
       Begin VB.CommandButton cmdVerResumen 
@@ -50,7 +60,7 @@ Begin VB.Form frmResumenCuentaBanco
          EndProperty
          Height          =   315
          Left            =   6345
-         TabIndex        =   3
+         TabIndex        =   2
          Top             =   675
          Width           =   1485
       End
@@ -76,18 +86,21 @@ Begin VB.Form frmResumenCuentaBanco
          Enabled         =   0   'False
          Height          =   300
          Left            =   4860
-         TabIndex        =   14
+         TabIndex        =   13
          Top             =   270
          Width           =   465
       End
-      Begin VB.PictureBox Fecha 
-         Height          =   300
-         Left            =   735
-         ScaleHeight     =   240
-         ScaleWidth      =   1095
-         TabIndex        =   2
-         Top             =   675
-         Width           =   1155
+      Begin MSComCtl2.DTPicker Fecha 
+         Height          =   315
+         Left            =   720
+         TabIndex        =   21
+         Top             =   630
+         Width           =   1335
+         _ExtentX        =   2355
+         _ExtentY        =   556
+         _Version        =   393216
+         Format          =   53542913
+         CurrentDate     =   43367
       End
       Begin VB.Label Label1 
          AutoSize        =   -1  'True
@@ -95,7 +108,7 @@ Begin VB.Form frmResumenCuentaBanco
          Height          =   195
          Index           =   0
          Left            =   90
-         TabIndex        =   20
+         TabIndex        =   19
          Top             =   690
          Width           =   585
       End
@@ -111,9 +124,9 @@ Begin VB.Form frmResumenCuentaBanco
             Strikethrough   =   0   'False
          EndProperty
          Height          =   285
-         Left            =   1890
-         TabIndex        =   19
-         Top             =   675
+         Left            =   2130
+         TabIndex        =   18
+         Top             =   645
          Width           =   1785
       End
       Begin VB.Label Label1 
@@ -122,7 +135,7 @@ Begin VB.Form frmResumenCuentaBanco
          Height          =   195
          Index           =   6
          Left            =   5670
-         TabIndex        =   17
+         TabIndex        =   16
          Top             =   300
          Width           =   555
       End
@@ -132,7 +145,7 @@ Begin VB.Form frmResumenCuentaBanco
          Height          =   195
          Index           =   5
          Left            =   165
-         TabIndex        =   16
+         TabIndex        =   15
          Top             =   330
          Width           =   510
       End
@@ -142,7 +155,7 @@ Begin VB.Form frmResumenCuentaBanco
          Height          =   195
          Index           =   7
          Left            =   4185
-         TabIndex        =   15
+         TabIndex        =   14
          Top             =   285
          Width           =   540
       End
@@ -153,7 +166,7 @@ Begin VB.Form frmResumenCuentaBanco
       Left            =   7095
       Picture         =   "frmResumenCuentaBanco.frx":0004
       Style           =   1  'Graphical
-      TabIndex        =   8
+      TabIndex        =   7
       Top             =   4980
       Width           =   870
    End
@@ -163,7 +176,7 @@ Begin VB.Form frmResumenCuentaBanco
       Left            =   7980
       Picture         =   "frmResumenCuentaBanco.frx":030E
       Style           =   1  'Graphical
-      TabIndex        =   9
+      TabIndex        =   8
       Top             =   4980
       Width           =   870
    End
@@ -173,7 +186,7 @@ Begin VB.Form frmResumenCuentaBanco
       Left            =   6225
       Picture         =   "frmResumenCuentaBanco.frx":0618
       Style           =   1  'Graphical
-      TabIndex        =   7
+      TabIndex        =   6
       Top             =   4980
       Width           =   855
    End
@@ -190,14 +203,14 @@ Begin VB.Form frmResumenCuentaBanco
       EndProperty
       Height          =   1020
       Left            =   75
-      TabIndex        =   10
+      TabIndex        =   9
       Top             =   4665
       Width           =   3270
       Begin VB.OptionButton optImpresora 
          Caption         =   "Impresora"
          Height          =   195
          Left            =   2085
-         TabIndex        =   6
+         TabIndex        =   5
          Top             =   315
          Width           =   1005
       End
@@ -205,7 +218,7 @@ Begin VB.Form frmResumenCuentaBanco
          Caption         =   "Pantalla"
          Height          =   195
          Left            =   1035
-         TabIndex        =   5
+         TabIndex        =   4
          Top             =   315
          Value           =   -1  'True
          Width           =   885
@@ -215,7 +228,7 @@ Begin VB.Form frmResumenCuentaBanco
          Height          =   345
          Left            =   195
          Style           =   1  'Graphical
-         TabIndex        =   11
+         TabIndex        =   10
          Top             =   600
          Width           =   1590
       End
@@ -224,19 +237,10 @@ Begin VB.Form frmResumenCuentaBanco
          Caption         =   "Destino:"
          Height          =   195
          Left            =   225
-         TabIndex        =   12
+         TabIndex        =   11
          Top             =   300
          Width           =   585
       End
-   End
-   Begin VB.PictureBox Rep 
-      Height          =   480
-      Left            =   5550
-      ScaleHeight     =   420
-      ScaleWidth      =   1140
-      TabIndex        =   22
-      Top             =   5250
-      Width           =   1200
    End
    Begin MSComDlg.CommonDialog CDImpresora 
       Left            =   5055
@@ -261,7 +265,7 @@ Begin VB.Form frmResumenCuentaBanco
       ForeColor       =   &H000000FF&
       Height          =   300
       Left            =   7890
-      TabIndex        =   21
+      TabIndex        =   20
       Top             =   4260
       Width           =   705
    End
@@ -280,7 +284,7 @@ Begin VB.Form frmResumenCuentaBanco
       EndProperty
       Height          =   240
       Left            =   3420
-      TabIndex        =   18
+      TabIndex        =   17
       Top             =   5130
       Width           =   750
    End
@@ -326,7 +330,7 @@ Private Sub cmdListar_Click()
     Rep.Connect = "Provider=MSDASQL.1;Persist Security Info=False;Data Source=SIELECTROCENTRO"
     Rep.Formulas(0) = ""
     
-    lblEstado.Caption = "Buscando Listado..."
+    lblestado.Caption = "Buscando Listado..."
     
     Rep.Formulas(0) = "SALDO='" & lblSaldoActual.Caption & "'"
         
@@ -340,7 +344,7 @@ Private Sub cmdListar_Click()
     End If
      Rep.Action = 1
      Rep.Formulas(0) = ""
-     lblEstado.Caption = ""
+     lblestado.Caption = ""
 End Sub
 
 Private Sub CmdNuevo_Click()
@@ -354,7 +358,7 @@ Private Sub CmdNuevo_Click()
     CboBancoBoleta.SetFocus
 End Sub
 
-Private Sub CmdSalir_Click()
+Private Sub cmdSalir_Click()
     Set frmResumenCuentaBanco = Nothing
     Unload Me
 End Sub
@@ -367,7 +371,7 @@ Private Sub cmdVerResumen_Click()
     FechaUltimoSaldo = ""
     Saldo = 0
     grdResumenCuenta.Rows = 1
-    lblEstado.Caption = "Buscando Movimientos..."
+    lblestado.Caption = "Buscando Movimientos..."
     'BORRO LA TEMPORAL
     sql = "DELETE FROM TMP_RESUMEN_CUENTA_BANCO"
     DBConn.Execute sql
@@ -575,7 +579,7 @@ Private Sub cmdVerResumen_Click()
     End If
     rec.Close
     lblSaldoActual.Caption = "Saldo Actual: " & Valido_Importe(CStr(Saldo))
-    lblEstado.Caption = ""
+    lblestado.Caption = ""
 End Sub
 
 Private Sub Fecha_Change()
@@ -588,7 +592,7 @@ End Sub
 
 Private Sub Form_KeyPress(KeyAscii As Integer)
     If KeyAscii = vbKeyReturn Then SendKeys "{TAB}"
-    If KeyAscii = vbKeyEscape Then CmdSalir_Click
+    If KeyAscii = vbKeyEscape Then cmdSalir_Click
 End Sub
 
 Private Sub Form_Load()
@@ -597,7 +601,7 @@ Private Sub Form_Load()
     'CARGO COMBO BANCO
     CargoBanco
     FrameImpresora.Caption = "Impresora Actual: " & Printer.DeviceName
-    lblEstado.Caption = ""
+    lblestado.Caption = ""
     'CONFIGURO GRILLA
     grdResumenCuenta.FormatString = "^Fecha|Descripción|^Comprob|>Débito|>Crédito|>Saldo"
     grdResumenCuenta.ColWidth(0) = 1100 'FECHA

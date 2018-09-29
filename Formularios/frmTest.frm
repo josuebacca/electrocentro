@@ -1,6 +1,6 @@
 VERSION 5.00
-Object = "{F9043C88-F6F2-101A-A3C9-08002B2F49FB}#1.2#0"; "Comdlg32.ocx"
-Object = "{831FDD16-0C5C-11D2-A9FC-0000F8754DA1}#2.0#0"; "MSCOMCTL.OCX"
+Object = "{F9043C88-F6F2-101A-A3C9-08002B2F49FB}#1.2#0"; "comdlg32.ocx"
+Object = "{831FDD16-0C5C-11D2-A9FC-0000F8754DA1}#2.1#0"; "mscomctl.ocx"
 Begin VB.Form frmTest 
    BorderStyle     =   1  'Fixed Single
    Caption         =   "Importar Lista de Precios"
@@ -237,45 +237,45 @@ Private Sub CmdNuevo_Click()
     
 End Sub
 
-Private Sub cmdReadXLS_Click()
-      Dim obj As Read_Files.CReadFile
-      Set obj = New Read_Files.CReadFile
-      Dim I As Integer
-      Dim sql As String
-      Dim rec As New ADODB.Recordset
-      Dim Rec1 As New ADODB.Recordset
-      Dim nLinea As Integer
-      Dim nRubro As Integer
-      Dim nMarca As Integer
-      Dim nDescri As String
-      'Dim nPrecioVenta As String
-      'Dim nPrecioIVA As String
-      Dim resp As Integer
-      
-      If ValidarImportacion = False Then Exit Sub
-      resp = MsgBox("Confirma la Importacion de la Nueva Lista de Precios de : " & Trim(cboLPrecioRep.Text) & "?.   Este proceso puede demorar unos minutos ", 36, TIT_MSGBOX)
-      If resp <> 6 Then Exit Sub
-      
+'Private Sub cmdReadXLS_Click()
+ '     Dim obj As Read_Files.CReadFile
+  '    Set obj = New Read_Files.CReadFile
+   '   Dim I As Integer
+'      Dim sql As String
+ '     Dim rec As New ADODB.Recordset
+  '    Dim Rec1 As New ADODB.Recordset
+   '   Dim nLinea As Integer
+    '  Dim nRubro As Integer
+'      Dim nMarca As Integer
+'      Dim nDescri As String
+'      'Dim nPrecioVenta As String
+'      'Dim nPrecioIVA As String
+'      Dim resp As Integer
+'
+'      If ValidarImportacion = False Then Exit Sub
+'      resp = MsgBox("Confirma la Importacion de la Nueva Lista de Precios de : " & Trim(cboLPrecioRep.Text) & "?.   Este proceso puede demorar unos minutos ", 36, TIT_MSGBOX)
+ '     If resp <> 6 Then Exit Sub
+ '
       'Set rec = obj.Read_Excel(App.Path & "\" & "test.xls")
-      Set rec = obj.Read_Excel(txtArchivo.Text)
-      Set obj = Nothing
+ '     Set rec = obj.Read_Excel(txtArchivo.Text)
+  '    Set obj = Nothing
       
         'BARRA DE ESTADO
         'Establecemos el primer valor de la etiqueta.
-        Me.lblCuenta.Caption = m_intInicio
+ '       Me.lblCuenta.Caption = m_intInicio
         'Establece el intervalo al Timer para que
         'comience a descontar .
         'Me.tmrCuenta.Interval = 100    'milisegundos
         
        'ESTO LO HAGO PARA GUARDAR LA LINEA RUBRO Y MARCA DE LA LISTA DE PRECIO
-        sql = "select * FROM PRODUCTO WHERE LIS_CODIGO = " & cboLPrecioRep.ItemData(cboLPrecioRep.ListIndex)
-        Rec1.Open sql, DBConn, adOpenStatic, adLockOptimistic
-        If Rec1.EOF = False Then
-            nLinea = Rec1!LNA_CODIGO
-            nRubro = Rec1!RUB_CODIGO
-            nMarca = Rec1!TPRE_CODIGO
-        End If
-        Rec1.Close
+  '      sql = "select * FROM PRODUCTO WHERE LIS_CODIGO = " & cboLPrecioRep.ItemData(cboLPrecioRep.ListIndex)
+  '      Rec1.Open sql, DBConn, adOpenStatic, adLockOptimistic
+  '      If Rec1.EOF = False Then
+  '          nLinea = Rec1!LNA_CODIGO
+  '          nRubro = Rec1!RUB_CODIGO
+  '          nMarca = Rec1!TPRE_CODIGO
+  '      End If
+  '      Rec1.Close
         
         'BORRO LA LISTA A IMPORTAR
         'sql = "Delete from PRODUCTO WHERE (LIS_CODIGO = " & cboLPrecioRep.ItemData(cboLPrecioRep.ListIndex) & ")"
@@ -283,71 +283,71 @@ Private Sub cmdReadXLS_Click()
         'sql = sql & " AND RUB_CODIGO = " & nRubro & ""
         'sql = sql & " AND TPRE_CODIGO = " & nMarca & ")"
         'DBConn.Execute sql
-        I = 2
-        If rec.EOF = False Then
-            lblestado.Caption = "Procesando...."
-            Me.tmrCuenta.Interval = 100
-            Do While rec.EOF = False
-                
+  '      I = 2
+  '      If rec.EOF = False Then
+   '         lblestado.Caption = "Procesando...."
+   '         Me.tmrCuenta.Interval = 100
+   '         Do While rec.EOF = False
+   '
                 'Calulos
                 'nPrecioVenta = 0
                 'nPrecioIVA = 0
                 'nPrecioVenta = rec.Fields(2) + (rec.Fields(2) * 20) / 100
                 'nPrecioIVA = Valido_Importe(nPrecioVenta) * 1.21
-                If IsNull(rec.Fields(0)) Then
-                    rec.Close
-                    lblestado.Caption = "Fin de proceso"
-                    Exit Sub
-                End If
+     '           If IsNull(rec.Fields(0)) Then
+      '              rec.Close
+      '              lblestado.Caption = "Fin de proceso"
+      '              Exit Sub
+      '          End If
                 'pregunto si existe el producto
                 'si existe actualizo los precios
-                sql = "SELECT * FROM PRODUCTO WHERE "
-                sql = sql & " PTO_CODIGO LIKE '" & rec.Fields(0) & "' "
+    '            sql = "SELECT * FROM PRODUCTO WHERE "
+      '          sql = sql & " PTO_CODIGO LIKE '" & rec.Fields(0) & "' "
                 'sql = sql & " AND LNA_CODIGO = " & nLinea
                 'sql = sql & " AND RUB_CODIGO = " & nRubro
                 'sql = sql & " AND TPRE_CODIGO = " & nMarca
-                Rec1.Open sql, DBConn, adOpenStatic, adLockOptimistic
-                If Rec1.EOF = False Then
+      '          Rec1.Open sql, DBConn, adOpenStatic, adLockOptimistic
+      '          If Rec1.EOF = False Then
                     'si existe ACTUALIZO LOS PRECIOS
-                    sql = "UPDATE PRODUCTO SET"
-                    sql = sql & " PTO_PRECIO = " & XN(Valido_Importe(rec.Fields(5)))
-                    sql = sql & ",PTO_PRECIOC = " & XN(Valido_Importe(rec.Fields(6)))
-                    sql = sql & ",PTO_PRECIVA = " & XN(Valido_Importe(rec.Fields(4)))
-                    sql = sql & ",LIS_CODIGO = " & XN(cboLPrecioRep.ItemData(cboLPrecioRep.ListIndex))
-                    sql = sql & " WHERE PTO_CODIGO LIKE '" & rec.Fields(0) & "' "
-                    DBConn.Execute sql
-                Else
+      '              sql = "UPDATE PRODUCTO SET"
+      '              sql = sql & " PTO_PRECIO = " & XN(Valido_Importe(rec.Fields(5)))
+      '              sql = sql & ",PTO_PRECIOC = " & XN(Valido_Importe(rec.Fields(6)))
+      '              sql = sql & ",PTO_PRECIVA = " & XN(Valido_Importe(rec.Fields(4)))
+      '              sql = sql & ",LIS_CODIGO = " & XN(cboLPrecioRep.ItemData(cboLPrecioRep.ListIndex))
+      '              sql = sql & " WHERE PTO_CODIGO LIKE '" & rec.Fields(0) & "' "
+      '              DBConn.Execute sql
+      '          Else
                     'si no existe lo inserto
-                    sql = "INSERT INTO PRODUCTO (PTO_CODIGO,LNA_CODIGO,RUB_CODIGO,"
-                    sql = sql & "TPRE_CODIGO,PTO_DESCRI,PTO_PRECIO,PTO_PRECIOC,PTO_PRECIVA,LIS_CODIGO)"
-                    sql = sql & " VALUES ("
-                    'txtDescri.Text = Replace(txtDescri, "'", "´")
-                    sql = sql & rec.Fields(0) & ","
-                    sql = sql & nLinea & ","
-                    sql = sql & nRubro & ","
-                    sql = sql & nMarca & ","
-                    nDescri = ""
-                    nDescri = Replace(rec.Fields(1), "'", "")
-                    sql = sql & XS(nDescri) & ","
-                    sql = sql & XN(Valido_Importe(rec.Fields(5))) & ","
-                    sql = sql & XN(Valido_Importe(rec.Fields(6))) & ","
-                    sql = sql & XN(Valido_Importe(rec.Fields(4))) & ","
-                    sql = sql & XN(cboLPrecioRep.ItemData(cboLPrecioRep.ListIndex)) & ")"
-                    DBConn.Execute sql
-                End If
-                Rec1.Close
-                I = I + 1
-                rec.MoveNext
+       '             sql = "INSERT INTO PRODUCTO (PTO_CODIGO,LNA_CODIGO,RUB_CODIGO,"
+       '             sql = sql & "TPRE_CODIGO,PTO_DESCRI,PTO_PRECIO,PTO_PRECIOC,PTO_PRECIVA,LIS_CODIGO)"
+       '             sql = sql & " VALUES ("
+       '             'txtDescri.Text = Replace(txtDescri, "'", "´")
+       '             sql = sql & rec.Fields(0) & ","
+       '             sql = sql & nLinea & ","
+       '             sql = sql & nRubro & ","
+       '             sql = sql & nMarca & ","
+       '             nDescri = ""
+       '             nDescri = Replace(rec.Fields(1), "'", "")
+       '             sql = sql & XS(nDescri) & ","
+       '             sql = sql & XN(Valido_Importe(rec.Fields(5))) & ","
+       '             sql = sql & XN(Valido_Importe(rec.Fields(6))) & ","
+       '             sql = sql & XN(Valido_Importe(rec.Fields(4))) & ","
+        '            sql = sql & XN(cboLPrecioRep.ItemData(cboLPrecioRep.ListIndex)) & ")"
+        '            DBConn.Execute sql
+        '        End If
+        '        Rec1.Close
+        '        I = I + 1
+        '        rec.MoveNext
                 
                 
-            Loop
-         Else
-            MsgBox "Se ha producido un error en la importacion. Consulte con el programador!", vbExclamation, TIT_MSGBOX
-         End If
-         rec.Close
-         lblestado.Caption = "Fin de proceso"
+        '    Loop
+        ' Else
+         '   MsgBox "Se ha producido un error en la importacion. Consulte con el programador!", vbExclamation, TIT_MSGBOX
+      '   End If
+       '  rec.Close
+       '  lblestado.Caption = "Fin de proceso"
 
-End Sub
+'End Sub
 Private Sub tmrCuenta_Timer()
 
     

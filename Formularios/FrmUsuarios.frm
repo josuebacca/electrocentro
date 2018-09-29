@@ -1,6 +1,6 @@
 VERSION 5.00
-Object = "{BDC217C8-ED16-11CD-956C-0000C04E4C0A}#1.1#0"; "TABCTL32.OCX"
-Object = "{F9043C88-F6F2-101A-A3C9-08002B2F49FB}#1.2#0"; "Comdlg32.ocx"
+Object = "{BDC217C8-ED16-11CD-956C-0000C04E4C0A}#1.1#0"; "tabctl32.ocx"
+Object = "{F9043C88-F6F2-101A-A3C9-08002B2F49FB}#1.2#0"; "comdlg32.ocx"
 Begin VB.Form FrmUsuarios 
    BorderStyle     =   3  'Fixed Dialog
    Caption         =   " Usuarios"
@@ -32,7 +32,6 @@ Begin VB.Form FrmUsuarios
       _ExtentY        =   6773
       _Version        =   393216
       Tabs            =   2
-      Tab             =   1
       TabHeight       =   520
       BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
          Name            =   "MS Sans Serif"
@@ -45,7 +44,7 @@ Begin VB.Form FrmUsuarios
       EndProperty
       TabCaption(0)   =   "&Usuarios"
       TabPicture(0)   =   "FrmUsuarios.frx":0000
-      Tab(0).ControlEnabled=   0   'False
+      Tab(0).ControlEnabled=   -1  'True
       Tab(0).Control(0)=   "CmdClave"
       Tab(0).Control(0).Enabled=   0   'False
       Tab(0).Control(1)=   "CmdNuevo"
@@ -61,14 +60,14 @@ Begin VB.Form FrmUsuarios
       Tab(0).ControlCount=   6
       TabCaption(1)   =   "&Datos"
       TabPicture(1)   =   "FrmUsuarios.frx":001C
-      Tab(1).ControlEnabled=   -1  'True
+      Tab(1).ControlEnabled=   0   'False
       Tab(1).Control(0)=   "FraClave"
       Tab(1).Control(0).Enabled=   0   'False
       Tab(1).ControlCount=   1
       Begin VB.CommandButton cmdPermisos 
          Caption         =   "&Permisos"
          Height          =   700
-         Left            =   -69600
+         Left            =   5400
          Picture         =   "FrmUsuarios.frx":0038
          Style           =   1  'Graphical
          TabIndex        =   25
@@ -77,7 +76,7 @@ Begin VB.Form FrmUsuarios
       End
       Begin TabDlg.SSTab tabborrar 
          Height          =   1950
-         Left            =   -74760
+         Left            =   240
          TabIndex        =   19
          Top             =   540
          Visible         =   0   'False
@@ -170,7 +169,7 @@ Begin VB.Form FrmUsuarios
          EndProperty
          ForeColor       =   &H00C00000&
          Height          =   3120
-         Left            =   225
+         Left            =   -74775
          TabIndex        =   13
          Top             =   450
          Width           =   6405
@@ -305,7 +304,7 @@ Begin VB.Form FrmUsuarios
       Begin VB.CommandButton CmdEliminar 
          Caption         =   "&Borrar Usuario"
          Height          =   700
-         Left            =   -69600
+         Left            =   5400
          Picture         =   "FrmUsuarios.frx":6B16
          Style           =   1  'Graphical
          TabIndex        =   2
@@ -323,7 +322,7 @@ Begin VB.Form FrmUsuarios
             Strikethrough   =   0   'False
          EndProperty
          Height          =   2940
-         Left            =   -74775
+         Left            =   225
          Sorted          =   -1  'True
          TabIndex        =   0
          Top             =   540
@@ -332,7 +331,7 @@ Begin VB.Form FrmUsuarios
       Begin VB.CommandButton CmdNuevo 
          Caption         =   "&Nuevo Usuario"
          Height          =   700
-         Left            =   -69600
+         Left            =   5400
          Picture         =   "FrmUsuarios.frx":6E20
          Style           =   1  'Graphical
          TabIndex        =   1
@@ -343,7 +342,7 @@ Begin VB.Form FrmUsuarios
          Caption         =   "&Cambiar"
          Enabled         =   0   'False
          Height          =   700
-         Left            =   -69600
+         Left            =   5400
          Picture         =   "FrmUsuarios.frx":76EA
          Style           =   1  'Graphical
          TabIndex        =   3
@@ -494,7 +493,7 @@ Private Sub cmdPermisos_Click()
     
 End Sub
 
-Private Sub cmdSalir_Click()
+Private Sub CmdSalir_Click()
     Unload Me
     Set FrmUsuarios = Nothing
 End Sub

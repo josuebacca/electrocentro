@@ -125,8 +125,6 @@ Attribute VB_Creatable = False
 Attribute VB_PredeclaredId = True
 Attribute VB_Exposed = False
 
-
-
 Option Explicit
 Dim CUANTAS_VECES As Integer
 Dim rec As ADODB.Recordset

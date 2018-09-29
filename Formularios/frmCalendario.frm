@@ -1,5 +1,5 @@
 VERSION 5.00
-Object = "{86CF1D34-0C5F-11D2-A9FC-0000F8754DA1}#2.0#0"; "MSCOMCT2.OCX"
+Object = "{86CF1D34-0C5F-11D2-A9FC-0000F8754DA1}#2.0#0"; "mscomct2.ocx"
 Begin VB.Form frmCalendario 
    BorderStyle     =   4  'Fixed ToolWindow
    Caption         =   "Calendario"
@@ -20,15 +20,15 @@ Begin VB.Form frmCalendario
       Left            =   45
       TabIndex        =   0
       Top             =   30
-      Width           =   2595
-      _ExtentX        =   4577
+      Width           =   2700
+      _ExtentX        =   4763
       _ExtentY        =   4180
       _Version        =   393216
       ForeColor       =   -2147483630
       BackColor       =   -2147483633
       Appearance      =   1
       MonthBackColor  =   15925247
-      StartOfWeek     =   61276161
+      StartOfWeek     =   54067201
       CurrentDate     =   37455
    End
 End

@@ -75,7 +75,7 @@ Begin VB.Form FrmCargaChequesPropios
          _ExtentX        =   2355
          _ExtentY        =   661
          _Version        =   393216
-         Format          =   53805057
+         Format          =   53673985
          CurrentDate     =   43367
       End
       Begin VB.ComboBox cboCtaBancaria 
@@ -142,7 +142,7 @@ Begin VB.Form FrmCargaChequesPropios
          _ExtentX        =   2355
          _ExtentY        =   661
          _Version        =   393216
-         Format          =   53805057
+         Format          =   53673985
          CurrentDate     =   43367
       End
       Begin MSComCtl2.DTPicker TxtCheFecVto 
@@ -154,7 +154,7 @@ Begin VB.Form FrmCargaChequesPropios
          _ExtentX        =   2355
          _ExtentY        =   661
          _Version        =   393216
-         Format          =   53805057
+         Format          =   53673985
          CurrentDate     =   43367
       End
       Begin VB.Label Label1 
@@ -355,7 +355,7 @@ Private Sub CboBanco_LostFocus()
                 " AND BAN_CODINT = " & XN(CboBanco.ItemData(CboBanco.ListIndex))
         rec.Open sql, DBConn, adOpenStatic, adLockOptimistic
         If rec.EOF = False Then 'EXITE
-            Me.TxtCheFecEnt.Text = rec!CHEP_FECENT
+            Me.TxtCheFecEnt.Value = rec!CHEP_FECENT
             Me.TxtCheNumero.Text = Trim(rec!CHEP_NUMERO)
             
             Me.TxtCheNombre.Text = ChkNull(rec!CHEP_NOMBRE)
@@ -406,7 +406,7 @@ Private Sub CmdBorrar_Click()
         If resp <> 6 Then Exit Sub
         
         Screen.MousePointer = vbHourglass
-        lblEstado.Caption = "Borrando..."
+        lblestado.Caption = "Borrando..."
         DBConn.BeginTrans
         
         'ACTUALIZO EL SALDO DE LA CTA-BANCARIA
@@ -424,7 +424,7 @@ Private Sub CmdBorrar_Click()
         DBConn.Execute "DELETE FROM CHEQUE WHERE CHE_NUMERO = " & XS(Me.TxtCheNumero.Text) & " AND BAN_CODINT = " & XN(Me.CboBanco.ItemData(CboBanco.ListIndex))
         
         Screen.MousePointer = vbNormal
-        lblEstado.Caption = ""
+        lblestado.Caption = ""
         DBConn.CommitTrans
         CmdNuevo_Click
     End If
@@ -433,13 +433,13 @@ Private Sub CmdBorrar_Click()
 CLAVOSE:
     DBConn.RollbackTrans
     If rec.State = 1 Then rec.Close
-    lblEstado.Caption = ""
+    lblestado.Caption = ""
     Screen.MousePointer = vbNormal
     MsgBox Err.Description, vbCritical, TIT_MSGBOX
 
 End Sub
 
-Private Sub cmdGrabar_Click()
+Private Sub CmdGrabar_Click()
     
   If Validar = True Then
   
@@ -448,7 +448,7 @@ Private Sub cmdGrabar_Click()
     DBConn.BeginTrans
     
     Screen.MousePointer = vbHourglass
-    lblEstado.Caption = "Guardando..."
+    lblestado.Caption = "Guardando..."
     Me.Refresh
     
     sql = "SELECT * FROM CHEQUE_PROPIO WHERE CHEP_NUMERO = " & XS(TxtCheNumero.Text)
@@ -464,7 +464,7 @@ Private Sub cmdGrabar_Click()
          sql = sql & XN(Me.TxtCheImport.Text) & ","
          sql = sql & XDQ(Me.TxtCheFecEmi.Value) & ","
          sql = sql & XDQ(Me.TxtCheFecVto.Value) & ","
-         sql = sql & XDQ(Me.TxtCheFecEnt.Text) & ","
+         sql = sql & XDQ(Me.TxtCheFecEnt.Value) & ","
          sql = sql & XS(Me.TxtCheMotivo.Text) & ","
          sql = sql & XS(Me.TxtCheObserv.Text) & ","
          sql = sql & XS(cboCtaBancaria.List(cboCtaBancaria.ListIndex)) & ")"
@@ -474,7 +474,7 @@ Private Sub cmdGrabar_Click()
          sql = sql & ",CHEP_IMPORT = " & XN(Me.TxtCheImport.Text)
          sql = sql & ",CHEP_FECEMI =" & XDQ(Me.TxtCheFecEmi.Value)
          sql = sql & ",CHEP_FECVTO =" & XDQ(Me.TxtCheFecVto.Value)
-         sql = sql & ",CHEP_FECENT = " & XDQ(Me.TxtCheFecEnt.Text)
+         sql = sql & ",CHEP_FECENT = " & XDQ(Me.TxtCheFecEnt.Value)
          sql = sql & ",CHEP_MOTIVO = " & XS(Me.TxtCheMotivo.Text)
          sql = sql & ",CHEP_OBSERV = " & XS(Me.TxtCheObserv.Text)
          sql = sql & ",CTA_NROCTA= " & XS(cboCtaBancaria.List(cboCtaBancaria.ListIndex))
@@ -510,14 +510,14 @@ Private Sub cmdGrabar_Click()
     
     '************* PREGUNTAR POR SI DESEA IMPRIMIR ***************
     Screen.MousePointer = vbNormal
-    lblEstado.Caption = ""
+    lblestado.Caption = ""
     DBConn.CommitTrans
     CmdNuevo_Click
  End If
  Exit Sub
       
 CLAVOSE:
-    lblEstado.Caption = ""
+    lblestado.Caption = ""
     DBConn.RollbackTrans
     If rec.State = 1 Then rec.Close
     Screen.MousePointer = vbNormal
@@ -526,7 +526,7 @@ CLAVOSE:
 End Sub
 
 Private Sub CmdNuevo_Click()
-    Me.TxtCheFecEnt.Text = ""
+    Me.TxtCheFecEnt.Value = Date
     Me.TxtCheNumero.Enabled = True
     Me.CboBanco.Enabled = True
     cboCtaBancaria.Clear
@@ -538,30 +538,30 @@ Private Sub CmdNuevo_Click()
     Me.TxtCheNombre.Text = ""
     Me.TxtCheMotivo.Text = ""
     Me.TxtCheFecEmi.Value = ""
-    Me.TxtCheFecVto.Value = ""
+    Me.TxtCheFecVto.Value = Date
     Me.TxtCheImport.Text = ""
     Me.TxtCheObserv.Text = ""
     ImporteCheque = ""
     Me.TxtCheFecEnt.SetFocus
     TxtCheNombre.ForeColor = &H80000005
-    lblEstado.Caption = ""
+    lblestado.Caption = ""
 End Sub
 
-Private Sub CmdSalir_Click()
+Private Sub cmdSalir_Click()
     Unload Me
     Set FrmCargaChequesPropios = Nothing
 End Sub
 
 Private Sub Form_KeyPress(KeyAscii As Integer)
     If KeyAscii = vbKeyReturn Then SendKeys "{tab}"
-    If KeyAscii = vbKeyEscape Then CmdSalir_Click
+    If KeyAscii = vbKeyEscape Then cmdSalir_Click
 End Sub
 
 Private Sub Form_Load()
     Set rec = New ADODB.Recordset
     Set Rec1 = New ADODB.Recordset
-    TxtCheFecEnt.Text = Date
-    lblEstado.Caption = ""
+    TxtCheFecEnt.Value = Date
+    lblestado.Caption = ""
     ImporteCheque = ""
     'CARGO LOS BANCON DONDE TIENEN CUENTAS
     CargoBanco
@@ -591,13 +591,13 @@ Private Sub TxtCheFecVto_LostFocus()
     
     If CVDate(TxtCheFecEmi.Value) > CVDate(TxtCheFecVto.Value) Then
         MsgBox "La Fecha de Vencimiento no puede ser anterior a la Fecha de Emisión del Cheque.! ", 16, TIT_MSGBOX
-        Me.TxtCheFecVto.Value = ""
+        Me.TxtCheFecVto.Value = Date
         Me.TxtCheFecVto.SetFocus
     Else
        If Me.TxtCheImport.Enabled = False Then 'PAGO EN CUOTAS
             Tasa = Trim(FrmComprobante.txtPmt_Tasa.Text)
             'Saco la Cantidad de Días del Cheque
-            Cant_Dias = DateDiff("d", FrmComprobante.TxtFechaComprobante.Text, Me.TxtCheFecVto.Value)
+            Cant_Dias = DateDiff("d", FrmComprobante.TxtFechaComprobante.Value, Me.TxtCheFecVto.Value)
             
             'Cálculo de Interes a Fecha del Cheque
             TxtCheImport.Text = Format(TxtCheImport.Text + (CDbl(TxtCheImport.Text) * CDbl(Chk0(Cant_Dias * Tasa)) / 100), "$ ##,##0.00")
@@ -645,8 +645,8 @@ Private Sub TxtCheNumero_KeyPress(KeyAscii As Integer)
 End Sub
 
 Private Sub TxtCheFecEnt_LostFocus()
-    If TxtCheFecEnt.Text = "" Then
-        TxtCheFecEnt.Text = Format(Date, "dd/mm/yyyy")
+    If TxtCheFecEnt.Value = Date Then
+        TxtCheFecEnt.Value = Format(Date, "dd/mm/yyyy")
     End If
 End Sub
 

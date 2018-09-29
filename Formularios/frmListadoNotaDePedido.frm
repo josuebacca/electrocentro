@@ -2,6 +2,7 @@ VERSION 5.00
 Object = "{F9043C88-F6F2-101A-A3C9-08002B2F49FB}#1.2#0"; "comdlg32.ocx"
 Object = "{5E9E78A0-531B-11CF-91F6-C2863C385E30}#1.0#0"; "msflxgrd.ocx"
 Object = "{86CF1D34-0C5F-11D2-A9FC-0000F8754DA1}#2.0#0"; "mscomct2.ocx"
+Object = "{00025600-0000-0000-C000-000000000046}#5.2#0"; "Crystl32.OCX"
 Begin VB.Form frmListadoNotaDePedido 
    BorderStyle     =   1  'Fixed Single
    Caption         =   "Listado de Nota de Pedido"
@@ -16,6 +17,14 @@ Begin VB.Form frmListadoNotaDePedido
    ScaleHeight     =   7020
    ScaleWidth      =   10635
    StartUpPosition =   2  'CenterScreen
+   Begin Crystal.CrystalReport Rep 
+      Left            =   8640
+      Top             =   5280
+      _ExtentX        =   741
+      _ExtentY        =   741
+      _Version        =   348160
+      PrintFileLinesPerPage=   60
+   End
    Begin VB.Frame Frame4 
       Caption         =   "Nota de Pedido por..."
       BeginProperty Font 
@@ -148,25 +157,25 @@ Begin VB.Form frmListadoNotaDePedido
       Begin MSComCtl2.DTPicker FechaDesde 
          Height          =   375
          Left            =   3360
+         TabIndex        =   31
+         Top             =   1320
+         Width           =   1335
+         _ExtentX        =   2355
+         _ExtentY        =   661
+         _Version        =   393216
+         Format          =   53936129
+         CurrentDate     =   43367
+      End
+      Begin MSComCtl2.DTPicker FechaHasta 
+         Height          =   375
+         Left            =   5880
          TabIndex        =   32
          Top             =   1320
          Width           =   1335
          _ExtentX        =   2355
          _ExtentY        =   661
          _Version        =   393216
-         Format          =   53411841
-         CurrentDate     =   43367
-      End
-      Begin MSComCtl2.DTPicker FechaHasta 
-         Height          =   375
-         Left            =   5880
-         TabIndex        =   33
-         Top             =   1320
-         Width           =   1335
-         _ExtentX        =   2355
-         _ExtentY        =   661
-         _Version        =   393216
-         Format          =   53411841
+         Format          =   53936129
          CurrentDate     =   43367
       End
       Begin VB.Label Label1 
@@ -235,15 +244,6 @@ Begin VB.Form frmListadoNotaDePedido
       TabIndex        =   21
       Top             =   6510
       Width           =   10650
-   End
-   Begin VB.PictureBox Rep 
-      Height          =   480
-      Left            =   7275
-      ScaleHeight     =   420
-      ScaleWidth      =   1140
-      TabIndex        =   31
-      Top             =   5145
-      Width           =   1200
    End
    Begin VB.CommandButton cmdSalir 
       Caption         =   "&Salir"
@@ -521,9 +521,9 @@ Private Sub cmdListar_Click()
         
         If FechaDesde.Value <> "" And FechaHasta.Value <> "" Then
             Rep.Formulas(2) = "FECHA='" & "Desde: " & FechaDesde.Value & "   Hasta: " & FechaHasta.Value & "'"
-        ElseIf FechaDesde.Value <> "" And FechaHasta.Value = "" Then
+        ElseIf FechaDesde.Value <> "" And FechaHasta.Value = Date Then
             Rep.Formulas(2) = "FECHA='" & "Desde: " & FechaDesde.Value & "   Hasta: " & Date & "'"
-        ElseIf FechaDesde.Value = "" And FechaHasta.Value <> "" Then
+        ElseIf FechaDesde.Value = Date And FechaHasta.Value <> "" Then
             Rep.Formulas(2) = "FECHA='" & "Desde: Inicio" & "   Hasta: " & FechaHasta.Value & "'"
         End If
     
@@ -578,9 +578,9 @@ Private Sub cmdListar_Click()
         
         If FechaDesde.Value <> "" And FechaHasta.Value <> "" Then
             Rep.Formulas(0) = "FECHA='" & "Desde: " & FechaDesde.Value & "   Hasta: " & FechaHasta.Value & "'"
-        ElseIf FechaDesde.Value <> "" And FechaHasta.Value = "" Then
+        ElseIf FechaDesde.Value <> "" And FechaHasta.Value = Date Then
             Rep.Formulas(0) = "FECHA='" & "Desde: " & FechaDesde.Value & "   Hasta: " & Date & "'"
-        ElseIf FechaDesde.Value = "" And FechaHasta.Value <> "" Then
+        ElseIf FechaDesde.Value = Date And FechaHasta.Value <> "" Then
             Rep.Formulas(0) = "FECHA='" & "Desde: Inicio" & "   Hasta: " & FechaHasta.Value & "'"
         End If
     
@@ -618,8 +618,8 @@ Private Sub CmdNuevo_Click()
     txtCliente.Text = ""
     txtDesCli.Text = ""
     txtVendedor.Text = ""
-    FechaDesde.Value = ""
-    FechaHasta.Value = ""
+    FechaDesde.Value = Date
+    FechaHasta.Value = Date
     GrdModulos.Rows = 1
     GrdModulos.Rows = 2
     txtCliente.Enabled = False
@@ -664,7 +664,7 @@ Private Sub Form_Load()
 End Sub
 Private Sub Form_KeyPress(KeyAscii As Integer)
     If KeyAscii = vbKeyReturn Then SendKeys "{TAB}"
-    If KeyAscii = vbKeyEscape Then CmdSalir_Click
+    If KeyAscii = vbKeyEscape Then cmdSalir_Click
 End Sub
 
 Private Sub chkCliente_Click()
@@ -729,7 +729,7 @@ Private Sub txtCliente_LostFocus()
         And chkVendedor.Value = Unchecked And ActiveControl.Name <> "cmdBuscarCli" _
         And ActiveControl.Name <> "cmdNuevo" And ActiveControl.Name <> "cmdSalir" Then CmdBuscAprox.SetFocus
 End Sub
-Private Sub CmdSalir_Click()
+Private Sub cmdSalir_Click()
     Set frmListadoNotaDePedido = Nothing
     Unload Me
 End Sub
