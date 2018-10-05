@@ -1,8 +1,8 @@
 VERSION 5.00
-Object = "{6B7E6392-850A-101B-AFC0-4210102A8DA7}#1.4#0"; "comctl32.ocx"
-Object = "{F9043C88-F6F2-101A-A3C9-08002B2F49FB}#1.2#0"; "comdlg32.ocx"
-Object = "{86CF1D34-0C5F-11D2-A9FC-0000F8754DA1}#2.0#0"; "mscomct2.ocx"
+Object = "{F9043C88-F6F2-101A-A3C9-08002B2F49FB}#1.2#0"; "Comdlg32.ocx"
+Object = "{86CF1D34-0C5F-11D2-A9FC-0000F8754DA1}#2.0#0"; "MSCOMCT2.OCX"
 Object = "{00025600-0000-0000-C000-000000000046}#5.2#0"; "Crystl32.OCX"
+Object = "{6B7E6392-850A-101B-AFC0-4210102A8DA7}#1.3#0"; "COMCTL32.OCX"
 Begin VB.Form frmLibroVentas2 
    BorderStyle     =   3  'Fixed Dialog
    Caption         =   "Libro IVA Ventas"
@@ -123,7 +123,7 @@ Begin VB.Form frmLibroVentas2
          _ExtentX        =   2355
          _ExtentY        =   661
          _Version        =   393216
-         Format          =   53936129
+         Format          =   54657025
          CurrentDate     =   43367
       End
       Begin MSComCtl2.DTPicker FechaHasta 
@@ -135,7 +135,7 @@ Begin VB.Form frmLibroVentas2
          _ExtentX        =   2355
          _ExtentY        =   661
          _Version        =   393216
-         Format          =   53936129
+         Format          =   54657025
          CurrentDate     =   43367
       End
       Begin VB.Label Label1 
@@ -272,7 +272,7 @@ Private Sub CmdAceptar_Click()
      On Error GoTo CLAVO
      Screen.MousePointer = vbHourglass
      DBConn.BeginTrans
-     lblestado.Caption = "Buscando Datos..."
+     lblEstado.Caption = "Buscando Datos..."
      
         'BORRO LA TABLA TEMPORAL DE IVA VENTAS
         sql = "DELETE FROM TMP_LIBRO_IVA_VENTAS"
@@ -432,7 +432,7 @@ Private Sub CmdAceptar_Click()
         End If
         rec.Close
         
-    lblestado.Caption = ""
+    lblEstado.Caption = ""
     DBConn.CommitTrans
     'cargo el reporte
     ListarLibroIVA
@@ -443,14 +443,14 @@ Private Sub CmdAceptar_Click()
 
 CLAVO:
  Screen.MousePointer = vbNormal
- lblestado.Caption = ""
+ lblEstado.Caption = ""
  DBConn.RollbackTrans
  If rec.State = 1 Then rec.Close
  MsgBox Err.Description, vbCritical, TIT_MSGBOX
 End Sub
 
 Private Sub ListarLibroIVA()
-    lblestado.Caption = "Buscando Listado..."
+    lblEstado.Caption = "Buscando Listado..."
     Rep.WindowState = crptMaximized
     Rep.WindowBorderStyle = crptNoBorder
     Rep.Connect = "Provider=MSDASQL.1;Persist Security Info=False;Data Source=SIELECTROCENTRO"
@@ -477,7 +477,7 @@ Private Sub ListarLibroIVA()
     End If
      Rep.Action = 1
      
-     lblestado.Caption = ""
+     lblEstado.Caption = ""
      Rep.Formulas(0) = ""
      Rep.Formulas(1) = ""
      Rep.Formulas(2) = ""
@@ -491,8 +491,8 @@ Private Sub CmdNuevo_Click()
     FechaDesde.SetFocus
 End Sub
 
-Private Sub cmdSalir_Click()
-    Set frmLibroIvaVentas = Nothing
+Private Sub CmdSalir_Click()
+    Set frmLibroVentas2 = Nothing
     Unload Me
 End Sub
 
@@ -501,7 +501,7 @@ Private Sub Form_KeyPress(KeyAscii As Integer)
 End Sub
 
 Private Sub Form_Load()
-    lblestado.Caption = ""
+    lblEstado.Caption = ""
     lblPor.Caption = "100 %"
     Call Centrar_pantalla(Me)
     Set rec = New ADODB.Recordset

@@ -289,7 +289,7 @@ Begin VB.MDIForm MENU
             Bevel           =   2
             Object.Width           =   2117
             MinWidth        =   2117
-            TextSave        =   "07/09/2011"
+            TextSave        =   "05/10/2018"
             Key             =   ""
             Object.Tag             =   ""
          EndProperty
@@ -299,7 +299,7 @@ Begin VB.MDIForm MENU
             Bevel           =   2
             Object.Width           =   1500
             MinWidth        =   1500
-            TextSave        =   "0:46"
+            TextSave        =   "9:49"
             Key             =   ""
             Object.Tag             =   ""
          EndProperty
@@ -1133,7 +1133,7 @@ Public Sub PERMISOS(USUARIO As String)
 
     Dim sql As String
     Dim r As ADODB.Recordset
-    Dim i As Integer
+    Dim I As Integer
 
     Set r = New ADODB.Recordset
 
@@ -1141,15 +1141,15 @@ Public Sub PERMISOS(USUARIO As String)
 
     If Trim(USUARIO) = "A" Then
         'Este usuario tiene derecho a todo
-        For i = 0 To MENU.Controls.Count - 1
-            If TypeName(MENU.Controls(i)) = "Menu" Then
-               MENU.Controls(i).Enabled = True
+        For I = 0 To MENU.Controls.Count - 1
+            If TypeName(MENU.Controls(I)) = "Menu" Then
+               MENU.Controls(I).Enabled = True
             End If
         Next
     Else
-        For i = 0 To MENU.Controls.Count - 1
-            If TypeName(MENU.Controls(i)) = "Menu" Then
-               MENU.Controls(i).Enabled = False
+        For I = 0 To MENU.Controls.Count - 1
+            If TypeName(MENU.Controls(I)) = "Menu" Then
+               MENU.Controls(I).Enabled = False
             End If
         Next
     
@@ -1162,10 +1162,10 @@ Public Sub PERMISOS(USUARIO As String)
         If r.RecordCount > 0 Then
             r.MoveFirst
             Do While Not r.EOF
-                For i = 0 To MENU.Controls.Count - 1
-                    If TypeName(MENU.Controls(i)) = "Menu" Then
-                        If UCase(Trim(MENU.Controls(i).Name)) = UCase(Trim(r!PRM_OPMENU)) Then
-                            MENU.Controls(i).Enabled = True
+                For I = 0 To MENU.Controls.Count - 1
+                    If TypeName(MENU.Controls(I)) = "Menu" Then
+                        If UCase(Trim(MENU.Controls(I).Name)) = UCase(Trim(r!PRM_OPMENU)) Then
+                            MENU.Controls(I).Enabled = True
                         End If
                     End If
                 Next
@@ -1254,7 +1254,7 @@ Private Sub mnuFondosCargaIngresos_Click()
 End Sub
 
 Private Sub mnuFondosCuentas_Click()
-    ABMCuentasBancarias.Show vbModal
+    'ABMCuentasBancarias.Show vbModal
 End Sub
 
 Private Sub mnuFondosEstadoCheques_Click()
@@ -1262,7 +1262,7 @@ Private Sub mnuFondosEstadoCheques_Click()
 End Sub
 
 Private Sub mnuFondosListadoCheques_Click()
-    FrmListCheques.Show vbModal
+    'FrmListCheques.Show vbModal
 End Sub
 
 Private Sub mnuFondosResumenCuneta_Click()
@@ -1402,7 +1402,7 @@ Private Sub mnuOrdenesdePago_Click()
 End Sub
 
 Private Sub mnuPagoProveedoresOrdenPago_Click()
-    frmPagoProveedores.Show vbModal
+    'frmPagoProveedores.Show vbModal
 End Sub
 
 Private Sub mnuPagosRealizadosPorCliente_Click()

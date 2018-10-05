@@ -1,6 +1,5 @@
 VERSION 5.00
-Object = "{F9043C88-F6F2-101A-A3C9-08002B2F49FB}#1.2#0"; "comdlg32.ocx"
-Object = "{831FDD16-0C5C-11D2-A9FC-0000F8754DA1}#2.1#0"; "mscomctl.ocx"
+Object = "{F9043C88-F6F2-101A-A3C9-08002B2F49FB}#1.2#0"; "Comdlg32.ocx"
 Begin VB.Form frmTest 
    BorderStyle     =   1  'Fixed Single
    Caption         =   "Importar Lista de Precios"
@@ -70,16 +69,14 @@ Begin VB.Form frmTest
          Left            =   5280
          Top             =   1920
       End
-      Begin MSComctlLib.ProgressBar Progreso 
+      Begin VB.PictureBox Progreso 
          Height          =   255
          Left            =   240
+         ScaleHeight     =   195
+         ScaleWidth      =   5475
          TabIndex        =   10
          Top             =   1560
          Width           =   5535
-         _ExtentX        =   9763
-         _ExtentY        =   450
-         _Version        =   393216
-         Appearance      =   1
       End
       Begin VB.CommandButton cmdSelArch 
          Caption         =   "..."
@@ -231,7 +228,7 @@ End Function
 Private Sub CmdNuevo_Click()
     cboLPrecioRep.ListIndex = -1
     txtArchivo.Text = ""
-    Progreso.Value = 0
+    'Progreso.Value = 0
     Label4.Caption = ""
     lblestado.Caption = ""
     
@@ -352,9 +349,9 @@ Private Sub tmrCuenta_Timer()
 
     
     'Cada décima de segundo, descontamos.
-    Progreso.Value = Progreso.Value + 1
-    Me.lblCuenta.Caption = 100 - (Progreso.Value \ 1)
-    Label4 = Progreso & " % Finalizado"
+    'Progreso.Value = Progreso.Value + 1
+    'Me.lblCuenta.Caption = 100 - (Progreso.Value \ 1)
+    'Label4 = Progreso & " % Finalizado"
     'Cuando llega a cero, paramos.
     If CInt(Me.lblCuenta.Caption) = 0 Then
         Me.tmrCuenta.Interval = 0
