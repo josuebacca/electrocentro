@@ -37,103 +37,87 @@ Begin VB.MDIForm MENU
          BeginProperty Buttons {0713E452-850A-101B-AFC0-4210102A8DA7} 
             NumButtons      =   16
             BeginProperty Button1 {0713F354-850A-101B-AFC0-4210102A8DA7} 
-               Key             =   ""
                Object.Tag             =   ""
                Style           =   3
                MixedState      =   -1  'True
             EndProperty
             BeginProperty Button2 {0713F354-850A-101B-AFC0-4210102A8DA7} 
-               Key             =   ""
                Object.ToolTipText     =   "Remitos de Clientes"
                Object.Tag             =   ""
                ImageIndex      =   2
             EndProperty
             BeginProperty Button3 {0713F354-850A-101B-AFC0-4210102A8DA7} 
                Object.Visible         =   0   'False
-               Key             =   ""
                Object.ToolTipText     =   "ABM de Clientes"
                Object.Tag             =   ""
                ImageIndex      =   1
             EndProperty
             BeginProperty Button4 {0713F354-850A-101B-AFC0-4210102A8DA7} 
-               Key             =   ""
                Object.ToolTipText     =   "Recibo de Clientes"
                Object.Tag             =   ""
                ImageIndex      =   13
             EndProperty
             BeginProperty Button5 {0713F354-850A-101B-AFC0-4210102A8DA7} 
                Object.Visible         =   0   'False
-               Key             =   ""
                Object.ToolTipText     =   "Agenda de Clientes"
                Object.Tag             =   ""
                ImageIndex      =   9
             EndProperty
             BeginProperty Button6 {0713F354-850A-101B-AFC0-4210102A8DA7} 
-               Key             =   ""
                Object.Tag             =   ""
                Style           =   3
                MixedState      =   -1  'True
             EndProperty
             BeginProperty Button7 {0713F354-850A-101B-AFC0-4210102A8DA7} 
                Object.Visible         =   0   'False
-               Key             =   ""
                Object.ToolTipText     =   "Compras"
                Object.Tag             =   ""
                ImageIndex      =   5
             EndProperty
             BeginProperty Button8 {0713F354-850A-101B-AFC0-4210102A8DA7} 
                Object.Visible         =   0   'False
-               Key             =   ""
                Object.ToolTipText     =   "Proveedores"
                Object.Tag             =   ""
                ImageIndex      =   15
             EndProperty
             BeginProperty Button9 {0713F354-850A-101B-AFC0-4210102A8DA7} 
-               Key             =   ""
                Object.Tag             =   ""
                Style           =   3
                MixedState      =   -1  'True
             EndProperty
             BeginProperty Button10 {0713F354-850A-101B-AFC0-4210102A8DA7} 
-               Key             =   ""
                Object.ToolTipText     =   "Productos"
                Object.Tag             =   ""
                ImageIndex      =   4
             EndProperty
             BeginProperty Button11 {0713F354-850A-101B-AFC0-4210102A8DA7} 
                Object.Visible         =   0   'False
-               Key             =   ""
                Object.ToolTipText     =   "Precios"
                Object.Tag             =   ""
                ImageIndex      =   3
             EndProperty
             BeginProperty Button12 {0713F354-850A-101B-AFC0-4210102A8DA7} 
                Object.Visible         =   0   'False
-               Key             =   ""
                Object.ToolTipText     =   "Listado de Stock Faltantes"
                Object.Tag             =   ""
                ImageIndex      =   16
             EndProperty
             BeginProperty Button13 {0713F354-850A-101B-AFC0-4210102A8DA7} 
-               Key             =   ""
                Object.Tag             =   ""
                Style           =   3
                MixedState      =   -1  'True
             EndProperty
             BeginProperty Button14 {0713F354-850A-101B-AFC0-4210102A8DA7} 
-               Key             =   ""
                Object.ToolTipText     =   "Listados de Ventas"
                Object.Tag             =   ""
                ImageIndex      =   10
             EndProperty
             BeginProperty Button15 {0713F354-850A-101B-AFC0-4210102A8DA7} 
-               Key             =   ""
                Object.Tag             =   ""
                Style           =   3
                MixedState      =   -1  'True
             EndProperty
             BeginProperty Button16 {0713F354-850A-101B-AFC0-4210102A8DA7} 
-               Key             =   ""
                Object.ToolTipText     =   "Salir"
                Object.Tag             =   ""
                ImageIndex      =   7
@@ -244,7 +228,6 @@ Begin VB.MDIForm MENU
             Object.Width           =   1411
             MinWidth        =   1411
             TextSave        =   "NÚM"
-            Key             =   ""
             Object.Tag             =   ""
          EndProperty
          BeginProperty Panel2 {0713E89F-850A-101B-AFC0-4210102A8DA7} 
@@ -254,7 +237,6 @@ Begin VB.MDIForm MENU
             Object.Width           =   1409
             MinWidth        =   1409
             TextSave        =   "MAYÚS"
-            Key             =   ""
             Object.Tag             =   ""
          EndProperty
          BeginProperty Panel3 {0713E89F-850A-101B-AFC0-4210102A8DA7} 
@@ -265,14 +247,12 @@ Begin VB.MDIForm MENU
             Object.Width           =   1411
             MinWidth        =   1411
             TextSave        =   "INS"
-            Key             =   ""
             Object.Tag             =   ""
          EndProperty
          BeginProperty Panel4 {0713E89F-850A-101B-AFC0-4210102A8DA7} 
             Alignment       =   1
             Object.Width           =   9701
             MinWidth        =   9701
-            Key             =   ""
             Object.Tag             =   ""
          EndProperty
          BeginProperty Panel5 {0713E89F-850A-101B-AFC0-4210102A8DA7} 
@@ -280,7 +260,6 @@ Begin VB.MDIForm MENU
             Bevel           =   2
             Object.Width           =   3528
             MinWidth        =   3528
-            Key             =   ""
             Object.Tag             =   ""
          EndProperty
          BeginProperty Panel6 {0713E89F-850A-101B-AFC0-4210102A8DA7} 
@@ -289,8 +268,7 @@ Begin VB.MDIForm MENU
             Bevel           =   2
             Object.Width           =   2117
             MinWidth        =   2117
-            TextSave        =   "05/10/2018"
-            Key             =   ""
+            TextSave        =   "06/10/2018"
             Object.Tag             =   ""
          EndProperty
          BeginProperty Panel7 {0713E89F-850A-101B-AFC0-4210102A8DA7} 
@@ -299,8 +277,7 @@ Begin VB.MDIForm MENU
             Bevel           =   2
             Object.Width           =   1500
             MinWidth        =   1500
-            TextSave        =   "9:49"
-            Key             =   ""
+            TextSave        =   "12:12"
             Object.Tag             =   ""
          EndProperty
       EndProperty

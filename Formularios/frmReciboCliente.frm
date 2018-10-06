@@ -1,7 +1,7 @@
 VERSION 5.00
-Object = "{BDC217C8-ED16-11CD-956C-0000C04E4C0A}#1.1#0"; "tabctl32.ocx"
-Object = "{5E9E78A0-531B-11CF-91F6-C2863C385E30}#1.0#0"; "msflxgrd.ocx"
-Object = "{86CF1D34-0C5F-11D2-A9FC-0000F8754DA1}#2.0#0"; "mscomct2.ocx"
+Object = "{BDC217C8-ED16-11CD-956C-0000C04E4C0A}#1.1#0"; "TABCTL32.OCX"
+Object = "{5E9E78A0-531B-11CF-91F6-C2863C385E30}#1.0#0"; "MSFLXGRD.OCX"
+Object = "{86CF1D34-0C5F-11D2-A9FC-0000F8754DA1}#2.0#0"; "MSCOMCT2.OCX"
 Begin VB.Form frmReciboCliente 
    BorderStyle     =   1  'Fixed Single
    Caption         =   "Recibo de Cliente"
@@ -50,6 +50,7 @@ Begin VB.Form frmReciboCliente
       _ExtentY        =   11404
       _Version        =   393216
       Tabs            =   2
+      Tab             =   1
       TabsPerRow      =   5
       TabHeight       =   512
       ForeColor       =   -2147483630
@@ -64,7 +65,7 @@ Begin VB.Form frmReciboCliente
       EndProperty
       TabCaption(0)   =   "&Datos"
       TabPicture(0)   =   "frmReciboCliente.frx":0000
-      Tab(0).ControlEnabled=   -1  'True
+      Tab(0).ControlEnabled=   0   'False
       Tab(0).Control(0)=   "FrameRecibo"
       Tab(0).Control(0).Enabled=   0   'False
       Tab(0).Control(1)=   "FrameRemito"
@@ -76,13 +77,15 @@ Begin VB.Form frmReciboCliente
       Tab(0).ControlCount=   4
       TabCaption(1)   =   "&Buscar"
       TabPicture(1)   =   "frmReciboCliente.frx":001C
-      Tab(1).ControlEnabled=   0   'False
+      Tab(1).ControlEnabled=   -1  'True
       Tab(1).Control(0)=   "GrdModulos"
+      Tab(1).Control(0).Enabled=   0   'False
       Tab(1).Control(1)=   "frameBuscar"
+      Tab(1).Control(1).Enabled=   0   'False
       Tab(1).ControlCount=   2
       Begin TabDlg.SSTab tabComprobantes 
          Height          =   3975
-         Left            =   120
+         Left            =   -74880
          TabIndex        =   89
          Top             =   2490
          Width           =   5940
@@ -378,7 +381,7 @@ Begin VB.Form frmReciboCliente
       End
       Begin TabDlg.SSTab tabValores 
          Height          =   3975
-         Left            =   6225
+         Left            =   -68775
          TabIndex        =   20
          Top             =   2490
          Width           =   5700
@@ -663,7 +666,7 @@ Begin VB.Form frmReciboCliente
                _ExtentX        =   2355
                _ExtentY        =   556
                _Version        =   393216
-               Format          =   53673985
+               Format          =   54460417
                CurrentDate     =   43367
             End
             Begin VB.Label Label21 
@@ -1129,7 +1132,7 @@ Begin VB.Form frmReciboCliente
                _ExtentX        =   2355
                _ExtentY        =   556
                _Version        =   393216
-               Format          =   53673985
+               Format          =   54460417
                CurrentDate     =   43367
             End
             Begin VB.Label Label1 
@@ -1313,7 +1316,7 @@ Begin VB.Form frmReciboCliente
             Strikethrough   =   0   'False
          EndProperty
          Height          =   2055
-         Left            =   5040
+         Left            =   -69960
          TabIndex        =   59
          Top             =   360
          Width           =   6900
@@ -1453,7 +1456,7 @@ Begin VB.Form frmReciboCliente
             Strikethrough   =   0   'False
          EndProperty
          Height          =   2055
-         Left            =   105
+         Left            =   -74895
          TabIndex        =   69
          Top             =   360
          Width           =   4845
@@ -1509,7 +1512,7 @@ Begin VB.Form frmReciboCliente
             _ExtentX        =   2355
             _ExtentY        =   556
             _Version        =   393216
-            Format          =   53673985
+            Format          =   54460417
             CurrentDate     =   43367
          End
          Begin MSComCtl2.DTPicker FechaRendicion 
@@ -1521,7 +1524,7 @@ Begin VB.Form frmReciboCliente
             _ExtentX        =   2355
             _ExtentY        =   556
             _Version        =   393216
-            Format          =   53673985
+            Format          =   54460417
             CurrentDate     =   43367
          End
          Begin VB.Label Label19 
@@ -1601,7 +1604,7 @@ Begin VB.Form frmReciboCliente
             Strikethrough   =   0   'False
          EndProperty
          Height          =   1845
-         Left            =   -74715
+         Left            =   285
          TabIndex        =   60
          Top             =   540
          Width           =   11115
@@ -1739,23 +1742,27 @@ Begin VB.Form frmReciboCliente
             Left            =   3360
             TabIndex        =   147
             Top             =   960
-            Width           =   1335
-            _ExtentX        =   2355
+            Width           =   1575
+            _ExtentX        =   2778
             _ExtentY        =   556
             _Version        =   393216
-            Format          =   53673985
+            CheckBox        =   -1  'True
+            DateIsNull      =   -1  'True
+            Format          =   54460417
             CurrentDate     =   43367
          End
          Begin MSComCtl2.DTPicker FechaHasta 
             Height          =   315
-            Left            =   5880
+            Left            =   6240
             TabIndex        =   148
             Top             =   960
-            Width           =   1335
-            _ExtentX        =   2355
+            Width           =   1575
+            _ExtentX        =   2778
             _ExtentY        =   556
             _Version        =   393216
-            Format          =   53673985
+            CheckBox        =   -1  'True
+            DateIsNull      =   -1  'True
+            Format          =   54460417
             CurrentDate     =   43367
          End
          Begin VB.Label lbl 
@@ -1785,7 +1792,7 @@ Begin VB.Form frmReciboCliente
             AutoSize        =   -1  'True
             Caption         =   "Fecha Hasta:"
             Height          =   195
-            Left            =   4815
+            Left            =   5175
             TabIndex        =   66
             Top             =   975
             Width           =   960
@@ -1812,7 +1819,7 @@ Begin VB.Form frmReciboCliente
       End
       Begin MSFlexGridLib.MSFlexGrid GrdModulos 
          Height          =   3780
-         Left            =   -74730
+         Left            =   270
          TabIndex        =   58
          Top             =   2475
          Width           =   11160
@@ -2134,10 +2141,10 @@ Private Function ValidoIngCheques() As Boolean
 End Function
 
 Private Sub LimpiarCheques()
-    TxtBanco.Text = ""
-    txtlocalidad.Text = ""
-    TxtSucursal.Text = ""
-    TxtCodigo.Text = ""
+    TxtBANCO.Text = ""
+    TxtLOCALIDAD.Text = ""
+    txtSucursal.Text = ""
+    TxtCODIGO.Text = ""
     TxtCheNumero.Text = ""
     TxtCheFecVto.Value = Date
     TxtCheImport.Text = ""
@@ -2357,7 +2364,7 @@ End Sub
 
 Private Sub CmdBuscAprox_Click()
     GrdModulos.Rows = 1
-    lblestado.Caption = "Buscando..."
+    lblEstado.Caption = "Buscando..."
     Screen.MousePointer = vbHourglass
     
     Set Rec1 = New ADODB.Recordset
@@ -2386,13 +2393,13 @@ Private Sub CmdBuscAprox_Click()
         Loop
         GrdModulos.SetFocus
     Else
-        lblestado.Caption = ""
+        lblEstado.Caption = ""
         Screen.MousePointer = vbNormal
         MsgBox "No se encontraron datos...", vbExclamation, TIT_MSGBOX
         chkCliente.SetFocus
     End If
     Rec1.Close
-    lblestado.Caption = ""
+    lblEstado.Caption = ""
     Screen.MousePointer = vbNormal
 End Sub
 
@@ -2449,7 +2456,7 @@ Private Sub cmdCancelarMoneda_Click()
     tabValores.Tab = 0
 End Sub
 
-Private Sub CmdGrabar_Click()
+Private Sub cmdGrabar_Click()
     'Dim vuelto As String
     Set Rec1 = New ADODB.Recordset
     If ValidarRecibo = False Then Exit Sub
@@ -2458,7 +2465,7 @@ Private Sub CmdGrabar_Click()
     On Error GoTo HayError
     DBConn.BeginTrans
     Screen.MousePointer = vbHourglass
-    lblestado.Caption = "Guardando..."
+    lblEstado.Caption = "Guardando..."
     
     sql = "SELECT EST_CODIGO"
     sql = sql & " FROM RECIBO_CLIENTE"
@@ -2656,13 +2663,13 @@ Private Sub CmdGrabar_Click()
         DBConn.CommitTrans
     End If
     Screen.MousePointer = vbNormal
-    lblestado.Caption = ""
+    lblEstado.Caption = ""
     rec.Close
     CmdNuevo_Click
     Exit Sub
     
 HayError:
-    lblestado.Caption = ""
+    lblEstado.Caption = ""
     Screen.MousePointer = vbNormal
     If rec.State = 1 Then rec.Close
     DBConn.RollbackTrans
@@ -2834,7 +2841,7 @@ Private Sub QuitoDineroACta()
     Next
 End Sub
 
-Private Sub cmdSalir_Click()
+Private Sub CmdSalir_Click()
     If MsgBox("Seguro que desea Salir", vbQuestion + vbYesNo, TIT_MSGBOX) = vbYes Then
         Set frmReciboCliente = Nothing
         Unload Me
@@ -2864,7 +2871,7 @@ End Sub
 
 Private Sub Form_KeyPress(KeyAscii As Integer)
     If KeyAscii = vbKeyReturn Then SendKeys "{TAB}"
-    If KeyAscii = vbKeyEscape Then cmdSalir_Click
+    If KeyAscii = vbKeyEscape Then CmdSalir_Click
 End Sub
 
 Private Sub Form_Load()
@@ -2898,7 +2905,7 @@ Private Sub Form_Load()
     FechaRendicion.Value = Date
     txtNroRecibo.Enabled = True
     cmdAgregarFacturas.Enabled = False
-    lblestado.Caption = ""
+    lblEstado.Caption = ""
     txtEntrega.Text = "0,00"
     txtResta.Text = "0,00"
     
@@ -3238,11 +3245,11 @@ Private Sub Text1_Change()
 End Sub
 
 Private Sub TxtBANCO_GotFocus()
-    SelecTexto TxtBanco
+    SelecTexto TxtBANCO
 End Sub
 
 Private Sub TxtBANCO_LostFocus()
-    If Len(TxtBanco.Text) < 3 Then TxtBanco.Text = CompletarConCeros(TxtBanco.Text, 3)
+    If Len(TxtBANCO.Text) < 3 Then TxtBANCO.Text = CompletarConCeros(TxtBANCO.Text, 3)
 End Sub
 
 Private Sub TxtCheNumero_Change()
@@ -3403,7 +3410,7 @@ Private Sub txtCodCliente_LostFocus()
 End Sub
 
 Private Sub TxtCodigo_GotFocus()
-    SelecTexto TxtCodigo
+    SelecTexto TxtCODIGO
 End Sub
 
 Private Sub txtEftImporte_Change()
@@ -3513,7 +3520,7 @@ Private Sub txtImporteComprobante_LostFocus()
 End Sub
 
 Private Sub TxtLOCALIDAD_GotFocus()
-    SelecTexto txtlocalidad
+    SelecTexto TxtLOCALIDAD
 End Sub
 
 Private Sub Txtlocalidad_KeyPress(KeyAscii As Integer)
@@ -3521,7 +3528,7 @@ Private Sub Txtlocalidad_KeyPress(KeyAscii As Integer)
 End Sub
 
 Private Sub TxtLOCALIDAD_LostFocus()
-    If Len(txtlocalidad.Text) < 3 Then txtlocalidad.Text = CompletarConCeros(txtlocalidad.Text, 3)
+    If Len(TxtLOCALIDAD.Text) < 3 Then TxtLOCALIDAD.Text = CompletarConCeros(TxtLOCALIDAD.Text, 3)
 End Sub
 
 Private Sub txtNroComprobantes_Change()
@@ -3887,7 +3894,7 @@ Private Sub txtResta_KeyPress(KeyAscii As Integer)
 End Sub
 
 Private Sub txtSucursal_GotFocus()
-    SelecTexto TxtSucursal
+    SelecTexto txtSucursal
 End Sub
 
 Private Sub TxtSucursal_KeyPress(KeyAscii As Integer)
@@ -3910,21 +3917,21 @@ Private Sub TxtCodigo_LostFocus()
         
     'ChequeRegistrado = False
     
-    If Len(TxtCodigo.Text) < 6 Then TxtCodigo.Text = CompletarConCeros(TxtCodigo.Text, 6)
+    If Len(TxtCODIGO.Text) < 6 Then TxtCODIGO.Text = CompletarConCeros(TxtCODIGO.Text, 6)
      
     If Trim(Me.TxtCheNumero.Text) <> "" And _
-       Trim(Me.TxtBanco.Text) <> "" And _
-       Trim(Me.txtlocalidad.Text) <> "" And _
-       Trim(Me.TxtSucursal.Text) <> "" And _
-       Trim(Me.TxtCodigo.Text) <> "" Then
+       Trim(Me.TxtBANCO.Text) <> "" And _
+       Trim(Me.TxtLOCALIDAD.Text) <> "" And _
+       Trim(Me.txtSucursal.Text) <> "" And _
+       Trim(Me.TxtCODIGO.Text) <> "" Then
        
        'BUSCO EL CODIGO INTERNO
        sql = "SELECT BAN_CODINT, BAN_DESCRI"
        sql = sql & " FROM BANCO"
-       sql = sql & " WHERE BAN_BANCO = " & XS(TxtBanco.Text)
-       sql = sql & " AND BAN_LOCALIDAD = " & XS(Me.txtlocalidad.Text)
-       sql = sql & " AND BAN_SUCURSAL = " & XS(Me.TxtSucursal.Text)
-       sql = sql & " AND BAN_CODIGO = " & XS(TxtCodigo.Text)
+       sql = sql & " WHERE BAN_BANCO = " & XS(TxtBANCO.Text)
+       sql = sql & " AND BAN_LOCALIDAD = " & XS(Me.TxtLOCALIDAD.Text)
+       sql = sql & " AND BAN_SUCURSAL = " & XS(Me.txtSucursal.Text)
+       sql = sql & " AND BAN_CODIGO = " & XS(TxtCODIGO.Text)
        rec.Open sql, DBConn, adOpenStatic, adLockOptimistic
        If rec.RecordCount > 0 Then 'EXITE
           TxtCodInt.Text = rec!BAN_CODINT
@@ -3933,7 +3940,7 @@ Private Sub TxtCodigo_LostFocus()
        Else
           If Me.ActiveControl.Name <> "CmdSalir" And Me.ActiveControl.Name <> "CmdNuevo" Then
             MsgBox "Banco NO Registrado.", 16, TIT_MSGBOX
-            TxtBanco.SetFocus
+            TxtBANCO.SetFocus
             Me.CmdBanco.SetFocus
           End If
           rec.Close
@@ -3954,10 +3961,10 @@ Private Sub TxtCodigo_LostFocus()
                    "WHERE BAN_CODINT = " & XN(Me.TxtCodInt.Text)
             Rec1.Open sql, DBConn, adOpenStatic, adLockOptimistic
             If Rec1.RecordCount > 0 Then 'EXITE
-                Me.TxtBanco.Text = Rec1!BAN_BANCO
-                Me.txtlocalidad.Text = Rec1!BAN_LOCALIDAD
-                Me.TxtSucursal.Text = Rec1!BAN_SUCURSAL
-                Me.TxtCodigo.Text = Rec1!BAN_CODIGO
+                Me.TxtBANCO.Text = Rec1!BAN_BANCO
+                Me.TxtLOCALIDAD.Text = Rec1!BAN_LOCALIDAD
+                Me.txtSucursal.Text = Rec1!BAN_SUCURSAL
+                Me.TxtCODIGO.Text = Rec1!BAN_CODIGO
             End If
             Rec1.Close
         Else
@@ -3970,7 +3977,7 @@ Private Sub TxtCodigo_LostFocus()
 End Sub
 
 Private Sub txtSucursal_LostFocus()
-    If Len(TxtSucursal.Text) < 3 Then TxtSucursal.Text = CompletarConCeros(TxtSucursal.Text, 3)
+    If Len(txtSucursal.Text) < 3 Then txtSucursal.Text = CompletarConCeros(txtSucursal.Text, 3)
 End Sub
 
 Private Sub txtVendedor_Change()

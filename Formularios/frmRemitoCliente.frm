@@ -1,7 +1,7 @@
 VERSION 5.00
-Object = "{BDC217C8-ED16-11CD-956C-0000C04E4C0A}#1.1#0"; "tabctl32.ocx"
-Object = "{5E9E78A0-531B-11CF-91F6-C2863C385E30}#1.0#0"; "msflxgrd.ocx"
-Object = "{86CF1D34-0C5F-11D2-A9FC-0000F8754DA1}#2.0#0"; "mscomct2.ocx"
+Object = "{BDC217C8-ED16-11CD-956C-0000C04E4C0A}#1.1#0"; "TABCTL32.OCX"
+Object = "{5E9E78A0-531B-11CF-91F6-C2863C385E30}#1.0#0"; "MSFLXGRD.OCX"
+Object = "{86CF1D34-0C5F-11D2-A9FC-0000F8754DA1}#2.0#0"; "MSCOMCT2.OCX"
 Begin VB.Form frmRemitoCliente 
    BorderStyle     =   1  'Fixed Single
    Caption         =   "Remito de Clientes..."
@@ -60,6 +60,7 @@ Begin VB.Form frmRemitoCliente
       _ExtentY        =   12885
       _Version        =   393216
       Tabs            =   2
+      Tab             =   1
       TabsPerRow      =   5
       TabHeight       =   512
       ForeColor       =   -2147483630
@@ -74,31 +75,30 @@ Begin VB.Form frmRemitoCliente
       EndProperty
       TabCaption(0)   =   "&Datos"
       TabPicture(0)   =   "frmRemitoCliente.frx":0000
-      Tab(0).ControlEnabled=   -1  'True
-      Tab(0).Control(0)=   "Frame3"
-      Tab(0).Control(0).Enabled=   0   'False
-      Tab(0).Control(1)=   "freRemito"
-      Tab(0).Control(1).Enabled=   0   'False
-      Tab(0).Control(2)=   "freCliente"
-      Tab(0).Control(2).Enabled=   0   'False
+      Tab(0).ControlEnabled=   0   'False
+      Tab(0).Control(0)=   "fraInfoCliente"
+      Tab(0).Control(1)=   "chkNotaPedido"
+      Tab(0).Control(2)=   "freNotaPedido"
       Tab(0).Control(3)=   "Frame5"
-      Tab(0).Control(3).Enabled=   0   'False
-      Tab(0).Control(4)=   "freNotaPedido"
-      Tab(0).Control(4).Enabled=   0   'False
-      Tab(0).Control(5)=   "chkNotaPedido"
-      Tab(0).Control(5).Enabled=   0   'False
-      Tab(0).Control(6)=   "fraInfoCliente"
-      Tab(0).Control(6).Enabled=   0   'False
+      Tab(0).Control(4)=   "freCliente"
+      Tab(0).Control(5)=   "freRemito"
+      Tab(0).Control(6)=   "Frame3"
       Tab(0).ControlCount=   7
       TabCaption(1)   =   "&Buscar"
       TabPicture(1)   =   "frmRemitoCliente.frx":001C
-      Tab(1).ControlEnabled=   0   'False
+      Tab(1).ControlEnabled=   -1  'True
       Tab(1).Control(0)=   "Label20"
+      Tab(1).Control(0).Enabled=   0   'False
       Tab(1).Control(1)=   "cmdAum"
+      Tab(1).Control(1).Enabled=   0   'False
       Tab(1).Control(2)=   "GrdModulos"
+      Tab(1).Control(2).Enabled=   0   'False
       Tab(1).Control(3)=   "frameBuscar"
+      Tab(1).Control(3).Enabled=   0   'False
       Tab(1).Control(4)=   "txtAum"
+      Tab(1).Control(4).Enabled=   0   'False
       Tab(1).Control(5)=   "cmdDesc"
+      Tab(1).Control(5).Enabled=   0   'False
       Tab(1).ControlCount=   6
       Begin VB.CommandButton cmdDesc 
          Caption         =   "- %"
@@ -112,7 +112,7 @@ Begin VB.Form frmRemitoCliente
             Strikethrough   =   0   'False
          EndProperty
          Height          =   285
-         Left            =   -72480
+         Left            =   2520
          Style           =   1  'Graphical
          TabIndex        =   23
          ToolTipText     =   "Porcentaje de descuento"
@@ -122,7 +122,7 @@ Begin VB.Form frmRemitoCliente
       Begin VB.TextBox txtAum 
          Alignment       =   1  'Right Justify
          Height          =   285
-         Left            =   -73680
+         Left            =   1320
          TabIndex        =   21
          Text            =   "0,00"
          Top             =   6960
@@ -130,7 +130,7 @@ Begin VB.Form frmRemitoCliente
       End
       Begin VB.Frame fraInfoCliente 
          Height          =   855
-         Left            =   9000
+         Left            =   -66000
          TabIndex        =   96
          Top             =   240
          Visible         =   0   'False
@@ -195,7 +195,7 @@ Begin VB.Form frmRemitoCliente
       Begin VB.CheckBox chkNotaPedido 
          Caption         =   "Recupera datos del Presupuesto"
          Height          =   255
-         Left            =   5040
+         Left            =   -69960
          TabIndex        =   3
          Top             =   360
          Width           =   2775
@@ -211,7 +211,7 @@ Begin VB.Form frmRemitoCliente
             Strikethrough   =   0   'False
          EndProperty
          Height          =   735
-         Left            =   4440
+         Left            =   -70560
          TabIndex        =   90
          Top             =   370
          Width           =   6630
@@ -243,7 +243,7 @@ Begin VB.Form frmRemitoCliente
             _ExtentX        =   2355
             _ExtentY        =   556
             _Version        =   393216
-            Format          =   53936129
+            Format          =   54460417
             CurrentDate     =   43367
          End
          Begin VB.Label Label4 
@@ -267,7 +267,7 @@ Begin VB.Form frmRemitoCliente
       End
       Begin VB.Frame Frame5 
          Height          =   635
-         Left            =   4440
+         Left            =   -70560
          TabIndex        =   86
          Top             =   2520
          Width           =   6615
@@ -303,7 +303,7 @@ Begin VB.Form frmRemitoCliente
       End
       Begin VB.Frame freCliente 
          Height          =   1455
-         Left            =   4410
+         Left            =   -70590
          TabIndex        =   48
          Top             =   1080
          Width           =   6645
@@ -562,7 +562,7 @@ Begin VB.Form frmRemitoCliente
             Strikethrough   =   0   'False
          EndProperty
          Height          =   2775
-         Left            =   120
+         Left            =   -74880
          TabIndex        =   26
          Top             =   370
          Width           =   4275
@@ -678,7 +678,7 @@ Begin VB.Form frmRemitoCliente
             _ExtentX        =   2355
             _ExtentY        =   556
             _Version        =   393216
-            Format          =   53936129
+            Format          =   54460417
             CurrentDate     =   43367
          End
          Begin VB.Label lblEstadoRemito 
@@ -750,7 +750,7 @@ Begin VB.Form frmRemitoCliente
             Strikethrough   =   0   'False
          EndProperty
          Height          =   1950
-         Left            =   -74600
+         Left            =   400
          TabIndex        =   33
          Top             =   540
          Width           =   10410
@@ -759,7 +759,7 @@ Begin VB.Form frmRemitoCliente
             Height          =   495
             Left            =   840
             TabIndex        =   67
-            Top             =   1320
+            Top             =   1440
             Width           =   8535
             Begin VB.OptionButton optFac 
                Caption         =   "Facturados"
@@ -921,23 +921,27 @@ Begin VB.Form frmRemitoCliente
             Left            =   3240
             TabIndex        =   104
             Top             =   1080
-            Width           =   1335
-            _ExtentX        =   2355
+            Width           =   1575
+            _ExtentX        =   2778
             _ExtentY        =   556
             _Version        =   393216
-            Format          =   53936129
+            CheckBox        =   -1  'True
+            DateIsNull      =   -1  'True
+            Format          =   54460417
             CurrentDate     =   43367
          End
          Begin MSComCtl2.DTPicker FechaHasta 
             Height          =   315
-            Left            =   5760
+            Left            =   6480
             TabIndex        =   105
             Top             =   1080
-            Width           =   1335
-            _ExtentX        =   2355
+            Width           =   1575
+            _ExtentX        =   2778
             _ExtentY        =   556
             _Version        =   393216
-            Format          =   53936129
+            CheckBox        =   -1  'True
+            DateIsNull      =   -1  'True
+            Format          =   54460417
             CurrentDate     =   43367
          End
          Begin VB.Label Label1 
@@ -954,7 +958,7 @@ Begin VB.Form frmRemitoCliente
             AutoSize        =   -1  'True
             Caption         =   "Fecha Hasta:"
             Height          =   195
-            Left            =   4695
+            Left            =   5415
             TabIndex        =   37
             Top             =   1140
             Width           =   960
@@ -985,7 +989,7 @@ Begin VB.Form frmRemitoCliente
       End
       Begin VB.Frame Frame3 
          Height          =   4260
-         Left            =   120
+         Left            =   -74880
          TabIndex        =   27
          ToolTipText     =   "Actualiza los precios del Remito"
          Top             =   3090
@@ -1250,7 +1254,7 @@ Begin VB.Form frmRemitoCliente
       End
       Begin MSFlexGridLib.MSFlexGrid GrdModulos 
          Height          =   4170
-         Left            =   -74640
+         Left            =   360
          TabIndex        =   20
          Top             =   2700
          Width           =   10455
@@ -1277,7 +1281,7 @@ Begin VB.Form frmRemitoCliente
             Strikethrough   =   0   'False
          EndProperty
          Height          =   285
-         Left            =   -73080
+         Left            =   1920
          Style           =   1  'Graphical
          TabIndex        =   22
          ToolTipText     =   "Porcentaje de aumento"
@@ -1288,7 +1292,7 @@ Begin VB.Form frmRemitoCliente
          AutoSize        =   -1  'True
          Caption         =   "% Porcentaje"
          Height          =   195
-         Left            =   -74640
+         Left            =   360
          TabIndex        =   102
          Top             =   7005
          Width           =   930
@@ -1464,7 +1468,7 @@ Private Sub cmdAgregarProducto_Click()
     If Consulta <> 4 Then
         grdGrilla.Col = 0
         EDITAR grdGrilla, txtEdit, 13
-        If Trim(ABMProducto.TxtCodigo) <> "" Then txtEdit.Text = ABMProducto.TxtCodigo
+        If Trim(ABMProducto.TxtCODIGO) <> "" Then txtEdit.Text = ABMProducto.TxtCODIGO
         TxtEdit_KeyDown vbKeyReturn, 0
     End If
     'grdGrilla.SetFocus
@@ -1572,7 +1576,7 @@ Private Sub CmdBuscAprox_Click()
     Dim TotalRemito As Double
     Dim TOTAL As Double
     GrdModulos.Rows = 1
-    lblestado.Caption = "Buscando..."
+    lblEstado.Caption = "Buscando..."
     Screen.MousePointer = vbHourglass
 '    If (chkPend.Value = Unchecked) And (chkDef.Value = Unchecked) And (chkAnu.Value = Unchecked) Then
 '        MsgBox "Debe Seleccionar un Estado del Remito", vbInformation
@@ -1594,8 +1598,8 @@ Private Sub CmdBuscAprox_Click()
         sql = sql & "  AND L.PRO_CODIGO=P.PRO_CODIGO"
         
         If txtCliente.Text <> "" Then sql = sql & " AND RC.CLI_CODIGO=" & XN(txtCliente)
-        If FechaDesde <> "" Then sql = sql & " AND RC.RCL_FECHA>=" & XDQ(FechaDesde)
-        If FechaHasta <> "" Then sql = sql & " AND RC.RCL_FECHA<=" & XDQ(FechaHasta)
+        If FechaDesde.Value <> "" Then sql = sql & " AND RC.RCL_FECHA>=" & XDQ(FechaDesde.Value)
+        If FechaHasta.Value <> "" Then sql = sql & " AND RC.RCL_FECHA<=" & XDQ(FechaHasta.Value)
         If optPen.Value = True Then
             sql = sql & " AND (RC.EST_CODIGO = 1 or RC.RCL_SALDO > 0)"
         End If
@@ -1629,7 +1633,7 @@ Private Sub CmdBuscAprox_Click()
             Loop
             GrdModulos.SetFocus
         Else
-            lblestado.Caption = ""
+            lblEstado.Caption = ""
             Screen.MousePointer = vbNormal
             MsgBox "No se encontraron datos...", vbExclamation, TIT_MSGBOX
         End If
@@ -1673,13 +1677,13 @@ Private Sub CmdBuscAprox_Click()
             Loop
             GrdModulos.SetFocus
         Else
-            lblestado.Caption = ""
+            lblEstado.Caption = ""
             Screen.MousePointer = vbNormal
             MsgBox "No se encontraron datos...", vbExclamation, TIT_MSGBOX
         End If
     End Select
     
-    lblestado.Caption = ""
+    lblEstado.Caption = ""
     Screen.MousePointer = vbNormal
     rec.Close
 End Sub
@@ -1862,7 +1866,7 @@ Private Sub cmdFacturar_Click()
     CmdNuevo_Click
 End Sub
 
-Private Sub CmdGrabar_Click()
+Private Sub cmdGrabar_Click()
     
     On Error GoTo HayErrorRemito
     If ValidarRemito = False Then Exit Sub
@@ -1878,7 +1882,7 @@ Private Sub CmdGrabar_Click()
     'rec.Open sql, DBConn, adOpenStatic, adLockOptimistic
             
     Screen.MousePointer = vbHourglass
-    lblestado.Caption = "Guardando..."
+    lblEstado.Caption = "Guardando..."
     
     If txtNroRemito.Text = "" Then
         'BUSCO EL NUMERO DE REMITO QUE CORRESPONDE
@@ -1904,12 +1908,12 @@ Private Sub CmdGrabar_Click()
             sql = sql & XN(TxtCodigoCli.Text) & ","
             sql = sql & cboCondicion.ItemData(cboCondicion.ListIndex) & ","
             sql = sql & 20 & ","
-            sql = sql & XN(txtTotal.Text) & ","
+            sql = sql & XN(txttotal.Text) & ","
             sql = sql & XN(txtSubtotal.Text) & ","
                 If (TxtCodigoCli.Text = "2") Or (cboCondicion.ItemData(cboCondicion.ListIndex) = 1) Then
                 sql = sql & 0 & ","
             Else
-                sql = sql & XN(txtTotal.Text) & ","
+                sql = sql & XN(txttotal.Text) & ","
             End If
             If txtPorc.Text = "" Then
                 sql = sql & 0 & ")"
@@ -1975,7 +1979,7 @@ Private Sub CmdGrabar_Click()
                 'ACTUALIZO LA CUENTA CORRIENTE DEL CLIENTE
                 DBConn.Execute AgregoCtaCteCliente(TxtCodigoCli, 20 _
                                                 , txtNroRemito, txtNroSucursal, _
-                                                FechaRemito, txtTotal, "D", CStr(Date))
+                                                FechaRemito, txttotal, "D", CStr(Date))
             Else
                 'ACTUALIZO SALDO DE LA REMITO DEL CLIENTE
                 
@@ -1992,12 +1996,12 @@ Private Sub CmdGrabar_Click()
                 sql = sql & " ,RCL_NUMEROTXT=" & XS(Format(txtNroRemito.Text, "00000000"))
                 sql = sql & " ,FPG_CODIGO =" & cboCondicion.ItemData(cboCondicion.ListIndex)
                 sql = sql & " ,TCO_CODIGO= 20 "
-                sql = sql & " ,RCL_TOTAL=" & XN(txtTotal.Text)
+                sql = sql & " ,RCL_TOTAL=" & XN(txttotal.Text)
                 sql = sql & " ,RCL_SUBTOTAL=" & XN(txtSubtotal.Text)
                 If (TxtCodigoCli.Text = "2") Or (cboCondicion.ItemData(cboCondicion.ListIndex) = 1) Then
                     sql = sql & " ,RCL_SALDO = 0 "
                 Else
-                    sql = sql & " ,RCL_SALDO=" & XS(txtTotal.Text)
+                    sql = sql & " ,RCL_SALDO=" & XS(txttotal.Text)
                 End If
                 If txtPorc.Text = "" Then
                     sql = sql & " ,RCL_PORCEN = 0 "
@@ -2061,7 +2065,7 @@ Private Sub CmdGrabar_Click()
                 
                 DBConn.Execute AgregoCtaCteCliente(TxtCodigoCli, 20 _
                                                 , txtNroRemito, txtNroSucursal, _
-                                                FechaRemito, txtTotal, "D", CStr(Date))
+                                                FechaRemito, txttotal, "D", CStr(Date))
                 End If
                 
                 DBConn.CommitTrans
@@ -2071,7 +2075,7 @@ Private Sub CmdGrabar_Click()
             
         'rec.Close
         Screen.MousePointer = vbNormal
-        lblestado.Caption = ""
+        lblEstado.Caption = ""
         
     '    If MsgBox("¿Desea Facturar el Remito?", vbQuestion + vbYesNo, TIT_MSGBOX) = vbYes Then
     '
@@ -2088,7 +2092,7 @@ Private Sub CmdGrabar_Click()
     Exit Sub
     
 HayErrorRemito:
-    lblestado.Caption = ""
+    lblEstado.Caption = ""
     Screen.MousePointer = vbNormal
     If rec.State = 1 Then rec.Close
     DBConn.RollbackTrans
@@ -2097,7 +2101,7 @@ End Sub
 
 Private Function ValidarRemito() As Boolean
     Dim BAND As Integer
-    If FechaRemito.Value = Date Then
+    If FechaRemito.Value = "" Then
         MsgBox "La Fecha del Remito es requerida", vbExclamation, TIT_MSGBOX
         FechaRemito.SetFocus
         ValidarRemito = False
@@ -2222,7 +2226,7 @@ Public Sub ImprimirRemito()
     Dim canttxt As Integer
     
     Screen.MousePointer = vbHourglass
-    lblestado.Caption = "Imprimiendo..."
+    lblEstado.Caption = "Imprimiendo..."
     
     For w = 1 To 2 'SE IMPRIME POR DUPLICADO
       '-----IMPRESION DEL ENCABEZADO------------------
@@ -2291,7 +2295,7 @@ Public Sub ImprimirRemito()
         Printer.EndDoc
     Next w
     Screen.MousePointer = vbNormal
-    lblestado.Caption = ""
+    lblEstado.Caption = ""
 End Sub
 
 Private Sub CmdNuevo_Click()
@@ -2314,7 +2318,7 @@ Private Sub CmdNuevo_Click()
   ' txtConcepto.Text = ""
    lblEstadoRemito.Caption = ""
    txtObservaciones.Text = ""
-   lblestado.Caption = ""
+   lblEstado.Caption = ""
    cmdGrabar.Enabled = True
    freRemito.Enabled = True
    freCliente.Enabled = True
@@ -2348,7 +2352,7 @@ Private Sub CmdNuevo_Click()
     BuscoIva
     txtImporteIva.Text = ""
     txtSubtotal.Text = ""
-    txtTotal.Text = ""
+    txttotal.Text = ""
     txtObservaciones.Text = ""
     
     Call BuscaCodigoProxItemData(1, cboCondicion)
@@ -2433,7 +2437,7 @@ Private Sub cmdQuitarProducto_Click()
     If BAND = 0 Then
         txtSubtotal.Text = "0,00"
         txtImporteIva.Text = "0,00"
-        txtTotal.Text = "0,00"
+        txttotal.Text = "0,00"
     Else
         TotalPEDIDO
 '        txtSubtotal.Text = Valido_Importe(SumaTotal)
@@ -2493,7 +2497,7 @@ Private Sub cmdQuitarProducto_Click()
 '    End If
 '    Rec2.Close
 End Sub
-Private Sub cmdSalir_Click()
+Private Sub CmdSalir_Click()
     If MsgBox("Seguro que desea Salir", vbQuestion + vbYesNo, TIT_MSGBOX) = vbYes Then
         Set frmRemitoCliente = Nothing
         Unload Me
@@ -2515,7 +2519,7 @@ Private Sub Form_KeyPress(KeyAscii As Integer)
         KeyAscii = vbKeyReturn Then
         SendKeys "{TAB}"
     End If
-    If KeyAscii = vbKeyEscape Then cmdSalir_Click
+    If KeyAscii = vbKeyEscape Then CmdSalir_Click
 End Sub
 
 Private Sub Form_Load()
@@ -2567,7 +2571,7 @@ Private Sub Form_Load()
     'grillaNotaPedido.TextMatrix(1, 0) = " Sucursal:"
     'grillaNotaPedido.TextMatrix(2, 0) = "Vendedor:"
     '------------------------------------
-    lblestado.Caption = ""
+    lblEstado.Caption = ""
     'Llenar Combo forma de pago
     LlenarComboFormaPago
     'CARGO EL COMBO DE LISTA DE PRECIOS DE MAQUINARIAS
@@ -2759,7 +2763,7 @@ Private Sub GrdModulos_DblClick()
         CmdNuevo_Click
         Select Case TipoBusquedaDoc
         Case 1 'BUSCA REMITOS
-            lblestado.Caption = "Buscando..."
+            lblEstado.Caption = "Buscando..."
             Screen.MousePointer = vbHourglass
             Set Rec1 = New ADODB.Recordset
             Set Rec2 = New ADODB.Recordset
@@ -2855,7 +2859,7 @@ Private Sub GrdModulos_DblClick()
             Else
                 BuscoPtosBorrados
             End If
-            lblestado.Caption = ""
+            lblEstado.Caption = ""
             Screen.MousePointer = vbNormal
             '--------------
             FechaRemito.Enabled = False
@@ -3066,7 +3070,7 @@ Private Sub TxtCodigoCli_Change()
         txtIngBrutos.Text = ""
         txtCondicionIVA.Text = ""
         txtDomici.Text = ""
-        txtlocalidad.Text = ""
+        TxtLOCALIDAD.Text = ""
         txtprovincia.Text = ""
         txtcodpos.Text = ""
     End If
@@ -3097,7 +3101,7 @@ Set Rec1 = New ADODB.Recordset
         If rec.EOF = False Then
             txtRazSocCli.Text = rec!CLI_RAZSOC
             txtDomici.Text = IIf(IsNull(rec!CLI_DOMICI), "", rec!CLI_DOMICI)
-            txtlocalidad.Text = IIf(IsNull(rec!LOC_DESCRI), "", rec!LOC_DESCRI)
+            TxtLOCALIDAD.Text = IIf(IsNull(rec!LOC_DESCRI), "", rec!LOC_DESCRI)
             txtprovincia.Text = IIf(IsNull(rec!PRO_DESCRI), "", rec!PRO_DESCRI)
             txtCondicionIVA.Text = BuscoCondicionIVA(rec!IVA_CODIGO)
             txtCUIT.Text = IIf(IsNull(rec!CLI_CUIT), "", Format(rec!CLI_CUIT, "##-########-#"))
@@ -3414,7 +3418,7 @@ Private Function TotalPEDIDO()
     subtotal = txtSubtotal
     impIva = txtImporteIva
     TOTAL = subtotal + impIva
-    txtTotal.Text = Format(TOTAL, "0.00")
+    txttotal.Text = Format(TOTAL, "0.00")
 
 End Function
 Private Function SumaTotal() As Double
@@ -3468,7 +3472,7 @@ Private Sub txtNroNotaPedido_LostFocus()
                 Exit Sub
             End If
             Screen.MousePointer = vbHourglass
-            lblestado.Caption = "Buscando..."
+            lblEstado.Caption = "Buscando..."
             
             'CARGO CABECERA DE LA NOTA DE PEDIDO
             FechaNotaPedido.Value = Rec2!NPE_FECHA
@@ -3484,7 +3488,7 @@ Private Sub txtNroNotaPedido_LostFocus()
                 LimpiarNotaPedido
                 cmdGrabar.Enabled = False
                 Screen.MousePointer = vbNormal
-                lblestado.Caption = ""
+                lblEstado.Caption = ""
                 Rec2.Close
                 Exit Sub
             Else
@@ -3521,7 +3525,7 @@ Private Sub txtNroNotaPedido_LostFocus()
             Rec1.Close
             '--------------------------------------------------
             Screen.MousePointer = vbNormal
-            lblestado.Caption = ""
+            lblEstado.Caption = ""
             'chkRemitoSinFactura.SetFocus
         Else
             MsgBox "El Presupuesto no existe", vbExclamation, TIT_MSGBOX

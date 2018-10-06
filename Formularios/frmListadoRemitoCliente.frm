@@ -1,7 +1,7 @@
 VERSION 5.00
-Object = "{F9043C88-F6F2-101A-A3C9-08002B2F49FB}#1.2#0"; "comdlg32.ocx"
-Object = "{5E9E78A0-531B-11CF-91F6-C2863C385E30}#1.0#0"; "msflxgrd.ocx"
-Object = "{86CF1D34-0C5F-11D2-A9FC-0000F8754DA1}#2.0#0"; "mscomct2.ocx"
+Object = "{F9043C88-F6F2-101A-A3C9-08002B2F49FB}#1.2#0"; "Comdlg32.ocx"
+Object = "{5E9E78A0-531B-11CF-91F6-C2863C385E30}#1.0#0"; "MSFLXGRD.OCX"
+Object = "{86CF1D34-0C5F-11D2-A9FC-0000F8754DA1}#2.0#0"; "MSCOMCT2.OCX"
 Object = "{00025600-0000-0000-C000-000000000046}#5.2#0"; "Crystl32.OCX"
 Begin VB.Form frmListadoRemitoCliente 
    BorderStyle     =   1  'Fixed Single
@@ -348,23 +348,27 @@ Begin VB.Form frmListadoRemitoCliente
          Left            =   3360
          TabIndex        =   33
          Top             =   720
-         Width           =   1335
-         _ExtentX        =   2355
+         Width           =   1575
+         _ExtentX        =   2778
          _ExtentY        =   661
          _Version        =   393216
-         Format          =   53936129
+         CheckBox        =   -1  'True
+         DateIsNull      =   -1  'True
+         Format          =   54263809
          CurrentDate     =   43367
       End
       Begin MSComCtl2.DTPicker FechaHasta 
          Height          =   375
-         Left            =   5880
+         Left            =   6240
          TabIndex        =   34
          Top             =   720
-         Width           =   1335
-         _ExtentX        =   2355
+         Width           =   1575
+         _ExtentX        =   2778
          _ExtentY        =   661
          _Version        =   393216
-         Format          =   53936129
+         CheckBox        =   -1  'True
+         DateIsNull      =   -1  'True
+         Format          =   54263809
          CurrentDate     =   43367
       End
       Begin VB.Label lbl 
@@ -394,7 +398,7 @@ Begin VB.Form frmListadoRemitoCliente
          AutoSize        =   -1  'True
          Caption         =   "Fecha Hasta:"
          Height          =   195
-         Left            =   4815
+         Left            =   5175
          TabIndex        =   15
          Top             =   780
          Width           =   960
@@ -471,7 +475,7 @@ Private Sub CmdBuscAprox_Click()
 Dim VTotal  As Double
 Dim VSaldo  As Double
     GrdModulos.Rows = 1
-    lblestado.Caption = "Buscando..."
+    lblEstado.Caption = "Buscando..."
     Screen.MousePointer = vbHourglass
     GrdModulos.HighLight = flexHighlightNever
     sql = "SELECT RC.RCL_NUMERO, RC.RCL_SUCURSAL,RC.RCL_SALDO, "
@@ -510,11 +514,11 @@ Dim VSaldo  As Double
             rec.MoveNext
         Loop
         GrdModulos.SetFocus
-        lblestado.Caption = "Se encontraron " & GrdModulos.Rows - 1 & " remitos"
-        txtTotal.Text = Format(VTotal, "0.00")
+        lblEstado.Caption = "Se encontraron " & GrdModulos.Rows - 1 & " remitos"
+        txttotal.Text = Format(VTotal, "0.00")
         txtSaldo.Text = Format(VSaldo, "0.00")
     Else
-        lblestado.Caption = ""
+        lblEstado.Caption = ""
         Screen.MousePointer = vbNormal
         MsgBox "No se encontraron datos...", vbExclamation, TIT_MSGBOX
     End If
@@ -793,8 +797,8 @@ Private Sub CmdNuevo_Click()
     optDetallado.Value = True
     optPantalla.Value = True
     chkCliente.SetFocus
-    lblestado.Caption = ""
-    txtTotal.Text = ""
+    lblEstado.Caption = ""
+    txttotal.Text = ""
     txtSaldo.Text = ""
 End Sub
 
@@ -808,7 +812,7 @@ Private Sub Form_Load()
     cmdBuscarCli.Enabled = False
     GrdModulos.Rows = 1
 '    lblImpresora.Caption = "Impresora Actual: " & Printer.DeviceName
-    lblestado.Caption = ""
+    lblEstado.Caption = ""
 
     Call Centrar_pantalla(Me)
     GrdModulos.FormatString = "^Número|^Fecha|Importe|Saldo|Cliente|Domicilio|Localidad|Provincia"
@@ -826,7 +830,7 @@ End Sub
 
 Private Sub Form_KeyPress(KeyAscii As Integer)
     If KeyAscii = vbKeyReturn Then SendKeys "{TAB}"
-    If KeyAscii = vbKeyEscape Then cmdSalir_Click
+    If KeyAscii = vbKeyEscape Then CmdSalir_Click
 End Sub
 
 Private Sub chkCliente_Click()
@@ -881,7 +885,7 @@ Private Sub txtCliente_LostFocus()
         And ActiveControl.Name <> "cmdBuscarCli" _
         And ActiveControl.Name <> "cmdNuevo" And ActiveControl.Name <> "CmdSalir" Then CmdBuscAprox.SetFocus
 End Sub
-Private Sub cmdSalir_Click()
+Private Sub CmdSalir_Click()
     Set frmListadoRemitoCliente = Nothing
     Unload Me
 End Sub
