@@ -1,7 +1,7 @@
 VERSION 5.00
-Object = "{BDC217C8-ED16-11CD-956C-0000C04E4C0A}#1.1#0"; "tabctl32.ocx"
-Object = "{F9043C88-F6F2-101A-A3C9-08002B2F49FB}#1.2#0"; "comdlg32.ocx"
-Object = "{5E9E78A0-531B-11CF-91F6-C2863C385E30}#1.0#0"; "msflxgrd.ocx"
+Object = "{BDC217C8-ED16-11CD-956C-0000C04E4C0A}#1.1#0"; "TABCTL32.OCX"
+Object = "{F9043C88-F6F2-101A-A3C9-08002B2F49FB}#1.2#0"; "Comdlg32.ocx"
+Object = "{5E9E78A0-531B-11CF-91F6-C2863C385E30}#1.0#0"; "MSFLXGRD.OCX"
 Object = "{00025600-0000-0000-C000-000000000046}#5.2#0"; "Crystl32.OCX"
 Begin VB.Form frmControlStock 
    BorderStyle     =   1  'Fixed Single
@@ -489,7 +489,7 @@ Private Sub CBImpresora_Click()
 End Sub
 
 Private Sub chklinea_Click()
-    If chkLinea.Value = 1 Then
+    If chklinea.Value = 1 Then
         cboLinea.Enabled = True
         cboLinea.ListIndex = 0
         cboLinea.SetFocus
@@ -518,22 +518,22 @@ End Sub
 
 Private Sub chkProducto_Click()
     If chkProducto.Value = 1 Then
-        txtproducto.Enabled = True
-        txtproducto.SetFocus
+        txtProducto.Enabled = True
+        txtProducto.SetFocus
     Else
-        txtproducto.Enabled = False
-        txtproducto.Text = ""
+        txtProducto.Enabled = False
+        txtProducto.Text = ""
     End If
 End Sub
 
 Private Sub chkRepres_Click()
-    If (chkLinea.Value = 1) And (chkRubro.Value = 1) Then
+    If (chklinea.Value = 1) And (chkrubro.Value = 1) Then
         cargocboRepres cboLinea.ItemData(cboLinea.ListIndex), cboRubro.ItemData(cboRubro.ListIndex)
     Else
-        If chkLinea.Value = 1 Then
+        If chklinea.Value = 1 Then
             cargocboRepres cboLinea.ItemData(cboLinea.ListIndex), -1
         Else
-            If chkRubro.Value = 1 Then
+            If chkrubro.Value = 1 Then
                 cargocboRepres -1, cboRubro.ItemData(cboRubro.ListIndex)
             Else
                     cargocboRepres -1, -1
@@ -552,12 +552,12 @@ Private Sub chkRepres_Click()
 End Sub
 
 Private Sub chkRubro_Click()
-    If chkLinea.Value = 0 Then
+    If chklinea.Value = 0 Then
         cargocboRubro (-1)
     Else
         cargocboRubro (cboLinea.ItemData(cboLinea.ListIndex))
     End If
-    If chkRubro.Value = 1 Then
+    If chkrubro.Value = 1 Then
         cboRubro.Enabled = True
         cboRubro.ListIndex = 0
         cboRubro.SetFocus
@@ -645,11 +645,11 @@ End Sub
 Private Sub CmdBuscAprox_Click()
     Dim j As Integer
     
-    lblestado.Caption = "Buscando..."
+    lblEstado.Caption = "Buscando..."
     Screen.MousePointer = vbHourglass
     sql = "SELECT DISTINCT   P.PTO_CODIGO,P.PTO_DESCRI,L.LNA_DESCRI,R.RUB_DESCRI,TP.TPRE_DESCRI,"
     sql = sql & " P.PTO_STKMIN,D.DST_STKFIS"
-    sql = sql & " FROM PRODUCTO P,LINEAS L,RUBROS R, REPRESENTADA RE,DETALLE_STOCK D,TIPO_PRESENTACION TP"
+    sql = sql & " FROM PRODUCTO P,LINEAS L,RUBROS R,DETALLE_STOCK D,TIPO_PRESENTACION TP"
     sql = sql & " WHERE P.PTO_CODIGO = D.PTO_CODIGO "
     sql = sql & " AND L.LNA_CODIGO = P.LNA_CODIGO "
     sql = sql & " AND P.TPRE_CODIGO = TP.TPRE_CODIGO "
@@ -660,12 +660,12 @@ Private Sub CmdBuscAprox_Click()
     sql = sql & " AND P.PTO_SERVICIO <> 1"
     sql = sql & " AND D.STK_CODIGO = 1 "
     '" & cboStock.ItemData(cboStock.ListIndex) & " "
-    If txtproducto.Text <> "" Then
-        sql = sql & " AND (P.PTO_CODIGO LIKE '" & txtproducto.Text & "%' "
-        sql = sql & " OR P.PTO_DESCRI LIKE '" & txtproducto.Text & "%')"
+    If txtProducto.Text <> "" Then
+        sql = sql & " AND (P.PTO_CODIGO LIKE '" & txtProducto.Text & "%' "
+        sql = sql & " OR P.PTO_DESCRI LIKE '" & txtProducto.Text & "%')"
     End If
-    If chkLinea.Value = 1 Then sql = sql & " AND L.LNA_CODIGO=" & cboLinea.ItemData(cboLinea.ListIndex)
-    If chkRubro.Value = 1 Then sql = sql & "AND R.RUB_CODIGO=" & cboRubro.ItemData(cboRubro.ListIndex)
+    If chklinea.Value = 1 Then sql = sql & " AND L.LNA_CODIGO=" & cboLinea.ItemData(cboLinea.ListIndex)
+    If chkrubro.Value = 1 Then sql = sql & "AND R.RUB_CODIGO=" & cboRubro.ItemData(cboRubro.ListIndex)
     If chkRepres = 1 Then sql = sql & " AND TP.TPRE_CODIGO=" & cboRep.ItemData(cboRep.ListIndex)
     'Muestro de acuerdo a la Lista de Precio
     If chkLista.Value = Checked Then
@@ -704,7 +704,7 @@ Private Sub CmdBuscAprox_Click()
         End If
         rec.Close
         Screen.MousePointer = vbNormal
-        lblestado.Caption = ""
+        lblEstado.Caption = ""
     Else 'ACA ENTRA CUANDO NO ES COVIT
 '        rec.Open sql, DBConn, adOpenStatic, adLockOptimistic
 '        GrdModulos.ColWidth(1) = 2500
@@ -727,7 +727,7 @@ Private Sub CmdBuscAprox_Click()
 '        End If
         rec.Close
         Screen.MousePointer = vbNormal
-        lblestado.Caption = ""
+        lblEstado.Caption = ""
         
 '        If GrdModulos.Rows > 1 Then
 '
@@ -780,7 +780,7 @@ Private Sub CmdBuscAprox_Click()
 '        End If
 '        rec.Close
 '    End If
-    lblestado.Caption = ""
+    lblEstado.Caption = ""
     If Stock = 0 Then
         If GrdModulos.Rows > 1 Then
             GrdModulos.ToolTipText = "Doble Click en la Grilla para actualizar el Stock"
@@ -822,7 +822,7 @@ End Sub
 
 Private Sub cmdListar_Click()
     
-    lblestado.Caption = "Buscando Listado..."
+    lblEstado.Caption = "Buscando Listado..."
     Screen.MousePointer = vbHourglass
     
     Rep.WindowState = crptMaximized 'crptMinimized
@@ -844,7 +844,7 @@ Private Sub cmdListar_Click()
     Rep.Action = 1
     Rep.SelectionFormula = ""
     Rep.Formulas(0) = ""
-    lblestado.Caption = ""
+    lblEstado.Caption = ""
     
 End Sub
 
@@ -866,12 +866,12 @@ Private Sub LlenoTablaTemporal()
     sql = sql & " AND L.LNA_CODIGO = R.LNA_CODIGO "
     
     sql = sql & " AND D.STK_CODIGO = 1 "  ' " & cboStock.ItemData(cboStock.ListIndex)
-    If txtproducto.Text <> "" Then
-        sql = sql & " AND (P.PTO_CODIGO LIKE '" & txtproducto.Text & "%' "
-        sql = sql & " OR P.PTO_DESCRI LIKE '" & txtproducto.Text & "%')"
+    If txtProducto.Text <> "" Then
+        sql = sql & " AND (P.PTO_CODIGO LIKE '" & txtProducto.Text & "%' "
+        sql = sql & " OR P.PTO_DESCRI LIKE '" & txtProducto.Text & "%')"
     End If
-    If chkLinea.Value = 1 Then sql = sql & " AND L.LNA_CODIGO=" & cboLinea.ItemData(cboLinea.ListIndex)
-    If chkRubro.Value = 1 Then sql = sql & " AND R.RUB_CODIGO=" & cboRubro.ItemData(cboRubro.ListIndex)
+    If chklinea.Value = 1 Then sql = sql & " AND L.LNA_CODIGO=" & cboLinea.ItemData(cboLinea.ListIndex)
+    If chkrubro.Value = 1 Then sql = sql & " AND R.RUB_CODIGO=" & cboRubro.ItemData(cboRubro.ListIndex)
     If chkRepres = 1 Then sql = sql & " AND TP.TPRE_CODIGO=" & cboRep.ItemData(cboRep.ListIndex)
     
     DBConn.Execute sql
@@ -901,11 +901,11 @@ Private Sub CmdNuevo_Click()
     CmdBuscAprox_Click
 End Sub
 Private Sub HacerNuevo()
-    chkLinea.Value = 0
-    chkRubro.Value = 0
+    chklinea.Value = 0
+    chkrubro.Value = 0
     chkRepres.Value = 0
     chkProducto.Value = 0
-    txtproducto.Text = ""
+    txtProducto.Text = ""
 '    txtLinea.Text = ""
 '    txtRubro.Text = ""
 '    txtRepresentada.Text = ""
@@ -960,7 +960,7 @@ tabLista.Tab = 1
 CargoCboLPrecioRep
 'CargoCboListaPrecio
 
-lblestado.Caption = ""
+lblEstado.Caption = ""
 'lblImpresora.Caption = "Impresora Actual: " & Printer.DeviceName
 'CmdBuscAprox_Click
 End Sub
@@ -1156,7 +1156,7 @@ Private Sub txtproducto_Change()
 End Sub
 
 Private Sub txtproducto_GotFocus()
-    SelecTexto txtproducto
+    SelecTexto txtProducto
     
 End Sub
 

@@ -1,7 +1,7 @@
 VERSION 5.00
-Object = "{BDC217C8-ED16-11CD-956C-0000C04E4C0A}#1.1#0"; "tabctl32.ocx"
-Object = "{5E9E78A0-531B-11CF-91F6-C2863C385E30}#1.0#0"; "msflxgrd.ocx"
-Object = "{86CF1D34-0C5F-11D2-A9FC-0000F8754DA1}#2.0#0"; "mscomct2.ocx"
+Object = "{BDC217C8-ED16-11CD-956C-0000C04E4C0A}#1.1#0"; "TABCTL32.OCX"
+Object = "{5E9E78A0-531B-11CF-91F6-C2863C385E30}#1.0#0"; "MSFLXGRD.OCX"
+Object = "{86CF1D34-0C5F-11D2-A9FC-0000F8754DA1}#2.0#0"; "MSCOMCT2.OCX"
 Begin VB.Form frmNotaDePedido 
    BorderStyle     =   1  'Fixed Single
    Caption         =   "Presupuesto"
@@ -101,9 +101,7 @@ Begin VB.Form frmNotaDePedido
       TabPicture(1)   =   "frmNotaDePedido.frx":001C
       Tab(1).ControlEnabled=   0   'False
       Tab(1).Control(0)=   "Frame4"
-      Tab(1).Control(0).Enabled=   0   'False
       Tab(1).Control(1)=   "GrdModulos"
-      Tab(1).Control(1).Enabled=   0   'False
       Tab(1).ControlCount=   2
       Begin VB.Frame Frame4 
          Caption         =   "Buscar por..."
@@ -243,7 +241,7 @@ Begin VB.Form frmNotaDePedido
             _ExtentX        =   2355
             _ExtentY        =   661
             _Version        =   393216
-            Format          =   53936129
+            Format          =   57278465
             CurrentDate     =   43367
          End
          Begin MSComCtl2.DTPicker FechaHasta 
@@ -255,7 +253,7 @@ Begin VB.Form frmNotaDePedido
             _ExtentX        =   2355
             _ExtentY        =   661
             _Version        =   393216
-            Format          =   53936129
+            Format          =   57278465
             CurrentDate     =   43367
          End
          Begin VB.Label Label1 
@@ -674,7 +672,7 @@ Begin VB.Form frmNotaDePedido
             _ExtentX        =   2355
             _ExtentY        =   556
             _Version        =   393216
-            Format          =   53936129
+            Format          =   57278465
             CurrentDate     =   43367
          End
          Begin VB.Label Label5 
@@ -1236,7 +1234,7 @@ Private Sub CmdBorrar_Click()
                 End If
            End If
            rec.Close
-            lblestado.Caption = "Eliminando..."
+            lblEstado.Caption = "Eliminando..."
             Screen.MousePointer = vbHourglass
             
             sql = "DELETE FROM DETALLE_NOTA_PEDIDO"
@@ -1249,7 +1247,7 @@ Private Sub CmdBorrar_Click()
             sql = sql & " AND NPE_FECHA=" & XDQ(FechaNotaPedido)
             DBConn.Execute sql
             
-            lblestado.Caption = ""
+            lblEstado.Caption = ""
             Screen.MousePointer = vbNormal
             CmdNuevo_Click
         End If
@@ -1259,13 +1257,13 @@ Private Sub CmdBorrar_Click()
 Seclavose:
     DBConn.RollbackTrans
     Screen.MousePointer = vbNormal
-    lblestado.Caption = ""
+    lblEstado.Caption = ""
     MsgBox Err.Description, vbCritical, TIT_MSGBOX
 End Sub
 
 Private Sub CmdBuscAprox_Click()
     GrdModulos.Rows = 1
-    lblestado.Caption = "Buscando..."
+    lblEstado.Caption = "Buscando..."
     Screen.MousePointer = vbHourglass
     
     sql = "SELECT NP.*, C.CLI_RAZSOC,C.CLI_DOMICI,L.LOC_DESCRI"
@@ -1288,11 +1286,11 @@ Private Sub CmdBuscAprox_Click()
         Loop
         GrdModulos.SetFocus
     Else
-        lblestado.Caption = ""
+        lblEstado.Caption = ""
         Screen.MousePointer = vbNormal
         MsgBox "No se encontraron datos...", vbExclamation, TIT_MSGBOX
     End If
-    lblestado.Caption = ""
+    lblEstado.Caption = ""
     Screen.MousePointer = vbNormal
     rec.Close
 End Sub
@@ -1389,7 +1387,7 @@ Private Sub cmdBuscarVendedor_Click()
     End If
 End Sub
 
-Private Sub CmdGrabar_Click()
+Private Sub cmdGrabar_Click()
     If ValidarNotaPedido = False Then Exit Sub
     If MsgBox("¿Confirma el Presupuesto?", vbQuestion + vbYesNo, TIT_MSGBOX) = vbNo Then Exit Sub
     On Error GoTo HayErrorNota
@@ -1401,7 +1399,7 @@ Private Sub CmdGrabar_Click()
     rec.Open sql, DBConn, adOpenStatic, adLockOptimistic
     
     Screen.MousePointer = vbHourglass
-    lblestado.Caption = "Guardando..."
+    lblEstado.Caption = "Guardando..."
     
     If rec.EOF = False Then
         If MsgBox("Seguro que modificar el Presupuesto Nro.: " & Trim(txtNroNotaPedido), vbQuestion + vbYesNo, TIT_MSGBOX) = vbYes Then
@@ -1410,7 +1408,7 @@ Private Sub CmdGrabar_Click()
             sql = sql & " ,VEN_CODIGO=" & XN(txtNroVendedor)
             sql = sql & " ,NPE_IVA=" & XN(txtPorcentajeIva)
             sql = sql & " ,NPE_SUBTOTAL=" & XN(txtSubtotal)
-            sql = sql & " ,NPE_TOTAL=" & XN(txtTotal)
+            sql = sql & " ,NPE_TOTAL=" & XN(txttotal)
             sql = sql & ", NPE_OBSERV =" & XS(txtObservaciones)
             If chkDetalle.Value = Checked Then
                 sql = sql & " ,FPG_CODIGO=" & cboCondicion.ItemData(cboCondicion.ListIndex)
@@ -1465,7 +1463,7 @@ Private Sub CmdGrabar_Click()
         'sql = sql & XS(txtNroNotaPedido) & ","
         sql = sql & XN(txtPorcentajeIva) & ","
         sql = sql & XN(txtSubtotal) & ","
-        sql = sql & XN(txtTotal) & ","
+        sql = sql & XN(txttotal) & ","
         sql = sql & XS(txtObservaciones) & ","
         sql = sql & "1)" 'ESTADO PENDIENTE
         DBConn.Execute sql
@@ -1490,12 +1488,12 @@ Private Sub CmdGrabar_Click()
     End If
     rec.Close
     Screen.MousePointer = vbNormal
-    lblestado.Caption = ""
+    lblEstado.Caption = ""
     CmdNuevo_Click
     Exit Sub
     
 HayErrorNota:
-    lblestado.Caption = ""
+    lblEstado.Caption = ""
     Screen.MousePointer = vbNormal
     DBConn.RollbackTrans
     MsgBox Err.Description, vbCritical, TIT_MSGBOX
@@ -1508,7 +1506,7 @@ Private Function ValidarNotaPedido() As Boolean
         ValidarNotaPedido = False
         Exit Function
     End If
-    If FechaNotaPedido.Value = Date Then
+    If FechaNotaPedido.Value = "" Then
         MsgBox "La Fecha del Presupuesto es requerida", vbExclamation, TIT_MSGBOX
         FechaNotaPedido.SetFocus
         ValidarNotaPedido = False
@@ -1559,7 +1557,7 @@ Public Sub ImprimirFactura()
     Dim Renglon As Double
     Dim canttxt As Integer
     Screen.MousePointer = vbHourglass
-    lblestado.Caption = "Imprimiendo..."
+    lblEstado.Caption = "Imprimiendo..."
     Dim w As Integer
     For w = 1 To 2 'SE IMPRIME POR DUPLICADO
       '-----IMPRESION DEL ENCABEZADO------------------
@@ -1690,13 +1688,13 @@ Public Sub ImprimirFactura()
             
             Imprimir 11.6, 23.5, True, "IVA: " & txtPorcentajeIva.Text & "  $ " & txtImporteIva.Text
             'Imprimir 12.2, 23.5, True, " $" & txtImporteIva.Text
-            Imprimir 12, 25.5, True, "TOTAL: $ " & txtTotal.Text
+            Imprimir 12, 25.5, True, "TOTAL: $ " & txttotal.Text
             
             
         Printer.EndDoc
     Next w
     Screen.MousePointer = vbNormal
-    lblestado.Caption = ""
+    lblEstado.Caption = ""
 End Sub
 
 Public Sub ImprimirEncabezado()
@@ -1784,17 +1782,17 @@ Private Sub CmdNuevo_Click()
    FechaNotaPedido.Value = Date
    txtNroNotaPedido.Text = ""
    lblEstadoNota.Caption = ""
-   lblestado.Caption = ""
+   lblEstado.Caption = ""
    tabDatos.Tab = 0
    Call BuscoEstado(1, lblEstadoNota)
    cmdGrabar.Enabled = True
-   CmdBorrar.Enabled = True
+   cmdBorrar.Enabled = True
    txtNroNotaPedido.Text = BuscoUltimoPedido
    txtNroNotaPedido.SetFocus
    BuscoIva
    txtImporteIva.Text = ""
    txtSubtotal.Text = ""
-   txtTotal.Text = ""
+   txttotal.Text = ""
    txtObservaciones.Text = ""
 End Sub
 Private Function SumaTotal() As Double
@@ -1890,7 +1888,7 @@ Private Sub cmdQuitarProducto_Click()
     End If
 End Sub
 
-Private Sub cmdSalir_Click()
+Private Sub CmdSalir_Click()
     If MsgBox("Seguro que desea Salir", vbQuestion + vbYesNo, TIT_MSGBOX) = vbYes Then
         Set frmNotaDePedido = Nothing
         Unload Me
@@ -1915,7 +1913,7 @@ Private Sub Form_KeyPress(KeyAscii As Integer)
         KeyAscii = vbKeyReturn Then
         SendKeys "{TAB}"
     End If
-    If KeyAscii = vbKeyEscape Then cmdSalir_Click
+    If KeyAscii = vbKeyEscape Then CmdSalir_Click
 End Sub
 
 Private Sub Form_Load()
@@ -1975,7 +1973,7 @@ Private Sub Form_Load()
     cboCondicion.ListIndex = -1
     cboCondicion.Enabled = False
     cmdNuevoRubro.Enabled = False
-    lblestado.Caption = ""
+    lblEstado.Caption = ""
     Call BuscoEstado(1, lblEstadoNota)
     tabDatos.Tab = 0
     'ULTIMO PRESUPEUSTO O PEDIDO
@@ -2128,7 +2126,7 @@ Private Sub tabDatos_Click(PreviousTab As Integer)
     FechaHasta.Enabled = False
     txtVendedor.Enabled = False
     cmdGrabar.Enabled = False
-    CmdBorrar.Enabled = False
+    cmdBorrar.Enabled = False
     cmdBuscarCli.Enabled = False
     cmdBuscarVen.Enabled = False
     LimpiarBusqueda
@@ -2136,7 +2134,7 @@ Private Sub tabDatos_Click(PreviousTab As Integer)
   Else
     'If Me.Visible = True Then txtNroNotaPedido.SetFocus
     cmdGrabar.Enabled = True
-    CmdBorrar.Enabled = True
+    cmdBorrar.Enabled = True
   End If
 End Sub
 
@@ -2196,7 +2194,7 @@ Private Sub TxtCodigoCli_Change()
         txtIngBrutos.Text = ""
         txtCondicionIVA.Text = ""
         txtDomici.Text = ""
-        txtlocalidad.Text = ""
+        TxtLOCALIDAD.Text = ""
         txtprovincia.Text = ""
         txtcodpos.Text = ""
     End If
@@ -2239,7 +2237,7 @@ Private Sub TxtCodigoCli_LostFocus()
         If rec.EOF = False Then
             txtRazSocCli.Text = rec!CLI_RAZSOC
             txtDomici.Text = IIf(IsNull(rec!CLI_DOMICI), "", rec!CLI_DOMICI)
-            txtlocalidad.Text = rec!LOC_DESCRI
+            TxtLOCALIDAD.Text = rec!LOC_DESCRI
             txtprovincia.Text = rec!PRO_DESCRI
             txtCondicionIVA.Text = BuscoCondicionIVA(rec!IVA_CODIGO)
             txtCUIT.Text = IIf(IsNull(rec!CLI_CUIT), "NO INFORMADO", Format(rec!CLI_CUIT, "##-########-#"))
@@ -2559,7 +2557,7 @@ Private Sub TotalPresupuesto()
     subtotal = txtSubtotal
     impIva = txtImporteIva
     TOTAL = subtotal + impIva
-    txtTotal.Text = Format(TOTAL, "0.00")
+    txttotal.Text = Format(TOTAL, "0.00")
 
 End Sub
 
@@ -2612,7 +2610,7 @@ Private Sub txtNroNotaPedido_LostFocus()
                 Exit Sub
             End If
             Screen.MousePointer = vbHourglass
-            lblestado.Caption = "Buscando..."
+            lblEstado.Caption = "Buscando..."
             
             'CARGO CABECERA DE LA NOTA DE PEDIDO
             FechaNotaPedido.Value = Rec2!NPE_FECHA
@@ -2634,13 +2632,13 @@ Private Sub txtNroNotaPedido_LostFocus()
             Call BuscoEstado(Rec2!EST_CODIGO, lblEstadoNota)
             If Rec2!EST_CODIGO <> 1 Then
                 cmdGrabar.Enabled = False
-                CmdBorrar.Enabled = False
+                cmdBorrar.Enabled = False
                 FramePedido.Enabled = False
                 fraDatos.Enabled = False
                 grdGrilla.SetFocus
             Else
                 cmdGrabar.Enabled = True
-                CmdBorrar.Enabled = True
+                cmdBorrar.Enabled = True
                 FramePedido.Enabled = True
                 fraDatos.Enabled = True
             End If
@@ -2684,7 +2682,7 @@ Private Sub txtNroNotaPedido_LostFocus()
             End If
             Rec1.Close
             Screen.MousePointer = vbNormal
-            lblestado.Caption = ""
+            lblEstado.Caption = ""
         Else
             Call BuscoEstado(1, lblEstadoNota)
         End If
@@ -2698,7 +2696,7 @@ Private Sub txtNroNotaPedido_LostFocus()
         subtotal = txtSubtotal
         impIva = txtImporteIva
         TOTAL = subtotal + impIva
-        txtTotal.Text = Format(TOTAL, "0.00")
+        txttotal.Text = Format(TOTAL, "0.00")
     Else
         MsgBox "Debe ingresar el Número del Presupuesto", vbExclamation, TIT_MSGBOX
         txtNroNotaPedido.SetFocus

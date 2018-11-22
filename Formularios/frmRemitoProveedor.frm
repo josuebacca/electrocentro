@@ -1,7 +1,7 @@
 VERSION 5.00
-Object = "{BDC217C8-ED16-11CD-956C-0000C04E4C0A}#1.1#0"; "tabctl32.ocx"
-Object = "{5E9E78A0-531B-11CF-91F6-C2863C385E30}#1.0#0"; "msflxgrd.ocx"
-Object = "{86CF1D34-0C5F-11D2-A9FC-0000F8754DA1}#2.0#0"; "mscomct2.ocx"
+Object = "{BDC217C8-ED16-11CD-956C-0000C04E4C0A}#1.1#0"; "TABCTL32.OCX"
+Object = "{5E9E78A0-531B-11CF-91F6-C2863C385E30}#1.0#0"; "MSFLXGRD.OCX"
+Object = "{86CF1D34-0C5F-11D2-A9FC-0000F8754DA1}#2.0#0"; "MSCOMCT2.OCX"
 Begin VB.Form frmRemitoProveedor 
    BorderStyle     =   1  'Fixed Single
    Caption         =   "Remito de Proveedores..."
@@ -388,7 +388,7 @@ Begin VB.Form frmRemitoProveedor
             _ExtentX        =   2355
             _ExtentY        =   556
             _Version        =   393216
-            Format          =   53936129
+            Format          =   57409537
             CurrentDate     =   43367
          End
          Begin VB.Label Label4 
@@ -536,7 +536,7 @@ Begin VB.Form frmRemitoProveedor
             _ExtentX        =   2355
             _ExtentY        =   556
             _Version        =   393216
-            Format          =   53936129
+            Format          =   57409537
             CurrentDate     =   43367
          End
          Begin VB.Label lblEstadoRemito 
@@ -621,7 +621,7 @@ Begin VB.Form frmRemitoProveedor
             _ExtentX        =   2355
             _ExtentY        =   556
             _Version        =   393216
-            Format          =   53936129
+            Format          =   57409537
             CurrentDate     =   43371
          End
          Begin VB.Frame Frame1 
@@ -787,7 +787,7 @@ Begin VB.Form frmRemitoProveedor
             _ExtentX        =   2355
             _ExtentY        =   556
             _Version        =   393216
-            Format          =   53936129
+            Format          =   57409537
             CurrentDate     =   43367
          End
          Begin VB.Label Label1 
@@ -1202,14 +1202,14 @@ Private Sub cmdAgregarProducto_Click()
     If Consulta <> 4 Then
         grdGrilla.Col = 0
         EDITAR grdGrilla, txtEdit, 13
-        If Trim(ABMProducto.TxtCodigo) <> "" Then txtEdit.Text = ABMProducto.TxtCodigo
+        If Trim(ABMProducto.TxtCODIGO) <> "" Then txtEdit.Text = ABMProducto.TxtCODIGO
         TxtEdit_KeyDown vbKeyReturn, 0
     End If
 End Sub
 
 Private Sub CmdBuscAprox_Click()
     GrdModulos.Rows = 1
-    lblestado.Caption = "Buscando..."
+    lblEstado.Caption = "Buscando..."
     Screen.MousePointer = vbHourglass
     
     Select Case TipoBusquedaDoc
@@ -1252,7 +1252,7 @@ Private Sub CmdBuscAprox_Click()
             Loop
             GrdModulos.SetFocus
         Else
-            lblestado.Caption = ""
+            lblEstado.Caption = ""
             Screen.MousePointer = vbNormal
             MsgBox "No se encontraron datos...", vbExclamation, TIT_MSGBOX
         End If
@@ -1285,13 +1285,13 @@ Private Sub CmdBuscAprox_Click()
             Loop
             GrdModulos.SetFocus
         Else
-            lblestado.Caption = ""
+            lblEstado.Caption = ""
             Screen.MousePointer = vbNormal
             MsgBox "No se encontraron datos...", vbExclamation, TIT_MSGBOX
         End If
     End Select
     
-    lblestado.Caption = ""
+    lblEstado.Caption = ""
     Screen.MousePointer = vbNormal
     rec.Close
 End Sub
@@ -1379,7 +1379,7 @@ Private Sub cmdBuscarVendedor_Click()
     End If
 End Sub
 
-Private Sub CmdGrabar_Click()
+Private Sub cmdGrabar_Click()
     If ValidarRemito = False Then Exit Sub
     
     On Error GoTo HayErrorRemito
@@ -1394,7 +1394,7 @@ Private Sub CmdGrabar_Click()
     rec.Open sql, DBConn, adOpenStatic, adLockOptimistic
             
     Screen.MousePointer = vbHourglass
-    lblestado.Caption = "Guardando..."
+    lblEstado.Caption = "Guardando..."
     
     If rec.EOF = True Then 'NUEVO REMITO
         sql = "INSERT INTO REMITO_PROVEEDOR"
@@ -1415,9 +1415,9 @@ Private Sub CmdGrabar_Click()
         sql = sql & 1 & ","
         sql = sql & XN(TxtCodigoCli.Text) & ","
         sql = sql & 21 & ","
-        sql = sql & XN(txtTotal.Text) & ","
+        sql = sql & XN(txttotal.Text) & ","
         sql = sql & XN(txtSubtotal.Text) & ","
-        sql = sql & XN(txtTotal.Text) & ")"
+        sql = sql & XN(txttotal.Text) & ")"
         
         DBConn.Execute sql
            
@@ -1464,7 +1464,7 @@ Private Sub CmdGrabar_Click()
         End If
         DBConn.Execute AgregoCtaCteProveedores(cmdBuscarCliente.Tag _
                                               , TxtCodigoCli, 21 _
-                                        , txtNroSucursal, txtNroRemito, FechaRemito, txtTotal, "D", CStr(Date))
+                                        , txtNroSucursal, txtNroRemito, FechaRemito, txttotal, "D", CStr(Date))
         
         
         'ACTUALIZO LA TABLA PARAMENTROS Y LE SUMO UNO AL REMITO
@@ -1480,7 +1480,7 @@ Private Sub CmdGrabar_Click()
             sql = sql & " ,STK_CODIGO=" & cboStock.ItemData(cboStock.ListIndex)
             sql = sql & " ,RPR_NUMEROTXT=" & XS(Format(txtNroRemito.Text, "00000000"))
             sql = sql & " ,TCO_CODIGO = 21 "
-            sql = sql & " ,RPR_TOTAL = " & XN(txtTotal.Text)
+            sql = sql & " ,RPR_TOTAL = " & XN(txttotal.Text)
             sql = sql & " ,RPR_SUBTOTAL = " & XN(txtSubtotal.Text)
             sql = sql & " ,RPR_SALDO = & XN(txtTotal.Text) "
             
@@ -1536,7 +1536,7 @@ Private Sub CmdGrabar_Click()
             
             DBConn.Execute AgregoCtaCteProveedores(cmdBuscarCliente.Tag _
                                               , TxtCodigoCli, 21 _
-                                        , txtNroSucursal, txtNroRemito, FechaRemito, txtTotal, "D", CStr(Date))
+                                        , txtNroSucursal, txtNroRemito, FechaRemito, txttotal, "D", CStr(Date))
             
             
             DBConn.CommitTrans
@@ -1546,7 +1546,7 @@ Private Sub CmdGrabar_Click()
         
     rec.Close
     Screen.MousePointer = vbNormal
-    lblestado.Caption = ""
+    lblEstado.Caption = ""
     
 '    If MsgBox("¿Desea Facturar el Remito?", vbQuestion + vbYesNo, TIT_MSGBOX) = vbYes Then
 '        'frmFacturaCliente.TipoBusquedaDoc = 2 'BUSCA REMITOS
@@ -1565,7 +1565,7 @@ Private Sub CmdGrabar_Click()
     Exit Sub
     
 HayErrorRemito:
-    lblestado.Caption = ""
+    lblEstado.Caption = ""
     Screen.MousePointer = vbNormal
     If rec.State = 1 Then rec.Close
     DBConn.RollbackTrans
@@ -1586,7 +1586,7 @@ Private Function ValidarRemito() As Boolean
         ValidarRemito = False
         Exit Function
     End If
-    If FechaRemito.Value = Date Then
+    If FechaRemito.Value = "" Then
         MsgBox "La Fecha del Remito es requerida", vbExclamation, TIT_MSGBOX
         FechaRemito.SetFocus
         ValidarRemito = False
@@ -1644,7 +1644,7 @@ Private Sub CmdNuevo_Click()
    txtNroRemito.Text = ""
    lblEstadoRemito.Caption = ""
    txtObservaciones.Text = ""
-   lblestado.Caption = ""
+   lblEstado.Caption = ""
    cmdGrabar.Enabled = True
    freRemito.Enabled = True
    freCliente.Enabled = True
@@ -1694,7 +1694,7 @@ Private Sub cmdQuitarProducto_Click()
     End If
 End Sub
 
-Private Sub cmdSalir_Click()
+Private Sub CmdSalir_Click()
     If MsgBox("Seguro que desea Salir", vbQuestion + vbYesNo, TIT_MSGBOX) = vbYes Then
         Set frmRemitoProveedor = Nothing
         Unload Me
@@ -1713,7 +1713,7 @@ Private Sub Form_KeyPress(KeyAscii As Integer)
         KeyAscii = vbKeyReturn Then
         SendKeys "{TAB}"
     End If
-    If KeyAscii = vbKeyEscape Then cmdSalir_Click
+    If KeyAscii = vbKeyEscape Then CmdSalir_Click
 End Sub
 
 Private Sub Form_Load()
@@ -1764,7 +1764,7 @@ Private Sub Form_Load()
     'grillaNotaPedido.TextMatrix(1, 0) = " Sucursal:"
     'grillaNotaPedido.TextMatrix(2, 0) = "Vendedor:"
     '------------------------------------
-    lblestado.Caption = ""
+    lblEstado.Caption = ""
     'CARGO EL COMBO DE LISTA DE PRECIOS
     'CargoCboListaPrecio
     
@@ -1939,7 +1939,7 @@ Private Sub GrdModulos_DblClick()
 '        CmdNuevo_Click
         Select Case TipoBusquedaDoc
         Case 1 'BUSCA REMITOS
-            lblestado.Caption = "Buscando..."
+            lblEstado.Caption = "Buscando..."
             Screen.MousePointer = vbHourglass
             Set Rec1 = New ADODB.Recordset
             
@@ -2013,7 +2013,7 @@ Private Sub GrdModulos_DblClick()
                     Rec1.MoveNext
                 Loop
             End If
-            lblestado.Caption = ""
+            lblEstado.Caption = ""
             Screen.MousePointer = vbNormal
             '--------------
             FechaRemito.Enabled = False
@@ -2044,7 +2044,7 @@ Private Sub GrdModulos_DblClick()
         subtotal = txtSubtotal
         impIva = txtImporteIva
         TOTAL = subtotal + impIva
-        txtTotal.Text = Format(TOTAL, "0.00")
+        txttotal.Text = Format(TOTAL, "0.00")
     End If
 End Sub
 
@@ -2156,7 +2156,7 @@ Private Sub TxtCodigoCli_Change()
         txtIngBrutos.Text = ""
         txtCondicionIVA.Text = ""
         txtDomici.Text = ""
-        txtlocalidad.Text = ""
+        TxtLOCALIDAD.Text = ""
         txtprovincia.Text = ""
         txtcodpos.Text = ""
         cmdBuscarCliente.Tag = ""
@@ -2188,7 +2188,7 @@ Private Sub TxtCodigoCli_LostFocus()
         If Rec1.EOF = False Then
             txtRazSocCli.Text = Rec1!PROV_RAZSOC
             txtDomici.Text = Rec1!PROV_DOMICI
-            txtlocalidad.Text = Rec1!LOC_DESCRI
+            TxtLOCALIDAD.Text = Rec1!LOC_DESCRI
             txtprovincia.Text = Rec1!PRO_DESCRI
             txtCondicionIVA.Text = BuscoCondicionIVA(Rec1!IVA_CODIGO)
             txtCUIT.Text = IIf(IsNull(Rec1!PROV_CUIT), "NO INFORMADO", Format(Rec1!PROV_CUIT, "##-########-#"))
@@ -2407,7 +2407,7 @@ Private Function TotalPEDIDO()
     subtotal = txtSubtotal
     impIva = txtImporteIva
     TOTAL = subtotal + impIva
-    txtTotal.Text = Format(TOTAL, "0.00")
+    txttotal.Text = Format(TOTAL, "0.00")
 
 End Function
 Private Function SumaTotal() As Double
@@ -2461,7 +2461,7 @@ Private Sub txtNroNotaPedido_LostFocus()
                 Exit Sub
             End If
             Screen.MousePointer = vbHourglass
-            lblestado.Caption = "Buscando..."
+            lblEstado.Caption = "Buscando..."
             
             'CARGO CABECERA DE LA Orden de Compra
             FechaNotaPedido.Value = Rec2!OC_FECHA
@@ -2477,7 +2477,7 @@ Private Sub txtNroNotaPedido_LostFocus()
                 LimpiarNotaPedido
                 cmdGrabar.Enabled = False
                 Screen.MousePointer = vbNormal
-                lblestado.Caption = ""
+                lblEstado.Caption = ""
                 Rec2.Close
                 Exit Sub
             Else
@@ -2515,7 +2515,7 @@ Private Sub txtNroNotaPedido_LostFocus()
             Rec1.Close
             '--------------------------------------------------
             Screen.MousePointer = vbNormal
-            lblestado.Caption = ""
+            lblEstado.Caption = ""
             'chkRemitoSinFactura.SetFocus
         Else
             MsgBox "La Orden de Compra no existe", vbExclamation, TIT_MSGBOX

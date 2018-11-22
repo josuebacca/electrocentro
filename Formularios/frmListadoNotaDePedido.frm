@@ -1,7 +1,7 @@
 VERSION 5.00
-Object = "{F9043C88-F6F2-101A-A3C9-08002B2F49FB}#1.2#0"; "comdlg32.ocx"
-Object = "{5E9E78A0-531B-11CF-91F6-C2863C385E30}#1.0#0"; "msflxgrd.ocx"
-Object = "{86CF1D34-0C5F-11D2-A9FC-0000F8754DA1}#2.0#0"; "mscomct2.ocx"
+Object = "{F9043C88-F6F2-101A-A3C9-08002B2F49FB}#1.2#0"; "Comdlg32.ocx"
+Object = "{5E9E78A0-531B-11CF-91F6-C2863C385E30}#1.0#0"; "MSFLXGRD.OCX"
+Object = "{86CF1D34-0C5F-11D2-A9FC-0000F8754DA1}#2.0#0"; "MSCOMCT2.OCX"
 Object = "{00025600-0000-0000-C000-000000000046}#5.2#0"; "Crystl32.OCX"
 Begin VB.Form frmListadoNotaDePedido 
    BorderStyle     =   1  'Fixed Single
@@ -163,7 +163,7 @@ Begin VB.Form frmListadoNotaDePedido
          _ExtentX        =   2355
          _ExtentY        =   661
          _Version        =   393216
-         Format          =   53936129
+         Format          =   20905985
          CurrentDate     =   43367
       End
       Begin MSComCtl2.DTPicker FechaHasta 
@@ -175,7 +175,7 @@ Begin VB.Form frmListadoNotaDePedido
          _ExtentX        =   2355
          _ExtentY        =   661
          _Version        =   393216
-         Format          =   53936129
+         Format          =   20905985
          CurrentDate     =   43367
       End
       Begin VB.Label Label1 
@@ -430,7 +430,7 @@ Private Sub CBImpresora_Click()
 End Sub
 Private Sub CmdBuscAprox_Click()
     GrdModulos.Rows = 1
-    lblestado.Caption = "Buscando..."
+    lblEstado.Caption = "Buscando..."
     Screen.MousePointer = vbHourglass
     GrdModulos.HighLight = flexHighlightNever
     sql = "SELECT NP.*, C.CLI_RAZSOC,C.CLI_DOMICI,L.LOC_DESCRI,P.PRO_DESCRI"
@@ -459,11 +459,11 @@ Private Sub CmdBuscAprox_Click()
         Loop
         GrdModulos.SetFocus
     Else
-        lblestado.Caption = ""
+        lblEstado.Caption = ""
         Screen.MousePointer = vbNormal
         MsgBox "No se encontraron datos...", vbExclamation, TIT_MSGBOX
     End If
-    lblestado.Caption = ""
+    lblEstado.Caption = ""
     Screen.MousePointer = vbNormal
     rec.Close
 End Sub
@@ -645,8 +645,8 @@ Private Sub Form_Load()
     cmdBuscarCli.Enabled = False
     cmdBuscarVendedor.Enabled = False
     GrdModulos.Rows = 1
-    lblImpresora.Caption = "Impresora Actual: " & Printer.DeviceName
-    lblestado.Caption = ""
+    'lblImpresora.Caption = "Impresora Actual: " & Printer.DeviceName
+    lblEstado.Caption = ""
 
     Call Centrar_pantalla(Me)
     GrdModulos.FormatString = ">Número|^Fecha|Cliente|Localidad|Provincia|Forma de pago"
@@ -664,7 +664,7 @@ Private Sub Form_Load()
 End Sub
 Private Sub Form_KeyPress(KeyAscii As Integer)
     If KeyAscii = vbKeyReturn Then SendKeys "{TAB}"
-    If KeyAscii = vbKeyEscape Then cmdSalir_Click
+    If KeyAscii = vbKeyEscape Then CmdSalir_Click
 End Sub
 
 Private Sub chkCliente_Click()
@@ -729,7 +729,7 @@ Private Sub txtCliente_LostFocus()
         And chkVendedor.Value = Unchecked And ActiveControl.Name <> "cmdBuscarCli" _
         And ActiveControl.Name <> "cmdNuevo" And ActiveControl.Name <> "cmdSalir" Then CmdBuscAprox.SetFocus
 End Sub
-Private Sub cmdSalir_Click()
+Private Sub CmdSalir_Click()
     Set frmListadoNotaDePedido = Nothing
     Unload Me
 End Sub
