@@ -1,0 +1,47 @@
+:Base DICTNRY.hlp
+1 Introducción a Crystal Dictionaries
+2 Indice de temas de Introducción de Crystal Dictionaries=DICTN_Crystal_Dictonaries_Overview_Topics_Index
+2 Introducción a diccionarios=DICTN_Crystal_Dictionaries_Overview
+2 Por qué usar un diccionario=DICTN_Why_use_a_Crystal_Dictionary
+1 Asistente de Diccionarios
+2 Asistente de Diccionarios=DIALOGBX_Dictionaries_Expert
+2 Ficha Tablas=DIALOGBX_Tables_Tab
+2 Ficha Vínculos=DIALOGBX_Links_Tab
+2 Ficha Vista=DIALOGBX_View_Tab
+2 Ficha Gráficos=DIALOGBX_Graphic_Tab
+2 Ficha Datos de muestra=DIALOGBX_Sample_Data_Tab
+1 Botones de Crystal Dictionaries
+2 Indice de Botones=COMMANDS_Buttons_Index
+2 Botón Diccionario nuevo=COMMANDS_New_Dictionary_button
+2 Botón Abrir diccionario=COMMANDS_Open_Dictionary_button
+2 Botón Guardar=COMMANDS_Save_button
+1 Comandos de menú de Crystal Dictionaries 
+2 Indice de Comandos del Menú Crystal Dictionaries=COMMANDS_Crystal_Dictionaries_Menu_Commands_Index
+2 Comando Diccionario Nuevo (Menú Archivo)=COMMANDS_New_Dictionary_command_File_menu
+2 Comando Abrir diccionario (Menú Archivo)=COMMANDS_Open_Dictionary_command_File_menu
+2 Comando Guardar (Menú Archivo)=COMMANDS_Save_command_File_menu
+2 Comando Guardar como (Menú Archivo)=COMMANDS_Save_As_command_File_menu
+2 Comando Cerrar (Menú Archivo)=COMMANDS_Close_command_File_menu
+2 Comando Verificar Diccionario (Menú Archivo)=COMMANDS_Verify_Dictionary_command_File_menu
+2 Comando Conectar al Servidor de la Base de Datos (Menú Archivo)=COMMANDS_Log_On_Database_Server_command_File_menu
+2 Comando Desconectar del Servidor de la Base de Datos (Menú Archivo)=COMMANDS_Log_Off_Database_Server_command_File_menu
+2 Comando Opciones (Menú Archivo)=COMMANDS_Options_command_File_menu
+2 Comando Contenido (Menú Ayuda)=COMMANDS_Contents_command_Help_menu
+2 Comando Acerca de Crystal Reports (Menú Ayuda)=COMMANDS_About_Crystal_Reports_command_Help_menu
+1 Tutoriales de manos a la obra
+2 Indice de temas de Tutoriales de Manos a la obra=DICTN_Hands_On_Tutorial_Topics_Index
+2 Cómo crear un diccionario nuevo=32558Heading2CmocrearundiccionarioInfoVirioInfoViewnuevo
+2 Cómo agregar un archivo de datos=Cmoagregarunarchivodedatosdatos
+2 Cómo abrir una fuente de datos SQL u ODBC=CmoabrirunafuentededatosSQLuODBCQLuODBC
+2 Cómo vincular varias tablas=Cmovincularvariastablasblas
+2 Cómo seleccionar tablas y campos para usuarios=DICTN_How_to_select_tables_and_fields_for_users
+2 Cómo agregar y crear fórmulas=Cmoagregarycrearfrmulasrmulas
+2 Cómo cambiar nombres a encabezados de campo, campos y fórmulas=Cmocambiarnombresaencabezadosdecampocampmpocamposyfrmulas
+2 Cómo actualizar la ubicación de una tabla de base de datos=moactualizarlaubicacindeunatabladebasededebasededatos
+2 Cómo agregar un nuevo encabezado de campo=Cmoagregarunnuevoencabezadodecampoecampo
+2 Cómo agregar texto de Ayuda=CmoagregartextodeAyudaAyuda
+2 Cómo agregar un gráfico=Cmoagregarungrficofico
+2 Cómo crear datos de ejemplo para que los usuarios examinen=Cmocreardatosdeejemploparaquelosusuariosusuariosexaminen
+2 Cómo editar un diccionario existente=Cmoeditarunexistenteente
+2 Cómo convertir un archivo de diccionario 4.x o 5.x=Cmoconvertirunarchivodediccionario4xo5xo4.xo5.x
+2 Cómo seleccionar un diccionario para un informe=CmoseleccionarundiccionarioInfoViewparauparauninforme

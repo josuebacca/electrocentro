@@ -1,0 +1,278 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+
+<html>
+<head>
+<title>Tablas indexadas</title>
+
+<link REL=STYLESHEET TYPE="text/css" HREF="seagate.css">
+
+<!--
+                 ***********************************
+                 * Seagate Software copyright 1999 *
+                 ***********************************
+
+                      Template version: 5.1
+-->
+
+
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" link="#0000FF" vlink="#0000FF" alink="#800080">
+
+
+ 
+<a name="320222"></a><h3 class="newpage"> Tablas indexadas</h3>
+<p><a name="320223"></a>Crear &#237;ndices para tablas de bases de datos puede incrementar la velocidad del acceso de datos y reducir el tiempo que le toma al programa evaluar los datos. Algunos programas SABD indexan autom&#225;ticamente sus tablas de base de datos, mientras que otros requieren que usted haga un &#237;ndice. Para una elaboraci&#243;n de informes m&#225;s eficiente aseg&#250;rese de que cada una de las tablas de base de datos tenga el &#237;ndice correspondiente.</p><p><a name="320224"></a><font color="darkblue"><b>Nota:   &nbsp;&nbsp;&nbsp;</b></font>Algunos programas SABD no admiten tablas indexadas. Refi&#233;rase a la documentaci&#243;n de su SABD para averiguar si admite &#237;ndices y c&#243;mo crearlos. Si su documentaci&#243;n SABD no menciona las tablas indexadas, puede no admitirlas y debe entonces vincular las tablas basadas en campos en com&#250;n. El Asistente de V&#237;nculo Visual tambi&#233;n puede ayudarle a determinar si sus tablas incluyen &#237;ndices. Buscar <kbd>Asistente de V&#237;nculo Visual</kbd> en la Ayuda en l&#237;nea de Info Report DesignerSeagate Crystal Reports.</p>
+<p><a name="320234"></a>Los &#237;ndices organizan los registros en una tabla de base de datos relacional para que los datos puedan ser localizados f&#225;cilmente. Por ejemplo, suponga que usted tiene una tabla con los siguientes datos:</p><p><a name="320302"></a> <Table Border="1">
+<tr><th align="left" valign="bottom"><a name="320237"></a># de Pedido
+
+</th><th align="left" valign="bottom"><a name="320239"></a>Cliente
+
+</th><th align="left" valign="bottom"><a name="320241"></a>Cantidad
+
+</th></tr>
+<tr><td align="left" valign="TOP"><P><a name="320243"></a>10444</P>
+
+
+</td><td align="left" valign="TOP"><P><a name="320245"></a>Allez Distribution</P>
+
+
+</td><td align="left" valign="TOP"><P><a name="320247"></a>25141.50</P>
+
+
+</td></tr>
+<tr><td align="left" valign="TOP"><P><a name="320249"></a>10470</P>
+
+
+</td><td align="left" valign="TOP"><P><a name="320251"></a>BG Mountain Inc.</P>
+
+
+</td><td align="left" valign="TOP"><P><a name="320253"></a>19164.30</P>
+
+
+</td></tr>
+<tr><td align="left" valign="TOP"><P><a name="320255"></a>10485</P>
+
+
+</td><td align="left" valign="TOP"><P><a name="320257"></a>Sierra Mountain</P>
+
+
+</td><td align="left" valign="TOP"><P><a name="320259"></a>8233.50</P>
+
+
+</td></tr>
+<tr><td align="left" valign="TOP"><P><a name="320261"></a>10488</P>
+
+
+</td><td align="left" valign="TOP"><P><a name="320263"></a>Mountain Toad</P>
+
+
+</td><td align="left" valign="TOP"><P><a name="320265"></a>24580.50</P>
+
+
+</td></tr>
+<tr><td align="left" valign="TOP"><P><a name="320267"></a>10495</P>
+
+
+</td><td align="left" valign="TOP"><P><a name="320269"></a>SFB Inc.</P>
+
+
+</td><td align="left" valign="TOP"><P><a name="320271"></a>7911.80</P>
+
+
+</td></tr>
+<tr><td align="left" valign="TOP"><P><a name="320273"></a>10501</P>
+
+
+</td><td align="left" valign="TOP"><P><a name="320275"></a>La Bomba de Bicicleta</P>
+
+
+</td><td align="left" valign="TOP"><P><a name="320277"></a>1956.20</P>
+
+
+</td></tr>
+<tr><td align="left" valign="TOP"><P><a name="320279"></a>10511</P>
+
+
+</td><td align="left" valign="TOP"><P><a name="320281"></a>BG Mountain Inc.</P>
+
+
+</td><td align="left" valign="TOP"><P><a name="320283"></a>1683.60</P>
+
+
+</td></tr>
+<tr><td align="left" valign="TOP"><P><a name="320285"></a>10544</P>
+
+
+</td><td align="left" valign="TOP"><P><a name="320287"></a>Sierra Bicycle Group</P>
+
+
+</td><td align="left" valign="TOP"><P><a name="320289"></a>19766.20</P>
+
+
+</td></tr>
+<tr><td align="left" valign="TOP"><P><a name="320291"></a>10568</P>
+
+
+</td><td align="left" valign="TOP"><P><a name="320293"></a>Mountain Tops Inc.</P>
+
+
+</td><td align="left" valign="TOP"><P><a name="320295"></a>29759.55</P>
+
+
+</td></tr>
+<tr><td align="left" valign="TOP"><P><a name="320297"></a>10579</P>
+
+
+</td><td align="left" valign="TOP"><P><a name="320299"></a>Sierra Bicycle Group</P>
+
+
+</td><td align="left" valign="TOP"><P><a name="320301"></a>12763.95</P>
+
+
+</td></tr>
+
+</Table></p>
+<p><a name="320303"></a>La informaci&#243;n en esta tabla est&#225; organizada de acuerdo al campo # de Pedido. Esto est&#225; bien siempre que desee buscar informaci&#243;n en la tabla basada en n&#250;meros de pedido. Sin embargo, &#191;qu&#233; tal si desea buscar informaci&#243;n espec&#237;fica de un cliente determinado?</p><p><a name="320304"></a>Digamos que desea buscar todos los pedidos hechos por Sierra Bicycle Group. El procesador de base de datos comienza mirando el primer n&#250;mero de pedido en la lista y verifica si el nombre de cliente coincide con el pedido. Si no coincide, va al segundo n&#250;mero de pedido y verifica el nombre de ese cliente. Cuando llega a un n&#250;mero de pedido que contiene el nombre de cliente correcto, el procesador de base de datos recupera la informaci&#243;n, luego contin&#250;a con el siguiente n&#250;mero de pedido. Usando esta t&#233;cnica, los campos # de Pedido y Cliente deben ser le&#237;dos para cada uno de los registros en la tabla. Esto toma un largo tiempo y un gran esfuerzo de procesamiento de la computadora para examinar las tablas de base de datos extensas conteniendo miles o incluso millones de registros.</p><p><a name="320305"></a>En lugar de esto, usted puede crear un &#237;ndice para la tabla basada en el campo Cliente. Un &#237;ndice como &#233;se se ver&#237;a asi:</p><p><a name="320351"></a> <Table Border="1">
+<tr><th align="left" valign="bottom"><a name="320308"></a>Cliente
+
+</th><th align="left" valign="bottom"><a name="320310"></a>Puntero al # de Pedido
+
+</th></tr>
+<tr><td align="left" valign="TOP"><P><a name="320312"></a>Allez Distribution</P>
+
+
+</td><td align="left" valign="TOP"><P><a name="320314"></a>10444</P>
+
+
+</td></tr>
+<tr><td align="left" valign="TOP"><P><a name="320316"></a>BG Mountain Inc.</P>
+
+
+</td><td align="left" valign="TOP"><P><a name="320318"></a>10470</P>
+
+
+</td></tr>
+<tr><td align="left" valign="TOP"><P><a name="320320"></a>BG Mountain Inc.</P>
+
+
+</td><td align="left" valign="TOP"><P><a name="320322"></a>10511</P>
+
+
+</td></tr>
+<tr><td align="left" valign="TOP"><P><a name="320324"></a>La Bomba de Bicicleta</P>
+
+
+</td><td align="left" valign="TOP"><P><a name="320326"></a>10501</P>
+
+
+</td></tr>
+<tr><td align="left" valign="TOP"><P><a name="320328"></a>Mountain Toad</P>
+
+
+</td><td align="left" valign="TOP"><P><a name="320330"></a>10488</P>
+
+
+</td></tr>
+<tr><td align="left" valign="TOP"><P><a name="320332"></a>Mountain Tops Inc.</P>
+
+
+</td><td align="left" valign="TOP"><P><a name="320334"></a>10568</P>
+
+
+</td></tr>
+<tr><td align="left" valign="TOP"><P><a name="320336"></a>SFB Inc.</P>
+
+
+</td><td align="left" valign="TOP"><P><a name="320338"></a>10495</P>
+
+
+</td></tr>
+<tr><td align="left" valign="TOP"><P><a name="320340"></a>Sierra Bicycle Group</P>
+
+
+</td><td align="left" valign="TOP"><P><a name="320342"></a>10544</P>
+
+
+</td></tr>
+<tr><td align="left" valign="TOP"><P><a name="320344"></a>Sierra Bicycle Group</P>
+
+
+</td><td align="left" valign="TOP"><P><a name="320346"></a>10579</P>
+
+
+</td></tr>
+<tr><td align="left" valign="TOP"><P><a name="320348"></a>Sierra Mountain</P>
+
+
+</td><td align="left" valign="TOP"><P><a name="320350"></a>10485</P>
+
+
+</td></tr>
+
+</Table></p>
+<p><a name="320352"></a>En este &#237;ndice, la informaci&#243;n est&#225; organizada por clientes, no por n&#250;mero de pedido. Adem&#225;s, note que la segunda columna contiene punteros para n&#250;meros de pedido espec&#237;ficos en la tabla original. Al utilizar este &#237;ndice, el procesador de base de datos puede buscar s&#243;lo la informaci&#243;n en la columna Cliente hasta que encuentre el cliente de su inter&#233;s, Sierra Bicycle Group.</p><p><a name="320353"></a>Para cada entrada correcta de cliente que el procesador encuentra en el &#237;ndice, busca el pedido coincidente en la tabla de acuerdo al puntero en la segunda columna del &#237;ndice. Solamente son le&#237;dos los pedidos para el cliente correcto. Finalmente, como la informaci&#243;n en el &#237;ndice est&#225; organizada de acuerdo a los nombres de clientes, el procesador de base de datos no necesita continuar buscando por el &#237;ndice o la tabla, una vez que encuentra un nombre que no coincide con el cliente requerido.</p><p><a name="320354"></a>El resultado de esta b&#250;squeda organizada en una tabla de base de datos de acuerdo a un &#237;ndice es rapidez. Utilizar &#237;ndices acelera la recuperaci&#243;n de datos y la elaboraci&#243;n de informes, factores importantes cuando se elaboran informes en archivos grandes de base de datos.</p>
+<hr><br>
+
+<script  language="JavaScript"><!--
+
+var prev = "24_under_databases5.html";
+var next = "24_under_databases7.html";
+
+function setTopicID() { 
+      var number = "320222"; 
+      return number; 
+}
+
+// --></script>
+
+
+
+
+<SCRIPT>
+
+if (!window.parent.toc && navigator.appName == "Netscape") {
+
+   document.writeln ('<TABLE ALIGN="left" border="0" cellspacing="0" cellpadding="10">');
+   document.writeln ('<TR>');
+   document.write ('<TD ALIGN="left">');
+
+   if (prev != "crw_spTOC.hhc") {
+      document.writeln ('<A HREF="' + prev + '">');
+      document.writeln ('<IMG SRC="prevpage.gif" HEIGHT=17 BORDER=0 ALT="Página anterior"></A>');
+   } else {
+//   window.alert ('no previous page');
+   }
+
+   if (next != "crw_spIX.hhk") {
+      document.writeln ('<A HREF="' + next + '">');
+      document.writeln ('<IMG SRC="nextpage.gif" HEIGHT=17 BORDER=0 ALT="Página siguiente"></A>');
+   } else {
+//   window.alert ('no next page');
+   }
+   document.writeln ('</TD><TD ALIGN="left">');
+   document.writeln ('<A HREF="frameset.htm?TOC">');
+   document.writeln ('<IMG SRC="showtoc.gif" HEIGHT=17 BORDER=0 ALT="Haga clic para ver el contenido"></A></TD>');
+   document.writeln ('<TD ALIGN="left">');
+   document.writeln ('<A HREF="frameset.htm?IDX">');
+   document.writeln ('<IMG SRC="showix.gif" HEIGHT=17 BORDER=0 ALT="Haga clic para ver el índice"></A></TD>');
+   document.writeln ('</TD>');
+   document.writeln ('</TR>');
+   document.writeln ('</TABLE>');
+
+}
+
+</SCRIPT>
+<table align="right" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td align="right"><font size="1">Seagate Software, Inc.<br>
+    <a href="http://www.seagatesoftware.com">http://www.seagatesoftware.com</a><br>
+    Envíe sus comentarios a:<br>
+    <a href="mailto:techpubs@seagatesoftware.com">techpubs@seagatesoftware.com</a><br>
+    </font></td>
+  </tr>
+</table>
+</body>
+</html>
+
+

@@ -1,0 +1,104 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+
+<html>
+<head>
+<title>Uso de las variables de matriz</title>
+
+<link REL=STYLESHEET TYPE="text/css" HREF="seagate.css">
+
+<!--
+                 ***********************************
+                 * Seagate Software copyright 1999 *
+                 ***********************************
+
+                      Template version: 5.1
+-->
+
+
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" link="#0000FF" vlink="#0000FF" alink="#800080">
+
+
+ 
+<a name="130465"></a><h4 class="newpage"> Uso de las variables de matriz</h4><p><a name="130467"></a>Puede asignar valores a elementos de una matriz y tambi&#233;n usar los valores de los elementos para otros c&#225;lculos:</p><PRE><a name="130469"></a>Global x() As String
+<a name="130470"></a>x =Array ("hola", "adi&#243;s", "otra vez")
+<a name="130472"></a>'Ahora x es matriz ("hola", "una vez", "otra vez")
+<a name="130473"></a>x (2) = "una vez"
+<a name="130475"></a>'El enunciado siguiente causar&#237;a un error si no
+<a name="130476"></a>'se incluyera ya que la matriz tiene un tama&#241;o de 3
+<a name="130477"></a>'x (4) = "zas"
+<a name="130479"></a>'la f&#243;rmula devuelve la cadena "HOLA"
+<a name="130480"></a>formula = UCase (x (1))
+</PRE><p><a name="130482"></a>Las palabras clave Redim y Redim Preserve se pueden usar para cambiar el tama&#241;o de una matriz, lo cual es &#250;til si se desea agregar informaci&#243;n adicional a ella. Redim borra el contenido anterior de la matriz antes de cambiar su tama&#241;o, mientras que Redim Preserve conserva el contenido anterior.</p><PRE><a name="155709"></a>Dim x () As Number
+<a name="130485"></a>Redim x (2) 'Ahora x es matriz (0, 0)
+<a name="130486"></a>x (2) = 20 'Ahora x es matriz (0, 20)
+<a name="130487"></a>Redim x (3) 'Ahora x es matriz (0, 0,0)
+<a name="130488"></a>x (3) = 30 'Ahora x es matriz (0, 0, 30)
+<a name="130489"></a>Redim Preserve x (4) 'Ahora x es matriz (0, 0, 30, 0)
+<a name="130490"></a>formula = "finalizado"
+</PRE>
+<hr><br>
+
+<script  language="JavaScript"><!--
+
+var prev = "20_basicsyntax28.html";
+var next = "20_basicsyntax30.html";
+
+function setTopicID() { 
+      var number = "130465"; 
+      return number; 
+}
+
+// --></script>
+
+
+
+
+<SCRIPT>
+
+if (!window.parent.toc && navigator.appName == "Netscape") {
+
+   document.writeln ('<TABLE ALIGN="left" border="0" cellspacing="0" cellpadding="10">');
+   document.writeln ('<TR>');
+   document.write ('<TD ALIGN="left">');
+
+   if (prev != "crw_spTOC.hhc") {
+      document.writeln ('<A HREF="' + prev + '">');
+      document.writeln ('<IMG SRC="prevpage.gif" HEIGHT=17 BORDER=0 ALT="Página anterior"></A>');
+   } else {
+//   window.alert ('no previous page');
+   }
+
+   if (next != "crw_spIX.hhk") {
+      document.writeln ('<A HREF="' + next + '">');
+      document.writeln ('<IMG SRC="nextpage.gif" HEIGHT=17 BORDER=0 ALT="Página siguiente"></A>');
+   } else {
+//   window.alert ('no next page');
+   }
+   document.writeln ('</TD><TD ALIGN="left">');
+   document.writeln ('<A HREF="frameset.htm?TOC">');
+   document.writeln ('<IMG SRC="showtoc.gif" HEIGHT=17 BORDER=0 ALT="Haga clic para ver el contenido"></A></TD>');
+   document.writeln ('<TD ALIGN="left">');
+   document.writeln ('<A HREF="frameset.htm?IDX">');
+   document.writeln ('<IMG SRC="showix.gif" HEIGHT=17 BORDER=0 ALT="Haga clic para ver el índice"></A></TD>');
+   document.writeln ('</TD>');
+   document.writeln ('</TR>');
+   document.writeln ('</TABLE>');
+
+}
+
+</SCRIPT>
+<table align="right" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td align="right"><font size="1">Seagate Software, Inc.<br>
+    <a href="http://www.seagatesoftware.com">http://www.seagatesoftware.com</a><br>
+    Envíe sus comentarios a:<br>
+    <a href="mailto:techpubs@seagatesoftware.com">techpubs@seagatesoftware.com</a><br>
+    </font></td>
+  </tr>
+</table>
+</body>
+</html>
+
+

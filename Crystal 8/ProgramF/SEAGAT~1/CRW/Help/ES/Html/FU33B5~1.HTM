@@ -1,0 +1,88 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+
+<html>
+<head>
+<title>Funciones de Fecha y Hora</title>
+
+<link REL=STYLESHEET TYPE="text/css" HREF="seagate.css">
+
+<!--
+                 ***********************************
+                 * Seagate Software copyright 1999 *
+                 ***********************************
+
+                      Template version: 5.1
+-->
+
+
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" link="#0000FF" vlink="#0000FF" alink="#800080">
+
+
+ 
+<a name="1000821477"></a><h2 class="newpage">Funciones de Fecha y Hora</h2><p><a name="1000821478"></a>Las funciones de fecha le permiten convertir n&#250;meros a fechas (las cuales puede formatear para que se desplieguen como desee) y para convertir fechas a n&#250;meros.</p><p><a name="1000016015"></a><a href="Functions103.html#1000528638">CurrentDate</a></p><p><a name="1000671315"></a><a href="Functions104.html#1000530702">CurrentTime</a></p><p><a name="1000671327"></a><a href="Functions105.html#1000821639">CurrentDateTime</a></p><p><a name="1000671353"></a><a href="Functions106.html#1000821699">Date</a></p><p><a name="1000686968"></a><a href="Functions107.html#1000686634">Time</a></p><p><a name="1000671364"></a><a href="Functions108.html#1000581401">DateTime</a></p><p><a name="1000671385"></a><a href="Functions109.html#1000531915">DateValue</a></p><p><a name="1000671392"></a><a href="Functions110.html#1000645674">TimeValue</a></p><p><a name="1000671399"></a><a href="Functions111.html#1000533082">DateTimeValue</a></p><p><a name="1000671406"></a><a href="Functions112.html#1000535456">DateSerial (a&#241;o, mes, d&#237;a)</a></p><p><a name="1000671413"></a><a href="Functions113.html#1000536658">TimeSerial (hora, minuto, segundo)</a></p><p><a name="1000671420"></a><a href="Functions114.html#1000537820">IsDateTime</a></p><p><a name="1000671427"></a><a href="Functions115.html#1000781158">IsTime</a></p><p><a name="1000671473"></a><a href="Functions116.html#1000540723">IsDate</a></p><p><a name="1000671480"></a><a href="Functions117.html#1000821738">Year (x)</a></p><p><a name="1000671487"></a><a href="Functions118.html#1000541296">Month (x)</a></p><p><a name="1000671498"></a><a href="Functions119.html#1000542086">Day (x)</a></p><p><a name="1000671505"></a><a href="Functions120.html#1000822382">WeekDay</a></p><p><a name="1000671536"></a><a href="Functions121.html#1000822416">DayOfWeek</a></p><p><a name="1000671557"></a><a href="Functions122.html#1000543524">Hour (x)</a></p><p><a name="1000671814"></a><a href="Functions123.html#1000543937">Minute (x)</a></p><p><a name="1000671829"></a><a href="Functions124.html#1000544307">Second (x)</a></p><p><a name="1000671844"></a><a href="Functions125.html#1000545212">MonthName</a></p><p><a name="1000671855"></a><a href="Functions126.html#1000546588">WeekdayName</a></p><p><a name="1000671866"></a><a href="Functions127.html#1000545231">Timer ( )</a></p><p><a name="1000671876"></a><a href="Functions128.html#1000693154">DateAdd (tipoIntervalo, nIntervalos, fechaHoraInicio)</a></p><p><a name="1000686976"></a><a href="Functions129.html#1000548748">DateDiff</a></p><p><a name="1000686983"></a><a href="Functions130.html#1000548830">DatePart</a></p><p><a name="1000687258"></a><a href="Functions131.html#1000547687">Constantes primer d&#237;a de la semana/a&#241;o</a></p><a name="1000671310"></a><h5>Funciones adicionales de Fecha/Hora</h5><p><a name="1000688446"></a><a href="Functions205.html#1000827409">DateTo2000 (fecha, n&#250;mero)</a></p><p><a name="1000688456"></a><a href="Functions206.html#1000827521">DTSTo2000 (cadenaFecha, n&#250;mero)</a></p><p><a name="1000688727"></a><a href="Functions207.html#1000585393">DTSToDate (cadenaFechaHora)</a></p><p><a name="1000688739"></a><a href="Functions208.html#1000585411">DTSToSeconds (cadenaFechaHora)</a></p><p><a name="1000688750"></a><a href="Functions209.html#1000585427">DTSToTimeString (cadenaFechaHora)</a></p>
+<hr><br>
+
+<script  language="JavaScript"><!--
+
+var prev = "Functions101.html";
+var next = "Functions103.html";
+
+function setTopicID() { 
+      var number = "1000821477"; 
+      return number; 
+}
+
+// --></script>
+
+
+
+
+<SCRIPT>
+
+if (!window.parent.toc && navigator.appName == "Netscape") {
+
+   document.writeln ('<TABLE ALIGN="left" border="0" cellspacing="0" cellpadding="10">');
+   document.writeln ('<TR>');
+   document.write ('<TD ALIGN="left">');
+
+   if (prev != "crw_spTOC.hhc") {
+      document.writeln ('<A HREF="' + prev + '">');
+      document.writeln ('<IMG SRC="prevpage.gif" HEIGHT=17 BORDER=0 ALT="Página anterior"></A>');
+   } else {
+//   window.alert ('no previous page');
+   }
+
+   if (next != "crw_spIX.hhk") {
+      document.writeln ('<A HREF="' + next + '">');
+      document.writeln ('<IMG SRC="nextpage.gif" HEIGHT=17 BORDER=0 ALT="Página siguiente"></A>');
+   } else {
+//   window.alert ('no next page');
+   }
+   document.writeln ('</TD><TD ALIGN="left">');
+   document.writeln ('<A HREF="frameset.htm?TOC">');
+   document.writeln ('<IMG SRC="showtoc.gif" HEIGHT=17 BORDER=0 ALT="Haga clic para ver el contenido"></A></TD>');
+   document.writeln ('<TD ALIGN="left">');
+   document.writeln ('<A HREF="frameset.htm?IDX">');
+   document.writeln ('<IMG SRC="showix.gif" HEIGHT=17 BORDER=0 ALT="Haga clic para ver el índice"></A></TD>');
+   document.writeln ('</TD>');
+   document.writeln ('</TR>');
+   document.writeln ('</TABLE>');
+
+}
+
+</SCRIPT>
+<table align="right" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td align="right"><font size="1">Seagate Software, Inc.<br>
+    <a href="http://www.seagatesoftware.com">http://www.seagatesoftware.com</a><br>
+    Envíe sus comentarios a:<br>
+    <a href="mailto:techpubs@seagatesoftware.com">techpubs@seagatesoftware.com</a><br>
+    </font></td>
+  </tr>
+</table>
+</body>
+</html>
+
+

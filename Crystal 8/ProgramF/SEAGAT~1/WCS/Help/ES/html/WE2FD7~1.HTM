@@ -1,0 +1,102 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+
+<html>
+<head>
+<title>Creaci&#243;n de un sitio web</title>
+
+<link REL=STYLESHEET TYPE="text/css" HREF="seagate.css">
+
+<!--
+                 ***********************************
+                 * Seagate Software copyright 1999 *
+                 ***********************************
+
+                      Template version: 5.1
+-->
+
+
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" link="#0000FF" vlink="#0000FF" alink="#800080">
+
+
+ 
+<a name="149465"></a><h3 class="newpage"> Creaci&#243;n de un sitio web</h3>
+<p><a name="149466"></a>Una vez que haya instalado y configurado el Web Component Server, el siguiente paso ser&#225; crear una p&#225;gina web que contenga v&#237;nculos a informes.</p><a name="149467"></a><h6>Para crear un sitio web</h6><p><a name="161997"></a>Primero deber&#225; determinar una ubicaci&#243;n para su nueva p&#225;gina web y luego deber&#225; crear un directorio virtual para el sitio que apunte al nuevo directorio.</p><ol>
+<a name="149468"></a><li value="1&nbsp;&nbsp;&nbsp;&nbsp;">Cree el directorio en el que desea almacenar sus informes. Copie los informes al directorio.
+<p class="indent"><a name="164471"></a>Este ejemplo emplea los informes Ventas a nivel mundial y Estado de cuenta y el directorio: </p><p class="indent"><a name="149469"></a>c:\webroot\newsite</p><p class="indent"><a name="164467"></a><font color="darkblue"><b>Nota:   &nbsp;&nbsp;&nbsp;</b></font>Para obtener informaci&#243;n sobre la ubicaci&#243;n del directorio ra&#237;z de su servidor web, consulte la documentaci&#243;n del software de su servidor web. El directorio que se muestra a continuaci&#243;n es solamente para fines ilustrativos.</p>
+<a name="149471"></a><li value="2&nbsp;&nbsp;&nbsp;&nbsp;">Use el software de administraci&#243;n de su servidor web para crear un directorio virtual que apunte al directorio f&#237;sico que acaba de crear. Probablemente, a este directorio virtual tendr&#225; que darle permiso de "ejecuci&#243;n". Para este ejemplo utilizaremos el siguiente directorio virtual:
+<p class="indent"><a name="163982"></a>midirectorio</p><a name="149475"></a><li value="3&nbsp;&nbsp;&nbsp;&nbsp;">Usando un editor de texto simple, como el Bloc de notas o su editor HTML favorito, cree una p&#225;gina con v&#237;nculos a los informes que se encuentren en el directorio virtual. Para este ejemplo, use el siguiente c&#243;digo HTML:
+<p class="code"><a name="149476"></a>&lt;HTML&gt;<br><a name="167782"></a>&lt;HEAD&gt;<br><a name="167783"></a>&lt;TITLE&gt;&Iacute;ndice de informes&lt;/TITLE&gt;<br><a name="167786"></a>&lt;/HEAD&gt;<br><a name="149477"></a>&lt;BODY&gt;<br><a name="149478"></a>&lt;H1&gt;&#161;Vea estos informes!&lt;/H1&gt;<br><a name="167787"></a>&lt;HR&gt;<br><a name="149479"></a>&lt;UL&gt;<br><a name="167788"></a>&nbsp;&nbsp;&nbsp;&nbsp;&lt;LI&gt;&lt;A HREF="http://localhost/midirectorio/estado de cuenta.rpt"&gt;<br><a name="167789"></a>&nbsp;&nbsp;&nbsp;&nbsp;Estado de cuenta<br><a name="167790"></a>&nbsp;&nbsp;&nbsp;&nbsp;&lt;/A&gt;&lt;/LI&gt;<br><a name="167793"></a>&nbsp;&nbsp;&nbsp;&nbsp;&lt;LI&gt;&lt;A HREF="http://localhost/midirectorio/ventas a nivel mundial.rpt"&gt;<br><a name="167792"></a>&nbsp;&nbsp;&nbsp;&nbsp;Ventas a nivel mundial<br><a name="167791"></a>&nbsp;&nbsp;&nbsp;&nbsp;&lt;/A&gt;&lt;/LI&gt;<br><a name="167798"></a>&lt;/UL&gt;<br><a name="149480"></a>&lt;/BODY&gt;<br><a name="167802"></a>&lt;/HTML&gt;</p><a name="149481"></a><li value="4&nbsp;&nbsp;&nbsp;&nbsp;">Guarde el archivo como listainformes.htm en el directorio c:\webroot\newsite.
+<a name="165880"></a><li value="5&nbsp;&nbsp;&nbsp;&nbsp;">Abra su explorador web e introduzca la siguiente URL:
+<p class="indent"><a name="169009"></a>http://localhost/midirectorio/listainformes.htm</p><p><a name="169013"></a> <img src="images/pg_indexofreports.gif">
+
+
+</p>
+<a name="169017"></a><li value="6&nbsp;&nbsp;&nbsp;&nbsp;">Haga clic en uno de los dos v&#237;nculos de su nueva p&#225;gina web para generar y visualizar el informe en su explorador.
+</ol>
+<p><a name="149486"></a>En este ejemplo, usted especifica dos archivos .rpt usando direcciones URL est&#225;ndar. Su servidor web analiza la extensi&#243;n .rpt y determina que es una extensi&#243;n que debe ser manejada por la aplicaci&#243;n Web Component Server. La URL se transmite y el Web Component Server determina c&#243;mo manejar el .rpt solicitado.</p><p><a name="164454"></a>Una vez que el informe aparece en el explorador web, el Web Component Server analiza el tipo de explorador que usa y entrega el informe utilizando el visor de informes que considera apropiado. Por ejemplo, si usa Internet Explorer 4.0, ver&#225; el informe en el visor de informes para ActiveX. Si usa Netscape Navigator 4.0, ver&#225; el informe en el visor de informes para Java.</p>
+<hr><br>
+
+<script  language="JavaScript"><!--
+
+var prev = "WebServerImplementation23.html";
+var next = "WebServerImplementation25.html";
+
+function setTopicID() { 
+      var number = "149465"; 
+      return number; 
+}
+
+// --></script>
+
+
+
+
+<SCRIPT>
+
+if (!window.parent.toc && navigator.appName == "Netscape") {
+
+   document.writeln ('<TABLE ALIGN="left" border="0" cellspacing="0" cellpadding="10">');
+   document.writeln ('<TR>');
+   document.write ('<TD ALIGN="left">');
+
+   if (prev != "wcmadminTOC.hhc") {
+      document.writeln ('<A HREF="' + prev + '">');
+      document.writeln ('<IMG SRC="prevpage.gif" HEIGHT=17 BORDER=0 ALT="Página anterior"></A>');
+   } else {
+//   window.alert ('no previous page');
+   }
+
+   if (next != "wcmadminIX.hhk") {
+      document.writeln ('<A HREF="' + next + '">');
+      document.writeln ('<IMG SRC="nextpage.gif" HEIGHT=17 BORDER=0 ALT="Página siguiente"></A>');
+   } else {
+//   window.alert ('no next page');
+   }
+   document.writeln ('</TD><TD ALIGN="left">');
+   document.writeln ('<A HREF="frameset.htm?TOC">');
+   document.writeln ('<IMG SRC="showtoc.gif" HEIGHT=17 BORDER=0 ALT="Haga clic para ver el contenido"></A></TD>');
+   document.writeln ('<TD ALIGN="left">');
+   document.writeln ('<A HREF="frameset.htm?IDX">');
+   document.writeln ('<IMG SRC="showix.gif" HEIGHT=17 BORDER=0 ALT="Haga clic para ver el índice"></A></TD>');
+   document.writeln ('</TD>');
+   document.writeln ('</TR>');
+   document.writeln ('</TABLE>');
+
+}
+
+</SCRIPT>
+<table align="right" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td align="right"><font size="1">Seagate Software, Inc.<br>
+    <a href="http://www.seagatesoftware.com">http://www.seagatesoftware.com</a><br>
+    Envíe sus comentarios a:<br>
+    <a href="mailto:techpubs@seagatesoftware.com">techpubs@seagatesoftware.com</a><br>
+    </font></td>
+  </tr>
+</table>
+</body>
+</html>
+
+

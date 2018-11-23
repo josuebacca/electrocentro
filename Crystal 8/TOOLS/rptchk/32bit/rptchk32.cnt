@@ -1,0 +1,9 @@
+:Base rptchk32.hlp
+1 Menus
+2 Detection menu=menu_file
+2 Options menu=menu_options
+2 View menu=menu_view
+2 Help menu=menu_help
+1 Diagnostic Utility
+2 What is Diagnostic Utility?=Definition
+2 How to use the Diagnostic Utility?=main_index

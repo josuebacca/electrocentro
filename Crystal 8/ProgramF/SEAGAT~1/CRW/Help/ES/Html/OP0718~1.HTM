@@ -1,0 +1,93 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+
+<html>
+<head>
+<title>Operador En rango</title>
+
+<link REL=STYLESHEET TYPE="text/css" HREF="seagate.css">
+
+<!--
+                 ***********************************
+                 * Seagate Software copyright 1999 *
+                 ***********************************
+
+                      Template version: 5.1
+-->
+
+
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" link="#0000FF" vlink="#0000FF" alink="#800080">
+
+
+ 
+<a name="1000024807"></a><h3 class="newpage"> Operador En rango</h3>
+<p><a name="1000024812"></a>Sintaxis Basic y Crystal.</p><a name="1000024813"></a><h5>Usage</h5><p><code><a name="1000024814"></a>x in y</code></p><p class="example"><a name="1000024815"></a>Verifica un rango de valores (<EM>y</EM>) para saber si (<EM>x</EM>) cae en el Rango especificado.</p><a name="1000024816"></a><h5>Examplos</h5><p><a name="1000024821"></a>Los siguientes ejemplos son aplicables a sintaxis Basic y Crystal:</p><p><code><a name="1000019389"></a>CurrentDate in CDate(1990, 09, 01) to CDate(1990, 09, 20)</code></p><p class="example"><a name="1000019390"></a>Devuelve verdadero, si la fecha de hoy es 15 de septiembre de 1990.</p><p><code><a name="1000019391"></a>CurrentDate in CDate(1990, 09, 01) to CDate(1990, 09, 20)</code></p><p class="example"><a name="1000024826"></a>Devuelve falso, si la fecha de hoy es 21de septiembre de 1990.</p><p><code><a name="1000024827"></a>{archivo.CNTD} in {archivo.A MANO} to ({archivo.ATRASADO} + {archivo.ENPEDIDO})</code></p><p class="example"><a name="1000024828"></a>VERDADERO, donde {archivo.CNTD} = 20, {archivo.A MANO} = 10, {archivo.ATRASADO} = 5, {archivo.ENPEDIDO} = 25 (&#191;Est&#225; 20 en el rango que empieza en 10 y termina con la suma de 5 y 25?).</p><p><code><a name="1000024829"></a>{archivo.CNTD} in {archivo.A MANO} to ({archivo.ATRASADO} + {archivo.ENPEDIDO})</code></p><p class="example"><a name="1000024830"></a>FALSO, donde {archivo.CNTD} = 31, {archivo.A MANO} = 10, {archivo.ATRASADO} = 5, {archivo.ENPEDIDO} = 25 (&#191;Est&#225; 31 en el rango que empieza con 10 y termina con la suma de 5 y 25?).</p><a name="1000024831"></a><h5>Comentarios</h5><p><a name="1000024837"></a>La combinaci&#243;n de los operadores Hacer rango y En Rango a menudo se usan con el operador&nbsp;&nbsp;&nbsp;&nbsp; If<nobr>-T</nobr>hen<nobr>-E</nobr>lse. Por ejemplo la f&#243;rmula en sintaxis Crystal:</p><p class="code"><a name="1000024838"></a>If ({archivo.CANTIDAD} in (100.00 to 250.00)) Then
+<br><a name="1000024839"></a>&nbsp;&nbsp;&nbsp;&nbsp;(.10 * {archivo.CANTIDAD})
+<br><a name="1000024840"></a>Else
+<br><a name="1000024841"></a>&nbsp;&nbsp;&nbsp;&nbsp;0; 
+</p><p class="example"><a name="1000024842"></a>Si el valor de {archivo.CANTIDAD} cae en el rango 100.00 a 250.00. Si es as&#237;, multiplicar .10 veces {archivo.CANTIDAD}. Si no es as&#237;, retornar cero</p><a name="1000029222"></a><h6>Temas relacionados</h6><p><a name="1000029226"></a><a href="19_introformulas37.html#317136">F&#243;rmula 9</a></p><p><a name="1000029230"></a><a href="19_introformulas38.html#317211">F&#243;rmula 10</a></p><p><a name="1000024847"></a><a href="Functions108.html#1000581401">DateTime</a> funci&#243;n</p>
+<hr><br>
+
+<script  language="JavaScript"><!--
+
+var prev = "Operators26.html";
+var next = "Operators28.html";
+
+function setTopicID() { 
+      var number = "1000024807"; 
+      return number; 
+}
+
+// --></script>
+
+
+
+
+<SCRIPT>
+
+if (!window.parent.toc && navigator.appName == "Netscape") {
+
+   document.writeln ('<TABLE ALIGN="left" border="0" cellspacing="0" cellpadding="10">');
+   document.writeln ('<TR>');
+   document.write ('<TD ALIGN="left">');
+
+   if (prev != "crw_spTOC.hhc") {
+      document.writeln ('<A HREF="' + prev + '">');
+      document.writeln ('<IMG SRC="prevpage.gif" HEIGHT=17 BORDER=0 ALT="Página anterior"></A>');
+   } else {
+//   window.alert ('no previous page');
+   }
+
+   if (next != "crw_spIX.hhk") {
+      document.writeln ('<A HREF="' + next + '">');
+      document.writeln ('<IMG SRC="nextpage.gif" HEIGHT=17 BORDER=0 ALT="Página siguiente"></A>');
+   } else {
+//   window.alert ('no next page');
+   }
+   document.writeln ('</TD><TD ALIGN="left">');
+   document.writeln ('<A HREF="frameset.htm?TOC">');
+   document.writeln ('<IMG SRC="showtoc.gif" HEIGHT=17 BORDER=0 ALT="Haga clic para ver el contenido"></A></TD>');
+   document.writeln ('<TD ALIGN="left">');
+   document.writeln ('<A HREF="frameset.htm?IDX">');
+   document.writeln ('<IMG SRC="showix.gif" HEIGHT=17 BORDER=0 ALT="Haga clic para ver el índice"></A></TD>');
+   document.writeln ('</TD>');
+   document.writeln ('</TR>');
+   document.writeln ('</TABLE>');
+
+}
+
+</SCRIPT>
+<table align="right" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td align="right"><font size="1">Seagate Software, Inc.<br>
+    <a href="http://www.seagatesoftware.com">http://www.seagatesoftware.com</a><br>
+    Envíe sus comentarios a:<br>
+    <a href="mailto:techpubs@seagatesoftware.com">techpubs@seagatesoftware.com</a><br>
+    </font></td>
+  </tr>
+</table>
+</body>
+</html>
+
+

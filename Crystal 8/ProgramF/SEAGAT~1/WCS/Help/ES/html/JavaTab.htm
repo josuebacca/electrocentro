@@ -1,0 +1,84 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Type"
+content="text/html; charset=iso-8859-1">
+<title>JavaTab</title>
+</head>
+
+<body bgcolor="#C0C0C0">
+<script language="JavaScript">
+function OnContents()
+{
+	open("JavaContents.htm","frmApplet");
+}
+
+function OnIndex()
+{
+	open("JavaIndex.htm","frmApplet");
+}
+
+function NormalizeURL(strURL)
+{
+	// Start by converting to lower case
+	var str = strURL.toLowerCase();
+	strURL = "";
+	var cLast = '';
+	for (var i = 0; i < str.length; i++) {
+		var c = str.charAt(i);
+		if (c == '\\') {
+			// Convert backslash to forward slash
+			c = '/';
+		}
+		if (c == '/') {
+			if (cLast == '/') {
+				// Collapse multiple slashes to single slash
+				continue;
+			}
+		}
+		strURL = strURL + c;
+		cLast = c;
+	}
+	return(strURL);
+}
+
+function OnSync()
+{
+	// Extract base location from current document
+	var strBase = NormalizeURL(document.location.toString());
+	strBase = strBase.substring(0,strBase.lastIndexOf("javatab.htm"));
+
+	// Get location of current topic
+	var strTopic = NormalizeURL(parent.parent.frmTopic.document.location.toString());
+
+	if (strTopic.indexOf(strBase) == 0) {
+		// Current topic is relative to base
+		// Strip base from left hand side
+		strTopic = strTopic.substring(strBase.length);
+	}
+
+	// Sync it in the table of contents
+
+        if (strTopic.search("#") == -1) {
+                // Current topic does not contain topic id
+                // so get the topic id from the page
+                strTopic = strTopic + "#" + parent.parent.frmTopic.setTopicID();
+        }
+
+	parent.frmApplet.document.HHCtrl.syncURL(strTopic);
+}
+
+</script>
+
+<form method="POST" name="formTab">
+    <p>
+    <input type="button" name="btnContents" value="Contents"
+      language="JavaScript" onclick="OnContents();">
+    <input type="button" name="btnIndex" value="Index"
+      language="JavaScript" onclick="OnIndex();">
+    <input type="button" name="btnSync" value="Sync"
+      language="JavaScript" onclick="OnSync();">
+    </p>
+</form>
+</body>
+</html>

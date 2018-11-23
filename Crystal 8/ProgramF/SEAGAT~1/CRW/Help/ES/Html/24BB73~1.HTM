@@ -1,0 +1,97 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+
+<html>
+<head>
+<title>Consideraciones de rendimiento para todos los informes</title>
+
+<link REL=STYLESHEET TYPE="text/css" HREF="seagate.css">
+
+<!--
+                 ***********************************
+                 * Seagate Software copyright 1999 *
+                 ***********************************
+
+                      Template version: 5.1
+-->
+
+
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" link="#0000FF" vlink="#0000FF" alink="#800080">
+
+
+ 
+<a name="320936"></a><h4 class="newpage"> Consideraciones de rendimiento para todos los informes</h4><a name="320937"></a><h5>Consideraci&#243;n no 1</h5><p><a name="320938"></a>Con archivos de datos y bases de datos SQL, el programa analiza toda la f&#243;rmula de selecci&#243;n y pasa cualquier parte del critero que puede trasladar, donde sea que lo que encuentre en la f&#243;rmula. Por lo tanto, si encuentra un criterio que puede pasar, despu&#233;s un criterio que no puede, luego otro criterio que s&#237;, pasa la primera parte, omite la segunda y despu&#233;s pasa la tercera parte.</p><ul type="disc"><a name="320939"></a><li>En el caso de archivos de datos, pasa el criterio que puede a la capa de traslaci&#243;n de base de datos.
+<a name="320940"></a><li>En el caso de bases de datos SQL, pasa el criterio que puede al servidor en la forma de una cl&#225;usula WHERE (DONDE).
+</ul><p><a name="320941"></a>A&#250;n cuando hay excepciones, como regla general puede pasar cualquier parte de la f&#243;rmula de selecci&#243;n de registros que compara un campo con una constante. Generalmente, &#233;sto significa que puede pasar cualquier tipo de criterio de selecci&#243;n de registros que puede ser configurado en el Asistente de Selecci&#243;n (igual que, uno de, menor que, mayor que, menor o igual que, mayor o igual que, entre, empezando con, o como constante).</p><p><a name="320942"></a>Hay dos situaciones de f&#243;rmulas de selecci&#243;n especiales que necesitan ser consideradas. En estas situaciones, hay varias condiciones en la f&#243;rmula de selecci&#243;n de registros y algunas pueden ser pasadas mientras que otras no.</p><ul type="disc"><a name="320943"></a><li>Situaciones AND (Y)
+<a name="320944"></a>({cliente.REGION} = "CA" and<br>{cliente.ID DEL CLIENTE[3 to 5] = "777")<br><p class="indent"><a name="320945"></a>En esta situaci&#243;n, el programa ve que puede pasar la condici&#243;n antes del operador "and" pero no la condici&#243;n posterior. Como los registros que satisfagan la segunda condici&#243;n tendr&#225;n que satisfacer tambi&#233;n la primera, pasa la primera condici&#243;n, recupera el conjunto de datos que satisfacen la condici&#243;n y luego aplica la segunda condici&#243;n a los datos recuperados. La regla para situaciones de AND es que el programa pasa las condiciones que puede.</p><p class="indent"><a name="340517"></a><font color="darkblue"><b>Nota:   &nbsp;&nbsp;&nbsp;</b></font>Si todas las condiciones en una situaci&#243;n AND pueden ser satisfechas en el servidor o DLL de base de datos, el programa las pasa todas.</p>
+<a name="320947"></a><li>situaciones OR (O)
+<a name="320948"></a>({cliente.REGION} = "CA" OR<br>{cliente.ID DEL CLIENTE[3 to 5] = "777")<br><p class="indent"><a name="320949"></a>En esta situaci&#243;n, el programa tambi&#233;n ve que puede pasar la condici&#243;n antes del operador "Or" pero no la condici&#243;n posterior. Como hay registros que pueden satisfacer la segunda condici&#243;n sin satisfacer la primera, pasar la primera condici&#243;n no tiene sentido porque recuperar&#225; un conjunto de datos incompleto. En otras palabras, incluso si recuperara todos los datos que satisfagan la primera condici&#243;n, todav&#237;a tendr&#237;a que recuperar todos los datos en la(s) tabla(s) de manera que pueda aplicar la segunda condici&#243;n en Seagate Crystal Reports. Por lo tanto, en lugar de duplicar partes de la recuperaci&#243;n de datos, el programa no pasa nada. Recupera todos los datos y luego ejecuta ambas pruebas en Seagate Crystal Reports. La regla en situaciones OR es que el programa pase todas las pruebas o ning&#250;na.</p><p class="indent"><a name="320950"></a><font color="darkblue"><b>Nota:   &nbsp;&nbsp;&nbsp;</b></font>Si todas las pruebas en una situaci&#243;n OR pueden ser realizadas en el servidor o en el DLL de bases de datos, el programa las pasa toda.</p>
+</ul><a name="320951"></a><h5>Consideraci&#243;n no 2</h5><p><a name="320952"></a>Para asegurarse de que el programa puede utilizar el &#237;ndice en la tabla A para mejorar el rendimiento, aseg&#250;rese de que:</p><ul type="disc"><a name="320953"></a><li>hay una f&#243;rmula de selecci&#243;n,
+<a name="320954"></a><li>hay l&#237;mites de rango en la f&#243;rmula de selecci&#243;n en el campo clave (indexado) en la tabla A, y 
+<a name="320955"></a><li>la opci&#243;n <kbd>Usar &#237;ndices</kbd> est&#225; activada en el cuadro de di&#225;logo Opciones. Buscar en <kbd>cuadro de di&#225;logo Opciones</kbd> en la Ayuda en l&#237;nea de Seagate Crystal Reports.
+</ul><a name="320956"></a><h5>Consideraci&#243;n no 3</h5><p><a name="320957"></a>Si los campos que est&#225; usando de la tabla A no est&#225;n indexados, pero hay un campo indexado que puede utilizar en su solicitud de selecci&#243;n de registros, util&#237;celo. Por ejemplo, suponga que tiene tres productos (Producto 1, Producto 2 y Producto 3) y quiere identificar todas las ventas del Producto 2 en EE.UU. No hay &#237;ndice en el campo Producto pero hay uno en el campo Fecha de Pedido. Como usted sabe que el Producto 2 no comenz&#243; a ser enviado sino desde julio de 1995, utilizando la f&#243;rmula de selecci&#243;n, puede incrementar la velocidad al limitar su informe a pedidos en y despu&#233;s de julio de 1995. En este caso, el programa utiliza el &#237;ndice Fecha de Pedido para recuperar s&#243;lo los pedidos de julio de 1995 en adelante (un peque&#241;o subconjunto de toda la base de datos) y despu&#233;s busca las veces que aparece el Producto 2 en ese subconjunto, no en toda la base de datos.</p>
+<hr><br>
+
+<script  language="JavaScript"><!--
+
+var prev = "24_under_databases11.html";
+var next = "24_under_databases13.html";
+
+function setTopicID() { 
+      var number = "320936"; 
+      return number; 
+}
+
+// --></script>
+
+
+
+
+<SCRIPT>
+
+if (!window.parent.toc && navigator.appName == "Netscape") {
+
+   document.writeln ('<TABLE ALIGN="left" border="0" cellspacing="0" cellpadding="10">');
+   document.writeln ('<TR>');
+   document.write ('<TD ALIGN="left">');
+
+   if (prev != "crw_spTOC.hhc") {
+      document.writeln ('<A HREF="' + prev + '">');
+      document.writeln ('<IMG SRC="prevpage.gif" HEIGHT=17 BORDER=0 ALT="Página anterior"></A>');
+   } else {
+//   window.alert ('no previous page');
+   }
+
+   if (next != "crw_spIX.hhk") {
+      document.writeln ('<A HREF="' + next + '">');
+      document.writeln ('<IMG SRC="nextpage.gif" HEIGHT=17 BORDER=0 ALT="Página siguiente"></A>');
+   } else {
+//   window.alert ('no next page');
+   }
+   document.writeln ('</TD><TD ALIGN="left">');
+   document.writeln ('<A HREF="frameset.htm?TOC">');
+   document.writeln ('<IMG SRC="showtoc.gif" HEIGHT=17 BORDER=0 ALT="Haga clic para ver el contenido"></A></TD>');
+   document.writeln ('<TD ALIGN="left">');
+   document.writeln ('<A HREF="frameset.htm?IDX">');
+   document.writeln ('<IMG SRC="showix.gif" HEIGHT=17 BORDER=0 ALT="Haga clic para ver el índice"></A></TD>');
+   document.writeln ('</TD>');
+   document.writeln ('</TR>');
+   document.writeln ('</TABLE>');
+
+}
+
+</SCRIPT>
+<table align="right" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td align="right"><font size="1">Seagate Software, Inc.<br>
+    <a href="http://www.seagatesoftware.com">http://www.seagatesoftware.com</a><br>
+    Envíe sus comentarios a:<br>
+    <a href="mailto:techpubs@seagatesoftware.com">techpubs@seagatesoftware.com</a><br>
+    </font></td>
+  </tr>
+</table>
+</body>
+</html>
+
+

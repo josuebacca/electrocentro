@@ -1,0 +1,106 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+
+<html>
+<head>
+<title>Choose (&#237;ndice, opci&#243;n1, opci&#243;n2, .., opci&#243;nN)</title>
+
+<link REL=STYLESHEET TYPE="text/css" HREF="seagate.css">
+
+<!--
+                 ***********************************
+                 * Seagate Software copyright 1999 *
+                 ***********************************
+
+                      Template version: 5.1
+-->
+
+
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" link="#0000FF" vlink="#0000FF" alink="#800080">
+
+
+ 
+<a name="1000571527"></a><h3 class="newpage"> Choose (&#237;ndice, opci&#243;n1, opci&#243;n2, .., opci&#243;nN)</h3>
+<a name="1000571528"></a><h5>Argumentos</h5><ul type="disc"><a name="1000571529"></a><li>&#237;ndice es un N&#250;mero o expresi&#243;n num&#233;rica que especifica el &#237;ndice de la opci&#243;n.  Debe ser entre 1 y el n&#250;mero de las opciones disponibles.   Si excede los l&#237;mites, Choose devuelve al valor preestablecido.   (El valor preestablecido devuelto depende del tipo de las opciones.   Por ejemplo, si las opciones son de tipo Num&#233;ricas, el valor preestablecido es 0; si las opciones son del tipo de Cadena, el valor preestablecido es una cadena vac&#237;a ("").)
+<a name="1000571530"></a><li>opci&#243;n es una de las opciones de entre las que se puede elegir. Las opciones deben ser del mismo tipo.   Las opciones pueden ser de cualquier tipo simple (N&#250;mero, Moneda, Cadena, Booleana, Fecha, Hora, o FechaHora) o un tipo de rango (Rango de N&#250;meros, Rango de Monedas, Rango de Cadenas, Rango de fechas, Rango de Horas o Rango de fechaHora), pero no pueden ser una matriz.  
+</ul><a name="1000571531"></a><h5>Devuelve </h5><p><a name="1000571532"></a>Un valor de una lista de opciones dada.   El tipo de valor devuelto es el mismo que el tipo de opci&#243;n.  </p><a name="1000571533"></a><h5>Acci&#243;n</h5><p><a name="1000571534"></a>Choose devuelve un valor de la lista de opciones sobre la base del valor del &#237;ndice.  Por ejemplo, si el &#237;ndice es 1, devuelve una opci&#243;n 1 y si es 2, devuelve una opci&#243;n 2, y as&#237; sucesivamente.  </p><a name="1000571535"></a><h5>Uso(s) t&#237;pico(s)</h5><ul type="disc"><a name="1000571536"></a><li>Puede usarse Choose en lugar de <a href="Operators56.html#1000025244">Operador If<nobr>-T</nobr>hen<nobr>-E</nobr>lse</a> o las estructuras de control Seleccionar, en algunas situaciones.   Por ejemplo, si est&#225; haciendo un mapa de un valor de &#237;ndice a un valor Cadena, Choose puede ser lo m&#225;s simple.  
+<a name="1000571537"></a><li>Una situaci&#243;n en la que Choose puede ser mejor que una estructura de control es cuando se escriben f&#243;rmulas de selecci&#243;n de registros para instalarlas en el servidor de la base de datos.   
+<p class="indent"><a name="1000708910"></a>Vea la funci&#243;n <a href="Functions168.html#1000571589">Switch (expr1, valor1, expr2, valor2, ..., exprN, valorN)</a> para ejemplos de este procedimiento. </p><p class="indent"><a name="1000708911"></a>Vea <a href="07_recordgroupsel12.html#53628">F&#243;rmulas avanzadas de selecci&#243;n de registros</a> para una explicaci&#243;n de las t&#233;cnicas involucradas.</p></ul><a name="1000571538"></a><h5>Ejemplo(s)</h5><p><a name="1000571539"></a>Los siguientes ejemplos son aplicables a las sintaxis b&#225;sica y Crystal:</p><p><code><a name="1000571541"></a>Choose (3, "Malo", "Regular", "Bueno", "Excelente")</code></p><p class="example"><a name="1000571542"></a>Devuelve la Cadena "Bueno". </p><p><code><a name="1000831847"></a>Choose (2, 10 A 20, 100 A 200, 60 A 70)</code></p><p class="example"><a name="1000831848"></a>Devuelve el valor de Rango Num&#233;rico 100 A 200.</p><p><a name="1000831849"></a>Si el a&#241;o tributario de una compa&#241;&#237;a se inicia el 1 de julio (el tercer trimestre calendario) y desea imprimir el trimestre tributario  de cada fecha de pedido: </p><p class="code"><a name="1000571547"></a>Sintaxis b&#225;sica Rem
+<br><a name="1000571548"></a>formula = Choose (DatePart ("t", {pedidos.FECHA DEL PEDIDO}), _
+<br><a name="1000571549"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"tercer trimestre tributario", "cuarto trimestre 
+tributario", _
+<br><a name="1000571550"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"&nbsp;primer trimestre tributario", "segundo trimestre 
+tributario")
+<br><a name="1000571551"></a>
+<br><a name="1000571552"></a>Sintaxis Crystal
+<br><a name="1000571553"></a>Choose (DatePart ("t", {pedidos.FECHA DEL PEDIDO}), 
+<br><a name="1000571554"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"tercer trimestre tributario", "cuarto trimestre tributario", 
+<br><a name="1000571555"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"primer trimestre tributario", "segundo trimestre tributario")
+</p><p class="example"><a name="1000571556"></a>Si {pedidos.FECHA DEL PEDIDO} es el 18 de febrero de 1996, entonces la invocaci&#243;n de la funci&#243;n DatePart devuelve 1, ya que esta fecha cae en el primer trimestre calendario.   En consecuencia, la f&#243;rmula devuelve el valor de la primera opci&#243;n, a saber el valor Cadena "tercer trimestre tributario".</p><a name="1000571557"></a><h5>Comentario(s) </h5><ul type="disc"><a name="1000571558"></a><li>Una diferencia es que la funci&#243;n no devuelve una Variante y, en consecuencia, las opciones deben ser del mismo tipo.
+<a name="1000571559"></a><li>Todo argumento de la funci&#243;n Choose se eval&#250;a antes de retornarse la opci&#243;n.   Por lo tanto, cuando use la funci&#243;n Choose, debe estar atento a los efectos secundarios no deseados.   Por ejemplo, si una de las expresiones elegidas resulta en una divisi&#243;n por cero, se generar&#225; un error, aun cuando esa opci&#243;n no sea la opci&#243;n que devuelve la funci&#243;n Choose.  
+</ul><a name="1000571560"></a><h6>Temas relacionados</h6><p><a name="1000648954"></a><a href="Functions167.html#1000571561">IIF (expresi&#243;n, parteVerdadero, parteFalso)</a> funci&#243;n</p><p><a name="1000708937"></a><a href="Functions168.html#1000571589">Switch (expr1, valor1, expr2, valor2, ..., exprN, valorN)</a> funci&#243;n</p><p><a name="1000708958"></a><a href="Operators56.html#1000025244">Operador If<nobr>-T</nobr>hen<nobr>-E</nobr>lse</a></p><p><a name="1000708991"></a><a href="20_basicsyntax51.html#132768">Enunciados Select</a> (Sintaxis b&#225;sica)</p><p><a name="1000708998"></a><a href="21_crystalsyntax56.html#147492">Expresiones Select</a> (Sintaxis Crystal)</p>
+<hr><br>
+
+<script  language="JavaScript"><!--
+
+var prev = "Functions165.html";
+var next = "Functions167.html";
+
+function setTopicID() { 
+      var number = "1000571527"; 
+      return number; 
+}
+
+// --></script>
+
+
+
+
+<SCRIPT>
+
+if (!window.parent.toc && navigator.appName == "Netscape") {
+
+   document.writeln ('<TABLE ALIGN="left" border="0" cellspacing="0" cellpadding="10">');
+   document.writeln ('<TR>');
+   document.write ('<TD ALIGN="left">');
+
+   if (prev != "crw_spTOC.hhc") {
+      document.writeln ('<A HREF="' + prev + '">');
+      document.writeln ('<IMG SRC="prevpage.gif" HEIGHT=17 BORDER=0 ALT="Página anterior"></A>');
+   } else {
+//   window.alert ('no previous page');
+   }
+
+   if (next != "crw_spIX.hhk") {
+      document.writeln ('<A HREF="' + next + '">');
+      document.writeln ('<IMG SRC="nextpage.gif" HEIGHT=17 BORDER=0 ALT="Página siguiente"></A>');
+   } else {
+//   window.alert ('no next page');
+   }
+   document.writeln ('</TD><TD ALIGN="left">');
+   document.writeln ('<A HREF="frameset.htm?TOC">');
+   document.writeln ('<IMG SRC="showtoc.gif" HEIGHT=17 BORDER=0 ALT="Haga clic para ver el contenido"></A></TD>');
+   document.writeln ('<TD ALIGN="left">');
+   document.writeln ('<A HREF="frameset.htm?IDX">');
+   document.writeln ('<IMG SRC="showix.gif" HEIGHT=17 BORDER=0 ALT="Haga clic para ver el índice"></A></TD>');
+   document.writeln ('</TD>');
+   document.writeln ('</TR>');
+   document.writeln ('</TABLE>');
+
+}
+
+</SCRIPT>
+<table align="right" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td align="right"><font size="1">Seagate Software, Inc.<br>
+    <a href="http://www.seagatesoftware.com">http://www.seagatesoftware.com</a><br>
+    Envíe sus comentarios a:<br>
+    <a href="mailto:techpubs@seagatesoftware.com">techpubs@seagatesoftware.com</a><br>
+    </font></td>
+  </tr>
+</table>
+</body>
+</html>
+
+

@@ -1,0 +1,107 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+
+<html>
+<head>
+<title>Ordenamiento de uno y m&#250;ltiples campos</title>
+
+<link REL=STYLESHEET TYPE="text/css" HREF="seagate.css">
+
+<!--
+                 ***********************************
+                 * Seagate Software copyright 1999 *
+                 ***********************************
+
+                      Template version: 5.1
+-->
+
+
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" link="#0000FF" vlink="#0000FF" alink="#800080">
+
+
+ 
+<a name="246830"></a><h3 class="newpage"> Ordenamiento de uno y m&#250;ltiples campos</h3>
+<p><a name="246831"></a>Los ordenamientos de un solo campo son aquellos en los cuales todos los registros usados en el informe son ordenados bas&#225;ndose en los valores de un solo campo. Ejemplos de este tipo de ordenamiento ser&#237;a, el ordenar un informe de inventario por n&#250;mero de almacenamiento o una lista de clientes por el n&#250;mero de cliente. </p><p><a name="246832"></a>En los ordenamientos de campos m&#250;ltiples, el Report Designer ordena primero los registros basados en los valores del primer campo seleccionado, poni&#233;ndolos en orden ascendente o descendente seg&#250;n se haya especificado. Cuando dos o m&#225;s registros tienen el mismo valor de campo en el primer campo de ordenamiento, entonces ordena aquellos registros (y s&#243;lo &#233;sos) basados en el valor del segundo campo de ordenamiento.</p><p><a name="253451"></a>Por ejemplo, si primero ordena seg&#250;n el campo {cliente.PA&Iacute;S} y luego seg&#250;n el campo {cliente.REGI&Oacute;N}, ambos en orden ascendente, el informe aparecer&#225; con los pa&#237;ses y las regiones de cada pa&#237;s enumerados en orden alfab&#233;tico. El resto de los campos, como el c&#243;digo postal de cada regi&#243;n, permanecer&#237;a sin ordenar.</p><p><a name="253452"></a>Puede crear ordenamientos de campos m&#250;ltiples o sencillos siguiendo el mismo procedimiento.</p><a name="245010"></a><h6>Para ordenar los datos</h6><ol>
+<a name="245014"></a><li value="1&nbsp;&nbsp;&nbsp;&nbsp;"><img src="images/Bt_sordr.gif">
+
+
+En el men&#250; <strong>Informe</strong>, haga clic en <strong>Ordenar registros</strong>.
+<p class="indent"><a name="245015"></a>Aparece el cuadro de di&#225;logo Direcci&#243;n de ordenamiento de registros.</p><p><a name="245019"></a> <img src="images/recsort1.gif">
+
+
+</p>
+<a name="245020"></a><li value="2&nbsp;&nbsp;&nbsp;&nbsp;">Destaque el campo a ordenar de la lista Campos del informe.
+<a name="245021"></a><li value="3&nbsp;&nbsp;&nbsp;&nbsp;">Haga clic en el bot&#243;n <strong>Agregar</strong>.
+<p class="indent"><a name="245022"></a>El campo seleccionado se agrega a la lista Campos de ordenamiento.</p><a name="245023"></a><li value="4&nbsp;&nbsp;&nbsp;&nbsp;">Especifique la direcci&#243;n de ordenamiento.
+</ol>
+<ol>
+<a name="245025"></a><li value="5&nbsp;&nbsp;&nbsp;&nbsp;">Si desea ordenar m&#225;s de un campo, destaque el segundo campo seg&#250;n el cual desea ordenar los datos y agr&#233;guelo a la lista Campos de ordenamiento.
+<a name="245026"></a><li value="6&nbsp;&nbsp;&nbsp;&nbsp;">A medida que agrega cada campo a la lista Campos de ordenamiento, especifique la direcci&#243;n de ordenamiento.
+<a name="245027"></a><li value="7&nbsp;&nbsp;&nbsp;&nbsp;">Al terminar, haga clic en <strong>Aceptar</strong>.
+</ol>
+<p><a name="245028"></a>Los registros se ordenan seg&#250;n los valores de la lista Campos de ordenamiento.</p>
+<hr><br>
+
+<script  language="JavaScript"><!--
+
+var prev = "08_sortgrouptotal2.html";
+var next = "08_sortgrouptotal4.html";
+
+function setTopicID() { 
+      var number = "246830"; 
+      return number; 
+}
+
+// --></script>
+
+
+
+
+<SCRIPT>
+
+if (!window.parent.toc && navigator.appName == "Netscape") {
+
+   document.writeln ('<TABLE ALIGN="left" border="0" cellspacing="0" cellpadding="10">');
+   document.writeln ('<TR>');
+   document.write ('<TD ALIGN="left">');
+
+   if (prev != "crw_spTOC.hhc") {
+      document.writeln ('<A HREF="' + prev + '">');
+      document.writeln ('<IMG SRC="prevpage.gif" HEIGHT=17 BORDER=0 ALT="Página anterior"></A>');
+   } else {
+//   window.alert ('no previous page');
+   }
+
+   if (next != "crw_spIX.hhk") {
+      document.writeln ('<A HREF="' + next + '">');
+      document.writeln ('<IMG SRC="nextpage.gif" HEIGHT=17 BORDER=0 ALT="Página siguiente"></A>');
+   } else {
+//   window.alert ('no next page');
+   }
+   document.writeln ('</TD><TD ALIGN="left">');
+   document.writeln ('<A HREF="frameset.htm?TOC">');
+   document.writeln ('<IMG SRC="showtoc.gif" HEIGHT=17 BORDER=0 ALT="Haga clic para ver el contenido"></A></TD>');
+   document.writeln ('<TD ALIGN="left">');
+   document.writeln ('<A HREF="frameset.htm?IDX">');
+   document.writeln ('<IMG SRC="showix.gif" HEIGHT=17 BORDER=0 ALT="Haga clic para ver el índice"></A></TD>');
+   document.writeln ('</TD>');
+   document.writeln ('</TR>');
+   document.writeln ('</TABLE>');
+
+}
+
+</SCRIPT>
+<table align="right" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td align="right"><font size="1">Seagate Software, Inc.<br>
+    <a href="http://www.seagatesoftware.com">http://www.seagatesoftware.com</a><br>
+    Envíe sus comentarios a:<br>
+    <a href="mailto:techpubs@seagatesoftware.com">techpubs@seagatesoftware.com</a><br>
+    </font></td>
+  </tr>
+</table>
+</body>
+</html>
+
+

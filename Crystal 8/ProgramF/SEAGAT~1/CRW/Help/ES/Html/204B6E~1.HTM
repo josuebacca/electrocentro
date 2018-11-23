@@ -1,0 +1,105 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+
+<html>
+<head>
+<title>Tipo de fecha, hora y fechahora</title>
+
+<link REL=STYLESHEET TYPE="text/css" HREF="seagate.css">
+
+<!--
+                 ***********************************
+                 * Seagate Software copyright 1999 *
+                 ***********************************
+
+                      Template version: 5.1
+-->
+
+
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" link="#0000FF" vlink="#0000FF" alink="#800080">
+
+
+ 
+<a name="128228"></a><h3 class="newpage"> Tipo de fecha, hora y fechahora</h3>
+<p><a name="128230"></a>El tipo de fechahora puede incluir la fecha y la hora, s&#243;lo fechas o s&#243;lo horas. El tipo de fecha s&#243;lo incluye fechas y el tipo de hora s&#243;lo incluye horas. Los tipos de fecha y de hora son m&#225;s eficaces que el tipo fechahora y por ello se pueden usar en situaciones donde la funcionalidad y la flexibilidad agregada de este tipo no sea necesaria.</p><p><a name="135109"></a>Visual Basic no es compatible con los tipos separados para colocar s&#243;lo fechas o s&#243;lo horas. El tipo de fechahora de la sintaxis Basic es similar al tipo de fecha de Visual Basic.</p><p><a name="135180"></a>Puede crear directamente valores de fechahora usando la construcci&#243;n literal fecha<nobr>-h</nobr>ora. &Eacute;sta se forma al escribir la fecha<nobr>-h</nobr>ora entre 2 signos almohadilla (#). Igual que en Visual Basic, se admiten muchos formatos diferentes.</p><p><a name="135181"></a><font color="darkblue"><b>Nota:   &nbsp;&nbsp;&nbsp;</b></font>Los literales fecha<nobr>-h</nobr>ora no se pueden dividir entre l&#237;neas.</p>
+<a name="155189"></a><h5>Ejemplos</h5><PRE><a name="135182"></a>#8/6/1976 1:20 am#
+<a name="128235"></a>#August 6, 1976#
+<a name="128236"></a>#6 Aug 1976 13:20:19#
+<a name="128237"></a>#6 Aug 1976 1:30:15 pm#
+<a name="128238"></a>#8/6/1976#
+<a name="128239"></a>#10:20 am#
+</PRE><p><a name="128241"></a>Aunque parece que<code> #10:20 am#</code> podr&#237;a tener el tipo de hora y <code>#6/8/1976#</code> el tipo de fecha, no es as&#237;. Ambos tienen el tipo fechahora, igual que todos los literales fecha<nobr>-h</nobr>ora. Por ejemplo, podemos pensar en <code>#10:20 am#</code> como valor de fechahora con una parte de fecha nula. Para convertirlo al tipo hora, use <code>CTime (#10:20 am#)</code>.</p><p><a name="128243"></a>En vez de usar los literales fecha<nobr>-h</nobr>ora, puede usar CDateTime para convertir una cadena a un valor de fechahora. Por ejemplo,</p><PRE><a name="128245"></a>CDateTime ("8/6/1976 1:20 am")
+<a name="128246"></a>CDateTime ("10:20 am")
+</PRE><p><a name="137602"></a>Sin embargo, existe una diferencia clave entre usar literales fecha<nobr>-h</nobr>ora y el uso anterior de CDateTime. Los literales fecha<nobr>-h</nobr>ora siempre usan formatos de fecha en ingl&#233;s de EE.UU. en vez de la configuraci&#243;n local de la computadora particular en la que se ejecuta Seagate Crystal Reports. As&#237;, los ejemplos anteriores de literal fecha<nobr>-h</nobr>ora funcionar&#237;an en todas las computadoras. Por otra parte, en un sistema franc&#233;s, se podr&#237;an usar construcciones como:</p><p><code><a name="137603"></a>CDateTime ("22 aout 1997") 'Igual que #Aug 22, 1997#</code></p><p><a name="137604"></a>Los valores de fecha se pueden construir con CDate y los de hora con CTime:</p><PRE><a name="128254"></a>CDate ("Aug 6, 1969")
+<a name="128255"></a>CDate (1969, 8, 6) 'Especificar el a&#241;o, mes, d&#237;a
+<a name="128256"></a>'Convierte el argumento de fechahora a una fecha
+<a name="128257"></a>CDate (#Aug 6, 1969#)
+<a name="128259"></a>CTime ("10:30 am")
+<a name="128260"></a>CTime (10, 30, 0) 'Especificar la hora, minuto, segundo
+<a name="128261"></a>CTime (#10:30 am#)
+</PRE>
+<hr><br>
+
+<script  language="JavaScript"><!--
+
+var prev = "20_basicsyntax17.html";
+var next = "20_basicsyntax19.html";
+
+function setTopicID() { 
+      var number = "128228"; 
+      return number; 
+}
+
+// --></script>
+
+
+
+
+<SCRIPT>
+
+if (!window.parent.toc && navigator.appName == "Netscape") {
+
+   document.writeln ('<TABLE ALIGN="left" border="0" cellspacing="0" cellpadding="10">');
+   document.writeln ('<TR>');
+   document.write ('<TD ALIGN="left">');
+
+   if (prev != "crw_spTOC.hhc") {
+      document.writeln ('<A HREF="' + prev + '">');
+      document.writeln ('<IMG SRC="prevpage.gif" HEIGHT=17 BORDER=0 ALT="Página anterior"></A>');
+   } else {
+//   window.alert ('no previous page');
+   }
+
+   if (next != "crw_spIX.hhk") {
+      document.writeln ('<A HREF="' + next + '">');
+      document.writeln ('<IMG SRC="nextpage.gif" HEIGHT=17 BORDER=0 ALT="Página siguiente"></A>');
+   } else {
+//   window.alert ('no next page');
+   }
+   document.writeln ('</TD><TD ALIGN="left">');
+   document.writeln ('<A HREF="frameset.htm?TOC">');
+   document.writeln ('<IMG SRC="showtoc.gif" HEIGHT=17 BORDER=0 ALT="Haga clic para ver el contenido"></A></TD>');
+   document.writeln ('<TD ALIGN="left">');
+   document.writeln ('<A HREF="frameset.htm?IDX">');
+   document.writeln ('<IMG SRC="showix.gif" HEIGHT=17 BORDER=0 ALT="Haga clic para ver el índice"></A></TD>');
+   document.writeln ('</TD>');
+   document.writeln ('</TR>');
+   document.writeln ('</TABLE>');
+
+}
+
+</SCRIPT>
+<table align="right" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td align="right"><font size="1">Seagate Software, Inc.<br>
+    <a href="http://www.seagatesoftware.com">http://www.seagatesoftware.com</a><br>
+    Envíe sus comentarios a:<br>
+    <a href="mailto:techpubs@seagatesoftware.com">techpubs@seagatesoftware.com</a><br>
+    </font></td>
+  </tr>
+</table>
+</body>
+</html>
+
+

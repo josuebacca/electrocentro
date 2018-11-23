@@ -1,0 +1,109 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+
+<html>
+<head>
+<title>Enunciados If de una sola l&#237;nea y de m&#250;ltiples l&#237;neas</title>
+
+<link REL=STYLESHEET TYPE="text/css" HREF="seagate.css">
+
+<!--
+                 ***********************************
+                 * Seagate Software copyright 1999 *
+                 ***********************************
+
+                      Template version: 5.1
+-->
+
+
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" link="#0000FF" vlink="#0000FF" alink="#800080">
+
+
+ 
+<a name="132741"></a><h4 class="newpage"> Enunciados If de una sola l&#237;nea y de m&#250;ltiples l&#237;neas</h4><p><a name="132743"></a>Existen dos tipos de enunciados If, el enunciado if de una sola l&#237;nea y el enunciado if de m&#250;ltiples l&#237;neas. Si comienza en una l&#237;nea nueva despu&#233;s del primer <EM>Then</EM> cambiar&#225; su enunciado If a un enunciado If de m&#250;ltiples l&#237;neas. De lo contrario es un enunciado If de una sola l&#237;nea. El enunciado If de m&#250;ltiples l&#237;neas siempre incluye un End If, mientras que el enunciado If de una sola l&#237;nea no.</p><p><a name="135939"></a><font color="darkblue"><b>Nota:   &nbsp;&nbsp;&nbsp;</b></font>Debido al uso de caracteres de continuaci&#243;n de l&#237;nea, los enunciados If de una sola l&#237;nea no necesitan estar en una sola l&#237;nea. En general, resulta preferible usar enunciados If de m&#250;ltiples l&#237;neas ya que tienen una presentaci&#243;n m&#225;s clara. Sin embargo, para situaciones simples, algunas veces se usa el enunciado If de una sola l&#237;nea.</p>
+<PRE><a name="132745"></a>Rem Ejemplo de enunciado If ejemplo 1
+<a name="132746"></a>Rem Ejemplo de mismo resultado que If ejemplo 1
+<a name="132747"></a>If {Empleado.Departamento} = "Ventas" Then _
+<a name="132748"></a>   formula = {Empleado.Salario} * 0.06 _
+<a name="132749"></a>Else _
+<a name="132750"></a>   formula = {Empleado.Salario} * 0.04
+</PRE><p><a name="132752"></a>He aqu&#237; un ejemplo que muestra varias formas de enunciados If de una sola l&#237;nea:</p><PRE><a name="132754"></a>Rem Ejemplo de enunciado If ejemplo 2
+<a name="132755"></a>Dim porcentaje As Number, extra As Boolean
+<a name="132756"></a>porcentaje = 2 : extra = False
+<a name="132758"></a>'Un ejemplo sin cl&#225;usula Else
+<a name="132759"></a>If {Empleado.Departamento} = "Ventas" Then porcentaje = 
+10
+<a name="132761"></a>'Se puede incluir m&#225;s de 1 enunciado en la parte Then o 
+Else 
+<a name="132762"></a>'al separarlos con dos puntos
+<a name="132763"></a>If {Empleado.Departamento} = "Investigaci&#243;n y Desarrollo" 
+Then _
+<a name="132764"></a>   porcentaje = 5 : extra = True _
+<a name="132765"></a>Else _
+<a name="132766"></a>   porcentaje = 3
+</PRE>
+<hr><br>
+
+<script  language="JavaScript"><!--
+
+var prev = "20_basicsyntax49.html";
+var next = "20_basicsyntax51.html";
+
+function setTopicID() { 
+      var number = "132741"; 
+      return number; 
+}
+
+// --></script>
+
+
+
+
+<SCRIPT>
+
+if (!window.parent.toc && navigator.appName == "Netscape") {
+
+   document.writeln ('<TABLE ALIGN="left" border="0" cellspacing="0" cellpadding="10">');
+   document.writeln ('<TR>');
+   document.write ('<TD ALIGN="left">');
+
+   if (prev != "crw_spTOC.hhc") {
+      document.writeln ('<A HREF="' + prev + '">');
+      document.writeln ('<IMG SRC="prevpage.gif" HEIGHT=17 BORDER=0 ALT="Página anterior"></A>');
+   } else {
+//   window.alert ('no previous page');
+   }
+
+   if (next != "crw_spIX.hhk") {
+      document.writeln ('<A HREF="' + next + '">');
+      document.writeln ('<IMG SRC="nextpage.gif" HEIGHT=17 BORDER=0 ALT="Página siguiente"></A>');
+   } else {
+//   window.alert ('no next page');
+   }
+   document.writeln ('</TD><TD ALIGN="left">');
+   document.writeln ('<A HREF="frameset.htm?TOC">');
+   document.writeln ('<IMG SRC="showtoc.gif" HEIGHT=17 BORDER=0 ALT="Haga clic para ver el contenido"></A></TD>');
+   document.writeln ('<TD ALIGN="left">');
+   document.writeln ('<A HREF="frameset.htm?IDX">');
+   document.writeln ('<IMG SRC="showix.gif" HEIGHT=17 BORDER=0 ALT="Haga clic para ver el índice"></A></TD>');
+   document.writeln ('</TD>');
+   document.writeln ('</TR>');
+   document.writeln ('</TABLE>');
+
+}
+
+</SCRIPT>
+<table align="right" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td align="right"><font size="1">Seagate Software, Inc.<br>
+    <a href="http://www.seagatesoftware.com">http://www.seagatesoftware.com</a><br>
+    Envíe sus comentarios a:<br>
+    <a href="mailto:techpubs@seagatesoftware.com">techpubs@seagatesoftware.com</a><br>
+    </font></td>
+  </tr>
+</table>
+</body>
+</html>
+
+

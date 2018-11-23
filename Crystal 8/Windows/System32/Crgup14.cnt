@@ -1,0 +1,19 @@
+:Base CRGUP14.HLP
+1 Copyright=Copyright
+1 Contacting Technical Support=contact_tec_supp
+1 About Connect ODBC for SQLBase
+2 About the SQLBase Driver=About_the_SQLBase_Driver
+2 System Requirements=GUPsystem
+1 Configuring Data Sources
+2 Configuring SQLBase Data Sources=GUPconfigure
+2 General Tab, SQLBase Driver Setup=IDHELPTEXT
+2 Advanced Tab, SQLBase Driver Setup=IDAdvancedTEXT
+1 Connecting to a Data Source
+2 Connecting Using a Connection String=GUPconnect
+2 Connecting Using a Logon Dialog Box=GUPlogon
+2 SQLBase Logon Dialog Box=HLP_GUPLOGON
+1 Data Types and Supported Options
+2 Data Types=GUPtypes
+2 ODBC Conformance Level=GUPfunctions
+2 Isolation and Lock Levels Supported=GUPlevels
+2 Number of Connections and Statements Supported=GUPnumber

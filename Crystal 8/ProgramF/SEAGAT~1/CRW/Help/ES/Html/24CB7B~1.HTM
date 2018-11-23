@@ -1,0 +1,185 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+
+<html>
+<head>
+<title>Buscar ambos al mismo tiempo</title>
+
+<link REL=STYLESHEET TYPE="text/css" HREF="seagate.css">
+
+<!--
+                 ***********************************
+                 * Seagate Software copyright 1999 *
+                 ***********************************
+
+                      Template version: 5.1
+-->
+
+
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" link="#0000FF" vlink="#0000FF" alink="#800080">
+
+
+ 
+<a name="321305"></a><h4 class="newpage"> Buscar ambos al mismo tiempo</h4><p><a name="321306"></a>Esta opci&#243;n busca un registro coincidente en la tabla Cr&#233;dito y un registro coincidente en la tabla Pedidos por cada registro en la tabla Clientes. Luego busca el siguiente registro coincidente en la tabla Cr&#233;dito y en la tabla Pedidos, etc. Una vez que encuentra todos los registros coincidentes, repite el proceso con el siguiente registro en la tabla Clientes.</p><p><a name="321368"></a> <Table Border="1">
+<tr><th align="left" valign="bottom"><a name="321309"></a>Tabla Clientes
+
+</th><th align="left" valign="bottom"><a name="321311"></a>Tabla Cr&#233;dito
+
+</th><th align="left" valign="bottom"><a name="321313"></a>Tabla Pedidos
+
+</th></tr>
+<tr><th align="left" valign="bottom"><a name="321315"></a>Nombre del Cliente
+
+</th><th align="left" valign="bottom"><a name="321317"></a>Cantidad
+
+</th><th align="left" valign="bottom"><a name="321319"></a>Monto del Pedido
+
+</th></tr>
+<tr><td align="left" valign="TOP"><P><a name="321321"></a>Cyclists Incorporated</P>
+
+
+</td><td align="left" valign="TOP"><P><a name="321323"></a>($1088.56)</P>
+
+
+</td><td align="left" valign="TOP"><P><a name="321325"></a>$1529.70</P>
+
+
+</td></tr>
+<tr><td align="left" valign="TOP"><P><a name="321327"></a>Cyclists Incorporated</P>
+
+
+</td><td align="left" valign="TOP"><P><a name="321329"></a>($1250.12)</P>
+
+
+</td><td align="left" valign="TOP"><P><a name="321331"></a>$23.50</P>
+
+
+</td></tr>
+<tr><td align="left" valign="TOP"><P><a name="321333"></a>CyclePath Corp.</P>
+
+
+</td><td align="left" valign="TOP"><P><a name="321335"></a>($1958.03)</P>
+
+
+</td><td align="left" valign="TOP"><P><a name="321337"></a>$49.50</P>
+
+
+</td></tr>
+<tr><td align="left" valign="TOP"><P><a name="321339"></a>CyclePath Corp.</P>
+
+
+</td><td align="left" valign="TOP"><P><a name="321341"></a>($1076.43)</P>
+
+
+</td><td align="left" valign="TOP"><P><a name="321343"></a>$1702.60</P>
+
+
+</td></tr>
+<tr><td align="left" valign="TOP"><P><a name="321345"></a>CyclePath Corp.</P>
+
+
+</td><td align="left" valign="TOP"><P><a name="321347"></a>($75.04)</P>
+
+
+</td><td align="left" valign="TOP"><P><br></P>
+
+
+</td></tr>
+<tr><td align="left" valign="TOP"><P><a name="321351"></a>The Great Bike Shop</P>
+
+
+</td><td align="left" valign="TOP"><P><a name="321353"></a>($138.98)</P>
+
+
+</td><td align="left" valign="TOP"><P><a name="321355"></a>$3259.70</P>
+
+
+</td></tr>
+<tr><td align="left" valign="TOP"><P><a name="321357"></a>The Great Bike Shop</P>
+
+
+</td><td align="left" valign="TOP"><P><br></P>
+
+
+</td><td align="left" valign="TOP"><P><a name="321361"></a>$5219.55</P>
+
+
+</td></tr>
+<tr><td align="left" valign="TOP"><P><a name="321363"></a>The Great Bike Shop</P>
+
+
+</td><td align="left" valign="TOP"><P><br></P>
+
+
+</td><td align="left" valign="TOP"><P><a name="321367"></a>$1538.20</P>
+
+
+</td></tr>
+
+</Table></p>
+<p><a name="321369"></a>Note que por cada l&#237;nea en el informe, el valor del campo Cantidad de la tabla Cr&#233;dito no est&#225; necesariamente relacionado al valor del campo Monto del Pedido de la tabla Pedidos. Sin embargo, por cada registro en la tabla Clientes, se selecciona un registro de la tabla Cr&#233;dito y uno de la tabla Pedidos al mismo tiempo.</p><p><a name="321370"></a>Tambi&#233;n note que cuando la tabla Cr&#233;ditos ya no tiene registros para un registro dado en la tabla Clientes, quedan espacios en blanco en lugar de valores hasta que todos los registros relacionados de la tabla Pedidos sean hallados. Lo mismo sucede cuando la tabla Pedidos ya no tiene m&#225;s registros, pero la tabla Cr&#233;dito s&#237;.</p>
+<hr><br>
+
+<script  language="JavaScript"><!--
+
+var prev = "24_under_databases15.html";
+var next = "24_under_databases17.html";
+
+function setTopicID() { 
+      var number = "321305"; 
+      return number; 
+}
+
+// --></script>
+
+
+
+
+<SCRIPT>
+
+if (!window.parent.toc && navigator.appName == "Netscape") {
+
+   document.writeln ('<TABLE ALIGN="left" border="0" cellspacing="0" cellpadding="10">');
+   document.writeln ('<TR>');
+   document.write ('<TD ALIGN="left">');
+
+   if (prev != "crw_spTOC.hhc") {
+      document.writeln ('<A HREF="' + prev + '">');
+      document.writeln ('<IMG SRC="prevpage.gif" HEIGHT=17 BORDER=0 ALT="Página anterior"></A>');
+   } else {
+//   window.alert ('no previous page');
+   }
+
+   if (next != "crw_spIX.hhk") {
+      document.writeln ('<A HREF="' + next + '">');
+      document.writeln ('<IMG SRC="nextpage.gif" HEIGHT=17 BORDER=0 ALT="Página siguiente"></A>');
+   } else {
+//   window.alert ('no next page');
+   }
+   document.writeln ('</TD><TD ALIGN="left">');
+   document.writeln ('<A HREF="frameset.htm?TOC">');
+   document.writeln ('<IMG SRC="showtoc.gif" HEIGHT=17 BORDER=0 ALT="Haga clic para ver el contenido"></A></TD>');
+   document.writeln ('<TD ALIGN="left">');
+   document.writeln ('<A HREF="frameset.htm?IDX">');
+   document.writeln ('<IMG SRC="showix.gif" HEIGHT=17 BORDER=0 ALT="Haga clic para ver el índice"></A></TD>');
+   document.writeln ('</TD>');
+   document.writeln ('</TR>');
+   document.writeln ('</TABLE>');
+
+}
+
+</SCRIPT>
+<table align="right" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td align="right"><font size="1">Seagate Software, Inc.<br>
+    <a href="http://www.seagatesoftware.com">http://www.seagatesoftware.com</a><br>
+    Envíe sus comentarios a:<br>
+    <a href="mailto:techpubs@seagatesoftware.com">techpubs@seagatesoftware.com</a><br>
+    </font></td>
+  </tr>
+</table>
+</body>
+</html>
+
+

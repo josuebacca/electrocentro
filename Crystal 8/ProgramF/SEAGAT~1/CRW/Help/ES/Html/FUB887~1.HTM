@@ -1,0 +1,101 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+
+<html>
+<head>
+<title>Remainder (numerador, denominador)</title>
+
+<link REL=STYLESHEET TYPE="text/css" HREF="seagate.css">
+
+<!--
+                 ***********************************
+                 * Seagate Software copyright 1999 *
+                 ***********************************
+
+                      Template version: 5.1
+-->
+
+
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" link="#0000FF" vlink="#0000FF" alink="#800080">
+
+
+ 
+<a name="1000850220"></a><h3 class="newpage"> Remainder (numerador, denominador)</h3>
+<p><a name="1000850221"></a>Sintaxis b&#225;sica y Crystal.</p><a name="1000850222"></a><h5>Argumentos</h5><ul type="disc"><a name="1000850223"></a><li>Numerador es un valor fraccionario.
+<a name="1000850224"></a><li>Denominador es un valor fraccionario.
+</ul><a name="1000850225"></a><h5>Devuelve </h5><p><a name="1000850226"></a>Un valor fraccionario.</p><a name="1000850227"></a><h5>Acci&#243;n</h5><p><a name="1000850228"></a>Remainder devuelve el resto despu&#233;s de que el numerador (dividendo) ha sido dividido entre el denominador (divisor). En una situaci&#243;n de divisi&#243;n t&#237;pica, Crystal Reports expresa un cociente como un n&#250;mero entero (si hay) y hasta seis lugares decimales. Sin embargo, cuando utiliza Remainder, Crystal Reports realiza la divisi&#243;n internamente, determina el cociente del n&#250;mero entero y el resto, y devuelve s&#243;lo el resto.</p><a name="1000850229"></a><h5>Uso(s) t&#237;pico(s)</h5><p><a name="1000850230"></a>Puede utilizar esta funci&#243;n para hacer conversiones (pies a millas, onzas a litros, etc.)  Puede tambi&#233;n seleccionar cada elemento <EM>n</EM> de una matriz.</p><a name="1000850231"></a><h5>Ejemplo(s)</h5><p><a name="1000850232"></a>Los siguientes ejemplos son aplicables a las sintaxis b&#225;sica y Crystal:</p><p><code><a name="1000850233"></a>Remainder(12,5) </code></p><p class="example"><a name="1000850234"></a>Devuelve 2.</p><p><code><a name="1000850235"></a>Rmainder(16,5) </code></p><p class="example"><a name="1000850236"></a>Devuelve 1.</p><p class="code"><a name="1000850237"></a>Sintaxis b&#225;sica Rem
+<br><a name="1000850238"></a>If Remainder ({archivo.N&#186; DE EXAMEN}, 7) = 0 Then
+<br><a name="1000850239"></a>&nbsp;&nbsp;&nbsp;&nbsp;formula = "*****"
+<br><a name="1000850240"></a>End If
+<br><a name="1000850241"></a>
+<br><a name="1000850242"></a>Sintaxis Crystal
+<br><a name="1000850243"></a>If Remainder(<EM>{archivo.N&#186; DE EXAMEN}</EM>, 7) = 0 Then
+<br><a name="1000850244"></a>&nbsp;&nbsp;&nbsp;&nbsp;"*****" 
+<br><a name="1000850245"></a>Else
+<br><a name="1000850246"></a>&nbsp;&nbsp;&nbsp;&nbsp;"" 
+</p><p class="example"><a name="1000850247"></a>Pone indicadores en cada s&#233;ptimo examen para calificarlo en segunda l&#237;nea compartida. </p><p><code><a name="1000850248"></a>ToText(Truncate(<EM>{archivo.D&Iacute;AS}</EM>/7)) + " semana(s), "  + ToText(Remainder({archivo.<EM>D&Iacute;AS}</EM>,7)) + " d&#237;a(s)"  </code></p><p class="example"><a name="1000850249"></a>Devuelve "9 semana(s), 1 d&#237;a(s)". Convierte d&#237;as a semanas y d&#237;as. Por ejemplo, si el campo ten&#237;a un valor de 64 d&#237;as, la f&#243;rmula devolver&#237;a el valor de "9 semana(s), 1 d&#237;a(s)."</p><a name="1000850250"></a><h6>Temas relacionados</h6><p><a name="1000850254"></a><a href="Operators9.html#1000018746">M&#243;dulo (x Mod y)</a></p><p><a name="1000850258"></a><a href="19_introformulas41.html#317444">F&#243;rmula 13</a></p><p><a name="1000850262"></a><a href="19_introformulas45.html#317677">F&#243;rmula 17</a></p>
+<hr><br>
+
+<script  language="JavaScript"><!--
+
+var prev = "Functions8.html";
+var next = "Functions10.html";
+
+function setTopicID() { 
+      var number = "1000850220"; 
+      return number; 
+}
+
+// --></script>
+
+
+
+
+<SCRIPT>
+
+if (!window.parent.toc && navigator.appName == "Netscape") {
+
+   document.writeln ('<TABLE ALIGN="left" border="0" cellspacing="0" cellpadding="10">');
+   document.writeln ('<TR>');
+   document.write ('<TD ALIGN="left">');
+
+   if (prev != "crw_spTOC.hhc") {
+      document.writeln ('<A HREF="' + prev + '">');
+      document.writeln ('<IMG SRC="prevpage.gif" HEIGHT=17 BORDER=0 ALT="Página anterior"></A>');
+   } else {
+//   window.alert ('no previous page');
+   }
+
+   if (next != "crw_spIX.hhk") {
+      document.writeln ('<A HREF="' + next + '">');
+      document.writeln ('<IMG SRC="nextpage.gif" HEIGHT=17 BORDER=0 ALT="Página siguiente"></A>');
+   } else {
+//   window.alert ('no next page');
+   }
+   document.writeln ('</TD><TD ALIGN="left">');
+   document.writeln ('<A HREF="frameset.htm?TOC">');
+   document.writeln ('<IMG SRC="showtoc.gif" HEIGHT=17 BORDER=0 ALT="Haga clic para ver el contenido"></A></TD>');
+   document.writeln ('<TD ALIGN="left">');
+   document.writeln ('<A HREF="frameset.htm?IDX">');
+   document.writeln ('<IMG SRC="showix.gif" HEIGHT=17 BORDER=0 ALT="Haga clic para ver el índice"></A></TD>');
+   document.writeln ('</TD>');
+   document.writeln ('</TR>');
+   document.writeln ('</TABLE>');
+
+}
+
+</SCRIPT>
+<table align="right" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td align="right"><font size="1">Seagate Software, Inc.<br>
+    <a href="http://www.seagatesoftware.com">http://www.seagatesoftware.com</a><br>
+    Envíe sus comentarios a:<br>
+    <a href="mailto:techpubs@seagatesoftware.com">techpubs@seagatesoftware.com</a><br>
+    </font></td>
+  </tr>
+</table>
+</body>
+</html>
+
+

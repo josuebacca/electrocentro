@@ -1,0 +1,117 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+
+<html>
+<head>
+<title>Conversiones autom&#225;ticas de tipos</title>
+
+<link REL=STYLESHEET TYPE="text/css" HREF="seagate.css">
+
+<!--
+                 ***********************************
+                 * Seagate Software copyright 1999 *
+                 ***********************************
+
+                      Template version: 5.1
+-->
+
+
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" link="#0000FF" vlink="#0000FF" alink="#800080">
+
+
+ 
+<a name="145582"></a><h3 class="newpage"> Conversiones autom&#225;ticas de tipos</h3>
+<p><a name="145584"></a>Generalmente en Seagate Crystal Reports, los valores de un tipo no se pueden usar donde se esperan los valores de otro tipo sin entregar expl&#237;citamente un tipo de funci&#243;n de conversi&#243;n. Por ejemplo:</p><PRE><a name="145586"></a>Local StringVar cPostal;
+<a name="145587"></a>//Error - asignaci&#243;n de un valor num&#233;rico a una variable 
+de cadena
+<a name="145588"></a>cPostal := 10025;
+<a name="145589"></a>//Correcto - usar la funci&#243;n de conversi&#243;n de tipos CStr
+</PRE><p><a name="145590"></a>//para crear "10025"</p><PRE><a name="145591"></a>cPostal := CStr (10025, 0);
+</PRE><p><a name="145593"></a>No obstante, hay algunas conversiones que se realizan autom&#225;ticamente:</p><ul type="disc"><a name="164497"></a><li>De n&#250;mero a moneda
+<a name="164498"></a><li>De fecha a fechahora
+<a name="164499"></a><li>De tipo simple a valor de rango del mismo tipo simple subyacente
+</ul><p><a name="145598"></a>Por ejemplo, las siguiente asignaciones son correctas:</p><PRE><a name="145600"></a>Local CurrencyVar costo;
+<a name="145601"></a>//Igual que: costo := $10
+<a name="145602"></a>costo := 10;
+<a name="145604"></a>Local DateTimeVar fechaPedido;
+<a name="145605"></a>//Igual que: fechaPedido := CDateTime (1999, 9, 23, 0, 0, 
+0)
+<a name="145606"></a>fechaPedido := CDate (1999, 9, 23);
+<a name="145608"></a>Local NumberVar Range aRango;
+<a name="145609"></a>//Igual que: aRango := 20 To 20
+<a name="145610"></a>aRango := 20;
+<a name="145612"></a>Local NumberVar Range Array aMatrizRango;
+<a name="145613"></a>//Igual que : aMatrizRango := [10 To 10, 20 To 25, 2 To 2]
+<a name="145614"></a>aMatrizRango := [10, 20 To 25, 2];
+</PRE><p><a name="145616"></a><font color="darkblue"><b>Nota:   &nbsp;&nbsp;&nbsp;</b></font>No se permiten las conversiones opuestas. Por ejemplo:</p>
+<PRE><a name="145618"></a>Local NumberVar num;
+<a name="145619"></a>num := 5 + $10; //Error
+<a name="145620"></a>//Correcto - convertir a tipo num&#233;rico mediante la 
+funci&#243;n CDbl
+<a name="145621"></a>num := CDbl (5 + $10) //Podr&#237;a usar tambi&#233;n ToNumber
+</PRE><p><a name="145623"></a>5 se convierte a $5 y se agrega a $10 para hacer $15. Sin embargo, este valor monetario no se puede asignar autom&#225;ticamente a la variable num&#233;rica num, ya que no est&#225;n permitidas las conversiones autom&#225;ticas de moneda a n&#250;mero. De igual forma, a las funciones que aceptan un argumento de moneda puede en cambio asignarse un argumento num&#233;rico. Este argumento se convierte entonces a moneda, mientras que a las funciones que aceptan un argumento num&#233;rico no se les puede asignar un argumento de moneda si la moneda no se convierte expl&#237;citamente a n&#250;mero mediante CDbl.</p>
+<hr><br>
+
+<script  language="JavaScript"><!--
+
+var prev = "21_crystalsyntax35.html";
+var next = "21_crystalsyntax37.html";
+
+function setTopicID() { 
+      var number = "145582"; 
+      return number; 
+}
+
+// --></script>
+
+
+
+
+<SCRIPT>
+
+if (!window.parent.toc && navigator.appName == "Netscape") {
+
+   document.writeln ('<TABLE ALIGN="left" border="0" cellspacing="0" cellpadding="10">');
+   document.writeln ('<TR>');
+   document.write ('<TD ALIGN="left">');
+
+   if (prev != "crw_spTOC.hhc") {
+      document.writeln ('<A HREF="' + prev + '">');
+      document.writeln ('<IMG SRC="prevpage.gif" HEIGHT=17 BORDER=0 ALT="Página anterior"></A>');
+   } else {
+//   window.alert ('no previous page');
+   }
+
+   if (next != "crw_spIX.hhk") {
+      document.writeln ('<A HREF="' + next + '">');
+      document.writeln ('<IMG SRC="nextpage.gif" HEIGHT=17 BORDER=0 ALT="Página siguiente"></A>');
+   } else {
+//   window.alert ('no next page');
+   }
+   document.writeln ('</TD><TD ALIGN="left">');
+   document.writeln ('<A HREF="frameset.htm?TOC">');
+   document.writeln ('<IMG SRC="showtoc.gif" HEIGHT=17 BORDER=0 ALT="Haga clic para ver el contenido"></A></TD>');
+   document.writeln ('<TD ALIGN="left">');
+   document.writeln ('<A HREF="frameset.htm?IDX">');
+   document.writeln ('<IMG SRC="showix.gif" HEIGHT=17 BORDER=0 ALT="Haga clic para ver el índice"></A></TD>');
+   document.writeln ('</TD>');
+   document.writeln ('</TR>');
+   document.writeln ('</TABLE>');
+
+}
+
+</SCRIPT>
+<table align="right" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td align="right"><font size="1">Seagate Software, Inc.<br>
+    <a href="http://www.seagatesoftware.com">http://www.seagatesoftware.com</a><br>
+    Envíe sus comentarios a:<br>
+    <a href="mailto:techpubs@seagatesoftware.com">techpubs@seagatesoftware.com</a><br>
+    </font></td>
+  </tr>
+</table>
+</body>
+</html>
+
+

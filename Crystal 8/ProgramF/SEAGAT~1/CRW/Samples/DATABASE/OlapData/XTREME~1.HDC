@@ -1,0 +1,15 @@
+!!! Holos Data control File
+DatafeedControl
+ Header
+  Version "1.0.0"
+ End Header
+ Structure
+  Name "Xtreme"
+  Class Numeric
+  File "xtreme_es.hsh"
+  Attr "027400<SPARSE>"
+  Dimension "Producto","Product_es.hdd"
+  Dimension "Cliente","Customer_es.hdd"
+  Dimension "Mensual","Monthly_es.hdd"
+ End Structure
+End DatafeedControl

@@ -1,0 +1,102 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+
+<html>
+<head>
+<title>PercentOfDistinctCount</title>
+
+<link REL=STYLESHEET TYPE="text/css" HREF="seagate.css">
+
+<!--
+                 ***********************************
+                 * Seagate Software copyright 1999 *
+                 ***********************************
+
+                      Template version: 5.1
+-->
+
+
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" link="#0000FF" vlink="#0000FF" alink="#800080">
+
+
+ 
+<a name="1000851707"></a><h3 class="newpage"> PercentOfDistinctCount</h3>
+<p><a name="1000851708"></a>Sintaxis b&#225;sica y Crystal.</p><a name="1000851709"></a><h5>Sobrecargas</h5><ul type="disc"><a name="1000851710"></a><li>PercentOfDistinctCount (campo, campoCondicional)
+<a name="1000851711"></a><li>PercentOfDistinctCount (campo, campoCondicional, condici&#243;n)
+<a name="1000851712"></a><li>PercentOfDistinctCount (campo, campoCondicionalInterno, campoCondicionalExterno)
+<a name="1000851713"></a><li>PercentOfDistinctCount (campo, campoCondicionalInterno, condici&#243;nInterna, campoCondicionalExterno)
+<a name="1000851714"></a><li>PercentOfDistinctCount (campo, campoCondicionalInterno, campoCondicionalExterno, condici&#243;nExterna)
+<a name="1000851715"></a><li>PercentOfDistinctCount (campo, campoCondicionalInterno, condici&#243;nInterna, campoCondicionalExterno, condici&#243;nExterna)
+</ul><a name="1000851716"></a><h5>Argumentos</h5><ul type="disc"><a name="1000851717"></a><li>campo es un campo N&#250;mero, Moneda, Cadena, Booleano, Fecha, Hora o FechaHora que puede ser evaluado por la funci&#243;n. 
+<a name="1000851718"></a><li>campoCondicional es un campo utilizado para agrupar los valores del campo.
+<a name="1000851719"></a><li>condici&#243;n es una cadena que indica el tipo de agrupaci&#243;n para campoCondicional. S&#243;lo se especifica este argumento cuando  campoCondicional es un campo de fecha, hora, fecha/hora o booleano. Para obtener m&#225;s informaci&#243;n sobre las cadenas v&#225;lidas para este argumento, v&#233;ase <a href="Functions20.html#1000850529">Condiciones para las funciones de resumen</a>.
+<a name="1000851723"></a><li>campoCondicionalInterno es un campo utilizado para agrupar los valores del campo.
+<a name="1000851724"></a><li>condici&#243;nInterna es una cadena que indica el tipo de agrupaci&#243;n para campoCondicionalInterno. S&#243;lo se especifica este argumento cuando campoCondicionalInterno es un campo de fecha, hora, fecha/hora o booleano. Para obtener m&#225;s informaci&#243;n sobre las cadenas v&#225;lidas para este argumento, v&#233;ase <a href="Functions20.html#1000850529">Condiciones para las funciones de resumen</a>.
+<a name="1000851728"></a><li>campoCondicionalExterno es un campo utilizado para agrupar los valores del campo.
+<a name="1000851729"></a><li>condici&#243;nExterna es una cadena que indica el tipo de agrupaci&#243;n para campoCondicionalExterno. S&#243;lo se especifica este argumento cuando campoCondicionalExterno es un campo de fecha, hora, fecha/hora o booleano. Para obtener m&#225;s informaci&#243;n sobre las cadenas v&#225;lidas para este argumento, v&#233;ase <a href="Functions20.html#1000850529">Condiciones para las funciones de resumen</a>.
+</ul><a name="1000851733"></a><h5>Devuelve </h5><p><a name="1000851734"></a>Valor N&#250;mero.</p><a name="1000851735"></a><h5>Acci&#243;n</h5><p><a name="1000851736"></a><strong>PercentOfDistinctCount (</strong><strong>campo, campoCondicional) </strong>tiene el mismo efecto que: 100 * DistinctCount (campo, campoCondicional) / DistinctCount (campo). Expresa el recuento distintivo de los valores del campo campo para el grupo determinado por campoCondicional como un porcentaje del recuento distintivo de todos los valores del campo.</p><p><a name="1000851737"></a><strong>PercentOfDistinctCount (</strong><strong>campo, campoCondicional, condici&#243;n)</strong> tiene el mismo efecto que: 100 * DistinctCount (campo, campoCondicional, condici&#243;n) / DistinctCount (campo). La cadena condicional de argumento expresa informaci&#243;n adicional para especificar en forma precisa la agrupaci&#243;n; por ejemplo, si campoCondicional es un campo de fecha, es la agrupaci&#243;n "diaria", "semanal", "mensual" etc.</p><p><a name="1000851738"></a><strong>PercentOfDistinctCount (</strong><strong>campo, campoCondicionalInterno, campoCondicionalExterno) </strong>tiene el mismo efecto que: 100 * DistinctCount (campo, campoCondicionalInterno) / DistinctCount (campo, campoCondicionalExterno). Expresa el recuento distintivo de los valores del campo campo para  el grupo determinado por campoCondicionalInterno como un porcentaje del recuento distintivo para el grupo determinado por campoCondicionalExterno.</p><p><a name="1000851739"></a><strong>PercentOfDistinctCount (</strong><strong>campo, campoCondicionalInterno, condici&#243;nInterna, campoCondicionalExterno) </strong>tiene el mismo efecto que: 100 * DistinctCount (campo, campoCondicionalInterno, condici&#243;nInterna) / DistinctCount (campo, campoCondicionalExterno).</p><p><a name="1000851740"></a><strong>PercentOfDistinctCount (</strong><strong>campo, campoCondicionalInterno, campoCondicionalExterno, condici&#243;nExterna) </strong>tiene el mismo efecto que: 100 * DistinctCount (campo, campoCondicionalInterno) / DistinctCount (campo, campoCondicionalExterno, condici&#243;nExterna).</p><p><a name="1000851741"></a><strong>PercentOfDistinctCount (</strong><strong>campo, campoCondicionalInterno, condici&#243;nInterna, campoCondicionalExterno, condici&#243;nExterna) </strong>tiene el mismo efecto que: 100 * DistinctCount (campo, campoCondicionalInterno, condici&#243;nInterna) / DistinctCount (campo, campoCondicionalExterno, condici&#243;nExterna).</p><a name="1000851742"></a><h5>Comentario</h5><p><a name="1000851743"></a>Esta funci&#243;n y otras funciones de porcentajes fueron creadas para apoyar los campos de resumen porcentual.  Las agrupaciones entregadas como argumentos deben existir realmente en el informe para que la funci&#243;n de resumen llamada  tenga &#233;xito.</p>
+<hr><br>
+
+<script  language="JavaScript"><!--
+
+var prev = "Functions47.html";
+var next = "Functions49.html";
+
+function setTopicID() { 
+      var number = "1000851707"; 
+      return number; 
+}
+
+// --></script>
+
+
+
+
+<SCRIPT>
+
+if (!window.parent.toc && navigator.appName == "Netscape") {
+
+   document.writeln ('<TABLE ALIGN="left" border="0" cellspacing="0" cellpadding="10">');
+   document.writeln ('<TR>');
+   document.write ('<TD ALIGN="left">');
+
+   if (prev != "crw_spTOC.hhc") {
+      document.writeln ('<A HREF="' + prev + '">');
+      document.writeln ('<IMG SRC="prevpage.gif" HEIGHT=17 BORDER=0 ALT="Página anterior"></A>');
+   } else {
+//   window.alert ('no previous page');
+   }
+
+   if (next != "crw_spIX.hhk") {
+      document.writeln ('<A HREF="' + next + '">');
+      document.writeln ('<IMG SRC="nextpage.gif" HEIGHT=17 BORDER=0 ALT="Página siguiente"></A>');
+   } else {
+//   window.alert ('no next page');
+   }
+   document.writeln ('</TD><TD ALIGN="left">');
+   document.writeln ('<A HREF="frameset.htm?TOC">');
+   document.writeln ('<IMG SRC="showtoc.gif" HEIGHT=17 BORDER=0 ALT="Haga clic para ver el contenido"></A></TD>');
+   document.writeln ('<TD ALIGN="left">');
+   document.writeln ('<A HREF="frameset.htm?IDX">');
+   document.writeln ('<IMG SRC="showix.gif" HEIGHT=17 BORDER=0 ALT="Haga clic para ver el índice"></A></TD>');
+   document.writeln ('</TD>');
+   document.writeln ('</TR>');
+   document.writeln ('</TABLE>');
+
+}
+
+</SCRIPT>
+<table align="right" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td align="right"><font size="1">Seagate Software, Inc.<br>
+    <a href="http://www.seagatesoftware.com">http://www.seagatesoftware.com</a><br>
+    Envíe sus comentarios a:<br>
+    <a href="mailto:techpubs@seagatesoftware.com">techpubs@seagatesoftware.com</a><br>
+    </font></td>
+  </tr>
+</table>
+</body>
+</html>
+
+

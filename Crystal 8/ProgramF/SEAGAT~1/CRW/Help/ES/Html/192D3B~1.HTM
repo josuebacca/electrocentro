@@ -1,0 +1,175 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+
+<html>
+<head>
+<title>F&#243;rmula 9</title>
+
+<link REL=STYLESHEET TYPE="text/css" HREF="seagate.css">
+
+<!--
+                 ***********************************
+                 * Seagate Software copyright 1999 *
+                 ***********************************
+
+                      Template version: 5.1
+-->
+
+
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" link="#0000FF" vlink="#0000FF" alink="#800080">
+
+
+ 
+<a name="317136"></a><h3 class="newpage"> F&#243;rmula 9</h3>
+<a name="317137"></a><h4>Funciones y operadores usados</h4><p><a name="317138"></a>Expresiones If<nobr>-T</nobr>hen<nobr>-E</nobr>lse anidadas, NumericText, Indexar, Calcular rango, Igual a (=), ToNumber, En rango, Par&#233;ntesis ()</p><a name="317139"></a><h4>Prop&#243;sito de la f&#243;rmula</h4><p><a name="317140"></a>Un minorista de Estados Unidos tiene una lista de clientes que incluye tanto a los clientes que viven en su estado y clientes que viven en Canad&#225;. En el caso de los clientes dentro del estado, algunos tienen c&#243;digos postales de 5 d&#237;gitos, otros tienen c&#243;digos postales de 9 d&#237;gitos. Los clientes canadienses tienen c&#243;digos postales que comienzan con una letra.</p><p><a name="317141"></a>La compa&#241;&#237;a necesita una columna en la lista que muestre el impuesto a las ventas aplicables en los pedidos de cada cliente. Los clientes locales (aquellos dentro del gran &#225;rea metropolitana) tienen un impuesto a las ventas asignado del 7,5% (6,5% del estado y 1% local); los clientes del estado, pero que viven fuera del &#225;rea metropolitana, tienen un impuesto del 6,5% (s&#243;lo del estado); y los clientes canadienses no est&#225;n sujetos a impuestos sobre las ventas.</p><a name="317142"></a><h4>F&#243;rmula</h4><PRE><a name="317143"></a>If NumericText({cliente.C&Oacute;DIGO POSTAL}[1 to 5])Then<br>
+&nbsp;&nbsp;&nbsp;&nbsp;If NumericText({cliente.C&Oacute;DIGO POSTAL}[1 to 5]) in <br>
+&nbsp;&nbsp;&nbsp;&nbsp;92200 to 92399 Then <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"7,5" <br>
+&nbsp;&nbsp;&nbsp;&nbsp;Else <br>
+&nbsp;&nbsp;&nbsp;&nbsp;"6,5"<br>
+Else <br>
+&nbsp;&nbsp;&nbsp;&nbsp;0
+</PRE><a name="317144"></a><h4>Resultado</h4><p><a name="317182"></a> <Table Border="1">
+<tr><td align="left" valign="TOP"><a name="317147"></a>C&#243;digo postal
+
+</td><td align="left" valign="TOP"><a name="317149"></a>Impuesto
+
+</td><td align="left" valign="TOP"><a name="317151"></a>Explicaci&#243;n
+
+</td></tr>
+<tr><td align="left" valign="TOP"><P><a name="317153"></a>91134</P>
+
+
+</td><td align="left" valign="TOP"><P><a name="317155"></a>6.5</P>
+
+
+</td><td align="left" valign="TOP"><P><a name="317157"></a>Dentro del estado/fuera del &#225;rea metropolitana</P>
+
+
+</td></tr>
+<tr><td align="left" valign="TOP"><P><a name="317159"></a>92305</P>
+
+
+</td><td align="left" valign="TOP"><P><a name="317161"></a>7.5</P>
+
+
+</td><td align="left" valign="TOP"><P><a name="317163"></a>Dentro del estado/dentro del &#225;rea metropolitana</P>
+
+
+</td></tr>
+<tr><td align="left" valign="TOP"><P><a name="317165"></a>92288-5423</P>
+
+
+</td><td align="left" valign="TOP"><P><a name="317167"></a>7.5</P>
+
+
+</td><td align="left" valign="TOP"><P><a name="317169"></a>Dentro del estado/dentro del &#225;rea metropolitana (CP + 4)</P>
+
+
+</td></tr>
+<tr><td align="left" valign="TOP"><P><a name="317171"></a>96544-2333</P>
+
+
+</td><td align="left" valign="TOP"><P><a name="317173"></a>6.5</P>
+
+
+</td><td align="left" valign="TOP"><P><a name="317175"></a>Dentro del estado/fuera del &#225;rea metropolitana (CP + 4)</P>
+
+
+</td></tr>
+<tr><td align="left" valign="TOP"><P><a name="317177"></a>T5A 9S2</P>
+
+
+</td><td align="left" valign="TOP"><P><a name="317179"></a>0.0</P>
+
+
+</td><td align="left" valign="TOP"><P><a name="317181"></a>Cliente canadiense</P>
+
+
+</td></tr>
+
+</Table></p>
+<a name="317183"></a><h4>Explicaci&#243;n</h4><ul type="disc"><a name="317184"></a><li>Esta f&#243;rmula usa operadores If<nobr>-T</nobr>hen<nobr>-E</nobr>lse anidados.
+<a name="317185"></a><li>La primera de estas expresiones If<nobr>-T</nobr>hen<nobr>-E</nobr>lse comienza con el If inicial y termina con el "0"final. Dice:
+<a name="317186"></a><li>Si los primeros cinco caracteres del campo {cliente.C&Oacute;DIGO POSTAL}son todos n&#250;meros, entonces calcular e imprimir el impuesto sobre las ventas con la metodolog&#237;a especificada en la segunda expresi&#243;n If<nobr>-T</nobr>hen<nobr>-E</nobr>lse. 
+<a name="317187"></a><li>Si los primeros cinco caracteres no son todos n&#250;meros, imprimir "0".
+<a name="317188"></a><li>La segunda de las expresiones If<nobr>-T</nobr>hen<nobr>-E</nobr>lse comienza despu&#233;s del Then inicial y termina inmediatamente antes de las palabras finales Else "0". Dice, ahora que ya hemos probado y sabemos que los cinco primeros caracteres de {cliente.C&Oacute;DIGO POSTAL}son n&#250;meros:
+<a name="317189"></a><li>Si los primeros cinco caracteres de {cliente.C&Oacute;DIGO POSTAL}, convertidos en n&#250;meros, est&#225;n en el rango de 92200 a 92399, imprimir "7,5" (el monto combinado de los impuestos del estado y los locales).
+<a name="317190"></a><li>Si los primeros cinco caracteres de {cliente.C&Oacute;DIGO POSTAL}, convertidos en n&#250;meros, est&#225;n fuera de ese rango, imprimir "6,5" (s&#243;lo impuestos del estado).
+<a name="317191"></a><li>If NumericText ({cliente.C&Oacute;DIGO POSTAL} [1 to 5]) usa el operador If<nobr>-T</nobr>hen<nobr>-E</nobr>lse para probar la condici&#243;n entre par&#233;ntesis:
+<a name="317192"></a><li>({cliente.C&Oacute;DIGO POSTAL} [1 to 5]) usa el operador de indexaci&#243;n [ ] y el operador de c&#225;lculo de rangos para extraer caracteres 1 a 5 en el campo {cliente.C&Oacute;DIGO POSTAL}.
+<a name="317193"></a><li>La funci&#243;n NumericText eval&#250;a los caracteres extra&#237;dos para determinar si todos son n&#250;meros.
+<a name="317194"></a><li>Si son todos n&#250;meros (S&Iacute;) la primera condici&#243;n If se cumple y la f&#243;rmula se desplaza a la primera consecuencia Then.
+<a name="317195"></a><li>Si no son todos n&#250;meros, la primera condici&#243;n If no se cumple y la f&#243;rmula se desplaza a la consecuencia Else final.
+<a name="317196"></a><li>Entonces If ToNumber({cliente.C&Oacute;DIGO POSTAL} [1 to 5]) in 92200 to 92399 Then "7,5" Else "6,5" Else "0" muestra qu&#233; debe suceder si las condiciones If se han cumplido.
+<a name="317197"></a><li>({cliente.C&Oacute;DIGO POSTAL} [1 to 5]) usa el operador de indexaci&#243;n [ ] y el operador de c&#225;lculo de rangos para extraer caracteres 1 a 5 en el campo {cliente.C&Oacute;DIGO POSTAL}.
+<a name="317198"></a><li>La funci&#243;n ToNumber convierte estos caracteres extra&#237;dos en un n&#250;mero que luego se puede usar en una expresi&#243;n num&#233;rica.
+<a name="317199"></a><li>La parte in 92200 to 92399 verifica para ver si el {cliente.C&Oacute;DIGO POSTAL} (ahora convertido en un n&#250;mero) est&#225; dentro del rango 92200 a 92399.
+<a name="317200"></a><li>Si as&#237; es, la condici&#243;n If  (dentro del par&#233;ntesis) se cumple y se ejecuta la consecuencia Then al imprimir la cadena de texto "7,5".
+<a name="317201"></a><li>Si no es as&#237;, la condici&#243;n If no se cumple y se ejecuta la consecuencia Else al imprimir la cadena de texto "6,5".
+</ul><a name="317202"></a><h4>Comentarios</h4><p><a name="317203"></a>Estas figuras tributarias, reglas y c&#243;digos postales sirven solamente como ilustraci&#243;n; as&#237; que no intentan representar con precisi&#243;n las reglamentaciones tributarias a nivel estatal o local.</p><a name="317204"></a><h6>Temas relacionados</h6><p><a name="317208"></a><a href="19_introformulas28.html#316471">F&#243;rmulas en acci&#243;n</a></p>
+<hr><br>
+
+<script  language="JavaScript"><!--
+
+var prev = "19_introformulas36.html";
+var next = "19_introformulas38.html";
+
+function setTopicID() { 
+      var number = "317136"; 
+      return number; 
+}
+
+// --></script>
+
+
+
+
+<SCRIPT>
+
+if (!window.parent.toc && navigator.appName == "Netscape") {
+
+   document.writeln ('<TABLE ALIGN="left" border="0" cellspacing="0" cellpadding="10">');
+   document.writeln ('<TR>');
+   document.write ('<TD ALIGN="left">');
+
+   if (prev != "crw_spTOC.hhc") {
+      document.writeln ('<A HREF="' + prev + '">');
+      document.writeln ('<IMG SRC="prevpage.gif" HEIGHT=17 BORDER=0 ALT="Página anterior"></A>');
+   } else {
+//   window.alert ('no previous page');
+   }
+
+   if (next != "crw_spIX.hhk") {
+      document.writeln ('<A HREF="' + next + '">');
+      document.writeln ('<IMG SRC="nextpage.gif" HEIGHT=17 BORDER=0 ALT="Página siguiente"></A>');
+   } else {
+//   window.alert ('no next page');
+   }
+   document.writeln ('</TD><TD ALIGN="left">');
+   document.writeln ('<A HREF="frameset.htm?TOC">');
+   document.writeln ('<IMG SRC="showtoc.gif" HEIGHT=17 BORDER=0 ALT="Haga clic para ver el contenido"></A></TD>');
+   document.writeln ('<TD ALIGN="left">');
+   document.writeln ('<A HREF="frameset.htm?IDX">');
+   document.writeln ('<IMG SRC="showix.gif" HEIGHT=17 BORDER=0 ALT="Haga clic para ver el índice"></A></TD>');
+   document.writeln ('</TD>');
+   document.writeln ('</TR>');
+   document.writeln ('</TABLE>');
+
+}
+
+</SCRIPT>
+<table align="right" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td align="right"><font size="1">Seagate Software, Inc.<br>
+    <a href="http://www.seagatesoftware.com">http://www.seagatesoftware.com</a><br>
+    Envíe sus comentarios a:<br>
+    <a href="mailto:techpubs@seagatesoftware.com">techpubs@seagatesoftware.com</a><br>
+    </font></td>
+  </tr>
+</table>
+</body>
+</html>
+
+

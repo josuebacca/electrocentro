@@ -1,0 +1,98 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+
+<html>
+<head>
+<title>NPV (tasa, valores)</title>
+
+<link REL=STYLESHEET TYPE="text/css" HREF="seagate.css">
+
+<!--
+                 ***********************************
+                 * Seagate Software copyright 1999 *
+                 ***********************************
+
+                      Template version: 5.1
+-->
+
+
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" link="#0000FF" vlink="#0000FF" alink="#800080">
+
+
+ 
+<a name="1000851973"></a><h3 class="newpage"> NPV (tasa, valores)</h3>
+<p><a name="1000851974"></a>Sintaxis b&#225;sica y Crystal.</p><a name="1000851975"></a><h5>Argumentos</h5><ul type="disc"><a name="1000851976"></a><li>tasa es un N&#250;mero que especifica la tasa de descuento por la duraci&#243;n del per&#237;odo expresado como un decimal.  
+<a name="1000851977"></a><li>valores es una matriz de tipo N&#250;mero o Moneda que especifica los valores del flujo de caja.  Los valores negativos representan pagos y los valores positivos ingresos.  El flujo de caja debe realizarse a intervalos regulares tales como mensual o anualmente.
+</ul><a name="1000851978"></a><h5>Devuelve </h5><p><a name="1000851979"></a>Valor num&#233;rico</p><a name="1000851980"></a><h5>Acci&#243;n </h5><p><a name="1000851981"></a>NPV devuelve un n&#250;mero especificando el pr&#243;ximo valor presente neto de una inversi&#243;n basado en una serie de flujos de efectivo peri&#243;dicos (pagos e ingresos) y una tasa de descuento. </p><a name="1000851982"></a><h5>Ejemplo</h5><p><a name="1000851983"></a>El siguiente ejemplo es aplicable a las sintaxis b&#225;sica y Crystal:</p><p><a name="1000851984"></a>Supongamos que alguien ofrece pagarle $1000 despu&#233;s de 1 a&#241;o, $2.000 despu&#233;s de 2 a&#241;os $1.500 despu&#233;s de 3 a&#241;os y $1.200 despu&#233;s de 4 a&#241;os. Si la tasa de descuento (el valor hora del dinero) es del 5 por ciento, el valor de esta oferta hoy en d&#237;a es:</p><p class="code"><a name="1000851985"></a>Sintaxis b&#225;sica Rem
+<br><a name="1000851986"></a>formula = NPV (0.05, Array (1000, 2000, 1500, 1200))
+<br><a name="1000851987"></a>
+<br><a name="1000851988"></a>Sintaxis Crystal
+<br><a name="1000851989"></a>NPV (0.05, [1000, 2000, 1500, 1200])
+</p><p class="example"><a name="1000851990"></a>La f&#243;rmula devuelve 5049.44 (redondeado a  2 decimales). Por lo que este esquema vale  $5,049.44 para usted hoy en d&#237;a.  Esto es menos de la suma de pagos, la cual es  $5700, ya que tiene que esperar por el dinero.</p><a name="1000851991"></a><h5>Comentario(s) </h5><ul type="disc"><a name="1000851992"></a><li>Esta funci&#243;n est&#225; dise&#241;ada para trabajar exactamente como la funci&#243;n de Visual Basic del mismo nombre.
+<a name="1000851996"></a><li>Las funciones NPVe <a href="Functions53.html#1000851892">IRR</a> est&#225;n relacionadas, ya que NPV (IRR (valores), valores) = 0. Esto es, la tasa interna de devoluci&#243;n de una secuencia de flujos de efectivo es la tasa de descuento para la cual esa secuencia de flujos de efectivo tiene un valor presente neto de 0. 
+</ul>
+<hr><br>
+
+<script  language="JavaScript"><!--
+
+var prev = "Functions55.html";
+var next = "Functions57.html";
+
+function setTopicID() { 
+      var number = "1000851973"; 
+      return number; 
+}
+
+// --></script>
+
+
+
+
+<SCRIPT>
+
+if (!window.parent.toc && navigator.appName == "Netscape") {
+
+   document.writeln ('<TABLE ALIGN="left" border="0" cellspacing="0" cellpadding="10">');
+   document.writeln ('<TR>');
+   document.write ('<TD ALIGN="left">');
+
+   if (prev != "crw_spTOC.hhc") {
+      document.writeln ('<A HREF="' + prev + '">');
+      document.writeln ('<IMG SRC="prevpage.gif" HEIGHT=17 BORDER=0 ALT="Página anterior"></A>');
+   } else {
+//   window.alert ('no previous page');
+   }
+
+   if (next != "crw_spIX.hhk") {
+      document.writeln ('<A HREF="' + next + '">');
+      document.writeln ('<IMG SRC="nextpage.gif" HEIGHT=17 BORDER=0 ALT="Página siguiente"></A>');
+   } else {
+//   window.alert ('no next page');
+   }
+   document.writeln ('</TD><TD ALIGN="left">');
+   document.writeln ('<A HREF="frameset.htm?TOC">');
+   document.writeln ('<IMG SRC="showtoc.gif" HEIGHT=17 BORDER=0 ALT="Haga clic para ver el contenido"></A></TD>');
+   document.writeln ('<TD ALIGN="left">');
+   document.writeln ('<A HREF="frameset.htm?IDX">');
+   document.writeln ('<IMG SRC="showix.gif" HEIGHT=17 BORDER=0 ALT="Haga clic para ver el índice"></A></TD>');
+   document.writeln ('</TD>');
+   document.writeln ('</TR>');
+   document.writeln ('</TABLE>');
+
+}
+
+</SCRIPT>
+<table align="right" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td align="right"><font size="1">Seagate Software, Inc.<br>
+    <a href="http://www.seagatesoftware.com">http://www.seagatesoftware.com</a><br>
+    Envíe sus comentarios a:<br>
+    <a href="mailto:techpubs@seagatesoftware.com">techpubs@seagatesoftware.com</a><br>
+    </font></td>
+  </tr>
+</table>
+</body>
+</html>
+
+

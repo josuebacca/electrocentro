@@ -1,0 +1,22 @@
+:Base CRINF14.HLP
+:Index Technical Support =techsupp.hlp
+1 Copyright=Copyright
+1 Contacting Technical Support=contact_tec_supp
+1 About Connect ODBC for Informix
+2 About the Informix Driver=About_the_INFORMIX_7_Driver
+2 System Requirements=INF72system
+1 Configuring Data Sources
+2 Configuring Informix Data Sources=INF72configure
+2 General Tab, Informix Driver Setup=IDHELPTEXT
+2 Advanced Tab, Informix Driver Setup=IDAdvancedTEXT
+2 Connection Tab, Informix Driver Setup=IDCONNECTTEXT
+1 Connecting to a Data Source
+2 Connecting Using a Connection String=INF72connect
+2 Connecting Using a Logon Dialog=INF72logon
+2 Informix Logon Dialog=HLP_INFLOGON
+2 Informix Logon Options=HLP_INFOPTIONS
+1 Data Types and Supported Options
+2 Data Types=INF72types
+2 ODBC Conformance Level=INF72functions
+2 Isolation and Lock Levels Supported=INF72levels
+2 Number of Connections and Statements Supported=INF72number

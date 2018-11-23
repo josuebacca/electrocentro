@@ -1,0 +1,103 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+
+<html>
+<head>
+<title>Construcci&#243;n de solicitudes de informe</title>
+
+<link REL=STYLESHEET TYPE="text/css" HREF="seagate.css">
+
+<!--
+                 ***********************************
+                 * Seagate Software copyright 1999 *
+                 ***********************************
+
+                      Template version: 5.1
+-->
+
+
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" link="#0000FF" vlink="#0000FF" alink="#800080">
+
+
+ 
+<a name="161239"></a><h3 class="newpage"> Construcci&#243;n de solicitudes de informe</h3>
+<p><a name="149817"></a>Al solicitar un informe desde el Web Component Server, o al establecer un v&#237;nculo a un informe desde otra p&#225;gina web, dispone de varios comandos opcionales para personalizar la informaci&#243;n que recibe de vuelta. </p><p><a name="161138"></a>Para enviar los comandos con una solicitud de informe, a la direcci&#243;n URL del informe se debe adjuntar un signo de interrogaci&#243;n seguido de cada comando de cadena de consulta que se desea usar. </p><p><a name="161139"></a><font color="darkblue"><b>Nota:   &nbsp;&nbsp;&nbsp;</b></font>Los comandos pueden enviarse en cualquier orden y en cualquier combinaci&#243;n. Todos los comandos son opcionales. Si no especifica ning&#250;n comando, el visor predeterminado mostrar&#225; el informe.</p>
+<p><a name="149818"></a>El siguiente es un ejemplo de uso de comandos de cadena de consulta al solicitar un informe:</p><p><code><a name="149820"></a>http://&lt;hostlocal&gt;/scrreports/Accounting/<br>wsale.rpt?sf={cliente.Ventas}&gt;10000</code></p><p><a name="149821"></a>Tenga presente que cada comando se especifica usando la siguiente sintaxis:</p><p><code><a name="149822"></a>comando=valor</code></p><p><a name="149823"></a>Donde <EM>comando</EM> corresponde al primer nombre del comando y <EM>valor</EM> corresponde al valor asignado al comando.</p><p><a name="161142"></a><font color="darkblue"><b>Nota:   &nbsp;&nbsp;&nbsp;</b></font>El comando se antecede de un signo de interrogaci&#243;n <EM>?</EM> y los comandos adicionales se separan con un signo <EM>&amp;</EM>.</p>
+<p><a name="149824"></a>Puede ser m&#225;s conveniente incrustar la solicitud en una p&#225;gina HTML y transferirla al Web Component Server por medio de una etiqueta FORM, como en el siguiente ejemplo:</p><PRE><a name="149825"></a>&lt;FORM ACTION='http://hostlocal/scrreports/Accounting/
+wsale.rpt?sf={cliente.Ventas}&gt;1000' METHOD='post'&gt; 
+<a name="149826"></a>&lt;input type=submit value='Haga clic aqu&#237; para lanzar el 
+informe: http://hostlocal/scrreports/Accounting/
+wsale.rpt?sf={cliente.Ventas}&gt;1000'&gt; 
+<a name="149827"></a>&lt;input type=hidden name="init" value="html_page"&gt;
+<a name="149828"></a>&lt;input type=hidden name="rf" value="0"&gt;
+<a name="149829"></a>&lt;input type=hidden name="promptOnRefresh" value="0"&gt;
+<a name="149830"></a>&lt;/FORM&gt;
+</PRE><p><a name="149831"></a>La URL resultante y la cadena de consulta adjunta tendr&#225;n la siguiente forma:</p><PRE><a name="149832"></a>http://hostlocal/scrreports/Accounting/
+wsale.rpt?sf={cliente.Ventas}&gt;1000&amp;init=html_page&amp;rf=0&amp;p
+romptOnRefresh=0
+</PRE>
+<hr><br>
+
+<script  language="JavaScript"><!--
+
+var prev = "WebServerCommands2.html";
+var next = "WebServerCommands4.html";
+
+function setTopicID() { 
+      var number = "161239"; 
+      return number; 
+}
+
+// --></script>
+
+
+
+
+<SCRIPT>
+
+if (!window.parent.toc && navigator.appName == "Netscape") {
+
+   document.writeln ('<TABLE ALIGN="left" border="0" cellspacing="0" cellpadding="10">');
+   document.writeln ('<TR>');
+   document.write ('<TD ALIGN="left">');
+
+   if (prev != "wcmadminTOC.hhc") {
+      document.writeln ('<A HREF="' + prev + '">');
+      document.writeln ('<IMG SRC="prevpage.gif" HEIGHT=17 BORDER=0 ALT="Página anterior"></A>');
+   } else {
+//   window.alert ('no previous page');
+   }
+
+   if (next != "wcmadminIX.hhk") {
+      document.writeln ('<A HREF="' + next + '">');
+      document.writeln ('<IMG SRC="nextpage.gif" HEIGHT=17 BORDER=0 ALT="Página siguiente"></A>');
+   } else {
+//   window.alert ('no next page');
+   }
+   document.writeln ('</TD><TD ALIGN="left">');
+   document.writeln ('<A HREF="frameset.htm?TOC">');
+   document.writeln ('<IMG SRC="showtoc.gif" HEIGHT=17 BORDER=0 ALT="Haga clic para ver el contenido"></A></TD>');
+   document.writeln ('<TD ALIGN="left">');
+   document.writeln ('<A HREF="frameset.htm?IDX">');
+   document.writeln ('<IMG SRC="showix.gif" HEIGHT=17 BORDER=0 ALT="Haga clic para ver el índice"></A></TD>');
+   document.writeln ('</TD>');
+   document.writeln ('</TR>');
+   document.writeln ('</TABLE>');
+
+}
+
+</SCRIPT>
+<table align="right" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td align="right"><font size="1">Seagate Software, Inc.<br>
+    <a href="http://www.seagatesoftware.com">http://www.seagatesoftware.com</a><br>
+    Envíe sus comentarios a:<br>
+    <a href="mailto:techpubs@seagatesoftware.com">techpubs@seagatesoftware.com</a><br>
+    </font></td>
+  </tr>
+</table>
+</body>
+</html>
+
+

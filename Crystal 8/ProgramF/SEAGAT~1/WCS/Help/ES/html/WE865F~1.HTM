@@ -1,0 +1,100 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+
+<html>
+<head>
+<title>Comando USER# </title>
+
+<link REL=STYLESHEET TYPE="text/css" HREF="seagate.css">
+
+<!--
+                 ***********************************
+                 * Seagate Software copyright 1999 *
+                 ***********************************
+
+                      Template version: 5.1
+-->
+
+
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" link="#0000FF" vlink="#0000FF" alink="#800080">
+
+
+ 
+<a name="149962"></a><h4 class="newpage"> Comando USER# </h4><p><a name="149963"></a>Especifica las ID de usuario para conectarse a las bases de datos SQL o ODBC usadas por el informe.</p><PRE><a name="149964"></a>USER#=&lt;idusuarios&gt;
+<a name="149965"></a>&#171;&lt;idusuarios&gt; es una cadena.&#187;
+</PRE><p><a name="149966"></a>Por ejemplo:</p><PRE><a name="149967"></a>user0=JuradoS
+</PRE><p><a name="149968"></a>Si el informe accede a m&#225;s de una base de datos protegida por contrase&#241;a, se pueden enviar varias ID de usuario incrementando el n&#250;mero de &#237;ndice USER. Por ejemplo:</p><PRE><a name="149969"></a>user0=JuradoS&amp;user1=JuanP&amp;user2=SJurado
+</PRE><p><a name="149973"></a>Normalmente se utiliza el comando USER# conjuntamente con el comando PASSWORD#. Por ejemplo:</p><PRE><a name="149974"></a>user0=JuradoS&amp;password0=secreto&amp;user1=JuanP&amp;password1=<br>
+misterio
+</PRE><p><a name="149975"></a>Si el informe contiene subinformes que requieren ID de usuario para conectarse a fuentes de datos SQL o ODBC, use la siguiente sintaxis en la URL:</p><PRE><a name="149976"></a>user#@subinforme
+</PRE><p><a name="149977"></a>Por ejemplo:</p><PRE><a name="149978"></a>user0@Tablacruzada=gerardod&amp;password0@Tablacruzada=<br>
+gerardoz
+</PRE><p><a name="150985"></a><font color="darkblue"><b>Nota:   &nbsp;&nbsp;&nbsp;</b></font>Si se inserta un informe existente como subinforme, el nombre del subinforme incluir&#225; la extensi&#243;n del archivo (por ejemplo, user0@subinforme.rpt). Sin embargo, si el informe ha sido creado en el informe principal (con la funci&#243;n Insertar subinforme y utilizando el Asistente de informes), el nombre del subinforme generalmente no contendr&#225; una extensi&#243;n de archivo (por ejemplo, user0@subinforme) a menos que se agregue una en el cuadro de texto "Nombre del informe" del cuadro de di&#225;logo Insertar subinforme.</p>
+<p><a name="150986"></a><font color="darkblue"><b>Nota:   &nbsp;&nbsp;&nbsp;</b></font>Aseg&#250;rese de que las ID de usuario aparezcan en la URL en el mismo orden que las bases de datos protegidas por contrase&#241;a aparecen en el informe. Asimismo, la ID de usuario de los subinformes debe aparecer en el mismo orden que los subinformes aparecen en el informe. Si las ID de usuario no se env&#237;an utilizando la direcci&#243;n URL, al usuario se le solicitar&#225; informaci&#243;n de inicio de sesi&#243;n durante la ejecuci&#243;n.</p>
+<p><a name="162240"></a><font color="darkblue"><b>Nota:   &nbsp;&nbsp;&nbsp;</b></font>Los informes no pueden compartirse cuando hay requisitos de inicio de sesi&#243;n.</p>
+
+<hr><br>
+
+<script  language="JavaScript"><!--
+
+var prev = "WebServerCommands10.html";
+var next = "WebServerCommands12.html";
+
+function setTopicID() { 
+      var number = "149962"; 
+      return number; 
+}
+
+// --></script>
+
+
+
+
+<SCRIPT>
+
+if (!window.parent.toc && navigator.appName == "Netscape") {
+
+   document.writeln ('<TABLE ALIGN="left" border="0" cellspacing="0" cellpadding="10">');
+   document.writeln ('<TR>');
+   document.write ('<TD ALIGN="left">');
+
+   if (prev != "wcmadminTOC.hhc") {
+      document.writeln ('<A HREF="' + prev + '">');
+      document.writeln ('<IMG SRC="prevpage.gif" HEIGHT=17 BORDER=0 ALT="Página anterior"></A>');
+   } else {
+//   window.alert ('no previous page');
+   }
+
+   if (next != "wcmadminIX.hhk") {
+      document.writeln ('<A HREF="' + next + '">');
+      document.writeln ('<IMG SRC="nextpage.gif" HEIGHT=17 BORDER=0 ALT="Página siguiente"></A>');
+   } else {
+//   window.alert ('no next page');
+   }
+   document.writeln ('</TD><TD ALIGN="left">');
+   document.writeln ('<A HREF="frameset.htm?TOC">');
+   document.writeln ('<IMG SRC="showtoc.gif" HEIGHT=17 BORDER=0 ALT="Haga clic para ver el contenido"></A></TD>');
+   document.writeln ('<TD ALIGN="left">');
+   document.writeln ('<A HREF="frameset.htm?IDX">');
+   document.writeln ('<IMG SRC="showix.gif" HEIGHT=17 BORDER=0 ALT="Haga clic para ver el índice"></A></TD>');
+   document.writeln ('</TD>');
+   document.writeln ('</TR>');
+   document.writeln ('</TABLE>');
+
+}
+
+</SCRIPT>
+<table align="right" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td align="right"><font size="1">Seagate Software, Inc.<br>
+    <a href="http://www.seagatesoftware.com">http://www.seagatesoftware.com</a><br>
+    Envíe sus comentarios a:<br>
+    <a href="mailto:techpubs@seagatesoftware.com">techpubs@seagatesoftware.com</a><br>
+    </font></td>
+  </tr>
+</table>
+</body>
+</html>
+
+

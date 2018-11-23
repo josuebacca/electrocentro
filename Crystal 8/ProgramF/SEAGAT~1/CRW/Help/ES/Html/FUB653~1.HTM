@@ -1,0 +1,96 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+
+<html>
+<head>
+<title>Correlation (campo, campo), Correlation (campo, campo, campoCondicional), Correlation (campo, campo, campoCondicional, condici&#243;n)</title>
+
+<link REL=STYLESHEET TYPE="text/css" HREF="seagate.css">
+
+<!--
+                 ***********************************
+                 * Seagate Software copyright 1999 *
+                 ***********************************
+
+                      Template version: 5.1
+-->
+
+
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" link="#0000FF" vlink="#0000FF" alink="#800080">
+
+
+ 
+<a name="1000851180"></a><h3 class="newpage"> Correlation (campo, campo), Correlation (campo, campo, campoCondicional), Correlation (campo, campo, campoCondicional, condici&#243;n)</h3>
+<p><a name="1000851182"></a>Sintaxis b&#225;sica y Crystal.</p><a name="1000851183"></a><h5>Argumentos</h5><ul type="disc"><a name="1000851184"></a><li>campo es cualquier campo num&#233;rico.
+<a name="1000851185"></a><li>campoCondicional es un campo utilizado para agrupar los valores del campo.
+<a name="1000851186"></a><li>condici&#243;n es una cadena que indica el tipo de agrupaci&#243;n para campoCondicional. S&#243;lo se especifica este argumento cuando  campoCondicional es un campo de fecha, hora, fecha/hora o booleano. Para obtener m&#225;s informaci&#243;n sobre las cadenas v&#225;lidas para este argumento, vea <a href="Functions20.html#1000850529">Condiciones para las funciones de resumen</a>
+</ul><a name="1000851190"></a><h5>Devuelve </h5><p><a name="1000851191"></a>Un n&#250;mero fraccionario.</p><a name="1000851192"></a><h5>Acci&#243;n</h5><p><a name="1000851193"></a>Le permite calcular la correlaci&#243;n de dos campos espec&#237;ficos (es decir, el grado en el cual los campos var&#237;an de la misma manera). Por ejemplo:</p><ul type="disc"><a name="1000851194"></a><li>Puede calcular la correlaci&#243;n de dos campos, para todos los registros del informe.
+<a name="1000851195"></a><li>Puede calcular la correlaci&#243;n de dos campos para todos los valores dentro de un grupo (por ejemplo, ventas agrupadas por el estado de donde provienen). Para obtener m&#225;s informaci&#243;n acerca de esta clase de resumen, vea <a href="Functions23.html#1000850631">SummaryFunction (campo, campoCondicional)</a>.
+<a name="1000851199"></a><li>Puede calcular la correlaci&#243;n de dos campos para todos los valores dentro de un grupo en el cual el agrupamiento es controlado por cambios en un campo de fecha o booleano (por ejemplo, las ventas agrupadas por el mes en que fueron efectuadas). Para obtener m&#225;s informaci&#243;n acerca de esta clase de resumen, v&#233;ase <a href="Functions23.html#1000850631">SummaryFunction (campo, campoCondicional)</a>.
+</ul><a name="1000851203"></a><h5>Ejemplo(s)</h5><p><a name="1000851204"></a>Los siguientes ejemplos son aplicables a las sintaxis b&#225;sica y Crystal:</p><p><code><a name="1000851205"></a>Correlation({Cliente.ID DEL CLIENTE}, {Cliente.ID DE CR&Eacute;DITO DEL CLIENTE})</code></p><p class="example"><a name="1000851206"></a>Calcula la correlaci&#243;n entre los campos Id del cliente e Id de cr&#233;dito.</p><p><code><a name="1000851207"></a>Correlation({pedidos.ID DEL CLIENTE}, {pedidos.ID DE CR&Eacute;DITO DEL CLIENTE}, {Cliente.REGI&Oacute;N})</code></p><p class="example"><a name="1000851208"></a>Calcula la correlaci&#243;n  entre los campos Id del cliente e Id de Cr&#233;dito del Cliente, para cada regi&#243;n.</p><p><code><a name="1000851209"></a>Correlation({pedidos.ID DEL CLIENTE}, {pedidos.ID DE CR&Eacute;DITO DEL CLIENTE}, {Cliente.REGI&Oacute;N}, "mensual")</code></p><p class="example"><a name="1000851210"></a>Calcula la correlaci&#243;n entre los campos Id del cliente e Id de cr&#233;dito del cliente para todos los valores dentro de cada regi&#243;n, para cada mes.</p><p><a name="1000851211"></a><font color="darkblue"><b>Nota:   &nbsp;&nbsp;&nbsp;</b></font>El uso de esta funci&#243;n en una f&#243;rmula obliga a que la f&#243;rmula sea evaluada al momento de impresi&#243;n. </p>
+<p><a name="1000851212"></a>Para obtener m&#225;s informaci&#243;n sobre las consideraciones de evaluaci&#243;n de hora, v&#233;ase el <a href="Functions169.html#1000572432">Funciones de tiempo de evaluaci&#243;n</a>.</p><a name="1000851216"></a><h5>Comentario(s) </h5><p><a name="1000851217"></a>La correlaci&#243;n ser&#225; siempre un n&#250;mero entre -1 y 1, a menos que sea indefinida, en cuyo caso se asigna un valor nulo (0) a la funci&#243;n. Si la correlaci&#243;n es cero, los campos no est&#225;n correlacionados.</p>
+<hr><br>
+
+<script  language="JavaScript"><!--
+
+var prev = "Functions33.html";
+var next = "Functions35.html";
+
+function setTopicID() { 
+      var number = "1000851180"; 
+      return number; 
+}
+
+// --></script>
+
+
+
+
+<SCRIPT>
+
+if (!window.parent.toc && navigator.appName == "Netscape") {
+
+   document.writeln ('<TABLE ALIGN="left" border="0" cellspacing="0" cellpadding="10">');
+   document.writeln ('<TR>');
+   document.write ('<TD ALIGN="left">');
+
+   if (prev != "crw_spTOC.hhc") {
+      document.writeln ('<A HREF="' + prev + '">');
+      document.writeln ('<IMG SRC="prevpage.gif" HEIGHT=17 BORDER=0 ALT="Página anterior"></A>');
+   } else {
+//   window.alert ('no previous page');
+   }
+
+   if (next != "crw_spIX.hhk") {
+      document.writeln ('<A HREF="' + next + '">');
+      document.writeln ('<IMG SRC="nextpage.gif" HEIGHT=17 BORDER=0 ALT="Página siguiente"></A>');
+   } else {
+//   window.alert ('no next page');
+   }
+   document.writeln ('</TD><TD ALIGN="left">');
+   document.writeln ('<A HREF="frameset.htm?TOC">');
+   document.writeln ('<IMG SRC="showtoc.gif" HEIGHT=17 BORDER=0 ALT="Haga clic para ver el contenido"></A></TD>');
+   document.writeln ('<TD ALIGN="left">');
+   document.writeln ('<A HREF="frameset.htm?IDX">');
+   document.writeln ('<IMG SRC="showix.gif" HEIGHT=17 BORDER=0 ALT="Haga clic para ver el índice"></A></TD>');
+   document.writeln ('</TD>');
+   document.writeln ('</TR>');
+   document.writeln ('</TABLE>');
+
+}
+
+</SCRIPT>
+<table align="right" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td align="right"><font size="1">Seagate Software, Inc.<br>
+    <a href="http://www.seagatesoftware.com">http://www.seagatesoftware.com</a><br>
+    Envíe sus comentarios a:<br>
+    <a href="mailto:techpubs@seagatesoftware.com">techpubs@seagatesoftware.com</a><br>
+    </font></td>
+  </tr>
+</table>
+</body>
+</html>
+
+

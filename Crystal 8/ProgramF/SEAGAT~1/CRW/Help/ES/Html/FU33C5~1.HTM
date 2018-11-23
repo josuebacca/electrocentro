@@ -1,0 +1,96 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+
+<html>
+<head>
+<title>PageNumber</title>
+
+<link REL=STYLESHEET TYPE="text/css" HREF="seagate.css">
+
+<!--
+                 ***********************************
+                 * Seagate Software copyright 1999 *
+                 ***********************************
+
+                      Template version: 5.1
+-->
+
+
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" link="#0000FF" vlink="#0000FF" alink="#800080">
+
+
+ 
+<a name="1000578922"></a><h3 class="newpage"> PageNumber</h3>
+<p><a name="1000720027"></a>Sintaxis b&#225;sica y Crystal.</p><a name="1000578924"></a><h5>Devuelve </h5><p><a name="1000578925"></a>Un n&#250;mero entero.</p><a name="1000578926"></a><h5>Acci&#243;n</h5><p><a name="1000578928"></a>PageNumber inserta el n&#250;mero de p&#225;gina actual como un campo en una f&#243;rmula.</p><a name="1000578929"></a><h5>Uso(s) t&#237;pico(s)</h5><p><a name="1000578930"></a>Utilice esta funci&#243;n siempre que quiera que Crystal Reports determina el n&#250;mero de p&#225;ginas, a la hora de impresi&#243;n, y utilice ese n&#250;mero en el c&#225;lculo de resultados de f&#243;rmulas. Por ejemplo, puede utilizar esta funci&#243;n cuando usted quiera que Crystal Reports imprima algo en ciertas p&#225;ginas y no en otras.</p><a name="1000578931"></a><h5>Ejemplo(s) </h5><p><a name="1000578932"></a>Los siguientes ejemplos son aplicables para la sintaxis Crystal:</p><p><code><a name="1000578934"></a>PageNumber </code></p><p class="example"><a name="1000578935"></a>Crea un campo que contenga el n&#250;mero de p&#225;gina actual que usted pueda colocar en cualquier lugar de la p&#225;gina. Utilizar esta f&#243;rmula es equivalente a utilizar el campo N&#250;mero de p&#225;gina en la carpeta Campos especiales en el Explorador de Campos.</p><p class="code"><a name="1000578937"></a>If PageNumber &gt; 1 Then
+<br><a name="1000750802"></a>&nbsp;&nbsp;&nbsp;&nbsp;PageNumber 
+<br><a name="1000750803"></a>Else
+<br><a name="1000750804"></a>&nbsp;&nbsp;&nbsp;&nbsp;0
+</p><p class="example"><a name="1000578939"></a>Crea un campo que imprime el n&#250;mero de p&#225;gina en cada p&#225;gina menos en la primera. Si activa el cuadro de verificaci&#243;n Suprimir si Cero en la Ficha Booleano del Editor de Formato, la f&#243;rmula no imprimir&#225; nada en la primera p&#225;gina en lugar de un cero.</p><p><a name="1000650016"></a><font color="darkblue"><b>Nota:   &nbsp;&nbsp;&nbsp;</b></font></p>
+<ul type="disc"><a name="1000650017"></a><li>Usted no tiene que tener un campo de n&#250;mero de p&#225;gina en su informe para utilizar la funci&#243;n PageNumber en una f&#243;rmula de informe.
+<a name="1000578948"></a><li>El uso de esta funci&#243;n en una f&#243;rmula obliga a que la f&#243;rmula sea evaluada al momento de impresi&#243;n. 
+<p class="indent"><a name="1000650106"></a>Para obtener m&#225;s informaci&#243;n sobre las consideraciones de evaluaci&#243;n de hora, v&#233;ase el the <a href="Functions169.html#1000572432">Funciones de tiempo de evaluaci&#243;n</a>.</p></ul>
+<hr><br>
+
+<script  language="JavaScript"><!--
+
+var prev = "Functions181.html";
+var next = "Functions183.html";
+
+function setTopicID() { 
+      var number = "1000578922"; 
+      return number; 
+}
+
+// --></script>
+
+
+
+
+<SCRIPT>
+
+if (!window.parent.toc && navigator.appName == "Netscape") {
+
+   document.writeln ('<TABLE ALIGN="left" border="0" cellspacing="0" cellpadding="10">');
+   document.writeln ('<TR>');
+   document.write ('<TD ALIGN="left">');
+
+   if (prev != "crw_spTOC.hhc") {
+      document.writeln ('<A HREF="' + prev + '">');
+      document.writeln ('<IMG SRC="prevpage.gif" HEIGHT=17 BORDER=0 ALT="Página anterior"></A>');
+   } else {
+//   window.alert ('no previous page');
+   }
+
+   if (next != "crw_spIX.hhk") {
+      document.writeln ('<A HREF="' + next + '">');
+      document.writeln ('<IMG SRC="nextpage.gif" HEIGHT=17 BORDER=0 ALT="Página siguiente"></A>');
+   } else {
+//   window.alert ('no next page');
+   }
+   document.writeln ('</TD><TD ALIGN="left">');
+   document.writeln ('<A HREF="frameset.htm?TOC">');
+   document.writeln ('<IMG SRC="showtoc.gif" HEIGHT=17 BORDER=0 ALT="Haga clic para ver el contenido"></A></TD>');
+   document.writeln ('<TD ALIGN="left">');
+   document.writeln ('<A HREF="frameset.htm?IDX">');
+   document.writeln ('<IMG SRC="showix.gif" HEIGHT=17 BORDER=0 ALT="Haga clic para ver el índice"></A></TD>');
+   document.writeln ('</TD>');
+   document.writeln ('</TR>');
+   document.writeln ('</TABLE>');
+
+}
+
+</SCRIPT>
+<table align="right" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td align="right"><font size="1">Seagate Software, Inc.<br>
+    <a href="http://www.seagatesoftware.com">http://www.seagatesoftware.com</a><br>
+    Envíe sus comentarios a:<br>
+    <a href="mailto:techpubs@seagatesoftware.com">techpubs@seagatesoftware.com</a><br>
+    </font></td>
+  </tr>
+</table>
+</body>
+</html>
+
+

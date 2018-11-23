@@ -1,0 +1,202 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+
+<html>
+<head>
+<title>Ordenamiento</title>
+
+<link REL=STYLESHEET TYPE="text/css" HREF="seagate.css">
+
+<!--
+                 ***********************************
+                 * Seagate Software copyright 1999 *
+                 ***********************************
+
+                      Template version: 5.1
+-->
+
+
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" link="#0000FF" vlink="#0000FF" alink="#800080">
+
+
+ 
+<a name="246748"></a><h2 class="newpage">Ordenamiento</h2><p><a name="248510"></a>Ordenar quiere decir poner los valores en un cierto orden para ayudarle a encontrarlos o evaluarlos.</p><p><a name="246782"></a>Cuando inserta por primera vez un campo de base de datos en su informe, los datos de los campos aparecen en el orden en que se ingresaron originalmente. Es dif&#237;cil encontrar informaci&#243;n en este tipo de informe. Resulta mucho m&#225;s f&#225;cil revisar o buscar informaci&#243;n cuando la puede ver ordenada en un formato l&#243;gico. Por ejemplo, es aconsejable tener una lista de clientes ordenada alfab&#233;ticamente por nombre o por pa&#237;s.</p><a name="246787"></a><h3>Comprensi&#243;n de las opciones de ordenamiento</h3>
+<p><a name="246788"></a>Cuando usted ordena, el programa le pide que seleccione dos cosas:</p><ul type="disc"><a name="246789"></a><li>el campo en el cual desea basar su ordenamiento (campo de ordenamiento)
+<a name="246790"></a><li>la direcci&#243;n del ordenamiento.
+</ul><a name="246792"></a><h4>Campo de ordenamiento</h4><p><a name="246793"></a>Un campo de ordenamiento es aquel que determina el orden en el que aparecen los datos en su informe. Casi todos los campos se pueden usar como campo de ordenamiento, incluso los de f&#243;rmula. El tipo de datos de un campo determina el m&#233;todo en el que se ordenan los datos de dicho campo.</p><p><a name="244891"></a><font color="darkblue"><b>Nota:   &nbsp;&nbsp;&nbsp;</b></font>No es posible ordenar seg&#250;n campos de memorando o BLOB.</p>
+<p><a name="244949"></a> <Table Border="1">
+<tr><th align="left" valign="bottom"><a name="244894"></a>Tipo de campo
+
+</th><th align="left" valign="bottom"><a name="244896"></a>Orden
+
+</th></tr>
+<tr><td align="left" valign="TOP"><P><a name="244898"></a>Campos de cadena de un solo car&#225;cter</P>
+
+
+</td><td align="left" valign="TOP"><P><a name="244900"></a>espacios en blanco</P>
+
+
+<P><a name="244901"></a>puntuaci&#243;n</P>
+
+
+<P><a name="244902"></a>n&#250;meros</P>
+
+
+<P><a name="244903"></a>letras may&#250;sculas</P>
+
+
+<P><a name="244904"></a>letras min&#250;sculas</P>
+
+
+</td></tr>
+<tr><td align="left" valign="TOP"><P><a name="244906"></a>Campo de cadena de m&#250;ltiples caracteres</P>
+
+
+</td><td align="left" valign="TOP"><P><a name="244908"></a>dos letras</P>
+
+
+<P><a name="244909"></a>tres letras</P>
+
+
+<P><a name="244910"></a>cuatro letras, etc.</P>
+
+
+<P><br></P>
+
+
+<P><a name="244912"></a>Por ejemplo:</P>
+
+
+<ul type="disc"><a name="244914"></a><li>"BOB" antecede a "bob"
+<a name="244915"></a><li>"123" antecede a "124" 
+<a name="244916"></a><li>" " (espacio en blanco) antecede a "a"
+<a name="244917"></a><li>"aa" antecede a "aaa"
+</ul></td></tr>
+<tr><td align="left" valign="TOP"><P><a name="244919"></a>Campos monetarios</P>
+
+
+</td><td align="left" valign="TOP"><P><a name="244921"></a>orden num&#233;rico</P>
+
+
+</td></tr>
+<tr><td align="left" valign="TOP"><P><a name="244923"></a>Campos num&#233;ricos</P>
+
+
+</td><td align="left" valign="TOP"><P><a name="244925"></a>orden num&#233;rico</P>
+
+
+</td></tr>
+<tr><td align="left" valign="TOP"><P><a name="244927"></a>Campos de fecha</P>
+
+
+</td><td align="left" valign="TOP"><P><a name="244929"></a>orden cronol&#243;gico</P>
+
+
+</td></tr>
+<tr><td align="left" valign="TOP"><P><a name="244931"></a>Campos de fechahora</P>
+
+
+</td><td align="left" valign="TOP"><P><a name="244933"></a>orden cronol&#243;gico </P>
+
+
+<P><a name="244934"></a>valores de igual fecha ordenados por hora</P>
+
+
+</td></tr>
+<tr><td align="left" valign="TOP"><P><a name="244936"></a>Campos de hora</P>
+
+
+</td><td align="left" valign="TOP"><P><a name="244938"></a>orden cronol&#243;gico</P>
+
+
+</td></tr>
+<tr><td align="left" valign="TOP"><P><a name="244940"></a>Campos booleanos de comparaci&#243;n</P>
+
+
+</td><td align="left" valign="TOP"><P><a name="244942"></a>Valores falsos (0)</P>
+
+
+<P><a name="244943"></a>Valores verdaderos (1)</P>
+
+
+</td></tr>
+<tr><td align="left" valign="TOP"><P><a name="244945"></a>Valores nulos</P>
+
+
+</td><td align="left" valign="TOP"><P><a name="244947"></a>valores nulos</P>
+
+
+<P><a name="244948"></a>valores no nulos</P>
+
+
+</td></tr>
+
+</Table></p>
+<a name="244951"></a><h4>Direcci&#243;n de ordenamiento</h4><p><a name="244952"></a>La direcci&#243;n se refiere al orden en que se muestran los valores una vez ordenados.</p><ul type="disc"><a name="244954"></a><li><kbd>Ascendente<br></kbd>Orden ascendente significa de menor a mayor (1 a 9, A a Z, Falso a Verdadero). El programa clasifica los registros en orden ascendente seg&#250;n los valores del campo de ordenamiento seleccionado.
+<a name="246825"></a><li><kbd>Descendente<br></kbd>Orden descendente significa de mayor a menor (9 a 1, Z a A, Verdadero a Falso). El programa clasifica los registros en orden descendente seg&#250;n los valores del campo de ordenamiento seleccionado.
+</ul>
+<hr><br>
+
+<script  language="JavaScript"><!--
+
+var prev = "08_sortgrouptotal.html";
+var next = "08_sortgrouptotal3.html";
+
+function setTopicID() { 
+      var number = "246748"; 
+      return number; 
+}
+
+// --></script>
+
+
+
+
+<SCRIPT>
+
+if (!window.parent.toc && navigator.appName == "Netscape") {
+
+   document.writeln ('<TABLE ALIGN="left" border="0" cellspacing="0" cellpadding="10">');
+   document.writeln ('<TR>');
+   document.write ('<TD ALIGN="left">');
+
+   if (prev != "crw_spTOC.hhc") {
+      document.writeln ('<A HREF="' + prev + '">');
+      document.writeln ('<IMG SRC="prevpage.gif" HEIGHT=17 BORDER=0 ALT="Página anterior"></A>');
+   } else {
+//   window.alert ('no previous page');
+   }
+
+   if (next != "crw_spIX.hhk") {
+      document.writeln ('<A HREF="' + next + '">');
+      document.writeln ('<IMG SRC="nextpage.gif" HEIGHT=17 BORDER=0 ALT="Página siguiente"></A>');
+   } else {
+//   window.alert ('no next page');
+   }
+   document.writeln ('</TD><TD ALIGN="left">');
+   document.writeln ('<A HREF="frameset.htm?TOC">');
+   document.writeln ('<IMG SRC="showtoc.gif" HEIGHT=17 BORDER=0 ALT="Haga clic para ver el contenido"></A></TD>');
+   document.writeln ('<TD ALIGN="left">');
+   document.writeln ('<A HREF="frameset.htm?IDX">');
+   document.writeln ('<IMG SRC="showix.gif" HEIGHT=17 BORDER=0 ALT="Haga clic para ver el índice"></A></TD>');
+   document.writeln ('</TD>');
+   document.writeln ('</TR>');
+   document.writeln ('</TABLE>');
+
+}
+
+</SCRIPT>
+<table align="right" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td align="right"><font size="1">Seagate Software, Inc.<br>
+    <a href="http://www.seagatesoftware.com">http://www.seagatesoftware.com</a><br>
+    Envíe sus comentarios a:<br>
+    <a href="mailto:techpubs@seagatesoftware.com">techpubs@seagatesoftware.com</a><br>
+    </font></td>
+  </tr>
+</table>
+</body>
+</html>
+
+

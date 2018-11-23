@@ -1,0 +1,125 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+
+<html>
+<head>
+<title>TimeValue</title>
+
+<link REL=STYLESHEET TYPE="text/css" HREF="seagate.css">
+
+<!--
+                 ***********************************
+                 * Seagate Software copyright 1999 *
+                 ***********************************
+
+                      Template version: 5.1
+-->
+
+
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" link="#0000FF" vlink="#0000FF" alink="#800080">
+
+
+ 
+<a name="1000645674"></a><h3 class="newpage"> TimeValue</h3>
+<p><a name="1000690863"></a>Sintaxis b&#225;sica y Crystal.</p><p><a name="1000690858"></a>Las funciones <a href="Functions163.html#1000570720">CTime</a> y <a href="Functions107.html#1000686634">Time</a> son equivalentes a TimeValue. Sin embargo, Time s&#243;lo puede usarse en sintaxis Crystal, ya que en sintaxis b&#225;sica es un nombre tipo.</p><a name="1000645675"></a><h5>Sobrecargas</h5><ul type="disc"><a name="1000534247"></a><li>TimeValue (n&#250;mero)
+<a name="1000534248"></a><li>TimeValue (cadena)
+<a name="1000534249"></a><li>TimeValue (fechaHora)
+<a name="1000534250"></a><li>TimeValue (HH, MM, SS)
+</ul><a name="1000534251"></a><h5>Argumentos</h5><p><a name="1000752131"></a> <Table Border="1">
+<tr><td align="left" valign="TOP"><P><a name="1000752114"></a>TimeValue (n&#250;mero)</P>
+
+
+</td><td align="left" valign="TOP"><ul type="disc"><a name="1000752116"></a><li>Devuelve<strong> </strong>un valor Hora dado un n&#250;mero en unidades de 24 horas.
+<a name="1000756476"></a><li>n&#250;mero tambi&#233;n puede ser fraccional o negativo
+</ul></td></tr>
+<tr><td align="left" valign="TOP"><P><a name="1000752118"></a>TimeValue (cadena)</P>
+
+
+</td><td align="left" valign="TOP"><P><a name="1000752154"></a>Devuelve un valor Hora que representa la hora, dada un expresi&#243;n de Cadena que especifique una hora entre 0:00:00 (12:00:00 A.M.) y 23:59:59 (11:59:59 P.M.), inclusive.</P>
+
+
+</td></tr>
+<tr><td align="left" valign="TOP"><P><a name="1000752122"></a>TimeValue (fechaHora)</P>
+
+
+</td><td align="left" valign="TOP"><P><a name="1000752162"></a>fechaHora es un valor Fecha/hora.</P>
+
+
+</td></tr>
+<tr><td align="left" valign="TOP"><P><a name="1000752126"></a>TimeValue (hour, min, seg)</P>
+
+
+</td><td align="left" valign="TOP"><ul type="disc"><a name="1000752170"></a><li>Hora es un n&#250;mero entero que representa la hora del d&#237;a.
+<a name="1000752171"></a><li>Min es un n&#250;mero entero que representa un minuto.
+<a name="1000752172"></a><li>Seg es un n&#250;mero entero que representa un segundo.
+</ul></td></tr>
+
+</Table></p>
+<a name="1000534262"></a><h5>Devuelve </h5><p><a name="1000534263"></a>Valor Hora.</p><a name="1000534264"></a><h5>Acci&#243;n</h5><p><a name="1000534265"></a><strong>TimeValue</strong><strong> (n&#250;mero)</strong> devuelve  un valor Hora dado un n&#250;mero en unidades de 24 horas. El n&#250;mero puede ser negativo y tambi&#233;n fraccional.  . </p><p><a name="1000534267"></a><strong>TimeValue </strong><strong>(cadena)</strong> devuelve un valor Hora que representa la hora, dada un expresi&#243;n de Cadena que especifique una hora entre 0:00:00 (12:00:00 A.M.) y 23:59:59 (11:59:59 P.M.), inclusive.</p><p><a name="1000534269"></a><strong>DateValue (</strong><strong>fechaHora) devuelv</strong>e la porci&#243;n de hora de un valor Fecha/hora dado. </p><p><a name="1000534271"></a><strong>TimeValue (</strong><strong>HH, MM, SS) devuelv</strong>e un valor Hora dados argumentos num&#233;ricos de hora, minuto y segundos.</p><a name="1000534272"></a><h5>Ejemplo(s)</h5><p><a name="1000534273"></a>Los siguientes ejemplos son aplicables a las sintaxis b&#225;sica y Crystal:</p><p class="code"><a name="1000534274"></a>TimeValue (.2) 
+<br><a name="1000534275"></a>TimeValue (1.2)
+</p><p class="example"><a name="1000534276"></a>Ambos devuelven el mismo valor 4:48:00 a.m.</p><p><code><a name="1000534277"></a>TimeValue (-.2)</code></p><p class="example"><a name="1000534278"></a>Devuelve 7:12:00 pm</p><p><code><a name="1000534279"></a>TimeValue ("ene. 6, 1999 2:30pm")</code></p><p class="example"><a name="1000534280"></a>Devuelve 2:30:00 pm</p><p><code><a name="1000534281"></a>TimeValue (#feb. 24, 1999 2:40pm#)</code></p><p class="example"><a name="1000534282"></a>Devuelve 2:40:00 pm</p><p><code><a name="1000534283"></a>TimeValue (18, 30, 30)</code></p><p class="example"><a name="1000690850"></a>Devuelve 6:30:30 pm</p><a name="1000690851"></a><h5>Comentario(s) </h5><p><a name="1000690853"></a>Puede usar la funci&#243;n<a href="Functions115.html#1000781158">IsTime</a> para verificar si un argumento de Cadena puede ser convertido a una Hora antes de hacer la conversi&#243;n real.  De esta manera, si no puede hacerse la conversi&#243;n, podr&#225; manejar la situaci&#243;n como corresponda. Vea tambi&#233;n <a href="Functions113.html#1000536658">TimeSerial (hora, minuto, segundo)</a>.</p>
+<hr><br>
+
+<script  language="JavaScript"><!--
+
+var prev = "Functions109.html";
+var next = "Functions111.html";
+
+function setTopicID() { 
+      var number = "1000645674"; 
+      return number; 
+}
+
+// --></script>
+
+
+
+
+<SCRIPT>
+
+if (!window.parent.toc && navigator.appName == "Netscape") {
+
+   document.writeln ('<TABLE ALIGN="left" border="0" cellspacing="0" cellpadding="10">');
+   document.writeln ('<TR>');
+   document.write ('<TD ALIGN="left">');
+
+   if (prev != "crw_spTOC.hhc") {
+      document.writeln ('<A HREF="' + prev + '">');
+      document.writeln ('<IMG SRC="prevpage.gif" HEIGHT=17 BORDER=0 ALT="Página anterior"></A>');
+   } else {
+//   window.alert ('no previous page');
+   }
+
+   if (next != "crw_spIX.hhk") {
+      document.writeln ('<A HREF="' + next + '">');
+      document.writeln ('<IMG SRC="nextpage.gif" HEIGHT=17 BORDER=0 ALT="Página siguiente"></A>');
+   } else {
+//   window.alert ('no next page');
+   }
+   document.writeln ('</TD><TD ALIGN="left">');
+   document.writeln ('<A HREF="frameset.htm?TOC">');
+   document.writeln ('<IMG SRC="showtoc.gif" HEIGHT=17 BORDER=0 ALT="Haga clic para ver el contenido"></A></TD>');
+   document.writeln ('<TD ALIGN="left">');
+   document.writeln ('<A HREF="frameset.htm?IDX">');
+   document.writeln ('<IMG SRC="showix.gif" HEIGHT=17 BORDER=0 ALT="Haga clic para ver el índice"></A></TD>');
+   document.writeln ('</TD>');
+   document.writeln ('</TR>');
+   document.writeln ('</TABLE>');
+
+}
+
+</SCRIPT>
+<table align="right" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td align="right"><font size="1">Seagate Software, Inc.<br>
+    <a href="http://www.seagatesoftware.com">http://www.seagatesoftware.com</a><br>
+    Envíe sus comentarios a:<br>
+    <a href="mailto:techpubs@seagatesoftware.com">techpubs@seagatesoftware.com</a><br>
+    </font></td>
+  </tr>
+</table>
+</body>
+</html>
+
+

@@ -1,0 +1,109 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+
+<html>
+<head>
+<title>Uso del Asistente de selecci&#243;n</title>
+
+<link REL=STYLESHEET TYPE="text/css" HREF="seagate.css">
+
+<!--
+                 ***********************************
+                 * Seagate Software copyright 1999 *
+                 ***********************************
+
+                      Template version: 5.1
+-->
+
+
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" link="#0000FF" vlink="#0000FF" alink="#800080">
+
+
+ 
+<a name="245151"></a><h4 class="newpage"> Uso del Asistente de selecci&#243;n</h4><p><a name="245152"></a>El Asistente de selecci&#243;n se puede usar para seleccionar grupos de registros tal como se seleccionan registros individuales.</p><p><a name="245153"></a>Cuando define los criterios de selecci&#243;n de grupos, en vez de basar dichos criterios en campos est&#225;ndar, tal como lo har&#237;a para la selecci&#243;n de registros, los criterios se basan en campos de nombre de grupo o campos de resumen.</p><ul type="disc"><a name="245154"></a><li>Si agrup&#243; sus datos, pero no los ha resumido, s&#243;lo puede establecer la selecci&#243;n de grupos seg&#250;n el campo de nombre de grupo. Por ejemplo, es preferible seleccionar solamente aquellos grupos cuya regi&#243;n sea Massachusetts:
+<a name="245155"></a><p class="indent"><code>GroupName ({Cliente.REGI&Oacute;N}) = "MA"</code></p><a name="245156"></a><li>Si ha resumido sus datos, puede establecer la selecci&#243;n de grupos seg&#250;n el campo de nombre de grupo o el campo de resumen. Por ejemplo:
+<a name="245157"></a><p class="indent"><code>Sum({Cliente.VENTAS DEL &Uacute;LTIMO A&Ntilde;O}, <br>{Cliente.REGI&Oacute;N}) &gt; 10000</code></p></ul><p><a name="245158"></a><font color="darkblue"><b>Nota:   &nbsp;&nbsp;&nbsp;</b></font>El Asistente de selecci&#243;n se puede usar para establecer solicitudes de selecci&#243;n de grupos y de selecci&#243;n de registros. Cuando se selecciona un campo de nombre de grupo o de resumen, el programa reconoce que los criterios de selecci&#243;n configurados est&#225;n dirigidos para la selecci&#243;n de grupos. En todos los dem&#225;s casos, el programa reconoce que est&#225; estableciendo una selecci&#243;n de registros.</p>
+<a name="245160"></a><h6>Para establecer la selecci&#243;n de grupos usando el Asistente <br>de selecci&#243;n</h6><ol>
+<a name="245164"></a><li value="1&nbsp;&nbsp;&nbsp;&nbsp;"><img src="images/Bt_selrc.gif">
+
+
+Haga clic con el bot&#243;n derecho en el campo de resumen en el que desea basar la selecci&#243;n de grupos y elija <kbd>Asistente de selecci&#243;n</kbd> en el men&#250; contextual.
+<p class="indent"><a name="245165"></a>Aparece el cuadro de di&#225;logo Asistente de selecci&#243;n.</p><p class="indent"><a name="245166"></a><font color="darkblue"><b>Nota:   &nbsp;&nbsp;&nbsp;</b></font>Si hace clic en el bot&#243;n Asistente de selecci&#243;n sin destacar primero un campo de resumen del informe, aparece el cuadro de di&#225;logo Elegir campo. Destaque el campo de resumen en el que desea basar la selecci&#243;n de grupos y haga clic en Aceptar. Aparece el Asistente de selecci&#243;n.</p>
+<p><a name="245170"></a> <img src="images/db_slrc2.gif">
+
+
+</p>
+<a name="245171"></a><li value="2&nbsp;&nbsp;&nbsp;&nbsp;">Use la lista desplegable para ingresar sus criterios de selecci&#243;n para el campo indicado.
+<a name="245172"></a><li value="3&nbsp;&nbsp;&nbsp;&nbsp;">Para basar la selecci&#243;n de grupos en m&#225;s de un campo, haga clic en la ficha <strong>Nuevo</strong> y elija el campo siguiente del cuadro de di&#225;logo Elegir campo.
+<p class="indent"><a name="245176"></a><font color="darkblue"><b>Nota:   &nbsp;&nbsp;&nbsp;</b></font><img src="images/Bt_prevw.gif">
+
+
+Si no ha obtenido una vista previa del informe anteriormente ni ha actualizado los datos, no habr&#225; datos guardados en el informe. Sin los datos, el programa no puede calcular los valores de grupo; as&#237;, no aparecer&#225; ning&#250;n valor cuando haga clic en la flecha de la lista desplegable derecha. En esta situaci&#243;n, tendr&#225; que escribir los valores que desea. Si desea trabajar con valores reales, primero es necesario obtener una vista previa de su informe. As&#237; calcula los valores resumidos reales disponibles con los que puede trabajar.</p>
+<a name="245177"></a><li value="4&nbsp;&nbsp;&nbsp;&nbsp;">Al terminar, haga clic <strong>Aceptar</strong> en el Asistente de selecci&#243;n para volver al informe.
+</ol>
+
+<hr><br>
+
+<script  language="JavaScript"><!--
+
+var prev = "08_sortgrouptotal7.html";
+var next = "08_sortgrouptotal9.html";
+
+function setTopicID() { 
+      var number = "245151"; 
+      return number; 
+}
+
+// --></script>
+
+
+
+
+<SCRIPT>
+
+if (!window.parent.toc && navigator.appName == "Netscape") {
+
+   document.writeln ('<TABLE ALIGN="left" border="0" cellspacing="0" cellpadding="10">');
+   document.writeln ('<TR>');
+   document.write ('<TD ALIGN="left">');
+
+   if (prev != "crw_spTOC.hhc") {
+      document.writeln ('<A HREF="' + prev + '">');
+      document.writeln ('<IMG SRC="prevpage.gif" HEIGHT=17 BORDER=0 ALT="Página anterior"></A>');
+   } else {
+//   window.alert ('no previous page');
+   }
+
+   if (next != "crw_spIX.hhk") {
+      document.writeln ('<A HREF="' + next + '">');
+      document.writeln ('<IMG SRC="nextpage.gif" HEIGHT=17 BORDER=0 ALT="Página siguiente"></A>');
+   } else {
+//   window.alert ('no next page');
+   }
+   document.writeln ('</TD><TD ALIGN="left">');
+   document.writeln ('<A HREF="frameset.htm?TOC">');
+   document.writeln ('<IMG SRC="showtoc.gif" HEIGHT=17 BORDER=0 ALT="Haga clic para ver el contenido"></A></TD>');
+   document.writeln ('<TD ALIGN="left">');
+   document.writeln ('<A HREF="frameset.htm?IDX">');
+   document.writeln ('<IMG SRC="showix.gif" HEIGHT=17 BORDER=0 ALT="Haga clic para ver el índice"></A></TD>');
+   document.writeln ('</TD>');
+   document.writeln ('</TR>');
+   document.writeln ('</TABLE>');
+
+}
+
+</SCRIPT>
+<table align="right" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td align="right"><font size="1">Seagate Software, Inc.<br>
+    <a href="http://www.seagatesoftware.com">http://www.seagatesoftware.com</a><br>
+    Envíe sus comentarios a:<br>
+    <a href="mailto:techpubs@seagatesoftware.com">techpubs@seagatesoftware.com</a><br>
+    </font></td>
+  </tr>
+</table>
+</body>
+</html>
+
+

@@ -1,0 +1,40 @@
+VERSION 5.00
+Begin {BD4B4E61-F7B8-11D0-964D-00A0C9273C2A} dsrEmployeeProfiles 
+   ClientHeight    =   10020
+   ClientLeft      =   3360
+   ClientTop       =   3270
+   ClientWidth     =   12315
+   OleObjectBlob   =   "dsrEmployeeProfiles.dsx":0000
+End
+Attribute VB_Name = "dsrEmployeeProfiles"
+Attribute VB_GlobalNameSpace = False
+Attribute VB_Creatable = False
+Attribute VB_PredeclaredId = False
+Attribute VB_Exposed = False
+' *************************************************************
+' Purpose: Perform some report manipulation at runtime
+'
+
+Option Explicit
+
+' *************************************************************
+' Format the address and phone number fields
+'
+Private Sub scnDetail_Format(ByVal pFormattingInfo As Object)
+    ' Format an Address Field - This functionality is also shown using the
+    ' Crystal Formula language with @home address city/region
+    If fldRegion.Value = "" Then
+        txtCityRegion.SetText fldCity.Value
+    Else
+        txtCityRegion.SetText fldCity.Value + ", " + fldRegion.Value
+    End If
+    ' Format a Phone Number:
+    ' Under the Field View the Crystal Formula @home phone implements
+    ' the same functionality
+    If Len(fldHomePhone.Value) = 10 Then
+        txtHomePhone.SetText "(" + Mid(CStr(fldHomePhone.Value), 1, 3) + ") " + Mid(CStr(fldHomePhone.Value), 4, 3) + "-" + _
+        Mid(CStr(fldHomePhone.Value), 7, 4)
+    Else
+        txtHomePhone.SetText Mid(CStr(fldHomePhone.Value), 1, 3) + "-" + Right(CStr(fldHomePhone.Value), 4)
+    End If
+End Sub

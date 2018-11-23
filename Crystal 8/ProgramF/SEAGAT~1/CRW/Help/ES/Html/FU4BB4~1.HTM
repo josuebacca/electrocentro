@@ -1,0 +1,102 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+
+<html>
+<head>
+<title>GridRowColumnValue (nombre)</title>
+
+<link REL=STYLESHEET TYPE="text/css" HREF="seagate.css">
+
+<!--
+                 ***********************************
+                 * Seagate Software copyright 1999 *
+                 ***********************************
+
+                      Template version: 5.1
+-->
+
+
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" link="#0000FF" vlink="#0000FF" alink="#800080">
+
+
+ 
+<a name="1000690158"></a><h3 class="newpage"> GridRowColumnValue (nombre)</h3>
+<p><a name="1000690159"></a>Sintaxis b&#225;sica y Crystal.</p><a name="1000690160"></a><h5>Argumentos</h5><p><a name="1000690161"></a>nombre es un valor Cadena que es un Alias de F&#243;rmulas.  El Alias de F&#243;rmulas es un nombre especificado para un nivel de dimensi&#243;n en una cuadr&#237;cula OLAP o tabla cruzada. <a href="16_olap8.html#53273">See Formato de la cuadr&#237;cula.</a></p><a name="1000690162"></a><h5>Devuelve </h5><p><a name="1000690163"></a>El valor de un nivel de dimensi&#243;n en una cuadr&#237;cula OLAP o tabla cruzada que ha sido especificada por el argumento, nombre. Por lo tanto, el tipo de valor depende del tipo de la dimensi&#243;n especificada.  </p><a name="1000690164"></a><h5>Acci&#243;n</h5><p><a name="1000690165"></a>GridRowColumnValue devuelve el valor de un nivel de dimensi&#243;n especificado en una cuadr&#237;cula OLAP o tabla cruzada.  </p><a name="1000690166"></a><h5>Uso(s) t&#237;pico(s)</h5><p><a name="1000690167"></a>Para formatear celdas bajo un nivel de dimensi&#243;n en una cuadr&#237;cula OLAP o tabla cruzada, sobre la base del valor de ese nivel de dimensi&#243;n. Por ejemplo, puede formatear el color de fuente de celdas en un nivel de dimensi&#243;n sobre la base del valor de ese nivel de dimensi&#243;n. Los atributos de una celda que puede formatear condicionalmente usando una f&#243;rmula incluyen: fuente, bordes, posici&#243;n del objeto, etc. Estos atributos se acceden a trav&#233;s del Editor de Formato. <a href="11_format43.html#89444">See Propiedades de atributo condicional.</a></p><a name="1000690168"></a><h5>Ejemplo(s)</h5><p><a name="1000690169"></a>Los siguientes ejemplos son aplicables a las sintaxis b&#225;sica y Crystal:</p><p><a name="1000690178"></a>Imagine una cuadr&#237;cula OLAP con Productos en l&#237;neas y Regiones en las columnas.   </p><p><a name="1000690182"></a> <img src="images/WinGridGroupAlias1.gif">
+
+
+</p>
+<p><a name="1000690216"></a>Suponga que desea usar GridRowcolumnValue para formatear condicionalmente las celdas bajo el Nivel 1 de la dimensi&#243;n Regiones y Nivel 2 de la dimensi&#243;n Productos.   En especial, desea formatear el color de fuente del total de ventas de un producto espec&#237;fico en Europa con rojo, y en Norte Am&#233;rica con azul.  </p><ol>
+<a name="1000690217"></a><li value="1&nbsp;&nbsp;&nbsp;&nbsp;">Establezca un Alias "Continente"para las F&#243;rmulas en el Nivel 1 de la dimensi&#243;n Regiones. (Puede hacerlo usando el Asistente de Informes OLAP o el comando Objeto de Cuadr&#237;cula OLAP. <a href="16_olap8.html#53273">See Formato de la cuadr&#237;cula.</a>
+<p class="indent"><a name="1000690218"></a>Despu&#233;s de establecer el Alias necesario para las F&#243;rmulas, puede tener que expresar la condici&#243;n de formato como: si GridRowColumnValue("Continente") devuelve "Europa", entonces desear&#237;a que el color de fuente de las celdas de cada ingreso en el Nivel 2 de la dimensi&#243;n Productos  sea rojo, de lo contrario, ya que s&#243;lo hay dos continentes en este escenario, el color deber&#225; ser azul.  </p><a name="1000690219"></a><li value="2&nbsp;&nbsp;&nbsp;&nbsp;">Haga click en la cuadr&#237;cula OLAP sobre una de las celdas que represente las ventas totales en Europa de ese producto espec&#237;fico (Nivel 2).   
+<p class="indent"><a name="1000690220"></a>Tambi&#233;n se seleccionan las celdas de todos los ingresos en el Nivel 2 de Productos combinadas con los ingresos en el Nivel 1 de Regiones. El formateo realizado en una de estas celdas ser&#225; copiado en todas las dem&#225;s celdas seleccionadas.   </p><a name="1000690221"></a><li value="3&nbsp;&nbsp;&nbsp;&nbsp;">Use el comando Formatear Campo para introducir una f&#243;rmula de formato condicional para las celdas seleccionadas. <a href="11_format43.html#89319">See Trabajo con Formato condicional.</a>
+<p class="indent"><a name="1000690222"></a>En sintaxis Crystal, puede introducir una f&#243;rmula como:</p></ol>
+<p><code><a name="1000690223"></a>If GridRowColumnValue("Continente") = "Europa" Then crRed Else crBlue</code></p><p class="indent"><a name="1000690224"></a>En sintaxis b&#225;sica, la f&#243;rmula ser&#225;:</p><p><code><a name="1000690225"></a>If GridRowColumnValue("Continente") = "Europa" Then formula = crRed Else formula = crBlue</code></p><p class="indent"><a name="1000690241"></a>Ver&#225; las ventas totales de los productos individuales en Europa resaltadas en rojo y las ventas totales de los productos individuales en Am&#233;rica del Norte resaltadas en azul.</p><p><a name="1000690245"></a> <img src="images/WinGridGroupAlias4.gif">
+
+
+</p>
+
+<hr><br>
+
+<script  language="JavaScript"><!--
+
+var prev = "Functions248.html";
+var next = "Functions250.html";
+
+function setTopicID() { 
+      var number = "1000690158"; 
+      return number; 
+}
+
+// --></script>
+
+
+
+
+<SCRIPT>
+
+if (!window.parent.toc && navigator.appName == "Netscape") {
+
+   document.writeln ('<TABLE ALIGN="left" border="0" cellspacing="0" cellpadding="10">');
+   document.writeln ('<TR>');
+   document.write ('<TD ALIGN="left">');
+
+   if (prev != "crw_spTOC.hhc") {
+      document.writeln ('<A HREF="' + prev + '">');
+      document.writeln ('<IMG SRC="prevpage.gif" HEIGHT=17 BORDER=0 ALT="Página anterior"></A>');
+   } else {
+//   window.alert ('no previous page');
+   }
+
+   if (next != "crw_spIX.hhk") {
+      document.writeln ('<A HREF="' + next + '">');
+      document.writeln ('<IMG SRC="nextpage.gif" HEIGHT=17 BORDER=0 ALT="Página siguiente"></A>');
+   } else {
+//   window.alert ('no next page');
+   }
+   document.writeln ('</TD><TD ALIGN="left">');
+   document.writeln ('<A HREF="frameset.htm?TOC">');
+   document.writeln ('<IMG SRC="showtoc.gif" HEIGHT=17 BORDER=0 ALT="Haga clic para ver el contenido"></A></TD>');
+   document.writeln ('<TD ALIGN="left">');
+   document.writeln ('<A HREF="frameset.htm?IDX">');
+   document.writeln ('<IMG SRC="showix.gif" HEIGHT=17 BORDER=0 ALT="Haga clic para ver el índice"></A></TD>');
+   document.writeln ('</TD>');
+   document.writeln ('</TR>');
+   document.writeln ('</TABLE>');
+
+}
+
+</SCRIPT>
+<table align="right" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td align="right"><font size="1">Seagate Software, Inc.<br>
+    <a href="http://www.seagatesoftware.com">http://www.seagatesoftware.com</a><br>
+    Envíe sus comentarios a:<br>
+    <a href="mailto:techpubs@seagatesoftware.com">techpubs@seagatesoftware.com</a><br>
+    </font></td>
+  </tr>
+</table>
+</body>
+</html>
+
+

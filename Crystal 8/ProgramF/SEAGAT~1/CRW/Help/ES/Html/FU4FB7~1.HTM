@@ -1,0 +1,98 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+
+<html>
+<head>
+<title>IIF (expresi&#243;n, parteVerdadero, parteFalso)</title>
+
+<link REL=STYLESHEET TYPE="text/css" HREF="seagate.css">
+
+<!--
+                 ***********************************
+                 * Seagate Software copyright 1999 *
+                 ***********************************
+
+                      Template version: 5.1
+-->
+
+
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" link="#0000FF" vlink="#0000FF" alink="#800080">
+
+
+ 
+<a name="1000571561"></a><h3 class="newpage"> IIF (expresi&#243;n, parteVerdadero, parteFalso)</h3>
+<p><a name="1000709084"></a>Sintaxis b&#225;sica y Crystal.</p><a name="1000571562"></a><h5>Argumento</h5><ul type="disc"><ul type="disc"><a name="1000571563"></a><li>expresi&#243;n es una expresi&#243;n Booleana.<a name="1000571564"></a><li>parteVerdadero es el valor devuelto si la expresi&#243;n es Verdadera.   Puede ser de cualquier tipo simple (N&#250;mero, Moneda, Cadena, Booleana, Fecha, Hora, o FechaHora) o un tipo de rango (Rango de N&#250;meros, Rango de Monedas, Rango de Cadenas, Rango de fechas, Rango de Horas o Rango de fechaHora), pero no pueden ser una matriz.  <a name="1000571565"></a><li> parteFalso es el valor devuelto si la expresi&#243;n es Falsa. Debe ser del mismo tipo que parteVerdadero.</ul></ul><a name="1000571566"></a><h5>Devuelve </h5><p><a name="1000571567"></a>parteVerdadero si la expresi&#243;n es Verdadera y parteFalso si la expresi&#243;n es Falsa. El tipo del valor devuelto es el mismo que el tipo de parteVerdadero y parteFalso.</p><a name="1000571568"></a><h5>Acci&#243;n</h5><p><a name="1000571569"></a>IIF devuelve una de dos partes, dependiendo de la evaluaci&#243;n de la expresi&#243;n.   </p><a name="1000571570"></a><h5>Uso(s) t&#237;pico(s)</h5><ul type="disc"><a name="1000571571"></a><li>IIF puede usarse como alternativa a la estructura de control If/Then/Else en algunas situaciones.
+<a name="1000571572"></a><li>Una situaci&#243;n en la que IIF puede ser mejor que una estructura de control es cuando se escriben f&#243;rmulas de selecci&#243;n de registros para instalarlas en el servidor de la base de datos.   Vea <a href="Functions168.html#1000571589">Switch (expr1, valor1, expr2, valor2, ..., exprN, valorN)</a> para ejemplos y <a href="07_recordgroupsel12.html#53628">F&#243;rmulas avanzadas de selecci&#243;n de registros</a> para una explicaci&#243;n de las t&#233;cnicas involucradas.   
+</ul><a name="1000571573"></a><h5>Ejemplo(s)</h5><p><a name="1000571574"></a>Los siguientes ejemplos son aplicables a las sintaxis b&#225;sica y Crystal:</p><p><code><a name="1000571576"></a>IIF ({pedidos.MONTO DEL PEDIDO} &gt; 10000, "pedido grande", "pedido est&#225;ndar")</code></p><p class="example"><a name="1000571577"></a>Devuelve el valor Cadena "pedido grande" si {pedidos.MONTO DEL PEDIDO} es mayor que $10.000; de lo contrario, devuelve un valor de cadena  "pedido est&#225;ndar". </p><p><a name="1000571579"></a>Puede insertar un campo de f&#243;rmula que represente el monto del pedido si ya se ha hecho el pedido, de lo contrario es 0:</p><p class="code"><a name="1000571580"></a>Sintaxis b&#225;sica Rem
+<br><a name="1000571581"></a>formula = IIF ({Pedidos.Pago Recibido}, {pedidos.MONTO DEL PEDIDO}, 0)
+<br><a name="1000571582"></a>
+<br><a name="1000571583"></a>//Sintaxis Crystal
+<br><a name="1000571584"></a>IIF ({Pedidos.Pago Recibido}, {pedidos.MONTO DEL PEDIDO}, 0)
+</p><a name="1000571585"></a><h5>Comentario(s) </h5><ul type="disc"><a name="1000571586"></a><li>Esta funci&#243;n est&#225; dise&#241;ada para trabajar exactamente como la funci&#243;n de Visual Basic del mismo nombre. Una diferencia es que la funci&#243;n no devuelve una Variante y, en consecuencia, parteVerdadero y parteFalso deben ser del mismo tipo. 
+<a name="1000571587"></a><li>Cada argumento de la funci&#243;n IIF se eval&#250;a antes de retornarse el resultado. Por lo tanto, cuando use la funci&#243;n IIF, debe estar atento a los efectos secundarios no deseados.   Por ejemplo, si parteFalso resulta en una divisi&#243;n por cero, se generar&#225; un error, aun si la expresi&#243;n es Verdadera y por ello se devuelve parteVerdadero.
+</ul><a name="1000709016"></a><h6>Temas relacionados</h6><p><a name="1000709093"></a><a href="Functions166.html#1000571527">Choose (&#237;ndice, opci&#243;n1, opci&#243;n2, .., opci&#243;nN)</a></p><p><a name="1000709099"></a><a href="Functions168.html#1000571589">Switch (expr1, valor1, expr2, valor2, ..., exprN, valorN)</a></p><p><a name="1000709880"></a><a href="20_basicsyntax51.html#132768">Enunciados Select</a> (Sintaxis b&#225;sica)</p><p><a name="1000709020"></a><a href="21_crystalsyntax56.html#147492">Expresiones Select</a> (Sintaxis Crystal)</p>
+<hr><br>
+
+<script  language="JavaScript"><!--
+
+var prev = "Functions166.html";
+var next = "Functions168.html";
+
+function setTopicID() { 
+      var number = "1000571561"; 
+      return number; 
+}
+
+// --></script>
+
+
+
+
+<SCRIPT>
+
+if (!window.parent.toc && navigator.appName == "Netscape") {
+
+   document.writeln ('<TABLE ALIGN="left" border="0" cellspacing="0" cellpadding="10">');
+   document.writeln ('<TR>');
+   document.write ('<TD ALIGN="left">');
+
+   if (prev != "crw_spTOC.hhc") {
+      document.writeln ('<A HREF="' + prev + '">');
+      document.writeln ('<IMG SRC="prevpage.gif" HEIGHT=17 BORDER=0 ALT="Página anterior"></A>');
+   } else {
+//   window.alert ('no previous page');
+   }
+
+   if (next != "crw_spIX.hhk") {
+      document.writeln ('<A HREF="' + next + '">');
+      document.writeln ('<IMG SRC="nextpage.gif" HEIGHT=17 BORDER=0 ALT="Página siguiente"></A>');
+   } else {
+//   window.alert ('no next page');
+   }
+   document.writeln ('</TD><TD ALIGN="left">');
+   document.writeln ('<A HREF="frameset.htm?TOC">');
+   document.writeln ('<IMG SRC="showtoc.gif" HEIGHT=17 BORDER=0 ALT="Haga clic para ver el contenido"></A></TD>');
+   document.writeln ('<TD ALIGN="left">');
+   document.writeln ('<A HREF="frameset.htm?IDX">');
+   document.writeln ('<IMG SRC="showix.gif" HEIGHT=17 BORDER=0 ALT="Haga clic para ver el índice"></A></TD>');
+   document.writeln ('</TD>');
+   document.writeln ('</TR>');
+   document.writeln ('</TABLE>');
+
+}
+
+</SCRIPT>
+<table align="right" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td align="right"><font size="1">Seagate Software, Inc.<br>
+    <a href="http://www.seagatesoftware.com">http://www.seagatesoftware.com</a><br>
+    Envíe sus comentarios a:<br>
+    <a href="mailto:techpubs@seagatesoftware.com">techpubs@seagatesoftware.com</a><br>
+    </font></td>
+  </tr>
+</table>
+</body>
+</html>
+
+

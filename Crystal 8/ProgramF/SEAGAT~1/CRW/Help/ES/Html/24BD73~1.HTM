@@ -1,0 +1,216 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+
+<html>
+<head>
+<title>Uni&#243;n Extrema Derecha [(+)=, =*]</title>
+
+<link REL=STYLESHEET TYPE="text/css" HREF="seagate.css">
+
+<!--
+                 ***********************************
+                 * Seagate Software copyright 1999 *
+                 ***********************************
+
+                      Template version: 5.1
+-->
+
+
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" link="#0000FF" vlink="#0000FF" alink="#800080">
+
+
+ 
+<a name="321800"></a><h4 class="newpage"> Uni&#243;n Extrema Derecha [(+)=, =*]</h4><p><a name="321801"></a>El conjunto de resultados de una uni&#243;n Extrema Derecha incluye todos los registros donde el valor del campo vinculado en ambas tablas coincide exactamente. Tambi&#233;n incluye una fila por cada registro en la tabla de comparaci&#243;n (derecha) cuyo valor de campo vinculado no coincide con la tabla principal. Si vincula la tabla Clientes a la tabla Pedidos, obtiene una fila en la tabla por cada pedido que haya hecho un cliente, igual que en una uni&#243;n Igual que. Tambi&#233;n obtiene una l&#237;nea por cada pedido hallado que no puede ser vinculado a un cliente. Te&#243;ricamente, esto no deber&#237;a suceder, pero si un vendedor sin experiencia se olvid&#243; de asignar una Id. del cliente a un pedido, puede localizar r&#225;pidamente ese pedido con una uni&#243;n Extrema Derecha. La tabla resultante deja un espacio en blanco en cualquier campo de Clientes para el pedido sin un cliente:</p><p><a name="321881"></a> <Table Border="1">
+<tr><th align="left" valign="bottom"><a name="321804"></a>Tabla Clientes
+
+</th><th align="left" valign="bottom"><a name="321806"></a>Tabla Pedidos
+
+</th><th align="left" valign="bottom"><a name="321808"></a>Tabla Pedidos
+
+</th></tr>
+<tr><th align="left" valign="bottom"><a name="321810"></a>Id. del Cliente
+
+</th><th align="left" valign="bottom"><a name="321812"></a>Id. del Pedido
+
+</th><th align="left" valign="bottom"><a name="321814"></a>Monto del Pedido
+
+</th></tr>
+<tr><td align="left" valign="TOP"><P><a name="321816"></a>52</P>
+
+
+</td><td align="left" valign="TOP"><P><a name="321818"></a>6</P>
+
+
+</td><td align="left" valign="TOP"><P><a name="321820"></a>25141.50</P>
+
+
+</td></tr>
+<tr><td align="left" valign="TOP"><P><a name="321822"></a>53</P>
+
+
+</td><td align="left" valign="TOP"><P><a name="321824"></a>11</P>
+
+
+</td><td align="left" valign="TOP"><P><a name="321826"></a>19164.30</P>
+
+
+</td></tr>
+<tr><td align="left" valign="TOP"><P><a name="321828"></a>53</P>
+
+
+</td><td align="left" valign="TOP"><P><a name="321830"></a>21</P>
+
+
+</td><td align="left" valign="TOP"><P><a name="321832"></a>1683.60</P>
+
+
+</td></tr>
+<tr><td align="left" valign="TOP"><P><a name="321834"></a>57</P>
+
+
+</td><td align="left" valign="TOP"><P><a name="321836"></a>4</P>
+
+
+</td><td align="left" valign="TOP"><P><a name="321838"></a>15716.40</P>
+
+
+</td></tr>
+<tr><td align="left" valign="TOP"><P><a name="321840"></a>58</P>
+
+
+</td><td align="left" valign="TOP"><P><a name="321842"></a>20</P>
+
+
+</td><td align="left" valign="TOP"><P><a name="321844"></a>1956.20</P>
+
+
+</td></tr>
+<tr><td align="left" valign="TOP"><P><a name="321846"></a>60</P>
+
+
+</td><td align="left" valign="TOP"><P><a name="321848"></a>16</P>
+
+
+</td><td align="left" valign="TOP"><P><a name="321850"></a>24580.50</P>
+
+
+</td></tr>
+<tr><td align="left" valign="TOP"><P><a name="321852"></a>62</P>
+
+
+</td><td align="left" valign="TOP"><P><a name="321854"></a>19</P>
+
+
+</td><td align="left" valign="TOP"><P><a name="321856"></a>7911.80</P>
+
+
+</td></tr>
+<tr><td align="left" valign="TOP"><P><a name="321858"></a>63</P>
+
+
+</td><td align="left" valign="TOP"><P><a name="321860"></a>28</P>
+
+
+</td><td align="left" valign="TOP"><P><a name="321862"></a>19766.20</P>
+
+
+</td></tr>
+<tr><td align="left" valign="TOP"><P><a name="321864"></a>63</P>
+
+
+</td><td align="left" valign="TOP"><P><a name="321866"></a>32</P>
+
+
+</td><td align="left" valign="TOP"><P><a name="321868"></a>12763.95</P>
+
+
+</td></tr>
+<tr><td align="left" valign="TOP"><P><a name="321870"></a>64</P>
+
+
+</td><td align="left" valign="TOP"><P><a name="321872"></a>14</P>
+
+
+</td><td align="left" valign="TOP"><P><a name="321874"></a>8233.50</P>
+
+
+</td></tr>
+<tr><td align="left" valign="TOP"><P><br></P>
+
+
+</td><td align="left" valign="TOP"><P><a name="321878"></a>25</P>
+
+
+</td><td align="left" valign="TOP"><P><a name="321880"></a>10320.87</P>
+
+
+</td></tr>
+
+</Table></p>
+<p><a name="327999"></a><font color="darkblue"><b>Nota:   &nbsp;&nbsp;&nbsp;</b></font>Las uniones Extrema Izquierda y Extrema Derecha son manejados de manera diferente en el lenguaje SQL a los otros tipos de uniones. Si la base de datos es accesible a trav&#233;s de ODBC, Seagate Crystal Reports utilizar&#225; la sintaxis ODBC en el enunciado SQL. Si se est&#225; conectando a una base de datos SQL directamente (no a trav&#233;s de ODBC), Seagate Crystal Reports utilizar&#225; una sintaxis originaria a la base de datos. Para informaci&#243;n completa sobre c&#243;mo se ve una uni&#243;n Extrema en un enunciado SQL, refi&#233;rase a la documentaci&#243;n de Microsoft ODBC o a la documentaci&#243;n de su base de datos SQL.</p>
+
+<hr><br>
+
+<script  language="JavaScript"><!--
+
+var prev = "24_under_databases21.html";
+var next = "24_under_databases23.html";
+
+function setTopicID() { 
+      var number = "321800"; 
+      return number; 
+}
+
+// --></script>
+
+
+
+
+<SCRIPT>
+
+if (!window.parent.toc && navigator.appName == "Netscape") {
+
+   document.writeln ('<TABLE ALIGN="left" border="0" cellspacing="0" cellpadding="10">');
+   document.writeln ('<TR>');
+   document.write ('<TD ALIGN="left">');
+
+   if (prev != "crw_spTOC.hhc") {
+      document.writeln ('<A HREF="' + prev + '">');
+      document.writeln ('<IMG SRC="prevpage.gif" HEIGHT=17 BORDER=0 ALT="Página anterior"></A>');
+   } else {
+//   window.alert ('no previous page');
+   }
+
+   if (next != "crw_spIX.hhk") {
+      document.writeln ('<A HREF="' + next + '">');
+      document.writeln ('<IMG SRC="nextpage.gif" HEIGHT=17 BORDER=0 ALT="Página siguiente"></A>');
+   } else {
+//   window.alert ('no next page');
+   }
+   document.writeln ('</TD><TD ALIGN="left">');
+   document.writeln ('<A HREF="frameset.htm?TOC">');
+   document.writeln ('<IMG SRC="showtoc.gif" HEIGHT=17 BORDER=0 ALT="Haga clic para ver el contenido"></A></TD>');
+   document.writeln ('<TD ALIGN="left">');
+   document.writeln ('<A HREF="frameset.htm?IDX">');
+   document.writeln ('<IMG SRC="showix.gif" HEIGHT=17 BORDER=0 ALT="Haga clic para ver el índice"></A></TD>');
+   document.writeln ('</TD>');
+   document.writeln ('</TR>');
+   document.writeln ('</TABLE>');
+
+}
+
+</SCRIPT>
+<table align="right" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td align="right"><font size="1">Seagate Software, Inc.<br>
+    <a href="http://www.seagatesoftware.com">http://www.seagatesoftware.com</a><br>
+    Envíe sus comentarios a:<br>
+    <a href="mailto:techpubs@seagatesoftware.com">techpubs@seagatesoftware.com</a><br>
+    </font></td>
+  </tr>
+</table>
+</body>
+</html>
+
+

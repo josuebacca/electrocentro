@@ -1,0 +1,98 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+
+<html>
+<head>
+<title>ExchGetSite (direcci&#243;n)</title>
+
+<link REL=STYLESHEET TYPE="text/css" HREF="seagate.css">
+
+<!--
+                 ***********************************
+                 * Seagate Software copyright 1999 *
+                 ***********************************
+
+                      Template version: 5.1
+-->
+
+
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" link="#0000FF" vlink="#0000FF" alink="#800080">
+
+
+ 
+<a name="1000586493"></a><h3 class="newpage"> ExchGetSite (direcci&#243;n)</h3>
+<p><a name="1000652088"></a>Sintaxis b&#225;sica y Crystal.</p><a name="1000586497"></a><h5>Argumento(s)</h5><p><a name="1000586498"></a>direcci&#243;n es la direcci&#243;n del emisor/receptor (tipo de datos de cadena).</p><a name="1000586499"></a><h5>Devuelve </h5><p><a name="1000586500"></a>Una cadena</p><a name="1000586501"></a><h5>Acci&#243;n</h5><p><a name="1000586502"></a>La funci&#243;n comenzar&#225; por determinar si la direcci&#243;n est&#225; en formato X500 o X400. Una vez que esto ha sido solucionado, entonces la funci&#243;n determinar&#225; el Nombre del sitio. </p><ul type="disc"><a name="1000586503"></a><li>Si el campo est&#225; en formato X500, la funci&#243;n extraer&#225; la &#250;ltima instancia del c&#243;digo "/OU=" (no sensible a may&#250;sculas/min&#250;sculas). 
+<a name="1000586504"></a><li>Si el campo est&#225; en formato X400, extraer&#225; la instancia del c&#243;digo "O="  (no sensible a may&#250;sculas/min&#250;sculas).
+</ul><p><a name="1000684425"></a><font color="darkblue"><b>Nota:   &nbsp;&nbsp;&nbsp;</b></font>Los campos deben seguir los est&#225;ndares de tipo de direcci&#243;n para las funciones para operarlos.</p>
+<a name="1000586511"></a><h5>Ejemplo(s)</h5><p><a name="1000586512"></a>Los siguientes ejemplos son aplicables para la sintaxis Crystal:</p><p class="code"><a name="1000586513"></a>Campo = /o=Seagate Software/ou=CRYSTALNT/
+<br><a name="1000721898"></a>/cn=Configuration/cn=Servers/cn=ESPRESSO/cn=Fredt
+<br><a name="1000586514"></a>ExchGetSite({Campo})
+</p><p class="example"><a name="1000586515"></a>Devuelve "CRYSTALNT".</p><p class="code"><a name="1000586516"></a>Campo = c=US; a= ;p=Microsoft; o=apps<nobr>-w</nobr>ga;
+<br><a name="1000721899"></a>dda:smtp=James@Rich.com.
+<br><a name="1000586517"></a>ExchGetSite({Campo})
+</p><p class="example"><a name="1000586518"></a>Devuelve "apps<nobr>-w</nobr>ga".</p>
+<hr><br>
+
+<script  language="JavaScript"><!--
+
+var prev = "Functions211.html";
+var next = "Functions213.html";
+
+function setTopicID() { 
+      var number = "1000586493"; 
+      return number; 
+}
+
+// --></script>
+
+
+
+
+<SCRIPT>
+
+if (!window.parent.toc && navigator.appName == "Netscape") {
+
+   document.writeln ('<TABLE ALIGN="left" border="0" cellspacing="0" cellpadding="10">');
+   document.writeln ('<TR>');
+   document.write ('<TD ALIGN="left">');
+
+   if (prev != "crw_spTOC.hhc") {
+      document.writeln ('<A HREF="' + prev + '">');
+      document.writeln ('<IMG SRC="prevpage.gif" HEIGHT=17 BORDER=0 ALT="Página anterior"></A>');
+   } else {
+//   window.alert ('no previous page');
+   }
+
+   if (next != "crw_spIX.hhk") {
+      document.writeln ('<A HREF="' + next + '">');
+      document.writeln ('<IMG SRC="nextpage.gif" HEIGHT=17 BORDER=0 ALT="Página siguiente"></A>');
+   } else {
+//   window.alert ('no next page');
+   }
+   document.writeln ('</TD><TD ALIGN="left">');
+   document.writeln ('<A HREF="frameset.htm?TOC">');
+   document.writeln ('<IMG SRC="showtoc.gif" HEIGHT=17 BORDER=0 ALT="Haga clic para ver el contenido"></A></TD>');
+   document.writeln ('<TD ALIGN="left">');
+   document.writeln ('<A HREF="frameset.htm?IDX">');
+   document.writeln ('<IMG SRC="showix.gif" HEIGHT=17 BORDER=0 ALT="Haga clic para ver el índice"></A></TD>');
+   document.writeln ('</TD>');
+   document.writeln ('</TR>');
+   document.writeln ('</TABLE>');
+
+}
+
+</SCRIPT>
+<table align="right" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td align="right"><font size="1">Seagate Software, Inc.<br>
+    <a href="http://www.seagatesoftware.com">http://www.seagatesoftware.com</a><br>
+    Envíe sus comentarios a:<br>
+    <a href="mailto:techpubs@seagatesoftware.com">techpubs@seagatesoftware.com</a><br>
+    </font></td>
+  </tr>
+</table>
+</body>
+</html>
+
+

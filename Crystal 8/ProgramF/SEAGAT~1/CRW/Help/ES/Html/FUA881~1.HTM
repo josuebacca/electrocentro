@@ -1,0 +1,91 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+
+<html>
+<head>
+<title>Round (x), Round (x, #lugares)</title>
+
+<link REL=STYLESHEET TYPE="text/css" HREF="seagate.css">
+
+<!--
+                 ***********************************
+                 * Seagate Software copyright 1999 *
+                 ***********************************
+
+                      Template version: 5.1
+-->
+
+
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" link="#0000FF" vlink="#0000FF" alink="#800080">
+
+
+ 
+<a name="1000850039"></a><h3 class="newpage"> Round (x), Round (x, #lugares)</h3>
+<p><a name="1000850040"></a>Sintaxis b&#225;sica y Crystal.</p><a name="1000850041"></a><h5>Argumentos</h5><ul type="disc"><a name="1000850042"></a><li>x  es un valor fraccionario para ser redondeado.
+<a name="1000850043"></a><li>#lugares es un n&#250;mero entero que indica el n&#250;mero de lugares decimales a que x va a ser redondeado.
+</ul><a name="1000850044"></a><h5>Devuelve </h5><p><a name="1000850045"></a>Un n&#250;mero fraccionario.</p><a name="1000850046"></a><h5>Acci&#243;n </h5><p><a name="1000850047"></a>Round redondea al n&#250;mero entero m&#225;s cercano si se excluye el argumento #lugares. Si el valor a la derecha del punto decimal es .499 o inferior, Crystal Reports redondea al n&#250;mero inferior m&#225;s cercano. Si el valor a la derecha del punto decimal es .5 o superior, Crystal Reports redondea al n&#250;mero superior m&#225;s cercano.</p><p><a name="1000850048"></a>Si se utiliza el argumento #lugares, el valor en x es redondeado al lugar decimal m&#225;s cercano indicado por #lugares. Si se especifica #lugares como 0, la funci&#243;n trabaja de manera id&#233;ntica a cuando se excluye el argumento #lugares. Si #lugares es negativo, el n&#250;mero es redondeado a la decena m&#225;s cercana (.1), centena m&#225;s cercana (.01) y as&#237; sucesivamente.</p><a name="1000850049"></a><h5>Uso(s) t&#237;pico(s)</h5><p><a name="1000850050"></a>Utilice Round siempre que redondear un valor a un lugar decimal particular sea m&#225;s apropiado que utilizar el valor original.</p><a name="1000850051"></a><h5>Ejemplo(s) </h5><p><a name="1000850052"></a>Los siguientes ejemplos se aplican a las sintaxis b&#225;sica y Crystal, aunque se prefiere Fix en esta &#250;ltima:</p><p><code><a name="1000850053"></a>Round(1.23456) </code></p><p class="example"><a name="1000850054"></a>Devuelve 1.</p><p><code><a name="1000850055"></a>Round(1.499) </code></p><p class="example"><a name="1000850056"></a>Devuelve 1.</p><p><code><a name="1000850057"></a>Round(1.5000) </code></p><p class="example"><a name="1000850058"></a>Devuelve 2.</p><p><code><a name="1000850059"></a>Round(2345.23456,4) </code></p><p class="example"><a name="1000850060"></a>Devuelve 2345.2346.</p><p><code><a name="1000850061"></a>Round(2345.23456,3) </code></p><p class="example"><a name="1000850062"></a>Devuelve 2345.235.</p><p><code><a name="1000850063"></a>Round(2345.23456,2) </code></p><p class="example"><a name="1000850064"></a>Devuelve 2345.23.</p><p><code><a name="1000850065"></a>Round(2345.23456,0) </code></p><p class="example"><a name="1000850066"></a>Devuelve 2345.</p><p><code><a name="1000850067"></a>Round(2345.23456,-1) </code></p><p class="example"><a name="1000850068"></a>Devuelve 2350.</p><p><code><a name="1000850069"></a>Round(2345.23456,-2) </code></p><p class="example"><a name="1000850070"></a>Devuelve 2300.</p><p><code><a name="1000850071"></a>Round(2345.23456,-3) </code></p><p class="example"><a name="1000850072"></a>Devuelve 2000.</p><p><code><a name="1000850073"></a>Round(1.234499,3) </code></p><p class="example"><a name="1000850074"></a>Devuelve 1.234.</p><p><code><a name="1000850075"></a>Round(1.234500,3) </code></p><p class="example"><a name="1000850076"></a>Devuelve 1.235.</p><p><code><a name="1000850077"></a>Round({archivo.CANTIDAD},1) </code></p><p class="example"><a name="1000850078"></a>Devuelve 1854.5 cuando Cantidad = 1854.49.</p><p><code><a name="1000850079"></a>Round({archivo.CANTIDAD}) </code></p><p class="example"><a name="1000850080"></a>Devuelve 1854.00 cuando Cantidad = 1854.49.</p><p><code><a name="1000850081"></a>Round({archivo.CANTIDAD}) </code></p><p class="example"><a name="1000850082"></a>Devuelve 1855.00 cuando Cantidad = 1854.51.</p><p><code><a name="1000850083"></a>Round({archivo.PESO} / 100) </code></p><p class="example"><a name="1000850084"></a>Devuelve 4 cuando Peso = 424.</p><p><code><a name="1000850085"></a>Round({archivo.PESO} / 100) </code></p><p class="example"><a name="1000850086"></a>Devuelve 5 cuando Peso = 451.</p><p><code><a name="1000850087"></a>Round((A * B) / C) </code></p><p class="example"><a name="1000850088"></a>Devuelve 11 cuando A = 25, B = 3 y C = 7.</p><p><code><a name="1000850089"></a>Round(archivo.CANTIDAD,1) </code></p><p class="example"><a name="1000850090"></a>Devuelve 1854.5 cuando Cantidad = 1854.51.</p><p><code><a name="1000850091"></a>Round({archivo.SUELDO} * {archivo.HORAS TRABAJADAS}, 2) </code></p><p class="example"><a name="1000850092"></a>Devuelve $146.63 cuando Sueldo = $5.75 y Horas trabajadas = 25.5.</p><a name="1000850093"></a><h5>Comentarios</h5><p><a name="1000850094"></a>El redondeo es tambi&#233;n una caracter&#237;stica disponible como opci&#243;n para dar formato a valores num&#233;ricos en campos. </p><p><a name="1000850095"></a>Tenga en cuenta que el uso de caracter&#237;sticas de formato de campo puede afectar a la forma en que se utilizan los valores en las f&#243;rmulas. Para obtener m&#225;s informaci&#243;n, consulte la funci&#243;n ToNumber y el operador ToCurrency.</p><a name="1000850096"></a><h6>Temas relacionados</h6><p><a name="1000850100"></a><a href="Functions7.html#1000850115">Truncate (x), Truncate (x, #lugares)</a></p><p><a name="1000850104"></a><a href="Functions8.html#1000850182">Fix</a></p><p><a name="1000850108"></a><a href="Functions5.html#1000850004">Int (n&#250;mero)</a></p><p><a name="1000850112"></a><a href="19_introformulas36.html#317048">F&#243;rmula 8</a></p>
+<hr><br>
+
+<script  language="JavaScript"><!--
+
+var prev = "Functions5.html";
+var next = "Functions7.html";
+
+function setTopicID() { 
+      var number = "1000850039"; 
+      return number; 
+}
+
+// --></script>
+
+
+
+
+<SCRIPT>
+
+if (!window.parent.toc && navigator.appName == "Netscape") {
+
+   document.writeln ('<TABLE ALIGN="left" border="0" cellspacing="0" cellpadding="10">');
+   document.writeln ('<TR>');
+   document.write ('<TD ALIGN="left">');
+
+   if (prev != "crw_spTOC.hhc") {
+      document.writeln ('<A HREF="' + prev + '">');
+      document.writeln ('<IMG SRC="prevpage.gif" HEIGHT=17 BORDER=0 ALT="Página anterior"></A>');
+   } else {
+//   window.alert ('no previous page');
+   }
+
+   if (next != "crw_spIX.hhk") {
+      document.writeln ('<A HREF="' + next + '">');
+      document.writeln ('<IMG SRC="nextpage.gif" HEIGHT=17 BORDER=0 ALT="Página siguiente"></A>');
+   } else {
+//   window.alert ('no next page');
+   }
+   document.writeln ('</TD><TD ALIGN="left">');
+   document.writeln ('<A HREF="frameset.htm?TOC">');
+   document.writeln ('<IMG SRC="showtoc.gif" HEIGHT=17 BORDER=0 ALT="Haga clic para ver el contenido"></A></TD>');
+   document.writeln ('<TD ALIGN="left">');
+   document.writeln ('<A HREF="frameset.htm?IDX">');
+   document.writeln ('<IMG SRC="showix.gif" HEIGHT=17 BORDER=0 ALT="Haga clic para ver el índice"></A></TD>');
+   document.writeln ('</TD>');
+   document.writeln ('</TR>');
+   document.writeln ('</TABLE>');
+
+}
+
+</SCRIPT>
+<table align="right" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td align="right"><font size="1">Seagate Software, Inc.<br>
+    <a href="http://www.seagatesoftware.com">http://www.seagatesoftware.com</a><br>
+    Envíe sus comentarios a:<br>
+    <a href="mailto:techpubs@seagatesoftware.com">techpubs@seagatesoftware.com</a><br>
+    </font></td>
+  </tr>
+</table>
+</body>
+</html>
+
+

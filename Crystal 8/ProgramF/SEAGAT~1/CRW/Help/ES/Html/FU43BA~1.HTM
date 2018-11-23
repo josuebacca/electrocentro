@@ -1,0 +1,94 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+
+<html>
+<head>
+<title>DTSTo2000 (cadenaFecha, n&#250;mero)</title>
+
+<link REL=STYLESHEET TYPE="text/css" HREF="seagate.css">
+
+<!--
+                 ***********************************
+                 * Seagate Software copyright 1999 *
+                 ***********************************
+
+                      Template version: 5.1
+-->
+
+
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" link="#0000FF" vlink="#0000FF" alink="#800080">
+
+
+ 
+<a name="1000827521"></a><h3 class="newpage"> DTSTo2000 (cadenaFecha, n&#250;mero)</h3>
+<p><a name="1000827522"></a>Sintaxis b&#225;sica y Crystal.</p><a name="1000585350"></a><h5>Argumentos</h5><ul type="disc"><a name="1000585351"></a><li>cadenaFecha: acepta s&#243;lo campos de fecha v&#225;lidos, ya sea con a&#241;os de dos o cuatro d&#237;gitos.
+<ul type="disc"><ul type="disc"><a name="1000585352"></a><li>Un campo de base de datos definido como campo de fecha. Archivar|Opciones del informe debe ser configurado a Convertir campos de Fecha/Hora a fecha.<a name="1000585353"></a><li>Un campo de base de datos definido como campo de cadena, pero conteniendo una fecha.<a name="1000585354"></a><li>Una cadena de fecha/hora introducida en el formato: "yyyy/MM/dd HH:mm:ss.00" o "yy/MM/dd HH:mm:ss:00", por ejemplo,  "1997/04/11 12:12:12.00" o "97/04/11 12:12:12.00".</ul></ul><a name="1000585355"></a><li>n&#250;mero: un n&#250;mero entre 0 y 99 correspondiente con el a&#241;o mostrado en la ventana.
+</ul><a name="1000585356"></a><h5>Devuelve </h5><p><a name="1000585357"></a>Una cadena de fecha/hora con a&#241;o de cuatro d&#237;gitos</p><a name="1000585358"></a><h5>Acci&#243;n </h5><ul type="disc"><a name="1000585359"></a><li>A&#241;os de dos d&#237;gitos (xx):
+<p class="indent"><a name="1000585360"></a>Si el valor A&#241;o es mayor que el n&#250;mero de la ventana, el n&#250;mero 19 es agregado antes de los dos d&#237;gitos (19xx). Si el valor A&#241;o es menor o igual que el n&#250;mero mostrado, se agrega el n&#250;mero 20 (20xx).</p><a name="1000585361"></a><li>A&#241;os de cuatro d&#237;gitos (19xx):
+<p class="indent"><a name="1000585362"></a>Si los dos &#250;ltimos d&#237;gitos en el valor A&#241;o son mayores que el n&#250;mero de la ventana, el A&#241;o se preserva tal como se encuentra en el campo fecha (19xx). Si los dos d&#237;gitos en el valor A&#241;o son menores o igual que el n&#250;mero de la ventana, los dos primeros d&#237;gitos se cambian a 20 (20xx). Si los dos primeros d&#237;gitos en el campo A&#241;o son menores que 20, el A&#241;o es preservado tal como se encuentra en el campo fecha (20xx).</p><p class="indent"><a name="1000585363"></a><font color="darkblue"><b>Nota:   &nbsp;&nbsp;&nbsp;</b></font>Si el a&#241;o es menor o igual a 1899 y mayor o igual a 100, entonces no habr&#225; cambio en la fecha.</p>
+</ul><a name="1000585364"></a><h5>Ejemplo(s)</h5><p><a name="1000585365"></a>Los siguientes ejemplos son aplicables a las sintaxis b&#225;sica y Crystal:</p><p><a name="1000585366"></a>El valor de la ventana es mayor que el a&#241;o, de manera que cambiar&#225; a 20XX.</p><p><code><a name="1000585367"></a>DTSTo2000(ToText(CDateTime(1988,12,12,12,12,12)), 90)</code></p><p class="example"><a name="1000585368"></a>debe devolver 2093/12/12 12:12:12</p><p><a name="1000585369"></a>El valor de la ventana es menor que el a&#241;o, de manera que no cambiar&#225; el a&#241;o</p><p><code><a name="1000585370"></a>DTSTo2000(ToText(CDateTime(1984,12,12,1,2,3)), 83)</code></p><p class="example"><a name="1000585371"></a>debe devolver 1984/12/12 1:02:03</p><a name="1000585372"></a><h5>Otros ejemplos </h5><p><a name="1000585373"></a>Estos son ejemplos de fechas que no ser&#225;n afectados por la funci&#243;n.</p><p><code><a name="1000585374"></a>DTSTo2000(ToText(CDateTime(1899,12,12,1,2,3)), 99)</code></p><p class="example"><a name="1000585375"></a>debe devolver 1899/12/12 1:02:03</p><p><code><a name="1000585376"></a>DTSTo2000(ToText(CDateTime(1899,12,12)), 99)</code></p><p class="example"><a name="1000585377"></a>debe devolver 1899/12/12 12:00:00</p><p><code><a name="1000585378"></a>DTSTo2000(ToText(CDateTime(100,12,12,1,2,3)), 99)</code></p><p class="example"><a name="1000585379"></a>debe devolver 100/12/12 1:02:03</p><p><a name="1000585380"></a>Algunas bases de datos mantienen el a&#241;o de la fecha como un campo de dos d&#237;gitos. Estos ejemplos simular&#225;n ese campo de fecha.</p><p><code><a name="1000585381"></a>DTSTo2000(ToText(CDateTime(98,12,12,1,2,3)), 99)</code></p><p class="example"><a name="1000585382"></a>debe devolver 2098/12/12 1:02:03</p><p><code><a name="1000585383"></a>DTSTo2000(ToText(CDateTime(98,12,12,1,2,3)), 97)</code></p><p class="example"><a name="1000585384"></a>debe devolver 1998/12/12 1:02:03</p><p><code><a name="1000585385"></a>DTSTo2000(ToText(CDateTime(98,12,12), 97)</code></p><p class="example"><a name="1000585386"></a>debe devolver 1998/12/12 12:00:00</p><p><code><a name="1000585387"></a>DTSTo2000(ToText(CDateTime(9,12,12,1,2,3)), 10)</code></p><p class="example"><a name="1000585388"></a>debe devolver 2009/12/12 1:02:03</p><p><code><a name="1000585389"></a>DTSTo2000(ToText(CDateTime(1,12,12,1,2,3)), 0)</code></p><p class="example"><a name="1000585390"></a>debe devolver 1901/12/12 1:02:03</p>
+<hr><br>
+
+<script  language="JavaScript"><!--
+
+var prev = "Functions205.html";
+var next = "Functions207.html";
+
+function setTopicID() { 
+      var number = "1000827521"; 
+      return number; 
+}
+
+// --></script>
+
+
+
+
+<SCRIPT>
+
+if (!window.parent.toc && navigator.appName == "Netscape") {
+
+   document.writeln ('<TABLE ALIGN="left" border="0" cellspacing="0" cellpadding="10">');
+   document.writeln ('<TR>');
+   document.write ('<TD ALIGN="left">');
+
+   if (prev != "crw_spTOC.hhc") {
+      document.writeln ('<A HREF="' + prev + '">');
+      document.writeln ('<IMG SRC="prevpage.gif" HEIGHT=17 BORDER=0 ALT="Página anterior"></A>');
+   } else {
+//   window.alert ('no previous page');
+   }
+
+   if (next != "crw_spIX.hhk") {
+      document.writeln ('<A HREF="' + next + '">');
+      document.writeln ('<IMG SRC="nextpage.gif" HEIGHT=17 BORDER=0 ALT="Página siguiente"></A>');
+   } else {
+//   window.alert ('no next page');
+   }
+   document.writeln ('</TD><TD ALIGN="left">');
+   document.writeln ('<A HREF="frameset.htm?TOC">');
+   document.writeln ('<IMG SRC="showtoc.gif" HEIGHT=17 BORDER=0 ALT="Haga clic para ver el contenido"></A></TD>');
+   document.writeln ('<TD ALIGN="left">');
+   document.writeln ('<A HREF="frameset.htm?IDX">');
+   document.writeln ('<IMG SRC="showix.gif" HEIGHT=17 BORDER=0 ALT="Haga clic para ver el índice"></A></TD>');
+   document.writeln ('</TD>');
+   document.writeln ('</TR>');
+   document.writeln ('</TABLE>');
+
+}
+
+</SCRIPT>
+<table align="right" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td align="right"><font size="1">Seagate Software, Inc.<br>
+    <a href="http://www.seagatesoftware.com">http://www.seagatesoftware.com</a><br>
+    Envíe sus comentarios a:<br>
+    <a href="mailto:techpubs@seagatesoftware.com">techpubs@seagatesoftware.com</a><br>
+    </font></td>
+  </tr>
+</table>
+</body>
+</html>
+
+

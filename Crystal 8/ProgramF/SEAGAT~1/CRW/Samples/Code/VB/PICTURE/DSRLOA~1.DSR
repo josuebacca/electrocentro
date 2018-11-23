@@ -1,0 +1,96 @@
+VERSION 5.00
+Begin {BD4B4E61-F7B8-11D0-964D-00A0C9273C2A} dsrLoadPicture 
+   ClientHeight    =   10020
+   ClientLeft      =   1395
+   ClientTop       =   1575
+   ClientWidth     =   11790
+   OleObjectBlob   =   "dsrLoadPicture.dsx":0000
+End
+Attribute VB_Name = "dsrLoadPicture"
+Attribute VB_GlobalNameSpace = False
+Attribute VB_Creatable = False
+Attribute VB_PredeclaredId = False
+Attribute VB_Exposed = False
+' *************************************************************
+' Purpose: Load a picture into the report at runtime.  Also change
+'          some of the values and properties of a few of the text
+'          objects in the details.
+
+Option Explicit
+
+' *************************************************************
+' There are two ways to implement calculations and calculated fields:
+' 1. Using the Crystal Formulas language
+'  For example the @due date formula takes an existing field and adds 30 to it
+' {ado.Ship Date} + 30
+' 2. Using VB code in Section_Format event *Note: There are some restrictions on what you
+'    can do with this - Please see the documentation
+'
+' In the following example the @due date formula is implemented using VB code
+' First insert a Text field in this section (right click in the section and
+' select Insert | Text Object and place the Text Object in the appropriate spot and name it
+' to rename it to txtDueDate
+' The Text Object has a SetText method that can be used to Set a value to it at Runtime
+' Now Insert the {ado.Ship Date} field in the scnDetail Section and suppress it
+' It is necessary to have the field physically in the section in order for it to have a value
+' when the section is being formatted.
+
+Private Sub scnDetail_Format(ByVal pFormattingInfo As Object)
+    txtDueDate.SetText Me.fldOrderDate.Value
+    'The Text object, like other objects in the report, has formatting
+    ' properties that can be changed at runtime
+    txtDueDate.BackColor = vbBlue
+End Sub
+
+'************************************************************
+' Using the FormattedPicture property of the OLEObject object,
+' the VB LoadPicture Method can be used to change a picture image
+' at runtime. This example changes the coupon depending on the
+' customer's last year's sales
+'
+Private Sub Section12_Format(ByVal pFormattingInfo As Object)
+    Select Case fldLastYearsSales.Value
+    Case Is < 10000
+        Set picCoupon.FormattedPicture = LoadPicture(App.Path & "\Coup20.bmp")
+    Case 10001 To 20000
+        Set picCoupon.FormattedPicture = LoadPicture(App.Path & "\Coup30.bmp")
+    Case 20001 To 30000
+        Set picCoupon.FormattedPicture = LoadPicture(App.Path & "\Coup40.bmp")
+    Case Is > 30000
+        Set picCoupon.FormattedPicture = LoadPicture(App.Path & "\Coup50.bmp")
+    End Select
+End Sub
+
+'******************************* Formatting Fields **************************************
+' In order to format fields at depending on their values the Crystal Formula language
+' can be used or the Section_Format Event handler can be used to format a field and then
+' it's value can be passed back to the report through a Text Object
+' The @city/region shows how to do this using the Crystal Formula language
+' The following code shows how to do this in VB code
+' Note: The fields must be physically present in the section in order for it to have a value in the section
+'       The field is then suppressed i.e.
+'
+Private Sub Section5_Format(ByVal pFormattingInfo As Object)
+    If fldAddress1.Value = "" Then
+        txtAddress12.SetText fldAddress2.Value
+    ElseIf fldAddress2.Value = "" Then
+        txtAddress12.SetText fldAddress1.Value
+    Else
+        txtAddress12.SetText fldAddress2.Value + ", " + fldAddress1.Value
+    End If
+End Sub
+
+'****************************** Conditional Formatting **********************************
+' Suppress one of the 2 sections depending on if the Customer's account is past due or not
+'
+Private Sub Section7_Format(ByVal pFormattingInfo As Object)
+    If #4/20/1997# > CDate(fldOrderDate2.Value + 30) Then Section7.Suppress = True
+End Sub
+
+'****************************** Conditional Formatting **********************************
+' As in the Section7_Formatting event, suppress one of the 2 sections depending
+' on if the Customer's account is past due or not
+'
+Private Sub Section8_Format(ByVal pFormattingInfo As Object)
+    If "4/20/97" < CDate(fldOrderDate1.Value + 30) Then Section8.Suppress = True
+End Sub

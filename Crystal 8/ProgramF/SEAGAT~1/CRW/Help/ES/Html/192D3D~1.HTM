@@ -1,0 +1,185 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+
+<html>
+<head>
+<title>F&#243;rmula 10</title>
+
+<link REL=STYLESHEET TYPE="text/css" HREF="seagate.css">
+
+<!--
+                 ***********************************
+                 * Seagate Software copyright 1999 *
+                 ***********************************
+
+                      Template version: 5.1
+-->
+
+
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" link="#0000FF" vlink="#0000FF" alink="#800080">
+
+
+ 
+<a name="317211"></a><h3 class="newpage"> F&#243;rmula 10</h3>
+<a name="317212"></a><h4>Funciones y operadores usados</h4><p><a name="317213"></a>If<nobr>-T</nobr>hen<nobr>-E</nobr>lse, Not, DayOfWeek, Calcular rango (to), En rango (in), Par&#233;ntesis ()</p><a name="317214"></a><h4>Prop&#243;sito de la f&#243;rmula</h4><p><a name="317215"></a>Un departamento de servicio al cliente con atenci&#243;n siete d&#237;as a la semana registra todas las llamadas y almacena los registros en una base de datos. Como ayuda en la planificaci&#243;n del personal para los fines de semana, la gerencia desea poner indicaciones a las llamadas de fin de semana, de modo que se destaquen en el informe de llamadas.</p><a name="317216"></a><h4>F&#243;rmula</h4><PRE><a name="317217"></a>If Not(DayOfWeek({archivo.FECHA DE LLAMADA}) in 2 to 6) 
+Then<br>
+&nbsp;&nbsp;&nbsp;&nbsp;"Fin de semana"<br>
+Else <br>
+&nbsp;&nbsp;&nbsp;&nbsp;""
+</PRE><a name="317218"></a><h4>Resultado</h4><p><a name="317268"></a> <Table Border="1">
+<tr><td align="left" valign="TOP"><a name="317221"></a>D&#237;a de semana
+
+</td><td align="left" valign="TOP"><a name="317223"></a>N&#186;
+
+</td><td align="left" valign="TOP"><a name="317225"></a>Indicador
+
+</td></tr>
+<tr><td align="left" valign="TOP"><P><a name="317227"></a>Domingo</P>
+
+
+</td><td align="left" valign="TOP"><P><a name="317229"></a>1</P>
+
+
+</td><td align="left" valign="TOP"><P><a name="317231"></a>Fin d semana</P>
+
+
+</td></tr>
+<tr><td align="left" valign="TOP"><P><a name="317233"></a>Lunes</P>
+
+
+</td><td align="left" valign="TOP"><P><a name="317235"></a>2</P>
+
+
+</td><td align="left" valign="TOP"><P><br></P>
+
+
+</td></tr>
+<tr><td align="left" valign="TOP"><P><a name="317239"></a>Martes</P>
+
+
+</td><td align="left" valign="TOP"><P><a name="317241"></a>3</P>
+
+
+</td><td align="left" valign="TOP"><P><br></P>
+
+
+</td></tr>
+<tr><td align="left" valign="TOP"><P><a name="317245"></a>Mi&#233;rcoles</P>
+
+
+</td><td align="left" valign="TOP"><P><a name="317247"></a>4</P>
+
+
+</td><td align="left" valign="TOP"><P><br></P>
+
+
+</td></tr>
+<tr><td align="left" valign="TOP"><P><a name="317251"></a>Jueves</P>
+
+
+</td><td align="left" valign="TOP"><P><a name="317253"></a>5</P>
+
+
+</td><td align="left" valign="TOP"><P><br></P>
+
+
+</td></tr>
+<tr><td align="left" valign="TOP"><P><a name="317257"></a>Viernes</P>
+
+
+</td><td align="left" valign="TOP"><P><a name="317259"></a>6</P>
+
+
+</td><td align="left" valign="TOP"><P><br></P>
+
+
+</td></tr>
+<tr><td align="left" valign="TOP"><P><a name="317263"></a>S&#225;bado</P>
+
+
+</td><td align="left" valign="TOP"><P><a name="317265"></a>7</P>
+
+
+</td><td align="left" valign="TOP"><P><a name="317267"></a>Fin d semana</P>
+
+
+</td></tr>
+
+</Table></p>
+<a name="317269"></a><h4>Explicaci&#243;n</h4><ul type="disc"><a name="317270"></a><li>La f&#243;rmula usa el operador If<nobr>-T</nobr>hen<nobr>-E</nobr>lse para decir: "Si el d&#237;a de la semana no es un d&#237;a laborable, entonces imprimir "Fin de semana"; de lo contrario (Else) no imprimir nada (como lo indica la cadena de texto vac&#237;a "").
+<a name="317271"></a><li>La parte If de la f&#243;rmula configura la condici&#243;n, "Si el d&#237;a de la semana no es un d&#237;a laborable".
+<a name="317272"></a><li>La funci&#243;n DayOfWeek eval&#250;a {archivo.FECHA DE LLAMADA} y devuelve un n&#250;mero de 1 a 7 (domingo equivale a 1; s&#225;bado a 7) para indicar el d&#237;a de la semana en el que se hizo la llamada.
+<a name="317273"></a><li>La parte in 2 to 6 usa la funci&#243;n en rango (in) y la funci&#243;n de c&#225;lculo de rangos (to) para determinar si el d&#237;a de la semana en que se hizo la llamada estaba en el rango de 2 a 6 (de lunes a viernes).
+<a name="317274"></a><li>La funci&#243;n Not niega la expresi&#243;n que viene a continuaci&#243;n.
+<a name="317275"></a><li>Si la funci&#243;n Not no precede a la expresi&#243;n, la expresi&#243;n If dice: "Si el n&#250;mero de d&#237;a de la semana indica que la fecha de la llamada fue un d&#237;a laborable."
+<a name="317276"></a><li>Con la funci&#243;n Not, la expresi&#243;n If dice: "Si el n&#250;mero de d&#237;a de la semana indica que la fecha de la llamada no fue un d&#237;a laborable."
+<a name="317277"></a><li>Si la fecha de la llamada no es un d&#237;a laborable, la expresi&#243;n If se cumple, activ&#225;ndose as&#237; la consecuencia Then.
+<a name="317278"></a><li>"Fin de semana" le ordena al programa que cuando se cumpla la condici&#243;n If , imprima la expresi&#243;n "Fin de semana".
+<a name="317279"></a><li>Si la fecha de la llamada es un d&#237;a laborable, la condici&#243;n  If no se cumple, activ&#225;ndose as&#237; la consecuencia Else.
+<a name="317280"></a><li>"" le ordena al programa no imprimir nada si no se cumple la condici&#243;n If.
+</ul><a name="317281"></a><h6>Temas relacionados</h6><p><a name="317285"></a><a href="19_introformulas28.html#316471">F&#243;rmulas en acci&#243;n</a></p>
+<hr><br>
+
+<script  language="JavaScript"><!--
+
+var prev = "19_introformulas37.html";
+var next = "19_introformulas39.html";
+
+function setTopicID() { 
+      var number = "317211"; 
+      return number; 
+}
+
+// --></script>
+
+
+
+
+<SCRIPT>
+
+if (!window.parent.toc && navigator.appName == "Netscape") {
+
+   document.writeln ('<TABLE ALIGN="left" border="0" cellspacing="0" cellpadding="10">');
+   document.writeln ('<TR>');
+   document.write ('<TD ALIGN="left">');
+
+   if (prev != "crw_spTOC.hhc") {
+      document.writeln ('<A HREF="' + prev + '">');
+      document.writeln ('<IMG SRC="prevpage.gif" HEIGHT=17 BORDER=0 ALT="Página anterior"></A>');
+   } else {
+//   window.alert ('no previous page');
+   }
+
+   if (next != "crw_spIX.hhk") {
+      document.writeln ('<A HREF="' + next + '">');
+      document.writeln ('<IMG SRC="nextpage.gif" HEIGHT=17 BORDER=0 ALT="Página siguiente"></A>');
+   } else {
+//   window.alert ('no next page');
+   }
+   document.writeln ('</TD><TD ALIGN="left">');
+   document.writeln ('<A HREF="frameset.htm?TOC">');
+   document.writeln ('<IMG SRC="showtoc.gif" HEIGHT=17 BORDER=0 ALT="Haga clic para ver el contenido"></A></TD>');
+   document.writeln ('<TD ALIGN="left">');
+   document.writeln ('<A HREF="frameset.htm?IDX">');
+   document.writeln ('<IMG SRC="showix.gif" HEIGHT=17 BORDER=0 ALT="Haga clic para ver el índice"></A></TD>');
+   document.writeln ('</TD>');
+   document.writeln ('</TR>');
+   document.writeln ('</TABLE>');
+
+}
+
+</SCRIPT>
+<table align="right" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td align="right"><font size="1">Seagate Software, Inc.<br>
+    <a href="http://www.seagatesoftware.com">http://www.seagatesoftware.com</a><br>
+    Envíe sus comentarios a:<br>
+    <a href="mailto:techpubs@seagatesoftware.com">techpubs@seagatesoftware.com</a><br>
+    </font></td>
+  </tr>
+</table>
+</body>
+</html>
+
+

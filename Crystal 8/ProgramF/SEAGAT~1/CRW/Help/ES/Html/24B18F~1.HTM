@@ -1,0 +1,151 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+
+<html>
+<head>
+<title>C&#243;mo abrir consultas de par&#225;metros Access</title>
+
+<link REL=STYLESHEET TYPE="text/css" HREF="seagate.css">
+
+<!--
+                 ***********************************
+                 * Seagate Software copyright 1999 *
+                 ***********************************
+
+                      Template version: 5.1
+-->
+
+
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" link="#0000FF" vlink="#0000FF" alink="#800080">
+
+
+ 
+<a name="325041"></a><h4 class="newpage"> C&#243;mo abrir consultas de par&#225;metros Access</h4><p><a name="325042"></a>Las consultas de par&#225;metros Access s&#243;lo se abren cuando la base de datos Access se abre v&#237;a ODBC. Aseg&#250;rese de tener configurada una fuente de datos ODBC para su base de datos Access antes de que intente este procedimiento. Vea <a href="24_under_databases44.html#325457">C&#243;mo configurar una fuente de datos ODBC</a>.</p><p><a name="325046"></a><font color="darkblue"><b>Nota:   &nbsp;&nbsp;&nbsp;</b></font>Cuando dise&#241;a una consulta de par&#225;metro en Access, debe proporcionar una pregunta para la consulta y especificar un tipo de datos para el par&#225;metro. Primero, con su consulta abierta en Design View de Microsoft Access, introduzca una pregunta en la celda <kbd>Criterio</kbd> para el campo que actuar&#225; como par&#225;metro. Despu&#233;s, seleccione el comando <kbd>Par&#225;metros</kbd> del men&#250; Consultas en Access y especifique un tipo de datos para el par&#225;metro que cre&#243;. Aseg&#250;rese que la pregunta aparezca exactamente como en la celda <kbd>Criterio</kbd>. Para instrucciones completas, refi&#233;rase a su documentaci&#243;n de Access. Si no configura la consulta de par&#225;metro correctamente, Seagate Crystal Reports no podr&#225; utilizarlo.</p>
+<a name="317968"></a><h6>Para abrir una consulta de par&#225;metro de Access</h6><ol>
+<a name="317972"></a><li value="1&nbsp;&nbsp;&nbsp;&nbsp;">En Seagate Crystal Reports, elija <kbd>Opciones</kbd> del men&#250; <kbd>Archivo</kbd>.
+<p class="indent"><a name="317973"></a>Aparece el cuadro de di&#225;logo Opciones.</p><a name="325140"></a><li value="2&nbsp;&nbsp;&nbsp;&nbsp;">Haga clic en la ficha <kbd>Base de datos</kbd>.
+<p><a name="325144"></a> <img src="images/db_fopt3.gif">
+
+
+</p>
+<a name="325149"></a><li value="3&nbsp;&nbsp;&nbsp;&nbsp;">Seleccione la casillas de verificaci&#243;n <kbd>Procedimientos almacenados</kbd> y/o <kbd>Volver a preguntar al usuario al conectar</kbd>.
+<ul type="disc"><ul type="disc"><a name="325153"></a><li>La opci&#243;n <kbd>Procedimientos almacenados</kbd> muestra autom&#225;ticamente cualquier procedimiento almacenado disponible cuando inicia sesi&#243;n en una fuente de datos ODBC. Seagate Crystal Reports maneja las consultas de par&#225;metro Access de manera semejante a los procedimientos almacenados SQL. Por lo tanto, para usar una consulta de par&#225;metro, la opci&#243;n de Procedimientos almacenados debe estar activada.<a name="325154"></a><li>La opci&#243;n <EM>Volver a preguntar al usuario al conectar </EM>muestra el cuadro de di&#225;logo Permitir Elaborar Informes de, cada vez que inicia sesi&#243;n en una fuente de base de datos ODBC. Este cuadro de di&#225;logo proporciona las mismas opciones que la secci&#243;n Permitir Elaborar Informes en del cuadro de di&#225;logo Opciones, pero lo hace para cada fuente de datos ODBC en que usted inicia sesi&#243;n.</ul></ul><a name="325155"></a><li value="4&nbsp;&nbsp;&nbsp;&nbsp;">Adem&#225;s, puede especificar las opciones <kbd>Nombre de tabla LIKE </kbd>y<kbd> Propietario LIKE</kbd> si lo desea.
+<ul type="disc"><ul type="disc"><a name="325156"></a><li>El <EM>Nombre de tabla LIKE</EM> est&#225; basado en la cl&#225;usula SQL LIKE. Esta opci&#243;n le permite especificar los tipos de nombres de tablas que desea que aparezcan en el cuadro de di&#225;logo Elegir Tabla SQL. Utilice el car&#225;cter de gui&#243;n bajo (_) o el de signo de porcentaje (%) como comodines con esta funci&#243;n. El car&#225;cter de gui&#243;n bajo espec&#237;fica cualquier car&#225;cter &#250;nico, mientras que el signo de porcentaje significa cualquier cadena de caracteres. Por ejemplo, DAV_ coincide con DAVE solamente, mientras que DAV% coincide con DAVE y DAVID. El Nombre de tabla LIKE C% mostrar&#237;a s&#243;lo aquellas tablas cuyo nombre de tabla comienza con la letra C.<a name="325157"></a><li>El<EM> Propietario LIKE</EM> tambi&#233;n est&#225; basado en la cl&#225;usula SQL LIKE. La opci&#243;n Propietario LIKE le permite seleccionar el Propietario (o Creador o Alias) de la tabla, no el nombre de la tabla. Por ejemplo el Propietario LIKE C% s&#243;lo mostrar&#237;a aquellas tablas cuyo Propietario tuviera un nombre comenzando con la letra C.</ul></ul><a name="325158"></a><li value="5&nbsp;&nbsp;&nbsp;&nbsp;">Haga clic en <kbd>Aceptar</kbd> para salir del cuadro de di&#225;logo Opciones.
+</ol>
+<ol>
+<a name="329489"></a><li value="6&nbsp;&nbsp;&nbsp;&nbsp;">Origine un nuevo informey seleccione la fuente de datos ODBC para su base de datos Access.
+<p class="indent"><a name="325162"></a>Si no especific&#243; un archivo de base de datos Access en particular con su fuente de datos Access ODBC, aparecer&#225; el cuadro de di&#225;logo Seleccionar Base de Datos.</p><p class="indent"><a name="325288"></a><font color="darkblue"><b>Nota:   &nbsp;&nbsp;&nbsp;</b></font>Si su base de datos requiere de un nombre de usuario y contrase&#241;a o de cualquier otra informaci&#243;n de conexi&#243;n, aparece un cuadro de di&#225;logo de conexi&#243;n.</p>
+<a name="325289"></a><li value="7&nbsp;&nbsp;&nbsp;&nbsp;">Ubique y seleccione la base de datos que contenga la consulta de par&#225;metro Access que desea usar y exp&#225;ndala.
+<p class="indent"><a name="325290"></a>Si selecciona la casilla de verificaci&#243;n <EM>Volver a preguntar al usuario al conectar</EM> en el cuadro de di&#225;logo Opciones, el cuadro de di&#225;logo Permitir Elaborar Informes de aparecer&#225; en su pantalla ahora. De otra manera, dir&#237;jase al paso 9.</p><p><a name="343951"></a> <img src="images/db_alwrp.gif">
+
+
+</p>
+<a name="318125"></a><li value="8&nbsp;&nbsp;&nbsp;&nbsp;">Aseg&#250;rese de que est&#233; seleccionada la casilla de verificaci&#243;n <kbd>Procedimientos</kbd> y haga clic en <kbd>Aceptar</kbd> al finalizar.
+</ol>
+<ol>
+<a name="325338"></a><li value="9&nbsp;&nbsp;&nbsp;&nbsp;">Destaque su consulta de Par&#225;metro y haga clic en <kbd>Agregar.</kbd>
+<p class="indent"><a name="329587"></a>El cuadro de di&#225;logo Introduzca el valor de par&#225;metro aparecer&#225; en su pantalla.</p><p><a name="343972"></a> <img src="images/db_spip.gif">
+
+
+</p>
+<a name="318163"></a><li value="10&nbsp;&nbsp;&nbsp;&nbsp;">Destaque un par&#225;metro en la lista <kbd>Campos de par&#225;metros</kbd>.
+<p class="indent"><a name="318164"></a>La opci&#243;n predeterminada es Establecer en Valor NULL. Si desea asignar un valor, quite la marca a la casilla de verificaci&#243;n Establecer en Valor NULL.</p><a name="325389"></a><li value="11&nbsp;&nbsp;&nbsp;&nbsp;">Asigne un valor escribi&#233;ndolo en el cuadro <kbd>Valor discreto</kbd> y luego haga clic en <kbd>Aceptar</kbd>.
+<a name="325390"></a><li value="12&nbsp;&nbsp;&nbsp;&nbsp;">Repita los pasos 10 y 11 para cada par&#225;metro en su consulta de par&#225;metros Access.
+<a name="325391"></a><li value="13&nbsp;&nbsp;&nbsp;&nbsp;">En el cuadro de di&#225;logo Explorador de datos haga clic en <kbd>Cerrar</kbd>.
+<p class="indent"><a name="325392"></a>Puede cambiar los valores de par&#225;metros en cualquier momento seleccionando el comando Par&#225;metros de procedimientos almacenados del men&#250; Base de Datos.</p><a name="325393"></a><li value="14&nbsp;&nbsp;&nbsp;&nbsp;">Elabore su informe utilizando los campos en la consulta de par&#225;metro. S&#243;lo son usados en su informe los registros que satisfacen los valores de par&#225;metro especificados en el cuadro de di&#225;logo Par&#225;metros de Entrada de Procedimientos Almacenados.
+</ol>
+<p><a name="329633"></a><font color="darkblue"><b>Nota:   &nbsp;&nbsp;&nbsp;</b></font>No puede utilizar consultas de acci&#243;n Access o actualizar consultas en Seagate Crystal Reports. Pero s&#237; puede usar consultas de selecci&#243;n Access y consultas de tablas cruzadas.</p>
+<a name="325452"></a><h3>C&#243;mo usar una fuente de datos ODBC</h3>
+<a name="325457"></a><h4>C&#243;mo configurar una fuente de datos ODBC</h4><p><a name="325458"></a>Para configurar una fuente de datos ODBC, debe tener un controlador ODBC instalado para el tipo de datos que desea utilizar. Muchas programas SABD autom&#225;ticamente instalan y configuran controladores ODBC. Si no est&#225; seguro de si tiene controladores ODBC instalados para sus datos, refi&#233;rase a la documentaci&#243;n que viene con su programa SABD.</p><p><a name="318252"></a><font color="darkblue"><b>Nota:   &nbsp;&nbsp;&nbsp;</b></font>Seagate Crystal Reports instala la versi&#243;n 3.510 del Administrador ODBC. Los pasos en este procedimiento var&#237;an levemente si tiene una versi&#243;n diferente.</p>
+<a name="325463"></a><h6>Para configurar una fuente de datos ODBC</h6><ol>
+<a name="325464"></a><li value="1&nbsp;&nbsp;&nbsp;&nbsp;">Desde el Administrador de Programas, haga doble clic en el icono Administrador de ODBC en el grupo de programas apropiado.
+<p class="indent"><a name="359099"></a>El cuadro de di&#225;logo Administrador de or&#237;genes de datos ODBC aparecer&#225; en su pantalla.</p><p><a name="359226"></a> <img src="images/Db_dtsc.gif">
+
+
+</p>
+<a name="359104"></a><li value="2&nbsp;&nbsp;&nbsp;&nbsp;">Haga clic en el bot&#243;n <kbd>Agregar</kbd> para agregar una nueva fuente de datos ODBC.
+<p class="indent"><a name="325515"></a>Aparece el cuadro de di&#225;logo Crear nuevo origen de datos.</p><p><a name="359231"></a> <img src="images/24_under_databases39a.gif">
+
+
+</p>
+<a name="341026"></a><li value="3&nbsp;&nbsp;&nbsp;&nbsp;">Seleccione un controlador ODBC apropiado para el tipo de datos de esta lista. 
+<a name="341027"></a><li value="4&nbsp;&nbsp;&nbsp;&nbsp;">Haga clic en <kbd>Finalizar</kbd> cuando termine.
+<p class="indent"><a name="325535"></a>Si no aparece un controlador para su tipo de datos, significa que el controlador ODBC no ha sido instalado correctamente. Refi&#233;rase a la documentacion de su programa DBMS.</p><p class="indent"><a name="325536"></a>Aparece un cuadro de di&#225;logo Configuraci&#243;n de Fuente de Datos ODBC que es espec&#237;fico para el controlador ODBC que seleccion&#243;.</p><p class="indent"><a name="329745"></a><font color="darkblue"><b>Nota:   &nbsp;&nbsp;&nbsp;</b></font>Si aparece un mensaje de error en lugar del cuadro de di&#225;logo Configuraci&#243;n, significa que no tiene instalado en su sistema el controlador ODBC correcto para el tipo de datos que seleccion&#243;.</p>
+<p><a name="359236"></a> <img src="images/Db_odbc.gif">
+
+
+</p>
+<a name="325646"></a><li value="5&nbsp;&nbsp;&nbsp;&nbsp;">Escriba el nombre de su nueva fuente de datos ODBC en el cuadro <kbd>Nombre de fuente de datos</kbd>.
+<p class="indent"><a name="325649"></a><font color="darkblue"><b>Nota:   &nbsp;&nbsp;&nbsp;</b></font>El cuadro de di&#225;logo que aparece puede verse diferente al que se muestra aqu&#237;, dependiendo del tipo de datos que est&#225; utilizando. Este cuadro de di&#225;logo es espec&#237;fico al controlador ODBC de Access 97. Para mayor informaci&#243;n acerca del uso del cuadro de di&#225;logo que aparece para sus datos, haga clic en el bot&#243;n Ayuda.</p>
+<p><a name="325669"></a> .<img src="images/db_dtsc2.gif">
+
+
+</p>
+<a name="329809"></a><li value="6&nbsp;&nbsp;&nbsp;&nbsp;">Cuando haya terminado, haga clic en <kbd>Aceptar</kbd>.
+</ol>
+<a name="345670"></a><h4>C&#243;mo verificar la configuraci&#243;n de una fuente de datos ODBC</h4>
+<hr><br>
+
+<script  language="JavaScript"><!--
+
+var prev = "24_under_databases43.html";
+var next = "24_under_databases45.html";
+
+function setTopicID() { 
+      var number = "325041"; 
+      return number; 
+}
+
+// --></script>
+
+
+
+
+<SCRIPT>
+
+if (!window.parent.toc && navigator.appName == "Netscape") {
+
+   document.writeln ('<TABLE ALIGN="left" border="0" cellspacing="0" cellpadding="10">');
+   document.writeln ('<TR>');
+   document.write ('<TD ALIGN="left">');
+
+   if (prev != "crw_spTOC.hhc") {
+      document.writeln ('<A HREF="' + prev + '">');
+      document.writeln ('<IMG SRC="prevpage.gif" HEIGHT=17 BORDER=0 ALT="Página anterior"></A>');
+   } else {
+//   window.alert ('no previous page');
+   }
+
+   if (next != "crw_spIX.hhk") {
+      document.writeln ('<A HREF="' + next + '">');
+      document.writeln ('<IMG SRC="nextpage.gif" HEIGHT=17 BORDER=0 ALT="Página siguiente"></A>');
+   } else {
+//   window.alert ('no next page');
+   }
+   document.writeln ('</TD><TD ALIGN="left">');
+   document.writeln ('<A HREF="frameset.htm?TOC">');
+   document.writeln ('<IMG SRC="showtoc.gif" HEIGHT=17 BORDER=0 ALT="Haga clic para ver el contenido"></A></TD>');
+   document.writeln ('<TD ALIGN="left">');
+   document.writeln ('<A HREF="frameset.htm?IDX">');
+   document.writeln ('<IMG SRC="showix.gif" HEIGHT=17 BORDER=0 ALT="Haga clic para ver el índice"></A></TD>');
+   document.writeln ('</TD>');
+   document.writeln ('</TR>');
+   document.writeln ('</TABLE>');
+
+}
+
+</SCRIPT>
+<table align="right" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td align="right"><font size="1">Seagate Software, Inc.<br>
+    <a href="http://www.seagatesoftware.com">http://www.seagatesoftware.com</a><br>
+    Envíe sus comentarios a:<br>
+    <a href="mailto:techpubs@seagatesoftware.com">techpubs@seagatesoftware.com</a><br>
+    </font></td>
+  </tr>
+</table>
+</body>
+</html>
+
+

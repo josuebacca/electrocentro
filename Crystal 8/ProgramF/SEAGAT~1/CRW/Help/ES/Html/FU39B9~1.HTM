@@ -1,0 +1,187 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+
+<html>
+<head>
+<title>DatePart</title>
+
+<link REL=STYLESHEET TYPE="text/css" HREF="seagate.css">
+
+<!--
+                 ***********************************
+                 * Seagate Software copyright 1999 *
+                 ***********************************
+
+                      Template version: 5.1
+-->
+
+
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" link="#0000FF" vlink="#0000FF" alink="#800080">
+
+
+ 
+<a name="1000548830"></a><h3 class="newpage"> DatePart</h3>
+<p><a name="1000693186"></a>Sintaxis b&#225;sica y Crystal.</p><a name="1000548831"></a><h5>Sobrecargas</h5><ul type="disc"><a name="1000548832"></a><li>DatePart (tipoIntervalo, fechaHoraEntrada)
+<a name="1000548833"></a><li>DatePart (tipoIntervalo, fechaHoraEntrada, primerD&#237;aDeLaSemana)
+<a name="1000548834"></a><li>DatePart (tipoIntervalo, fechaHoraEntrada, primerD&#237;aDeLaSemana, primeraSemanaDelA&#241;o)
+</ul><a name="1000548835"></a><h5>Argumentos</h5><ul type="disc"><a name="1000548836"></a><li>tipoIntervalo es una expresi&#243;n de Cadena que especifica la parte de la fecha que debe devolverse.   Los valores posibles pueden ser:
+<p><a name="1000697444"></a> <Table Border="1">
+<tr><th align="left" valign="bottom"><a name="1000697401"></a>Tipo de valor 
+Intervalo
+
+</th><th align="left" valign="bottom"><a name="1000697403"></a>Descripci&#243;n
+
+</th></tr>
+<tr><td align="left" valign="TOP"><P><a name="1000697405"></a>aaaa</P>
+
+
+</td><td align="left" valign="TOP"><P><a name="1000697781"></a>Extrae el a&#241;o</P>
+
+
+</td></tr>
+<tr><td align="left" valign="TOP"><P><a name="1000697409"></a>t</P>
+
+
+</td><td align="left" valign="TOP"><P><a name="1000697411"></a>Trimestre (el resultado es 1, 2, 3 &#243; 4</P>
+
+
+</td></tr>
+<tr><td align="left" valign="TOP"><P><a name="1000697413"></a>m</P>
+
+
+</td><td align="left" valign="TOP"><P><a name="1000697800"></a>Mes (el resultado es entre 1 y 12)</P>
+
+
+</td></tr>
+<tr><td align="left" valign="TOP"><P><a name="1000697417"></a>a</P>
+
+
+</td><td align="left" valign="TOP"><P><a name="1000697804"></a>D&#237;a del a&#241;o (1 a 365 &#243; 366 en un a&#241;o bisiesto)</P>
+
+
+</td></tr>
+<tr><td align="left" valign="TOP"><P><a name="1000697421"></a>d</P>
+
+
+</td><td align="left" valign="TOP"><P><a name="1000697808"></a>Parte del d&#237;a de la fecha (1 a 31)</P>
+
+
+<P><a name="1000697809"></a>A&#241;o</P>
+
+
+</td></tr>
+<tr><td align="left" valign="TOP"><P><a name="1000697425"></a>s</P>
+
+
+</td><td align="left" valign="TOP"><P><a name="1000697427"></a>D&#237;a de la semana (1 a 7, el resultado depende de primerD&#237;aDeLaSemana)</P>
+
+
+</td></tr>
+<tr><td align="left" valign="TOP"><P><a name="1000697429"></a>ss</P>
+
+
+</td><td align="left" valign="TOP"><P><a name="1000697735"></a>Semana del a&#241;o (1 a 53 donde primerD&#237;aDeLaSemana y primeraSemanaDelA&#241;o determinan los d&#237;as exactos de la primera semana calendario del a&#241;o)   </P>
+
+
+</td></tr>
+<tr><td align="left" valign="TOP"><P><a name="1000697433"></a>h</P>
+
+
+</td><td align="left" valign="TOP"><P><a name="1000697717"></a>Extrae la parte de la hora de un valor Fecha/hora dado (0 a 23)</P>
+
+
+</td></tr>
+<tr><td align="left" valign="TOP"><P><a name="1000697437"></a>n</P>
+
+
+</td><td align="left" valign="TOP"><P><a name="1000697711"></a>Parte del minuto (0 a 59)</P>
+
+
+</td></tr>
+<tr><td align="left" valign="TOP"><P><a name="1000697441"></a>s</P>
+
+
+</td><td align="left" valign="TOP"><P><a name="1000697689"></a>Segunda parte (0 a 59)</P>
+
+
+</td></tr>
+
+</Table></p>
+<a name="1000697841"></a><li> fechaHoraEntrada es el valor Fecha/hora cuya parte se extraer&#225;.  
+<a name="1000548848"></a><li>primerD&#237;aDeLaSemana es una constante opcional que se usa para especificar el primer d&#237;a de la semana.   Si no se especifica, se presupone crSunday. Vea <a href="Operators70.html#1000020886">Constantes de d&#237;a de la semana</a> para obtener m&#225;s informaci&#243;n.
+<a name="1000548849"></a><li>primeraSemanaDelA&#241;o es una constante opcional que especifica la primera semana del a&#241;o.   Si no se especifica, se presupone que la primera semana del a&#241;o es en la que est&#225; el 1 de  enero (crFirstJan1). Vea <a href="Operators71.html#1000020928">Constantes de primera semana del a&#241;o</a>.
+</ul><a name="1000548850"></a><h5>Devuelve </h5><p><a name="1000548851"></a>Un valor N&#250;mero.</p><a name="1000548852"></a><h5>Acci&#243;n</h5><p><a name="1000548853"></a>DatePart devuelve el N&#250;mero que especifica una parte dada de una fecha dada.  </p><a name="1000548854"></a><h5>Ejemplo(s)</h5><p><a name="1000548855"></a>Los siguientes ejemplos son aplicables a las sintaxis b&#225;sica y Crystal:</p><p><code><a name="1000548856"></a>DatePart ("d", #agosto 15, 1999#) </code></p><p class="example"><a name="1000548857"></a>Devuelve 15.</p><p><code><a name="1000548858"></a>DatePart ("m", #agosto 15, 1999#)</code></p><p class="example"><a name="1000548859"></a>Devuelve 9.</p><p><code><a name="1000548860"></a>DatePart ("n", #10:35 am#)</code></p><p class="example"><a name="1000548861"></a>Devuelve 35.</p><p><code><a name="1000548862"></a>DatePart ("t", #septiembre 29, 1999#)</code></p><p class="example"><a name="1000548863"></a>Devuelve 3 ya que el 29 de septiembre cae en el tercer trimestre del a&#241;o.  </p><p><code><a name="1000548864"></a>DatePart ("ss", #septiembre 14, 1997#)}</code></p><p class="example"><a name="1000548865"></a>Devuelve 38 ya que el 14 de septiembre de 1997 cae en la semana 38ava de 1997.</p><p><a name="1000548867"></a>Suponga que una compa&#241;&#237;a desea estampar un n&#250;mero de identificaci&#243;n en cada uno de sus env&#237;os, para prop&#243;sitos de control de calidad. La identificaci&#243;n est&#225; compuesta de la identificaci&#243;n del pedido,  seguida por un gui&#243;n, por la semana en que se envi&#243; el pedido y por los &#250;ltimos dos d&#237;gitos del a&#241;o. Este es un ejemplo de la f&#243;rmula que genera estas identificaciones:   </p><p class="code"><a name="1000548868"></a>Sintaxis b&#225;sica Rem
+<br><a name="1000548869"></a>formula = CStr({Pedidos.ID Pedidos}, 0, "") &amp; "-" &amp; _
+<br><a name="1000548870"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;CStr(DatePart("ss", {Pedidos.Fecha de Env&#237;o}), 0) &amp; _
+<br><a name="1000548871"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;CStr({Pedidos.Fecha de Env&#237;o}, "aa")
+<br><a name="1000548872"></a>
+<br><a name="1000548873"></a>Sintaxis Crystal
+<br><a name="1000548874"></a>CStr({Pedidos.ID Pedidos}, 0, "") &amp; "-" &amp;
+<br><a name="1000548875"></a>&nbsp;&nbsp;&nbsp;&nbsp;CStr(DatePart("ss", {Pedidos.Fecha de Env&#237;o}), 0) &amp; 
+<br><a name="1000548876"></a>&nbsp;&nbsp;&nbsp;&nbsp;CStr({Pedidos.Fecha de Env&#237;o}, "aa")
+</p><p class="example"><a name="1000548877"></a>Devuelve una cadena  "2082-3897" si {Pedidos.ID Pedidos} es 2082 y {Pedidos.Fecha de Env&#237;o} es el 14 de septiembre de 1997.</p><a name="1000548878"></a><h5>Comentario(s) </h5><p><a name="1000548879"></a>Esta funci&#243;n est&#225; dise&#241;ada para trabajar exactamente como la funci&#243;n de Visual Basic del mismo nombre.</p><p><a name="1000548880"></a>La funci&#243;n DatePart con argumento tipoIntervalo "aaaa"  es la misma que la funci&#243;n A&#241;o. De manera similar, la funci&#243;n DatePart con un argumento tipoIntervalo  "m", "d", "s", "h", "n" y "s" es la misma que las funciones Month, Day, Weekday (o DayOfWeek), Hour, Minute y Second, respectivamente. Por otra parte, no existe una alternativa f&#225;cil al uso de la funci&#243;n DatePart para argumentos tipoIntervalo "t", "a" y  "ss".</p><p><a name="1000548881"></a>El argumento primerD&#237;aDeLaSemana afecta la funci&#243;n DatePart cuando el argumento de tipo de intervalo es  "s" o "ss". En todos los dem&#225;s valores de argumento tipoIntervalo, se pasa por alto.</p><p><a name="1000548882"></a>El argumento primeraSemanaDelA&#241;o afecta la funci&#243;n DatePart solamente cuando el argumento tipoIntervalo es "ss". En todos los dem&#225;s valores de argumento tipoIntervalo, se pasa por alto.</p>
+<hr><br>
+
+<script  language="JavaScript"><!--
+
+var prev = "Functions129.html";
+var next = "Functions131.html";
+
+function setTopicID() { 
+      var number = "1000548830"; 
+      return number; 
+}
+
+// --></script>
+
+
+
+
+<SCRIPT>
+
+if (!window.parent.toc && navigator.appName == "Netscape") {
+
+   document.writeln ('<TABLE ALIGN="left" border="0" cellspacing="0" cellpadding="10">');
+   document.writeln ('<TR>');
+   document.write ('<TD ALIGN="left">');
+
+   if (prev != "crw_spTOC.hhc") {
+      document.writeln ('<A HREF="' + prev + '">');
+      document.writeln ('<IMG SRC="prevpage.gif" HEIGHT=17 BORDER=0 ALT="Página anterior"></A>');
+   } else {
+//   window.alert ('no previous page');
+   }
+
+   if (next != "crw_spIX.hhk") {
+      document.writeln ('<A HREF="' + next + '">');
+      document.writeln ('<IMG SRC="nextpage.gif" HEIGHT=17 BORDER=0 ALT="Página siguiente"></A>');
+   } else {
+//   window.alert ('no next page');
+   }
+   document.writeln ('</TD><TD ALIGN="left">');
+   document.writeln ('<A HREF="frameset.htm?TOC">');
+   document.writeln ('<IMG SRC="showtoc.gif" HEIGHT=17 BORDER=0 ALT="Haga clic para ver el contenido"></A></TD>');
+   document.writeln ('<TD ALIGN="left">');
+   document.writeln ('<A HREF="frameset.htm?IDX">');
+   document.writeln ('<IMG SRC="showix.gif" HEIGHT=17 BORDER=0 ALT="Haga clic para ver el índice"></A></TD>');
+   document.writeln ('</TD>');
+   document.writeln ('</TR>');
+   document.writeln ('</TABLE>');
+
+}
+
+</SCRIPT>
+<table align="right" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td align="right"><font size="1">Seagate Software, Inc.<br>
+    <a href="http://www.seagatesoftware.com">http://www.seagatesoftware.com</a><br>
+    Envíe sus comentarios a:<br>
+    <a href="mailto:techpubs@seagatesoftware.com">techpubs@seagatesoftware.com</a><br>
+    </font></td>
+  </tr>
+</table>
+</body>
+</html>
+
+

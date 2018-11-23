@@ -1,0 +1,94 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+
+<html>
+<head>
+<title>Consideraciones acerca de archivos de datos</title>
+
+<link REL=STYLESHEET TYPE="text/css" HREF="seagate.css">
+
+<!--
+                 ***********************************
+                 * Seagate Software copyright 1999 *
+                 ***********************************
+
+                      Template version: 5.1
+-->
+
+
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" link="#0000FF" vlink="#0000FF" alink="#800080">
+
+
+ 
+<a name="320613"></a><h4 class="newpage"> Consideraciones acerca de archivos de datos</h4><p><a name="320614"></a>Cuando est&#233; trabajando con archivos de datos, se pueden hacer v&#237;nculos de uno a varios cuando vincula tablas en un solo informe o cuando agrega un subinforme a su informe.</p><a name="320616"></a><h5>Vinculando archivos de datos</h5><p><a name="320617"></a>El proceso que el programa sigue durante la recuperaci&#243;n de datos desde archivos de datos vinculados en situaciones de uno a muchos es el siguiente:</p><ul type="disc"><a name="320618"></a><li>Si hay una f&#243;rmula de selecci&#243;n, el programa la analiza y pasa lo que puede al DLL de la base de datos. Esto es generalmente informaci&#243;n del l&#237;mite de rango. Por ejemplo, considere la siguiente f&#243;rmula de selecci&#243;n:
+</ul><p><code><a name="320619"></a>&nbsp;&nbsp;&nbsp;&nbsp;{cliente.Regi&#243;n} in "CA" to "IL" AND<br>&nbsp;&nbsp;&nbsp;&nbsp;Remainder ({cliente.Id del Cliente},2)=0</code></p><p class="example"><a name="320620"></a>En esta f&#243;rmula, la parte antes del operador "and" contiene el rango del criterio de selecci&#243;n en el campo Regi&#243;n. La regi&#243;n debe caer alfab&#233;ticamente entre "CA" e "IL". El programa pasa este tipo de condici&#243;n al DLL de la base de datos (para datos PC) o al servidor (para datos SQL). Vea <a href="07_recordgroupsel.html#53140">Selecci&#243;n de registros</a>.</p><p class="example"><a name="320624"></a>La segunda mitad de la f&#243;rmula de selecci&#243;n, sin embargo, requiere procesamiento que debe ser hecho en el Procesador de Informes. Utiliza una funci&#243;n interna para manipular y evaluar un valor de campo y no puede ser hecho en el DLL de la base de datos o el servidor. El programa no pasa esta condici&#243;n al DLL de la base de datos.</p><ul type="disc"><a name="320625"></a><li>Si hay un &#237;ndice en la tabla A y la condici&#243;n de selecci&#243;n del l&#237;mite de rango est&#225; basada en el campo indexado {cliente.REGION} en este ejemplo, el programa va directamente al registro que est&#225; buscando en la tabla A (el primer registro CA) y lo lee.
+<ul type="disc"><ul type="disc"><a name="320626"></a><li>Para ese registro, ubica el primer registro coincidente en la tabla B, utilizando el &#237;ndice de la tabla B.<a name="320627"></a><li>Pasa este registro combinado (A+B) de regreso a Seagate Crystal Reports, que lo verifica frente a toda la f&#243;rmula de selecci&#243;n.<a name="320628"></a><li>Despu&#233;s lee el segundo registro coincidente y pasa el registro combinado, posteriormente el tercer registro coincidente y asi sucesivamente hasta que lee todos los registros coincidentes.<a name="320629"></a><li>Despu&#233;s regresa a la tabla A y lee el siguiente registro. No hay necesidad de verificar el registro para ver si cumple la condici&#243;n "CA"; esto es porque el campo est&#225; indexado y los registros est&#225;n en orden alfab&#233;tico. Pero verifica si el registro va m&#225;s all&#225; de la condici&#243;n "IL" (por ejemplo, &#191;puede ser el siguiente registro de Mississippi o Tennessee?). Si el registro est&#225; dentro del rango especificado, comienza de nuevo el proceso de cotejar para ese registro.<a name="320630"></a><li>Contin&#250;a el proceso hasta que ha localizado todos los registros en la tabla A y los registros coincidentes de la tabla B.<p class="indent"><a name="320631"></a>Para encontrar dos registros en la tabla A y los 100 registros en la tabla B que cotejen con los registros de la tabla A, el programa lee 200 registros.</p></ul></ul></ul><p><a name="327526"></a><font color="darkblue"><b>Nota:   &nbsp;&nbsp;&nbsp;</b></font>La tabla de comparaci&#243;n en un v&#237;nculo (tabla B) debe estar siempre indexada o no podr&#225; vincular las tablas.</p>
+<ul type="disc"><a name="320905"></a><li>Si no hay un &#237;ndice en la tabla A o si hay un &#237;ndice pero la condici&#243;n de selecci&#243;n de l&#237;mite de rango no est&#225; basada en el campo indexado, el programa lee el primer registro que encuentra.
+<ul type="disc"><ul type="disc"><a name="320906"></a><li>Para ese registro, ubica el primer registro coincidente en la tabla B, utilizando el &#237;ndice de la tabla B.<a name="320907"></a><li>Pasa el registro combinado (A+B) de regreso al procesador de informe que lo verifica frente a toda la f&#243;rmula de selecci&#243;n.<a name="320908"></a><li>Despu&#233;s ubica el segundo registro coincidente en la tabla B y pasa el registro combinado de regreso, despu&#233;s el tercer registro y asi sucesivamente hasta que haya ubicado, combinado y pasado todos los registros en la tabla B que coinciden con el primer registro en la tabla A.<a name="346576"></a><li>Despu&#233;s regresa al siguiente registro en la tabla A y empieza de nuevo el proceso de cotejar y combinar.<p class="indent"><a name="346577"></a>Para encontrar los dos registros en la tabla A y los 100 registros en la tabla B que coinciden con los registros de la tabla A, el programa lee 2500 registros.</p></ul></ul></ul><a name="346578"></a><h5>Subinformes y archivos de datos</h5><p><a name="320912"></a>Si su informe principal est&#225; basado en la tabla A, el subinforme en la tabla B y los registros est&#225;n vinculados, sus consideraciones principales son las siguientes:</p><ul type="disc"><a name="320913"></a><li>El n&#250;mero de subinformes que se ejecutan es determinado por el &#237;ndice y la f&#243;rmula de selecci&#243;n en el informe principal.
+<ul type="disc"><ul type="disc"><a name="320914"></a><li>Si la tabla A est&#225; indexada y si el informe principal tiene una f&#243;rmula de selecci&#243;n que pasa las condiciones del l&#237;mite de rango para el campo indexado, el programa ejecuta 2 subinformes.<a name="320915"></a><li>Si la tabla A no est&#225; indexada o si la tabla A est&#225; indexada pero la f&#243;rmula de selecci&#243;n no pasa las condiciones de l&#237;mite de rango para el campo indexado, el programa ejecuta 25 subinformes.</ul></ul><a name="320916"></a><li>El n&#250;mero de registros que son le&#237;dos por cada subinforme se determina por el &#237;ndice en la tabla B.
+<ul type="disc"><ul type="disc"><a name="320917"></a><li>Si tiene un &#237;ndice en la tabla B, el programa leer&#225; s&#243;lo los registros coincidentes (100) cada vez que ejecuta un subinforme.<a name="320918"></a><li>Si no tiene un &#237;ndice en la tabla B, el programa leer&#225; siempre cada registro en la tabla B (2500) cada vez que ejecuta un subinforme.</ul></ul></ul>
+<hr><br>
+
+<script  language="JavaScript"><!--
+
+var prev = "24_under_databases9.html";
+var next = "24_under_databases11.html";
+
+function setTopicID() { 
+      var number = "320613"; 
+      return number; 
+}
+
+// --></script>
+
+
+
+
+<SCRIPT>
+
+if (!window.parent.toc && navigator.appName == "Netscape") {
+
+   document.writeln ('<TABLE ALIGN="left" border="0" cellspacing="0" cellpadding="10">');
+   document.writeln ('<TR>');
+   document.write ('<TD ALIGN="left">');
+
+   if (prev != "crw_spTOC.hhc") {
+      document.writeln ('<A HREF="' + prev + '">');
+      document.writeln ('<IMG SRC="prevpage.gif" HEIGHT=17 BORDER=0 ALT="Página anterior"></A>');
+   } else {
+//   window.alert ('no previous page');
+   }
+
+   if (next != "crw_spIX.hhk") {
+      document.writeln ('<A HREF="' + next + '">');
+      document.writeln ('<IMG SRC="nextpage.gif" HEIGHT=17 BORDER=0 ALT="Página siguiente"></A>');
+   } else {
+//   window.alert ('no next page');
+   }
+   document.writeln ('</TD><TD ALIGN="left">');
+   document.writeln ('<A HREF="frameset.htm?TOC">');
+   document.writeln ('<IMG SRC="showtoc.gif" HEIGHT=17 BORDER=0 ALT="Haga clic para ver el contenido"></A></TD>');
+   document.writeln ('<TD ALIGN="left">');
+   document.writeln ('<A HREF="frameset.htm?IDX">');
+   document.writeln ('<IMG SRC="showix.gif" HEIGHT=17 BORDER=0 ALT="Haga clic para ver el índice"></A></TD>');
+   document.writeln ('</TD>');
+   document.writeln ('</TR>');
+   document.writeln ('</TABLE>');
+
+}
+
+</SCRIPT>
+<table align="right" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td align="right"><font size="1">Seagate Software, Inc.<br>
+    <a href="http://www.seagatesoftware.com">http://www.seagatesoftware.com</a><br>
+    Envíe sus comentarios a:<br>
+    <a href="mailto:techpubs@seagatesoftware.com">techpubs@seagatesoftware.com</a><br>
+    </font></td>
+  </tr>
+</table>
+</body>
+</html>
+
+

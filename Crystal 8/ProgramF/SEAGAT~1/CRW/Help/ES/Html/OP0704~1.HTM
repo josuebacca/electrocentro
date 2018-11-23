@@ -1,0 +1,144 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+
+<html>
+<head>
+<title>Operador Or (o)</title>
+
+<link REL=STYLESHEET TYPE="text/css" HREF="seagate.css">
+
+<!--
+                 ***********************************
+                 * Seagate Software copyright 1999 *
+                 ***********************************
+
+                      Template version: 5.1
+-->
+
+
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" link="#0000FF" vlink="#0000FF" alink="#800080">
+
+
+ 
+<a name="1000025021"></a><h3 class="newpage"> Operador Or (o)</h3>
+<p><a name="1000025026"></a>Sintaxis Basic y Crystal.</p><a name="1000025027"></a><h5>Uso</h5><p><code><a name="1000025028"></a>x Oo y </code></p><p><a name="1000025060"></a> <Table Border="1">
+<tr><th align="left" valign="bottom"><a name="1000025031"></a>Value of x
+
+</th><th align="left" valign="bottom"><a name="1000025033"></a>Value of y
+
+</th><th align="left" valign="bottom"><a name="1000025035"></a>x Or y
+
+</th></tr>
+<tr><td align="left" valign="TOP"><P><a name="1000025037"></a>Verdaderos</P>
+
+
+</td><td align="left" valign="TOP"><P><a name="1000025039"></a>Verdaderos</P>
+
+
+</td><td align="left" valign="TOP"><P><a name="1000025041"></a>Verdaderos</P>
+
+
+</td></tr>
+<tr><td align="left" valign="TOP"><P><a name="1000025043"></a>Verdaderos</P>
+
+
+</td><td align="left" valign="TOP"><P><a name="1000025045"></a>Falso</P>
+
+
+</td><td align="left" valign="TOP"><P><a name="1000025047"></a>Verdaderos</P>
+
+
+</td></tr>
+<tr><td align="left" valign="TOP"><P><a name="1000025049"></a>Falso</P>
+
+
+</td><td align="left" valign="TOP"><P><a name="1000025051"></a>Verdaderos</P>
+
+
+</td><td align="left" valign="TOP"><P><a name="1000025053"></a>Verdaderos</P>
+
+
+</td></tr>
+<tr><td align="left" valign="TOP"><P><a name="1000025055"></a>Falso</P>
+
+
+</td><td align="left" valign="TOP"><P><a name="1000025057"></a>Falso</P>
+
+
+</td><td align="left" valign="TOP"><P><a name="1000025059"></a>Falso</P>
+
+
+</td></tr>
+
+</Table></p>
+<a name="1000025061"></a><h5>Examplos</h5><p><a name="1000025066"></a>El siguiente ejemplo es aplicable a sintaxis Crystal:</p><p class="code"><a name="1000025067"></a>If {file.CREDIT LIMIT} = 5000 or {file.SALESMAN} = "SP"
+<br><a name="1000025068"></a>Then
+<br><a name="1000025069"></a>&nbsp;&nbsp;&nbsp;&nbsp;{file.AMOUNT}
+<br><a name="1000025070"></a>Else
+<br><a name="1000025071"></a>&nbsp;&nbsp;&nbsp;&nbsp;0; 
+</p><p class="example"><a name="1000025072"></a>Esto significa que si el l&#237;mite de cr&#233;dito es 5000, o&nbsp;&nbsp;&nbsp;&nbsp;, si el vendedor es SP, (cualquiera de las condiciones es VERDADERA), entonces retornar el valor en el campo t {archivo.CANTIDAD}, de lo contrario devuelva nada.</p><p><a name="1000025077"></a>Los siguientes ejemplos son aplicables a sintaxis Basic y Crystal:</p><p><code><a name="1000025078"></a>A &gt; B or B &gt; C</code></p><p class="example"><a name="1000025079"></a>VERDADERO, donde A = 10, B = 6, y C = 3 (ambas<EM> </EM>condiciones<EM> VERDADERO</EM>).</p><p><code><a name="1000025080"></a>A &gt; B or B &gt; C</code></p><p class="example"><a name="1000025081"></a>VERDADERO, donde A=10, B=6, y C=7 (una de las dos condiciones VERDADERO).</p><p><code><a name="1000025082"></a>A &gt; B or B &gt; C</code></p><p class="example"><a name="1000025083"></a>FALSO, donde A=5, B=6, y C=7 (ninguna de las dos condiciones VERDADERO).</p><p><code><a name="1000025084"></a>(A&gt;B) or (A * C - D &gt; E) or (E / D&lt;= B)</code></p><p class="example"><a name="1000025085"></a>VERDADERO, donde A = 5, B = 5, C = 3, D = 2, E = 12 (Por lo menos una de las tres condiciones es VERDADERO. S&#243;lo en este caso (A * C - D &gt; E) es VERDADERO).</p><a name="1000019853"></a><h6>Temas relacionados</h6><p><a name="1000025090"></a><a href="19_introformulas34.html#316913">F&#243;rmula 6</a></p>
+<hr><br>
+
+<script  language="JavaScript"><!--
+
+var prev = "Operators42.html";
+var next = "Operators44.html";
+
+function setTopicID() { 
+      var number = "1000025021"; 
+      return number; 
+}
+
+// --></script>
+
+
+
+
+<SCRIPT>
+
+if (!window.parent.toc && navigator.appName == "Netscape") {
+
+   document.writeln ('<TABLE ALIGN="left" border="0" cellspacing="0" cellpadding="10">');
+   document.writeln ('<TR>');
+   document.write ('<TD ALIGN="left">');
+
+   if (prev != "crw_spTOC.hhc") {
+      document.writeln ('<A HREF="' + prev + '">');
+      document.writeln ('<IMG SRC="prevpage.gif" HEIGHT=17 BORDER=0 ALT="Página anterior"></A>');
+   } else {
+//   window.alert ('no previous page');
+   }
+
+   if (next != "crw_spIX.hhk") {
+      document.writeln ('<A HREF="' + next + '">');
+      document.writeln ('<IMG SRC="nextpage.gif" HEIGHT=17 BORDER=0 ALT="Página siguiente"></A>');
+   } else {
+//   window.alert ('no next page');
+   }
+   document.writeln ('</TD><TD ALIGN="left">');
+   document.writeln ('<A HREF="frameset.htm?TOC">');
+   document.writeln ('<IMG SRC="showtoc.gif" HEIGHT=17 BORDER=0 ALT="Haga clic para ver el contenido"></A></TD>');
+   document.writeln ('<TD ALIGN="left">');
+   document.writeln ('<A HREF="frameset.htm?IDX">');
+   document.writeln ('<IMG SRC="showix.gif" HEIGHT=17 BORDER=0 ALT="Haga clic para ver el índice"></A></TD>');
+   document.writeln ('</TD>');
+   document.writeln ('</TR>');
+   document.writeln ('</TABLE>');
+
+}
+
+</SCRIPT>
+<table align="right" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td align="right"><font size="1">Seagate Software, Inc.<br>
+    <a href="http://www.seagatesoftware.com">http://www.seagatesoftware.com</a><br>
+    Envíe sus comentarios a:<br>
+    <a href="mailto:techpubs@seagatesoftware.com">techpubs@seagatesoftware.com</a><br>
+    </font></td>
+  </tr>
+</table>
+</body>
+</html>
+
+

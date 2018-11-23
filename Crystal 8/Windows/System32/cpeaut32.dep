@@ -1,0 +1,32 @@
+; ------------------------------------------------------------------------------
+; Dependency file for setup wizards.
+
+
+[Version]
+Version=8.0.0.5
+
+
+; ------------------------------------------------------------------------------
+; Dependencies for CPEAUT32.DLL
+
+
+[CPEAUT32.DLL]
+Dest=$(WinSysPath)
+Register=$(DLLSelfRegister)
+Version=8.0.0.5
+Uses1=CRPE32.DLL
+Uses2=MFC42.DLL
+Uses3=MSVCRT.DLL
+Uses4=
+
+
+[MFC42.DLL]
+Dest=$(WinSysPath)
+Uses1=
+
+
+[MSVCRT.DLL]
+Dest=$(WinSysPath)
+Uses1=
+
+

@@ -1,0 +1,93 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+
+<html>
+<head>
+<title>Tipos de mapas</title>
+
+<link REL=STYLESHEET TYPE="text/css" HREF="seagate.css">
+
+<!--
+                 ***********************************
+                 * Seagate Software copyright 1999 *
+                 ***********************************
+
+                      Template version: 5.1
+-->
+
+
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" link="#0000FF" vlink="#0000FF" alink="#800080">
+
+
+ 
+<a name="77671"></a><h3 class="newpage"> Tipos de mapas</h3>
+<p><a name="77672"></a>El Asistente de Mapas tambi&#233;n proporciona cinco tipos de mapas b&#225;sicos, cada cual est&#225; dise&#241;ado para una estrategia diferente de analisis de datos. Considere los tipos de datos que desea analizar para decidir qu&#233; tipo de mapa ser&#237;a m&#225;s adecuado en su informe. Por ejemplo, si espera que el mapa muestre un elemento de datos por cada divisi&#243;n geogr&#225;fica (ciudad, estado, pa&#237;s, etc.), podr&#237;a usar un mapa de Rangos, de Densidad de puntos o Graduaci&#243;n para representarlo. En cambio, si desea que el mapa presente m&#225;s de un valor para cada divisi&#243;n geogr&#225;fica nueva, entonces podr&#237;a usar un mapa de Gr&#225;fico circular o Gr&#225;fico de barras. Los tipos de mapas son:</p><a name="77673"></a><h5>De Rangos</h5><p><a name="77675"></a>Un mapa de Rangos divide los datos entre rangos, asigna un color espec&#237;fico para cada rango y despu&#233;s pone una clave de color en cada &#225;rea geogr&#225;fica del mapa para mostrar un rango. Por ejemplo, podr&#237;a crear un mapa para mostrar las Ventas del A&#241;o Pasado por Regi&#243;n. Si tiene ventas entre cero y 100,000, el mapa podr&#237;a contener cinco rangos con intervalos equivalentes, cada uno de 20,000. Podr&#237;a usar tonos del color rojo (de rojo oscuro al rojo claro) para poner una clave de color en cada regi&#243;n, de acuerdo a las figuras de venta. Entonces podr&#237;a usar este mapa para descubrir d&#243;nde hay mayores ventas.</p><p><a name="77676"></a>Usando intervalos equivalentes, puede que todas sus regiones est&#233;n entre cero y 20,000, excepto quiz&#225;s una regi&#243;n (por ejemplo, California) donde las ventas son excepcionalmente altas (tales como 98,000). Este mapa ser&#237;a una representaci&#243;n de los datos deficiente.Un mapa m&#225;s &#250;til tendr&#237;a rangos tales como de 0-5000, 5000-10000, 10001-15000, 15001-20000, y sobre 20000.</p><p><a name="77677"></a>Es importante definir los rangos cuidadosamente. Encontrar&#225; opciones de rangos diferentes:</p><ul type="disc"><a name="77679"></a><li><strong>Conteo igual</strong><br>Esta opci&#243;n asigna intervalos de tal modo que el mismo n&#250;mero de regiones (o aproximado) aparecen en cada intervalo. En otras palabras, esta opci&#243;n asigna intervalos para que cada color del mapa sea asignado al mismo n&#250;mero de regiones. La cantidad num&#233;rica de los valores de resumen en cada intervalo pueda ser  o no ser igual, dependiendo de las regiones individuales y sus valores de resumen.
+<a name="77681"></a><li><strong>Rangos iguales</strong><br>Esta opci&#243;n asigna intervalos de manera que los valores de resumen en cada intervalo son num&#233;ricamente iguales. El n&#250;mero de regiones en cada intervalo puede ser o no ser igual, dependiendo de las regiones individuales y sus valores de resumen.
+<a name="77683"></a><li><strong>Interrupci&#243;n natural</strong><br>Esta opci&#243;n asigna intervalos usando un algoritmo que intenta minimizar la diferencia entre los valores de resumen y el promedio de esos valores, por cada intervalo.
+<a name="77685"></a><li><strong>Desviaci&#243;n est&#225;ndar</strong><br>Esta opci&#243;n asigna intervalos de tal forma que el intervalo medio se quiebra en el medio (o promedio) de los valores de los datos, y los intervalos encima y debajo del rango medio est&#225;n una desviaci&#243;n est&#225;ndar por arriba o por abajo del medio. La desviaci&#243;n est&#225;ndar es la ra&#237;z cuadrada de la variancia. Esto proyecta c&#243;mo varios valores en un conjunto de valores se desv&#237;an del medio en ese conjunto.
+</ul><a name="78900"></a><h5>Densidad de puntos</h5><p><a name="77688"></a>Un mapa de densidad de puntos presenta un punto para cada ocurrencia de un elemento espec&#237;fico. Por ejemplo, un mapa de Estados Unidos que muestre un punto por cada fabricante de barcos en la naci&#243;n. En un estado como Tennessee no habr&#237;a ning&#250;n punto. En algunos estados costeros, tal como South Carolina, es posible contar los puntos del mapa ya que su dispersi&#243;n ser&#237;a bastante amplia. Sin embargo, en estados donde la industria de construcci&#243;n de barcos es muy importante, como en California y Virginia, la densidad de puntos formar&#237;a un s&#243;lido a lo largo de la costa. </p><p><a name="77689"></a>El prop&#243;sito de un mapa de densidad de puntos es, por lo tanto, proporcionar una impresi&#243;n general de la distribuci&#243;n de un elemento especificado. Este tipo de mapa es muy parecido a una foto nocturna de EE.UU. tomada por un sat&#233;lite, donde es posible ver las luces de todas las ciudades. Tal mapa no es una manera muy precisa para impartir informaci&#243;n (particularmente si usted tiene un gran n&#250;mero de elementos), pero s&#237; es una buena forma de dar una impresi&#243;n de la distribuci&#243;n de algo.</p><a name="78906"></a><h5>Graduaci&#243;n</h5><p><a name="77692"></a>Un mapa de graduaci&#243;n es muy parecido a un mapa de rangos, que muestra un s&#237;mbolo por instancia de un elemento especificado. El s&#237;mbolo, es un c&#237;rculo, pero usted puede elegir un s&#237;mbolo diferente si prefiere. Cada s&#237;mbolo tiene un tama&#241;o proporcional al valor del elemento que representa (dentro de un rango de tres tama&#241;os). </p><p><a name="77693"></a>Un mapa de graduaci&#243;n imparte la misma informaci&#243;n que un mapa de rangos, pero usualmente el mapa de rangos se usa en casos donde las &#225;reas geogr&#225;ficas tienen bordes geogr&#225;ficos definitivos (como en caso de regiones), mientras un mapa de graduaci&#243;n ser&#237;a m&#225;s bien para presentar datos que est&#225;n vinculados a ciertos puntos en lugar de &#225;reas precisas (como en el caso de ciudades). </p><p><a name="77694"></a>Por ejemplo, un mapa de una regi&#243;n particular podr&#237;a usar c&#237;rculos graduados para representar las ventas de cada oficina. El tama&#241;o de cada c&#237;rculo ser&#225; en proporci&#243;n a las ventas (o el rango de ventas) de la oficina que representa. En este mapa, una oficina que produce $70,000 podr&#237;a representarse con un c&#237;rculo grande, mientras que una que produce $20,000 se indicar&#237;a con un c&#237;rculo peque&#241;o. As&#237; que, un mapa de graduaci&#243;n ofrece una representaci&#243;n m&#225;s eficiente de datos por puntos comparado con un mapa de rangos, y utiliza s&#237;mbolos de distintos tama&#241;os en lugar de colores para distinguir variaciones en los valores de los elementos representados.</p><a name="78912"></a><h5>Gr&#225;fico circular</h5><p><a name="77697"></a>Un mapa de gr&#225;ficos circulares consiste de un gr&#225;fico circular sobre cada &#225;rea geogr&#225;fica. Los gr&#225;ficos circulares representan elementos de datos los cuales constituyen un total. Cada secci&#243;n del c&#237;rculo representa un elemento individual de los datos y muestra el porcentaje de ese elemento relacionado al total. Por ejemplo, usted podr&#237;a crear un mapa de gr&#225;ficos circulares para mostrar los tipos de combustibles de calefacci&#243;n por regi&#243;n. Pueden haber cuatro tipos de combustibles de calefacci&#243;n (cuatro secciones en cada c&#237;rculo): electricidad, gas, le&#241;a y solar. Entonces cada regi&#243;n tendr&#237;a un gr&#225;fico circular para representar la divisi&#243;n de tipos de combustibles de calefacci&#243;n dentro de esa regi&#243;n. El estado de Washington probablemente utiliza un alto porcentaje (una secci&#243;n grande del c&#237;rculo) de electricidad debido a la abundancia de energ&#237;a hidrol&#243;gica de esa regi&#243;n, mientras que Idaho probablemente utiliza un porcentaje m&#225;s alto (una secci&#243;n grande del c&#237;rculo) de gas natural. </p><p><a name="77698"></a>Puede usar este tipo de mapa para comparar la distribuci&#243;n de varios elementos dentro de una regi&#243;n en particular. Tambi&#233;n puede especificar que los gr&#225;ficos circulares tengan tama&#241;os proporcionados, con tal de que, como con los s&#237;mbolos en un mapa de graduaci&#243;n, los gr&#225;ficos circulares aparezcan de varios tama&#241;os, dependiendo de los valores de datos subyacentes. Esto permite comparar los totales entre regiones.</p><a name="78918"></a><h5>Gr&#225;fico de barras</h5><p><a name="77701"></a>Un mapa de gr&#225;fico de barras funciona como un mapa de gr&#225;fico circular, pero puede ser m&#225;s &#250;til para ciertos conjuntos de datos. T&#237;picamente, usted usar&#237;a un mapa de gr&#225;fico de barras para elementos que no suman el 100% (eso es, para elementos de datos que no constituyen un todo, o para elementos de datos que no est&#225;n relacionados). Por ejemplo, podr&#237;a crear un mapa de gr&#225;fico de barras para representar el uso de combustibles de calefacci&#243;n por regi&#243;n. Quiz&#225;s desea analizar el uso de tres tipos de combustibles: electricidad, gas y solar. Cada gr&#225;fico de barras en el mapa podr&#237;a contener barras individuales para cada uno de estos tipos. En este ejemplo, los elementos de datos (electricidad, gas y solar) no constituyen un todo. Puede ser que hayan otros tipos de combustibles en uso en estas regiones, tales como le&#241;a, pero este mapa s&#243;lo est&#225; interesado en los primeros tres. Adicionalmente, el prop&#243;sito del mapa es comparar el uso, en cada regi&#243;n, de cada tipo de combustible comparado con el uso en todas las otras regiones. En un mapa de gr&#225;fico circular, estos tres tipos de combustibles se podr&#237;an mostrar como porcentajes de uso del combustible total dentro de cada regi&#243;n, y aunque as&#237; puede comparar los porcentajes de cada regi&#243;n, probablemente no ser&#237;a posible comparar los valores actuales para cada regi&#243;n, ya que cada regi&#243;n tendr&#237;a el mismo valor total (100%).</p>
+<hr><br>
+
+<script  language="JavaScript"><!--
+
+var prev = "13_map3.html";
+var next = "13_map5.html";
+
+function setTopicID() { 
+      var number = "77671"; 
+      return number; 
+}
+
+// --></script>
+
+
+
+
+<SCRIPT>
+
+if (!window.parent.toc && navigator.appName == "Netscape") {
+
+   document.writeln ('<TABLE ALIGN="left" border="0" cellspacing="0" cellpadding="10">');
+   document.writeln ('<TR>');
+   document.write ('<TD ALIGN="left">');
+
+   if (prev != "crw_spTOC.hhc") {
+      document.writeln ('<A HREF="' + prev + '">');
+      document.writeln ('<IMG SRC="prevpage.gif" HEIGHT=17 BORDER=0 ALT="Página anterior"></A>');
+   } else {
+//   window.alert ('no previous page');
+   }
+
+   if (next != "crw_spIX.hhk") {
+      document.writeln ('<A HREF="' + next + '">');
+      document.writeln ('<IMG SRC="nextpage.gif" HEIGHT=17 BORDER=0 ALT="Página siguiente"></A>');
+   } else {
+//   window.alert ('no next page');
+   }
+   document.writeln ('</TD><TD ALIGN="left">');
+   document.writeln ('<A HREF="frameset.htm?TOC">');
+   document.writeln ('<IMG SRC="showtoc.gif" HEIGHT=17 BORDER=0 ALT="Haga clic para ver el contenido"></A></TD>');
+   document.writeln ('<TD ALIGN="left">');
+   document.writeln ('<A HREF="frameset.htm?IDX">');
+   document.writeln ('<IMG SRC="showix.gif" HEIGHT=17 BORDER=0 ALT="Haga clic para ver el índice"></A></TD>');
+   document.writeln ('</TD>');
+   document.writeln ('</TR>');
+   document.writeln ('</TABLE>');
+
+}
+
+</SCRIPT>
+<table align="right" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td align="right"><font size="1">Seagate Software, Inc.<br>
+    <a href="http://www.seagatesoftware.com">http://www.seagatesoftware.com</a><br>
+    Envíe sus comentarios a:<br>
+    <a href="mailto:techpubs@seagatesoftware.com">techpubs@seagatesoftware.com</a><br>
+    </font></td>
+  </tr>
+</table>
+</body>
+</html>
+
+

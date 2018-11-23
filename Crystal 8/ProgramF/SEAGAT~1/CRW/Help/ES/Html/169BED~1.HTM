@@ -1,0 +1,143 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+
+<html>
+<head>
+<title>Para crear un informe OLAP usando el m&#233;todo Informix MetaCube SQL</title>
+
+<link REL=STYLESHEET TYPE="text/css" HREF="seagate.css">
+
+<!--
+                 ***********************************
+                 * Seagate Software copyright 1999 *
+                 ***********************************
+
+                      Template version: 5.1
+-->
+
+
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" link="#0000FF" vlink="#0000FF" alink="#800080">
+
+
+ 
+<a name="62035"></a><h4 class="newpage"> Para crear un informe OLAP usando el m&#233;todo Informix MetaCube SQL</h4><ol>
+<a name="53387"></a><li value="1&nbsp;&nbsp;&nbsp;&nbsp;">En el men&#250; <strong>Archivo</strong>, haga clic en <kbd>Nuevo</kbd>.
+<p class="indent"><a name="53388"></a>Aparece la Galer&#237;a de Seagate Crystal Report.</p><a name="53389"></a><li value="2&nbsp;&nbsp;&nbsp;&nbsp;">Confirme que el Asistente de informe y Est&#225;ndar est&#233;n seleccionados y luego haga clic en <strong>Aceptar</strong>.
+<p><a name="53393"></a> <img src="images/ex_reportgallery_wizardstandard.gif">
+
+
+</p>
+<a name="53395"></a><li value="3&nbsp;&nbsp;&nbsp;&nbsp;">Haga clic en<strong> Base de datos</strong>.
+<p class="indent"><a name="53396"></a>Aparece el Explorador de datos.</p><a name="53397"></a><li value="4&nbsp;&nbsp;&nbsp;&nbsp;">Expanda la carpeta <kbd>M&#225;s or&#237;genes de datos</kbd> y luego haga clic en la carpeta <strong>Informix MetaCube</strong>.
+<p><a name="53401"></a> <img src="images/db_dataexplorer_informixmetacube.gif">
+
+
+</p>
+<a name="53403"></a><li value="5&nbsp;&nbsp;&nbsp;&nbsp;">En el cuadro de di&#225;logo Inicio de sesi&#243;n RDBMS y elija sistema DSS, ingrese la contrase&#241;a y haga clic en <strong>Aceptar</strong>.
+<a name="59397"></a><li value="6&nbsp;&nbsp;&nbsp;&nbsp;">Elija <kbd>Brand Channel Net Profit</kbd> en el cuadro de lista<EM> </EM><kbd>Tablas SQL</kbd>.
+<a name="59398"></a><li value="7&nbsp;&nbsp;&nbsp;&nbsp;">Haga clic en <kbd>Agregar</kbd> y despu&#233;s en <kbd>Terminado</kbd>.
+<p class="indent"><a name="53411"></a>Aparece el Asistente de informe est&#225;ndar.</p><a name="53412"></a><li value="8&nbsp;&nbsp;&nbsp;&nbsp;">Haga clic en <strong>Siguiente</strong>.
+<p class="indent"><a name="53413"></a>La ficha Campos aparece.</p><a name="53414"></a><li value="9&nbsp;&nbsp;&nbsp;&nbsp;">En este ejemplo seleccione <kbd>Brand Channel Net Profit.Channel</kbd> en el cuadro de lista <kbd>Campos del informe</kbd> y haga clic en <kbd>Agregar</kbd>. 
+<a name="54071"></a><li value="10&nbsp;&nbsp;&nbsp;&nbsp;">Para ver el informe, haga clic en <kbd>Terminar</kbd>.
+</ol>
+<p><a name="54072"></a><font color="darkblue"><b>Nota:   &nbsp;&nbsp;&nbsp;</b></font>Es posible que tenga que ajustar el ancho de las columnas de los campos y encabezados de campos para poder ver todos los datos. Si desea ocultar la columna Channel Field, simplemente seleccione el elemento superior del campo, haga clic con el bot&#243;n derecho del mouse y seleccione <kbd>Eliminar</kbd> en el men&#250; contextual.</p>
+<a name="54074"></a><h6>C&#243;mo crear un informe de MetaCube de tablas cruzadas</h6><ol>
+<a name="53424"></a><li value="1&nbsp;&nbsp;&nbsp;&nbsp;">En el men&#250; <strong>Archivo</strong>, haga clic en <strong>Nuevo</strong>.
+<p class="indent"><a name="54119"></a>Aparece Galer&#237;a de Informes de Seagate Crystal.</p><a name="54120"></a><li value="2&nbsp;&nbsp;&nbsp;&nbsp;">Elija el <kbd>Asistente de Tablas Cruzadas</kbd>.
+<p><a name="53433"></a> <img src="images/db_reportgallery_crosstab.gif">
+
+
+</p>
+<a name="53435"></a><li value="3&nbsp;&nbsp;&nbsp;&nbsp;">Haga clic en <strong>Aceptar</strong>.
+<p class="indent"><a name="53436"></a>Aparece el Asistente de informe de tabla cruzada.</p><p><a name="53440"></a> <img src="images/ex_crosstabreport_data.gif">
+
+
+</p>
+<a name="53443"></a><li value="4&nbsp;&nbsp;&nbsp;&nbsp;">Haga clic en <strong>Base de datos</strong>.
+<p class="indent"><a name="53444"></a>Aparece el Explorador de datos.</p><a name="53445"></a><li value="5&nbsp;&nbsp;&nbsp;&nbsp;">Expanda la carpeta <kbd>M&#225;s or&#237;genes de datos</kbd> y luego la carpeta<strong> Informix MetaCube</strong>.
+<p><a name="53449"></a> <img src="images/db_dataexplorer_informixmetacube.gif">
+
+
+</p>
+<a name="53451"></a><li value="6&nbsp;&nbsp;&nbsp;&nbsp;">En el cuadro de di&#225;logo Inicio de sesi&#243;n RDBMS y elija sistema DSS, ingrese la contrase&#241;a y luego haga clic en <strong>Aceptar</strong>.
+<p class="indent"><a name="54460"></a><font color="darkblue"><b>Nota:   &nbsp;&nbsp;&nbsp;</b></font>Si usted ya ha estado trabajando con informes de MetaCube durante esta sesi&#243;n, entonces puede que el paso 2 no sea necesario.</p>
+<a name="54127"></a><li value="7&nbsp;&nbsp;&nbsp;&nbsp;">Elija Ventas de <kbd>audio YTD por Canal</kbd> y haga clic en <kbd>Agregar</kbd>. Haga lo mismo con <kbd>Brand Channel Net Profit</kbd>.
+<p class="indent"><a name="53458"></a>Aparece el Asistente de informe de tabla cruzada con la ficha V&#237;nculos activada.</p><a name="53463"></a><li value="8&nbsp;&nbsp;&nbsp;&nbsp;">Haga clic en <strong>Siguiente</strong>.
+<p class="indent"><a name="53465"></a>Aparece la ficha Campos.</p><a name="53466"></a><li value="9&nbsp;&nbsp;&nbsp;&nbsp;">Arrastre y suelte los siguientes campos del &#225;rea Campos de informe a las &#225;reas de tabla cruzada apropiadas:
+<ul type="disc"><ul type="disc"><a name="53467"></a><li>campo <strong>Atributos.Canal.Canal</strong> de la tabla Canal AA de ventas de audio al &#225;rea Filas.<a name="53468"></a><li>campo <strong>Atributos.Producto.Marca</strong> de la tabla Beneficios netos de canal de marca al &#225;rea Columnas.<a name="54146"></a><li>campo <strong>Medidas.Transacciones de ventas.Beneficios netos</strong>  a la tabla Beneficios netos de canal de marca al &#225;rea Campos resumidos<strong>.</strong></ul></ul><a name="54151"></a><li value="10&nbsp;&nbsp;&nbsp;&nbsp;">Haga clic en <kbd>Terminar </kbd>y ver&#225; un informe de tablas cruzadas basado en los campos que ha seleccionado.
+<a name="54152"></a><li value="11&nbsp;&nbsp;&nbsp;&nbsp;">Guarde el informe.
+<p class="indent"><a name="54157"></a>Este informe se usa en el tutorial sobre c&#243;mo agregar un campo a un informe de tabla cruzada.</p></ol>
+<a name="54162"></a><h6>C&#243;mo agregar un campo a un informe de MetaCube de tablas cruzadas</h6><p><a name="54163"></a>Este tutorial est&#225; basado en el informe creado en el tutorial creando informes de MetaCube de tablas cruzadas.</p><ol>
+<a name="54164"></a><li value="1&nbsp;&nbsp;&nbsp;&nbsp;">Seleccione el objeto de Tablas Cruzadas completo a trav&#233;s de hacer clic en la esquina superior izquierda del objeto, encima del encabezado de la fila superior y a la izquierda del encabezado de la columna m&#225;s a la izquierda.
+<a name="54165"></a><li value="2&nbsp;&nbsp;&nbsp;&nbsp;">Elija <kbd>Tablas cruzadas</kbd> en el men&#250; <kbd>Formato</kbd>.
+<p class="indent"><a name="54200"></a>Aparece el cuadro de di&#225;logo Formato de tabla cruzada.</p><a name="54201"></a><li value="3&nbsp;&nbsp;&nbsp;&nbsp;">En el seleccione <kbd>Fiscal Year</kbd> bajo Audio Sales YTD by Channel y arrastre y ub&#237;quelo en el cuadro de lista Columnas.
+<a name="54202"></a><li value="4&nbsp;&nbsp;&nbsp;&nbsp;">Haga clic en <kbd>Aceptar</kbd>.
+<p class="indent"><a name="54203"></a>Fiscal Year ahora est&#225; agregado al informe de Tablas cruzadas.</p><p class="indent"><a name="54221"></a><font color="darkblue"><b>Nota:   &nbsp;&nbsp;&nbsp;</b></font>Es posible que tenga que expandir las columnas para ver toda la informaci&#243;n.</p>
+<a name="54222"></a><li value="5&nbsp;&nbsp;&nbsp;&nbsp;">Guarde el informe.
+<p class="indent"><a name="54227"></a>Este informe se usa en el tutorial sobre c&#243;mo girar campos en un informe de tabla cruzada Informix MetaCube.</p></ol>
+
+<hr><br>
+
+<script  language="JavaScript"><!--
+
+var prev = "16_olap14.html";
+var next = "16_olap16.html";
+
+function setTopicID() { 
+      var number = "62035"; 
+      return number; 
+}
+
+// --></script>
+
+
+
+
+<SCRIPT>
+
+if (!window.parent.toc && navigator.appName == "Netscape") {
+
+   document.writeln ('<TABLE ALIGN="left" border="0" cellspacing="0" cellpadding="10">');
+   document.writeln ('<TR>');
+   document.write ('<TD ALIGN="left">');
+
+   if (prev != "crw_spTOC.hhc") {
+      document.writeln ('<A HREF="' + prev + '">');
+      document.writeln ('<IMG SRC="prevpage.gif" HEIGHT=17 BORDER=0 ALT="Página anterior"></A>');
+   } else {
+//   window.alert ('no previous page');
+   }
+
+   if (next != "crw_spIX.hhk") {
+      document.writeln ('<A HREF="' + next + '">');
+      document.writeln ('<IMG SRC="nextpage.gif" HEIGHT=17 BORDER=0 ALT="Página siguiente"></A>');
+   } else {
+//   window.alert ('no next page');
+   }
+   document.writeln ('</TD><TD ALIGN="left">');
+   document.writeln ('<A HREF="frameset.htm?TOC">');
+   document.writeln ('<IMG SRC="showtoc.gif" HEIGHT=17 BORDER=0 ALT="Haga clic para ver el contenido"></A></TD>');
+   document.writeln ('<TD ALIGN="left">');
+   document.writeln ('<A HREF="frameset.htm?IDX">');
+   document.writeln ('<IMG SRC="showix.gif" HEIGHT=17 BORDER=0 ALT="Haga clic para ver el índice"></A></TD>');
+   document.writeln ('</TD>');
+   document.writeln ('</TR>');
+   document.writeln ('</TABLE>');
+
+}
+
+</SCRIPT>
+<table align="right" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td align="right"><font size="1">Seagate Software, Inc.<br>
+    <a href="http://www.seagatesoftware.com">http://www.seagatesoftware.com</a><br>
+    Envíe sus comentarios a:<br>
+    <a href="mailto:techpubs@seagatesoftware.com">techpubs@seagatesoftware.com</a><br>
+    </font></td>
+  </tr>
+</table>
+</body>
+</html>
+
+

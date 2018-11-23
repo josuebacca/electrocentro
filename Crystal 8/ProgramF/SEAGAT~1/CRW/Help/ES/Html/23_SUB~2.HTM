@@ -1,0 +1,107 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+
+<html>
+<head>
+<title>C&#243;mo vincular un subinforme a los datos del informe principal</title>
+
+<link REL=STYLESHEET TYPE="text/css" HREF="seagate.css">
+
+<!--
+                 ***********************************
+                 * Seagate Software copyright 1999 *
+                 ***********************************
+
+                      Template version: 5.1
+-->
+
+
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" link="#0000FF" vlink="#0000FF" alink="#800080">
+
+
+ 
+<a name="44569"></a><h2 class="newpage">C&#243;mo vincular un subinforme a los datos del informe principal</h2><p><a name="44570"></a>Muchas veces los datos en un subinforme complementan los datos en el informe principal. Usted puede, por ejemplo, tener datos de clientes en un informe principal y utilizar subinformes para mostrar los pedidos de cada cliente.</p><p><a name="57012"></a> <img src="images/RPT_SUB3.gif">
+
+
+</p>
+<p><a name="44584"></a> </p>
+<p><a name="44586"></a>En tales casos, necesitar&#225; coordinar los datos en el informe principal y el subinforme para que los pedidos en cada subinforme coincidan con el cliente correspondiente.</p><p><a name="42838"></a>Para hacer esto, necesita especificar un campo en el subinforme y uno en el informe principal que contengan datos en com&#250;n. Hace esto por medio del cuadro de di&#225;logo V&#237;nculos de Subinforme. Seagate Crystal Reports utiliza estos campos para coordinar los datos. El v&#237;nculo asegura que los datos de "pedidos" del subinforme est&#233;n en la misma fila que los datos de "cliente" correspondientes en el informe principal.</p><a name="44659"></a><h6>Para vincular un subinforme a los datos del informe principal</h6><ol>
+<a name="42879"></a><li value="1&nbsp;&nbsp;&nbsp;&nbsp;">Si va a usar un nuevo subinforme o a importar un informe existente como subinforme, en el men&#250; <kbd>Insertar</kbd>, haga clic en <kbd>Subinforme</kbd>. Elija o cree un informe y haga clic en la ficha <kbd>Vincular</kbd>.
+<p class="indent"><a name="44664"></a>- o -</p><p class="indent"><a name="44665"></a>Si ya tiene un subinforme en su informe principal y no lo vincul&#243; en un principio, puede abrir el cuadro de di&#225;logo V&#237;nculos de Subinforme al seleccionar <kbd>V&#237;nculos del subinforme</kbd> en el men&#250; <kbd>Edici&#243;n</kbd>.</p><p class="indent"><a name="44683"></a>Aparece el cuadro de di&#225;logo Insertar un subinforme.</p><p><a name="44703"></a> <img src="images/db_sbrlk.gif">
+
+
+</p>
+<a name="42946"></a><li value="2&nbsp;&nbsp;&nbsp;&nbsp;">Elija el subinforme que desea vincular de la lista desplegable <kbd>Para el subinforme</kbd> (si a&#250;n no ha seleccionado ninguno).
+<a name="42947"></a><li value="3&nbsp;&nbsp;&nbsp;&nbsp;">Seleccione el campo que desea usar como campo de vinculaci&#243;n en el informe principal (que lo contiene) de la lista <kbd>Campos disponibles</kbd>.
+<a name="42948"></a><li value="4&nbsp;&nbsp;&nbsp;&nbsp;">Haga clic en el<EM> </EM>bot&#243;n de flecha<EM> (&gt;)</EM>.
+<p class="indent"><a name="44754"></a>El campo se agrega al cuadro de lista Campos para vincular y estar&#225; seleccionado como campo de vinculaci&#243;n.</p><a name="44759"></a><li value="5&nbsp;&nbsp;&nbsp;&nbsp;">Repita los Pasos 3 y 4 cuantas veces sea necesario para cada v&#237;nculo que desea establecer.
+<a name="44760"></a><li value="6&nbsp;&nbsp;&nbsp;&nbsp;">Use la secci&#243;n <kbd>V&#237;nculo de campo</kbd> (el cual aparecer&#225; solamente si ha seleccionado un campo vinculado) para establecer el v&#237;nculo para cada campo de vinculaci&#243;n:
+<ul type="disc"><ul type="disc"><a name="44761"></a><li>Seleccione el subinforme que desea vincular de la lista desplegable <kbd>Campo de par&#225;metro de subinforme a usar</kbd>.<a name="44762"></a><li>Active el cuadro de verificaci&#243;n <kbd>Seleccionar datos basados en campo</kbd> si desea organizar los datos del subinforme que est&#225;n basados en un campo espec&#237;fico (este es el equivalente r&#225;pido al usar el Asistente de Selecci&#243;n). Si no hay nada especificado aqu&#237;, el subinforme adoptar&#225; la organizaci&#243;n del informe principal.</ul></ul><a name="44763"></a><li value="7&nbsp;&nbsp;&nbsp;&nbsp;">Haga clic en <kbd>Aceptar</kbd>.
+</ol>
+<p><a name="53374"></a>Ahora, cuando usted ejecute el informe, el programa coordinar&#225; los datos en el informe principal y el subinforme.</p><p><a name="53381"></a><font color="darkblue"><b>Nota:   &nbsp;&nbsp;&nbsp;</b></font>El tipo de campo del Informe Contenedor determina cuales campos del subinforme ser&#225;n visibles. Ya que Info Report DesignerSeagate Crystal Reports lee las fechas ya sea como campos de cadenas, fecha o fecha<nobr>-h</nobr>ora, usted debe asegurarse que el tipo de campo de par&#225;metro en el subinforme coincide con el tipo de campo establecido en las Opciones del informe en el informe principal para el campo que desea vincular.</p>
+
+<hr><br>
+
+<script  language="JavaScript"><!--
+
+var prev = "23_subreports9.html";
+var next = "23_subreports11.html";
+
+function setTopicID() { 
+      var number = "44569"; 
+      return number; 
+}
+
+// --></script>
+
+
+
+
+<SCRIPT>
+
+if (!window.parent.toc && navigator.appName == "Netscape") {
+
+   document.writeln ('<TABLE ALIGN="left" border="0" cellspacing="0" cellpadding="10">');
+   document.writeln ('<TR>');
+   document.write ('<TD ALIGN="left">');
+
+   if (prev != "crw_spTOC.hhc") {
+      document.writeln ('<A HREF="' + prev + '">');
+      document.writeln ('<IMG SRC="prevpage.gif" HEIGHT=17 BORDER=0 ALT="Página anterior"></A>');
+   } else {
+//   window.alert ('no previous page');
+   }
+
+   if (next != "crw_spIX.hhk") {
+      document.writeln ('<A HREF="' + next + '">');
+      document.writeln ('<IMG SRC="nextpage.gif" HEIGHT=17 BORDER=0 ALT="Página siguiente"></A>');
+   } else {
+//   window.alert ('no next page');
+   }
+   document.writeln ('</TD><TD ALIGN="left">');
+   document.writeln ('<A HREF="frameset.htm?TOC">');
+   document.writeln ('<IMG SRC="showtoc.gif" HEIGHT=17 BORDER=0 ALT="Haga clic para ver el contenido"></A></TD>');
+   document.writeln ('<TD ALIGN="left">');
+   document.writeln ('<A HREF="frameset.htm?IDX">');
+   document.writeln ('<IMG SRC="showix.gif" HEIGHT=17 BORDER=0 ALT="Haga clic para ver el índice"></A></TD>');
+   document.writeln ('</TD>');
+   document.writeln ('</TR>');
+   document.writeln ('</TABLE>');
+
+}
+
+</SCRIPT>
+<table align="right" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td align="right"><font size="1">Seagate Software, Inc.<br>
+    <a href="http://www.seagatesoftware.com">http://www.seagatesoftware.com</a><br>
+    Envíe sus comentarios a:<br>
+    <a href="mailto:techpubs@seagatesoftware.com">techpubs@seagatesoftware.com</a><br>
+    </font></td>
+  </tr>
+</table>
+</body>
+</html>
+
+

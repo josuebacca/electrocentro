@@ -1,0 +1,91 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+
+<html>
+<head>
+<title>CurrentFieldValue</title>
+
+<link REL=STYLESHEET TYPE="text/css" HREF="seagate.css">
+
+<!--
+                 ***********************************
+                 * Seagate Software copyright 1999 *
+                 ***********************************
+
+                      Template version: 5.1
+-->
+
+
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" link="#0000FF" vlink="#0000FF" alink="#800080">
+
+
+ 
+<a name="1000690198"></a><h3 class="newpage"> CurrentFieldValue</h3>
+<p><a name="1000725781"></a>Sintaxis b&#225;sica y Crystal.</p><a name="1000686559"></a><h5>Devuelve </h5><p><a name="1000686560"></a>Puede devolver cualquier tipo de campo</p><a name="1000686561"></a><h5>Acci&#243;n</h5><p><a name="1000686562"></a>CurrentFieldValue devuelve el valor actual del campo que se va a imprimir.  </p><a name="1000686563"></a><h5>Uso(s) t&#237;pico(s)</h5><p><a name="1000686564"></a>Puede usar CurrentFieldValue para ayudarle a dar formato condicional a un elemento de campo, objeto de campo o resumen o etiqueta de tabla cruzada.  </p><a name="1000686565"></a><h5>Ejemplo(s)</h5><p><a name="1000751046"></a>En sintaxis Crystal, puede introducir una f&#243;rmula como:</p><p><code><a name="1000686567"></a>if CurrentFieldValue = 0 then crRed</code></p><p><a name="1000751050"></a>En sintaxis b&#225;sica, la f&#243;rmula ser&#225;:</p><p><code><a name="1000751057"></a>If CurrentFieldValue = 0 Then formula = crRed</code></p><p class="indent"><a name="1000686568"></a>Formatea el color de fuente del objeto a imprimirse en rojo cuando el valor del campo es cero.</p><a name="1000686569"></a><h5>Comentario(s) </h5><ul type="disc"><a name="1000686570"></a><li>CurrentFieldValue s&#243;lo est&#225; disponible cuando se introducen f&#243;rmulas de formato de campo.  
+<a name="1000686571"></a><li>El tipo devuelto depende del contexto de la f&#243;rmula. Por ejemplo, si est&#225; dando formato a un campo de cadena, CurrentFieldValue devuelve un tipo de cadena; si est&#225; dando formato a un campo de fecha, CurrentFieldValue devuelve un tipo de fecha.
+</ul>
+<hr><br>
+
+<script  language="JavaScript"><!--
+
+var prev = "Functions249.html";
+var next = "Functions251.html";
+
+function setTopicID() { 
+      var number = "1000690198"; 
+      return number; 
+}
+
+// --></script>
+
+
+
+
+<SCRIPT>
+
+if (!window.parent.toc && navigator.appName == "Netscape") {
+
+   document.writeln ('<TABLE ALIGN="left" border="0" cellspacing="0" cellpadding="10">');
+   document.writeln ('<TR>');
+   document.write ('<TD ALIGN="left">');
+
+   if (prev != "crw_spTOC.hhc") {
+      document.writeln ('<A HREF="' + prev + '">');
+      document.writeln ('<IMG SRC="prevpage.gif" HEIGHT=17 BORDER=0 ALT="Página anterior"></A>');
+   } else {
+//   window.alert ('no previous page');
+   }
+
+   if (next != "crw_spIX.hhk") {
+      document.writeln ('<A HREF="' + next + '">');
+      document.writeln ('<IMG SRC="nextpage.gif" HEIGHT=17 BORDER=0 ALT="Página siguiente"></A>');
+   } else {
+//   window.alert ('no next page');
+   }
+   document.writeln ('</TD><TD ALIGN="left">');
+   document.writeln ('<A HREF="frameset.htm?TOC">');
+   document.writeln ('<IMG SRC="showtoc.gif" HEIGHT=17 BORDER=0 ALT="Haga clic para ver el contenido"></A></TD>');
+   document.writeln ('<TD ALIGN="left">');
+   document.writeln ('<A HREF="frameset.htm?IDX">');
+   document.writeln ('<IMG SRC="showix.gif" HEIGHT=17 BORDER=0 ALT="Haga clic para ver el índice"></A></TD>');
+   document.writeln ('</TD>');
+   document.writeln ('</TR>');
+   document.writeln ('</TABLE>');
+
+}
+
+</SCRIPT>
+<table align="right" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td align="right"><font size="1">Seagate Software, Inc.<br>
+    <a href="http://www.seagatesoftware.com">http://www.seagatesoftware.com</a><br>
+    Envíe sus comentarios a:<br>
+    <a href="mailto:techpubs@seagatesoftware.com">techpubs@seagatesoftware.com</a><br>
+    </font></td>
+  </tr>
+</table>
+</body>
+</html>
+
+

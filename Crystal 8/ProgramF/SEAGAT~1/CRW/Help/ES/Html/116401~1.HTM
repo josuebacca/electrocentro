@@ -1,0 +1,93 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+
+<html>
+<head>
+<title>Opcion Ubicacion en Modo Libre Desactivada</title>
+
+<link REL=STYLESHEET TYPE="text/css" HREF="seagate.css">
+
+<!--
+                 ***********************************
+                 * Seagate Software copyright 1999 *
+                 ***********************************
+
+                      Template version: 5.1
+-->
+
+
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" link="#0000FF" vlink="#0000FF" alink="#800080">
+
+
+ 
+<a name="88246"></a><h4 class="newpage"> Opcion Ubicacion en Modo Libre Desactivada</h4><p><a name="88247"></a>Si la secci&#243;n tiene desactivada la opci&#243;n Ubicaci&#243;n en modo libre, el programa no se refiere a las coordenadas absolutas del objeto para determinar donde imprimirlo.</p><ul type="disc"><a name="88248"></a><li>La coordenada absoluta <kbd>x</kbd> es tomada como referencia para determinar donde comienza a imprimirse horizontalmente cada objeto (ubicaci&#243;n izquierda/derecha).
+<a name="88249"></a><li>La coordenada <kbd>y</kbd> todav&#237;a es tomada como referencia para la ubicaci&#243;n vertical del objeto, pero las coordenadas pueden ser ajustadas por Seagate Crystal Reports cuando cambia el controlador de la impresora.
+</ul><p><a name="88250"></a>As&#237;, si el informe se imprime usando un controlador que mide el espacio entre l&#237;neas <EM>m&#225;s ancho</EM> que el controlador original, la coordenar&#225; <kbd>y</kbd> aumentar&#225; y el objeto base<nobr>-t</nobr>exto ser&#225; impreso m&#225;s abajo dentro de la p&#225;gina. Con la opci&#243;n Ubicaci&#243;n en modo libre desactivada, el usuario ya no controla la ubicaci&#243;n vertical de los objetos base<nobr>-t</nobr>exto; es el controlador de la impresora que toma el control de la operaci&#243;n.</p><p><a name="88251"></a>Sin embargo, la ubicaci&#243;n de objetos OLE tales como gr&#225;ficos, cuadros y l&#237;neas, <EM>no</EM> est&#225; controlada por el controlador de la impresora. Seagate Crystal Reports siempre se refiere a las coordenadas absolutas de estos objetos para ubicarlos e imprimirlos. El uso de diferentes m&#233;todos para ubicar objetos base<nobr>-t</nobr>exto y objetos OLE, puede dar lugar a problemas cuando se combinan ambas clases de objetos.</p><p><a name="88295"></a>Por ejemplo,un cuadro (objeto OLE) es ubicado alrededor de un campo de texto (objeto base<nobr>-t</nobr>exto). Todo parece bien y los elementos est&#225;n alineados correctamente. Si el informe se imprime usando otro controlador de impresora que mide el espacio entre l&#237;neas m&#225;s ancho que el controlador original:</p><ul type="disc"><a name="88296"></a><li>la ubicaci&#243;n del cuadro no cambiar&#225; con respecto a la secci&#243;n, ya que las coordenadas <kbd>x</kbd> e <kbd>y</kbd> no cambiar&#225;n, pero
+<a name="88297"></a><li>la ubicaci&#243;n vertical del objeto base<nobr>-t</nobr>exto cambiar&#225;, ya que la coordenada <kbd>y</kbd> ser&#225; ajustada (increment&#225;ndose) en base al nuevo controlador de impresora usado.
+</ul><p><a name="90920"></a><font color="darkblue"><b>Nota:   &nbsp;&nbsp;&nbsp;</b></font>El valor de la coordenada <kbd>y</kbd> se mide desde el borde superior de la secci&#243;n hasta el borde superior del objeto; as&#237;, entre m&#225;s grande es el valor, el objeto se imprimir&#225; m&#225;s abajo dentro de la p&#225;gina.</p>
+<p><a name="88300"></a>Si est&#225; distribuyendo sus informes con secciones de formato Ubicaci&#243;n forma libre desactivado, y quiere que los objetos aparezcan rodeados por un borde o por l&#237;neas, es mejor modificar las propiedades del borde de los objetos, en lugar de insertar cuadros o l&#237;neas. De esta manera, los bordes se mantendr&#225;n siempre con los objetos. Simplemente haga clic con el bot&#243;n derecho y seleccione el comando Cambiar bordes del men&#250; contextual que aparece en su pantalla. Vea <a href="11_format34.html#88756">C&#243;mo agregar color, sombreado y bordes</a>.</p><p><a name="88304"></a>Recuerde que <EM>cada</EM> secci&#243;n puede tener la opci&#243;n Ubicaci&#243;n en forma libre activada o desactivada. Mientras que es mejor activar la opci&#243;n en algunos casos y no en otros, se recomienda de manera especial que todas las secciones del informe sean consistentes en este aspecto, es decir, activar o desactivar la opci&#243;n en general.</p>
+<hr><br>
+
+<script  language="JavaScript"><!--
+
+var prev = "11_format20.html";
+var next = "11_format22.html";
+
+function setTopicID() { 
+      var number = "88246"; 
+      return number; 
+}
+
+// --></script>
+
+
+
+
+<SCRIPT>
+
+if (!window.parent.toc && navigator.appName == "Netscape") {
+
+   document.writeln ('<TABLE ALIGN="left" border="0" cellspacing="0" cellpadding="10">');
+   document.writeln ('<TR>');
+   document.write ('<TD ALIGN="left">');
+
+   if (prev != "crw_spTOC.hhc") {
+      document.writeln ('<A HREF="' + prev + '">');
+      document.writeln ('<IMG SRC="prevpage.gif" HEIGHT=17 BORDER=0 ALT="Página anterior"></A>');
+   } else {
+//   window.alert ('no previous page');
+   }
+
+   if (next != "crw_spIX.hhk") {
+      document.writeln ('<A HREF="' + next + '">');
+      document.writeln ('<IMG SRC="nextpage.gif" HEIGHT=17 BORDER=0 ALT="Página siguiente"></A>');
+   } else {
+//   window.alert ('no next page');
+   }
+   document.writeln ('</TD><TD ALIGN="left">');
+   document.writeln ('<A HREF="frameset.htm?TOC">');
+   document.writeln ('<IMG SRC="showtoc.gif" HEIGHT=17 BORDER=0 ALT="Haga clic para ver el contenido"></A></TD>');
+   document.writeln ('<TD ALIGN="left">');
+   document.writeln ('<A HREF="frameset.htm?IDX">');
+   document.writeln ('<IMG SRC="showix.gif" HEIGHT=17 BORDER=0 ALT="Haga clic para ver el índice"></A></TD>');
+   document.writeln ('</TD>');
+   document.writeln ('</TR>');
+   document.writeln ('</TABLE>');
+
+}
+
+</SCRIPT>
+<table align="right" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td align="right"><font size="1">Seagate Software, Inc.<br>
+    <a href="http://www.seagatesoftware.com">http://www.seagatesoftware.com</a><br>
+    Envíe sus comentarios a:<br>
+    <a href="mailto:techpubs@seagatesoftware.com">techpubs@seagatesoftware.com</a><br>
+    </font></td>
+  </tr>
+</table>
+</body>
+</html>
+
+

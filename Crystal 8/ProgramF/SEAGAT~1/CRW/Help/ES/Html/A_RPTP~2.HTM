@@ -1,0 +1,104 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+
+<html>
+<head>
+
+<title>Introducci&#243;n general</title>
+
+<link REL=STYLESHEET TYPE="text/css" HREF="seagate.css">
+
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" link="#0000FF" vlink="#0000FF" alink="#800080">
+
+
+ 
+<a name="22321"></a><h2 class="newpage">Introducci&#243;n general</h2><p><a name="20760"></a>Seagate Crystal Reports usa un m&#233;todo de tres pasadas para elaborar los informes. Las siguientes secciones describen lo que sucede durante cada paso de este proceso. Para obtener una representaci&#243;n visual, consulte el diagrama de flujo al final de este anexo.</p><a name="13174"></a><h3>&#191;Qu&#233; es una "pasada"? </h3>
+<p><a name="21439"></a>Una pasada es un proceso que Seagate Crystal Reports usa cada vez que se leen y se manipulan los datos. Dependiendo de la complejidad del informe, Seagate Crystal Reports puede hacer 1, 2 o 3 pasadas sobre los datos. Esta funci&#243;n permite complejas tareas de elaboraci&#243;n de informes y manipulaci&#243;n de f&#243;rmulas. </p><a name="21442"></a><h3>Pasada previa n&#186; 1 </h3>
+<p><a name="13177"></a>Al observar una vista previa de un informe, los primeros elementos que se eval&#250;an son las f&#243;rmulas "constantes". Las f&#243;rmulas constantes son aquellas que tienen un valor constante durante todo el informe. Es decir, no cambian de un registro a otro. Por ejemplo, 100* 30 ser&#237;a una f&#243;rmula constante. Las f&#243;rmulas constantes se eval&#250;an al comienzo del proceso de generaci&#243;n de impresi&#243;n y no se vuelven a evaluar. Este proceso se conoce como "BeforeReadingRecords". Si ubicara un campo de f&#243;rmula constante (es decir, 100*30) en la secci&#243;n Detalles, el resultado ser&#237;a 3.000 para cada registro que se muestre.</p><a name="13178"></a><h3>Pasada n&#186; 1 </h3>
+<p><a name="13179"></a>Despu&#233;s que se ha producido el proceso "BeforeReadingRecords", Seagate Crystal Reports comienza a leer los registros de la base de datos. Durante el proceso de lectura de registros, ocurrir&#225; lo siguiente:</p><ul type="disc"><a name="13180"></a><li>Recuperaci&#243;n de registros. Donde la posible selecci&#243;n y ordenamiento de registros se transfieren a la base de datos en este paso.
+<a name="21880"></a><li>Evaluaci&#243;n de f&#243;rmulas recurrentes. Estas f&#243;rmulas contienen campos de base de datos, pero no contienen referencias a subtotales o informaci&#243;n de resumen. Este tiempo de evaluaci&#243;n se denomina "WhileReadingRecords". Las f&#243;rmulas que contienen referencias a subtotales o informaci&#243;n de resumen se procesan en la segunda pasada. 
+<a name="21885"></a><li>Aplicaci&#243;n local de la selecci&#243;n de registros. Si la selecci&#243;n de registros es demasiado compleja para transferirla a la base de datos, Seagate Crystal Reports se encarga de aplicarla en este paso.
+<a name="21600"></a><li>Ordenamiento, agrupamiento y c&#225;lculo de totales. En este paso, Seagate Crystal Reports ordena los registros, los separa en grupos y luego calcula los subtotales y res&#250;menes necesarios para cada grupo.
+<a name="21383"></a><li>Generaci&#243;n de tablas cruzadas.
+<a name="21890"></a><li>Almacenamiento de datos guardados. Despu&#233;s de terminar el proceso de c&#225;lculo de totales, todos los registros y totales se almacenan en la memoria y en archivos temporales. Crystal Reports no lee la base de datos nuevamente, sino que utiliza los datos guardados durante todo el procesamiento posterior.
+</ul><a name="21902"></a><h3>Pasada previa n&#186; 2 </h3>
+<p><a name="21809"></a>Durante la Pasada previa n&#186; 2, Seagate Crystal Reports ordena los grupos del informe para lograr un agrupamiento jer&#225;rquico o N superiores/inferiores. Los registros no se leen en este proceso, en cambio Seagate Crystal Reports s&#243;lo ve las instancias de grupo de la Pasada 1 y toma los N superiores como apropiados, o bien ordena los grupos seg&#250;n la configuraci&#243;n especificada de agrupamiento jer&#225;rquico.</p><a name="21783"></a><h3>Pasada n&#186; 2</h3>
+<p><a name="15520"></a>Seagate Crystal Reports realiza la segunda pasada por los datos para dar formato a las p&#225;ginas. A las p&#225;ginas se les da formato a la orden. Esto significa que Seagate Crystal Reports no dar&#225; formato a una p&#225;gina hasta que el usuario lo solicite o hasta que sea requerido para el conteo total de p&#225;ginas en la Pasada n&#186; 3.</p><p><a name="21704"></a>Durante el proceso de dar formato a las p&#225;ginas, Seagate Crystal Reports realiza lo siguiente:</p><ul type="disc"><a name="21714"></a><li>F&#243;rmula de selecci&#243;n de grupos
+<a name="21718"></a><li>Totales acumulados
+<a name="21719"></a><li>C&#225;lculo de f&#243;rmulas marcadas como "WhilePrinting Records"
+<p class="indent"><a name="21829"></a>Estas f&#243;rmulas contienen referencias a los subtotales o a la informaci&#243;n de resumen, tambi&#233;n conocidas como f&#243;rmulas "PrintTime". Este tiempo de evaluaci&#243;n se conoce como "WhilePrinting Records".</p><a name="21720"></a><li>Gr&#225;ficos y mapas
+<a name="21721"></a><li>Subinformes
+<a name="21907"></a><li>Generar p&#225;ginas a la orden
+</ul><p><a name="21723"></a><font color="darkblue"><b>Nota:   &nbsp;&nbsp;&nbsp;</b></font>Puede que los subtotales, totales generales res&#250;menes sean incorrectos si el informe tiene una f&#243;rmula de selecci&#243;n de grupos. Esto ocurre porque los totales generales y res&#250;menes se calculan durante la Pasada n&#186; 1, pero la f&#243;rmula de selecci&#243;n de grupos vuelve a filtrar los datos en la Pasada n&#186; 2. Es posible usar los campos de totales acumulados en lugar de los res&#250;menes para totalizar datos de los informes con una f&#243;rmula de selecci&#243;n de grupos.</p>
+<a name="21486"></a><h3>Pasada n&#186; 3</h3>
+<p><a name="21487"></a>En la tercera y &#250;ltima pasada, se determina el conteo total de p&#225;ginas. Esto se aplica a los informes que usan los campos de variables especiales del conteo total de p&#225;ginas, o P&#225;gina N de M.</p><a name="21348"></a><h3>Diagrama de flujo de informes de pasada m&#250;ltiple</h3>
+<p><a name="24418"></a></p><p><a name="23376"></a> <img src="images/reportprocessing.gif">
+
+
+</p>
+
+<hr><br>
+
+<script  language="JavaScript"><!--
+
+var prev = "a_rptpm.html";
+var next = "b_suprt.html";
+
+function setTopicID() { 
+      var number = "22321"; 
+      return number; 
+}
+
+// --></script>
+
+
+
+
+<SCRIPT>
+
+if (!window.parent.toc && navigator.appName == "Netscape") {
+
+   document.writeln ('<TABLE ALIGN="left" border="0" cellspacing="0" cellpadding="10">');
+   document.writeln ('<TR>');
+   document.write ('<TD ALIGN="left">');
+
+   if (prev != "crw_spTOC.hhc") {
+      document.writeln ('<A HREF="' + prev + '">');
+      document.writeln ('<IMG SRC="prevpage.gif" HEIGHT=17 BORDER=0 ALT="Página anterior"></A>');
+   } else {
+//   window.alert ('no previous page');
+   }
+
+   if (next != "crw_spIX.hhk") {
+      document.writeln ('<A HREF="' + next + '">');
+      document.writeln ('<IMG SRC="nextpage.gif" HEIGHT=17 BORDER=0 ALT="Página siguiente"></A>');
+   } else {
+//   window.alert ('no next page');
+   }
+   document.writeln ('</TD><TD ALIGN="left">');
+   document.writeln ('<A HREF="frameset.htm?TOC">');
+   document.writeln ('<IMG SRC="showtoc.gif" HEIGHT=17 BORDER=0 ALT="Haga clic para ver el contenido"></A></TD>');
+   document.writeln ('<TD ALIGN="left">');
+   document.writeln ('<A HREF="frameset.htm?IDX">');
+   document.writeln ('<IMG SRC="showix.gif" HEIGHT=17 BORDER=0 ALT="Haga clic para ver el índice"></A></TD>');
+   document.writeln ('</TD>');
+   document.writeln ('</TR>');
+   document.writeln ('</TABLE>');
+
+}
+
+</SCRIPT>
+<table align="right" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td align="right"><font size="1">Seagate Software, Inc.<br>
+    <a href="http://www.seagatesoftware.com">http://www.seagatesoftware.com</a><br>
+    Envíe sus comentarios a:<br>
+    <a href="mailto:techpubs@seagatesoftware.com">techpubs@seagatesoftware.com</a><br>
+    </font></td>
+  </tr>
+</table>
+</body>
+</html>
+
+

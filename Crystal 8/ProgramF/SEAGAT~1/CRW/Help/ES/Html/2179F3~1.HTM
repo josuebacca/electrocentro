@@ -1,0 +1,109 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+
+<html>
+<head>
+<title>Expresiones m&#250;ltiples</title>
+
+<link REL=STYLESHEET TYPE="text/css" HREF="seagate.css">
+
+<!--
+                 ***********************************
+                 * Seagate Software copyright 1999 *
+                 ***********************************
+
+                      Template version: 5.1
+-->
+
+
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" link="#0000FF" vlink="#0000FF" alink="#800080">
+
+
+ 
+<a name="150855"></a><h4 class="newpage"> Expresiones m&#250;ltiples</h4><p><a name="150866"></a>Normalmente, cada expresi&#243;n toma una l&#237;nea, pero es posible continuar una expresi&#243;n en la l&#237;nea siguiente si necesita m&#225;s espacio.</p><p><a name="160283"></a>La f&#243;rmula siguiente consta de cinco expresiones. Devuelve el valor num&#233;rico 25 dado que es el valor de la &#250;ltima expresi&#243;n de la f&#243;rmula.</p><a name="160281"></a><h5>Ejemplo</h5><PRE><a name="144521"></a>//Ejemplo de expresiones
+<a name="144522"></a>//La primera expresi&#243;n. Su valor es el valor
+<a name="144523"></a>//num&#233;rico 30
+<a name="144524"></a>10 + 20;
+<a name="144526"></a>//La segunda expresi&#243;n. Su valor es la cadena
+<a name="144527"></a>//"Hola mundo". Toma dos l&#237;neas.
+<a name="144528"></a>"Hola " +
+<a name="144529"></a>"mundo";
+<a name="144531"></a>//La tercera expresi&#243;n. Su valor es de tipo num&#233;rico
+<a name="144532"></a>{Detalles del pedido.Cantidad} * 2 - 5;
+<a name="144534"></a>//La cuarta expresi&#243;n. Su valor es de tipo de cadena
+<a name="144535"></a>If {Detalles del pedido.Cantidad} &gt; 1 Then
+<a name="144536"></a>   "varias unidades"
+<a name="144537"></a>Else
+<a name="144538"></a>   "una unidad";
+<a name="144540"></a>//La quinta y &#250;ltima expresi&#243;n. Su valor es el
+<a name="144541"></a>//valor num&#233;rico 25
+<a name="144542"></a>20 + 5
+</PRE><p><a name="157535"></a>Tambi&#233;n est&#225; permitido poner un punto y coma despu&#233;s de la &#250;ltima expresi&#243;n de la f&#243;rmula, pero es opcional. Por ejemplo, la f&#243;rmula anterior podr&#237;a haber terminado de este modo:</p><p><code><a name="144545"></a>20 + 5;</code></p><p><a name="144547"></a>Algunas de las f&#243;rmulas de muestra en la secci&#243;n precedente no tienen punto y coma. Esto es porque constan de una sola expresi&#243;n y un punto y coma es opcional despu&#233;s de la &#250;ltima expresi&#243;n. Muchas f&#243;rmulas de la sintaxis Crystal se pueden escribir como una sola expresi&#243;n.</p><p><a name="144549"></a>Observe que no hay punto y coma despu&#233;s de la cadena "varias unidades". De hecho, si se pone un punto y coma, el programa va a informar de un error. Esto es porque un punto y coma separa expresiones, y</p><PRE><a name="144550"></a>Else
+<a name="144551"></a>   "una unidad";
+</PRE><p><a name="144553"></a>no es una expresi&#243;n separada. No es independiente de If. De hecho, es parte integral de la expresi&#243;n If dado que describe el valor que va a devolver la expresi&#243;n If en ciertas circunstancias.</p><p><a name="150880"></a><font color="darkblue"><b>Nota:   &nbsp;&nbsp;&nbsp;</b></font>El ejemplo no es un ejemplo pr&#225;ctico porque las primeras cuatro expresiones de la f&#243;rmula no ten&#237;an ning&#250;n efecto sobre la &#250;ltima expresi&#243;n.</p>
+
+<hr><br>
+
+<script  language="JavaScript"><!--
+
+var prev = "21_crystalsyntax14.html";
+var next = "21_crystalsyntax16.html";
+
+function setTopicID() { 
+      var number = "150855"; 
+      return number; 
+}
+
+// --></script>
+
+
+
+
+<SCRIPT>
+
+if (!window.parent.toc && navigator.appName == "Netscape") {
+
+   document.writeln ('<TABLE ALIGN="left" border="0" cellspacing="0" cellpadding="10">');
+   document.writeln ('<TR>');
+   document.write ('<TD ALIGN="left">');
+
+   if (prev != "crw_spTOC.hhc") {
+      document.writeln ('<A HREF="' + prev + '">');
+      document.writeln ('<IMG SRC="prevpage.gif" HEIGHT=17 BORDER=0 ALT="Página anterior"></A>');
+   } else {
+//   window.alert ('no previous page');
+   }
+
+   if (next != "crw_spIX.hhk") {
+      document.writeln ('<A HREF="' + next + '">');
+      document.writeln ('<IMG SRC="nextpage.gif" HEIGHT=17 BORDER=0 ALT="Página siguiente"></A>');
+   } else {
+//   window.alert ('no next page');
+   }
+   document.writeln ('</TD><TD ALIGN="left">');
+   document.writeln ('<A HREF="frameset.htm?TOC">');
+   document.writeln ('<IMG SRC="showtoc.gif" HEIGHT=17 BORDER=0 ALT="Haga clic para ver el contenido"></A></TD>');
+   document.writeln ('<TD ALIGN="left">');
+   document.writeln ('<A HREF="frameset.htm?IDX">');
+   document.writeln ('<IMG SRC="showix.gif" HEIGHT=17 BORDER=0 ALT="Haga clic para ver el índice"></A></TD>');
+   document.writeln ('</TD>');
+   document.writeln ('</TR>');
+   document.writeln ('</TABLE>');
+
+}
+
+</SCRIPT>
+<table align="right" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td align="right"><font size="1">Seagate Software, Inc.<br>
+    <a href="http://www.seagatesoftware.com">http://www.seagatesoftware.com</a><br>
+    Envíe sus comentarios a:<br>
+    <a href="mailto:techpubs@seagatesoftware.com">techpubs@seagatesoftware.com</a><br>
+    </font></td>
+  </tr>
+</table>
+</body>
+</html>
+
+

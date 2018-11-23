@@ -1,0 +1,98 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+
+<html>
+<head>
+<title>Alcance de las variables</title>
+
+<link REL=STYLESHEET TYPE="text/css" HREF="seagate.css">
+
+<!--
+                 ***********************************
+                 * Seagate Software copyright 1999 *
+                 ***********************************
+
+                      Template version: 5.1
+-->
+
+
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" link="#0000FF" vlink="#0000FF" alink="#800080">
+
+
+ 
+<a name="145424"></a><h3 class="newpage"> Alcance de las variables</h3>
+<p><a name="145426"></a>Los alcances de variable se usan para definir el grado de disponibilidad de las variables de una f&#243;rmula para otras f&#243;rmulas. Existen tres niveles de alcance en Seagate Crystal Reports: local, global y compartido. Cada variable tiene un alcance especificado cuando se declara.</p><a name="145427"></a><h4>Variables locales</h4><p><a name="145428"></a>Las variables con alcance local, tambi&#233;n conocidas como variables locales, se declaran usando la palabra clave Local seguida por el nombre de tipo (con el sufijo Var) seguido por el nombre de la variable como en los ejemplos anteriores.</p><p><a name="145429"></a>Las variables locales est&#225;n restringidas a una sola f&#243;rmula y una sola evaluaci&#243;n de &#233;sta. Esto significa que no se puede acceder al valor de una variable local de una f&#243;rmula desde una f&#243;rmula diferente.</p><a name="151275"></a><h5>Ejemplo</h5><PRE><a name="145431"></a>//F&#243;rmula A 
+<a name="145432"></a>Local NumberVar x;
+<a name="145433"></a>x := 10;
+<a name="145435"></a>//F&#243;rmula B
+<a name="145436"></a>EvaluateAfter ({@F&#243;rmula A})
+<a name="145437"></a>Local NumberVar x;
+<a name="145438"></a>x := x + 1;
+</PRE><p><a name="145440"></a>La llamada de funci&#243;n EvaluateAfter ({@F&#243;rmula A}) asegura que la F&#243;rmula B se evaluar&#225; despu&#233;s de que se eval&#250;e la F&#243;rmula A. La F&#243;rmula A devuelve un valor de 10 y la F&#243;rmula B devuelve un valor de 1. La F&#243;rmula B no tiene acceso a la x de la F&#243;rmula A y por ello no puede usar el valor de 10 y agregarle 1; en cambio, usa el valor predeterminado para la variable x local no iniciada encontrada en la F&#243;rmula B, que es 0, y agrega 1 para obtener 1.</p><p><a name="145442"></a>Tambi&#233;n puede crear variables locales con el mismo nombre, pero con tipos diferentes en f&#243;rmulas diferentes. Por ejemplo, las declaraciones de tipo en las f&#243;rmulas A y B no entran en conflicto con:</p><PRE><a name="145444"></a>//F&#243;rmula C
+<a name="145445"></a>Local StringVar x := "hola";
+</PRE><p><a name="145446"></a>Las variables locales son las m&#225;s eficaces de los tres alcances. Adem&#225;s, no interfieren entre s&#237; en f&#243;rmulas diferentes. Por estas razones, es mejor declarar las variables para que sean locales siempre que sea posible.</p>
+<hr><br>
+
+<script  language="JavaScript"><!--
+
+var prev = "21_crystalsyntax28.html";
+var next = "21_crystalsyntax30.html";
+
+function setTopicID() { 
+      var number = "145424"; 
+      return number; 
+}
+
+// --></script>
+
+
+
+
+<SCRIPT>
+
+if (!window.parent.toc && navigator.appName == "Netscape") {
+
+   document.writeln ('<TABLE ALIGN="left" border="0" cellspacing="0" cellpadding="10">');
+   document.writeln ('<TR>');
+   document.write ('<TD ALIGN="left">');
+
+   if (prev != "crw_spTOC.hhc") {
+      document.writeln ('<A HREF="' + prev + '">');
+      document.writeln ('<IMG SRC="prevpage.gif" HEIGHT=17 BORDER=0 ALT="Página anterior"></A>');
+   } else {
+//   window.alert ('no previous page');
+   }
+
+   if (next != "crw_spIX.hhk") {
+      document.writeln ('<A HREF="' + next + '">');
+      document.writeln ('<IMG SRC="nextpage.gif" HEIGHT=17 BORDER=0 ALT="Página siguiente"></A>');
+   } else {
+//   window.alert ('no next page');
+   }
+   document.writeln ('</TD><TD ALIGN="left">');
+   document.writeln ('<A HREF="frameset.htm?TOC">');
+   document.writeln ('<IMG SRC="showtoc.gif" HEIGHT=17 BORDER=0 ALT="Haga clic para ver el contenido"></A></TD>');
+   document.writeln ('<TD ALIGN="left">');
+   document.writeln ('<A HREF="frameset.htm?IDX">');
+   document.writeln ('<IMG SRC="showix.gif" HEIGHT=17 BORDER=0 ALT="Haga clic para ver el índice"></A></TD>');
+   document.writeln ('</TD>');
+   document.writeln ('</TR>');
+   document.writeln ('</TABLE>');
+
+}
+
+</SCRIPT>
+<table align="right" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td align="right"><font size="1">Seagate Software, Inc.<br>
+    <a href="http://www.seagatesoftware.com">http://www.seagatesoftware.com</a><br>
+    Envíe sus comentarios a:<br>
+    <a href="mailto:techpubs@seagatesoftware.com">techpubs@seagatesoftware.com</a><br>
+    </font></td>
+  </tr>
+</table>
+</body>
+</html>
+
+

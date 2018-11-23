@@ -1,0 +1,96 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+
+<html>
+<head>
+<title>Vinculaci&#243;n de bases de datos versus subinformes en situaciones "de uno a varios"</title>
+
+<link REL=STYLESHEET TYPE="text/css" HREF="seagate.css">
+
+<!--
+                 ***********************************
+                 * Seagate Software copyright 1999 *
+                 ***********************************
+
+                      Template version: 5.1
+-->
+
+
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" link="#0000FF" vlink="#0000FF" alink="#800080">
+
+
+ 
+<a name="57149"></a><h3 class="newpage"> Vinculaci&#243;n de bases de datos versus subinformes en situaciones "de uno a varios"</h3>
+<p><a name="57151"></a>Cuando dos tablas en su informe tienen una relaci&#243;n de uno a varios, el programa recupera los datos en diferentes maneras dependiendo de:</p><ul type="disc"><a name="43939"></a><li>la fuente de datos,
+<a name="43940"></a><li>la situaci&#243;n del &#237;ndice,
+<a name="43941"></a><li>el criterio de selecci&#243;n de registros, y
+<a name="43942"></a><li>si es que usted est&#225; creando un solo informe basado en tablas vinculadas o un informe principal que contiene un subinforme.
+</ul><p><a name="43943"></a>Cuando est&#225; considerando si utilizar tablas vinculadas o un subinforme, necesita entender las implicaciones de ambos. Estas cuestiones son tratadas plenamente en la secci&#243;n <a href="24_under_databases9.html#320374">Consideraciones de desempe&#241;o en los v&#237;nculos de uno a varios</a>.</p><p><a name="43947"></a>Como regla general:</p><ul type="disc"><a name="43948"></a><li>si tiene tablas indexadas,
+<a name="43949"></a><li>si est&#225; vinculando campos indexados, y
+<a name="43950"></a><li>si tiene el criterio de selecci&#243;n de registros de rango limitando basado en campos indexados.
+</ul><p><a name="46069"></a>El programa necesita leer el mismo n&#250;mero de registros ya sea que est&#233; vinculando tablas en un solo informe o est&#233; utilizando subinformes. Ya que cada subinforme es elaborado como un informe separado, es posible que le lleve menos tiempo elaborar el informe usando tablas vinculadas.Vea <a href="24_under_databases6.html#320222">Tablas indexadas</a>.</p>
+<hr><br>
+
+<script  language="JavaScript"><!--
+
+var prev = "23_subreports4.html";
+var next = "23_subreports6.html";
+
+function setTopicID() { 
+      var number = "57149"; 
+      return number; 
+}
+
+// --></script>
+
+
+
+
+<SCRIPT>
+
+if (!window.parent.toc && navigator.appName == "Netscape") {
+
+   document.writeln ('<TABLE ALIGN="left" border="0" cellspacing="0" cellpadding="10">');
+   document.writeln ('<TR>');
+   document.write ('<TD ALIGN="left">');
+
+   if (prev != "crw_spTOC.hhc") {
+      document.writeln ('<A HREF="' + prev + '">');
+      document.writeln ('<IMG SRC="prevpage.gif" HEIGHT=17 BORDER=0 ALT="Página anterior"></A>');
+   } else {
+//   window.alert ('no previous page');
+   }
+
+   if (next != "crw_spIX.hhk") {
+      document.writeln ('<A HREF="' + next + '">');
+      document.writeln ('<IMG SRC="nextpage.gif" HEIGHT=17 BORDER=0 ALT="Página siguiente"></A>');
+   } else {
+//   window.alert ('no next page');
+   }
+   document.writeln ('</TD><TD ALIGN="left">');
+   document.writeln ('<A HREF="frameset.htm?TOC">');
+   document.writeln ('<IMG SRC="showtoc.gif" HEIGHT=17 BORDER=0 ALT="Haga clic para ver el contenido"></A></TD>');
+   document.writeln ('<TD ALIGN="left">');
+   document.writeln ('<A HREF="frameset.htm?IDX">');
+   document.writeln ('<IMG SRC="showix.gif" HEIGHT=17 BORDER=0 ALT="Haga clic para ver el índice"></A></TD>');
+   document.writeln ('</TD>');
+   document.writeln ('</TR>');
+   document.writeln ('</TABLE>');
+
+}
+
+</SCRIPT>
+<table align="right" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td align="right"><font size="1">Seagate Software, Inc.<br>
+    <a href="http://www.seagatesoftware.com">http://www.seagatesoftware.com</a><br>
+    Envíe sus comentarios a:<br>
+    <a href="mailto:techpubs@seagatesoftware.com">techpubs@seagatesoftware.com</a><br>
+    </font></td>
+  </tr>
+</table>
+</body>
+</html>
+
+

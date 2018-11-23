@@ -1,0 +1,89 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+
+<html>
+<head>
+<title>Cambio de f&#243;rmulas de selecci&#243;n en informes web </title>
+
+<link REL=STYLESHEET TYPE="text/css" HREF="seagate.css">
+
+<!--
+                 ***********************************
+                 * Seagate Software copyright 1999 *
+                 ***********************************
+
+                      Template version: 5.1
+-->
+
+
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" link="#0000FF" vlink="#0000FF" alink="#800080">
+
+
+ 
+<a name="161718"></a><h3 class="newpage"> Cambio de f&#243;rmulas de selecci&#243;n en informes web </h3>
+<p><a name="161719"></a>Adem&#225;s de poder especificar un registro o una f&#243;rmula de selecci&#243;n de grupos al dise&#241;ar un informe, tambi&#233;n puede cambiar la f&#243;rmula de selecci&#243;n usando un comando adjunto a la URL de un informe solicitado a trav&#233;s del Web Component Server. Como administrador, puede crear un informe y dise&#241;ar una p&#225;gina web que permita a los usuarios elegir los criterios de selecci&#243;n para la informaci&#243;n que necesitan. De esta forma, el Web Component Server genera din&#225;micamente el informe solicitado solamente con los registros seleccionados.</p><p><a name="149864"></a>Para especificar una selecci&#243;n de registros en una solicitud de un informe web, utilice el comando SF de par&#225;metro. Por ejemplo:</p><p><code><a name="149865"></a>http://nombre_servidor/reports/taquilla.rpt? sf={estudio.Estudio}+%3d+'Universal'</code></p><p><a name="149866"></a>Esto cambia cualquier f&#243;rmula de selecci&#243;n ya contenida en Taquilla.Rpt. Sin embargo, la nueva f&#243;rmula de selecci&#243;n no se almacena con el archivo del informe original. La f&#243;rmula s&#243;lo es v&#225;lida para la tarea actualmente solicitada. Puede usar el comando GF (selecci&#243;n de grupos) para cambiar una f&#243;rmula de selecci&#243;n de grupos en un informe.</p><p><a name="149870"></a>El Web Component Server no comprueba la validez de ninguna de las f&#243;rmulas de selecci&#243;n que env&#237;a a un informe. Si crea una f&#243;rmula de selecci&#243;n no v&#225;lida, el explorador web recibe un error como respuesta. Si va a dise&#241;ar un sitio web que transfiere f&#243;rmulas de selecci&#243;n a los informes, aseg&#250;rese de probar las f&#243;rmulas de selecci&#243;n antes de permitir que los usuarios accedan a su sitio.</p>
+<hr><br>
+
+<script  language="JavaScript"><!--
+
+var prev = "WebServerCommands5.html";
+var next = "WebServerCommands7.html";
+
+function setTopicID() { 
+      var number = "161718"; 
+      return number; 
+}
+
+// --></script>
+
+
+
+
+<SCRIPT>
+
+if (!window.parent.toc && navigator.appName == "Netscape") {
+
+   document.writeln ('<TABLE ALIGN="left" border="0" cellspacing="0" cellpadding="10">');
+   document.writeln ('<TR>');
+   document.write ('<TD ALIGN="left">');
+
+   if (prev != "wcmadminTOC.hhc") {
+      document.writeln ('<A HREF="' + prev + '">');
+      document.writeln ('<IMG SRC="prevpage.gif" HEIGHT=17 BORDER=0 ALT="Página anterior"></A>');
+   } else {
+//   window.alert ('no previous page');
+   }
+
+   if (next != "wcmadminIX.hhk") {
+      document.writeln ('<A HREF="' + next + '">');
+      document.writeln ('<IMG SRC="nextpage.gif" HEIGHT=17 BORDER=0 ALT="Página siguiente"></A>');
+   } else {
+//   window.alert ('no next page');
+   }
+   document.writeln ('</TD><TD ALIGN="left">');
+   document.writeln ('<A HREF="frameset.htm?TOC">');
+   document.writeln ('<IMG SRC="showtoc.gif" HEIGHT=17 BORDER=0 ALT="Haga clic para ver el contenido"></A></TD>');
+   document.writeln ('<TD ALIGN="left">');
+   document.writeln ('<A HREF="frameset.htm?IDX">');
+   document.writeln ('<IMG SRC="showix.gif" HEIGHT=17 BORDER=0 ALT="Haga clic para ver el índice"></A></TD>');
+   document.writeln ('</TD>');
+   document.writeln ('</TR>');
+   document.writeln ('</TABLE>');
+
+}
+
+</SCRIPT>
+<table align="right" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td align="right"><font size="1">Seagate Software, Inc.<br>
+    <a href="http://www.seagatesoftware.com">http://www.seagatesoftware.com</a><br>
+    Envíe sus comentarios a:<br>
+    <a href="mailto:techpubs@seagatesoftware.com">techpubs@seagatesoftware.com</a><br>
+    </font></td>
+  </tr>
+</table>
+</body>
+</html>
+
+

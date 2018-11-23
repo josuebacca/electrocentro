@@ -1,0 +1,140 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+
+<html>
+<head>
+<title>Operador If-Then-Else</title>
+
+<link REL=STYLESHEET TYPE="text/css" HREF="seagate.css">
+
+<!--
+                 ***********************************
+                 * Seagate Software copyright 1999 *
+                 ***********************************
+
+                      Template version: 5.1
+-->
+
+
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" link="#0000FF" vlink="#0000FF" alink="#800080">
+
+
+ 
+<a name="1000025244"></a><h3 class="newpage"> Operador If-Then-Else</h3>
+<a name="1000025249"></a><h4>Sintaxis Basic</h4><a name="1000025250"></a><h5>Uso</h5><p><a name="1000020304"></a>Existen dos tipos de enunciados If, el If de multil&#237;nea (o l&#237;neas m&#250;ltiples) y el If de una l&#237;nea. Generalmente, es mejor usar el If de multil&#237;nea dado que genera f&#243;rmulas m&#225;s claras.</p><a name="1000025255"></a><h6>Enunciados If de multil&#237;nea</h6><p class="code"><a name="1000025256"></a>If x Then
+<br><a name="1000025257"></a>&nbsp;&nbsp;&nbsp;&nbsp;statementsA
+<br><a name="1000025258"></a>End If
+</p><p class="example"><a name="1000025263"></a>Si x es verdadero, entonces evaluar enunciados A.</p><p class="code"><a name="1000025264"></a>If x Then
+<br><a name="1000025265"></a>&nbsp;&nbsp;&nbsp;&nbsp;statementsA
+<br><a name="1000025266"></a>Else
+<br><a name="1000025267"></a>&nbsp;&nbsp;&nbsp;&nbsp;statementB
+<br><a name="1000025268"></a>End If
+</p><p class="example"><a name="1000025273"></a>Si x es verdadero, entonces evaluar enunciados A, de lo contrario evaluar enunciados B.</p><p class="code"><a name="1000025274"></a>If x Then
+<br><a name="1000025275"></a>&nbsp;&nbsp;&nbsp;&nbsp;statementsA
+<br><a name="1000025276"></a>ElseIf y Then
+<br><a name="1000025277"></a>&nbsp;&nbsp;&nbsp;&nbsp;statementsB
+<br><a name="1000025278"></a>Else
+<br><a name="1000025279"></a>&nbsp;&nbsp;&nbsp;&nbsp;statementsC
+<br><a name="1000025280"></a>End If
+</p><p class="indent"><a name="1000020323"></a>Si x es verdadero, entonces evaluar enunciados A; de lo contrario si y es verdadero, evaluar enunciados B; de lo contrario evaluar enunciados C.</p><p><a name="1000020324"></a><font color="darkblue"><b>Nota:   &nbsp;&nbsp;&nbsp;</b></font> </p>
+<ul type="disc"><a name="1000020325"></a><li>Puede haber 0 o m&#225;s cl&#225;usulas ElseIf y 0 o 1 cl&#225;usula Else. 
+<a name="1000020326"></a><li>La cl&#225;usula Else debe ser la &#250;ltima.
+<a name="1000020327"></a><li>ElseIf es una palabra.
+<a name="1000020328"></a><li>Los enunciados If de multil&#237;nea deben terminar en End If.
+</ul><a name="1000020329"></a><h6>Enunciados If de una l&#237;nea</h6><p><code><a name="1000020330"></a>If x Then y Else z </code></p><p class="example"><a name="1000020331"></a>Si x es verdadero, entonces hacer y. Si x no es verdadero (Else), hacer  z.</p><a name="1000020332"></a><h5>Ejemplos</h5><p><a name="1000025285"></a>El siguiente ejemplo es aplicable a sintaxis Basic:</p><p class="code"><a name="1000020334"></a>If {Empleado.Departamento} = "Ventas" Then
+<br><a name="1000020335"></a>&nbsp;&nbsp;&nbsp;&nbsp;formula = {Empleado.Salario} * 0.06
+<br><a name="1000020336"></a>Else
+<br><a name="1000025291"></a>&nbsp;&nbsp;&nbsp;&nbsp;formula = {Empleado.Salario} * 0.04
+<br><a name="1000025292"></a>End If
+</p><p class="example"><a name="1000020339"></a>Asigna tasa de aumento de salario basado en el departamento del empleado</p><a name="1000025297"></a><h5>Comentarios</h5><p><a name="1000025298"></a>La parte <EM>If </EM>de la expresi&#243;n puede incluir texto, n&#250;meros, expresiones Booleanas (Cust#&lt;"10000"), y f&#243;rmulas  ({@FORMULA}), donde @FORMULA es Booleano.</p><a name="1000020342"></a><h6>Temas relacionados</h6><p><a name="1000020343"></a>Para obtener detalles completos de c&#243;mo usar el enunciado If, vea:</p><p><a name="1000020347"></a><a href="20_basicsyntax49.html#132674">Enunciados If</a> (Sintaxis Basic)</p><p><a name="1000025303"></a><a href="20_basicsyntax50.html#132741">Enunciados If de una sola l&#237;nea y de m&#250;ltiples l&#237;neas</a> (Sintaxis Basic)</p><a name="1000025305"></a><h4>Crystal Syntax</h4><a name="1000025306"></a><h5>Uso</h5><p><code><a name="1000025307"></a>If x Then y Else z </code></p><p class="example"><a name="1000020356"></a>Si <EM>x</EM> es verdadero Entonces haga <EM>y</EM>. Si x no es verdadero (De lo contrario), haga <EM>z</EM>.</p><a name="1000020357"></a><h5>Examplos</h5><p><a name="1000032763"></a>El siguiente ejemplo es aplicable para sintaxis Crystal:</p><p class="code"><a name="1000025319"></a>If {cliente.CODIGO POSTAL} &lt;= "49999" Then
+<br><a name="1000025320"></a>&nbsp;&nbsp;&nbsp;&nbsp;"Etiqueta azul"
+<br><a name="1000025321"></a>Else
+<br><a name="1000025322"></a>&nbsp;&nbsp;&nbsp;&nbsp;"Por tierra" 
+</p><p class="example"><a name="1000025323"></a>Asigna m&#233;todo de transporte basado en la distancia desde el punto de embarque.</p><p class="code"><a name="1000025324"></a>If ToNumber ({archivo.ARTICULO}) &gt;= 2500 and ToNumber({archivo.ARTICULO}) 
+&lt; 2600 Then
+<br><a name="1000025325"></a>&nbsp;&nbsp;&nbsp;&nbsp;"Seasonal"
+<br><a name="1000025326"></a>Else
+<br><a name="1000025327"></a>&nbsp;&nbsp;&nbsp;&nbsp;""
+</p><p class="example"><a name="1000025328"></a> La expresi&#243;n <EM>If </EM>incluye un operador&nbsp;&nbsp;&nbsp;&nbsp; <strong>and </strong>para la funci&#243;n funci&#243;n ToNumber.</p><p class="code"><a name="1000025329"></a>If {archivo.CUENTA} &gt;= 25 Then
+<br><a name="1000025330"></a>&nbsp;&nbsp;&nbsp;&nbsp;{archivo.DISTRIBUIDOR} * {archivo.CUENTA}
+<br><a name="1000025331"></a>Else
+<br><a name="1000025332"></a>&nbsp;&nbsp;&nbsp;&nbsp;{archivo.DISTRIBUIDOR} * {archivo.CUENTA}
+</p><p class="example"><a name="1000025333"></a>La cantidad solicitada establece el precio de lista.</p><p class="code"><a name="1000025334"></a>If {archivo.A MANO}&gt;10 Then
+<br><a name="1000025335"></a>&nbsp;&nbsp;&nbsp;&nbsp;{archivo.ORDENADO}
+<br><a name="1000025336"></a>Else 
+<br><a name="1000025337"></a>&nbsp;&nbsp;&nbsp;&nbsp;If {archivo.ORDENADO} &lt; 5 Then
+<br><a name="1000025338"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{archivo.ORDENADO}
+<br><a name="1000025339"></a>&nbsp;&nbsp;&nbsp;&nbsp;Else
+<br><a name="1000025340"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2
+</p><p class="example"><a name="1000025341"></a>Asignaci&#243;n basada en la cantidad solicitada usando anidar If<nobr>-T</nobr>hen<nobr>-E</nobr>lse&nbsp;&nbsp;&nbsp;&nbsp;.</p><p class="code"><a name="1000025342"></a>If PageNumber = 1 Then
+<br><a name="1000025343"></a>&nbsp;&nbsp;&nbsp;&nbsp;PrintDate
+<br><a name="1000025344"></a>Else
+<br><a name="1000025345"></a>&nbsp;&nbsp;&nbsp;&nbsp;CDate(0,0,0)
+</p><p class="example"><a name="1000025346"></a>Imprime la fecha de impresi&#243;n (de la funci&#243;n PrintDate en la primera p&#225;gina , y no imprime [designada por la fecha vac&#237;a Date(0,0,0)] en las p&#225;ginas restantes.</p><a name="1000025347"></a><h5>Comentarios</h5><ul type="disc"><a name="1000025348"></a><li>La parte <EM>If </EM>de la expresi&#243;n puede incluir texto, n&#250;meros, expresiones Booleanas (Cust#&lt;"10000"), y f&#243;rmulas  ({@FORMULA}), donde @FORMULA es Booleano. 
+<a name="1000025349"></a><li> Las partes <EM>Then </EM>y <EM>Else</EM>, sin embargo, deben ser ambas del mismo tipo: (<EM>Then </EM>Texto, <EM>Else </EM>Texto; <EM>Then </EM>n&#250;mero,<EM> Else </EM>n&#250;mero). Mezclar acciones de Texto y n&#250;mero genera un mensaje de error.
+</ul><a name="1000020390"></a><h6>Temas relacionados</h6><p><a name="1000020391"></a>Para obtener detalles completos de c&#243;mo usar el enunciado If, vea:</p><p><a name="1000020395"></a><a href="21_crystalsyntax53.html#147318">Expresiones If</a> (Sintaxis Crystal)</p><p><a name="1000020399"></a><a href="21_crystalsyntax55.html#147405">M&#225;s detalles sobre las expresiones If</a> (Sintaxis Crystal)</p><p><a name="1000025354"></a>La mayor&#237;a de los ejemplos de f&#243;rmula usan este operador. Seleccione la f&#243;rmula de inter&#233;s en el &#237;ndice de <a href="19_introformulas28.html#316471">F&#243;rmulas en acci&#243;n</a>.</p>
+<hr><br>
+
+<script  language="JavaScript"><!--
+
+var prev = "Operators55.html";
+var next = "Operators57.html";
+
+function setTopicID() { 
+      var number = "1000025244"; 
+      return number; 
+}
+
+// --></script>
+
+
+
+
+<SCRIPT>
+
+if (!window.parent.toc && navigator.appName == "Netscape") {
+
+   document.writeln ('<TABLE ALIGN="left" border="0" cellspacing="0" cellpadding="10">');
+   document.writeln ('<TR>');
+   document.write ('<TD ALIGN="left">');
+
+   if (prev != "crw_spTOC.hhc") {
+      document.writeln ('<A HREF="' + prev + '">');
+      document.writeln ('<IMG SRC="prevpage.gif" HEIGHT=17 BORDER=0 ALT="Página anterior"></A>');
+   } else {
+//   window.alert ('no previous page');
+   }
+
+   if (next != "crw_spIX.hhk") {
+      document.writeln ('<A HREF="' + next + '">');
+      document.writeln ('<IMG SRC="nextpage.gif" HEIGHT=17 BORDER=0 ALT="Página siguiente"></A>');
+   } else {
+//   window.alert ('no next page');
+   }
+   document.writeln ('</TD><TD ALIGN="left">');
+   document.writeln ('<A HREF="frameset.htm?TOC">');
+   document.writeln ('<IMG SRC="showtoc.gif" HEIGHT=17 BORDER=0 ALT="Haga clic para ver el contenido"></A></TD>');
+   document.writeln ('<TD ALIGN="left">');
+   document.writeln ('<A HREF="frameset.htm?IDX">');
+   document.writeln ('<IMG SRC="showix.gif" HEIGHT=17 BORDER=0 ALT="Haga clic para ver el índice"></A></TD>');
+   document.writeln ('</TD>');
+   document.writeln ('</TR>');
+   document.writeln ('</TABLE>');
+
+}
+
+</SCRIPT>
+<table align="right" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td align="right"><font size="1">Seagate Software, Inc.<br>
+    <a href="http://www.seagatesoftware.com">http://www.seagatesoftware.com</a><br>
+    Envíe sus comentarios a:<br>
+    <a href="mailto:techpubs@seagatesoftware.com">techpubs@seagatesoftware.com</a><br>
+    </font></td>
+  </tr>
+</table>
+</body>
+</html>
+
+

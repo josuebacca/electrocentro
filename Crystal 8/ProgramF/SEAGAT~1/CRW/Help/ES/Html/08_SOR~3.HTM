@@ -1,0 +1,130 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+
+<html>
+<head>
+<title>Agrupamiento de datos en intervalos</title>
+
+<link REL=STYLESHEET TYPE="text/css" HREF="seagate.css">
+
+<!--
+                 ***********************************
+                 * Seagate Software copyright 1999 *
+                 ***********************************
+
+                      Template version: 5.1
+-->
+
+
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" link="#0000FF" vlink="#0000FF" alink="#800080">
+
+
+ 
+<a name="245233"></a><h3 class="newpage"> Agrupamiento de datos en intervalos</h3>
+<p><a name="245234"></a>Puede agrupar sus datos en intervalos. Grupos de edad, per&#237;odos y categor&#237;as de ventas son algunos de los grupos de intervalos que se pueden crear. En este ejemplo, clasificar&#225; a los clientes por el monto del negocio realizado el a&#241;o anterior.</p><p><a name="245235"></a>Este ejemplo usa el agrupamiento por orden espec&#237;fico. Este tipo de agrupamiento le permite especificar los registros que se incluyen en cada grupo. Puede definir los intervalos que desea y el programa hace el resto.</p><a name="246879"></a><h6>C&#243;mo agrupar datos en intervalos</h6><ol>
+<a name="253526"></a><li value="1&nbsp;&nbsp;&nbsp;&nbsp;">Para comenzar, inicie un informe utilizando los datos de muestra <strong>Xtreme_es.mdb</strong> y coloque los siguientes campos de izquierda a derecha en la secci&#243;n Detalles:
+<a name="253529"></a><p class="indent"><code>{cliente.REGION}<br>{cliente.CODIGO POSTAL}<br>{cliente.PAIS}<br>{cliente.VENTAS DEL &Uacute;LTIMO A&Ntilde;O}</code></p><a name="246882"></a><li value="2&nbsp;&nbsp;&nbsp;&nbsp;">Haga clic con el bot&#243;n derecho del mouse en el campo Ventas del &#250;ltimo a&#241;o y seleccione <strong>Insertar subtotal</strong> del men&#250; contextual que aparece.
+<p class="indent"><a name="246883"></a>El cuadro de di&#225;logo Insertar subtotal aparecer&#225; en su pantalla.</p><p><a name="260104"></a> <img src="images/db_insb3.gif">
+
+
+</p>
+<a name="246887"></a><li value="3&nbsp;&nbsp;&nbsp;&nbsp;">Siendo que quiere configurar intervalos bas&#225;ndose en las ventas del a&#241;o anterior, seleccione el campo Ventas del &#250;ltimo a&#241;o como el campo para ordenar y agrupar.
+<a name="246890"></a><li value="4&nbsp;&nbsp;&nbsp;&nbsp;">Seleccione la opci&#243;n<strong> en orden especificado</strong> de la segunda lista de desplazamiento.
+<p class="indent"><a name="246891"></a>La ficha Orden Especifico aparecer&#225; en el cuadro de di&#225;logo.</p><a name="246897"></a><li value="5&nbsp;&nbsp;&nbsp;&nbsp;">Haga clic en el bot&#243;n <strong>Nuevo</strong>. 
+<p class="indent"><a name="246898"></a>El programa despliega el cuadro de di&#225;logo Definir Nombre de grupo.</p><p><a name="260875"></a> <img src="images/db_defn1.gif">
+
+
+</p>
+<a name="246904"></a><li value="6&nbsp;&nbsp;&nbsp;&nbsp;">Escriba "Menos de $10,000" en el cuadro <strong>Nombre del grupo.</strong> Este es el nombre que aparecer&#225; como el valor del campo Nombre de grupo para el grupo.
+<a name="246905"></a><li value="7&nbsp;&nbsp;&nbsp;&nbsp;">Como el primer grupo contendr&#225; s&#243;lo aquellos registros que tienen una cifra de ventas del a&#241;o anterior menor a los $10,000, establezca los tres cuadros desplegables para que su condici&#243;n se lea: 
+<a name="246906"></a><p class="indent"><code>is less than 10000 (es menor que 10,000)</code></p><a name="249959"></a><li value="8&nbsp;&nbsp;&nbsp;&nbsp;">Haga clic en <strong>Aceptar</strong><EM> </EM>para regresar a la ficha Orden Especificado.
+<a name="246917"></a><li value="9&nbsp;&nbsp;&nbsp;&nbsp;">Haga clic en <strong>Nuevo.</strong>
+<p class="indent"><a name="253571"></a>El cuadro de di&#225;logo Definir Nombre de grupo vuelve a aparecer. </p><a name="246918"></a><li value="10&nbsp;&nbsp;&nbsp;&nbsp;">Esta vez, configure un segundo grupo, un grupo que contenga valores de entre $10,000 y $25,000.
+<ul type="disc"><ul type="disc"><a name="246919"></a><li>Escriba "$10,000 a $25,000" en el cuadro <strong>Nombre de grupo.</strong><a name="246920"></a><li>Establezca los primeros dos cuadros desplegables para que su condici&#243;n se lea: is between (est&#225; entre)<ul type="disc"><ul type="disc"><ul type="disc">
+<a name="247102"></a><li>Especifique un rango de valores:
+<a name="247103"></a><li>escriba 10000 en el cuadro desplegable de arriba, y
+<a name="247104"></a><li>escriba 25000 en el cuadro desplegable de abajo.
+<p class="indent"><a name="247105"></a>Ahora, ha configurado el grupo para que contenga todos los valores entre $10,000 y $25,000.</p></ul>
+</ul>
+</ul>
+</ul></ul><a name="247106"></a><li value="11&nbsp;&nbsp;&nbsp;&nbsp;">Haga clic en <strong>Aceptar</strong> para regresar a la ficha Orden Especificado.
+<a name="245336"></a><li value="12&nbsp;&nbsp;&nbsp;&nbsp;">Haga clic en <strong>Nuevo</strong>.
+<p class="indent"><a name="247111"></a>El cuadro de di&#225;logo Definir Nombre de grupo vuelve a aparecer.</p><a name="247112"></a><li value="13&nbsp;&nbsp;&nbsp;&nbsp;">Para configurar su grupo final con todos aquellos valores sobre los $25,000.
+</ol><ul type="disc"><a name="247113"></a><li>Escriba "M&#225;s de $25,000" en el cuadro <strong>Nombre de grupo</strong>.
+<a name="247114"></a><li>Establezca los tres cuadros desplegables para que su condici&#243;n sea la siguiente: es mayor que 
+<a name="247115"></a><li>Escriba "25,000"
+</ul><ol>
+<a name="247116"></a><li value="14&nbsp;&nbsp;&nbsp;&nbsp;">Haga clic en <strong>Aceptar</strong> para regresar a la ficha Orden Especifico.
+<a name="248752"></a><li value="15&nbsp;&nbsp;&nbsp;&nbsp;">Haga clic en <strong>Aceptar</strong>. El informe se agrupa por intervalos en un orden espec&#237;fico. El informe debe verse similar a &#233;ste.
+<p><a name="261100"></a> <img src="images/SORT8_2.gif">
+
+
+</p>
+<p><a name="260193"></a> </p>
+</ol>
+
+<hr><br>
+
+<script  language="JavaScript"><!--
+
+var prev = "08_sortgrouptotal10.html";
+var next = "08_sortgrouptotal12.html";
+
+function setTopicID() { 
+      var number = "245233"; 
+      return number; 
+}
+
+// --></script>
+
+
+
+
+<SCRIPT>
+
+if (!window.parent.toc && navigator.appName == "Netscape") {
+
+   document.writeln ('<TABLE ALIGN="left" border="0" cellspacing="0" cellpadding="10">');
+   document.writeln ('<TR>');
+   document.write ('<TD ALIGN="left">');
+
+   if (prev != "crw_spTOC.hhc") {
+      document.writeln ('<A HREF="' + prev + '">');
+      document.writeln ('<IMG SRC="prevpage.gif" HEIGHT=17 BORDER=0 ALT="Página anterior"></A>');
+   } else {
+//   window.alert ('no previous page');
+   }
+
+   if (next != "crw_spIX.hhk") {
+      document.writeln ('<A HREF="' + next + '">');
+      document.writeln ('<IMG SRC="nextpage.gif" HEIGHT=17 BORDER=0 ALT="Página siguiente"></A>');
+   } else {
+//   window.alert ('no next page');
+   }
+   document.writeln ('</TD><TD ALIGN="left">');
+   document.writeln ('<A HREF="frameset.htm?TOC">');
+   document.writeln ('<IMG SRC="showtoc.gif" HEIGHT=17 BORDER=0 ALT="Haga clic para ver el contenido"></A></TD>');
+   document.writeln ('<TD ALIGN="left">');
+   document.writeln ('<A HREF="frameset.htm?IDX">');
+   document.writeln ('<IMG SRC="showix.gif" HEIGHT=17 BORDER=0 ALT="Haga clic para ver el índice"></A></TD>');
+   document.writeln ('</TD>');
+   document.writeln ('</TR>');
+   document.writeln ('</TABLE>');
+
+}
+
+</SCRIPT>
+<table align="right" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td align="right"><font size="1">Seagate Software, Inc.<br>
+    <a href="http://www.seagatesoftware.com">http://www.seagatesoftware.com</a><br>
+    Envíe sus comentarios a:<br>
+    <a href="mailto:techpubs@seagatesoftware.com">techpubs@seagatesoftware.com</a><br>
+    </font></td>
+  </tr>
+</table>
+</body>
+</html>
+
+

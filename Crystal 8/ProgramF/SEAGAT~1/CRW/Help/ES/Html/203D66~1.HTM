@@ -1,0 +1,101 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+
+<html>
+<head>
+<title>Las variables s&#243;lo pueden contener valores de un tipo</title>
+
+<link REL=STYLESHEET TYPE="text/css" HREF="seagate.css">
+
+<!--
+                 ***********************************
+                 * Seagate Software copyright 1999 *
+                 ***********************************
+
+                      Template version: 5.1
+-->
+
+
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" link="#0000FF" vlink="#0000FF" alink="#800080">
+
+
+ 
+<a name="130289"></a><h4 class="newpage"> Las variables s&#243;lo pueden contener valores de un tipo</h4><p><a name="135261"></a>Una variable s&#243;lo puede contener valores de un tipo. Por ejemplo, si una variable tiene un valor num&#233;rico, no puede usarla despu&#233;s como cadena.</p><a name="135274"></a><h5>Ejemplo</h5><PRE><a name="135300"></a>Dim y As String
+<a name="130291"></a>y = "hola"
+<a name="130293"></a>'Correcto - la funci&#243;n Len espera un argumento de cadena
+<a name="130294"></a>formula = Len (y)
+<a name="130296"></a>'Error - y s&#243;lo puede tener valores de cadena
+<a name="130297"></a>y = #Jan 5, 1993#
+<a name="130299"></a>'Error - y s&#243;lo puede tener valores de cadena
+<a name="130300"></a>y = Array ("a", "bb", "ccc")
+<a name="130302"></a>'Error - la funci&#243;n Sin espera un argumento num&#233;rico
+<a name="130303"></a>formula = Sin (y)
+</PRE><p><a name="130304"></a>Puede declarar m&#225;s de una variable por enunciado al separar su declaraci&#243;n con comas:</p><PRE><a name="130305"></a>Dim x As Number, y as String, z as DateTime Range
+<a name="130306"></a>x = 10 : y = "hola"
+<a name="130307"></a>z = #Jan 1, 1999# To #Jan 31, 1999#
+</PRE>
+<hr><br>
+
+<script  language="JavaScript"><!--
+
+var prev = "20_basicsyntax23.html";
+var next = "20_basicsyntax25.html";
+
+function setTopicID() { 
+      var number = "130289"; 
+      return number; 
+}
+
+// --></script>
+
+
+
+
+<SCRIPT>
+
+if (!window.parent.toc && navigator.appName == "Netscape") {
+
+   document.writeln ('<TABLE ALIGN="left" border="0" cellspacing="0" cellpadding="10">');
+   document.writeln ('<TR>');
+   document.write ('<TD ALIGN="left">');
+
+   if (prev != "crw_spTOC.hhc") {
+      document.writeln ('<A HREF="' + prev + '">');
+      document.writeln ('<IMG SRC="prevpage.gif" HEIGHT=17 BORDER=0 ALT="Página anterior"></A>');
+   } else {
+//   window.alert ('no previous page');
+   }
+
+   if (next != "crw_spIX.hhk") {
+      document.writeln ('<A HREF="' + next + '">');
+      document.writeln ('<IMG SRC="nextpage.gif" HEIGHT=17 BORDER=0 ALT="Página siguiente"></A>');
+   } else {
+//   window.alert ('no next page');
+   }
+   document.writeln ('</TD><TD ALIGN="left">');
+   document.writeln ('<A HREF="frameset.htm?TOC">');
+   document.writeln ('<IMG SRC="showtoc.gif" HEIGHT=17 BORDER=0 ALT="Haga clic para ver el contenido"></A></TD>');
+   document.writeln ('<TD ALIGN="left">');
+   document.writeln ('<A HREF="frameset.htm?IDX">');
+   document.writeln ('<IMG SRC="showix.gif" HEIGHT=17 BORDER=0 ALT="Haga clic para ver el índice"></A></TD>');
+   document.writeln ('</TD>');
+   document.writeln ('</TR>');
+   document.writeln ('</TABLE>');
+
+}
+
+</SCRIPT>
+<table align="right" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td align="right"><font size="1">Seagate Software, Inc.<br>
+    <a href="http://www.seagatesoftware.com">http://www.seagatesoftware.com</a><br>
+    Envíe sus comentarios a:<br>
+    <a href="mailto:techpubs@seagatesoftware.com">techpubs@seagatesoftware.com</a><br>
+    </font></td>
+  </tr>
+</table>
+</body>
+</html>
+
+

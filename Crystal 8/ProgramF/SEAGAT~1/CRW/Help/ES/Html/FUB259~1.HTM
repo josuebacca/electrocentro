@@ -1,0 +1,93 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+
+<html>
+<head>
+<title>SummaryFunction (campo, campoCondicional)</title>
+
+<link REL=STYLESHEET TYPE="text/css" HREF="seagate.css">
+
+<!--
+                 ***********************************
+                 * Seagate Software copyright 1999 *
+                 ***********************************
+
+                      Template version: 5.1
+-->
+
+
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" link="#0000FF" vlink="#0000FF" alink="#800080">
+
+
+ 
+<a name="1000850631"></a><h3 class="newpage"> SummaryFunction (campo, campoCondicional)</h3>
+<p><a name="1000850632"></a>Sintaxis b&#225;sica y Crystal.</p><a name="1000850633"></a><h5>Argumentos</h5><ul type="disc"><a name="1000850634"></a><li>campo es cualquier campo de f&#243;rmula o de base de datos v&#225;lido que pueda ser evaluado por la funci&#243;n.
+<a name="1000850635"></a><li>campoCondicional es cualquier campo de f&#243;rmula o de base de datos utilizado para agrupar los valores en campo.
+</ul><a name="1000850636"></a><h5>Devuelve </h5><p><a name="1000850637"></a>Un n&#250;mero fraccionario.</p><a name="1000850638"></a><h5>Acci&#243;n </h5><p><a name="1000850639"></a>SummaryFunction(campo, campoCondicional) resume cada grupo de valores que es generado cuando se cumple la condici&#243;n de resumen especificada.</p><a name="1000850640"></a><h5>Uso(s) t&#237;pico(s)</h5><p><a name="1000850641"></a>Utilice estas funciones siempre que quiera duplicar en una f&#243;rmula un resumen</p><ul type="disc"><a name="1000850642"></a><li>que resume el valor en un grupo 
+<a name="1000850643"></a><li>que utiliza un campo de cadena, n&#250;mero, fecha, hora, fecha/hora o valor monetario como campo de ordenamiento y agrupar por(activador).
+</ul><a name="1000850644"></a><h5>Ejemplo(s) </h5><p><a name="1000850645"></a>Los siguientes ejemplos son aplicables a las sintaxis b&#225;sica y Crystal:</p><p><code><a name="1000850646"></a>SummaryFunction({pedidos.MONTO DEL PEDIDO}, {cliente.ID DEL CLIENTE})</code></p><p class="example"><a name="1000850647"></a>Resume los pedidos en cada grupo de pedidos de clientes. Los pedidos son separados en grupos siempre que el valor del campo Cliente cambia.</p><p><code><a name="1000850648"></a>Count({pedidos.MONTO DEL PEDIDO}, {pedidos.ID DEL CLIENTE})</code></p><p class="example"><a name="1000850649"></a>Esta f&#243;rmula cuenta el n&#250;mero de pedidos en cada grupo de pedidos en el campo Monto  (los pedidos totales para cada mes). Los pedidos son separados en grupos siempre que el valor del campo Id del cliente cambia.</p><p><code><a name="1000850650"></a>StdDev({pedidos.MONTO DEL PEDIDO}, {pedidos.ID DEL CLIENTE})</code></p><p class="example"><a name="1000850651"></a>Calcula la desviaci&#243;n est&#225;ndar de los pedidos en cada grupo de pedidos en el campo Pedidos. Los pedidos son separados en grupos siempre que el valor del campo Id del cliente cambia.</p><p><code><a name="1000850652"></a>Sum{pedidos.MONTO DEL PEDIDO}, {pedidos.ID DEL CLIENTE})</code></p><p class="example"><a name="1000850653"></a>Suma (totaliza) los pedidos en cada grupo de pedidos en el campo Monto. Los pedidos son separados siempre que el valor del campo Id del cliente cambia.</p><p><a name="1000850654"></a>El siguiente ejemplo es aplicable a la sintaxis Crystal:</p><p><code><a name="1000850655"></a>SummaryFucntion({pedidos.MONTO DEL PEDIDO}, {cliente. REGI&Oacute;N}) % SummaryFunction({pedidos.MONTO DEL PEDIDO})</code></p><p class="example"><a name="1000850656"></a>Agrupa los valores del campo Monto por regi&#243;n, resume los valores para cada grupo de regi&#243;n y muestra esos valores como un porcentaje del valor del resumen para el informe completo. </p><a name="1000850657"></a><h5>Comentario(s)  </h5><p><a name="1000850658"></a>Para poder utilizar esta funci&#243;n para insertar un campo de grupo en una f&#243;rmula, usted ya debe haber introducido un campo de grupo en su informe con argumentos id&#233;nticos: mismo campo, mismo campo de ordenamiento y agrupar por (activador), misma acci&#243;n (promedio, cuenta, etc.).</p>
+<hr><br>
+
+<script  language="JavaScript"><!--
+
+var prev = "Functions22.html";
+var next = "Functions24.html";
+
+function setTopicID() { 
+      var number = "1000850631"; 
+      return number; 
+}
+
+// --></script>
+
+
+
+
+<SCRIPT>
+
+if (!window.parent.toc && navigator.appName == "Netscape") {
+
+   document.writeln ('<TABLE ALIGN="left" border="0" cellspacing="0" cellpadding="10">');
+   document.writeln ('<TR>');
+   document.write ('<TD ALIGN="left">');
+
+   if (prev != "crw_spTOC.hhc") {
+      document.writeln ('<A HREF="' + prev + '">');
+      document.writeln ('<IMG SRC="prevpage.gif" HEIGHT=17 BORDER=0 ALT="Página anterior"></A>');
+   } else {
+//   window.alert ('no previous page');
+   }
+
+   if (next != "crw_spIX.hhk") {
+      document.writeln ('<A HREF="' + next + '">');
+      document.writeln ('<IMG SRC="nextpage.gif" HEIGHT=17 BORDER=0 ALT="Página siguiente"></A>');
+   } else {
+//   window.alert ('no next page');
+   }
+   document.writeln ('</TD><TD ALIGN="left">');
+   document.writeln ('<A HREF="frameset.htm?TOC">');
+   document.writeln ('<IMG SRC="showtoc.gif" HEIGHT=17 BORDER=0 ALT="Haga clic para ver el contenido"></A></TD>');
+   document.writeln ('<TD ALIGN="left">');
+   document.writeln ('<A HREF="frameset.htm?IDX">');
+   document.writeln ('<IMG SRC="showix.gif" HEIGHT=17 BORDER=0 ALT="Haga clic para ver el índice"></A></TD>');
+   document.writeln ('</TD>');
+   document.writeln ('</TR>');
+   document.writeln ('</TABLE>');
+
+}
+
+</SCRIPT>
+<table align="right" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td align="right"><font size="1">Seagate Software, Inc.<br>
+    <a href="http://www.seagatesoftware.com">http://www.seagatesoftware.com</a><br>
+    Envíe sus comentarios a:<br>
+    <a href="mailto:techpubs@seagatesoftware.com">techpubs@seagatesoftware.com</a><br>
+    </font></td>
+  </tr>
+</table>
+</body>
+</html>
+
+

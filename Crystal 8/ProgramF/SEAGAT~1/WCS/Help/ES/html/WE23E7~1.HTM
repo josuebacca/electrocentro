@@ -1,0 +1,82 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+
+<html>
+<head>
+
+<title>Especificaci&#243;n del visor de informes</title>
+
+<link REL=STYLESHEET TYPE="text/css" HREF="seagate.css">
+
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" link="#0000FF" vlink="#0000FF" alink="#800080">
+
+
+ 
+<a name="149487"></a><h3 class="newpage"> Especificaci&#243;n del visor de informes</h3>
+<p><a name="163420"></a>Como dise&#241;ador de sitios web, puede especificar el visor que se debe usar cuando se solicita el informe, cambiando el visor predeterminado para el explorador. Por ejemplo, la siguiente URL obliga al explorador a usar el visor Java, incluso cuando se usa Internet Explorer o cualquier otro explorador web:</p><p><code><a name="149488"></a>http://localhost/midirectorio/estado de cuenta.rpt?init=java</code></p><p><a name="149489"></a><font color="darkblue"><b>Nota:   &nbsp;&nbsp;&nbsp;</b></font>Si el explorador del usuario no es compatible con la tecnolog&#237;a utilizada por el visor especificado, en este caso Java, ocurrir&#225; un error o se visualizar&#225; una p&#225;gina vac&#237;a.</p>
+<p><a name="149490"></a>En esta URL, INIT es un par&#225;metro reconocido por el Web Component Server. Ajustando el par&#225;metro INIT a Java, puede hacer que el Web Component Server utilice el visor de informes para Java al mostrar el informe en un explorador. El Web Component Server acepta varios par&#225;metros que permiten controlar la forma en que se generan y visualizan los informes. Para m&#225;s informaci&#243;n, vea <a href="WebServerCommands.html#162489">Comandos del Web Component Server</a>.</p>
+<hr><br>
+
+<script  language="JavaScript"><!--
+
+var prev = "WebServerImplementation24.html";
+var next = "WebServerAdministration.html";
+
+function setTopicID() { 
+      var number = "149487"; 
+      return number; 
+}
+
+// --></script>
+
+
+
+
+<SCRIPT>
+
+if (!window.parent.toc && navigator.appName == "Netscape") {
+
+   document.writeln ('<TABLE ALIGN="left" border="0" cellspacing="0" cellpadding="10">');
+   document.writeln ('<TR>');
+   document.write ('<TD ALIGN="left">');
+
+   if (prev != "wcmadminTOC.hhc") {
+      document.writeln ('<A HREF="' + prev + '">');
+      document.writeln ('<IMG SRC="prevpage.gif" HEIGHT=17 BORDER=0 ALT="Página anterior"></A>');
+   } else {
+//   window.alert ('no previous page');
+   }
+
+   if (next != "wcmadminIX.hhk") {
+      document.writeln ('<A HREF="' + next + '">');
+      document.writeln ('<IMG SRC="nextpage.gif" HEIGHT=17 BORDER=0 ALT="Página siguiente"></A>');
+   } else {
+//   window.alert ('no next page');
+   }
+   document.writeln ('</TD><TD ALIGN="left">');
+   document.writeln ('<A HREF="frameset.htm?TOC">');
+   document.writeln ('<IMG SRC="showtoc.gif" HEIGHT=17 BORDER=0 ALT="Haga clic para ver el contenido"></A></TD>');
+   document.writeln ('<TD ALIGN="left">');
+   document.writeln ('<A HREF="frameset.htm?IDX">');
+   document.writeln ('<IMG SRC="showix.gif" HEIGHT=17 BORDER=0 ALT="Haga clic para ver el índice"></A></TD>');
+   document.writeln ('</TD>');
+   document.writeln ('</TR>');
+   document.writeln ('</TABLE>');
+
+}
+
+</SCRIPT>
+<table align="right" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td align="right"><font size="1">Seagate Software, Inc.<br>
+    <a href="http://www.seagatesoftware.com">http://www.seagatesoftware.com</a><br>
+    Envíe sus comentarios a:<br>
+    <a href="mailto:techpubs@seagatesoftware.com">techpubs@seagatesoftware.com</a><br>
+    </font></td>
+  </tr>
+</table>
+</body>
+</html>
+
+

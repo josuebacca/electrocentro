@@ -1,0 +1,99 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+
+<html>
+<head>
+<title>Depuraci&#243;n de f&#243;rmulas</title>
+
+<link REL=STYLESHEET TYPE="text/css" HREF="seagate.css">
+
+<!--
+                 ***********************************
+                 * Seagate Software copyright 1999 *
+                 ***********************************
+
+                      Template version: 5.1
+-->
+
+
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" link="#0000FF" vlink="#0000FF" alink="#800080">
+
+
+ 
+<a name="256332"></a><h2 class="newpage">Depuraci&#243;n de f&#243;rmulas</h2><a name="256334"></a><h3>Tutorial de depuraci&#243;n</h3>
+<p><a name="256335"></a>Siga el ejemplo a continuaci&#243;n para aprender los pasos necesarios para depurar una f&#243;rmula. Despu&#233;s de terminar este ejercicio, use los mismos principios para depurar sus propias f&#243;rmulas.</p><a name="258830"></a><h4>Acerca de este tutorial</h4><ul type="disc"><a name="256336"></a><li>Este tutorial usa la base de datos de muestra <kbd>Xtreme_es.mdb</kbd>.
+<a name="258877"></a><li>Este tutorial usa sintaxis Crystal.
+<a name="256337"></a><li>Los errores se verificar&#225;n en la siguiente f&#243;rmula:
+</ul><PRE><a name="256338"></a>If ({cliente.NOMBRE DEL CLIENTE} [1 to 2 = "Bi" and
+<a name="286668"></a>ToText({cliente,ID DEL CLIENTE}) [1] = "6") Or
+<a name="286670"></a>({cliente.NOMBRE DEL CLIENTE} [1] = 'Ro" and
+<a name="286672"></a>ToText({cliente.ID DEL CLIENTE}) [1] = "5")
+<a name="256339"></a>&nbsp;&nbsp;&nbsp;&nbsp;"CLIENTE PREFERIDO"
+<a name="256340"></a>Else
+<a name="256341"></a>&nbsp;&nbsp;&nbsp;&nbsp;"NO SE AJUSTA A LOS CRITERIOS"
+</PRE><p><a name="256342"></a>Si est&#225; correcta, esta f&#243;rmula deber&#237;a seleccionar todos los clientes cuyos nombres comienzan con "Bi" y cuyas identificaciones de cliente comienzan con "6", al igual que aquellas compa&#241;&#237;as cuyos nombres comienzan con "Ro" y cuyas identificaciones de cliente comienzan con "5". Al imprimir el campo, aquellas selecciones se ver&#225;n como "CLIENTE PREFERIDO", mientras que el resto se ver&#225; como "NO SE AJUSTA A LOS CRITERIOS".</p><p><a name="256343"></a>Ahora va a desglosar la f&#243;rmula para verificar y ver que cada condici&#243;n de la f&#243;rmula funciona individualmente.</p>
+<hr><br>
+
+<script  language="JavaScript"><!--
+
+var prev = "19_introformulas19.html";
+var next = "19_introformulas21.html";
+
+function setTopicID() { 
+      var number = "256332"; 
+      return number; 
+}
+
+// --></script>
+
+
+
+
+<SCRIPT>
+
+if (!window.parent.toc && navigator.appName == "Netscape") {
+
+   document.writeln ('<TABLE ALIGN="left" border="0" cellspacing="0" cellpadding="10">');
+   document.writeln ('<TR>');
+   document.write ('<TD ALIGN="left">');
+
+   if (prev != "crw_spTOC.hhc") {
+      document.writeln ('<A HREF="' + prev + '">');
+      document.writeln ('<IMG SRC="prevpage.gif" HEIGHT=17 BORDER=0 ALT="Página anterior"></A>');
+   } else {
+//   window.alert ('no previous page');
+   }
+
+   if (next != "crw_spIX.hhk") {
+      document.writeln ('<A HREF="' + next + '">');
+      document.writeln ('<IMG SRC="nextpage.gif" HEIGHT=17 BORDER=0 ALT="Página siguiente"></A>');
+   } else {
+//   window.alert ('no next page');
+   }
+   document.writeln ('</TD><TD ALIGN="left">');
+   document.writeln ('<A HREF="frameset.htm?TOC">');
+   document.writeln ('<IMG SRC="showtoc.gif" HEIGHT=17 BORDER=0 ALT="Haga clic para ver el contenido"></A></TD>');
+   document.writeln ('<TD ALIGN="left">');
+   document.writeln ('<A HREF="frameset.htm?IDX">');
+   document.writeln ('<IMG SRC="showix.gif" HEIGHT=17 BORDER=0 ALT="Haga clic para ver el índice"></A></TD>');
+   document.writeln ('</TD>');
+   document.writeln ('</TR>');
+   document.writeln ('</TABLE>');
+
+}
+
+</SCRIPT>
+<table align="right" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td align="right"><font size="1">Seagate Software, Inc.<br>
+    <a href="http://www.seagatesoftware.com">http://www.seagatesoftware.com</a><br>
+    Envíe sus comentarios a:<br>
+    <a href="mailto:techpubs@seagatesoftware.com">techpubs@seagatesoftware.com</a><br>
+    </font></td>
+  </tr>
+</table>
+</body>
+</html>
+
+

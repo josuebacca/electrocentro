@@ -1,0 +1,101 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+
+<html>
+<head>
+<title>Ventajas</title>
+
+<link REL=STYLESHEET TYPE="text/css" HREF="seagate.css">
+
+<!--
+                 ***********************************
+                 * Seagate Software copyright 1999 *
+                 ***********************************
+
+                      Template version: 5.1
+-->
+
+
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" link="#0000FF" vlink="#0000FF" alink="#800080">
+
+
+ 
+<a name="1814"></a><h3 class="newpage"> Ventajas</h3>
+<p><a name="1816"></a>Tal vez la mayor ventaja de acceder a los datos mediante ODBC es la capacidad de acceder a una amplia variedad de datos usando una sola interfaz. Como los sistemas de administraci&#243;n de bases de datos m&#225;s usados ya ofrecen controladores ODBC, y cada d&#237;a surgen m&#225;s, Seagate Crystal Reports puede usar cualquier tipo de datos que usted tenga.</p><p><a name="1818"></a>Debido a la flexibilidad extrema incorporada en ODBC, es posible usar el mismo archivo de informe con diferentes fuentes de datos ODBC. Por ejemplo, podr&#237;a dise&#241;ar un informe usando una fuente de datos Oracle y, luego, si su compa&#241;&#237;a cambia a Microsoft SQL Server, simplemente tiene que cambiar la fuente de datos ODBC usada en el informe. El &#250;nico requerimiento es que la nueva fuente de datos debe tener la misma estructura (tablas y campos) que la fuente de datos original (aunque los nombres de las tablas pueden ser diferentes). Vea <a href="24_under_databases50.html#326021">C&#243;mo cambiar la fuente de datos ODBC accesible por un informe</a>.</p><p><a name="1820"></a>Los programadores con experiencia en SQL (Lenguaje de consulta estructurado) tambi&#233;n pueden aprovechar el est&#225;ndar ODBC. Como Seagate Crystal Reports usa SQL para comunicarse con ODBC, los programadores de SQL y los administradores de bases de datos pueden ver y editar enunciados SQL enviados a ODBC, controlando con exactitud la recuperaci&#243;n de datos de la fuente de datos.</p><p><a name="1822"></a>Finalmente, al usar la tecnolog&#237;a de transmisi&#243;n de datos SQL para enviar un enunciado SQL a ODBC y recuperar un conjunto inicial de datos, Seagate Crystal Reports delega gran parte del trabajo de ordenaci&#243;n y recuperaci&#243;n de datos al sistema del servidor, liberando as&#237; recursos y memoria local para tareas m&#225;s importantes. Adem&#225;s, solamente los datos especificados por el enunciado SQL se devuelven a Seagate Crystal Reports, reduciendo el tr&#225;fico y el uso de recursos de la red. Al trabajar m&#225;s eficazmente con los datos originales, Seagate Crystal Reports le economiza tiempo y trabajo y le permite concentrarse en el proceso de dise&#241;o y en otras tareas m&#225;s importantes.</p><a name="1824"></a><h3>Desventajas</h3>
+<p><a name="71190"></a>Debido a las diferentes capas que participan en la transmisi&#243;n de datos mediante ODBC desde una base de datos a una aplicaci&#243;n, la fuente de datos de ODBC a menudo toma m&#225;s tiempo para devolver datos que las fuentes de datos a que se accede en forma nativa. Primero, Seagate Crystal Reports debe solicitar algunos datos. La solicitud debe ser traducida por la capa de traducci&#243;n ODBC a un formato que ODBC entienda (un enunciado SQL). ODBC debe determinar d&#243;nde existen los datos solicitados y transmitir la solicitud a la fuente de datos ODBC. Para m&#225;s informaci&#243;n, vea <a href="25_access_sources33.html#1862">Capa de traducci&#243;n de DBMS (fuente de datos ODBC)</a>. La fuente de datos debe analizar la solicitud y traducirla nuevamente a un formato comprensible para el DBMS. Este complejo proceso no s&#243;lo toma tiempo, sino que tambi&#233;n puede fallar en cualquiera de los niveles.</p><p><a name="26159"></a>Adem&#225;s, las fuentes de datos ODBC se deben configurar y establecer correctamente en los archivos Odbc.ini y Odbcinst.ini antes de poder usarlos. Si crea un informe en un sistema e intenta abrirlo en otro que no tenga configurada la misma fuente de datos ODBC, Seagate Crystal Reports no podr&#225; conectarse con los datos.</p><p><a name="1828"></a>Al trabajar con ODBC, tambi&#233;n debe tener en cuenta que el lenguaje SQL usado por ODBC se basa en est&#225;ndares establecidos por el American National Standards Institute (ANSI) para lenguaje SQL. Sin embargo, algunas aplicaciones DBMS basadas en SQL proporcionan funciones adicionales al lenguaje SQL que son espec&#237;ficas a dicho DBMS. Si sus datos usan funciones exclusivas a DBMS, ODBC no podr&#225; traducirlas (aunque en muchos casos recuperar&#225; la mayor&#237;a de los datos). Vea <a href="24_under_databases31.html#323214">El lenguaje SQL</a>.</p><a name="1830"></a><h3>Cinco capas</h3>
+<p><a name="1832"></a>El proceso por el cual Seagate Crystal Reports accede a los datos de una fuente de datos ODBC consta de cinco capas:</p><ul type="disc"><a name="120895"></a><li><a href="25_access_sources30.html#1848">Seagate Crystal Reports</a>
+<a name="120900"></a><li><a href="25_access_sources31.html#1852">Capa de traducci&#243;n ODBC</a>
+<a name="120905"></a><li><a href="25_access_sources32.html#1856">Capa de ODBC</a>
+<a name="120910"></a><li><a href="25_access_sources33.html#1862">Capa de traducci&#243;n de DBMS (fuente de datos ODBC)</a>
+<a name="120914"></a><li><a href="25_access_sources34.html#1870">Capa de base de datos</a>.
+<p><a name="333256"></a> </p>
+<p><a name="1846"></a> <img src="images/ODBCLYRS.gif">
+
+
+</p>
+</ul><p><a name="355243"></a>Al usar el lenguaje de consulta estructurado (SQL), las cinco capas transmiten los datos convenientemente desde la base de datos a su informe.</p>
+<hr><br>
+
+<script  language="JavaScript"><!--
+
+var prev = "25_access_sources28.html";
+var next = "25_access_sources30.html";
+
+function setTopicID() { 
+      var number = "1814"; 
+      return number; 
+}
+
+// --></script>
+
+
+
+
+<SCRIPT>
+
+if (!window.parent.toc && navigator.appName == "Netscape") {
+
+   document.writeln ('<TABLE ALIGN="left" border="0" cellspacing="0" cellpadding="10">');
+   document.writeln ('<TR>');
+   document.write ('<TD ALIGN="left">');
+
+   if (prev != "crw_spTOC.hhc") {
+      document.writeln ('<A HREF="' + prev + '">');
+      document.writeln ('<IMG SRC="prevpage.gif" HEIGHT=17 BORDER=0 ALT="Página anterior"></A>');
+   } else {
+//   window.alert ('no previous page');
+   }
+
+   if (next != "crw_spIX.hhk") {
+      document.writeln ('<A HREF="' + next + '">');
+      document.writeln ('<IMG SRC="nextpage.gif" HEIGHT=17 BORDER=0 ALT="Página siguiente"></A>');
+   } else {
+//   window.alert ('no next page');
+   }
+   document.writeln ('</TD><TD ALIGN="left">');
+   document.writeln ('<A HREF="frameset.htm?TOC">');
+   document.writeln ('<IMG SRC="showtoc.gif" HEIGHT=17 BORDER=0 ALT="Haga clic para ver el contenido"></A></TD>');
+   document.writeln ('<TD ALIGN="left">');
+   document.writeln ('<A HREF="frameset.htm?IDX">');
+   document.writeln ('<IMG SRC="showix.gif" HEIGHT=17 BORDER=0 ALT="Haga clic para ver el índice"></A></TD>');
+   document.writeln ('</TD>');
+   document.writeln ('</TR>');
+   document.writeln ('</TABLE>');
+
+}
+
+</SCRIPT>
+<table align="right" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td align="right"><font size="1">Seagate Software, Inc.<br>
+    <a href="http://www.seagatesoftware.com">http://www.seagatesoftware.com</a><br>
+    Envíe sus comentarios a:<br>
+    <a href="mailto:techpubs@seagatesoftware.com">techpubs@seagatesoftware.com</a><br>
+    </font></td>
+  </tr>
+</table>
+</body>
+</html>
+
+

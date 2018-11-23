@@ -1,0 +1,95 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+
+<html>
+<head>
+<title>Fix</title>
+
+<link REL=STYLESHEET TYPE="text/css" HREF="seagate.css">
+
+<!--
+                 ***********************************
+                 * Seagate Software copyright 1999 *
+                 ***********************************
+
+                      Template version: 5.1
+-->
+
+
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" link="#0000FF" vlink="#0000FF" alink="#800080">
+
+
+ 
+<a name="1000850182"></a><h3 class="newpage"> Fix</h3>
+<p><a name="1000850186"></a>Fix y <a href="Functions7.html#1000850115">Truncate (x), Truncate (x, #lugares)</a> son funciones equivalentes. Sin embargo, se prefiere Fix en la sintaxis b&#225;sica y Truncate en la sintaxis Crystal</p><a name="1000850187"></a><h5>Sobrecargas</h5><ul type="disc"><a name="1000850188"></a><li>Fix (n&#250;mero)
+<a name="1000850189"></a><li>Fix (n&#250;mero, #lugares)
+</ul><a name="1000850190"></a><h5>Argumentos</h5><ul type="disc"><a name="1000850191"></a><li>n&#250;mero es el valor num&#233;rico para truncar; puede ser positivo, 0 o negativo.
+<a name="1000850192"></a><li>#lugares es un n&#250;mero opcional que indica el n&#250;mero de lugares decimales para truncar. Si se omite, se asume 0.
+</ul><a name="1000850193"></a><h5>Devuelve </h5><p><a name="1000850194"></a>es una cadena que indica entero que puede ser positivo, 0 o negativo.</p><a name="1000850195"></a><h5>Acci&#243;n</h5><p><a name="1000850196"></a>Fix trunca un n&#250;mero en el n&#250;mero de lugares decimales especificado y lo devuelve.  Si se omite  #lugares, se asume  0.</p><a name="1000850197"></a><h5>Ejemplo(s)</h5><p><a name="1000850198"></a>Los siguientes ejemplos son aplicables a las sintaxis b&#225;sica y Crystal:</p><p><code><a name="1000850199"></a>Fix (123.678)</code></p><p class="example"><a name="1000850200"></a>Devuelve 123.</p><p><code><a name="1000850201"></a>Fix (-123.678)</code></p><p class="example"><a name="1000850202"></a>Devuelve -123.</p><p><code><a name="1000850203"></a>Fix (123.678,1)</code></p><p class="example"><a name="1000850204"></a>Devuelve 123.6.</p><p><code><a name="1000850205"></a>Fix (123.678,2)</code></p><p class="example"><a name="1000850206"></a>Devuelve 123.67.</p><a name="1000850207"></a><h5>Comentario(s) </h5><ul type="disc"><a name="1000850208"></a><li>Esta funci&#243;n con un s&#243;lo par&#225;metro, Fix (n&#250;mero), se designa para trabajar de forma similar a la funci&#243;n de Visual Basic del mismo nombre.
+<a name="1000850212"></a><li>Fix (n) y <a href="Functions5.html#1000850004">Int (n&#250;mero)</a> funcionan de igual manera excepto cuando n es negativo, en cuyo caso Fix devuelve el primer entero mayor o igual a n , e Int devuelve el primer entero menor o igual a  n. Por ejemplo,
+</ul><p><code><a name="1000850213"></a>Fix (-10.2)</code></p><p class="example"><a name="1000850214"></a>Devuelve -10.</p><p><code><a name="1000850215"></a>Int (-10.2)</code></p><p class="example"><a name="1000850216"></a>Devuelve -11.</p>
+<hr><br>
+
+<script  language="JavaScript"><!--
+
+var prev = "Functions7.html";
+var next = "Functions9.html";
+
+function setTopicID() { 
+      var number = "1000850182"; 
+      return number; 
+}
+
+// --></script>
+
+
+
+
+<SCRIPT>
+
+if (!window.parent.toc && navigator.appName == "Netscape") {
+
+   document.writeln ('<TABLE ALIGN="left" border="0" cellspacing="0" cellpadding="10">');
+   document.writeln ('<TR>');
+   document.write ('<TD ALIGN="left">');
+
+   if (prev != "crw_spTOC.hhc") {
+      document.writeln ('<A HREF="' + prev + '">');
+      document.writeln ('<IMG SRC="prevpage.gif" HEIGHT=17 BORDER=0 ALT="Página anterior"></A>');
+   } else {
+//   window.alert ('no previous page');
+   }
+
+   if (next != "crw_spIX.hhk") {
+      document.writeln ('<A HREF="' + next + '">');
+      document.writeln ('<IMG SRC="nextpage.gif" HEIGHT=17 BORDER=0 ALT="Página siguiente"></A>');
+   } else {
+//   window.alert ('no next page');
+   }
+   document.writeln ('</TD><TD ALIGN="left">');
+   document.writeln ('<A HREF="frameset.htm?TOC">');
+   document.writeln ('<IMG SRC="showtoc.gif" HEIGHT=17 BORDER=0 ALT="Haga clic para ver el contenido"></A></TD>');
+   document.writeln ('<TD ALIGN="left">');
+   document.writeln ('<A HREF="frameset.htm?IDX">');
+   document.writeln ('<IMG SRC="showix.gif" HEIGHT=17 BORDER=0 ALT="Haga clic para ver el índice"></A></TD>');
+   document.writeln ('</TD>');
+   document.writeln ('</TR>');
+   document.writeln ('</TABLE>');
+
+}
+
+</SCRIPT>
+<table align="right" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td align="right"><font size="1">Seagate Software, Inc.<br>
+    <a href="http://www.seagatesoftware.com">http://www.seagatesoftware.com</a><br>
+    Envíe sus comentarios a:<br>
+    <a href="mailto:techpubs@seagatesoftware.com">techpubs@seagatesoftware.com</a><br>
+    </font></td>
+  </tr>
+</table>
+</body>
+</html>
+
+

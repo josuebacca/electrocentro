@@ -1,0 +1,104 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+
+<html>
+<head>
+<title>Uso de los rangos en f&#243;rmulas</title>
+
+<link REL=STYLESHEET TYPE="text/css" HREF="seagate.css">
+
+<!--
+                 ***********************************
+                 * Seagate Software copyright 1999 *
+                 ***********************************
+
+                      Template version: 5.1
+-->
+
+
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" link="#0000FF" vlink="#0000FF" alink="#800080">
+
+
+ 
+<a name="145318"></a><h3 class="newpage"> Uso de los rangos en f&#243;rmulas</h3>
+<p><a name="145320"></a>Existen 27 funciones en Seagate Crystal Reports que especifican rangos de fecha. Por ejemplo, la funci&#243;n LastFullMonth especifica un rango de valores de fecha que incluye todas las fechas desde el primer al &#250;ltimo d&#237;a del mes anterior. As&#237;, si la fecha de hoy fuera 15 de septiembre de 1999, LastFullMonth ser&#237;a el mismo que el valor de rango CDate (#Aug 1, 1999#) To CDate (#Aug 31, 1999#).</p><p><a name="145322"></a>Los rangos a menudo se usan con expresiones If o Select. El siguiente ejemplo calcula las calificaciones con letras de estudiantes seg&#250;n sus calificaciones de prueba. Las calificaciones mayores o iguales a 90 reciben una calificaci&#243;n de "A", las calificaciones de 80 a 90, 90 no incluido, reciben una "B" y as&#237; sucesivamente.</p><PRE><a name="145324"></a>//Calcular calificaciones con letras de estudiantes
+<a name="145325"></a>Select {Estudiante.Calificaciones de prueba}
+<a name="145326"></a>   Case UpFrom 90 :
+<a name="145327"></a>      "A"
+<a name="145328"></a>   Case 80 To_ 90 :
+<a name="145329"></a>      "B"
+<a name="145330"></a>   Case 70 To_ 80 :
+<a name="145331"></a>      "C"
+<a name="145332"></a>   Case 60 To_ 70 :
+<a name="145333"></a>      "D"
+<a name="145334"></a>   Default :
+<a name="145335"></a>      "F";
+</PRE><p><a name="145337"></a>El ejemplo anterior usa la expresi&#243;n Select, analizada con mayor detalle en la secci&#243;n de estructuras de control. Puede verificar si un valor se encuentra en un rango usando el operador In. Por ejemplo:</p><PRE><a name="145339"></a>5 In 2 To 10; //Verdadero
+<a name="145340"></a>5 In 2 To_ 5; //Falso
+<a name="145341"></a>5 In 2 To 5; //Verdadero
+</PRE><p><a name="145343"></a>Se pueden usar las funciones Maximum y Minimum para buscar los puntos extremos de un rango:</p><p><code><a name="145344"></a>Maximum (2 To 10) //Devuelve 10</code></p>
+<hr><br>
+
+<script  language="JavaScript"><!--
+
+var prev = "21_crystalsyntax24.html";
+var next = "21_crystalsyntax26.html";
+
+function setTopicID() { 
+      var number = "145318"; 
+      return number; 
+}
+
+// --></script>
+
+
+
+
+<SCRIPT>
+
+if (!window.parent.toc && navigator.appName == "Netscape") {
+
+   document.writeln ('<TABLE ALIGN="left" border="0" cellspacing="0" cellpadding="10">');
+   document.writeln ('<TR>');
+   document.write ('<TD ALIGN="left">');
+
+   if (prev != "crw_spTOC.hhc") {
+      document.writeln ('<A HREF="' + prev + '">');
+      document.writeln ('<IMG SRC="prevpage.gif" HEIGHT=17 BORDER=0 ALT="Página anterior"></A>');
+   } else {
+//   window.alert ('no previous page');
+   }
+
+   if (next != "crw_spIX.hhk") {
+      document.writeln ('<A HREF="' + next + '">');
+      document.writeln ('<IMG SRC="nextpage.gif" HEIGHT=17 BORDER=0 ALT="Página siguiente"></A>');
+   } else {
+//   window.alert ('no next page');
+   }
+   document.writeln ('</TD><TD ALIGN="left">');
+   document.writeln ('<A HREF="frameset.htm?TOC">');
+   document.writeln ('<IMG SRC="showtoc.gif" HEIGHT=17 BORDER=0 ALT="Haga clic para ver el contenido"></A></TD>');
+   document.writeln ('<TD ALIGN="left">');
+   document.writeln ('<A HREF="frameset.htm?IDX">');
+   document.writeln ('<IMG SRC="showix.gif" HEIGHT=17 BORDER=0 ALT="Haga clic para ver el índice"></A></TD>');
+   document.writeln ('</TD>');
+   document.writeln ('</TR>');
+   document.writeln ('</TABLE>');
+
+}
+
+</SCRIPT>
+<table align="right" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td align="right"><font size="1">Seagate Software, Inc.<br>
+    <a href="http://www.seagatesoftware.com">http://www.seagatesoftware.com</a><br>
+    Envíe sus comentarios a:<br>
+    <a href="mailto:techpubs@seagatesoftware.com">techpubs@seagatesoftware.com</a><br>
+    </font></td>
+  </tr>
+</table>
+</body>
+</html>
+
+

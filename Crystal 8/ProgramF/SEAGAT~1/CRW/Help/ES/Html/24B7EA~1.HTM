@@ -1,0 +1,95 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+
+<html>
+<head>
+<title>Ubicaci&#243;n de archivos</title>
+
+<link REL=STYLESHEET TYPE="text/css" HREF="seagate.css">
+
+<!--
+                 ***********************************
+                 * Seagate Software copyright 1999 *
+                 ***********************************
+
+                      Template version: 5.1
+-->
+
+
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" link="#0000FF" vlink="#0000FF" alink="#800080">
+
+
+ 
+<a name="319885"></a><h3 class="newpage"> Ubicaci&#243;n de archivos</h3>
+<p><a name="319886"></a>Cuando un archivo de base de datos es movido o se le da un nuevo nombre, Seagate Crystal Reports no encontrar&#225; los datos la siguiente vez que el informe se imprima. En otras ocasiones, es posible que un informe sea creado en una m&#225;quina donde todos los datos de la base de datos est&#233;n almacenados en un cierto directorio, y luego el informe sea copiado o movido a otra m&#225;quina que almacena los mismos datos en un directorio diferente. En cualquiera de estos casos, necesita verificar la ubicaci&#243;n de los archivos de base de datos que tienen acceso por el informe y restablecer los punteros del alias a la nueva ubicaci&#243;n o nombre de la base de datos.</p><p><a name="356244"></a> <img src="images/locate.gif">
+
+
+</p>
+<p><a name="319892"></a>El comando Verificar Base de Datos en el men&#250; Base de datos verifica los punteros del alias almacenados en un archivo de informe para ver que los archivos de base de datos esperados est&#233;n en los directorios indicados. Si las bases de datos no se encuentran en la ubicaci&#243;n especificada, el programa le indicar&#225; las discrepancias. Busque <kbd>el comando Verificar base de datos</kbd> en la Ayuda en l&#237;nea de Seagate Crystal Reports.</p><p><a name="314390"></a>Utilice el comando Establecer Ubicaci&#243;n en el men&#250; Base de datos para cambiar los punteros de los alias almacenados por Seagate Crystal Reports. El comando <kbd>Establecer ubicaci&#243;n</kbd> proporciona una manera sencilla de indicar el nuevo nombre o ubicaci&#243;n de los archivos de base de datos. Adem&#225;s, este comando puede ser utilizado para cambiar la fuente de datos ODBC usada por un informe. Por ejemplo, usted puede convertir autom&#225;ticamente una fuente de datos de acceso directo a una fuente de datos ODBC usando el comando Establecer ubicaci&#243;n. Se aplican los siguientes lineamientos:</p><ul type="disc"><a name="314391"></a><li>Si s&#243;lo est&#225; moviendo una tabla, el comando Establecer ubicaci&#243;n puede convertirlo al mismo tipo o a cualquier otro tipo de fuente de datos.
+<a name="314392"></a><li>Si est&#225; moviendo m&#225;s de una tabla, el comando Establecer ubicaci&#243;n puede convertir todas las tablas al mismo tipo de fuente de datos. Para mover m&#225;s de una tabla a una fuente de datos diferente, use la opci&#243;n Convertir controlador de base de datos. 
+</ul><a name="320214"></a><h6>Temas relacionados</h6><p><a name="320218"></a><a href="24_under_databases49.html#352355">C&#243;mo desconectar de una fuente de datos ODBC</a>.</p>
+<hr><br>
+
+<script  language="JavaScript"><!--
+
+var prev = "24_under_databases4.html";
+var next = "24_under_databases6.html";
+
+function setTopicID() { 
+      var number = "319885"; 
+      return number; 
+}
+
+// --></script>
+
+
+
+
+<SCRIPT>
+
+if (!window.parent.toc && navigator.appName == "Netscape") {
+
+   document.writeln ('<TABLE ALIGN="left" border="0" cellspacing="0" cellpadding="10">');
+   document.writeln ('<TR>');
+   document.write ('<TD ALIGN="left">');
+
+   if (prev != "crw_spTOC.hhc") {
+      document.writeln ('<A HREF="' + prev + '">');
+      document.writeln ('<IMG SRC="prevpage.gif" HEIGHT=17 BORDER=0 ALT="Página anterior"></A>');
+   } else {
+//   window.alert ('no previous page');
+   }
+
+   if (next != "crw_spIX.hhk") {
+      document.writeln ('<A HREF="' + next + '">');
+      document.writeln ('<IMG SRC="nextpage.gif" HEIGHT=17 BORDER=0 ALT="Página siguiente"></A>');
+   } else {
+//   window.alert ('no next page');
+   }
+   document.writeln ('</TD><TD ALIGN="left">');
+   document.writeln ('<A HREF="frameset.htm?TOC">');
+   document.writeln ('<IMG SRC="showtoc.gif" HEIGHT=17 BORDER=0 ALT="Haga clic para ver el contenido"></A></TD>');
+   document.writeln ('<TD ALIGN="left">');
+   document.writeln ('<A HREF="frameset.htm?IDX">');
+   document.writeln ('<IMG SRC="showix.gif" HEIGHT=17 BORDER=0 ALT="Haga clic para ver el índice"></A></TD>');
+   document.writeln ('</TD>');
+   document.writeln ('</TR>');
+   document.writeln ('</TABLE>');
+
+}
+
+</SCRIPT>
+<table align="right" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td align="right"><font size="1">Seagate Software, Inc.<br>
+    <a href="http://www.seagatesoftware.com">http://www.seagatesoftware.com</a><br>
+    Envíe sus comentarios a:<br>
+    <a href="mailto:techpubs@seagatesoftware.com">techpubs@seagatesoftware.com</a><br>
+    </font></td>
+  </tr>
+</table>
+</body>
+</html>
+
+

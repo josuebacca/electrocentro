@@ -1,0 +1,91 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+
+<html>
+<head>
+<title>LTrim (Cadena)</title>
+
+<link REL=STYLESHEET TYPE="text/css" HREF="seagate.css">
+
+<!--
+                 ***********************************
+                 * Seagate Software copyright 1999 *
+                 ***********************************
+
+                      Template version: 5.1
+-->
+
+
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" link="#0000FF" vlink="#0000FF" alink="#800080">
+
+
+ 
+<a name="1000852428"></a><h3 class="newpage"> LTrim (Cadena)</h3>
+<p><a name="1000852432"></a>LTrim y <a href="Functions68.html#1000852478">TrimLeft (cadena)</a> son funciones equivalentes. Sin embargo, se prefiere LTrim en la sintaxis b&#225;sica y TrimLeft en la sintaxis Crystal.</p><a name="1000852433"></a><h5>Argumento</h5><p><a name="1000852434"></a>cadena es una cadena de texto</p><a name="1000852435"></a><h5>Devuelve </h5><p><a name="1000852436"></a>Una cadena de texto.</p><a name="1000852437"></a><h5>Acci&#243;n</h5><p><a name="1000852438"></a>LTrim elimina todos los espacios a la izquierda de la cadena determinada y los devuelve.  </p><a name="1000852439"></a><h5>Uso(s) t&#237;pico(s)</h5><ul type="disc"><a name="1000852440"></a><li>Use esta funci&#243;n siempre que haya espacios en blanco a la izquierda en un objeto de texto que puedan interferir con la alineaci&#243;n de las cadenas de texto, el recuento de caracteres o un c&#225;lculo (si la <a href="glossary.html#19812">Cadena</a> se convierte posteriormente en un N&#250;mero). 
+<a name="1000852447"></a><li>Use esta funci&#243;n siempre que combine (<a href="glossary.html#24440">Concatenar</a>) cadenas de texto justificado y quiera mantener el espaciado correcto entre las cadenas. 
+</ul><a name="1000852448"></a><h5>Ejemplo(s)</h5><p><a name="1000852449"></a>Los siguientes ejemplos son aplicables a las sintaxis b&#225;sica y Crystal:</p><p><code><a name="1000852450"></a>LTrim("&nbsp;&nbsp;&nbsp;Al/4520/B12") </code></p><p class="example"><a name="1000852451"></a>Devuelve "A1/4520/B12".</p><p><code><a name="1000852452"></a>LTrim("&nbsp;&nbsp;&nbsp;200")</code></p><p class="example"><a name="1000852453"></a>Devuelve "200", donde la cadena de texto "&nbsp;&nbsp;&nbsp;200" est&#225; justificada a la derecha con espacios en blanco a la izquierda. </p><p><a name="1000852454"></a>Tiene dos campos de base de datos justificados a la derecha, {archivo.COMIDA1} y {archivo.COMIDA2}. Cada campo puede contener hasta 15 caracteres. {archivo.COMIDA1} contiene la palabra pan y {archivo.COMIDA2} contiene la palabra mantequilla. Si fuera a imprimir estas palabras, aparecer&#237;an  de la siguiente manera: </p><p class="indent"><a name="1000852455"></a>"&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;pan" </p><p class="indent"><a name="1000852456"></a>"&nbsp;&nbsp;&nbsp;&nbsp;mantequilla"</p><p><a name="1000852460"></a>Por cada campo de 15 caracteres la base de datos incluye el campo <a href="glossary.html#44012">Valor</a>, justificado a la derecha, adem&#225;s de suficientes espacios en blanco para completar el campo.  Para utilizar estas palabras sin los espacios a la izquierda (para crear la expresi&#243;n pan con mantequilla, por ejemplo) use la funci&#243;n LTrim  de la siguiente manera:</p><p><code><a name="1000852461"></a>LTrim({archivo.COMIDA1}) + " con " + LTrim({archivo.COMIDA2}) </code></p><p class="example"><a name="1000852462"></a>Devuelve  "pan con mantequilla".</p><p class="indent"><a name="1000852463"></a>Los espacios incluidos en las comillas antes y despu&#233;s de la palabra con aseguran que exista el espaciado correcto entre las tres palabras en la oraci&#243;n resultante. </p><a name="1000852464"></a><h5>Comentario(s) </h5><p><a name="1000852465"></a>Esta funci&#243;n est&#225; dise&#241;ada para trabajar exactamente como la funci&#243;n de Visual Basic del mismo nombre.</p><a name="1000852466"></a><h6>Temas relacionados</h6><p><a name="1000852470"></a><a href="Functions66.html#1000852409">Trim (cadena)</a></p><p><a name="1000852474"></a><a href="Functions69.html#1000852523">RTrim (cadena)</a></p>
+<hr><br>
+
+<script  language="JavaScript"><!--
+
+var prev = "Functions66.html";
+var next = "Functions68.html";
+
+function setTopicID() { 
+      var number = "1000852428"; 
+      return number; 
+}
+
+// --></script>
+
+
+
+
+<SCRIPT>
+
+if (!window.parent.toc && navigator.appName == "Netscape") {
+
+   document.writeln ('<TABLE ALIGN="left" border="0" cellspacing="0" cellpadding="10">');
+   document.writeln ('<TR>');
+   document.write ('<TD ALIGN="left">');
+
+   if (prev != "crw_spTOC.hhc") {
+      document.writeln ('<A HREF="' + prev + '">');
+      document.writeln ('<IMG SRC="prevpage.gif" HEIGHT=17 BORDER=0 ALT="Página anterior"></A>');
+   } else {
+//   window.alert ('no previous page');
+   }
+
+   if (next != "crw_spIX.hhk") {
+      document.writeln ('<A HREF="' + next + '">');
+      document.writeln ('<IMG SRC="nextpage.gif" HEIGHT=17 BORDER=0 ALT="Página siguiente"></A>');
+   } else {
+//   window.alert ('no next page');
+   }
+   document.writeln ('</TD><TD ALIGN="left">');
+   document.writeln ('<A HREF="frameset.htm?TOC">');
+   document.writeln ('<IMG SRC="showtoc.gif" HEIGHT=17 BORDER=0 ALT="Haga clic para ver el contenido"></A></TD>');
+   document.writeln ('<TD ALIGN="left">');
+   document.writeln ('<A HREF="frameset.htm?IDX">');
+   document.writeln ('<IMG SRC="showix.gif" HEIGHT=17 BORDER=0 ALT="Haga clic para ver el índice"></A></TD>');
+   document.writeln ('</TD>');
+   document.writeln ('</TR>');
+   document.writeln ('</TABLE>');
+
+}
+
+</SCRIPT>
+<table align="right" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td align="right"><font size="1">Seagate Software, Inc.<br>
+    <a href="http://www.seagatesoftware.com">http://www.seagatesoftware.com</a><br>
+    Envíe sus comentarios a:<br>
+    <a href="mailto:techpubs@seagatesoftware.com">techpubs@seagatesoftware.com</a><br>
+    </font></td>
+  </tr>
+</table>
+</body>
+</html>
+
+

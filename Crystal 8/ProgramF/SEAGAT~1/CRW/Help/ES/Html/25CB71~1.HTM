@@ -1,0 +1,91 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+
+<html>
+<head>
+<title>Microsoft Access</title>
+
+<link REL=STYLESHEET TYPE="text/css" HREF="seagate.css">
+
+<!--
+                 ***********************************
+                 * Seagate Software copyright 1999 *
+                 ***********************************
+
+                      Template version: 5.1
+-->
+
+
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" link="#0000FF" vlink="#0000FF" alink="#800080">
+
+
+ 
+<a name="116245"></a><h4 class="newpage"> Microsoft Access</h4><p><a name="1780"></a>Microsoft Access ofrece varios medios para abrir sus archivos de bases de datos. Cada m&#233;todo tiene sus ventajas y desventajas y la t&#233;cnica que se debe usar puede depender de c&#243;mo se configuren sus datos. A continuaci&#243;n se presenta una descripci&#243;n de c&#243;mo abrir datos de Access desde Seagate Crystal Reports mediante el motor DAO. Otra t&#233;cnica emplea el est&#225;ndar de conectividad abierta de bases de datos de Microsoft (ODBC), el cual se describe en <a href="25_access_sources35.html#98286">Access</a>.</p><p><a name="103235"></a><font color="darkblue"><b>Nota:   &nbsp;&nbsp;&nbsp;</b></font></p>
+<ul type="disc"><a name="333726"></a><li>Es posible mantener la seguridad en Access al abrir archivos de bases de datos con Seagate Crystal Reports si ejecuta el archivo Sysdb32.exe y selecciona el archivo Systm.mdw de Access. En este caso, el programa reconoce Systm.mdw al abrir una base de datos en Access y el usuario recibe un mensaje solicitando la contrase&#241;a de Access (tal como se requiere) en Seagate Crystal Reports.
+<a name="305110"></a><li>Al abrir una base de datos de Access usando el motor DAO, Seagate Crystal Reports abre toda la base de datos y carga la informaci&#243;n de todas las tablas y consultas de la base de datos. Para hacer esto, Seagate Crystal Reports debe reservar de antemano una gran cantidad de memoria de su computadora (denominada b&#250;fer). Las restricciones de memoria de computadora limitan este b&#250;fer a 65.536 bytes (64 KB). Esto reduce el tama&#241;o de su base de datos de Access a cerca de 80 tablas, dependiendo del n&#250;mero de campos que haya.
+</ul>
+<hr><br>
+
+<script  language="JavaScript"><!--
+
+var prev = "25_access_sources8.html";
+var next = "25_access_sources10.html";
+
+function setTopicID() { 
+      var number = "116245"; 
+      return number; 
+}
+
+// --></script>
+
+
+
+
+<SCRIPT>
+
+if (!window.parent.toc && navigator.appName == "Netscape") {
+
+   document.writeln ('<TABLE ALIGN="left" border="0" cellspacing="0" cellpadding="10">');
+   document.writeln ('<TR>');
+   document.write ('<TD ALIGN="left">');
+
+   if (prev != "crw_spTOC.hhc") {
+      document.writeln ('<A HREF="' + prev + '">');
+      document.writeln ('<IMG SRC="prevpage.gif" HEIGHT=17 BORDER=0 ALT="Página anterior"></A>');
+   } else {
+//   window.alert ('no previous page');
+   }
+
+   if (next != "crw_spIX.hhk") {
+      document.writeln ('<A HREF="' + next + '">');
+      document.writeln ('<IMG SRC="nextpage.gif" HEIGHT=17 BORDER=0 ALT="Página siguiente"></A>');
+   } else {
+//   window.alert ('no next page');
+   }
+   document.writeln ('</TD><TD ALIGN="left">');
+   document.writeln ('<A HREF="frameset.htm?TOC">');
+   document.writeln ('<IMG SRC="showtoc.gif" HEIGHT=17 BORDER=0 ALT="Haga clic para ver el contenido"></A></TD>');
+   document.writeln ('<TD ALIGN="left">');
+   document.writeln ('<A HREF="frameset.htm?IDX">');
+   document.writeln ('<IMG SRC="showix.gif" HEIGHT=17 BORDER=0 ALT="Haga clic para ver el índice"></A></TD>');
+   document.writeln ('</TD>');
+   document.writeln ('</TR>');
+   document.writeln ('</TABLE>');
+
+}
+
+</SCRIPT>
+<table align="right" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td align="right"><font size="1">Seagate Software, Inc.<br>
+    <a href="http://www.seagatesoftware.com">http://www.seagatesoftware.com</a><br>
+    Envíe sus comentarios a:<br>
+    <a href="mailto:techpubs@seagatesoftware.com">techpubs@seagatesoftware.com</a><br>
+    </font></td>
+  </tr>
+</table>
+</body>
+</html>
+
+

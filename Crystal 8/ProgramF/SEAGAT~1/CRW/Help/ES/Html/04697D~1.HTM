@@ -1,0 +1,121 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+
+<html>
+<head>
+<title>Selecci&#243;n de registros</title>
+
+<link REL=STYLESHEET TYPE="text/css" HREF="seagate.css">
+
+<!--
+                 ***********************************
+                 * Seagate Software copyright 1999 *
+                 ***********************************
+
+                      Template version: 5.1
+-->
+
+
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" link="#0000FF" vlink="#0000FF" alink="#800080">
+
+
+ 
+<a name="69792"></a><h3 class="newpage"> Selecci&#243;n de registros</h3>
+<p><a name="69793"></a>Seagate Crystal Reports le permite limitar o restringir los registros que ser&#225;n incluidos en el informe. En esta secci&#243;n aprender&#225; a:</p><ul type="disc"><a name="69794"></a><li>seleccionar los registros que quiere incluir en su informe, y
+<a name="69795"></a><li>guardar su informe incluyendo su criterio de selecci&#243;n.
+</ul><p><a name="69796"></a>Por ejemplo, podr&#237;a ser &#250;til tener una lista de clientes que muestre solamente los clientes de los Estados Unidos (EE. UU.). Los datos de muestra contienen registros de clientes de los Estados Unidos y clientes internacionales. El programa facilita la elaboraci&#243;n de listas restringidas, usando el Asistente de Selecci&#243;n. Vea <a href="07_recordgroupsel.html#53140">Selecci&#243;n de registros</a>.</p><a name="69801"></a><h4>Establecimiento de su criterio de selecci&#243;n</h4><p><a name="69802"></a>Cuando se desplaza a trav&#233;s del informe, ver&#225; que contiene informaci&#243;n de clientes de diferentes pa&#237;ses. En este paso, usted limitar&#225; los datos de todos los pa&#237;ses, con excepci&#243;n de los Estados Unidos.</p><a name="67838"></a><h6>Para ingresar criterios de selecci&#243;n</h6><ol>
+<a name="69807"></a><li value="1&nbsp;&nbsp;&nbsp;&nbsp;">Para comenzar, haga clic en la ficha <strong>Dise&#241;o</strong> para regresar al modo de dise&#241;o.
+<a name="69808"></a><li value="2&nbsp;&nbsp;&nbsp;&nbsp;">Haga clic en un &#225;rea vac&#237;a de su informe para desactivar cualquier campo que estuviera seleccionado.
+<a name="69813"></a><li value="3&nbsp;&nbsp;&nbsp;&nbsp;"><img src="images/Bt_selrc.gif">
+
+
+Haga clic en el bot&#243;n <strong>Asistente de selecci&#243;n</strong> de la barra de herramientas est&#225;ndar.
+<p class="indent"><a name="69814"></a>El cuadro de di&#225;logo Elegir campo aparecer&#225; en su pantalla.</p><p><a name="69818"></a> <img src="images/Db_tudb2.gif">
+
+
+</p>
+<p class="indent"><a name="69819"></a>Este cuadro de di&#225;logo muestra una lista con dos secciones. La secci&#243;n Campos del Informe contiene la lista de los campos que existen en su informe, mientras que la secci&#243;n Campos de la Base de Datos contiene la lista de los campos disponibles en cada una de las tablas.</p><a name="69820"></a><li value="4&nbsp;&nbsp;&nbsp;&nbsp;">Ya que usted basar&#225; la selecci&#243;n de registros en el campo pa&#237;s, elija {cliente.Pais} del cuadro de lista <strong>Campos</strong> y haga clic en <strong>Aceptar</strong>.
+<p class="indent"><a name="69821"></a>El Asistente de selecci&#243;n aparecer&#225; en su pantalla.</p><p><a name="69825"></a> <img src="images/db_selrc.gif">
+
+
+</p>
+<p class="indent"><a name="69826"></a>Su tarea en este cuadro de di&#225;logo es imaginar que est&#225; completando la siguiente frase:</p><a name="69827"></a><p class="indent"><code>Seleccione todos los registros donde el PAIS del cliente es</code></p><p class="indent"><a name="69828"></a>Usted completa la frase con la condici&#243;n que quiere que el programa use al seleccionar los registros para su informe. Al presente la condici&#243;n es <EM>es</EM> <kbd>cualquier valor</kbd>, lo que implica la falta de restricciones. </p><a name="69829"></a><li value="5&nbsp;&nbsp;&nbsp;&nbsp;">Haga clic en la flecha a la derecha del cuadro desplegable para ver qu&#233; otras opciones est&#225;n disponibles. Ya que usted s&#243;lo desea aquellos registros donde el Pa&#237;s es igual a EE.UU., seleccione la condici&#243;n<EM> </EM><strong>es igual que</strong>. Un nuevo cuadro de lista aparece a la derecha. Ahora la frase dir&#225;:
+<a name="69830"></a><p class="indent"><code>Seleccione todos los registros donde el pa&#237;s del cliente es igual a </code></p><p class="indent"><a name="69831"></a>Todo lo que necesita para completar esta frase es el valor EE.UU.</p><a name="69832"></a><li value="6&nbsp;&nbsp;&nbsp;&nbsp;">Haga clic en la flecha del cuadro desplegable. Aparece una lista de todos los valores para el campo pa&#237;s. Seleccione <strong>EE. UU</strong><kbd>.</kbd> de la lista.
+<p class="indent"><a name="69833"></a>Ahora la frase dir&#225;:</p><a name="69834"></a><p class="indent"><code>Seleccione todos los registros donde el pa&#237;s del cliente es igual a EE. UU.</code></p><a name="69835"></a><li value="7&nbsp;&nbsp;&nbsp;&nbsp;">Haga clic en <strong>Aceptar</strong> para regresar a la ficha <strong>Dise&#241;o</strong>.
+<a name="69836"></a><li value="8&nbsp;&nbsp;&nbsp;&nbsp;">Haga clic en la ficha <strong>Vista previa</strong> para revisar el resultado de su trabajo.
+<p class="indent"><a name="65888"></a>Aparece el cuadro de di&#225;logo Se ha detectado un cambio en la f&#243;rmula de selecci&#243;n de registros.</p><a name="67915"></a><li value="9&nbsp;&nbsp;&nbsp;&nbsp;">Haga clic en <kbd>Actualizar datos</kbd>.
+<a name="69841"></a><li value="10&nbsp;&nbsp;&nbsp;&nbsp;">Guarde esta versi&#243;n del informe sin cambiar el informe original, eligiendo el comando <strong>Guardar como</strong> del men&#250; Archivo y nombrando el nuevo informe como EEUU.rpt.
+</ol>
+<p><a name="69842"></a>&#161;Felicitaciones! Ha comenzado a dar formato a su informe y le ha agregado un criterio de selecci&#243;n. A&#250;n m&#225;s, ha aprendido c&#243;mo manipular sus datos. Ahora tiene una buena idea de la clase de informes que puede preparar. </p><a name="69844"></a><h4>Eliminaci&#243;n de un campo</h4><p><a name="69845"></a>Ahora que su informe s&#243;lo contiene registros de los Estados Unidos, ya no se hace necesario desplegar el campo Pa&#237;s en el cuerpo del informe. Antes de continuar, elimine dicho campo.</p><a name="67942"></a><h6>Para eliminar un campo</h6><ol>
+<a name="69850"></a><li value="1&nbsp;&nbsp;&nbsp;&nbsp;">Seleccione el campo <strong>Pa&#237;s</strong> y el encabezado de la columna <strong>Pa&#237;s</strong>, usando la combinaci&#243;n Ctrl<nobr>-c</nobr>lic.
+<a name="69851"></a><li value="2&nbsp;&nbsp;&nbsp;&nbsp;">Presione la tecla <strong>Suprimir</strong> en su teclado.
+<p class="indent"><a name="69852"></a> Es todo lo que tiene que hacer para eliminar un campo de su informe.</p><p class="indent"><a name="69856"></a>Ahora su informe debe lucir similar a la siguiente ilustraci&#243;n:<img src="images/pw_tutr5.gif">
+
+
+</p></ol>
+
+<hr><br>
+
+<script  language="JavaScript"><!--
+
+var prev = "04_quick29.html";
+var next = "04_quick31.html";
+
+function setTopicID() { 
+      var number = "69792"; 
+      return number; 
+}
+
+// --></script>
+
+
+
+
+<SCRIPT>
+
+if (!window.parent.toc && navigator.appName == "Netscape") {
+
+   document.writeln ('<TABLE ALIGN="left" border="0" cellspacing="0" cellpadding="10">');
+   document.writeln ('<TR>');
+   document.write ('<TD ALIGN="left">');
+
+   if (prev != "crw_spTOC.hhc") {
+      document.writeln ('<A HREF="' + prev + '">');
+      document.writeln ('<IMG SRC="prevpage.gif" HEIGHT=17 BORDER=0 ALT="Página anterior"></A>');
+   } else {
+//   window.alert ('no previous page');
+   }
+
+   if (next != "crw_spIX.hhk") {
+      document.writeln ('<A HREF="' + next + '">');
+      document.writeln ('<IMG SRC="nextpage.gif" HEIGHT=17 BORDER=0 ALT="Página siguiente"></A>');
+   } else {
+//   window.alert ('no next page');
+   }
+   document.writeln ('</TD><TD ALIGN="left">');
+   document.writeln ('<A HREF="frameset.htm?TOC">');
+   document.writeln ('<IMG SRC="showtoc.gif" HEIGHT=17 BORDER=0 ALT="Haga clic para ver el contenido"></A></TD>');
+   document.writeln ('<TD ALIGN="left">');
+   document.writeln ('<A HREF="frameset.htm?IDX">');
+   document.writeln ('<IMG SRC="showix.gif" HEIGHT=17 BORDER=0 ALT="Haga clic para ver el índice"></A></TD>');
+   document.writeln ('</TD>');
+   document.writeln ('</TR>');
+   document.writeln ('</TABLE>');
+
+}
+
+</SCRIPT>
+<table align="right" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td align="right"><font size="1">Seagate Software, Inc.<br>
+    <a href="http://www.seagatesoftware.com">http://www.seagatesoftware.com</a><br>
+    Envíe sus comentarios a:<br>
+    <a href="mailto:techpubs@seagatesoftware.com">techpubs@seagatesoftware.com</a><br>
+    </font></td>
+  </tr>
+</table>
+</body>
+</html>
+
+

@@ -1,0 +1,144 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+
+<html>
+<head>
+<title>Exchange</title>
+
+<link REL=STYLESHEET TYPE="text/css" HREF="seagate.css">
+
+<!--
+                 ***********************************
+                 * Seagate Software copyright 1999 *
+                 ***********************************
+
+                      Template version: 5.1
+-->
+
+
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" link="#0000FF" vlink="#0000FF" alink="#800080">
+
+
+ 
+<a name="11700"></a><h4 class="newpage"> Exchange</h4><p><a name="11701"></a>Exchange es la opci&#243;n de Microsoft para sustituir a MS Mail. Sin embargo, Exchange no incluye &#250;nicamente correo electr&#243;nico, sino tambi&#233;n administraci&#243;n de programaci&#243;n de grupos, formularios electr&#243;nicos, trabajo en grupo y conectividad a Internet. Una carpeta de Exchange puede contener notas est&#225;ndar (correo), archivos e instancias de formularios Exchange. Todos estos datos se almacenan en el almac&#233;n de informaci&#243;n de Exchange.</p><p><a name="14277"></a>Seagate Crystal Reports puede informar acerca de datos contenidos en este almac&#233;n. Las fuentes de datos de Exchange disponibles para elaboraci&#243;n de informes incluyen:</p><ul type="disc"><a name="14366"></a><li>Registros de seguimiento de mensajes
+<a name="14367"></a><li>Listas de direcciones
+<ul type="disc"><ul type="disc"><a name="14368"></a><li>Libretas de direcciones personales<a name="14370"></a><li>Listas de direcciones globales<a name="14379"></a><li>Listas de distribuci&#243;n</ul></ul><a name="14369"></a><li>Contenido de carpeta de Exchange
+<ul type="disc"><ul type="disc"><a name="14388"></a><li>Mensajes de correo<a name="14396"></a><li>Formularios de Exchange<a name="14397"></a><li>Propiedades de documentos OLE</ul></ul><a name="14395"></a><li>Administrador de Exchange
+<ul type="disc"><ul type="disc"><a name="14398"></a><li>Propiedades de buzones de Exchange en el servidor de Exchange<a name="14399"></a><li>Propiedades de carpetas p&#250;blicas en el servidor de Exchange<a name="14400"></a><li>Lista r&#233;plica de carpetas p&#250;blicas<a name="14401"></a><li>ACL (Lista de control de acceso) de carpetas p&#250;blicas.</ul></ul></ul><p><a name="14402"></a>Es posible usar fuentes de datos de Exchange como tablas de base de datos y vincular cada fuente de datos de Exchange con otras fuentes de datos. Por ejemplo, puede combinar el registro de seguimiento de mensajes con una lista de direcciones usando una direcci&#243;n de correo electr&#243;nico como campo de vinculaci&#243;n.</p><p><a name="333116"></a> </p>
+<p><a name="162496"></a>El archivo de traducci&#243;n de datos usado para acceder a la fuente de datos de Exchange depende de la fuente de datos a que se accede. La siguiente tabla enumera cada uno de los archivos de traducci&#243;n de datos de Exchange y describe sus objetivos:</p><p><a name="210117"></a> <Table Border="1">
+<tr><th align="left" valign="bottom"><a name="210094"></a>Nombre de archivo
+
+</th><th align="left" valign="bottom"><a name="210096"></a>Fuente de datos
+
+</th></tr>
+<tr><td align="left" valign="TOP"><P><a name="210098"></a>P2strack.dll</P>
+
+
+</td><td align="left" valign="TOP"><P><a name="210100"></a>Registros de seguimiento de mensajes</P>
+
+
+</td></tr>
+<tr><td align="left" valign="TOP"><P><a name="210102"></a>P2smapi.dll</P>
+
+
+</td><td align="left" valign="TOP"><P><a name="210104"></a>Listas de direcciones y contenido de carpeta de Exchange</P>
+
+
+</td></tr>
+<tr><td align="left" valign="TOP"><P><a name="210106"></a>P2sexsr.dll</P>
+
+
+</td><td align="left" valign="TOP"><P><a name="210108"></a>Propiedades de buzones y carpetas p&#250;blicas de Exchange</P>
+
+
+</td></tr>
+<tr><td align="left" valign="TOP"><P><a name="210110"></a>P2srepl.dll</P>
+
+
+</td><td align="left" valign="TOP"><P><a name="210112"></a>Lista r&#233;plica de carpetas p&#250;blicas </P>
+
+
+</td></tr>
+<tr><td align="left" valign="TOP"><P><a name="210114"></a>P2sacl.dll</P>
+
+
+</td><td align="left" valign="TOP"><P><a name="210116"></a>ACL (Lista de control de acceso) de carpetas p&#250;blicas</P>
+
+
+</td></tr>
+<tr><td align="left" valign="TOP"><P><a name="327727"></a>P2soutlk.dll</P>
+
+
+</td><td align="left" valign="TOP"><P><a name="327729"></a>Microsoft Outlook</P>
+
+
+</td></tr>
+
+</Table></p>
+<p><a name="27633"></a>Los archivos de traducci&#243;n de Exchange funcionan directamente con el API de mensajer&#237;a de Microsoft (MAPI). MAPI funciona como un motor de base de datos para los datos de Exchange.</p><a name="271792"></a><h5>Manejo de datos de Exchange por parte de Report Designer  </h5><p><a name="319784"></a>Seagate Crystal Reports considera los datos del administrador de Exchange (tipos de servidor de administrador de carpetas p&#250;blicas, ACL de carpetas p&#250;blicas, r&#233;plica de carpetas p&#250;blicas y administrador de buzones) como servidor f&#237;sico de base de datos. Para acceder a estos datos, debe conectarse usando un servidor SQL/ODBC y seleccionando las tablas apropiadas del cuadro de di&#225;logo Elegir tabla SQL.</p><p><a name="162751"></a>Al conectarse a cualquiera de los servidores del administrador de Exchange, debe seleccionar un perfil (o perfiles). Cada perfil representa un servidor de Exchange.</p><p><a name="305505"></a><font color="darkblue"><b>Nota:   &nbsp;&nbsp;&nbsp;</b></font>Para m&#225;s informaci&#243;n acerca de c&#243;mo configurar y crear perfiles de Exchange, vea la documentaci&#243;n de Microsoft Exchange.</p>
+
+<hr><br>
+
+<script  language="JavaScript"><!--
+
+var prev = "25_access_sources11.html";
+var next = "25_access_sources13.html";
+
+function setTopicID() { 
+      var number = "11700"; 
+      return number; 
+}
+
+// --></script>
+
+
+
+
+<SCRIPT>
+
+if (!window.parent.toc && navigator.appName == "Netscape") {
+
+   document.writeln ('<TABLE ALIGN="left" border="0" cellspacing="0" cellpadding="10">');
+   document.writeln ('<TR>');
+   document.write ('<TD ALIGN="left">');
+
+   if (prev != "crw_spTOC.hhc") {
+      document.writeln ('<A HREF="' + prev + '">');
+      document.writeln ('<IMG SRC="prevpage.gif" HEIGHT=17 BORDER=0 ALT="Página anterior"></A>');
+   } else {
+//   window.alert ('no previous page');
+   }
+
+   if (next != "crw_spIX.hhk") {
+      document.writeln ('<A HREF="' + next + '">');
+      document.writeln ('<IMG SRC="nextpage.gif" HEIGHT=17 BORDER=0 ALT="Página siguiente"></A>');
+   } else {
+//   window.alert ('no next page');
+   }
+   document.writeln ('</TD><TD ALIGN="left">');
+   document.writeln ('<A HREF="frameset.htm?TOC">');
+   document.writeln ('<IMG SRC="showtoc.gif" HEIGHT=17 BORDER=0 ALT="Haga clic para ver el contenido"></A></TD>');
+   document.writeln ('<TD ALIGN="left">');
+   document.writeln ('<A HREF="frameset.htm?IDX">');
+   document.writeln ('<IMG SRC="showix.gif" HEIGHT=17 BORDER=0 ALT="Haga clic para ver el índice"></A></TD>');
+   document.writeln ('</TD>');
+   document.writeln ('</TR>');
+   document.writeln ('</TABLE>');
+
+}
+
+</SCRIPT>
+<table align="right" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td align="right"><font size="1">Seagate Software, Inc.<br>
+    <a href="http://www.seagatesoftware.com">http://www.seagatesoftware.com</a><br>
+    Envíe sus comentarios a:<br>
+    <a href="mailto:techpubs@seagatesoftware.com">techpubs@seagatesoftware.com</a><br>
+    </font></td>
+  </tr>
+</table>
+</body>
+</html>
+
+

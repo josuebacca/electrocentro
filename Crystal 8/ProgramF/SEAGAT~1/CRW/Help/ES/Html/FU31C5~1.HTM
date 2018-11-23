@@ -1,0 +1,97 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+
+<html>
+<head>
+<title>WhilePrintingRecords</title>
+
+<link REL=STYLESHEET TYPE="text/css" HREF="seagate.css">
+
+<!--
+                 ***********************************
+                 * Seagate Software copyright 1999 *
+                 ***********************************
+
+                      Template version: 5.1
+-->
+
+
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" link="#0000FF" vlink="#0000FF" alink="#800080">
+
+
+ 
+<a name="1000575826"></a><h3 class="newpage"> WhilePrintingRecords</h3>
+<p><a name="1000712619"></a>Sintaxis b&#225;sica y Crystal.</p><a name="1000575829"></a><h5>Devuelve </h5><p><a name="1000575830"></a>Nada</p><a name="1000575831"></a><h5>Acci&#243;n</h5><p><a name="1000575832"></a>Obliga al programa a evaluar la f&#243;rmula mientras est&#225; imprimiendo datos de registros de la base de datos.</p><a name="1000575833"></a><h5>Uso(s) t&#237;pico(s)</h5><p><a name="1000575834"></a>Las f&#243;rmulas son normalmente evaluadas en los siguientes momentos&nbsp; :</p><ul type="disc"><a name="1000575835"></a><li>Si ning&#250;n campo de grupo o de base de datos est&#225; incluido en la f&#243;rmula, la f&#243;rmula es evaluada antes del que el programa lea los registros de la base de datos.
+<a name="1000575836"></a><li>Si una base de datos est&#225; incluida en la f&#243;rmula, la f&#243;rmula es evaluada mientras que el programa lee los registros de base de datos.
+<a name="1000575837"></a><li>Si un campo de grupo, campo de p&#225;gina #, subtotal, etc. est&#225; incluida en la f&#243;rmula, la f&#243;rmula es evaluada despu&#233;s de que los registros de la base de datos son le&#237;dos y mientras los datos de los registros est&#225;n siendo impresos en el informe.
+</ul><p><a name="1000824780"></a>WhilePrintingRecords<EM> </EM>obliga a la f&#243;rmula a ser evaluada mientras el programa imprime los registros de base de datos.</p><p><a name="1000575840"></a>Esta funci&#243;n puede tambi&#233;n obligar a una f&#243;rmula que no incluye campos de base de datos ni campos de grupo a procesar mientras imprime los registros en lugar de antes de leer los registros. Tambi&#233;n obligar&#225; a una f&#243;rmula que incluye campos de base de datos a procesar mientras imprime los registros en lugar de antes de leer los registros.</p><a name="1000575841"></a><h5>Ejemplo(s) </h5><p><a name="1000712624"></a>Los siguientes ejemplos son aplicables para la sintaxis Crystal:</p><p class="code"><a name="1000712625"></a>WhilePrintingRecords;
+<br><a name="1000712628"></a>3* Sum ({archivo.CANT1}, {archivo.CANT2})
+</p><p class="example"><a name="1000575845"></a>Obliga a la f&#243;rmula (la cual contiene un grupo) a ser evaluada en su hora normal (mientras imprime los registros).</p><p class="code"><a name="1000575847"></a>WhilePrintingRecords;
+<br><a name="1000712629"></a>ToNumber ("12345")
+</p><p class="example"><a name="1000575848"></a>Obliga a la f&#243;rmula (la cual no contiene campos de base de datos ni grupos), a ser evaluadas tiempo despu&#233;s de lo normal. En este caso, causa que la f&#243;rmula sea evaluada mientras imprime los registros en lugar de antes de leer los registros.</p><p><a name="1000681824"></a><font color="darkblue"><b>Nota:   &nbsp;&nbsp;&nbsp;</b></font>El uso de esta funci&#243;n en una f&#243;rmula obliga a que la f&#243;rmula sea evaluada al momento de impresi&#243;n. Para obtener m&#225;s informaci&#243;n sobre las consideraciones de evaluaci&#243;n de hora, v&#233;ase el <a href="Functions169.html#1000572432">Funciones de tiempo de evaluaci&#243;n</a>.</p>
+
+<hr><br>
+
+<script  language="JavaScript"><!--
+
+var prev = "Functions171.html";
+var next = "Functions173.html";
+
+function setTopicID() { 
+      var number = "1000575826"; 
+      return number; 
+}
+
+// --></script>
+
+
+
+
+<SCRIPT>
+
+if (!window.parent.toc && navigator.appName == "Netscape") {
+
+   document.writeln ('<TABLE ALIGN="left" border="0" cellspacing="0" cellpadding="10">');
+   document.writeln ('<TR>');
+   document.write ('<TD ALIGN="left">');
+
+   if (prev != "crw_spTOC.hhc") {
+      document.writeln ('<A HREF="' + prev + '">');
+      document.writeln ('<IMG SRC="prevpage.gif" HEIGHT=17 BORDER=0 ALT="Página anterior"></A>');
+   } else {
+//   window.alert ('no previous page');
+   }
+
+   if (next != "crw_spIX.hhk") {
+      document.writeln ('<A HREF="' + next + '">');
+      document.writeln ('<IMG SRC="nextpage.gif" HEIGHT=17 BORDER=0 ALT="Página siguiente"></A>');
+   } else {
+//   window.alert ('no next page');
+   }
+   document.writeln ('</TD><TD ALIGN="left">');
+   document.writeln ('<A HREF="frameset.htm?TOC">');
+   document.writeln ('<IMG SRC="showtoc.gif" HEIGHT=17 BORDER=0 ALT="Haga clic para ver el contenido"></A></TD>');
+   document.writeln ('<TD ALIGN="left">');
+   document.writeln ('<A HREF="frameset.htm?IDX">');
+   document.writeln ('<IMG SRC="showix.gif" HEIGHT=17 BORDER=0 ALT="Haga clic para ver el índice"></A></TD>');
+   document.writeln ('</TD>');
+   document.writeln ('</TR>');
+   document.writeln ('</TABLE>');
+
+}
+
+</SCRIPT>
+<table align="right" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td align="right"><font size="1">Seagate Software, Inc.<br>
+    <a href="http://www.seagatesoftware.com">http://www.seagatesoftware.com</a><br>
+    Envíe sus comentarios a:<br>
+    <a href="mailto:techpubs@seagatesoftware.com">techpubs@seagatesoftware.com</a><br>
+    </font></td>
+  </tr>
+</table>
+</body>
+</html>
+
+

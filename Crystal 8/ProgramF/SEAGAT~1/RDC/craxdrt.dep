@@ -1,0 +1,52 @@
+; ------------------------------------------------------------------------------
+; Dependency file for setup wizards.
+
+
+[Version]
+Version=8.0.0.371
+
+; ------------------------------------------------------------------------------
+; Dependencies for CRAXDRT.DLL
+
+
+[CRAXDRT.DLL]
+Dest=$(WinSysPath)
+Register=$(DLLSelfRegister)
+Version=8.0.0.371
+Uses1=IMPLODE.DLL
+Uses2=CRPAIG80.DLL
+Uses3=\program files\seagate software\sschart\SSCSDK80.DLL
+
+; Database dlls
+Uses4=P2SMON.DLL
+
+; Additional
+;Uses?=CRXLAT32.DLL
+
+[IMPLODE.DLL]
+Dest=$(WinSysPath)
+Uses1=
+
+[CRPAIG80.DLL]
+Dest=$(WinSysPath)
+Uses1=
+
+[SSCSDK80.DLL]
+Dest=$(WinSysPath)
+Uses1=
+
+
+; Database dlls
+
+[P2SMON.DLL]
+Dest=$(WinSysPath)
+Uses1=P3SMNES.DLL
+Uses2=
+
+
+; Additional
+
+[CRXLAT32.DLL]
+Dest=$(WinSysPath)
+Uses1=CRAXDRT_RES_ES.DLL
+Uses2=

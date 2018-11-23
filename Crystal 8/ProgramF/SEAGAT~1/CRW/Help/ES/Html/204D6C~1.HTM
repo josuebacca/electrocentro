@@ -1,0 +1,127 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+
+<html>
+<head>
+<title>Declaraci&#243;n de variables sin especificar inmediatamente sus tipos</title>
+
+<link REL=STYLESHEET TYPE="text/css" HREF="seagate.css">
+
+<!--
+                 ***********************************
+                 * Seagate Software copyright 1999 *
+                 ***********************************
+
+                      Template version: 5.1
+-->
+
+
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" link="#0000FF" vlink="#0000FF" alink="#800080">
+
+
+ 
+<a name="130309"></a><h4 class="newpage"> Declaraci&#243;n de variables sin especificar inmediatamente sus tipos</h4><p><a name="130311"></a>En general, no es necesario dar expl&#237;citamente el tipo de una variable al declararla. En esos casos, el tipo de variable lo determina la primera asignaci&#243;n que se le haga. Esto es similar a la variable especial <EM>formula</EM>. Pero difiere en Visual Basic, donde una variable cuyo tipo no se da en la declaraci&#243;n, tiene autom&#225;ticamente el tipo Variante. Sin embargo, en la pr&#225;ctica, esto significa que puede escribir f&#243;rmulas en un estilo similar al que har&#237;a si usara una Variante en Visual Basic.</p><PRE><a name="130313"></a>Dim p 'El tipo de p no es conocido a&#250;n
+<a name="130314"></a>p = "adi&#243;s" 'El tipo de p ahora est&#225; establecido en 
+cadena
+<a name="130316"></a>Dim q 'El tipo de q no es conocido a&#250;n
+<a name="130317"></a>q = Array ("hola", p) 'q es una matriz de cadena
+<a name="130319"></a>'Error - p es una variable de cadena y no puede incluir 
+un n&#250;mero
+<a name="130320"></a>p = 25
+<a name="130322"></a>Dim r
+<a name="130323"></a>'r es una variable num&#233;rica y tiene el valor 5
+<a name="130324"></a>r = (10 + 5) / 3
+<a name="130326"></a>'Los tipos de a y c no son conocidos a&#250;n
+<a name="130327"></a>Dim a, b As Boolean, c
+<a name="130328"></a>b = False
+<a name="130329"></a>'El tipo de a se establece ahora como booleano
+<a name="130330"></a>'y su valor es falso
+<a name="130331"></a>a = b
+<a name="130332"></a>'El tipo de c se establece ahora en num&#233;rico y su valor 
+es 17
+<a name="130333"></a>c = 2 + 3 * 5
+</PRE><a name="130335"></a><h5>Ejemplos de declaraci&#243;n e iniciaci&#243;n de rango de variables</h5><p><a name="131115"></a> </p>
+<PRE><a name="130337"></a>Dim calificaci&#243;nA, trimestre
+<a name="130338"></a>'El tipo de calificaci&#243;nA se establece en rango num&#233;rico
+<a name="130339"></a>calificaci&#243;nA = 90 To 100
+<a name="130340"></a>'El tipo de trimestre se establece en rango de fecha
+<a name="130341"></a>trimestre = CDate (1999, 10, 1) To CDate (1999, 12, 31)
+</PRE><a name="130343"></a><h3>Alcance de las variables</h3>
+<p><a name="130345"></a>Los alcances de variable se usan para definir el grado de disponibilidad de las variables de una f&#243;rmula para otras f&#243;rmulas. En Seagate Crystal Reports existen tres niveles de alcance: local, global y compartido. Cada variable tiene un alcance especificado cuando se declara.</p><a name="130346"></a><h4>Variables locales</h4><p><a name="130347"></a>Las variables con alcance local, tambi&#233;n conocidas como variables locales, se declaran usando cualquiera de las palabras clave Dim o Local. Por ejemplo, todas las declaraciones en la secci&#243;n anterior que usan Dim declaraban variables locales. Otro ejemplo:</p><p><code><a name="130348"></a>Local x As Number 'equivalente a Dim x As Number</code></p><p><a name="130349"></a>Las variables locales est&#225;n limitadas a una sola f&#243;rmula y a una sola evaluaci&#243;n de dicha f&#243;rmula. Esto significa que no es posible acceder al valor de una variable local de una f&#243;rmula desde otra f&#243;rmula diferente.</p><a name="135301"></a><h5>Ejemplo</h5><PRE><a name="130351"></a>Rem F&#243;rmula A
+<a name="130352"></a>Local x as Number
+<a name="130353"></a>x = 10
+<a name="130354"></a>formula = x
+<a name="130356"></a>Rem F&#243;rmula B
+<a name="130357"></a>EvaluateAfter ({@F&#243;rmula A})
+<a name="130358"></a>Local x as Number
+<a name="130359"></a>formula = x + 1
+</PRE><p><a name="130361"></a>La llamada de funci&#243;n EvaluateAfter ({@F&#243;rmula A}) asegura que la F&#243;rmula B se evaluar&#225; despu&#233;s de que se eval&#250;e la F&#243;rmula A. La F&#243;rmula A devuelve un valor de 10 y la F&#243;rmula B devuelve un valor de 1. La F&#243;rmula B no tiene acceso a la x de la F&#243;rmula A y por ello no puede usar el valor de 10 y agregarle 1; en cambio, usa el valor predeterminado para la variable x local no iniciada encontrada en la F&#243;rmula B, que es 0, y agrega 1 para obtener 1.</p><p><a name="130363"></a>Tambi&#233;n puede crear variables locales con el mismo nombre, pero con tipos diferentes en f&#243;rmulas diferentes. Por ejemplo, las declaraciones de tipo en las f&#243;rmulas A y B no entran en conflicto con:</p><PRE><a name="130365"></a>Rem F&#243;rmula C
+<a name="130366"></a>Local x as String
+<a name="130367"></a>x = "hola"
+<a name="130368"></a>formula = x
+</PRE><p><a name="130369"></a>Las variables locales son las m&#225;s eficaces de los tres alcances. Adem&#225;s, no interfieren entre s&#237; en f&#243;rmulas diferentes. Por estas razones, es mejor declarar las variables para que sean locales siempre que sea posible.</p>
+<hr><br>
+
+<script  language="JavaScript"><!--
+
+var prev = "20_basicsyntax24.html";
+var next = "20_basicsyntax26.html";
+
+function setTopicID() { 
+      var number = "130309"; 
+      return number; 
+}
+
+// --></script>
+
+
+
+
+<SCRIPT>
+
+if (!window.parent.toc && navigator.appName == "Netscape") {
+
+   document.writeln ('<TABLE ALIGN="left" border="0" cellspacing="0" cellpadding="10">');
+   document.writeln ('<TR>');
+   document.write ('<TD ALIGN="left">');
+
+   if (prev != "crw_spTOC.hhc") {
+      document.writeln ('<A HREF="' + prev + '">');
+      document.writeln ('<IMG SRC="prevpage.gif" HEIGHT=17 BORDER=0 ALT="Página anterior"></A>');
+   } else {
+//   window.alert ('no previous page');
+   }
+
+   if (next != "crw_spIX.hhk") {
+      document.writeln ('<A HREF="' + next + '">');
+      document.writeln ('<IMG SRC="nextpage.gif" HEIGHT=17 BORDER=0 ALT="Página siguiente"></A>');
+   } else {
+//   window.alert ('no next page');
+   }
+   document.writeln ('</TD><TD ALIGN="left">');
+   document.writeln ('<A HREF="frameset.htm?TOC">');
+   document.writeln ('<IMG SRC="showtoc.gif" HEIGHT=17 BORDER=0 ALT="Haga clic para ver el contenido"></A></TD>');
+   document.writeln ('<TD ALIGN="left">');
+   document.writeln ('<A HREF="frameset.htm?IDX">');
+   document.writeln ('<IMG SRC="showix.gif" HEIGHT=17 BORDER=0 ALT="Haga clic para ver el índice"></A></TD>');
+   document.writeln ('</TD>');
+   document.writeln ('</TR>');
+   document.writeln ('</TABLE>');
+
+}
+
+</SCRIPT>
+<table align="right" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td align="right"><font size="1">Seagate Software, Inc.<br>
+    <a href="http://www.seagatesoftware.com">http://www.seagatesoftware.com</a><br>
+    Envíe sus comentarios a:<br>
+    <a href="mailto:techpubs@seagatesoftware.com">techpubs@seagatesoftware.com</a><br>
+    </font></td>
+  </tr>
+</table>
+</body>
+</html>
+
+

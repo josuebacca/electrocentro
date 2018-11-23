@@ -1,0 +1,95 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+
+<html>
+<head>
+<title>FREarningsPerCommonShare (beneficioNeto, dividendoPreferencial, n&#250;meroDeAccionesComunes)</title>
+
+<link REL=STYLESHEET TYPE="text/css" HREF="seagate.css">
+
+<!--
+                 ***********************************
+                 * Seagate Software copyright 1999 *
+                 ***********************************
+
+                      Template version: 5.1
+-->
+
+
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" link="#0000FF" vlink="#0000FF" alink="#800080">
+
+
+ 
+<a name="1000588206"></a><h3 class="newpage"> FREarningsPerCommonShare (beneficioNeto, dividendoPreferencial, n&#250;meroDeAccionesComunes)</h3>
+<p><a name="1000723726"></a>Sintaxis b&#225;sica y Crystal.</p><a name="1000588210"></a><h5>Formato</h5><p><code><a name="1000588211"></a>FREarningsPerCommonShare (beneficioNeto, dividendoPreferencial, n&#250;meroDeAccionesComunes)</code></p><a name="1000588213"></a><h5>Argumentos</h5><ul type="disc"><a name="1000588214"></a><li>beneficioNeto es un n&#250;mero o f&#243;rmula. beneficioNeto es la cantidad de ganancias que una compa&#241;&#237;a recibe durante el a&#241;o por la venta de sus productos o servicios, menos todos los gastos. Es la figura final en el estado de p&#233;rdidas y ganancias de una compa&#241;&#237;a. Algunos analistas podr&#237;an usar las ganancias netas antes de los elementos extraordinarios y/o impuestos de ingresos para calcular esta relaci&#243;n.
+<a name="1000588215"></a><li>dividendoPreferencial es un n&#250;mero o f&#243;rmula. dividendoPreferencial es el total de dividendos pagados a los accionistas preferidos durante el per&#237;odo contable bajo estudio. Esta informaci&#243;n puede encontrarse en el estado de p&#233;rdidas y ganancias y estado de cambio en la posici&#243;n financiera de una compa&#241;&#237;a. Tambi&#233;n se puede derivar en el balance general de una compa&#241;&#237;a.
+<a name="1000588216"></a><li>n&#250;meroDeAccionesComunes es un n&#250;mero o f&#243;rmula. Por lo general, n&#250;meroDeAccionesComunes es el n&#250;mero de acciones comunes emitidas y pendientes. Esta informaci&#243;n se puede encontrar en el balance general de una compa&#241;&#237;a.
+</ul><a name="1000588217"></a><h5>Acci&#243;n</h5><p><a name="1000588218"></a>FREarningsPerCommonShare devuelve la relaci&#243;n entre las ganancias netas distribuibles a los accionistas comunes (beneficioNeto<nobr>-d</nobr>ividendoPreferencial) y n&#250;meroDeAccionesComunes (por ejemplo, EarningPerCommonShare = (beneficioNeto - dividendoPreferencial) / n&#250;meroDeAccionesComunes).</p><a name="1000588220"></a><h5>Uso(s) t&#237;pico(s)</h5><p><a name="1000588221"></a>Esta relaci&#243;n se usa para calcular la cantidad de ganancias a las cuales tiene derecho una acci&#243;n com&#250;n. Esta relaci&#243;n se usa lado a lado con dividendo por acci&#243;n com&#250;n para determinar la relaci&#243;n de dividendos pagados. Algunos analistas pueden querer realizar un an&#225;lisis de ganancia por acci&#243;n completamente diluida. En este caso, tendr&#225;n que tener en cuenta adem&#225;s, todas las acciones comunes que podr&#237;an ser convertidas de las acciones preferidas convertibles.</p><a name="1000588222"></a><h5>Ejemplo(s)</h5><p><a name="1000588223"></a>Los siguientes ejemplos son aplicables a las sintaxis b&#225;sica y Crystal:</p><p><code><a name="1000588224"></a>FREarningsPerCommonShare(550000, 50000, 100000) </code></p><p class="example"><a name="1000588225"></a>Devuelve 5.</p><p><code><a name="1000588226"></a>FREarningsPerCommonShare(450000, 10000, 2000000) </code></p><p class="example"><a name="1000588227"></a>Devuelve 0.22.</p><p><a name="1000685756"></a><font color="darkblue"><b>Nota:   &nbsp;&nbsp;&nbsp;</b></font></p>
+<ul type="disc"><a name="1000685802"></a><li>Ninguno de los argumentos de entrada pueden ser negativos; debe revisar si hay valores negativos antes de pasar los argumentos de entrada.
+<a name="1000685817"></a><li>beneficioNeto no puede ser m&#225;s peque&#241;o que dividendoPreferencial, de otra manera usted recibir&#225; un mensaje de error.
+</ul><a name="1000829297"></a><h5>Comentario</h5><p><a name="1000829298"></a>FREarningsPerCommonShare es una de las muchas herramientas para an&#225;lisis financiero que se usan para interpretar la posici&#243;n financiera de una compa&#241;&#237;a. Como en el caso de todas las relaciones, se debe usar con precauci&#243;n. Se puede usar s&#243;lo como una gu&#237;a y no como prueba firme para formar una opini&#243;n sobre el estado financiero de una compa&#241;&#237;a. </p><p><a name="1000588243"></a>Ninguna de las relaciones se puede usar exclusivamente para hacer an&#225;lisis financieros y no hay reglas fijas sobre los resultados de las relaciones. Aparte de las diferencias entre los tipos de industrias, el resultado var&#237;a entre las compa&#241;&#237;as diferentes dentro de la misma industria y dentro de per&#237;odos de cuenta diferentes. Los resultados s&#243;lo se deben usar para hacer comparaciones relativas y an&#225;lisis de tendencias, y no se deben tratar como algo absoluto.</p>
+<hr><br>
+
+<script  language="JavaScript"><!--
+
+var prev = "Functions230.html";
+var next = "Functions232.html";
+
+function setTopicID() { 
+      var number = "1000588206"; 
+      return number; 
+}
+
+// --></script>
+
+
+
+
+<SCRIPT>
+
+if (!window.parent.toc && navigator.appName == "Netscape") {
+
+   document.writeln ('<TABLE ALIGN="left" border="0" cellspacing="0" cellpadding="10">');
+   document.writeln ('<TR>');
+   document.write ('<TD ALIGN="left">');
+
+   if (prev != "crw_spTOC.hhc") {
+      document.writeln ('<A HREF="' + prev + '">');
+      document.writeln ('<IMG SRC="prevpage.gif" HEIGHT=17 BORDER=0 ALT="Página anterior"></A>');
+   } else {
+//   window.alert ('no previous page');
+   }
+
+   if (next != "crw_spIX.hhk") {
+      document.writeln ('<A HREF="' + next + '">');
+      document.writeln ('<IMG SRC="nextpage.gif" HEIGHT=17 BORDER=0 ALT="Página siguiente"></A>');
+   } else {
+//   window.alert ('no next page');
+   }
+   document.writeln ('</TD><TD ALIGN="left">');
+   document.writeln ('<A HREF="frameset.htm?TOC">');
+   document.writeln ('<IMG SRC="showtoc.gif" HEIGHT=17 BORDER=0 ALT="Haga clic para ver el contenido"></A></TD>');
+   document.writeln ('<TD ALIGN="left">');
+   document.writeln ('<A HREF="frameset.htm?IDX">');
+   document.writeln ('<IMG SRC="showix.gif" HEIGHT=17 BORDER=0 ALT="Haga clic para ver el índice"></A></TD>');
+   document.writeln ('</TD>');
+   document.writeln ('</TR>');
+   document.writeln ('</TABLE>');
+
+}
+
+</SCRIPT>
+<table align="right" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td align="right"><font size="1">Seagate Software, Inc.<br>
+    <a href="http://www.seagatesoftware.com">http://www.seagatesoftware.com</a><br>
+    Envíe sus comentarios a:<br>
+    <a href="mailto:techpubs@seagatesoftware.com">techpubs@seagatesoftware.com</a><br>
+    </font></td>
+  </tr>
+</table>
+</body>
+</html>
+
+

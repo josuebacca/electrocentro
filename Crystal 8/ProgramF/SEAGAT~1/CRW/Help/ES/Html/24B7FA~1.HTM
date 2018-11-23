@@ -1,0 +1,405 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+
+<html>
+<head>
+<title>Consideraciones de desempe&#241;o en los v&#237;nculos de uno a varios</title>
+
+<link REL=STYLESHEET TYPE="text/css" HREF="seagate.css">
+
+<!--
+                 ***********************************
+                 * Seagate Software copyright 1999 *
+                 ***********************************
+
+                      Template version: 5.1
+-->
+
+
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" link="#0000FF" vlink="#0000FF" alink="#800080">
+
+
+ 
+<a name="320374"></a><h4 class="newpage"> Consideraciones de desempe&#241;o en los v&#237;nculos de uno a varios</h4><p><a name="320375"></a>La informaci&#243;n proporcionada en esta secci&#243;n es para ayudarle a reducir el tiempo de procesamiento y minimizar el tr&#225;fico en la red cuando est&#225; ejecutando sus informes. Aprender&#225; acerca de las mejores formas de utilizar f&#243;rmulas de selecci&#243;n e &#237;ndices en situaciones de uno a varios para hacer m&#225;s eficiente su elaboraci&#243;n de informes. Si no utiliza la informaci&#243;n en esta secci&#243;n, sus informes pueden terminar procesando docenas o incluso centenas de registros de m&#225;s.</p><p><a name="320376"></a>Cuando existe una situaci&#243;n de uno a varios entre dos tablas de base de datos y el programa coteja los registros de las tablas, hay varios factores que determinan cu&#225;ntos registros lee y eval&#250;a el programa.</p><p><a name="320377"></a>Entender esta informaci&#243;n le ayudar&#225; a evitar las situaciones que requieren un tiempo excesivo de procesamiento o tr&#225;fico innecesario en la red.</p><p><a name="320378"></a>Las tablas que siguen muestran los efectos de diferentes factores sobre el n&#250;mero de registros que el programa tiene que leer. Los gr&#225;ficos est&#225;n basadas en las siguientes suposiciones:</p><ul type="disc"><a name="320379"></a><li>La Tabla A contiene 25 registros (uno por cada letra en el alfabeto).
+<a name="320380"></a><li>La Tabla B contiene 2500 registros (100 registros que coinciden con cada registro en la Tabla A).
+<a name="320381"></a><li>La idea es producir un informe que encuentre dos registros espec&#237;ficos en la Tabla A y los 200 registros (100+100) en la Tabla B que coinciden con aquellos dos registros en la Tabla A.
+<p class="indent"><a name="320382"></a>En el mejor de los casos, el programa s&#243;lo tendr&#237;a que leer cerca de <br>200 registros para completar la tarea.</p><p class="indent"><a name="320383"></a>En el peor de los casos, el programa tendr&#237;a que leer cerca de <br>67,600 registros para completar la misma tarea.</p></ul><p><a name="320384"></a><font color="darkblue"><b>Nota:   &nbsp;&nbsp;&nbsp;</b></font>Las consideraciones de rendimiento para los archivos de datos son diferentes de las consideraciones para bases de datos SQL. Un archivo de datos es cualquier base de datos, que no es SQL, que es accesible directamente desde Info Report DesignerSeagate Crystal Reports. Para el prop&#243;sito de esta discusi&#243;n, una base de datos SQL es cualquier base de datos SQL accesible directamente desde Info Report DesignerSeagate Crystal Reports o a trav&#233;s de ODBC as&#237; como tambi&#233;n cualquier otro tipo de base de datos que sea accesible a trav&#233;s de ODBC. Para un mejor entendimiento de la diferencia entre bases de datos de acceso directo y fuentes de datos ODBC, vea <a href="25_access_sources.html#246299">Acceso a las fuentes de datos</a>.</p>
+<a name="320388"></a><h5>Descripciones detalladas de diagrama de columnas </h5><p><a name="320389"></a>Los diagramas de rendimiento utilizan las siguientes columnas: </p><ul type="disc"><a name="320390"></a><li><strong>V&#237;nculo o subinforme<br></strong>&#191;Est&#225; creando un informe de bases de datos vinculados o est&#225; insertando un subinforme y asoci&#225;ndolo a los datos en su informe principal?
+<a name="320391"></a><li><strong>F&#243;rmula de selecci&#243;n<br></strong>&#191;Incluye su informe principal una f&#243;rmula de selecci&#243;n de registros que establece l&#237;mites de rango en el campo clave (indexado) en la Tabla A?
+<a name="320392"></a><li><strong>Indice A<br></strong>&#191;Est&#225; la tabla A indexada en el campo que va a utilizar para cotejar los registros?
+<a name="320393"></a><li><strong>Indice B<br></strong>&#191;Est&#225; la tabla B indexada en el campo que va a utilizar para cotejar los registros?
+<a name="320394"></a><li><strong>Lee A<br></strong>&#191;Cu&#225;ntos registros en la tabla A tiene que leer el programa para encontrar los dos registros que est&#225; buscando?
+<a name="320395"></a><li><strong>Para cada A lee en B<br></strong>&#191;Cu&#225;ntos registros en la tabla B tiene que leer el programa para encontrar los 200 registros que est&#225; buscando?
+<a name="320396"></a><li><strong>Total de registros le&#237;dos<br></strong>&#191;Cu&#225;l es el n&#250;mero total de registros que el programa tiene que procesar para completar la tarea?<Table Border="1">
+<tr><th colspan=7 rowspan=1><a name="320399"></a>Datos de PC
+
+</th></tr>
+<tr><td align="left" valign="TOP"><a name="320413"></a>V&#237;nculo/ 
+Subinforme
+
+</td><td align="left" valign="TOP"><a name="320415"></a>F&#243;rmula 
+de 
+Selecci&#243;n
+
+</td><td align="left" valign="TOP"><a name="320417"></a>Indice A
+
+</td><td align="left" valign="TOP"><a name="320419"></a>Indice B
+
+</td><td align="left" valign="TOP"><a name="320421"></a>Leer A
+
+</td><td align="left" valign="TOP"><a name="320423"></a>Por cada A 
+lee en B
+
+</td><td align="left" valign="TOP"><a name="320425"></a>Total de 
+Registros 
+Leidos
+
+</td></tr>
+<tr><td align="left" valign="TOP"><P><a name="320427"></a>V&#237;nculo</P>
+
+
+</td><td align="left" valign="TOP"><P><a name="320429"></a>No</P>
+
+
+</td><td align="left" valign="TOP"><P><a name="320431"></a>S&#237; o No</P>
+
+
+</td><td align="left" valign="TOP"><P><a name="320433"></a>S&#237;</P>
+
+
+</td><td align="left" valign="TOP"><P><a name="320435"></a>25</P>
+
+
+</td><td align="left" valign="TOP"><P><a name="320437"></a>100 (25*100)</P>
+
+
+</td><td align="left" valign="TOP"><P><a name="320439"></a>2500</P>
+
+
+</td></tr>
+<tr><td align="left" valign="TOP"><P><a name="320441"></a>V&#237;nculo</P>
+
+
+</td><td align="left" valign="TOP"><P><a name="320443"></a>S&#237;</P>
+
+
+</td><td align="left" valign="TOP"><P><a name="320445"></a>No</P>
+
+
+</td><td align="left" valign="TOP"><P><a name="320447"></a>S&#237;</P>
+
+
+</td><td align="left" valign="TOP"><P><a name="320449"></a>25</P>
+
+
+</td><td align="left" valign="TOP"><P><a name="320451"></a>100 (25*100)</P>
+
+
+</td><td align="left" valign="TOP"><P><a name="320453"></a>2500</P>
+
+
+</td></tr>
+<tr><td align="left" valign="TOP"><P><a name="320455"></a>V&#237;nculo</P>
+
+
+</td><td align="left" valign="TOP"><P><a name="320457"></a>S&#237;</P>
+
+
+</td><td align="left" valign="TOP"><P><a name="320459"></a>S&#237;</P>
+
+
+</td><td align="left" valign="TOP"><P><a name="320461"></a>S&#237;</P>
+
+
+</td><td align="left" valign="TOP"><P><a name="320463"></a>2</P>
+
+
+</td><td align="left" valign="TOP"><P><a name="320465"></a>100 (2*100)</P>
+
+
+</td><td align="left" valign="TOP"><P><a name="320467"></a>200</P>
+
+
+</td></tr>
+<tr><td align="left" valign="TOP"><P><a name="320469"></a>Subinforme</P>
+
+
+</td><td align="left" valign="TOP"><P><a name="320471"></a>No</P>
+
+
+</td><td align="left" valign="TOP"><P><a name="320473"></a>No</P>
+
+
+</td><td align="left" valign="TOP"><P><a name="320475"></a>No</P>
+
+
+</td><td align="left" valign="TOP"><P><a name="320477"></a>25</P>
+
+
+</td><td align="left" valign="TOP"><P><a name="320479"></a>2500 (25*2500)</P>
+
+
+</td><td align="left" valign="TOP"><P><a name="320481"></a>67,600</P>
+
+
+</td></tr>
+<tr><td align="left" valign="TOP"><P><a name="320483"></a>Subinforme</P>
+
+
+</td><td align="left" valign="TOP"><P><a name="320485"></a>No</P>
+
+
+</td><td align="left" valign="TOP"><P><a name="320487"></a>S&#237;</P>
+
+
+</td><td align="left" valign="TOP"><P><a name="320489"></a>No</P>
+
+
+</td><td align="left" valign="TOP"><P><a name="320491"></a>2</P>
+
+
+</td><td align="left" valign="TOP"><P><a name="320493"></a>2500 (25*2500)</P>
+
+
+</td><td align="left" valign="TOP"><P><a name="320495"></a>67,600</P>
+
+
+</td></tr>
+<tr><td align="left" valign="TOP"><P><a name="320497"></a>Subinforme</P>
+
+
+</td><td align="left" valign="TOP"><P><a name="320499"></a>No</P>
+
+
+</td><td align="left" valign="TOP"><P><a name="320501"></a>S&#237;</P>
+
+
+</td><td align="left" valign="TOP"><P><a name="320503"></a>S&#237;</P>
+
+
+</td><td align="left" valign="TOP"><P><a name="320505"></a>25</P>
+
+
+</td><td align="left" valign="TOP"><P><a name="320507"></a>100 (25*100)</P>
+
+
+</td><td align="left" valign="TOP"><P><a name="320509"></a>2500</P>
+
+
+</td></tr>
+<tr><td align="left" valign="TOP"><P><a name="320511"></a>Subinforme</P>
+
+
+</td><td align="left" valign="TOP"><P><a name="320513"></a>S&#237;</P>
+
+
+</td><td align="left" valign="TOP"><P><a name="320515"></a>No</P>
+
+
+</td><td align="left" valign="TOP"><P><a name="320517"></a>No</P>
+
+
+</td><td align="left" valign="TOP"><P><a name="320519"></a>2</P>
+
+
+</td><td align="left" valign="TOP"><P><a name="320521"></a>2500 (2*2500)</P>
+
+
+</td><td align="left" valign="TOP"><P><a name="320523"></a>5200</P>
+
+
+</td></tr>
+<tr><td align="left" valign="TOP"><P><a name="320525"></a>Subinforme</P>
+
+
+</td><td align="left" valign="TOP"><P><a name="320527"></a>S&#237;</P>
+
+
+</td><td align="left" valign="TOP"><P><a name="320529"></a>No</P>
+
+
+</td><td align="left" valign="TOP"><P><a name="320531"></a>S&#237;</P>
+
+
+</td><td align="left" valign="TOP"><P><a name="320533"></a>25</P>
+
+
+</td><td align="left" valign="TOP"><P><a name="320535"></a>100 (25*100)</P>
+
+
+</td><td align="left" valign="TOP"><P><a name="320537"></a>2500</P>
+
+
+</td></tr>
+<tr><td align="left" valign="TOP"><P><a name="320539"></a>Subinforme</P>
+
+
+</td><td align="left" valign="TOP"><P><a name="320541"></a>S&#237;</P>
+
+
+</td><td align="left" valign="TOP"><P><a name="320543"></a>S&#237;</P>
+
+
+</td><td align="left" valign="TOP"><P><a name="320545"></a>S&#237;</P>
+
+
+</td><td align="left" valign="TOP"><P><a name="320547"></a>2</P>
+
+
+</td><td align="left" valign="TOP"><P><a name="320549"></a>100 (2*100)</P>
+
+
+</td><td align="left" valign="TOP"><P><a name="320551"></a>200</P>
+
+
+</td></tr>
+
+</Table><Table Border="1">
+<tr><th colspan=5 rowspan=1><a name="320554"></a>Datos de SQL
+
+</th></tr>
+<tr><td align="left" valign="TOP"><a name="320564"></a>V&#237;nculo/ Subinforme
+
+</td><td align="left" valign="TOP"><a name="320566"></a>F&#243;rmula de 
+Selecci&#243;n
+
+</td><td align="left" valign="TOP"><a name="320568"></a>Leer A
+
+</td><td align="left" valign="TOP"><a name="320570"></a>Por cada A lee en B
+
+</td><td align="left" valign="TOP"><a name="320572"></a>Total de 
+Registros Leidos
+
+</td></tr>
+<tr><td align="left" valign="TOP"><P><a name="320574"></a>V&#237;nculo</P>
+
+
+</td><td align="left" valign="TOP"><P><a name="320576"></a>No</P>
+
+
+</td><td align="left" valign="TOP"><P><a name="320578"></a>25</P>
+
+
+</td><td align="left" valign="TOP"><P><a name="320580"></a>100 (25*100)</P>
+
+
+</td><td align="left" valign="TOP"><P><a name="320582"></a>2500</P>
+
+
+</td></tr>
+<tr><td align="left" valign="TOP"><P><a name="320584"></a>V&#237;nculo</P>
+
+
+</td><td align="left" valign="TOP"><P><a name="320586"></a>S&#237;</P>
+
+
+</td><td align="left" valign="TOP"><P><a name="320588"></a>2</P>
+
+
+</td><td align="left" valign="TOP"><P><a name="320590"></a>100 (2*100)</P>
+
+
+</td><td align="left" valign="TOP"><P><a name="320592"></a>200</P>
+
+
+</td></tr>
+<tr><td align="left" valign="TOP"><P><a name="320594"></a>Subinforme</P>
+
+
+</td><td align="left" valign="TOP"><P><a name="320596"></a>No</P>
+
+
+</td><td align="left" valign="TOP"><P><a name="320598"></a>25</P>
+
+
+</td><td align="left" valign="TOP"><P><a name="320600"></a>100 (25*100)</P>
+
+
+</td><td align="left" valign="TOP"><P><a name="320602"></a>2500</P>
+
+
+</td></tr>
+<tr><td align="left" valign="TOP"><P><a name="320604"></a>Subinforme</P>
+
+
+</td><td align="left" valign="TOP"><P><a name="320606"></a>S&#237;</P>
+
+
+</td><td align="left" valign="TOP"><P><a name="320608"></a>2</P>
+
+
+</td><td align="left" valign="TOP"><P><a name="320610"></a>100 (2*100)</P>
+
+
+</td><td align="left" valign="TOP"><P><a name="320612"></a>200</P>
+
+
+</td></tr>
+
+</Table>
+</ul>
+<hr><br>
+
+<script  language="JavaScript"><!--
+
+var prev = "24_under_databases8.html";
+var next = "24_under_databases10.html";
+
+function setTopicID() { 
+      var number = "320374"; 
+      return number; 
+}
+
+// --></script>
+
+
+
+
+<SCRIPT>
+
+if (!window.parent.toc && navigator.appName == "Netscape") {
+
+   document.writeln ('<TABLE ALIGN="left" border="0" cellspacing="0" cellpadding="10">');
+   document.writeln ('<TR>');
+   document.write ('<TD ALIGN="left">');
+
+   if (prev != "crw_spTOC.hhc") {
+      document.writeln ('<A HREF="' + prev + '">');
+      document.writeln ('<IMG SRC="prevpage.gif" HEIGHT=17 BORDER=0 ALT="Página anterior"></A>');
+   } else {
+//   window.alert ('no previous page');
+   }
+
+   if (next != "crw_spIX.hhk") {
+      document.writeln ('<A HREF="' + next + '">');
+      document.writeln ('<IMG SRC="nextpage.gif" HEIGHT=17 BORDER=0 ALT="Página siguiente"></A>');
+   } else {
+//   window.alert ('no next page');
+   }
+   document.writeln ('</TD><TD ALIGN="left">');
+   document.writeln ('<A HREF="frameset.htm?TOC">');
+   document.writeln ('<IMG SRC="showtoc.gif" HEIGHT=17 BORDER=0 ALT="Haga clic para ver el contenido"></A></TD>');
+   document.writeln ('<TD ALIGN="left">');
+   document.writeln ('<A HREF="frameset.htm?IDX">');
+   document.writeln ('<IMG SRC="showix.gif" HEIGHT=17 BORDER=0 ALT="Haga clic para ver el índice"></A></TD>');
+   document.writeln ('</TD>');
+   document.writeln ('</TR>');
+   document.writeln ('</TABLE>');
+
+}
+
+</SCRIPT>
+<table align="right" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td align="right"><font size="1">Seagate Software, Inc.<br>
+    <a href="http://www.seagatesoftware.com">http://www.seagatesoftware.com</a><br>
+    Envíe sus comentarios a:<br>
+    <a href="mailto:techpubs@seagatesoftware.com">techpubs@seagatesoftware.com</a><br>
+    </font></td>
+  </tr>
+</table>
+</body>
+</html>
+
+

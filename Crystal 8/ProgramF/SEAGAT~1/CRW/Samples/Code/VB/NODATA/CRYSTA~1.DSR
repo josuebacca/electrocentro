@@ -1,0 +1,46 @@
+VERSION 5.00
+Begin {BD4B4E61-F7B8-11D0-964D-00A0C9273C2A} CrystalReport1 
+   ClientHeight    =   10020
+   ClientLeft      =   0
+   ClientTop       =   0
+   ClientWidth     =   10380
+   OleObjectBlob   =   "CrystalReport1.dsx":0000
+End
+Attribute VB_Name = "CrystalReport1"
+Attribute VB_GlobalNameSpace = False
+Attribute VB_Creatable = False
+Attribute VB_PredeclaredId = True
+Attribute VB_Exposed = False
+' *************************************************************
+' Purpose:  Demonstrate new "No Data" Event (New to Crystal Reports 8.0)
+'
+'           The "No Data" event is triggered when the data set
+'           in the report is empty.  In this sample, a filter is
+'           applied to the report that causes the report to have
+'           no data.
+'
+'           A message box is then displayed which allows
+'           the user the option to view the report without any data
+'           or just to view a blank page.
+'
+
+Option Explicit
+
+' *************************************************************
+' When there is no data to report on, give the user the option
+' to display a blank report by setting pCancel to False, or to
+' display a blank page by setting pCancel to True
+'
+Private Sub Report_NoData(pCancel As Boolean)
+    Dim Response As Integer
+    Response = MsgBox("There are no records to display!  " & vbNewLine & _
+           "Do you still want to display the empty report?", vbYesNo, _
+           "No Records to Display")
+    If Response = vbYes Then
+        ' Display a blank report
+        pCancel = False
+    Else
+        ' Display a blank page - don't show anything in the report
+        pCancel = True
+    End If
+End Sub

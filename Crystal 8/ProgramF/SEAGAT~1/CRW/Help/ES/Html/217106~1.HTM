@@ -1,0 +1,120 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+
+<html>
+<head>
+<title>Expresiones Select </title>
+
+<link REL=STYLESHEET TYPE="text/css" HREF="seagate.css">
+
+<!--
+                 ***********************************
+                 * Seagate Software copyright 1999 *
+                 ***********************************
+
+                      Template version: 5.1
+-->
+
+
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" link="#0000FF" vlink="#0000FF" alink="#800080">
+
+
+ 
+<a name="147492"></a><h3 class="newpage"> Expresiones Select </h3>
+<p><a name="147494"></a>La expresi&#243;n Select es similar a una expresi&#243;n If. A veces, no obstante, es posible escribir f&#243;rmulas m&#225;s claras y menos repetitivas usando la expresi&#243;n Select. Por ejemplo, para evaluar el campo {Cliente.Fax} y determinar si el c&#243;digo postal es del Estado de Washington (WA) (206, 360, 509) o de Colombia Brit&#225;nica (BC), Canad&#225; (604, 250):</p><PRE><a name="147496"></a>//Ejemplo de expresi&#243;n Select 1
+<a name="147497"></a>Select {Cliente.Fax}[1 To 3]
+<a name="147498"></a>   Case "604", "250" :
+<a name="147499"></a>      "BC"
+<a name="147500"></a>   Case "206", "509", "360" :
+<a name="147501"></a>      "WA"
+<a name="147502"></a>   Default :
+<a name="147503"></a>      "";
+</PRE><p><a name="147505"></a>La expresi&#243;n que sigue a la palabra clave Select se denomina <EM>condici&#243;n de selecci&#243;n</EM>. En el ejemplo anterior es {Cliente.Fax}[1 To 3]. La expresi&#243;n Select intenta buscar el primer caso (Case) que coincida con la condici&#243;n de selecci&#243;n y luego ejecuta la expresi&#243;n que sigue a los dos punto para ese caso. El caso predeterminado coincide si ninguno de los casos precedentes coincide con la condici&#243;n Select. Observe que tambi&#233;n hay dos puntos despu&#233;s del valor predeterminado.</p><PRE><a name="147507"></a>//Ejemplo de mismo efecto que Select 1
+<a name="147508"></a>Local StringVar cPostal := {Cliente.Fax}[1 To 3];
+<a name="147509"></a>If cPostal In ["604", "250"] Then
+<a name="147510"></a>   "BC"
+<a name="147511"></a>Else If cPostal In ["206", "509", "360"] Then
+<a name="147512"></a>   "WA"
+<a name="147513"></a>Else
+<a name="147514"></a>   "";
+</PRE><a name="147516"></a><h5>Ejemplo</h5><p><a name="152482"></a>Esta f&#243;rmula agrupa el n&#250;mero de nominaciones al Oscar recibidas por una pel&#237;cula en categor&#237;as baja, media, alta o extrema y, en el proceso, muestra las posibilidades de que la expresi&#243;n liste las siguientes etiquetas de caso (Case):</p><PRE><a name="147518"></a>//Ejemplo de expresi&#243;n Select 2
+<a name="147519"></a>Select {pel&#237;cula.NOM}
+<a name="147520"></a>   Case 1,2,3, Is &lt; 1 :
+<a name="147521"></a>   (
+<a name="147522"></a>      //Es posible tener listas de expresiones usando
+<a name="147523"></a>      //par&#233;ntesis
+<a name="147524"></a>      10 + 20;
+<a name="147525"></a>      "baja"
+<a name="147526"></a>   )
+<a name="147527"></a>   Case 4 To 6, 7, 8, 9 :
+<a name="147528"></a>      "media"
+<a name="147529"></a>   Case 10 :
+<a name="147530"></a>      "alta"
+<a name="147531"></a>   Default :
+<a name="147532"></a>      "extrema"
+</PRE><p><a name="147534"></a>La cl&#225;usula de valor predeterminado (Default) de la expresi&#243;n Select es opcional. Si falta la cl&#225;usula de valor predeterminado y ninguno de los casos coincide, entonces la expresi&#243;n Select devuelve el valor predeterminado para su tipo de expresi&#243;n. Por ejemplo, si en el ejemplo anterior se omitiese la cl&#225;usula predeterminada y {pel&#237;cula.NOM} = 11, devolver&#237;a la cadena vac&#237;a "". La expresi&#243;n Select es una expresi&#243;n, as&#237; que se le aplican los mismos comentarios que se explican en la secci&#243;n <EM>M&#225;s detalles sobre las expresiones If</EM>.</p>
+<hr><br>
+
+<script  language="JavaScript"><!--
+
+var prev = "21_crystalsyntax55.html";
+var next = "21_crystalsyntax57.html";
+
+function setTopicID() { 
+      var number = "147492"; 
+      return number; 
+}
+
+// --></script>
+
+
+
+
+<SCRIPT>
+
+if (!window.parent.toc && navigator.appName == "Netscape") {
+
+   document.writeln ('<TABLE ALIGN="left" border="0" cellspacing="0" cellpadding="10">');
+   document.writeln ('<TR>');
+   document.write ('<TD ALIGN="left">');
+
+   if (prev != "crw_spTOC.hhc") {
+      document.writeln ('<A HREF="' + prev + '">');
+      document.writeln ('<IMG SRC="prevpage.gif" HEIGHT=17 BORDER=0 ALT="Página anterior"></A>');
+   } else {
+//   window.alert ('no previous page');
+   }
+
+   if (next != "crw_spIX.hhk") {
+      document.writeln ('<A HREF="' + next + '">');
+      document.writeln ('<IMG SRC="nextpage.gif" HEIGHT=17 BORDER=0 ALT="Página siguiente"></A>');
+   } else {
+//   window.alert ('no next page');
+   }
+   document.writeln ('</TD><TD ALIGN="left">');
+   document.writeln ('<A HREF="frameset.htm?TOC">');
+   document.writeln ('<IMG SRC="showtoc.gif" HEIGHT=17 BORDER=0 ALT="Haga clic para ver el contenido"></A></TD>');
+   document.writeln ('<TD ALIGN="left">');
+   document.writeln ('<A HREF="frameset.htm?IDX">');
+   document.writeln ('<IMG SRC="showix.gif" HEIGHT=17 BORDER=0 ALT="Haga clic para ver el índice"></A></TD>');
+   document.writeln ('</TD>');
+   document.writeln ('</TR>');
+   document.writeln ('</TABLE>');
+
+}
+
+</SCRIPT>
+<table align="right" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td align="right"><font size="1">Seagate Software, Inc.<br>
+    <a href="http://www.seagatesoftware.com">http://www.seagatesoftware.com</a><br>
+    Envíe sus comentarios a:<br>
+    <a href="mailto:techpubs@seagatesoftware.com">techpubs@seagatesoftware.com</a><br>
+    </font></td>
+  </tr>
+</table>
+</body>
+</html>
+
+

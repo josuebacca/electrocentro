@@ -1,0 +1,97 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+
+<html>
+<head>
+<title>Comando PASSWORD# </title>
+
+<link REL=STYLESHEET TYPE="text/css" HREF="seagate.css">
+
+<!--
+                 ***********************************
+                 * Seagate Software copyright 1999 *
+                 ***********************************
+
+                      Template version: 5.1
+-->
+
+
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" link="#0000FF" vlink="#0000FF" alink="#800080">
+
+
+ 
+<a name="162222"></a><h4 class="newpage"> Comando PASSWORD# </h4><p><a name="162216"></a>Especifica contrase&#241;as para iniciar sesiones en bases de datos SQL, ODBC u otras bases de datos protegidas por contrase&#241;a utilizadas por el informe.</p><PRE><a name="149934"></a>PASSWORD#=&lt;contrase&#241;a&gt;
+<a name="149935"></a>&#171;&lt;contrase&#241;a&gt; es una cadena.&#187;
+</PRE><p><a name="149936"></a>Por ejemplo:</p><PRE><a name="149937"></a>password0=secreto
+</PRE><p><a name="149938"></a>Si el informe accede a m&#225;s de una base de datos protegida por contrase&#241;a, se pueden enviar varias contrase&#241;as incrementando el n&#250;mero de &#237;ndice. Por ejemplo:</p><PRE><a name="149939"></a>password0=secreto&amp;password1=misterio&amp;password2=desconocido
+</PRE><p><a name="161676"></a>Normalmente se utiliza el comando PASSWORD# conjuntamente con el comando USER#. Por ejemplo:</p><PRE><a name="161678"></a>user0=JuradoS&amp;password0=secreto&amp;user1=JuanP&amp;password1=mi
+sterio
+</PRE><p><a name="149945"></a>Si el informe contiene subinformes que requieren contrase&#241;as para iniciar sesiones en fuentes de datos SQL o ODBC, use la siguiente sintaxis en la URL:</p><PRE><a name="149946"></a>password@subnombre#=&lt;idusuario&gt;
+<p class="indent"><a name="149947"></a>&#171;subnombre es el nombre del subinforme.&#187;</p></PRE><p><a name="149948"></a>Por ejemplo:</p><PRE><a name="149949"></a>user0@Tablacruzada=gerardod&amp;password0@Tablacruzada=gerardoz
+</PRE><p><a name="150971"></a><font color="darkblue"><b>Nota:   &nbsp;&nbsp;&nbsp;</b></font>Aseg&#250;rese de que las contrase&#241;as aparezcan en la URL en el mismo orden que las bases de datos protegidas por contrase&#241;a aparecen en el informe. Asimismo, si las contrase&#241;as no son enviadas utilizando la direcci&#243;n URL, al usuario se le solicitar&#225; informaci&#243;n de inicio de sesi&#243;n durante la ejecuci&#243;n.</p>
+
+<hr><br>
+
+<script  language="JavaScript"><!--
+
+var prev = "WebServerCommands9.html";
+var next = "WebServerCommands11.html";
+
+function setTopicID() { 
+      var number = "162222"; 
+      return number; 
+}
+
+// --></script>
+
+
+
+
+<SCRIPT>
+
+if (!window.parent.toc && navigator.appName == "Netscape") {
+
+   document.writeln ('<TABLE ALIGN="left" border="0" cellspacing="0" cellpadding="10">');
+   document.writeln ('<TR>');
+   document.write ('<TD ALIGN="left">');
+
+   if (prev != "wcmadminTOC.hhc") {
+      document.writeln ('<A HREF="' + prev + '">');
+      document.writeln ('<IMG SRC="prevpage.gif" HEIGHT=17 BORDER=0 ALT="Página anterior"></A>');
+   } else {
+//   window.alert ('no previous page');
+   }
+
+   if (next != "wcmadminIX.hhk") {
+      document.writeln ('<A HREF="' + next + '">');
+      document.writeln ('<IMG SRC="nextpage.gif" HEIGHT=17 BORDER=0 ALT="Página siguiente"></A>');
+   } else {
+//   window.alert ('no next page');
+   }
+   document.writeln ('</TD><TD ALIGN="left">');
+   document.writeln ('<A HREF="frameset.htm?TOC">');
+   document.writeln ('<IMG SRC="showtoc.gif" HEIGHT=17 BORDER=0 ALT="Haga clic para ver el contenido"></A></TD>');
+   document.writeln ('<TD ALIGN="left">');
+   document.writeln ('<A HREF="frameset.htm?IDX">');
+   document.writeln ('<IMG SRC="showix.gif" HEIGHT=17 BORDER=0 ALT="Haga clic para ver el índice"></A></TD>');
+   document.writeln ('</TD>');
+   document.writeln ('</TR>');
+   document.writeln ('</TABLE>');
+
+}
+
+</SCRIPT>
+<table align="right" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td align="right"><font size="1">Seagate Software, Inc.<br>
+    <a href="http://www.seagatesoftware.com">http://www.seagatesoftware.com</a><br>
+    Envíe sus comentarios a:<br>
+    <a href="mailto:techpubs@seagatesoftware.com">techpubs@seagatesoftware.com</a><br>
+    </font></td>
+  </tr>
+</table>
+</body>
+</html>
+
+

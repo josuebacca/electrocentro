@@ -1,0 +1,101 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+
+<html>
+<head>
+<title>Replace</title>
+
+<link REL=STYLESHEET TYPE="text/css" HREF="seagate.css">
+
+<!--
+                 ***********************************
+                 * Seagate Software copyright 1999 *
+                 ***********************************
+
+                      Template version: 5.1
+-->
+
+
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" link="#0000FF" vlink="#0000FF" alink="#800080">
+
+
+ 
+<a name="1000853722"></a><h3 class="newpage"> Replace</h3>
+<p><a name="1000853723"></a>Sintaxis b&#225;sica y Crystal.</p><a name="1000853724"></a><h5>Sobrecargas</h5><ul type="disc"><a name="1000853725"></a><li>Replace (cadenaEntrada, cadenaB&#250;squeda, cadenaReemplazo)
+<a name="1000853726"></a><li>Replace (cadenaEntrada, cadenaB&#250;squeda, cadenaReemplazo, inicioPosici&#243;n)
+<a name="1000853727"></a><li>Replace (cadenaEntrada, cadenaB&#250;squeda, cadenaReemplazo, cuenta)
+<a name="1000853728"></a><li>Replace (cadenaEntrada, cadenaB&#250;squeda, cadenaReemplazo, cuenta, comparar)
+</ul><a name="1000853729"></a><h5>Argumentos</h5><ul type="disc"><a name="1000853730"></a><li>cadenaEntrada es una cadena que contiene una subcadena a ser reemplazada.
+<a name="1000853731"></a><li>cadenaB&#250;squeda es una subcadena que est&#225; siendo buscada.
+<a name="1000853732"></a><li>cadenaReemplazo es la subcadena de reemplazo.
+<a name="1000853733"></a><li>posici&#243;nInicio es un N&#250;mero opcional que indica la posici&#243;n dentro de cadenaEntrada, donde debe iniciarse la b&#250;squeda de la subcadena. Si se omite, se presupone 1. 
+<a name="1000853734"></a><li>cuenta es un N&#250;mero opcional de substituciones de subcadenas a realizarse. Si se omite, el valor preestablecido es -1, lo que significa hacer todas las substituciones posibles.
+<a name="1000853735"></a><li>comparar es un N&#250;mero opcional que indica el tipo de comparaci&#243;n que deber&#225; usarse para evaluar subcadenas:
+<ul type="disc"><ul type="disc"><a name="1000853736"></a><li> Realiza una comparaci&#243;n, que es sensible a may&#250;sculas y min&#250;sculas<a name="1000853737"></a><li> Realiza una comparaci&#243;n, que es sensible a may&#250;sculas y min&#250;sculas<p class="indent"><a name="1000853738"></a>Si se omite, se realiza una comparaci&#243;n sensible a may&#250;sculas y min&#250;sculas.</p></ul></ul></ul><a name="1000853739"></a><h5>Devuelve </h5><p><a name="1000853740"></a>Una cadena de texto.</p><a name="1000853741"></a><h5>Acci&#243;n</h5><p><a name="1000853742"></a>Replace devuelve una Cadena en la que se ha sustituido una subcadena espec&#237;fica por otra subcadena un n&#250;mero especificado de veces. Como opci&#243;n, tambi&#233;n puede especificar d&#243;nde comenzar a reemplazar en la Cadena y devolver una Cadena comenzando en esa posici&#243;n.</p><a name="1000853743"></a><h5>Uso t&#237;pico</h5><p><a name="1000853744"></a>Para reemplazar sistem&#225;ticamente una subcadena por otra dentro de una Cadena.</p><a name="1000853745"></a><h5>Ejemplo(s)</h5><p><a name="1000853746"></a>Los siguientes ejemplos son aplicables a las sintaxis b&#225;sica y Crystal: Presupone que cadenaEntrada es la cadena de texto "El lunes es mi d&#237;a libre. &#191;Podemos reunirnos el pr&#243;ximo lunes?".</p><p><code><a name="1000853747"></a>Replace (cadenaEntrada, "lunes", "mi&#233;rcoles")</code></p><p class="example"><a name="1000853748"></a>Devuelve "El mi&#233;rcoles es mi d&#237;a libre. &#191;Podemos reunirnos el pr&#243;ximo mi&#233;rcoles?".</p><p><code><a name="1000853749"></a>Replace (cadenaEntrada, "lunes", "mi&#233;rcoles",23)</code></p><p class="example"><a name="1000853750"></a>Devuelve "&#191;Podemos reunirnos el pr&#243;ximo mi&#233;rcoles?" El reemplazo se inicia en el car&#225;cter 23<sup>&#186;</sup> desde el principio de la cadenaEntrada original. La cadena devuelta es esta porci&#243;n de la cadena con la substituci&#243;n realizada.</p><p><code><a name="1000853751"></a>Replace (cadenaEntrada, "lunes", "mi&#233;rcoles", 1, 1)</code></p><p class="example"><a name="1000853752"></a>Devuelve "El mi&#233;rcoles es mi d&#237;a libre. &#191;Podemos reunirnos el pr&#243;ximo lunes?" Hay un s&#243;lo reemplazo que se inicia en el 1<sup>er</sup> car&#225;cter desde el principio de la cadenaEntrada original. As&#237;, la cadena devuelta es la original con una sola substituci&#243;n.</p><p><code><a name="1000853753"></a>Replace (cadenaEntrada, "lunes", "mi&#233;rcoles", 1, -1, 0)</code></p><p class="example"><a name="1000853754"></a>Devuelve la misma cadenaEntrada sin reemplazos, ya que no se encontr&#243; concordancia para "lunes" con la comparaci&#243;n sensible a may&#250;sculas y min&#250;sculas.</p><p><code><a name="1000853755"></a>Replace (cadenaEntrada, "lunes", "mi&#233;rcoles", 1, -1, 1)</code></p><p class="example"><a name="1000853756"></a>Devuelve la cadenaEntrada con ambas apariciones de "lunes" reemplazadas por "mi&#233;rcoles". Esto es,  "El mi&#233;rcoles es mi d&#237;a libre. &#191;Podemos reunirnos el pr&#243;ximo mi&#233;rcoles?".</p><a name="1000853757"></a><h5>Comentario(s) </h5><ul type="disc"><a name="1000853758"></a><li>Esta funci&#243;n est&#225; dise&#241;ada para trabajar exactamente como la funci&#243;n de Visual Basic del mismo nombre.
+<a name="1000853759"></a><li>El valor devuelto de la funci&#243;n Replace es una Cadena, con los reemplazos de las subcadenas especificadas, que se inicia en la posici&#243;n especificada por posici&#243;nInicio y concluye al final de la cadena cadenaEntrada. No es una copia de la cadena original de principio a fin.  
+</ul>
+<hr><br>
+
+<script  language="JavaScript"><!--
+
+var prev = "Functions98.html";
+var next = "Functions100.html";
+
+function setTopicID() { 
+      var number = "1000853722"; 
+      return number; 
+}
+
+// --></script>
+
+
+
+
+<SCRIPT>
+
+if (!window.parent.toc && navigator.appName == "Netscape") {
+
+   document.writeln ('<TABLE ALIGN="left" border="0" cellspacing="0" cellpadding="10">');
+   document.writeln ('<TR>');
+   document.write ('<TD ALIGN="left">');
+
+   if (prev != "crw_spTOC.hhc") {
+      document.writeln ('<A HREF="' + prev + '">');
+      document.writeln ('<IMG SRC="prevpage.gif" HEIGHT=17 BORDER=0 ALT="Página anterior"></A>');
+   } else {
+//   window.alert ('no previous page');
+   }
+
+   if (next != "crw_spIX.hhk") {
+      document.writeln ('<A HREF="' + next + '">');
+      document.writeln ('<IMG SRC="nextpage.gif" HEIGHT=17 BORDER=0 ALT="Página siguiente"></A>');
+   } else {
+//   window.alert ('no next page');
+   }
+   document.writeln ('</TD><TD ALIGN="left">');
+   document.writeln ('<A HREF="frameset.htm?TOC">');
+   document.writeln ('<IMG SRC="showtoc.gif" HEIGHT=17 BORDER=0 ALT="Haga clic para ver el contenido"></A></TD>');
+   document.writeln ('<TD ALIGN="left">');
+   document.writeln ('<A HREF="frameset.htm?IDX">');
+   document.writeln ('<IMG SRC="showix.gif" HEIGHT=17 BORDER=0 ALT="Haga clic para ver el índice"></A></TD>');
+   document.writeln ('</TD>');
+   document.writeln ('</TR>');
+   document.writeln ('</TABLE>');
+
+}
+
+</SCRIPT>
+<table align="right" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td align="right"><font size="1">Seagate Software, Inc.<br>
+    <a href="http://www.seagatesoftware.com">http://www.seagatesoftware.com</a><br>
+    Envíe sus comentarios a:<br>
+    <a href="mailto:techpubs@seagatesoftware.com">techpubs@seagatesoftware.com</a><br>
+    </font></td>
+  </tr>
+</table>
+</body>
+</html>
+
+

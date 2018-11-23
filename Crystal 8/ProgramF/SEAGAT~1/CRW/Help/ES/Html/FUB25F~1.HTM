@@ -1,0 +1,101 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+
+<html>
+<head>
+<title>IRR</title>
+
+<link REL=STYLESHEET TYPE="text/css" HREF="seagate.css">
+
+<!--
+                 ***********************************
+                 * Seagate Software copyright 1999 *
+                 ***********************************
+
+                      Template version: 5.1
+-->
+
+
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" link="#0000FF" vlink="#0000FF" alink="#800080">
+
+
+ 
+<a name="1000851892"></a><h3 class="newpage"> IRR</h3>
+<p><a name="1000851893"></a>Sintaxis b&#225;sica y Crystal.</p><a name="1000851894"></a><h5>Sobrecargas</h5><ul type="disc"><a name="1000851895"></a><li>IRR (valores)
+<a name="1000851896"></a><li>IRR (valores, estimaci&#243;n)
+</ul><a name="1000851897"></a><h5>Argumentos</h5><ul type="disc"><a name="1000851898"></a><li>valores es una matriz de tipo N&#250;mero o Moneda que especifica los valores del flujo de caja.  La matriz debe contener por lo menos un valor negativo (un pago) y un valor positivo (un ingreso).  El flujo de caja debe realizarse a intervalos regulares tales como mensual o anualmente.
+<a name="1000851899"></a><li>estimaci&#243;n es un valor num&#233;rico opcional que se estima se devuelve por IRR.  Si se omite, la estimaci&#243;n es  0.1 (10 por ciento).
+</ul><a name="1000851900"></a><h5>Devuelve </h5><p><a name="1000851901"></a>Valor num&#233;rico</p><a name="1000851902"></a><h5>Acci&#243;n</h5><p><a name="1000851903"></a>IRR devuelve un N&#250;mero especificando la tasa interna de devoluci&#243;n para una  serie de flujos de efectivo peri&#243;dicos (pagos e ingresos).  </p><a name="1000851904"></a><h5>Ejemplo</h5><p><a name="1000851905"></a>El siguiente ejemplo es aplicable a las sintaxis b&#225;sica y Crystal:</p><p><a name="1000851906"></a>Supongamos que puede elegir una de dos ofertas: $20,000 ahora o pagos garantizados de $5,000 despu&#233;s de 1 a&#241;o, $10,000 despu&#233;s de 2 a&#241;os y #15,000 despu&#233;s de 3 a&#241;os. &#191;Cu&#225;l es la mejor oferta? Un forma de cuantificar esto es calcular la tasa de inter&#233;s de devoluci&#243;n.  Si elige la segunda oferta, no puede elegir la primera, de modo que es como experimentar un pago inicial de $20,000 seguido de los ingresos:</p><p class="code"><a name="1000851907"></a>Sintaxis b&#225;sica Rem
+<br><a name="1000851908"></a>formula = IRR (Array(-20000, 5000, 10000, 15000))
+<br><a name="1000851909"></a>
+<br><a name="1000851910"></a>//Sintaxis Crystal
+<br><a name="1000851911"></a>IRR ([-20000, 5000, 10000, 15000])
+</p><p class="example"><a name="1000851912"></a>Devuelve 0.194 (redondeado a  3 decimales) o 19.4 por ciento de inter&#233;s. Siendo todas las otras cosas iguales y si piensa que 19.4 es una buena tasa de devoluci&#243;n , usted preferir&#237;a la segunda oferta.</p><a name="1000851913"></a><h5>Comentario(s) </h5><ul type="disc"><a name="1000851914"></a><li>Esta funci&#243;n est&#225; dise&#241;ada para trabajar exactamente como la funci&#243;n de Visual Basic del mismo nombre.
+<a name="1000851915"></a><li>Las funciones NPV e IRR est&#225;n relacionadas, ya que NPV (IRR (valores), valores) = 0. Esto es, la tasa interna de devoluci&#243;n de una secuencia de flujos de efectivo es la tasa de inter&#233;s para la cual esa secuencia de flujos de efectivo tiene un valor presente neto de 0. 
+<a name="1000851918"></a><li>No hay una f&#243;rmula directa para la funci&#243;n IRR, por lo que Seagate Crystal Reports calcula el valor por repetici&#243;n. El proceso depende de la estimaci&#243;n inicial de la tasa interna de devoluci&#243;n. Si el programa presenta un error, intente cambiar el valor del argumento estimaci&#243;n para acercarlo a lo que esperaba que fuera la tasa interna de devoluci&#243;n. 
+</ul>
+<hr><br>
+
+<script  language="JavaScript"><!--
+
+var prev = "Functions52.html";
+var next = "Functions54.html";
+
+function setTopicID() { 
+      var number = "1000851892"; 
+      return number; 
+}
+
+// --></script>
+
+
+
+
+<SCRIPT>
+
+if (!window.parent.toc && navigator.appName == "Netscape") {
+
+   document.writeln ('<TABLE ALIGN="left" border="0" cellspacing="0" cellpadding="10">');
+   document.writeln ('<TR>');
+   document.write ('<TD ALIGN="left">');
+
+   if (prev != "crw_spTOC.hhc") {
+      document.writeln ('<A HREF="' + prev + '">');
+      document.writeln ('<IMG SRC="prevpage.gif" HEIGHT=17 BORDER=0 ALT="Página anterior"></A>');
+   } else {
+//   window.alert ('no previous page');
+   }
+
+   if (next != "crw_spIX.hhk") {
+      document.writeln ('<A HREF="' + next + '">');
+      document.writeln ('<IMG SRC="nextpage.gif" HEIGHT=17 BORDER=0 ALT="Página siguiente"></A>');
+   } else {
+//   window.alert ('no next page');
+   }
+   document.writeln ('</TD><TD ALIGN="left">');
+   document.writeln ('<A HREF="frameset.htm?TOC">');
+   document.writeln ('<IMG SRC="showtoc.gif" HEIGHT=17 BORDER=0 ALT="Haga clic para ver el contenido"></A></TD>');
+   document.writeln ('<TD ALIGN="left">');
+   document.writeln ('<A HREF="frameset.htm?IDX">');
+   document.writeln ('<IMG SRC="showix.gif" HEIGHT=17 BORDER=0 ALT="Haga clic para ver el índice"></A></TD>');
+   document.writeln ('</TD>');
+   document.writeln ('</TR>');
+   document.writeln ('</TABLE>');
+
+}
+
+</SCRIPT>
+<table align="right" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td align="right"><font size="1">Seagate Software, Inc.<br>
+    <a href="http://www.seagatesoftware.com">http://www.seagatesoftware.com</a><br>
+    Envíe sus comentarios a:<br>
+    <a href="mailto:techpubs@seagatesoftware.com">techpubs@seagatesoftware.com</a><br>
+    </font></td>
+  </tr>
+</table>
+</body>
+</html>
+
+

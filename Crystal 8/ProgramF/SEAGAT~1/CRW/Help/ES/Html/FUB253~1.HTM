@@ -1,0 +1,98 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+
+<html>
+<head>
+<title>DistinctCount (campo), DistinctCount (campo, campoCondicional), DistinctCount (campo, campoCondicional, condici&#243;n), DistinctCount (x)</title>
+
+<link REL=STYLESHEET TYPE="text/css" HREF="seagate.css">
+
+<!--
+                 ***********************************
+                 * Seagate Software copyright 1999 *
+                 ***********************************
+
+                      Template version: 5.1
+-->
+
+
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" link="#0000FF" vlink="#0000FF" alink="#800080">
+
+
+ 
+<a name="1000851130"></a><h3 class="newpage"> DistinctCount (campo), DistinctCount (campo, campoCondicional), DistinctCount (campo, campoCondicional, condici&#243;n), DistinctCount (x)</h3>
+<p><a name="1000851132"></a>Sintaxis b&#225;sica y Crystal.</p><a name="1000851133"></a><h5>Argumentos</h5><ul type="disc"><a name="1000851134"></a><li>campo es cualquier campo de base de datos o de f&#243;rmula que puede ser evaluado por la funci&#243;n.
+<a name="1000851135"></a><li>campoCondicional es un campo utilizado para agrupar los valores del campo.
+<a name="1000851136"></a><li>condici&#243;n es una cadena que indica el tipo de agrupaci&#243;n para campoCondicional. S&#243;lo se especifica este argumento cuando  campoCondicional es un campo de fecha, hora, fecha/hora o booleano. Para obtener m&#225;s informaci&#243;n sobre las cadenas v&#225;lidas para este argumento, vea <a href="Functions20.html#1000850529">Condiciones para las funciones de resumen</a>
+<a name="1000851140"></a><li>x es un arreglo de valores que puede ser evaluado por la funci&#243;n que est&#225; siendo utilizada.
+</ul><a name="1000851141"></a><h5>Devuelve </h5><p><a name="1000851142"></a>Un n&#250;mero fraccionario.</p><a name="1000851143"></a><h5>Acci&#243;n</h5><p><a name="1000851144"></a>Crystal Reports le permite obtener una cuenta distinta de los valores que aparecen en su informe. Por ejemplo:</p><ul type="disc"><a name="1000851145"></a><li>Si un informe de ventas incluye todos los pedidos hechos por clientes, puede calcular el n&#250;mero total de clientes distintos que aparecen en el informe (una cuenta distinta de Total general), excluyendo cualquier registro duplicado. Si un cliente hace m&#225;s de un pedido, las ocurrencias duplicadas de ese cliente son ignoradas. Para obtener m&#225;s informaci&#243;n sobre esta clase de cuenta distinta, v&#233;ase <a href="Functions22.html#1000850599">SummaryFunction (campo)</a>.
+<a name="1000851149"></a><li>Si divide los pedidos en grupos (por ejemplo, pedidos agrupados por el estado del que vienen), puede calcular el n&#250;mero de clientes distintos por grupo (en este caso, por estado). Cualquier cliente que tenga m&#225;s de un pedido y aparezca m&#225;s de una vez en un grupo s&#243;lo es contado una vez. Para obtener m&#225;s informaci&#243;n sobre esta clase de cuenta distinta, v&#233;ase <a href="Functions23.html#1000850631">SummaryFunction (campo, campoCondicional)</a>.
+<a name="1000851153"></a><li>Si divide los pedidos en grupos de fecha y Booleanos (por ejemplo, pedidos agrupados por el mes en que fueron colocados), puede calcular el n&#250;mero de clientes distintos en cada grupo basado en un cambio en particular del campo fecha o Booleano (en este caso, el n&#250;mero de pedidos que son colocados cada mes). Si un cliente coloc&#243; m&#225;s de un pedido en el mes, las instancias duplicadas de ese cliente son ignoradas. Para obtener m&#225;s informaci&#243;n sobre esta clase de cuenta distinta, vea <a href="Functions24.html#1000850661">SummaryFunction (campo, campoCondicional, condici&#243;n)</a>.
+<a name="1000851157"></a><li>Si especifica un conjunto de valores individuales, puede calcular el n&#250;mero distinto de valores en el conjunto. Los valores duplicados en el conjunto s&#243;lo son contados una vez. Para obtener m&#225;s informaci&#243;n sobre esta clase de cuenta distinta, vea <a href="Functions155.html#1000567809">Funciones de resumen de matriz (x)</a>.
+</ul><a name="1000851161"></a><h5>Ejemplo(s)</h5><p><a name="1000851162"></a>Los siguientes ejemplos son aplicables a las sintaxis b&#225;sica y Crystal:</p><p><code><a name="1000851163"></a>DistinctCount({cliente.REGI&Oacute;N})</code></p><p class="example"><a name="1000851164"></a>Cuenta el n&#250;mero de diferentes Estados representados en el campo Regi&#243;n, ignorando cualquier repetici&#243;n.</p><p><code><a name="1000851165"></a>[@@@cITY= CIUDAD] DistinctCount({cliente.CIUDAD}, {cliente.REGI&Oacute;N})</code></p><p class="example"><a name="1000851166"></a>Calcula el n&#250;mero de diferentes ciudades en cada grupo de Estado.</p><p><code><a name="1000851167"></a>DisctrictCount{pedidos.ID DEL PEDIDO}, {pedidos FECHA DEL PEDIDO}, "semanal") </code></p><p class="example"><a name="1000851168"></a>Cuenta el n&#250;mero de diferentes clientes contactados, excluyendo los contactos repetidos. Los clientes son separados en grupos siempre que el valor del campo Fecha cambia a una nueva semana.</p><p><a name="1000851169"></a>El siguiente ejemplo se aplica a la sintaxis Crystal:</p><p><code><a name="1000851170"></a>DistinctCount([1,3,5,3,2,5]) </code></p><p class="example"><a name="1000851171"></a>Devuelve 4. Cuenta el n&#250;mero de valores distintos en un arreglo ignorando los valores repetidos.</p><p><a name="1000851172"></a><font color="darkblue"><b>Nota:   &nbsp;&nbsp;&nbsp;</b></font>El uso de esta funci&#243;n en una f&#243;rmula obliga a que la f&#243;rmula sea evaluada al momento de impresi&#243;n. </p>
+<p><a name="1000851173"></a>Para obtener m&#225;s informaci&#243;n sobre las consideraciones de evaluaci&#243;n de hora, v&#233;ase el <a href="Functions169.html#1000572432">Funciones de tiempo de evaluaci&#243;n</a>.</p><a name="1000851177"></a><h5>Comentario(s) </h5><p><a name="1000851178"></a>Cuenta el n&#250;mero de valores distintos en un campo, ignorando los valores repetidos.</p>
+<hr><br>
+
+<script  language="JavaScript"><!--
+
+var prev = "Functions32.html";
+var next = "Functions34.html";
+
+function setTopicID() { 
+      var number = "1000851130"; 
+      return number; 
+}
+
+// --></script>
+
+
+
+
+<SCRIPT>
+
+if (!window.parent.toc && navigator.appName == "Netscape") {
+
+   document.writeln ('<TABLE ALIGN="left" border="0" cellspacing="0" cellpadding="10">');
+   document.writeln ('<TR>');
+   document.write ('<TD ALIGN="left">');
+
+   if (prev != "crw_spTOC.hhc") {
+      document.writeln ('<A HREF="' + prev + '">');
+      document.writeln ('<IMG SRC="prevpage.gif" HEIGHT=17 BORDER=0 ALT="Página anterior"></A>');
+   } else {
+//   window.alert ('no previous page');
+   }
+
+   if (next != "crw_spIX.hhk") {
+      document.writeln ('<A HREF="' + next + '">');
+      document.writeln ('<IMG SRC="nextpage.gif" HEIGHT=17 BORDER=0 ALT="Página siguiente"></A>');
+   } else {
+//   window.alert ('no next page');
+   }
+   document.writeln ('</TD><TD ALIGN="left">');
+   document.writeln ('<A HREF="frameset.htm?TOC">');
+   document.writeln ('<IMG SRC="showtoc.gif" HEIGHT=17 BORDER=0 ALT="Haga clic para ver el contenido"></A></TD>');
+   document.writeln ('<TD ALIGN="left">');
+   document.writeln ('<A HREF="frameset.htm?IDX">');
+   document.writeln ('<IMG SRC="showix.gif" HEIGHT=17 BORDER=0 ALT="Haga clic para ver el índice"></A></TD>');
+   document.writeln ('</TD>');
+   document.writeln ('</TR>');
+   document.writeln ('</TABLE>');
+
+}
+
+</SCRIPT>
+<table align="right" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td align="right"><font size="1">Seagate Software, Inc.<br>
+    <a href="http://www.seagatesoftware.com">http://www.seagatesoftware.com</a><br>
+    Envíe sus comentarios a:<br>
+    <a href="mailto:techpubs@seagatesoftware.com">techpubs@seagatesoftware.com</a><br>
+    </font></td>
+  </tr>
+</table>
+</body>
+</html>
+
+

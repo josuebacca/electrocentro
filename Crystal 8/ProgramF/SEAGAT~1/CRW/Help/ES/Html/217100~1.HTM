@@ -1,0 +1,112 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+
+<html>
+<head>
+<title>Ciclos For </title>
+
+<link REL=STYLESHEET TYPE="text/css" HREF="seagate.css">
+
+<!--
+                 ***********************************
+                 * Seagate Software copyright 1999 *
+                 ***********************************
+
+                      Template version: 5.1
+-->
+
+
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" link="#0000FF" vlink="#0000FF" alink="#800080">
+
+
+ 
+<a name="147536"></a><h3 class="newpage"> Ciclos For </h3>
+<p><a name="147538"></a>Los ciclos For le permiten evaluar una secuencia de expresiones varias veces. Esto es diferente a los enunciados If y Select, donde el programa pasa por cada expresi&#243;n m&#225;ximo una vez durante la evaluaci&#243;n de la f&#243;rmula. Los ciclos For funcionan mejor cuando conoce de antemano la cantidad de veces que es necesario evaluar una expresi&#243;n.</p><a name="147540"></a><h4>Sintaxis del ciclo For mediante ejemplos</h4><a name="152499"></a><h5>Ejemplo 1</h5><p><a name="152493"></a>Suponga que desea invertir la cadena {Cliente.Nombre del cliente}. Por ejemplo, la compa&#241;&#237;a "City Cyclists" pasa a ser "stsilcyC ytiC".</p><PRE><a name="147542"></a>//Invertir una cadena, versi&#243;n 1
+<a name="147543"></a>Local StringVar cadena := "";
+<a name="147544"></a>Local NumberVar longitudCadena := 
+<a name="147545"></a>   Length ({Cliente.Nombre del cliente});
+<a name="147546"></a>Local NumberVar i;
+<a name="147547"></a>For i := 1 To longitudCadena Do
+</PRE><p><a name="147548"></a>(</p><PRE><a name="147549"></a>   Local NumberVar posGr&#225;fica := longitudCadena - i + 1;
+<a name="147550"></a>   cadena := cadena + {Cliente.Nombre del 
+cliente}[posGr&#225;fica]
+<a name="147551"></a>);
+<a name="147552"></a>cadena
+</PRE><p><a name="147554"></a>Examine c&#243;mo funciona esta f&#243;rmula asumiendo que el valor actual del campo {Cliente.Nombre del cliente} es "Clean Air". La variable longitudCadena se asigna a la longitud de "Clean Air", es decir, 9. La variable <EM>i</EM> se conoce como <EM>variable de contador</EM> ya que su valor cambia con cada iteraci&#243;n del ciclo For. Es decir, se usa para contar las reiteraciones del ciclo. El ciclo For tendr&#225; 9 iteraciones, durante la primera vez, i es 1, luego i es 2, luego i es 3 y as&#237; sucesivamente hasta que finalmente i = 9. Durante la primera iteraci&#243;n, el noveno car&#225;cter de {Cliente.Nombre del cliente} se anexa a la variable especial vac&#237;a cadena. Por eso cadena es igual a "r" despu&#233;s de la primera iteraci&#243;n. Durante la segunda iteraci&#243;n, el octavo car&#225;cter de {Cliente.Nombre del cliente}se anexa a cadena y de este modo cadena<EM> </EM>es igual a "ri". Esto contin&#250;a hasta despu&#233;s de la novena iteraci&#243;n, la cadena <EM> </EM>es igual a "riA naelC", que es la cadena invertida.</p><a name="147556"></a><h5>Ejemplo 2</h5><p><a name="152503"></a>Esta versi&#243;n es m&#225;s simple que la f&#243;rmula anterior, ya que usa una cl&#225;usula Step con un valor Step negativo de -1. Para el ejemplo de "Clean Air", i es 9 para la primera iteraci&#243;n, 8 para la segunda, 7 para la tercera y as&#237; sucesivamente hasta que es 1 en la iteraci&#243;n final.</p><PRE><a name="147558"></a>//Invertir una cadena, versi&#243;n 2
+<a name="147559"></a>Local StringVar cadena := "";
+<a name="147560"></a>Local NumberVar longitudCadena := 
+<a name="147561"></a>   Length ({Cliente.Nombre del cliente});
+<a name="147562"></a>Local NumberVar i;
+<a name="147563"></a>For i := longitudCadena To 1 Step -1 Do
+<a name="147564"></a>(
+<a name="147565"></a>   cadena := cadena + {Cliente.Nombre del cliente}[i]
+<a name="147566"></a>);
+<a name="147567"></a>cadena
+</PRE><a name="147569"></a><h5>Ejemplo 3</h5><p><a name="152504"></a>La versi&#243;n m&#225;s simple es usar la funci&#243;n incorporada StrReverse:</p><PRE><a name="147571"></a>//Invertir una cadena, versi&#243;n 3
+<a name="147572"></a>StrReverse ({Cliente.Nombre del cliente})
+</PRE><p><a name="147574"></a>Las funciones de cadena incorporada de Seagate Crystal Reports 8 pueden manejar muchas de las aplicaciones de procesamiento de cadenas que tradicionalmente ser&#237;an manejadas usando un ciclo For o alg&#250;n otro tipo de ciclo. No obstante, los ciclos For proporcionan la mayor flexibilidad en el procesamiento de cadenas, as&#237; como capacidad en el procesamiento de matrices, que pueden ser esenciales si las funciones incorporadas no abarcan el programa que desea usar.</p>
+<hr><br>
+
+<script  language="JavaScript"><!--
+
+var prev = "21_crystalsyntax56.html";
+var next = "21_crystalsyntax58.html";
+
+function setTopicID() { 
+      var number = "147536"; 
+      return number; 
+}
+
+// --></script>
+
+
+
+
+<SCRIPT>
+
+if (!window.parent.toc && navigator.appName == "Netscape") {
+
+   document.writeln ('<TABLE ALIGN="left" border="0" cellspacing="0" cellpadding="10">');
+   document.writeln ('<TR>');
+   document.write ('<TD ALIGN="left">');
+
+   if (prev != "crw_spTOC.hhc") {
+      document.writeln ('<A HREF="' + prev + '">');
+      document.writeln ('<IMG SRC="prevpage.gif" HEIGHT=17 BORDER=0 ALT="Página anterior"></A>');
+   } else {
+//   window.alert ('no previous page');
+   }
+
+   if (next != "crw_spIX.hhk") {
+      document.writeln ('<A HREF="' + next + '">');
+      document.writeln ('<IMG SRC="nextpage.gif" HEIGHT=17 BORDER=0 ALT="Página siguiente"></A>');
+   } else {
+//   window.alert ('no next page');
+   }
+   document.writeln ('</TD><TD ALIGN="left">');
+   document.writeln ('<A HREF="frameset.htm?TOC">');
+   document.writeln ('<IMG SRC="showtoc.gif" HEIGHT=17 BORDER=0 ALT="Haga clic para ver el contenido"></A></TD>');
+   document.writeln ('<TD ALIGN="left">');
+   document.writeln ('<A HREF="frameset.htm?IDX">');
+   document.writeln ('<IMG SRC="showix.gif" HEIGHT=17 BORDER=0 ALT="Haga clic para ver el índice"></A></TD>');
+   document.writeln ('</TD>');
+   document.writeln ('</TR>');
+   document.writeln ('</TABLE>');
+
+}
+
+</SCRIPT>
+<table align="right" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td align="right"><font size="1">Seagate Software, Inc.<br>
+    <a href="http://www.seagatesoftware.com">http://www.seagatesoftware.com</a><br>
+    Envíe sus comentarios a:<br>
+    <a href="mailto:techpubs@seagatesoftware.com">techpubs@seagatesoftware.com</a><br>
+    </font></td>
+  </tr>
+</table>
+</body>
+</html>
+
+

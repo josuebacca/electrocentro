@@ -1,0 +1,92 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+
+<html>
+<head>
+<title>Consideraciones acerca de bases de datos SQL</title>
+
+<link REL=STYLESHEET TYPE="text/css" HREF="seagate.css">
+
+<!--
+                 ***********************************
+                 * Seagate Software copyright 1999 *
+                 ***********************************
+
+                      Template version: 5.1
+-->
+
+
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" link="#0000FF" vlink="#0000FF" alink="#800080">
+
+
+ 
+<a name="320919"></a><h4 class="newpage"> Consideraciones acerca de bases de datos SQL</h4><p><a name="320920"></a>Como los &#237;ndices no son indispensables para los datos SQL, su preocupaci&#243;n principal con ambas tablas vinculadas y con los subinformes debe ser si existe o no una f&#243;rmula de selecci&#243;n en el informe principal que pone l&#237;mites de rango en la tabla A. Vea <a href="24_under_databases10.html#320616">Vinculando archivos de datos</a>.</p><a name="320924"></a><h5>Tablas SQL vinculadas</h5><p><a name="320925"></a>Si hay condiciones de l&#237;mite de rango en la f&#243;rmula de selecci&#243;n, el programa pasa esas condiciones al servidor.</p><ul type="disc"><a name="320926"></a><li>Si hay una f&#243;rmula de selecci&#243;n que pone l&#237;mites de rango en la tabla A, el servidor ubica los registros en la tabla A que cumplan con el criterio de selecci&#243;n (2), los coteja con los registros apropiados en la tabla B (100) y regresa los 200 registros combinados al Procesador de Informes.
+<a name="320927"></a><li>Si no hay f&#243;rmula de selecci&#243;n o si hay una f&#243;rmula de selecci&#243;n que no pone los l&#237;mites de rango en la tabla A, el servidor coteja cada registro en la tabla A (25) con los registros apropiados en la tabla B (100) y regresa 2500 registros combinados al Procesador de Informes.
+</ul><p><a name="320928"></a>En ambos casos, el Procesador de Informes aplica toda la f&#243;rmula de selecci&#243;n a los registros combinados.</p><a name="320929"></a><h5>Subinformes y bases de datos SQL</h5><p><a name="320930"></a>Si est&#225; creando un informe principal de la tabla A y un subinforme de la tabla B.</p><ul type="disc"><a name="320931"></a><li>El n&#250;mero de subinformes que se ejecutan est&#225; determinado por la f&#243;rmula de selecci&#243;n en el informe principal.
+<ul type="disc"><ul type="disc"><a name="320932"></a><li>Si hay una f&#243;rmula de selecci&#243;n y pasa los l&#237;mites de rango en la tabla A, el programa ejecuta un subinforme s&#243;lo para los registros que satisfacen las condiciones del l&#237;mite de rango (2).<a name="320933"></a><li>Si no hay f&#243;rmula de selecci&#243;n o si la f&#243;rmula de selecci&#243;n no pasa los l&#237;mites de rango en la tabla A, el programa ejecuta un subinforme por cada registro en la tabla A (25).</ul></ul><a name="320934"></a><li>El n&#250;mero de registros le&#237;dos en cada subinforme es el mismo sin importar si existe o no selecci&#243;n de l&#237;mite de rango en la tabla A. Cada subinforme leer&#225; s&#243;lo los registros en la tabla B que cotejan cada registro le&#237;do en el informe principal (tabla A) (100).
+</ul>
+<hr><br>
+
+<script  language="JavaScript"><!--
+
+var prev = "24_under_databases10.html";
+var next = "24_under_databases12.html";
+
+function setTopicID() { 
+      var number = "320919"; 
+      return number; 
+}
+
+// --></script>
+
+
+
+
+<SCRIPT>
+
+if (!window.parent.toc && navigator.appName == "Netscape") {
+
+   document.writeln ('<TABLE ALIGN="left" border="0" cellspacing="0" cellpadding="10">');
+   document.writeln ('<TR>');
+   document.write ('<TD ALIGN="left">');
+
+   if (prev != "crw_spTOC.hhc") {
+      document.writeln ('<A HREF="' + prev + '">');
+      document.writeln ('<IMG SRC="prevpage.gif" HEIGHT=17 BORDER=0 ALT="Página anterior"></A>');
+   } else {
+//   window.alert ('no previous page');
+   }
+
+   if (next != "crw_spIX.hhk") {
+      document.writeln ('<A HREF="' + next + '">');
+      document.writeln ('<IMG SRC="nextpage.gif" HEIGHT=17 BORDER=0 ALT="Página siguiente"></A>');
+   } else {
+//   window.alert ('no next page');
+   }
+   document.writeln ('</TD><TD ALIGN="left">');
+   document.writeln ('<A HREF="frameset.htm?TOC">');
+   document.writeln ('<IMG SRC="showtoc.gif" HEIGHT=17 BORDER=0 ALT="Haga clic para ver el contenido"></A></TD>');
+   document.writeln ('<TD ALIGN="left">');
+   document.writeln ('<A HREF="frameset.htm?IDX">');
+   document.writeln ('<IMG SRC="showix.gif" HEIGHT=17 BORDER=0 ALT="Haga clic para ver el índice"></A></TD>');
+   document.writeln ('</TD>');
+   document.writeln ('</TR>');
+   document.writeln ('</TABLE>');
+
+}
+
+</SCRIPT>
+<table align="right" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td align="right"><font size="1">Seagate Software, Inc.<br>
+    <a href="http://www.seagatesoftware.com">http://www.seagatesoftware.com</a><br>
+    Envíe sus comentarios a:<br>
+    <a href="mailto:techpubs@seagatesoftware.com">techpubs@seagatesoftware.com</a><br>
+    </font></td>
+  </tr>
+</table>
+</body>
+</html>
+
+

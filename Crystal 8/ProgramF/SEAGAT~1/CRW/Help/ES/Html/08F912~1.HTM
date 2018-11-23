@@ -1,0 +1,117 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+
+<html>
+<head>
+<title>Encabezados din&#225;micos</title>
+
+<link REL=STYLESHEET TYPE="text/css" HREF="seagate.css">
+
+<!--
+                 ***********************************
+                 * Seagate Software copyright 1999 *
+                 ***********************************
+
+                      Template version: 5.1
+-->
+
+
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" link="#0000FF" vlink="#0000FF" alink="#800080">
+
+
+ 
+<a name="248099"></a><h4 class="newpage"> Encabezados din&#225;micos</h4><p><a name="248100"></a>Un encabezado din&#225;mico es el que cambia bas&#225;ndose en el contenido del grupo. Si tiene sus datos subtotalizados por regi&#243;n, por ejemplo, un encabezado din&#225;mico identificar&#237;a la regi&#243;n detallada en cada grupo. As&#237;, los datos del grupo de Arizona, tendr&#237;an un encabezado que los identificar&#237;a como tales y a los de California, como de California y as&#237; respectivamente.</p><p><a name="254521"></a><font color="darkblue"><b>Nota:   &nbsp;&nbsp;&nbsp;</b></font>Cuando crea un grupo, el programa inserta autom&#225;ticamente un campo de nombre de grupo en la secci&#243;n Encabezado de grupo a menos que haya desactivado la opci&#243;n utilizando el comando <kbd>Opciones</kbd> del men&#250; Archivo. La informaci&#243;n siguiente detalla c&#243;mo puede insertar manualmente dicha secci&#243;n (si es que el programa no inserta una autom&#225;ticamente) y c&#243;mo crear diferentes tipos de encabezados din&#225;micos para diferentes necesidades. </p>
+<a name="254522"></a><h5>Nombre de grupo solamente </h5><p><a name="254523"></a>El encabezado din&#225;mico m&#225;s f&#225;cil de crear es un valor de campo de identificaci&#243;n.</p><a name="246409"></a><h6>Para crear un encabezado activo s&#243;lo por nombre de grupo</h6><ol>
+<a name="246444"></a><li value="1&nbsp;&nbsp;&nbsp;&nbsp;"><img src="images/Bt_indat.gif">
+
+
+En el men&#250;<strong> Insertar</strong>, haga clic en <strong>Campo de base de datos</strong>.
+<a name="246445"></a><li value="2&nbsp;&nbsp;&nbsp;&nbsp;">En el cuadro de di&#225;logo Explorador de campos, haga clic en el signo m&#225;s para expandir el directorio <kbd>Campos de nombre de grupo</kbd>.
+<a name="246446"></a><li value="3&nbsp;&nbsp;&nbsp;&nbsp;">Haga doble clic en el campo Nombre de grupo que corresponda al grupo con el que trabaja y arr&#225;strelo a la secci&#243;n Encabezado de grupo de dicho grupo.
+<p class="indent"><a name="246447"></a>Al ejecutar el informe, el identificador de valor del campo de grupo aparecer&#225; como encabezado de grupo para cada grupo de regi&#243;n.</p></ol>
+<a name="248188"></a><h5>Nombre de grupo con texto</h5><p><a name="248189"></a>Un tipo m&#225;s complejo de encabezado din&#225;mico, combina texto y un valor de un campo. Un encabezado de grupo t&#237;pico para datos divididos por regi&#243;n de este tipo ser&#237;a, "Ventas de California" o "Clientes en el c&#243;digo postal 60606". Para crear estos encabezados:</p><ul type="disc"><a name="248190"></a><li>Inserte un objeto de texto en la secci&#243;n Encabezado de grupo.
+<a name="248191"></a><li>Escriba el texto que desea que aparezca.
+<a name="248192"></a><li>Introduzca el campo Nombre de Grupo en el campo de texto donde desea que aparezca en el Encabezado de Grupo.
+</ul><p><a name="248193"></a>Por ejemplo, si desea que su encabezado diga "Ventas de" y a continuaci&#243;n el nombre de la regi&#243;n en el grupo actual (Ventas de Arizona, Ventas de California y as&#237; sucesivamente), siga &#233;stos pasos:</p><a name="246472"></a><h6>Para crear un encabezado activo con nombre de grupo <br>usando texto</h6><ol>
+<a name="248215"></a><li value="1&nbsp;&nbsp;&nbsp;&nbsp;"><img src="images/Bt_intxt.gif">
+
+
+Haga clic en el bot&#243;n <strong>Insertar objeto de texto</strong> en la barra de herramientas est&#225;ndar.
+<a name="248216"></a><li value="2&nbsp;&nbsp;&nbsp;&nbsp;">Mueva el marco de ese objeto hacia la secci&#243;n Encabezado de grupo del grupo.
+<a name="248217"></a><li value="3&nbsp;&nbsp;&nbsp;&nbsp;">Escriba "Ventas de" y un espacio despu&#233;s de esto.
+<a name="248222"></a><li value="4&nbsp;&nbsp;&nbsp;&nbsp;"><img src="images/Bt_indat.gif">
+
+
+Haga clic en el bot&#243;n <strong>Insertar campos</strong> en la barra de herramientas est&#225;ndar.
+<a name="248223"></a><li value="5&nbsp;&nbsp;&nbsp;&nbsp;">En el cuadro de di&#225;logo Explorador de campos, haga clic en el signo m&#225;s (+) para ampliar el directorio <strong>Campos de nombre de grupo</strong>.
+</ol>
+<ol>
+<a name="248224"></a><li value="6&nbsp;&nbsp;&nbsp;&nbsp;">Haga doble clic en el Campo Nombre de grupo que coincida con el grupo y arr&#225;strelo dentro del objeto de texto, inmediatamente despu&#233;s del texto y del espacio que escribi&#243;.
+<a name="248225"></a><li value="7&nbsp;&nbsp;&nbsp;&nbsp;">D&#233;le al texto el formato que desee.
+</ol>
+<p><a name="250120"></a>Ahora, cuando ejecute el informe, el programa crear&#225; un encabezado din&#225;mico (con texto) para cada uno de sus grupos.</p><a name="248229"></a><h5>Encabezados din&#225;micos para grupos basados en una f&#243;rmula</h5><p><a name="248230"></a>Cuando crea un grupo y utiliza un campo de f&#243;rmula como el campo para ordenar y agrupar, el programa crea autom&#225;ticamente un campo de nombre de grupo bas&#225;ndose en el valor producido por la f&#243;rmula.</p><p><a name="248231"></a>Por ejemplo, si usted crea esta f&#243;rmula:</p><p><code><a name="248232"></a>{cliente.NOMBRE DEL CLIENTE}[1]</code></p><p><a name="248233"></a>y despu&#233;s agrupa la f&#243;rmula, el programa agrupar&#225; sus datos bas&#225;ndose en la primer letra del campo Nombre del Cliente.</p><p><a name="248234"></a>Para crear en encabezado de grupo din&#225;mico para un grupo bas&#225;ndose en una f&#243;rmula, simplemente inserte el campo nombre de grupo en la secci&#243;n Encabezado de grupo.</p><p><a name="248235"></a>Cuando ejecute el informe, el grupo "A" tendr&#225; a la letra "A" como encabezado, el grupo "B" a la letra "B" y as&#237; sucesivamente. Para mayor informaci&#243;n, vea <a href="08_sortgrouptotal12.html#247131">Agrupar bas&#225;ndose en la primera letra del nombre de la compa&#241;&#237;a</a> y <a href="08_sortgrouptotal11.html#245233">Agrupamiento de datos en intervalos</a>.</p><p><a name="248240"></a>Para crear un encabezado m&#225;s descriptivo, como "Clientes que empiezan con la letra B", vea <a href="08_sortgrouptotal23.html#248188">Nombre de grupo con texto</a>.</p>
+<hr><br>
+
+<script  language="JavaScript"><!--
+
+var prev = "08_sortgrouptotal22.html";
+var next = "08_sortgrouptotal24.html";
+
+function setTopicID() { 
+      var number = "248099"; 
+      return number; 
+}
+
+// --></script>
+
+
+
+
+<SCRIPT>
+
+if (!window.parent.toc && navigator.appName == "Netscape") {
+
+   document.writeln ('<TABLE ALIGN="left" border="0" cellspacing="0" cellpadding="10">');
+   document.writeln ('<TR>');
+   document.write ('<TD ALIGN="left">');
+
+   if (prev != "crw_spTOC.hhc") {
+      document.writeln ('<A HREF="' + prev + '">');
+      document.writeln ('<IMG SRC="prevpage.gif" HEIGHT=17 BORDER=0 ALT="Página anterior"></A>');
+   } else {
+//   window.alert ('no previous page');
+   }
+
+   if (next != "crw_spIX.hhk") {
+      document.writeln ('<A HREF="' + next + '">');
+      document.writeln ('<IMG SRC="nextpage.gif" HEIGHT=17 BORDER=0 ALT="Página siguiente"></A>');
+   } else {
+//   window.alert ('no next page');
+   }
+   document.writeln ('</TD><TD ALIGN="left">');
+   document.writeln ('<A HREF="frameset.htm?TOC">');
+   document.writeln ('<IMG SRC="showtoc.gif" HEIGHT=17 BORDER=0 ALT="Haga clic para ver el contenido"></A></TD>');
+   document.writeln ('<TD ALIGN="left">');
+   document.writeln ('<A HREF="frameset.htm?IDX">');
+   document.writeln ('<IMG SRC="showix.gif" HEIGHT=17 BORDER=0 ALT="Haga clic para ver el índice"></A></TD>');
+   document.writeln ('</TD>');
+   document.writeln ('</TR>');
+   document.writeln ('</TABLE>');
+
+}
+
+</SCRIPT>
+<table align="right" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td align="right"><font size="1">Seagate Software, Inc.<br>
+    <a href="http://www.seagatesoftware.com">http://www.seagatesoftware.com</a><br>
+    Envíe sus comentarios a:<br>
+    <a href="mailto:techpubs@seagatesoftware.com">techpubs@seagatesoftware.com</a><br>
+    </font></td>
+  </tr>
+</table>
+</body>
+</html>
+
+

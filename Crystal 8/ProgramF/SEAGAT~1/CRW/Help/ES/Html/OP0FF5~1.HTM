@@ -1,0 +1,107 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+
+<html>
+<head>
+<title>Redim Preserve</title>
+
+<link REL=STYLESHEET TYPE="text/css" HREF="seagate.css">
+
+<!--
+                 ***********************************
+                 * Seagate Software copyright 1999 *
+                 ***********************************
+
+                      Template version: 5.1
+-->
+
+
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" link="#0000FF" vlink="#0000FF" alink="#800080">
+
+
+ 
+<a name="1000020125"></a><h3 class="newpage"> Redim Preserve</h3>
+<a name="1000020127"></a><h4>Sintaxis Basic x(n)</h4><a name="1000020128"></a><h5>Uso</h5><p><code><a name="1000020129"></a>Redim Preserve x(n) </code></p><p class="example"><a name="1000020130"></a>Cambia la dimensi&#243;n de la matriz x al tama&#241;o n, mientras mantiene los valores iniciales de x. x es una matriz y n es un n&#250;mero entero positivo que especifica el nuevo tama&#241;o de n.</p><a name="1000020131"></a><h5>Ejemplos</h5><p><a name="1000020132"></a>El siguiente ejemplo es aplicable para sintaxis Basic:</p><p class="code"><a name="1000020133"></a>Dim x() As String
+<br><a name="1000020134"></a>'Iniciar los tres primeros elementos de la matriz
+<br><a name="1000020135"></a>x = Array ("a", "bb", "ccc")
+<br><a name="1000020136"></a>'Ajustar el tama&#241;o de x a 4; los valores antiguos se retienen
+<br><a name="1000020137"></a>Redim Preserve x(4)
+<br><a name="1000020138"></a>'iniciar x(4)
+<br><a name="1000020139"></a>x(4) = "dddd"
+<br><a name="1000020140"></a>'devuelve "dddd"
+<br><a name="1000020141"></a>formula = x(4)
+</p><a name="1000020142"></a><h6>Temas relacionados</h6><p><a name="1000029948"></a><a href="20_basicsyntax21.html#128315">Tipos de datos de matriz</a> (Sintaxis Basic)</p><p><a name="1000029952"></a><a href="20_basicsyntax29.html#130465">Uso de las variables de matriz</a> (Sintaxis Basic)</p><a name="1000029954"></a><h4>Sintaxis Crystal x[n]</h4><ul type="disc"><a name="1000020153"></a><li>Use Redim Preserve x[n] (con los corchetes) s&#243;lo en sintaxis Crystal, y Redim Preserve x(n) (con las llaves) s&#243;lo en sintaxis Basic.
+<a name="1000020154"></a><li>A diferencia de Redim Preserve x(n) en sintaxis Basic, no puede tener matrices m&#250;ltiples en un enunciado Redim Preserve en sintaxis Crystal. 
+</ul><a name="1000020155"></a><h5>Uso</h5><p><code><a name="1000020156"></a>Redim Preserver x[n] </code></p><p class="example"><a name="1000020157"></a>Cambia la dimensi&#243;n de la matriz x al tama&#241;o n, mientras conserva los valores iniciales de x. x es una matriz y n es un n&#250;mero entero positivo que especifica el nuevo tama&#241;o de n.</p><a name="1000020158"></a><h5>Ejemplos</h5><p><a name="1000020159"></a>El siguiente ejemplo es aplicable para sintaxis Crystal:</p><p class="code"><a name="1000020160"></a>Local StringVar matriz x := ["a", "bb", "ccc"];
+<br><a name="1000020161"></a>// ajustar el tama&#241;o de la matriz a 4 mientras se mantienen los valores 
+antiguos.
+<br><a name="1000020162"></a>Redim Preserve x [4];
+<br><a name="1000020163"></a>// ahora x = ["a", "bb", "ccc", "dddd"]
+<br><a name="1000020164"></a>x [4] := "dddd";
+<br><a name="1000020165"></a>x[4] // devuelve "dddd"
+</p><a name="1000020166"></a><h6>Temas relacionados</h6><p><a name="1000029966"></a><a href="21_crystalsyntax26.html#145346">Tipos de datos de matriz</a> (Sintaxis Crystal)</p><p><a name="1000029970"></a><a href="21_crystalsyntax33.html#145513">Uso de las variables de matriz</a> (Sintaxis Crystal)</p>
+<hr><br>
+
+<script  language="JavaScript"><!--
+
+var prev = "Operators50.html";
+var next = "Operators52.html";
+
+function setTopicID() { 
+      var number = "1000020125"; 
+      return number; 
+}
+
+// --></script>
+
+
+
+
+<SCRIPT>
+
+if (!window.parent.toc && navigator.appName == "Netscape") {
+
+   document.writeln ('<TABLE ALIGN="left" border="0" cellspacing="0" cellpadding="10">');
+   document.writeln ('<TR>');
+   document.write ('<TD ALIGN="left">');
+
+   if (prev != "crw_spTOC.hhc") {
+      document.writeln ('<A HREF="' + prev + '">');
+      document.writeln ('<IMG SRC="prevpage.gif" HEIGHT=17 BORDER=0 ALT="Página anterior"></A>');
+   } else {
+//   window.alert ('no previous page');
+   }
+
+   if (next != "crw_spIX.hhk") {
+      document.writeln ('<A HREF="' + next + '">');
+      document.writeln ('<IMG SRC="nextpage.gif" HEIGHT=17 BORDER=0 ALT="Página siguiente"></A>');
+   } else {
+//   window.alert ('no next page');
+   }
+   document.writeln ('</TD><TD ALIGN="left">');
+   document.writeln ('<A HREF="frameset.htm?TOC">');
+   document.writeln ('<IMG SRC="showtoc.gif" HEIGHT=17 BORDER=0 ALT="Haga clic para ver el contenido"></A></TD>');
+   document.writeln ('<TD ALIGN="left">');
+   document.writeln ('<A HREF="frameset.htm?IDX">');
+   document.writeln ('<IMG SRC="showix.gif" HEIGHT=17 BORDER=0 ALT="Haga clic para ver el índice"></A></TD>');
+   document.writeln ('</TD>');
+   document.writeln ('</TR>');
+   document.writeln ('</TABLE>');
+
+}
+
+</SCRIPT>
+<table align="right" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td align="right"><font size="1">Seagate Software, Inc.<br>
+    <a href="http://www.seagatesoftware.com">http://www.seagatesoftware.com</a><br>
+    Envíe sus comentarios a:<br>
+    <a href="mailto:techpubs@seagatesoftware.com">techpubs@seagatesoftware.com</a><br>
+    </font></td>
+  </tr>
+</table>
+</body>
+</html>
+
+

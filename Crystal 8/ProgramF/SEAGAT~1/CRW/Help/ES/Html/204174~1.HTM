@@ -1,0 +1,136 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+
+<html>
+<head>
+<title>Enunciados If</title>
+
+<link REL=STYLESHEET TYPE="text/css" HREF="seagate.css">
+
+<!--
+                 ***********************************
+                 * Seagate Software copyright 1999 *
+                 ***********************************
+
+                      Template version: 5.1
+-->
+
+
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" link="#0000FF" vlink="#0000FF" alink="#800080">
+
+
+ 
+<a name="132674"></a><h3 class="newpage"> Enunciados If</h3>
+<p><a name="132676"></a>El enunciado If es una de las estructuras de control m&#225;s &#250;tiles. Le permite evaluar una secuencia de enunciados si una condici&#243;n es verdadera o evaluar otra secuencia distinta si no lo es.</p><a name="135924"></a><h5>Ejemplo </h5><p><a name="135926"></a>Una compa&#241;&#237;a tiene intenciones de pagar un bono del 4 por ciento a sus empleados excepto para aquellos que trabajan en el departamento de ventas, quienes recibir&#225;n un 6 por ciento. La siguiente f&#243;rmula usando un enunciado If arrojar&#237;a el siguiente resultado:</p><PRE><a name="132678"></a>Rem Ejemplo de multil&#237;nea si 1
+<a name="132679"></a>If {Empleado.Departamento} = "Ventas" Then
+<a name="132680"></a>   formula = {Empleado.Salario} * 0.06
+<a name="132681"></a>Else
+<a name="132682"></a>   formula = {Empleado.Salario} * 0.04
+<a name="132683"></a>End If
+</PRE><p><a name="132685"></a>En este ejemplo, si la condici&#243;n {Empleado.Departamento} = "Ventas" se eval&#250;a como verdadera, entonces el enunciado:</p><p><code><a name="132686"></a>formula = {Empleado.Salario} * 0.06</code></p><p><a name="132687"></a>se procesa. De lo contrario, el enunciado que sigue a Else, es decir,</p><p><code><a name="132688"></a>formula = {Empleado.Salario} * 0.04</code></p><p><a name="132689"></a>es el que se procesa.</p><p><a name="132691"></a>Supongamos que otra compa&#241;&#237;a desea dar a sus empleados un bono del 4%, pero con un bono m&#237;nimo de $1.000. El siguiente ejemplo muestra el procedimiento. Observe que la cl&#225;usula Else no se incluye; es opcional y no se necesita en este caso.</p><PRE><a name="132693"></a>Rem Ejemplo de multil&#237;nea si 2
+<a name="132694"></a>formula = {Empleado.Salario} * 0.04
+<a name="132695"></a>If formula &lt; 1000 Then
+<a name="132696"></a>   formula = 1000
+<a name="132697"></a>End If
+</PRE><p><a name="132699"></a>Ahora supongamos que la compa&#241;&#237;a anterior tambi&#233;n desea un bono m&#225;ximo de $5.000. Necesitar&#225; usar una cl&#225;usula ElseIf. Observe que ElseIf es solo una palabra. El siguiente ejemplo s&#243;lo tiene una cl&#225;usula ElseIf, pero usted puede agregar todas las que necesite.</p><p><a name="135931"></a><font color="darkblue"><b>Nota:   &nbsp;&nbsp;&nbsp;</b></font>Existe un m&#225;ximo de una cl&#225;usula Else por enunciado If.</p>
+<p><a name="135934"></a>La cl&#225;usula Else se ejecuta si ninguna de las condiciones If o ElseIf es verdadera.</p><PRE><a name="132701"></a>Rem Ejemplo de multil&#237;nea 3
+<a name="132702"></a>formula = {Empleado.Salario} * 0.04
+<a name="132703"></a>If formula &lt; 1000 Then
+<a name="132704"></a>   formula = 1000
+<a name="132705"></a>ElseIf formula &gt; 5000 Then
+<a name="132706"></a>   formula = 5000
+<a name="132707"></a>End If
+</PRE><a name="132709"></a><h5>Ejemplo</h5><p><a name="132711"></a>Supongamos que una compa&#241;&#237;a desea calcular el estimado del importe de impuestos que los empleados han de pagar y escribir adem&#225;s un mensaje apropiado. Los ingresos inferiores a $8.000 no est&#225;n sujetos a impuestos; los ingresos entre $8.000 y $20.000 lo est&#225;n al 20%; los ingresos entre $20.000 y $35.000 est&#225;n sujetos al 29%; y los ingresos superiores a $35.000 lo est&#225;n al 40%.</p><PRE><a name="132713"></a>Rem Ejemplo de multil&#237;nea si 4
+<a name="132714"></a>Dim impuestos As Currency, ingresos As Currency
+<a name="132715"></a>ingresos = {Empleado.Salario}
+<a name="132716"></a>Dim mensaje As String
+<a name="132717"></a>If ingresos &lt; 8000 Then
+<a name="132718"></a>&nbsp;&nbsp;&nbsp;&nbsp;impuestos = 0
+<a name="132719"></a>&nbsp;&nbsp;&nbsp;&nbsp;mensaje = "no"
+<a name="132720"></a>ElseIf ingresos &gt;= 8000 And ingresos &lt; 20000 Then
+<a name="132721"></a>&nbsp;&nbsp;&nbsp;&nbsp;mensaje = "la m&#225;s baja"
+<a name="132722"></a>&nbsp;&nbsp;&nbsp;&nbsp;impuestos = (ingresos - 8000)*0.20
+<a name="132723"></a>ElseIf ingresos &gt;= 20000 And ingresos &lt; 35000 Then
+<a name="132724"></a>&nbsp;&nbsp;&nbsp;&nbsp;mensaje = "la intermedia"
+<a name="132725"></a>&nbsp;&nbsp;&nbsp;&nbsp;impuestos = (20000 - 8000)*0.20 + (ingresos - 
+20000)*0.29
+<a name="132726"></a>Else
+<a name="132727"></a>&nbsp;&nbsp;&nbsp;&nbsp;mensaje = "la m&#225;s alta"
+<a name="132728"></a>&nbsp;&nbsp;&nbsp;&nbsp;impuestos = (20000 - 8000)*0.20 + (35000 - 20000)*0.29 
++ _
+<a name="132729"></a>        (ingresos - 35000)*0.40
+<a name="132730"></a>End If
+<a name="132732"></a>Dim cadenaImpuestos As String
+<a name="132733"></a>Rem usar 2 lugares decimales
+<a name="133068"></a>Rem y usar el punto como separador entre miles
+<a name="132734"></a>cadenaImpuestos = CStr (impuestos, 2, ".")
+<a name="132735"></a>formula = "Usted est&#225; en " &amp; mensaje &amp; _
+<a name="132736"></a>          " cuota impositiva. " &amp; _
+<a name="132737"></a>          "Sus impuestos estimados son " &amp; cadenaImpuestos 
+&amp; "."
+</PRE><p><a name="132739"></a>Observe, el uso de variables para simplificar la l&#243;gica del c&#225;lculo. Observe tambi&#233;n, que existen dos enunciados que se ejecutan cuando se satisface una de las condiciones; una asigna la variable de impuestos y la otra asigna la variable de mensaje. A menudo resulta &#250;til tener ejecutados m&#250;ltiples enunciados como resultado de una condici&#243;n.</p>
+<hr><br>
+
+<script  language="JavaScript"><!--
+
+var prev = "20_basicsyntax48.html";
+var next = "20_basicsyntax50.html";
+
+function setTopicID() { 
+      var number = "132674"; 
+      return number; 
+}
+
+// --></script>
+
+
+
+
+<SCRIPT>
+
+if (!window.parent.toc && navigator.appName == "Netscape") {
+
+   document.writeln ('<TABLE ALIGN="left" border="0" cellspacing="0" cellpadding="10">');
+   document.writeln ('<TR>');
+   document.write ('<TD ALIGN="left">');
+
+   if (prev != "crw_spTOC.hhc") {
+      document.writeln ('<A HREF="' + prev + '">');
+      document.writeln ('<IMG SRC="prevpage.gif" HEIGHT=17 BORDER=0 ALT="Página anterior"></A>');
+   } else {
+//   window.alert ('no previous page');
+   }
+
+   if (next != "crw_spIX.hhk") {
+      document.writeln ('<A HREF="' + next + '">');
+      document.writeln ('<IMG SRC="nextpage.gif" HEIGHT=17 BORDER=0 ALT="Página siguiente"></A>');
+   } else {
+//   window.alert ('no next page');
+   }
+   document.writeln ('</TD><TD ALIGN="left">');
+   document.writeln ('<A HREF="frameset.htm?TOC">');
+   document.writeln ('<IMG SRC="showtoc.gif" HEIGHT=17 BORDER=0 ALT="Haga clic para ver el contenido"></A></TD>');
+   document.writeln ('<TD ALIGN="left">');
+   document.writeln ('<A HREF="frameset.htm?IDX">');
+   document.writeln ('<IMG SRC="showix.gif" HEIGHT=17 BORDER=0 ALT="Haga clic para ver el índice"></A></TD>');
+   document.writeln ('</TD>');
+   document.writeln ('</TR>');
+   document.writeln ('</TABLE>');
+
+}
+
+</SCRIPT>
+<table align="right" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td align="right"><font size="1">Seagate Software, Inc.<br>
+    <a href="http://www.seagatesoftware.com">http://www.seagatesoftware.com</a><br>
+    Envíe sus comentarios a:<br>
+    <a href="mailto:techpubs@seagatesoftware.com">techpubs@seagatesoftware.com</a><br>
+    </font></td>
+  </tr>
+</table>
+</body>
+</html>
+
+

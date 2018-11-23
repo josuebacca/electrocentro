@@ -1,0 +1,128 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+
+<html>
+<head>
+<title>Procedimientos SQL almacenados</title>
+
+<link REL=STYLESHEET TYPE="text/css" HREF="seagate.css">
+
+<!--
+                 ***********************************
+                 * Seagate Software copyright 1999 *
+                 ***********************************
+
+                      Template version: 5.1
+-->
+
+
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" link="#0000FF" vlink="#0000FF" alink="#800080">
+
+
+ 
+<a name="326305"></a><h3 class="newpage"> Procedimientos SQL almacenados</h3>
+<a name="326308"></a><h6>C&#243;mo seleccionar un procedimiento almacenado desde una base de datos SQL y cambiar par&#225;metros de procedimiento almacenado</h6><ol>
+<a name="326310"></a><li value="1&nbsp;&nbsp;&nbsp;&nbsp;">Elija el comando <kbd>Opciones</kbd> del men&#250; <kbd>Archivo</kbd>.
+<p class="indent"><a name="326311"></a>El cuadro de di&#225;logo Opciones aparecer&#225; en su pantalla.</p><p><a name="359261"></a> <img src="images/db_fopt3.gif">
+
+
+</p>
+<a name="326388"></a><li value="2&nbsp;&nbsp;&nbsp;&nbsp;">Haga clic en la ficha <kbd>Base de datos</kbd> y aseg&#250;rese de que est&#233; seleccionada la casilla de verificaci&#243;n <kbd>Procedimientos almacenados</kbd> o <kbd>Volver a preguntar a usuario al conectar</kbd>.
+<ul type="disc"><ul type="disc"><a name="326391"></a><li>La opci&#243;n <kbd>Procedimientos Almacenados</kbd> muestra autom&#225;ticamente cualquier procedimiento almacenado disponible cuando inicia sesi&#243;n a una base de datos SQL.<a name="326392"></a><li>La opci&#243;n<EM> Volver a preguntar a usuario al conectar</EM> muestra el cuadro de di&#225;logo Permitir Elaborar Informes de cada vez que inicia sesi&#243;n a una fuente de datos ODBC. Este cuadro de di&#225;logo proporciona las mismas opciones que la secci&#243;n <kbd>Permitir Elaborar Informes</kbd> <EM>de</EM> del cuadro de di&#225;logo Opciones, pero lo hace para cada fuente de datos ODBC en que usted inicia sesi&#243;n.</ul></ul><a name="326393"></a><li value="3&nbsp;&nbsp;&nbsp;&nbsp;">Adem&#225;s, puede especificar las opciones de <kbd>Nombre de tabla LIKE </kbd>y <kbd>Propietario LIKE</kbd> si lo desea.
+<ul type="disc"><ul type="disc"><a name="326394"></a><li>El <kbd>Nombre de tabla LIKE</kbd> est&#225; basado en la cl&#225;usula SQL LIKE. Esta opci&#243;n le permite especificar el tipo de nombre de tabla que desea que aparezca en el cuadro de di&#225;logo Elegir Tabla SQL Utilice el car&#225;cter de gui&#243;n bajo (_) o el car&#225;cter de signo de porcentaje (%) como comodines con esta funci&#243;n. El car&#225;cter de gui&#243;n bajo especifica cualquier car&#225;cter, mientras que el signo de porcentaje significa cualquier cadena de caracteres. Por ejemplo, DAV_ coincide con DAVE solamente, mientras que DAV% coincide con DAVE y DAVID. El <kbd>Nombre de tabla LIKE</kbd> C% mostrar&#237;a s&#243;lo aquellas tablas que tienen el nombre de tabla comenzando con la letra C.<a name="326395"></a><li>El <kbd>Propietario LIKE</kbd> tambi&#233;n est&#225; basado en la cl&#225;usula SQL LIKE. La opci&#243;n <kbd>Propietario LIKE</kbd> le permite seleccionar el Propietario (o Creador o Alias) de la tabla, no el nombre de la tabla. Por ejemplo el <kbd>Propietario LIKE</kbd> C% mostrar&#237;a s&#243;lo aquellas tablas cuyo Propietario tuviera un nombre empezando con la letra C.<p class="indent"><a name="330322"></a><font color="darkblue"><b>Nota:   &nbsp;&nbsp;&nbsp;</b></font>Para mayor informaci&#243;n sobre la cl&#225;usula SQL LIKE, refi&#233;rase a su documentaci&#243;n de SQL.</p>
+</ul></ul><a name="326406"></a><li value="4&nbsp;&nbsp;&nbsp;&nbsp;">Haga clic en <kbd>Aceptar</kbd> para salir del cuadro de di&#225;logo Opciones.
+<a name="326407"></a><li value="5&nbsp;&nbsp;&nbsp;&nbsp;">Origine un nuevo informe basado en la base de datos SQL que contiene los procedimientos almacenados que usted quiere usar. 
+<a name="330393"></a><li value="6&nbsp;&nbsp;&nbsp;&nbsp;">Cuando elije <kbd>SQL/ODBC</kbd> como la fuente de sus datos, aparece el cuadro de di&#225;logo Inicio de sesi&#243;n para SQL Server.
+<p><a name="359266"></a> <img src="images/db_sqlog.gif">
+
+
+</p>
+<a name="319085"></a><li value="7&nbsp;&nbsp;&nbsp;&nbsp;">Entla informaci&#243;n requerida para iniciar sesi&#243;n.
+<a name="326544"></a><li value="8&nbsp;&nbsp;&nbsp;&nbsp;">Haga clic en <kbd>Opciones</kbd>.
+<p class="indent"><a name="346129"></a>Aparece la secci&#243;n Opciones del cuadro de di&#225;logo Inicio de sesi&#243;n para SQL Server.</p><p class="indent"><a name="357143"></a><img src="images/db_sqlg2.gif">
+
+
+</p><a name="353816"></a><li value="9&nbsp;&nbsp;&nbsp;&nbsp;">Verifique las configuraciones de su servidor SQL.
+<a name="319145"></a><li value="10&nbsp;&nbsp;&nbsp;&nbsp;">Haga clic en <kbd>Aceptar</kbd>.
+<p class="indent"><a name="319146"></a>Si activ&#243; la casilla de verificaci&#243;n <EM>Volver a preguntar a usuario al conectar </EM>en el cuadro de di&#225;logo Opciones, aparece el cuadro de di&#225;logo Permitir Elaborar Informe. De lo contrario, vaya al Paso 12.</p><p><a name="319150"></a> <img src="images/db_alwr2.gif">
+
+
+</p>
+<a name="319152"></a><li value="11&nbsp;&nbsp;&nbsp;&nbsp;">Aseg&#250;rese de que est&#233; seleccionada la casilla de verificaci&#243;n <kbd>Procedimientos</kbd> y luego haga clic en <kbd>Aceptar</kbd> cuando finalice.
+<a name="326598"></a><li value="12&nbsp;&nbsp;&nbsp;&nbsp;">Destaque un procedimiento SQL almacenado y haga clic en <kbd>Agregar</kbd>.
+<p class="indent"><a name="341259"></a>El cuadro de di&#225;logo Introduzca el valor de par&#225;metro aparecer&#225; en su pantalla.</p><p><a name="359271"></a> <img src="images/db_spip.gif">
+
+
+</p>
+<p class="indent"><a name="330485"></a><font color="darkblue"><b>Nota:   &nbsp;&nbsp;&nbsp;</b></font>Con el controlador original de MS SQL Server, los par&#225;metros de entrada de procedimientos almacenados est&#225;n limitados a 64 caracteres, en lugar de 255.</p>
+<a name="319220"></a><li value="13&nbsp;&nbsp;&nbsp;&nbsp;">Destaque un par&#225;metro en la lista <kbd>Campos de par&#225;metro</kbd>.
+<p class="indent"><a name="319221"></a>La opci&#243;n predeterminada es Establecer en Valor NULL. Si desea asignar un valor, quite la marca a la casilla de verificaci&#243;n Establecer en Valor NULL.</p><a name="319222"></a><li value="14&nbsp;&nbsp;&nbsp;&nbsp;">Asigne un valor escribi&#233;ndolo en el cuadro <kbd>Valor discreto</kbd> y luego haga clic en <kbd>Aceptar</kbd>.
+<a name="319223"></a><li value="15&nbsp;&nbsp;&nbsp;&nbsp;">Repita Pasos 13 y 14 para cada par&#225;metros que aparezca en la lista <kbd>Campos de par&#225;metro</kbd>.
+<a name="319224"></a><li value="16&nbsp;&nbsp;&nbsp;&nbsp;">En el cuadro de di&#225;logo Explorador de datos, haga clic en <kbd>Cerrar</kbd>.
+<p class="indent"><a name="319225"></a>Usted puede cambiar valores de par&#225;metro en cualquier momento al elegir Par&#225;metros de procedimiento almacenado del men&#250; Base de datos.</p><a name="353920"></a><li value="17&nbsp;&nbsp;&nbsp;&nbsp;">Cree su informe usando los campos del procedimiento almacenado. El informe s&#243;lo usa los registros que satisfacen los valores de par&#225;metro que usted especific&#243; en el cuadro de di&#225;logo Introduzca el valor de par&#225;metro.
+</ol>
+<hr><br>
+
+<script  language="JavaScript"><!--
+
+var prev = "24_under_databases50.html";
+var next = "24_under_databases52.html";
+
+function setTopicID() { 
+      var number = "326305"; 
+      return number; 
+}
+
+// --></script>
+
+
+
+
+<SCRIPT>
+
+if (!window.parent.toc && navigator.appName == "Netscape") {
+
+   document.writeln ('<TABLE ALIGN="left" border="0" cellspacing="0" cellpadding="10">');
+   document.writeln ('<TR>');
+   document.write ('<TD ALIGN="left">');
+
+   if (prev != "crw_spTOC.hhc") {
+      document.writeln ('<A HREF="' + prev + '">');
+      document.writeln ('<IMG SRC="prevpage.gif" HEIGHT=17 BORDER=0 ALT="Página anterior"></A>');
+   } else {
+//   window.alert ('no previous page');
+   }
+
+   if (next != "crw_spIX.hhk") {
+      document.writeln ('<A HREF="' + next + '">');
+      document.writeln ('<IMG SRC="nextpage.gif" HEIGHT=17 BORDER=0 ALT="Página siguiente"></A>');
+   } else {
+//   window.alert ('no next page');
+   }
+   document.writeln ('</TD><TD ALIGN="left">');
+   document.writeln ('<A HREF="frameset.htm?TOC">');
+   document.writeln ('<IMG SRC="showtoc.gif" HEIGHT=17 BORDER=0 ALT="Haga clic para ver el contenido"></A></TD>');
+   document.writeln ('<TD ALIGN="left">');
+   document.writeln ('<A HREF="frameset.htm?IDX">');
+   document.writeln ('<IMG SRC="showix.gif" HEIGHT=17 BORDER=0 ALT="Haga clic para ver el índice"></A></TD>');
+   document.writeln ('</TD>');
+   document.writeln ('</TR>');
+   document.writeln ('</TABLE>');
+
+}
+
+</SCRIPT>
+<table align="right" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td align="right"><font size="1">Seagate Software, Inc.<br>
+    <a href="http://www.seagatesoftware.com">http://www.seagatesoftware.com</a><br>
+    Envíe sus comentarios a:<br>
+    <a href="mailto:techpubs@seagatesoftware.com">techpubs@seagatesoftware.com</a><br>
+    </font></td>
+  </tr>
+</table>
+</body>
+</html>
+
+

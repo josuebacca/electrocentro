@@ -1,0 +1,88 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+
+<html>
+<head>
+<title>Funciones adicionales</title>
+
+<link REL=STYLESHEET TYPE="text/css" HREF="seagate.css">
+
+<!--
+                 ***********************************
+                 * Seagate Software copyright 1999 *
+                 ***********************************
+
+                      Template version: 5.1
+-->
+
+
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" link="#0000FF" vlink="#0000FF" alink="#800080">
+
+
+ 
+<a name="1000584916"></a><h2 class="newpage">Funciones adicionales</h2><p><a name="1000720843"></a><a href="Functions205.html#1000827409">DateTo2000 (fecha, n&#250;mero)</a></p><p><a name="1000720947"></a><a href="Functions206.html#1000827521">DTSTo2000 (cadenaFecha, n&#250;mero)</a></p><p><a name="1000720954"></a><a href="Functions207.html#1000585393">DTSToDate (cadenaFechaHora)</a></p><p><a name="1000720961"></a><a href="Functions208.html#1000585411">DTSToSeconds (cadenaFechaHora)</a></p><p><a name="1000720981"></a><a href="Functions209.html#1000585427">DTSToTimeString (cadenaFechaHora)</a></p><p><a name="1000720988"></a><a href="Functions210.html#1000586413">ExchGetId (direcci&#243;n)</a></p><p><a name="1000721003"></a><a href="Functions211.html#1000586441">ExchGetOrganization (direcci&#243;n)</a></p><p><a name="1000721010"></a><a href="Functions212.html#1000586493">ExchGetSite (direcci&#243;n)</a></p><p><a name="1000721024"></a><a href="Functions213.html#1000586521">ExtractString (origen, cadenaInicio, cadenaFin)</a></p><p><a name="1000721031"></a><a href="Functions214.html#1000587189">EventNumber (n&#250;meroEvento)</a></p><p><a name="1000721067"></a><a href="Functions215.html#1000587657">ExchGetPath (ruta)</a></p><p><a name="1000721087"></a><a href="Functions216.html#1000587899">ByteToText (byte)</a></p><p><a name="1000721094"></a><a href="Functions217.html#1000588110">FRCurrentRatio (activoCorriente, pasivoCorriente)</a></p><p><a name="1000721108"></a><a href="Functions218.html#1000588786">FRQuickRatio (activoCorriente, inventarios, pasivoCorriente)</a></p><p><a name="1000721115"></a><a href="Functions219.html#1000588143">FRDebtEquityRatio (pasivoTotal, patrimonioNeto)</a></p><p><a name="1000721122"></a><a href="Functions220.html#1000657402">FREquityVsTotalAssets(patrimonioNeto, ActivoTotal)</a></p><p><a name="1000721132"></a><a href="Functions221.html#1000589388">FRNetProfitMargin (beneficioNeto, ventas)</a></p><p><a name="1000721139"></a><a href="Functions222.html#1000589967">FRGrossProfitMargin (beneficioBruto, ventas)</a></p><p><a name="1000721146"></a><a href="Functions223.html#1000589420">FROperatingProfitMargin (beneficioDeExplotaci&#243;n, ventas)</a></p><p><a name="1000721171"></a><a href="Functions224.html#1000590197">FRInterestCoverage (flujoDeCaja, gastosPorIntereses)</a></p><p><a name="1000721178"></a><a href="Functions225.html#1000590471">FRCashFlowVsTotalDebt (flujoDeCaja, deudaTotal)</a></p><p><a name="1000721189"></a><a href="Functions226.html#1000590689">FRReturnOnEquity (beneficioNeto, patrimonioNeto)</a></p><p><a name="1000721196"></a><a href="Functions227.html#1000591458">FRReturnOnNetFixedAssets (beneficioNeto, activosFijosNetos)</a></p><p><a name="1000721267"></a><a href="Functions228.html#1000591490">FRReturnOnTotalAssets (beneficioNeto, activosTotales)</a></p><p><a name="1000721274"></a><a href="Functions229.html#1000590720">FRReturnOnInvestedCapital (beneficioNeto, deudaBancariaTotal, patrimonioNeto)</a></p><p><a name="1000721281"></a><a href="Functions230.html#1000591132">FRReturnOnCommonEquity (beneficioNeto, dividendoPreferencial, activoNetoCom&#250;n)</a></p><p><a name="1000721302"></a><a href="Functions231.html#1000588206">FREarningsPerCommonShare (beneficioNeto, dividendoPreferencial, n&#250;meroDeAccionesComunes)</a></p><p><a name="1000721313"></a><a href="Functions232.html#1000592414">FRAccRecTurnover (cuentasPorCobrar, ventas, n&#250;meroDeD&#237;as)</a></p><p><a name="1000721324"></a><a href="Functions233.html#1000723754">FRInventoryTurnover (inventario, ventas, n&#250;meroDeD&#237;as)</a></p><p><a name="1000721344"></a><a href="Functions234.html#1000592219">FRPriceEarningsRatio (precioDeMercado, dividendosPorAcci&#243;n)</a></p><p><a name="1000721372"></a><a href="Functions235.html#1000592253">FRDividendYield (dividendo, precioDeMercado)</a></p><p><a name="1000721379"></a><a href="Functions236.html#1000592822">Now</a></p><p><a name="1000721459"></a><a href="Functions237.html#1000592848">Picture (cadena, imagen)</a></p><p><a name="1000721466"></a><a href="Functions238.html#1000592987">LooksLike (cadena, m&#225;scara)</a></p><p><a name="1000721486"></a><a href="Functions239.html#1000593084">Soundex (cadena)</a></p><p><a name="1000721493"></a><a href="Functions240.html#1000593228">DateTimeTo2000 (fechaHora, n&#250;mero)</a></p><p><a name="1000721508"></a><a href="Functions241.html#1000593427">DTSToDateTime (cadenaFechaHora)</a></p><p><a name="1000721515"></a><a href="Functions242.html#1000593440">DTSToTimeField (cadenaFechaHora)</a></p><p><a name="1000721522"></a><a href="Functions243.html#1000593619">DateTimeToDate (fechaHora)</a></p><p><a name="1000721536"></a><a href="Functions244.html#1000593636">DateTimeToTime (fechaHora)</a></p><p><a name="1000827406"></a><a href="Functions245.html#1000593653">DateTimeToSeconds (fechaHora)</a></p>
+<hr><br>
+
+<script  language="JavaScript"><!--
+
+var prev = "Functions203.html";
+var next = "Functions205.html";
+
+function setTopicID() { 
+      var number = "1000584916"; 
+      return number; 
+}
+
+// --></script>
+
+
+
+
+<SCRIPT>
+
+if (!window.parent.toc && navigator.appName == "Netscape") {
+
+   document.writeln ('<TABLE ALIGN="left" border="0" cellspacing="0" cellpadding="10">');
+   document.writeln ('<TR>');
+   document.write ('<TD ALIGN="left">');
+
+   if (prev != "crw_spTOC.hhc") {
+      document.writeln ('<A HREF="' + prev + '">');
+      document.writeln ('<IMG SRC="prevpage.gif" HEIGHT=17 BORDER=0 ALT="Página anterior"></A>');
+   } else {
+//   window.alert ('no previous page');
+   }
+
+   if (next != "crw_spIX.hhk") {
+      document.writeln ('<A HREF="' + next + '">');
+      document.writeln ('<IMG SRC="nextpage.gif" HEIGHT=17 BORDER=0 ALT="Página siguiente"></A>');
+   } else {
+//   window.alert ('no next page');
+   }
+   document.writeln ('</TD><TD ALIGN="left">');
+   document.writeln ('<A HREF="frameset.htm?TOC">');
+   document.writeln ('<IMG SRC="showtoc.gif" HEIGHT=17 BORDER=0 ALT="Haga clic para ver el contenido"></A></TD>');
+   document.writeln ('<TD ALIGN="left">');
+   document.writeln ('<A HREF="frameset.htm?IDX">');
+   document.writeln ('<IMG SRC="showix.gif" HEIGHT=17 BORDER=0 ALT="Haga clic para ver el índice"></A></TD>');
+   document.writeln ('</TD>');
+   document.writeln ('</TR>');
+   document.writeln ('</TABLE>');
+
+}
+
+</SCRIPT>
+<table align="right" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td align="right"><font size="1">Seagate Software, Inc.<br>
+    <a href="http://www.seagatesoftware.com">http://www.seagatesoftware.com</a><br>
+    Envíe sus comentarios a:<br>
+    <a href="mailto:techpubs@seagatesoftware.com">techpubs@seagatesoftware.com</a><br>
+    </font></td>
+  </tr>
+</table>
+</body>
+</html>
+
+

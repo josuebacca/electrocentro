@@ -1,0 +1,88 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+
+<html>
+<head>
+<title>Para seleccionar registros utilizando numeros</title>
+
+<link REL=STYLESHEET TYPE="text/css" HREF="seagate.css">
+
+<!--
+                 ***********************************
+                 * Seagate Software copyright 1999 *
+                 ***********************************
+
+                      Template version: 5.1
+-->
+
+
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" link="#0000FF" vlink="#0000FF" alink="#800080">
+
+
+ 
+<a name="54336"></a><h4 class="newpage"> Para seleccionar registros utilizando numeros</h4><a name="54337"></a><h5>Valor sencillo</h5><p><code><a name="54338"></a>{archivo.CAMPO} &gt; 99999 </code></p><p class="indent"><a name="54339"></a>Selecciona aquellos registros que tienen un valor en el campo {archivo.CAMPO} mayor que 99999.</p><p><code><a name="54340"></a>{archivo.CAMPO} &lt; 99999 </code></p><p class="indent"><a name="54341"></a>Selecciona aquellos registros que tienen un valor en el campo {archivo.CAMPO} menor que 99999.</p><a name="54342"></a><h5>Rango de valores</h5><p><code><a name="54343"></a>{archivo.CAMPO} &gt; 11111 and {archivo.CAMPO} &lt; 99999 </code></p><p class="indent"><a name="54344"></a>Selecciona aquellos registros que tienen un valor en el campo {archivo.CAMPO} mayor que 11111 pero menor que 99999 (ni 11111 ni 99999 est&#225;n incluidos en ese rango de valores).</p><p><code><a name="54345"></a>{archivo.CAMPO} &gt;= 11111 and {archivo.CAMPO} &lt;= 99999 </code></p><p class="indent"><a name="54346"></a>Selecciona aquellos registros que tienen un valor en el campo {archivo.CAMPO} mayor que 11111 pero menor que 99999 (ambos 11111 y 99999 est&#225;n incluidos en el rango de valores).</p><a name="54347"></a><h4>Para seleccionar registros utilizando fechas</h4><p><a name="54348"></a>Todas las funciones de D&#237;a, Mes y A&#241;o pueden ser empleadas en ejemplos como los siguientes:</p><p><code><a name="54349"></a>Year ({archivo.FECHA}) &lt; 1996 </code></p><p class="indent"><a name="54350"></a>Selecciona aquellos registros donde el a&#241;o encontrado en el campo {archivo.FECHA} es anterior a 1996.</p><p><code><a name="54351"></a>Year ({archivo.FECHA}) &gt;1992 and<br>year ({archivo.FECHA}) &lt; 1996</code></p><p class="indent"><a name="54352"></a>Selecciona aquellos registros donde el a&#241;o encontrado en el campo {archivo.FECHA} se encuentra entre 1992 y 1996 (no se incluyen ni 1992 ni 1996).</p><p><code><a name="54353"></a>Year({archivo.FECHA}) &gt;=1992 and<br>year({archivo.FECHA}) &lt;= 1996</code></p><p class="indent"><a name="54354"></a>Selecciona aquellos registros donde el a&#241;o encontrado en el campo {archivo.FECHA} se ubica entre 1992 y 1996 (incluyendo 1992 y 1996).</p><p><code><a name="54355"></a>Month({archivo.FECHA}) in 1 to 4</code></p><p class="indent"><a name="54356"></a>Selecciona aquellos registros en los cuales el mes encontrado en el campo {archivo.FECHA} es uno de los primeros 4 meses del a&#241;o (incluye enero, febrero, marzo, y abril).</p><p><code><a name="54357"></a>Month({archivo.FECHA}) in [1,4]</code></p><p class="indent"><a name="54358"></a>Selecciona aquellos registros en los cuales el mes encontrado en el campo {archivo.FECHA} es el primero o el cuarto mes del a&#241;o (incluye enero y abril, excluye febrero y marzo).</p><a name="54359"></a><h4>Para seleccionar registros utilizando rangos de fecha predeterminados</h4><p><a name="54360"></a>Usted puede predeterminar los rangos para crear f&#243;rmulas de selecci&#243;n semejantes a las siguientes:</p><p><code><a name="54361"></a>{archivo.FECHA} in LastFullMonth</code></p><p class="indent"><a name="54362"></a>Selecciona aquellos registros donde la fecha encontrada en el campo {archivo.FECHA} esta dentro del &#250;ltimo mes completo. (Si est&#225; en el mes de mayo, selecciona todos los registros con la fecha de abril).</p><p><code><a name="54363"></a>no({archivo.FECHA})in LastFullMonth</code></p><p class="indent"><a name="54364"></a>Selecciona todos los registros, excepto aquellos en que la fecha encontrada en el campo {archivo.FECHA} est&#225; dentro del &#250;ltimo mes completo. (Si el mes es mayo, selecciona todos los registros, excepto aquellos en que la fecha es abril).</p><p><code><a name="54365"></a>{archivo.FECHA} &lt; CurrentDate</code></p><p class="indent"><a name="54366"></a>Selecciona todos los registros en los cuales la fecha encontrada en el campo {archivo.FECHA} est&#225; antes de la fecha de hoy.</p><a name="54367"></a><h4>Para seleccionar registros usando combinaciones de caracteres fecha/numero</h4><p><a name="54368"></a>Estas f&#243;rmulas simplemente "mezclan y combinan" f&#243;rmulas de las categor&#237;as antes mencionadas.</p><p><code><a name="54369"></a>"C" in {archivo.CAMPO}[1] and Month{archivo.FECHA} in [1, 4]</code></p><p class="indent"><a name="54370"></a>Selecciona aquellos registros en los cuales el valor en el campo {archivo.CAMPO} comienza con "C", y el mes es enero o abril. Por ejemplo, si usted usa este tipo de f&#243;rmula con una base de datos de pedidos, puede estar pidiendo un informe que muestre todos los clientes cuyos nombres comiencen con "C" y hayan ordenado algo en enero o en abril.</p><p><code><a name="54371"></a>"AOK" in {archivo.HISTORIA}[3 a 5] and {archivo.CREDITO} &gt;= 5000</code></p><p class="indent"><a name="54372"></a>Selecciona aquellos registros en los cuales el campo {archivo.HISTORIA} muestra los caracteres "AOK" como el 3, 4 y 5 y el campo {archivo.CREDITO} (el monto de cr&#233;dito disponible) es de por lo <br>menos 5000.</p><p><a name="54373"></a>Puede usar estas plantillas como est&#225;n (con sus propios datos), o combinarlas para crear f&#243;rmulas complejas.</p>
+<hr><br>
+
+<script  language="JavaScript"><!--
+
+var prev = "07_recordgroupsel8.html";
+var next = "07_recordgroupsel10.html";
+
+function setTopicID() { 
+      var number = "54336"; 
+      return number; 
+}
+
+// --></script>
+
+
+
+
+<SCRIPT>
+
+if (!window.parent.toc && navigator.appName == "Netscape") {
+
+   document.writeln ('<TABLE ALIGN="left" border="0" cellspacing="0" cellpadding="10">');
+   document.writeln ('<TR>');
+   document.write ('<TD ALIGN="left">');
+
+   if (prev != "crw_spTOC.hhc") {
+      document.writeln ('<A HREF="' + prev + '">');
+      document.writeln ('<IMG SRC="prevpage.gif" HEIGHT=17 BORDER=0 ALT="Página anterior"></A>');
+   } else {
+//   window.alert ('no previous page');
+   }
+
+   if (next != "crw_spIX.hhk") {
+      document.writeln ('<A HREF="' + next + '">');
+      document.writeln ('<IMG SRC="nextpage.gif" HEIGHT=17 BORDER=0 ALT="Página siguiente"></A>');
+   } else {
+//   window.alert ('no next page');
+   }
+   document.writeln ('</TD><TD ALIGN="left">');
+   document.writeln ('<A HREF="frameset.htm?TOC">');
+   document.writeln ('<IMG SRC="showtoc.gif" HEIGHT=17 BORDER=0 ALT="Haga clic para ver el contenido"></A></TD>');
+   document.writeln ('<TD ALIGN="left">');
+   document.writeln ('<A HREF="frameset.htm?IDX">');
+   document.writeln ('<IMG SRC="showix.gif" HEIGHT=17 BORDER=0 ALT="Haga clic para ver el índice"></A></TD>');
+   document.writeln ('</TD>');
+   document.writeln ('</TR>');
+   document.writeln ('</TABLE>');
+
+}
+
+</SCRIPT>
+<table align="right" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td align="right"><font size="1">Seagate Software, Inc.<br>
+    <a href="http://www.seagatesoftware.com">http://www.seagatesoftware.com</a><br>
+    Envíe sus comentarios a:<br>
+    <a href="mailto:techpubs@seagatesoftware.com">techpubs@seagatesoftware.com</a><br>
+    </font></td>
+  </tr>
+</table>
+</body>
+</html>
+
+

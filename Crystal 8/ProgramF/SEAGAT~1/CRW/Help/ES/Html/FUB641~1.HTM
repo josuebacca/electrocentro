@@ -1,0 +1,101 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+
+<html>
+<head>
+<title>Rate</title>
+
+<link REL=STYLESHEET TYPE="text/css" HREF="seagate.css">
+
+<!--
+                 ***********************************
+                 * Seagate Software copyright 1999 *
+                 ***********************************
+
+                      Template version: 5.1
+-->
+
+
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" link="#0000FF" vlink="#0000FF" alink="#800080">
+
+
+ 
+<a name="1000852100"></a><h3 class="newpage"> Rate</h3>
+<p><a name="1000852101"></a>Sintaxis b&#225;sica y Crystal.</p><a name="1000852102"></a><h5>Sobrecargas</h5><ul type="disc"><a name="1000852103"></a><li>Rate (nPer&#237;odos, pago, valorPresente)
+<a name="1000852104"></a><li>Rate (nPer&#237;odos, pago, valorPresente, valorFuturo)
+<a name="1000852105"></a><li>tasa (nPer&#237;odos, pago, valorPresente, valorFuturo, tipo)
+<a name="1000852106"></a><li>tasa (nPer&#237;odos, pago, valorPresente, valorFuturo, tipo, estimaci&#243;n)
+</ul><a name="1000852107"></a><h5>Argumentos</h5><ul type="disc"><a name="1000852108"></a><li>nPer&#237;odos es un N&#250;mero positivo que especifica el n&#250;mero total de per&#237;odos de pago en el a&#241;o.  
+<a name="1000852109"></a><li>pago es un N&#250;mero o Moneda que especifica el pago a realizarse cada per&#237;odo.
+<a name="1000852110"></a><li>valorPresente es un N&#250;mero o Moneda que especifica el valor presente o valor al d&#237;a de una serie de ingresos o pagos futuros.
+<a name="1000852111"></a><li>valorFuturo es un N&#250;mero o Moneda opcional que especifica el valor futuro o saldo de efectivo que usted desea despu&#233;s de haber efectuado el pago final.  Si se omite, se asume 0.
+<a name="1000852112"></a><li>Tipo es un N&#250;mero opcional que especifica cu&#225;ndo vencen los pagos.  Especifique  0 si los pagos vencen al final del per&#237;odo de pago y 1 si vencen al principio del per&#237;odo. Si se omite, se asume 0.
+<a name="1000852113"></a><li>estimaci&#243;n es un valor num&#233;rico opcional que se estima que devuelve Rate.  Si se omite, la estimaci&#243;n es  0.1 (10 por ciento).
+</ul><a name="1000852114"></a><h5>Devuelve </h5><p><a name="1000852115"></a>Valor num&#233;rico</p><a name="1000852116"></a><h5>Acci&#243;n</h5><p><a name="1000852117"></a>Rate devuelve un N&#250;mero especificando la tasa de inter&#233;s por per&#237;odo para una anualidad.  Las unidades del valor devuelto son concordantes con las unidades de nPer&#237;odos. Por ejemplo, si nPer&#237;odos est&#225; en meses, entonces la tasa devuelta ser&#225; una tasa de inter&#233;s mensual.  </p><a name="1000852118"></a><h5>Ejemplo(s)</h5><p><a name="1000852119"></a>Los siguientes ejemplos son aplicables a las sintaxis b&#225;sica y Crystal:</p><p><a name="1000852120"></a>Una tienda de art&#237;culos electr&#243;nicos ofrece financiamiento para un televisor de  $1500 pagando  $70 al mes, en 2 a&#241;os sin pie.  &#191;Ser&#225; este un buen trato? Un primer paso para determinar esto es calcular la tasa de inter&#233;s que cobra la tienda. </p><p><code><a name="1000852121"></a>Rate (2 * 12, -70, 1500)</code></p><p class="example"><a name="1000852122"></a>Devuelve  0.00927 (redondeado a 5 decimales). F&#237;jese que nPer&#237;odos es 24 meses, pago (-70) es negativo ya que est&#225; realizando pagos mensuales y el valor presente es positivo (1.500) ya que al iniciar el pr&#233;stamo efectivamente recibi&#243; $1500 (el valor del televisor).  La tasa de inter&#233;s devuelto es una tasa de inter&#233;s mensual ya que nPer&#237;odos estaba en meses.</p><p><a name="1000852123"></a>Esta pr&#243;xima expresi&#243;n calcula la tasa de inter&#233;s expresada como una tasa de inter&#233;s anual y como un porcentaje. </p><p><code><a name="1000852124"></a>Rate (2 * 12, -70, 1500) * 12 * 100</code></p><p class="example"><a name="1000852125"></a>Devuelve 11.1 (redondeado a  1 decimal). Por lo tanto, la tienda cobra una tasa de inter&#233;s anual efectiva de 11.1 por ciento.</p><a name="1000852126"></a><h5>Comentario</h5><ul type="disc"><a name="1000852127"></a><li>Esta funci&#243;n est&#225; dise&#241;ada para trabajar exactamente como la funci&#243;n de Visual Basic del mismo nombre.
+<a name="1000852130"></a><li>No hay una f&#243;rmula directa para la funci&#243;n Rate  por lo que Seagate Crystal Reports calcula el valor por repetici&#243;n. El proceso depende de la estimaci&#243;n inicial de la tasa.  Si el programa presenta un error, intente cambiar el valor del argumento estimaci&#243;n para acercarlo a lo que esperaba que fuera la tasa de inter&#233;s. 
+</ul>
+<hr><br>
+
+<script  language="JavaScript"><!--
+
+var prev = "Functions59.html";
+var next = "Functions61.html";
+
+function setTopicID() { 
+      var number = "1000852100"; 
+      return number; 
+}
+
+// --></script>
+
+
+
+
+<SCRIPT>
+
+if (!window.parent.toc && navigator.appName == "Netscape") {
+
+   document.writeln ('<TABLE ALIGN="left" border="0" cellspacing="0" cellpadding="10">');
+   document.writeln ('<TR>');
+   document.write ('<TD ALIGN="left">');
+
+   if (prev != "crw_spTOC.hhc") {
+      document.writeln ('<A HREF="' + prev + '">');
+      document.writeln ('<IMG SRC="prevpage.gif" HEIGHT=17 BORDER=0 ALT="Página anterior"></A>');
+   } else {
+//   window.alert ('no previous page');
+   }
+
+   if (next != "crw_spIX.hhk") {
+      document.writeln ('<A HREF="' + next + '">');
+      document.writeln ('<IMG SRC="nextpage.gif" HEIGHT=17 BORDER=0 ALT="Página siguiente"></A>');
+   } else {
+//   window.alert ('no next page');
+   }
+   document.writeln ('</TD><TD ALIGN="left">');
+   document.writeln ('<A HREF="frameset.htm?TOC">');
+   document.writeln ('<IMG SRC="showtoc.gif" HEIGHT=17 BORDER=0 ALT="Haga clic para ver el contenido"></A></TD>');
+   document.writeln ('<TD ALIGN="left">');
+   document.writeln ('<A HREF="frameset.htm?IDX">');
+   document.writeln ('<IMG SRC="showix.gif" HEIGHT=17 BORDER=0 ALT="Haga clic para ver el índice"></A></TD>');
+   document.writeln ('</TD>');
+   document.writeln ('</TR>');
+   document.writeln ('</TABLE>');
+
+}
+
+</SCRIPT>
+<table align="right" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td align="right"><font size="1">Seagate Software, Inc.<br>
+    <a href="http://www.seagatesoftware.com">http://www.seagatesoftware.com</a><br>
+    Envíe sus comentarios a:<br>
+    <a href="mailto:techpubs@seagatesoftware.com">techpubs@seagatesoftware.com</a><br>
+    </font></td>
+  </tr>
+</table>
+</body>
+</html>
+
+

@@ -1,0 +1,94 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+
+<html>
+<head>
+<title>InStr (cadena1, cadena2), InStr (inicio, cadena1, cadena2)</title>
+
+<link REL=STYLESHEET TYPE="text/css" HREF="seagate.css">
+
+<!--
+                 ***********************************
+                 * Seagate Software copyright 1999 *
+                 ***********************************
+
+                      Template version: 5.1
+-->
+
+
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" link="#0000FF" vlink="#0000FF" alink="#800080">
+
+
+ 
+<a name="1000853469"></a><h3 class="newpage"> InStr (cadena1, cadena2), InStr (inicio, cadena1, cadena2)</h3>
+<p><a name="1000853470"></a>Sintaxis b&#225;sica y Crystal.</p><a name="1000853471"></a><h5>Argumentos</h5><ul type="disc"><a name="1000853472"></a><li><EM>inicio</EM> es el car&#225;cter en la cadena1 donde la b&#250;squeda va a comenzar. Este es un &#237;ndice basado en 1. (Este argumento es opcional.)
+<a name="1000853473"></a><li><EM>cadena1</EM> es la cadena de caracteres de texto a ser buscada.
+<a name="1000853474"></a><li><EM>cadena2</EM> es la cadena de caracteres de texto que est&#225; siendo buscada.
+</ul><a name="1000853475"></a><h5>Devuelve </h5><p><a name="1000853476"></a>Un n&#250;mero entero.</p><a name="1000853477"></a><h5>Acci&#243;n</h5><p><a name="1000853478"></a>La funci&#243;n InStr devuelve la posici&#243;n de la primera ocurrencia de una cadena de caracteres dentro de otra. Esta posici&#243;n es un &#237;ndice basado en 1 de los caracteres en la cadena1. Si la cadena2 no es encontrada en cadena1, la funci&#243;n  InStr devuelve un 0. El argumento inicio configura la posici&#243;n inicial para la b&#250;squeda.</p><a name="1000853479"></a><h5>Uso(s) t&#237;pico(s)</h5><p><a name="1000853480"></a>Utilice esta funci&#243;n para determinar si una cadena contiene a otra.</p><a name="1000853481"></a><h5>Ejemplo(s)</h5><p><a name="1000853482"></a>Los siguientes ejemplos son aplicables a las sintaxis b&#225;sica y Crystal:</p><p><code><a name="1000853483"></a>InStr("abcdefg", "bcd") </code></p><p class="example"><a name="1000853484"></a>Devuelve 2.</p><p><code><a name="1000853485"></a>InStr(3, "abcdefg", "cde") </code></p><p class="example"><a name="1000853486"></a>Devuelve 3.</p><a name="1000853487"></a><h5>Comentarios</h5><ul type="disc"><a name="1000853488"></a><li>Esta funci&#243;n est&#225; dise&#241;ada para trabajar exactamente como la funci&#243;n de Visual Basic del mismo nombre.
+<a name="1000853489"></a><li>Hay dos versiones de esta funci&#243;n. La primera no utiliza el argumento inicio, y la segunda si. Si el argumento inicio no es utilizado, InStr busca en toda la cadena1 para intentar encontrar la cadena2. Si el argumento inicio es utilizado, InStr comienza a buscar el car&#225;cter en la cadena2 indicado por el <a href="glossary.html#15169">Argumento</a> inicio.
+</ul>
+<hr><br>
+
+<script  language="JavaScript"><!--
+
+var prev = "Functions88.html";
+var next = "Functions90.html";
+
+function setTopicID() { 
+      var number = "1000853469"; 
+      return number; 
+}
+
+// --></script>
+
+
+
+
+<SCRIPT>
+
+if (!window.parent.toc && navigator.appName == "Netscape") {
+
+   document.writeln ('<TABLE ALIGN="left" border="0" cellspacing="0" cellpadding="10">');
+   document.writeln ('<TR>');
+   document.write ('<TD ALIGN="left">');
+
+   if (prev != "crw_spTOC.hhc") {
+      document.writeln ('<A HREF="' + prev + '">');
+      document.writeln ('<IMG SRC="prevpage.gif" HEIGHT=17 BORDER=0 ALT="Página anterior"></A>');
+   } else {
+//   window.alert ('no previous page');
+   }
+
+   if (next != "crw_spIX.hhk") {
+      document.writeln ('<A HREF="' + next + '">');
+      document.writeln ('<IMG SRC="nextpage.gif" HEIGHT=17 BORDER=0 ALT="Página siguiente"></A>');
+   } else {
+//   window.alert ('no next page');
+   }
+   document.writeln ('</TD><TD ALIGN="left">');
+   document.writeln ('<A HREF="frameset.htm?TOC">');
+   document.writeln ('<IMG SRC="showtoc.gif" HEIGHT=17 BORDER=0 ALT="Haga clic para ver el contenido"></A></TD>');
+   document.writeln ('<TD ALIGN="left">');
+   document.writeln ('<A HREF="frameset.htm?IDX">');
+   document.writeln ('<IMG SRC="showix.gif" HEIGHT=17 BORDER=0 ALT="Haga clic para ver el índice"></A></TD>');
+   document.writeln ('</TD>');
+   document.writeln ('</TR>');
+   document.writeln ('</TABLE>');
+
+}
+
+</SCRIPT>
+<table align="right" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td align="right"><font size="1">Seagate Software, Inc.<br>
+    <a href="http://www.seagatesoftware.com">http://www.seagatesoftware.com</a><br>
+    Envíe sus comentarios a:<br>
+    <a href="mailto:techpubs@seagatesoftware.com">techpubs@seagatesoftware.com</a><br>
+    </font></td>
+  </tr>
+</table>
+</body>
+</html>
+
+

@@ -1,0 +1,81 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+
+<html>
+<head>
+
+<title>&Aacute;rbol de grupos (mediante el comando GroupBy de SQL)</title>
+
+<link REL=STYLESHEET TYPE="text/css" HREF="seagate.css">
+
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" link="#0000FF" vlink="#0000FF" alink="#800080">
+
+
+ 
+<a name="167664"></a><h3 class="newpage"> &Aacute;rbol de grupos (mediante el comando GroupBy de SQL)</h3>
+<p><a name="170802"></a>Si sus informes contienen procesamiento en el lado del servidor de enunciados GroupBy de SQL, el &#225;rbol de grupos de Smart Navigation se ver&#225; afectado cuando los informes se visualicen. En estos casos, s&#243;lo la informaci&#243;n de resumen es enviada de vuelta al cliente. Los registros detallados son evaluados por el servidor SQL, que calcula valores de agrupamiento y resumen, los cuales luego son enviados al cliente sin los registros detallados.</p><p><a name="161469"></a>Aunque este m&#233;todo reduce significativamente la cantidad de datos enviados a trav&#233;s de la red, tambi&#233;n afecta al &#225;rbol de grupos. Los nombres de los grupos aparecen en el &#225;rbol de la forma habitual. Sin embargo, si expande un grupo, la informaci&#243;n detallada no estar&#225; disponible. El servidor s&#243;lo env&#237;a los res&#250;menes de grupo al cliente. En este caso aparecer&#225; una lupa debajo del nombre del grupo en el &#225;rbol de grupos indicando que es posible recuperar datos detallados.</p><p><a name="161470"></a>Si se hace clic en la lupa, el Web Component Server recuperar&#225; los datos detallados para ese grupo y mostrar&#225; grupos detallados o nombres de registro debajo del nombre del grupo original. Este proceso requiere consulta a la base de datos. No es aconsejable usar esta funci&#243;n si cree que los usuarios que van a ver el informe siempre van a querer ver los detalles del resumen.</p>
+<hr><br>
+
+<script  language="JavaScript"><!--
+
+var prev = "WebServerOverview17.html";
+var next = "WebServerImplementation.html";
+
+function setTopicID() { 
+      var number = "167664"; 
+      return number; 
+}
+
+// --></script>
+
+
+
+
+<SCRIPT>
+
+if (!window.parent.toc && navigator.appName == "Netscape") {
+
+   document.writeln ('<TABLE ALIGN="left" border="0" cellspacing="0" cellpadding="10">');
+   document.writeln ('<TR>');
+   document.write ('<TD ALIGN="left">');
+
+   if (prev != "wcmadminTOC.hhc") {
+      document.writeln ('<A HREF="' + prev + '">');
+      document.writeln ('<IMG SRC="prevpage.gif" HEIGHT=17 BORDER=0 ALT="Página anterior"></A>');
+   } else {
+//   window.alert ('no previous page');
+   }
+
+   if (next != "wcmadminIX.hhk") {
+      document.writeln ('<A HREF="' + next + '">');
+      document.writeln ('<IMG SRC="nextpage.gif" HEIGHT=17 BORDER=0 ALT="Página siguiente"></A>');
+   } else {
+//   window.alert ('no next page');
+   }
+   document.writeln ('</TD><TD ALIGN="left">');
+   document.writeln ('<A HREF="frameset.htm?TOC">');
+   document.writeln ('<IMG SRC="showtoc.gif" HEIGHT=17 BORDER=0 ALT="Haga clic para ver el contenido"></A></TD>');
+   document.writeln ('<TD ALIGN="left">');
+   document.writeln ('<A HREF="frameset.htm?IDX">');
+   document.writeln ('<IMG SRC="showix.gif" HEIGHT=17 BORDER=0 ALT="Haga clic para ver el índice"></A></TD>');
+   document.writeln ('</TD>');
+   document.writeln ('</TR>');
+   document.writeln ('</TABLE>');
+
+}
+
+</SCRIPT>
+<table align="right" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td align="right"><font size="1">Seagate Software, Inc.<br>
+    <a href="http://www.seagatesoftware.com">http://www.seagatesoftware.com</a><br>
+    Envíe sus comentarios a:<br>
+    <a href="mailto:techpubs@seagatesoftware.com">techpubs@seagatesoftware.com</a><br>
+    </font></td>
+  </tr>
+</table>
+</body>
+</html>
+
+

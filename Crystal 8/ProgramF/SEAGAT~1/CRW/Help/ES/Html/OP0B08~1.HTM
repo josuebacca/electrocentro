@@ -1,0 +1,98 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+
+<html>
+<head>
+<title>Sub&#237;ndice para matrices y cadenas</title>
+
+<link REL=STYLESHEET TYPE="text/css" HREF="seagate.css">
+
+<!--
+                 ***********************************
+                 * Seagate Software copyright 1999 *
+                 ***********************************
+
+                      Template version: 5.1
+-->
+
+
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" link="#0000FF" vlink="#0000FF" alink="#800080">
+
+
+ 
+<a name="1000019201"></a><h3 class="newpage"> Sub&#237;ndice para matrices y cadenas</h3>
+<a name="1000019203"></a><h4>Sintaxis Basic (x(y))</h4><a name="1000019204"></a><h5>Uso </h5><p><code><a name="1000019205"></a>x(y)</code></p><p class="example"><a name="1000019206"></a>Extrae el elemento y de la cadena x.</p><p><code><a name="1000019207"></a>x(y To z) </code></p><p class="example"><a name="1000019208"></a>Extrae el rango de elementos y a z de la cadena x.</p><p><code><a name="1000019209"></a>x(n)</code></p><p class="example"><a name="1000019210"></a>Extrae el elemento n de la matriz x.</p><p><a name="1000019211"></a><font color="darkblue"><b>Nota:   &nbsp;&nbsp;&nbsp;</b></font>Los rangos de sub&#237;ndice se basan en 1; es decir, se inician en 1 en lugar de 0.</p>
+<p><a name="1000019212"></a>El sub&#237;ndice se usa para extraer uno o m&#225;s caracteres de una cadena de texto o para extraer un elemento de una matriz.</p><a name="1000019213"></a><h5>Ejemplos</h5><p><a name="1000019214"></a>Los siguientes ejemplos son aplicables a sintaxis Basic:</p><p><code><a name="1000019215"></a>APELLIDO (1) </code></p><p class="example"><a name="1000019216"></a>Devuelve "S", donde el apellido = "Soriano".</p><p><code><a name="1000019217"></a>Postal (6) </code></p><p class="example"><a name="1000019218"></a>Devuelve "V", donde el c&#243;digo postal = "T5A 9V2" (el espacio entre A y 9 se cuenta como un elemento).</p><p><code><a name="1000019219"></a>{cliente.C&Oacute;DIGO POSTAL} (5 to 7)  </code></p><p class="example"><a name="1000019220"></a>Devuelve "9V2", donde el c&#243;digo postal = T5A 9V2.</p><p><code><a name="1000019221"></a>{archivo.N&#186; DE ART&Iacute;CULO} (4 to 5) </code></p><p class="example"><a name="1000019222"></a>Devuelve "40", donde el n&#250;mero de art&#237;culo es A1/4020/B10.</p><a name="1000019223"></a><h5>Comentarios</h5><ul type="disc"><a name="1000019224"></a><li>Se debe subindexar una matriz declarando primero una matriz y luego haciendo referencia al nombre de variable de matriz en sintaxis Basic. Por ejemplo:
+</ul><p class="code"><a name="1000019225"></a>'declarar la matriz MiNombre
+<br><a name="1000019226"></a>Dim MiNombre () As String
+<br><a name="1000019227"></a>MiNombre = Array ("Compa&#241;&#237;a A", "Compa&#241;&#237;a B", "Compa&#241;&#237;a C")
+<br><a name="1000019228"></a>'hacer referencia a una matriz por su nombre
+<br><a name="1000019229"></a>formula = MiNombre (1)
+</p><ul type="disc"><a name="1000019233"></a><li>No confunda sub&#237;ndice con el <a href="Operators25.html#1000024731">Operador En Cadena</a>. 
+<p class="indent"><a name="1000019234"></a>Mientras el sub&#237;ndice detecta en una cadena objetivo la presencia de un elemento y lo extrae (si lo encuentra) de la cadena, En Cadena s&#243;lo detecta en una cadena objetivo la presencia del elemento.</p></ul><a name="1000019235"></a><h6>Temas relacionados</h6><p><a name="1000019239"></a><a href="Operators24.html#1000019241">Sintaxis Crystal (x[y])</a></p><a name="1000019241"></a><h4>Sintaxis Crystal (x[y]) </h4><a name="1000019242"></a><h5>Uso </h5><p><code><a name="1000019243"></a>x[y]</code></p><p class="example"><a name="1000019244"></a>Extrae el elemento y de la cadena x.</p><p><code><a name="1000019245"></a>x[y to z]</code></p><p class="example"><a name="1000019246"></a>Extrae el rango de elementos y a z de la cadena x.</p><p><code><a name="1000019247"></a>x[n]</code></p><p class="indent"><a name="1000019248"></a>Extrae el elemento n de la matriz x.</p><p><a name="1000019249"></a><font color="darkblue"><b>Nota:   &nbsp;&nbsp;&nbsp;</b></font>Los rangos del sub&#237;ndice se basan en 1; es decir, se inician en 1 en lugar de 0.</p>
+<p><a name="1000019250"></a>El sub&#237;ndice se usa para extraer uno o m&#225;s caracteres de una cadena de texto o para extraer un elemento de una matriz.</p><a name="1000019251"></a><h5>Ejemplos </h5><p><a name="1000019252"></a>Los siguientes ejemplos son aplicables a sintaxis Crystal:</p><p><code><a name="1000019253"></a> [100,233,466,998][3] </code></p><p class="example"><a name="1000019254"></a>Devuelve 466 ya que 466 es el tercer elemento en la matriz.</p><p><code><a name="1000019255"></a>APELLIDO (1)</code></p><p class="example"><a name="1000019256"></a>Devuelve "S", donde el apellido = "Soriano".</p><p><code><a name="1000019257"></a>Postal (6) </code></p><p class="example"><a name="1000019258"></a>Devuelve "V", donde el c&#243;digo postal = "T5A 9V2" (el espacio entre A y 9 se cuenta como un elemento).</p><p><code><a name="1000019259"></a>{cliente.C&Oacute;DIGO POSTAL} (5 to 7)  </code></p><p class="example"><a name="1000019260"></a>Devuelve "9V2", donde el c&#243;digo postal = "T5A 9V2".</p><p><code><a name="1000019261"></a>{archivo.N&#186; DE ART&Iacute;CULO} (4 to 5) </code></p><p class="example"><a name="1000019262"></a>Devuelve "40", donde el n&#250;mero de art&#237;culo es A1/4020/B10.</p><a name="1000019263"></a><h5>Comentarios</h5><p><a name="1000019267"></a>No confunda sub&#237;ndice con <a href="Operators25.html#1000024731">Operador En Cadena</a>. </p><p><a name="1000019268"></a>Mientras el sub&#237;ndice busca en una cadena de destino la presencia de un elemento y lo extrae (si lo encuentra), En Cadena s&#243;lo detecta la presencia del elemento en una cadena de destino.</p><a name="1000019269"></a><h6>Temas relacionados</h6><p><a name="1000019273"></a><a href="Operators24.html#1000019203">Sintaxis Basic (x(y))</a></p><p><a name="1000019277"></a><a href="19_introformulas29.html#316566">F&#243;rmula 1</a></p><p><a name="1000019281"></a><a href="19_introformulas30.html#316614">F&#243;rmula 2</a></p><p><a name="1000019285"></a><a href="19_introformulas31.html#316667">F&#243;rmula 3</a></p><p><a name="1000019289"></a><a href="19_introformulas37.html#317136">F&#243;rmula 9</a></p><p><a name="1000019293"></a><a href="19_introformulas39.html#317288">F&#243;rmula 11</a></p>
+<hr><br>
+
+<script  language="JavaScript"><!--
+
+var prev = "Operators23.html";
+var next = "Operators25.html";
+
+function setTopicID() { 
+      var number = "1000019201"; 
+      return number; 
+}
+
+// --></script>
+
+
+
+
+<SCRIPT>
+
+if (!window.parent.toc && navigator.appName == "Netscape") {
+
+   document.writeln ('<TABLE ALIGN="left" border="0" cellspacing="0" cellpadding="10">');
+   document.writeln ('<TR>');
+   document.write ('<TD ALIGN="left">');
+
+   if (prev != "crw_spTOC.hhc") {
+      document.writeln ('<A HREF="' + prev + '">');
+      document.writeln ('<IMG SRC="prevpage.gif" HEIGHT=17 BORDER=0 ALT="Página anterior"></A>');
+   } else {
+//   window.alert ('no previous page');
+   }
+
+   if (next != "crw_spIX.hhk") {
+      document.writeln ('<A HREF="' + next + '">');
+      document.writeln ('<IMG SRC="nextpage.gif" HEIGHT=17 BORDER=0 ALT="Página siguiente"></A>');
+   } else {
+//   window.alert ('no next page');
+   }
+   document.writeln ('</TD><TD ALIGN="left">');
+   document.writeln ('<A HREF="frameset.htm?TOC">');
+   document.writeln ('<IMG SRC="showtoc.gif" HEIGHT=17 BORDER=0 ALT="Haga clic para ver el contenido"></A></TD>');
+   document.writeln ('<TD ALIGN="left">');
+   document.writeln ('<A HREF="frameset.htm?IDX">');
+   document.writeln ('<IMG SRC="showix.gif" HEIGHT=17 BORDER=0 ALT="Haga clic para ver el índice"></A></TD>');
+   document.writeln ('</TD>');
+   document.writeln ('</TR>');
+   document.writeln ('</TABLE>');
+
+}
+
+</SCRIPT>
+<table align="right" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td align="right"><font size="1">Seagate Software, Inc.<br>
+    <a href="http://www.seagatesoftware.com">http://www.seagatesoftware.com</a><br>
+    Envíe sus comentarios a:<br>
+    <a href="mailto:techpubs@seagatesoftware.com">techpubs@seagatesoftware.com</a><br>
+    </font></td>
+  </tr>
+</table>
+</body>
+</html>
+
+

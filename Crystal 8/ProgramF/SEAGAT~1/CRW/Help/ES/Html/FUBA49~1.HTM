@@ -1,0 +1,98 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+
+<html>
+<head>
+<title>Sum (campo), Sum (campo, campo), Sum (campo, campoCondicional), Sum (campo, campoCondicional, condici&#243;n), Sum (x) </title>
+
+<link REL=STYLESHEET TYPE="text/css" HREF="seagate.css">
+
+<!--
+                 ***********************************
+                 * Seagate Software copyright 1999 *
+                 ***********************************
+
+                      Template version: 5.1
+-->
+
+
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" link="#0000FF" vlink="#0000FF" alink="#800080">
+
+
+ 
+<a name="1000850565"></a><h3 class="newpage"> Sum (campo), Sum (campo, campo), Sum (campo, campoCondicional), Sum (campo, campoCondicional, condici&#243;n), Sum (x) </h3>
+<p><a name="1000850568"></a>Sintaxis b&#225;sica y Crystal.</p><a name="1000850569"></a><h5>Argumentos</h5><ul type="disc"><a name="1000850570"></a><li>campo es cualquier campo de base de datos o de f&#243;rmula que puede ser evaluado por la funci&#243;n.
+<a name="1000850571"></a><li>campoCondicional es un campo utilizado para agrupar los valores del campo.
+<a name="1000850572"></a><li>condici&#243;n es una cadena que indica el tipo de agrupaci&#243;n para campoCondicional. S&#243;lo se especifica este argumento cuando  campoCondicional es un campo de fecha, hora, fecha/hora o booleano. Para obtener m&#225;s informaci&#243;n sobre las cadenas v&#225;lidas para este argumento, v&#233;ase <a href="Functions20.html#1000850529">Condiciones para las funciones de resumen</a>
+<a name="1000850576"></a><li>x es un arreglo de valores que puede ser evaluado por la funci&#243;n que est&#225; siendo utilizada.
+</ul><a name="1000850577"></a><h5>Devuelve </h5><p><a name="1000850578"></a>Un n&#250;mero fraccionario</p><a name="1000850579"></a><h5>Acci&#243;n</h5><p><a name="1000850580"></a>Le permite agregar los valores que aparecen en su informe. Por ejemplo:</p><ul type="disc"><a name="1000850581"></a><li>Si un informe de ventas incluye un campo que muestra la cantidad por pedido, puede calcular la suma de todos los pedidos que aparecen en el informe (un Total general de suma). Para obtener m&#225;s informaci&#243;n sobre esta clase de resumen, v&#233;ase SummaryFunction (campo).
+<a name="1000850582"></a><li>Si divide los pedidos en grupos (por ejemplo, pedidos agrupados por el estado del que vinieron), puede calcular la suma de las cantidades de los pedidos por grupo (en este caso, por estado). Para obtener m&#225;s informaci&#243;n sobre esta clase de resumen, v&#233;ase SummaryFunction (campo, campoCondicional).
+<a name="1000850583"></a><li>Si divide los pedidos en grupos de fecha o Booleanos (por ejemplo, los pedidos agrupados por el mes en que fueron hechos), puede calcular la suma de las cantidades de los pedidos por grupo basados en un cambio espec&#237;fico en el campo de fecha o Booleano (en este caso, por mes). Para obtener m&#225;s informaci&#243;n sobre esta clase de resumen, v&#233;ase SummaryFunction (campo, campoCondicional, condici&#243;n).
+<a name="1000850584"></a><li>Si especifica un conjunto de valores individuales, puede calcular la suma de los valores en el conjunto. Para obtener m&#225;s informaci&#243;n sobre esta clase de resumen, v&#233;ase SummaryFunction (x).
+</ul><a name="1000850585"></a><h5>Ejemplo(s)</h5><p><a name="1000850586"></a>Los siguientes ejemplos son aplicables a las sintaxis b&#225;sica y Crystal:</p><p><code><a name="1000850587"></a>Sum({archivo.CANT})</code></p><p class="example"><a name="1000850588"></a>Calcula la suma de todos los valores del campo CANT.</p><p><code><a name="1000850589"></a>Sum{pedidos.MONTO DEL PEDIDO}, {pedidos.ID DEL CLIENTE})</code></p><p class="example"><a name="1000850590"></a>Suma (totaliza) los pedidos en cada grupo de pedidos en el campo Monto. Los pedidos son separados en grupos siempre que cambia el valor del campo Id del cliente.</p><p><code><a name="1000850591"></a>Sum({pedidos.MONTO DEL PEDIDO}, {pedidos.FECHA}, "mensual") % Sum({pedidos.MONTO DEL PEDIDO})</code></p><p class="example"><a name="1000850592"></a>Agrupa los valores del campo Monto  por mes y calcula la suma de los valores por cada grupo mensual  como porcentaje de la suma de los valores de todo el informe.</p><p><code><a name="1000850593"></a>Sum([{archivo.CANTIDAD}, {archivo.PRECIO}, {archivo.COSTE}])</code></p><p class="example"><a name="1000850594"></a>Suma de los valores en los campos Monto , Precio y Coste.</p><p><a name="1000850595"></a><font color="darkblue"><b>Nota:   &nbsp;&nbsp;&nbsp;</b></font>El uso de esta funci&#243;n en una f&#243;rmula obliga a que la f&#243;rmula sea evaluada al momento de impresi&#243;n. Para obtener m&#225;s informaci&#243;n sobre las consideraciones de evaluaci&#243;n de hora, v&#233;ase el &Iacute;ndice de funciones de evaluaci&#243;n de tiempo.</p>
+
+<hr><br>
+
+<script  language="JavaScript"><!--
+
+var prev = "Functions20.html";
+var next = "Functions22.html";
+
+function setTopicID() { 
+      var number = "1000850565"; 
+      return number; 
+}
+
+// --></script>
+
+
+
+
+<SCRIPT>
+
+if (!window.parent.toc && navigator.appName == "Netscape") {
+
+   document.writeln ('<TABLE ALIGN="left" border="0" cellspacing="0" cellpadding="10">');
+   document.writeln ('<TR>');
+   document.write ('<TD ALIGN="left">');
+
+   if (prev != "crw_spTOC.hhc") {
+      document.writeln ('<A HREF="' + prev + '">');
+      document.writeln ('<IMG SRC="prevpage.gif" HEIGHT=17 BORDER=0 ALT="Página anterior"></A>');
+   } else {
+//   window.alert ('no previous page');
+   }
+
+   if (next != "crw_spIX.hhk") {
+      document.writeln ('<A HREF="' + next + '">');
+      document.writeln ('<IMG SRC="nextpage.gif" HEIGHT=17 BORDER=0 ALT="Página siguiente"></A>');
+   } else {
+//   window.alert ('no next page');
+   }
+   document.writeln ('</TD><TD ALIGN="left">');
+   document.writeln ('<A HREF="frameset.htm?TOC">');
+   document.writeln ('<IMG SRC="showtoc.gif" HEIGHT=17 BORDER=0 ALT="Haga clic para ver el contenido"></A></TD>');
+   document.writeln ('<TD ALIGN="left">');
+   document.writeln ('<A HREF="frameset.htm?IDX">');
+   document.writeln ('<IMG SRC="showix.gif" HEIGHT=17 BORDER=0 ALT="Haga clic para ver el índice"></A></TD>');
+   document.writeln ('</TD>');
+   document.writeln ('</TR>');
+   document.writeln ('</TABLE>');
+
+}
+
+</SCRIPT>
+<table align="right" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td align="right"><font size="1">Seagate Software, Inc.<br>
+    <a href="http://www.seagatesoftware.com">http://www.seagatesoftware.com</a><br>
+    Envíe sus comentarios a:<br>
+    <a href="mailto:techpubs@seagatesoftware.com">techpubs@seagatesoftware.com</a><br>
+    </font></td>
+  </tr>
+</table>
+</body>
+</html>
+
+

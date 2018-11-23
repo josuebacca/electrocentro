@@ -1,0 +1,116 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+
+<html>
+<head>
+<title>Extensi&#243;n de precios y c&#225;lculo de subtotales de las extensiones</title>
+
+<link REL=STYLESHEET TYPE="text/css" HREF="seagate.css">
+
+<!--
+                 ***********************************
+                 * Seagate Software copyright 1999 *
+                 ***********************************
+
+                      Template version: 5.1
+-->
+
+
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" link="#0000FF" vlink="#0000FF" alink="#800080">
+
+
+ 
+<a name="254317"></a><h3 class="newpage"> Extensi&#243;n de precios y c&#225;lculo de subtotales de las extensiones</h3>
+<p><a name="254309"></a>Es posible que en un informe de pedidos o una factura necesite extender precios para elementos de l&#237;nea individuales y, a continuaci&#243;n, calcular el subtotal de las extensiones. Esto se hace usando una f&#243;rmula simple para extender los precios y, a continuaci&#243;n, se calcula el subtotal del campo de f&#243;rmula.</p><a name="247928"></a><h6>Para extender el precio y calcular subtotales de las extensiones</h6><ol>
+<a name="247929"></a><li value="1&nbsp;&nbsp;&nbsp;&nbsp;">Inicie un informe utilizando los datos de muestra <strong>Xtreme_es.mdb</strong> y coloque los siguientes campos de izquierda a derecha en la secci&#243;n Detalles:
+<a name="249625"></a>{cliente.NOMBRE DEL CLIENTE}<br>{cliente.REGION}<br>{cliente.PAIS}<br>{cliente.VENTAS DEL &Uacute;LTIMO A&Ntilde;O}<br><a name="249626"></a><li value="2&nbsp;&nbsp;&nbsp;&nbsp;">Para crear la f&#243;rmula de extensi&#243;n de precios, elija <strong>Insertar</strong> en el men&#250; principal y seleccione <strong>Campo de f&#243;rmula</strong>.
+<p class="indent"><a name="246185"></a>Aparece el cuadro de di&#225;logo Explorador de campos.</p><a name="246186"></a><li value="3&nbsp;&nbsp;&nbsp;&nbsp;">Haga doble clic en <strong>Campos de f&#243;rmula</strong>.
+<p class="indent"><a name="246187"></a>Aparece el cuadro de di&#225;logo Nombre de f&#243;rmula.</p><a name="246188"></a><li value="4&nbsp;&nbsp;&nbsp;&nbsp;">Ingrese el nombre que desea para identificar la f&#243;rmula.
+<a name="246189"></a><li value="5&nbsp;&nbsp;&nbsp;&nbsp;">Haga clic en <strong>Aceptar</strong>.
+<p class="indent"><a name="246190"></a>Aparece el Editor de f&#243;rmulas.</p><a name="246191"></a><li value="6&nbsp;&nbsp;&nbsp;&nbsp;">Ingrese la siguiente f&#243;rmula en el cuadro de texto de f&#243;rmula:
+<p class="code"><a name="246192"></a>{Detalles del pedido.Cantidad} *<br><a name="246193"></a>{Detalles del pedido.Precio unitario}</p><a name="246197"></a><li value="7&nbsp;&nbsp;&nbsp;&nbsp;"><img src="images/bt_svcls.gif">
+
+
+Al terminar, haga clic en el bot&#243;n<EM> </EM><kbd>Guardar y cerrar</kbd>.
+<p class="indent"><a name="246198"></a>El cuadro de di&#225;logo Explorador de campos vuelve a aparecer con el nombre de la f&#243;rmula listada en el directorio Campos de f&#243;rmula.</p><a name="246199"></a><li value="8&nbsp;&nbsp;&nbsp;&nbsp;">Haga doble clic en su f&#243;rmula y coloque el campo de f&#243;rmula a la derecha del campo Precio unitario en la secci&#243;n Detalles del informe.
+<a name="246200"></a><li value="9&nbsp;&nbsp;&nbsp;&nbsp;">Haga clic en <strong>Cerrar </strong>para cerrar el cuadro de di&#225;logo Explorador de campos.
+<a name="246201"></a><li value="10&nbsp;&nbsp;&nbsp;&nbsp;">Para calcular subtotales de extensiones, haga clic con el bot&#243;n derecho en el campo de f&#243;rmula y elija<strong> Insertar subtotal</strong> en el men&#250; contextual.
+<p class="indent"><a name="246202"></a>Aparece el cuadro de di&#225;logo Insertar subtotal. </p><p><a name="246206"></a> <img src="images/inssub_2.gif">
+
+
+</p>
+<a name="246207"></a><li value="11&nbsp;&nbsp;&nbsp;&nbsp;">Para crear un subtotal para las ventas semanales, seleccione {pedidos.FECHA DEL PEDIDO} como el campo de ordenamiento y agrupamiento y elija para cada semana como intervalo del grupo.
+<p class="indent"><a name="246208"></a><font color="darkblue"><b>Nota:   &nbsp;&nbsp;&nbsp;</b></font>El cuadro desplegable La secci&#243;n se imprimir&#225; no se activa hasta que elige el campo Fecha del pedido. </p>
+<a name="246209"></a><li value="12&nbsp;&nbsp;&nbsp;&nbsp;">Haga clic en <strong>Aceptar </strong>para insertar el subtotal en el informe.
+</ol>
+<p><a name="257438"></a>Sus datos se ordenan por fecha y se agrupan en intervalos de una semana. Su informe final debe tener una presentaci&#243;n similar a la siguiente:</p><p><a name="261663"></a> <img src="images/SORT9_2.gif">
+
+
+</p>
+<p><a name="257443"></a> </p>
+
+<hr><br>
+
+<script  language="JavaScript"><!--
+
+var prev = "08_sortgrouptotal18.html";
+var next = "08_sortgrouptotal20.html";
+
+function setTopicID() { 
+      var number = "254317"; 
+      return number; 
+}
+
+// --></script>
+
+
+
+
+<SCRIPT>
+
+if (!window.parent.toc && navigator.appName == "Netscape") {
+
+   document.writeln ('<TABLE ALIGN="left" border="0" cellspacing="0" cellpadding="10">');
+   document.writeln ('<TR>');
+   document.write ('<TD ALIGN="left">');
+
+   if (prev != "crw_spTOC.hhc") {
+      document.writeln ('<A HREF="' + prev + '">');
+      document.writeln ('<IMG SRC="prevpage.gif" HEIGHT=17 BORDER=0 ALT="Página anterior"></A>');
+   } else {
+//   window.alert ('no previous page');
+   }
+
+   if (next != "crw_spIX.hhk") {
+      document.writeln ('<A HREF="' + next + '">');
+      document.writeln ('<IMG SRC="nextpage.gif" HEIGHT=17 BORDER=0 ALT="Página siguiente"></A>');
+   } else {
+//   window.alert ('no next page');
+   }
+   document.writeln ('</TD><TD ALIGN="left">');
+   document.writeln ('<A HREF="frameset.htm?TOC">');
+   document.writeln ('<IMG SRC="showtoc.gif" HEIGHT=17 BORDER=0 ALT="Haga clic para ver el contenido"></A></TD>');
+   document.writeln ('<TD ALIGN="left">');
+   document.writeln ('<A HREF="frameset.htm?IDX">');
+   document.writeln ('<IMG SRC="showix.gif" HEIGHT=17 BORDER=0 ALT="Haga clic para ver el índice"></A></TD>');
+   document.writeln ('</TD>');
+   document.writeln ('</TR>');
+   document.writeln ('</TABLE>');
+
+}
+
+</SCRIPT>
+<table align="right" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td align="right"><font size="1">Seagate Software, Inc.<br>
+    <a href="http://www.seagatesoftware.com">http://www.seagatesoftware.com</a><br>
+    Envíe sus comentarios a:<br>
+    <a href="mailto:techpubs@seagatesoftware.com">techpubs@seagatesoftware.com</a><br>
+    </font></td>
+  </tr>
+</table>
+</body>
+</html>
+
+

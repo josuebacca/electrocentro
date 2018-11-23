@@ -1,0 +1,96 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+
+<html>
+<head>
+<title>Filter</title>
+
+<link REL=STYLESHEET TYPE="text/css" HREF="seagate.css">
+
+<!--
+                 ***********************************
+                 * Seagate Software copyright 1999 *
+                 ***********************************
+
+                      Template version: 5.1
+-->
+
+
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" link="#0000FF" vlink="#0000FF" alink="#800080">
+
+
+ 
+<a name="1000853687"></a><h3 class="newpage"> Filter</h3>
+<p><a name="1000853688"></a>Sintaxis b&#225;sica y Crystal.</p><a name="1000853689"></a><h5>Sobrecargas</h5><ul type="disc"><a name="1000853690"></a><li>Filter (cadenasEntrada, cadenaB&#250;squeda)
+<a name="1000853691"></a><li>Filter (cadenasEntrada, cadenabusqueda, incluir)
+<a name="1000853692"></a><li>Filter (cadenasEntrada, cadenaB&#250;squeda, incluir, comparar)
+</ul><a name="1000853693"></a><h5>Argumentos</h5><ul type="disc"><a name="1000853694"></a><li>cadenasEntrada es una matriz de cadenas dentro de la que debe realizarse la b&#250;squeda.
+<a name="1000853695"></a><li>cadenaB&#250;squeda es una cadena que debe buscarse.
+<a name="1000853696"></a><li>incluir es un valor booleano opcional que indica si deben devolverse subcadenas que incluyan o excluyan cadenaB&#250;squeda. Si incluir es Verdadero, Filter devuelve el subconjunto de la matriz que contiene cadenaB&#250;squeda como subcadena. Si incluir es Falso, Filter devuelve el subconjunto de la matriz que contiene cadenaB&#250;squeda como subcadena. Si se omite, se supone el valor Verdadero.
+<a name="1000853697"></a><li>comparar es un valor Num&#233;rico opcional que indica el tipo de cadena de comparaci&#243;n a usar:
+<ul type="disc"><ul type="disc"><a name="1000853698"></a><li> Realiza una comparaci&#243;n, que es sensible a may&#250;sculas y min&#250;sculas<a name="1000853699"></a><li> Realiza una comparaci&#243;n, que es sensible a may&#250;sculas y min&#250;sculas<p class="indent"><a name="1000853700"></a>Si se omite, se realiza una comparaci&#243;n sensible a may&#250;sculas y min&#250;sculas.</p></ul></ul></ul><a name="1000853701"></a><h5>Devuelve </h5><p><a name="1000853702"></a>Matriz de valores de Cadena.</p><a name="1000853703"></a><h5>Acci&#243;n</h5><p><a name="1000853704"></a>Filter busca una cadena especificada dentro de una matriz de cadenas y devuelve las cadenas en una matriz.</p><a name="1000853705"></a><h5>Ejemplo(s)</h5><p><a name="1000853706"></a>Los siguientes ejemplos son aplicables a las sintaxis b&#225;sica y Crystal: </p><p><a name="1000853707"></a>Los ejemplos suponen que cadenasEntrada es una matriz de Cadenas compuesta de 5 elementos: "anan&#225;", "Manzana", "MANZANA", "uva" y "naranja".</p><p><code><a name="1000853708"></a>Filter (cadenasEntrada, "ap")</code></p><p class="example"><a name="1000853709"></a>Devuelve una matriz que contiene las 2 cadenas "anan&#225;" y "uva".</p><p><code><a name="1000853710"></a>Filter (cadenasEntrada, "Ap", Verdadero)</code></p><p class="example"><a name="1000853711"></a>Devuelve una matriz que contiene 1 cadena "Manzana". </p><p><code><a name="1000853712"></a>Filter (cadenasEntrada, "ap", Verdadero)</code></p><p class="example"><a name="1000853713"></a>Devuelve una matriz que contiene las 4 cadenas "anan&#225;", "Manzana", "MANZANA" y "uva". El proceso de concordancia con la cadena de b&#250;squeda usa comparaci&#243;n sensible a may&#250;sculas y min&#250;sculas.</p><p><code><a name="1000853714"></a>Filter (cadenasEntrada, "ap", Falso)</code></p><p class="example"><a name="1000853715"></a>Devuelve una matriz que contiene las 3 cadenas "Manzana", "MANZANA" y "naranja".</p><p><code><a name="1000853716"></a>Filter (cadenasEntrada, "cd")</code></p><p class="example"><a name="1000853717"></a>Devuelve una matriz que contiene 1 cadena: la cadena vac&#237;a "". La matriz devuelta no contiene ninguna cadena coincidente, pero s&#237; 1 elemento, ya que el lenguaje de la f&#243;rmula no admite matrices vac&#237;as.</p><a name="1000853718"></a><h5>Comentario(s)</h5><p><a name="1000853719"></a>Esta funci&#243;n est&#225; dise&#241;ada para trabajar exactamente como la funci&#243;n de Visual Basic del mismo nombre.</p>
+<hr><br>
+
+<script  language="JavaScript"><!--
+
+var prev = "Functions97.html";
+var next = "Functions99.html";
+
+function setTopicID() { 
+      var number = "1000853687"; 
+      return number; 
+}
+
+// --></script>
+
+
+
+
+<SCRIPT>
+
+if (!window.parent.toc && navigator.appName == "Netscape") {
+
+   document.writeln ('<TABLE ALIGN="left" border="0" cellspacing="0" cellpadding="10">');
+   document.writeln ('<TR>');
+   document.write ('<TD ALIGN="left">');
+
+   if (prev != "crw_spTOC.hhc") {
+      document.writeln ('<A HREF="' + prev + '">');
+      document.writeln ('<IMG SRC="prevpage.gif" HEIGHT=17 BORDER=0 ALT="Página anterior"></A>');
+   } else {
+//   window.alert ('no previous page');
+   }
+
+   if (next != "crw_spIX.hhk") {
+      document.writeln ('<A HREF="' + next + '">');
+      document.writeln ('<IMG SRC="nextpage.gif" HEIGHT=17 BORDER=0 ALT="Página siguiente"></A>');
+   } else {
+//   window.alert ('no next page');
+   }
+   document.writeln ('</TD><TD ALIGN="left">');
+   document.writeln ('<A HREF="frameset.htm?TOC">');
+   document.writeln ('<IMG SRC="showtoc.gif" HEIGHT=17 BORDER=0 ALT="Haga clic para ver el contenido"></A></TD>');
+   document.writeln ('<TD ALIGN="left">');
+   document.writeln ('<A HREF="frameset.htm?IDX">');
+   document.writeln ('<IMG SRC="showix.gif" HEIGHT=17 BORDER=0 ALT="Haga clic para ver el índice"></A></TD>');
+   document.writeln ('</TD>');
+   document.writeln ('</TR>');
+   document.writeln ('</TABLE>');
+
+}
+
+</SCRIPT>
+<table align="right" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td align="right"><font size="1">Seagate Software, Inc.<br>
+    <a href="http://www.seagatesoftware.com">http://www.seagatesoftware.com</a><br>
+    Envíe sus comentarios a:<br>
+    <a href="mailto:techpubs@seagatesoftware.com">techpubs@seagatesoftware.com</a><br>
+    </font></td>
+  </tr>
+</table>
+</body>
+</html>
+
+

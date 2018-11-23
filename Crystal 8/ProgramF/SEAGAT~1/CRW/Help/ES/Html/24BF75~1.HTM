@@ -1,0 +1,99 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+
+<html>
+<head>
+<title>C&#243;mo el agrupamiento del lado del servidor afecta la consulta SQL</title>
+
+<link REL=STYLESHEET TYPE="text/css" HREF="seagate.css">
+
+<!--
+                 ***********************************
+                 * Seagate Software copyright 1999 *
+                 ***********************************
+
+                      Template version: 5.1
+-->
+
+
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" link="#0000FF" vlink="#0000FF" alink="#800080">
+
+
+ 
+<a name="323312"></a><h3 class="newpage"> C&#243;mo el agrupamiento del lado del servidor afecta la consulta SQL</h3>
+<p><a name="323313"></a>Cuando un informe mueve la mayor&#237;a del procesamiento al servidor, esto por necesidad altera la consulta SQL. As&#237;, cuando la opci&#243;n Ejecutar el agrupamiento en el servidor esta activa, algunos aspectos individuales del procesamiento del lado del servidor modificar&#225;n el enunciado SQL en diferentes maneras.</p><ul type="disc"><a name="323314"></a><li>Si usted activa la opci&#243;n Usar &#237;ndices en el servidor para rapidez (eh el cuadro de di&#225;logo Opciones del Informe), el programa agregar&#225; una cl&#225;usula ORDER BY al enunciado SQL.
+<a name="323315"></a><li>Si agrupa en datos de tipo vinculable en el DBMS, el programa agregar&#225; una cl&#225;usula GROUP BY al enunciado SQL. El programa usa la cl&#225;usula GROUP BY para ejecutar el agrupamiento en el servidor.
+<a name="323316"></a><li>Si resume en datos de tipo vinculable, el programa agregar&#225; un campo de resumen a la cl&#225;usual SELECT del enunciado SQL.
+<a name="323317"></a><li>Si traspasa en datos de tipo vinculable, el programa agregar&#225; una cl&#225;usula WHERE al enunciado SQL.
+<a name="323318"></a><li>Si agrupa en orden descendente en datos de tipo vinculable, el programa agregar&#225; una cl&#225;usula ORDER BY al enunciado SQL.
+</ul><p><a name="323319"></a>El enunciado tambi&#233;n cambia entre fichas:</p><ul type="disc"><a name="323320"></a><li>Si usted est&#225; trabajando en la ficha Vista previa, el enunciado incluye la cl&#225;usual GROUP BY, as&#237; como tambi&#233;n cualquier agregado que el informe est&#225; moviendo al servidor.
+<a name="323321"></a><li>Si est&#225; traspasando, el enunciado variar&#225; dependiendo de los datos subyacentes y del nivel de traspaso. Con cada acci&#243;n de traspaso el criterio WHERE cambia. Tambi&#233;n, si usted traspasa a los detalles, el enunciado no incluir&#225; la cl&#225;usula GROUP BY (ya que no hay ning&#250;n grupo en esa ficha de traspaso).
+</ul><p><a name="323322"></a>Para ver el enunciado SQL actual de la ficha activa, elija el comando Mostrar consulta SQL del men&#250; Base de datos. El cuadro de di&#225;logo Mostra Consulta SQL aparecer&#225; en su pantalla, mostrando el enunciado correspondiente. </p><p><a name="323323"></a><font color="darkblue"><b>Nota:   &nbsp;&nbsp;&nbsp;</b></font></p>
+<ul type="disc"><a name="323324"></a><li>Puede usar el editor de expresiones SQL para editar los enunciados SQL que ser&#225;n procesados en el servidor.
+<a name="324009"></a><li>Los enunciados SQL que han sido editados en el cuadro de di&#225;logo Mostrar consulta SQL, desactivan el procesamiento en el lado de servidor ya que no se procesa el AGRUPAR POR.
+</ul>
+<hr><br>
+
+<script  language="JavaScript"><!--
+
+var prev = "24_under_databases32.html";
+var next = "24_under_databases34.html";
+
+function setTopicID() { 
+      var number = "323312"; 
+      return number; 
+}
+
+// --></script>
+
+
+
+
+<SCRIPT>
+
+if (!window.parent.toc && navigator.appName == "Netscape") {
+
+   document.writeln ('<TABLE ALIGN="left" border="0" cellspacing="0" cellpadding="10">');
+   document.writeln ('<TR>');
+   document.write ('<TD ALIGN="left">');
+
+   if (prev != "crw_spTOC.hhc") {
+      document.writeln ('<A HREF="' + prev + '">');
+      document.writeln ('<IMG SRC="prevpage.gif" HEIGHT=17 BORDER=0 ALT="Página anterior"></A>');
+   } else {
+//   window.alert ('no previous page');
+   }
+
+   if (next != "crw_spIX.hhk") {
+      document.writeln ('<A HREF="' + next + '">');
+      document.writeln ('<IMG SRC="nextpage.gif" HEIGHT=17 BORDER=0 ALT="Página siguiente"></A>');
+   } else {
+//   window.alert ('no next page');
+   }
+   document.writeln ('</TD><TD ALIGN="left">');
+   document.writeln ('<A HREF="frameset.htm?TOC">');
+   document.writeln ('<IMG SRC="showtoc.gif" HEIGHT=17 BORDER=0 ALT="Haga clic para ver el contenido"></A></TD>');
+   document.writeln ('<TD ALIGN="left">');
+   document.writeln ('<A HREF="frameset.htm?IDX">');
+   document.writeln ('<IMG SRC="showix.gif" HEIGHT=17 BORDER=0 ALT="Haga clic para ver el índice"></A></TD>');
+   document.writeln ('</TD>');
+   document.writeln ('</TR>');
+   document.writeln ('</TABLE>');
+
+}
+
+</SCRIPT>
+<table align="right" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td align="right"><font size="1">Seagate Software, Inc.<br>
+    <a href="http://www.seagatesoftware.com">http://www.seagatesoftware.com</a><br>
+    Envíe sus comentarios a:<br>
+    <a href="mailto:techpubs@seagatesoftware.com">techpubs@seagatesoftware.com</a><br>
+    </font></td>
+  </tr>
+</table>
+</body>
+</html>
+
+

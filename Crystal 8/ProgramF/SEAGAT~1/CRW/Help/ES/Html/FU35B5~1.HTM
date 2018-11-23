@@ -1,0 +1,124 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+
+<html>
+<head>
+<title>DateSerial (a&#241;o, mes, d&#237;a)</title>
+
+<link REL=STYLESHEET TYPE="text/css" HREF="seagate.css">
+
+<!--
+                 ***********************************
+                 * Seagate Software copyright 1999 *
+                 ***********************************
+
+                      Template version: 5.1
+-->
+
+
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" link="#0000FF" vlink="#0000FF" alink="#800080">
+
+
+ 
+<a name="1000535456"></a><h3 class="newpage"> DateSerial (a&#241;o, mes, d&#237;a)</h3>
+<p><a name="1000691076"></a>Sintaxis b&#225;sica y Crystal.</p><a name="1000535457"></a><h5>Argumentos</h5><ul type="disc"><a name="1000535458"></a><li>a&#241;o es un N&#250;mero entero o expresi&#243;n num&#233;rica que representa un a&#241;o; ejemplo: 1996.
+<a name="1000535459"></a><li>mes es un N&#250;mero entero o expresi&#243;n num&#233;rica que representa un mes; ejemplo: 12 por diciembre.
+<a name="1000535460"></a><li>d&#237;a es un N&#250;mero entero o expresi&#243;n num&#233;rica que representa un d&#237;a del mes; ejemplo: 
+</ul><a name="1000535461"></a><h5>Devuelve </h5><p><a name="1000535462"></a>Un valor Fecha.</p><a name="1000535463"></a><h5>Acci&#243;n</h5><p><a name="1000535464"></a>DateSerial devuelve un valor Fecha para el a&#241;o, mes y d&#237;a especificados. Tambi&#233;n maneja expresiones Date relativas.</p><a name="1000535465"></a><h5>Uso(s) t&#237;pico(s)</h5><p><a name="1000535466"></a>Puede usarse DateSerial en lugar de <a href="Functions162.html#1000568875">CDate</a> o <a href="Functions109.html#1000531915">DateValue</a> para crear un valor Fecha a partir del a&#241;o, mes y d&#237;a.  </p><p><a name="1000535467"></a>Una caracter&#237;stica &#250;til de DateSerial es que el argumento de mes no tiene que estar entre 1 y 12, y el argumento de d&#237;a no tiene que estar en el rango v&#225;lido para el n&#250;mero de d&#237;as del mes.  Tales fechas se interpretan como fechas relativas y DateSerial producir&#225; un valor Fecha v&#225;lido. Esta funci&#243;n puede usarse para realizar diversos c&#243;mputos con fechas, sin verificar casos especiales, tales como fin de a&#241;o, a&#241;os bisiestos y el n&#250;mero de d&#237;as de un mes. Examine los siguientes ejemplos de algunas aplicaciones t&#237;picas. </p><a name="1000535468"></a><h5>Ejemplo(s)</h5><p><a name="1000535469"></a>Los siguientes ejemplos son aplicables a las sintaxis b&#225;sica y Crystal:</p><p class="code"><a name="1000535470"></a>DateSerial (1999, 6, 15)
+<br><a name="1000535471"></a>DateSerial (2000, 1 - 7, 15)
+<br><a name="1000535472"></a>DateSerial (1999, 1, 166)
+</p><p class="example"><a name="1000535473"></a>Los tres devuelven la fecha 15 de junio de 1999.   El segundo indica que 7 meses antes del 1 de enero de 2000 es el 15 de junio de 1999.   El tercero indica que el d&#237;a 166th de 1999 es el 15 de junio de 1999.</p><p><code><a name="1000535474"></a>DateSerial (1996 + 12, 2 + 13, 29 + 14)</code></p><p class="example"><a name="1000535475"></a>Devuelve el 12 de abril de 2009. Lo que significa es que 12 a&#241;os, 13 meses y 14 d&#237;as a contar del 29 de febrero de 1996 es el 12 de abril de 2009.  </p><p><a name="1000535477"></a>Suponga que desea calcular el &#250;ltimo d&#237;a del mes para el campo Fecha/hora {pedidos.FECHA DEL PEDIDO}. Observe que en los c&#225;lculos DateSerial(A&#241;o(d), Mes(d) + 1, 1) es el primer d&#237;a del mes siguiente {pedidos.FECHA DEL PEDIDO} y que al restar un d&#237;a se obtiene el resultado deseado:</p><p class="code"><a name="1000535478"></a>Sintaxis b&#225;sica Rem
+<br><a name="1000535479"></a>Dim d
+<br><a name="1000535480"></a>d = {pedidos.FECHA DEL PEDIDO}
+<br><a name="1000535481"></a>formula = DateSerial(A&#241;o(d), Mes(d) + 1, 1 - 1)
+<br><a name="1000535482"></a>
+<br><a name="1000535483"></a>Sintaxis Crystal
+<br><a name="1000535484"></a>Local DateTimeVar d := {pedidos.FECHA DEL PEDIDO};
+<br><a name="1000535485"></a>DateSerial(A&#241;o(d), Mes(d) + 1, 1 - 1)
+</p><p class="indent"><a name="1000535487"></a>Con frecuencia es &#250;til combinar DateSerial con otras funciones de fecha. Por ejemplo, si desea calcular la fecha del &#250;ltimo viernes del mes en el campo {pedidos.FECHA DEL PEDIDO}, puede hacer lo siguiente. </p><p class="example"><a name="1000652454"></a>El c&#225;lculo se realiza encontrando el &#250;ltimo d&#237;a del mes y luego restando un n&#250;mero de d&#237;as para llegar hasta un d&#237;a viernes.  Ya que algunos meses tienen 5 viernes (ejemplo: octubre de 1999) y otros 4 (ejemplo: noviembre de 1999), este enfoque es m&#225;s f&#225;cil que trabajar a partir del primer d&#237;a de un mes.  </p><p class="code"><a name="1000535488"></a>Sintaxis b&#225;sica Rem
+<br><a name="1000535489"></a>Dim d1, d2
+<br><a name="1000535490"></a>d1 = {pedidos.FECHA DEL PEDIDO}
+<br><a name="1000535491"></a>d2 = DateSerial(Year(d1), Month(d1) + 1, 1 - 1)
+<br><a name="1000535492"></a>formula = d2 - (WeekDay(d2, crFriday) - 1)
+<br><a name="1000535493"></a>
+<br><a name="1000535494"></a>Sintaxis Crystal
+<br><a name="1000535495"></a>Local DateTimeVar d := {pedidos.FECHA DEL PEDIDO};
+<br><a name="1000535496"></a>Local DateVar d2;
+<br><a name="1000535497"></a>d2 = DateSerial(A&#241;o(d1), Mes(d1) + 1, 1 - 1)
+<br><a name="1000535498"></a>d2 - (DayOfWeek(d2, crFriday) - 1)
+</p><p class="example"><a name="1000535499"></a>Devuelve un valor Fecha 27 de marzo de 1998 si {pedidos.FECHA DEL PEDIDO} es el 18 de marzo de 1998.</p><p><a name="1000535501"></a>Este es un ejemplo que devuelve la fecha del segundo martes del mes 3 meses antes {pedidos.FECHA DEL PEDIDO}:</p><p class="code"><a name="1000535502"></a>Sintaxis b&#225;sica Rem
+<br><a name="1000535503"></a>Dim d1, d2
+<br><a name="1000535504"></a>d1 = {pedidos.FECHA DEL PEDIDO}
+<br><a name="1000535505"></a>d2 = DateSerial(A&#241;o(d1), Mes(d1) - 3, 1)
+<br><a name="1000535506"></a>formula = d2 + (2 * 7 - (WeekDay(d2, crTuesday) - 1))
+<br><a name="1000535507"></a>
+<br><a name="1000535508"></a>Sintaxis Crystal
+<br><a name="1000535509"></a>Local DateTimeVar d := {pedidos.FECHA DEL PEDIDO};
+<br><a name="1000535510"></a>Local DateVar d2 := DateSerial(A&#241;o(d1), Mes(d1) - 3, 1);
+<br><a name="1000535511"></a>d2 + (2 * 7 - (DayOfWeek(d2, crTuesday) - 1))
+</p><p class="example"><a name="1000535512"></a>Devuelve el valor Fecha 9 de diciembre de 1997 si {pedidos.FECHA DEL PEDIDO} es el 18 de marzo de 1998.</p><a name="1000535513"></a><h5>Comentario</h5><p><a name="1000535514"></a>Esta funci&#243;n est&#225; dise&#241;ada para trabajar exactamente como la funci&#243;n de Visual Basic del mismo nombre.</p>
+<hr><br>
+
+<script  language="JavaScript"><!--
+
+var prev = "Functions111.html";
+var next = "Functions113.html";
+
+function setTopicID() { 
+      var number = "1000535456"; 
+      return number; 
+}
+
+// --></script>
+
+
+
+
+<SCRIPT>
+
+if (!window.parent.toc && navigator.appName == "Netscape") {
+
+   document.writeln ('<TABLE ALIGN="left" border="0" cellspacing="0" cellpadding="10">');
+   document.writeln ('<TR>');
+   document.write ('<TD ALIGN="left">');
+
+   if (prev != "crw_spTOC.hhc") {
+      document.writeln ('<A HREF="' + prev + '">');
+      document.writeln ('<IMG SRC="prevpage.gif" HEIGHT=17 BORDER=0 ALT="Página anterior"></A>');
+   } else {
+//   window.alert ('no previous page');
+   }
+
+   if (next != "crw_spIX.hhk") {
+      document.writeln ('<A HREF="' + next + '">');
+      document.writeln ('<IMG SRC="nextpage.gif" HEIGHT=17 BORDER=0 ALT="Página siguiente"></A>');
+   } else {
+//   window.alert ('no next page');
+   }
+   document.writeln ('</TD><TD ALIGN="left">');
+   document.writeln ('<A HREF="frameset.htm?TOC">');
+   document.writeln ('<IMG SRC="showtoc.gif" HEIGHT=17 BORDER=0 ALT="Haga clic para ver el contenido"></A></TD>');
+   document.writeln ('<TD ALIGN="left">');
+   document.writeln ('<A HREF="frameset.htm?IDX">');
+   document.writeln ('<IMG SRC="showix.gif" HEIGHT=17 BORDER=0 ALT="Haga clic para ver el índice"></A></TD>');
+   document.writeln ('</TD>');
+   document.writeln ('</TR>');
+   document.writeln ('</TABLE>');
+
+}
+
+</SCRIPT>
+<table align="right" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td align="right"><font size="1">Seagate Software, Inc.<br>
+    <a href="http://www.seagatesoftware.com">http://www.seagatesoftware.com</a><br>
+    Envíe sus comentarios a:<br>
+    <a href="mailto:techpubs@seagatesoftware.com">techpubs@seagatesoftware.com</a><br>
+    </font></td>
+  </tr>
+</table>
+</body>
+</html>
+
+

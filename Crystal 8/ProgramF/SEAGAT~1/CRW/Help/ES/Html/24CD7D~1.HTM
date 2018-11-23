@@ -1,0 +1,192 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+
+<html>
+<head>
+<title>Uni&#243;n No Igual que [!=, &lt;&gt;]</title>
+
+<link REL=STYLESHEET TYPE="text/css" HREF="seagate.css">
+
+<!--
+                 ***********************************
+                 * Seagate Software copyright 1999 *
+                 ***********************************
+
+                      Template version: 5.1
+-->
+
+
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" link="#0000FF" vlink="#0000FF" alink="#800080">
+
+
+ 
+<a name="322311"></a><h4 class="newpage"> Uni&#243;n No Igual que [!=, &lt;&gt;]</h4><p><a name="322312"></a>El conjunto resultante de una uni&#243;n No Igual que incluye todos los registros en que el valor del campo vinculado de la tabla principal no es igual que el valor del campo vinculado de la tabla de comparaci&#243;n. Este tipo de uni&#243;n puede ser usado para encontrar posibles combinaciones de elementos cuando una tabla es unida a si misma (una auto<nobr>-u</nobr>ni&#243;n). Por ejemplo, una compa&#241;&#237;a puede tener una tabla que describe todos los productos que vende. Si deciden tener una venta especial, ofreciendo a sus clientes que si compran un art&#237;culo podr&#225;n llevarse el segundo a mitad de precio, necesitar&#225;n tener una lista de todas las posibles combinaciones de dos productos:</p><PRE><a name="322313"></a>SELECT Producto1.'Nombre de Producto',<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Producto2.'Nombre de Producto',<br>
+FROM 'Producto' Producto1<br>
+&nbsp;&nbsp;&nbsp;&nbsp;'Producto' Producto2<br>
+WHERE Producto1.'Nombre de Producto' !=<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Producto2.'Nombre de Producto'
+</PRE><p><a name="322314"></a>En este enunciado SQL, la tabla Producto es abierta dos veces. La primera vez, se le da el alias Producto1. La segunda vez, se le da el alias Producto2. Luego, el campo Nombre de Producto es usado para vincular desde la tabla Producto1 a la tabla Producto2. Esta es la misma tabla, pero como ha sido abierta dos veces utilizando diferentes alias, Seagate Crystal Reports la considera como dos tablas separadas. Una uni&#243;n No Igual que es usada para vincular las tablas por el campo Nombre de Producto. Como resultado, cada producto es apareado con cada uno de los otros productos, pero no es apareado consigo mismo.</p><p><a name="322372"></a> <Table Border="1">
+<tr><th align="left" valign="bottom"><a name="322317"></a>Producto1
+
+</th><th align="left" valign="bottom"><a name="322319"></a>Producto2
+
+</th></tr>
+<tr><th align="left" valign="bottom"><a name="322321"></a>Nombre de Producto
+
+</th><th align="left" valign="bottom"><a name="322323"></a>Nombre de Producto
+
+</th></tr>
+<tr><td align="left" valign="TOP"><P><a name="322325"></a>Craze Adult Helmet</P>
+
+
+</td><td align="left" valign="TOP"><P><a name="322327"></a>Craze Mtn Lock</P>
+
+
+</td></tr>
+<tr><td align="left" valign="TOP"><P><a name="322329"></a>Craze Adult Helmet</P>
+
+
+</td><td align="left" valign="TOP"><P><a name="322331"></a>InFlux Lycra Glove</P>
+
+
+</td></tr>
+<tr><td align="left" valign="TOP"><P><a name="322333"></a>Craze Adult Helmet</P>
+
+
+</td><td align="left" valign="TOP"><P><a name="322335"></a>Roadster Micro Mtn Saddle</P>
+
+
+</td></tr>
+<tr><td align="left" valign="TOP"><P><a name="322337"></a>Craze Mtn Lock</P>
+
+
+</td><td align="left" valign="TOP"><P><a name="322339"></a>Craze Adult Helmet</P>
+
+
+</td></tr>
+<tr><td align="left" valign="TOP"><P><a name="322341"></a>Craze Mtn Lock</P>
+
+
+</td><td align="left" valign="TOP"><P><a name="322343"></a>InFlux Lycra Glove</P>
+
+
+</td></tr>
+<tr><td align="left" valign="TOP"><P><a name="322345"></a>Craze Mtn Lock</P>
+
+
+</td><td align="left" valign="TOP"><P><a name="322347"></a>Roadster Micro Mtn Saddle</P>
+
+
+</td></tr>
+<tr><td align="left" valign="TOP"><P><a name="322349"></a>InFlux Lycra Glove</P>
+
+
+</td><td align="left" valign="TOP"><P><a name="322351"></a>Craze Adult Helmet</P>
+
+
+</td></tr>
+<tr><td align="left" valign="TOP"><P><a name="322353"></a>InFlux Lycra Glove</P>
+
+
+</td><td align="left" valign="TOP"><P><a name="322355"></a>Craze Mtn Lock</P>
+
+
+</td></tr>
+<tr><td align="left" valign="TOP"><P><a name="322357"></a>InFlux Lycra Glove</P>
+
+
+</td><td align="left" valign="TOP"><P><a name="322359"></a>Roadster Micro Mtn Saddle</P>
+
+
+</td></tr>
+<tr><td align="left" valign="TOP"><P><a name="322361"></a>Roadster Micro Mtn Saddle</P>
+
+
+</td><td align="left" valign="TOP"><P><a name="322363"></a>Craze Adult Helmet</P>
+
+
+</td></tr>
+<tr><td align="left" valign="TOP"><P><a name="322365"></a>Roadster Micro Mtn Saddle</P>
+
+
+</td><td align="left" valign="TOP"><P><a name="322367"></a>Craze Mtn Lock</P>
+
+
+</td></tr>
+<tr><td align="left" valign="TOP"><P><a name="322369"></a>Roadster Micro Mtn Saddle</P>
+
+
+</td><td align="left" valign="TOP"><P><a name="322371"></a>InFlux Lycra Glove</P>
+
+
+</td></tr>
+
+</Table></p>
+<p><a name="328101"></a><font color="darkblue"><b>Nota:   &nbsp;&nbsp;&nbsp;</b></font>El s&#237;mbolo != es utilizado para representar una uni&#243;n No Igual que, si el controlador de la fuente de datos ODBC para los datos que est&#225;n siendo accedidos admite este s&#237;mbolo. Si no, el s&#237;mbolo predeterminado &lt;&gt; es utilizado para representar una uni&#243;n No Igual que. Buscar en <kbd>Auto<nobr>-u</nobr>ni&#243;n</kbd> en la Ayuda en l&#237;nea de Seagate Crystal Reports.</p>
+
+<hr><br>
+
+<script  language="JavaScript"><!--
+
+var prev = "24_under_databases26.html";
+var next = "24_under_databases28.html";
+
+function setTopicID() { 
+      var number = "322311"; 
+      return number; 
+}
+
+// --></script>
+
+
+
+
+<SCRIPT>
+
+if (!window.parent.toc && navigator.appName == "Netscape") {
+
+   document.writeln ('<TABLE ALIGN="left" border="0" cellspacing="0" cellpadding="10">');
+   document.writeln ('<TR>');
+   document.write ('<TD ALIGN="left">');
+
+   if (prev != "crw_spTOC.hhc") {
+      document.writeln ('<A HREF="' + prev + '">');
+      document.writeln ('<IMG SRC="prevpage.gif" HEIGHT=17 BORDER=0 ALT="Página anterior"></A>');
+   } else {
+//   window.alert ('no previous page');
+   }
+
+   if (next != "crw_spIX.hhk") {
+      document.writeln ('<A HREF="' + next + '">');
+      document.writeln ('<IMG SRC="nextpage.gif" HEIGHT=17 BORDER=0 ALT="Página siguiente"></A>');
+   } else {
+//   window.alert ('no next page');
+   }
+   document.writeln ('</TD><TD ALIGN="left">');
+   document.writeln ('<A HREF="frameset.htm?TOC">');
+   document.writeln ('<IMG SRC="showtoc.gif" HEIGHT=17 BORDER=0 ALT="Haga clic para ver el contenido"></A></TD>');
+   document.writeln ('<TD ALIGN="left">');
+   document.writeln ('<A HREF="frameset.htm?IDX">');
+   document.writeln ('<IMG SRC="showix.gif" HEIGHT=17 BORDER=0 ALT="Haga clic para ver el índice"></A></TD>');
+   document.writeln ('</TD>');
+   document.writeln ('</TR>');
+   document.writeln ('</TABLE>');
+
+}
+
+</SCRIPT>
+<table align="right" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td align="right"><font size="1">Seagate Software, Inc.<br>
+    <a href="http://www.seagatesoftware.com">http://www.seagatesoftware.com</a><br>
+    Envíe sus comentarios a:<br>
+    <a href="mailto:techpubs@seagatesoftware.com">techpubs@seagatesoftware.com</a><br>
+    </font></td>
+  </tr>
+</table>
+</body>
+</html>
+
+

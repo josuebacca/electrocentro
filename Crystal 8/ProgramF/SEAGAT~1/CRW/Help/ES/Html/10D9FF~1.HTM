@@ -1,0 +1,109 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+
+<html>
+<head>
+<title>Formato condicional de objetos</title>
+
+<link REL=STYLESHEET TYPE="text/css" HREF="seagate.css">
+
+<!--
+                 ***********************************
+                 * Seagate Software copyright 1999 *
+                 ***********************************
+
+                      Template version: 5.1
+-->
+
+
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" link="#0000FF" vlink="#0000FF" alink="#800080">
+
+
+ 
+<a name="58673"></a><h3 class="newpage"> Formato condicional de objetos</h3>
+<p><a name="58674"></a>Es aconsejable crear un informe que use formatos diferentes dependiendo del valor del campo. Por ejemplo, puede crear un informe internacional que imprima valores monetarios para cada pa&#237;s en el formato que sea com&#250;n en dicho pa&#237;s. Puede realizar esta acci&#243;n usando las secciones m&#250;ltiples.</p><a name="58675"></a><h6>Para dar formato condicional a objetos</h6><ol>
+<a name="58679"></a><li value="1&nbsp;&nbsp;&nbsp;&nbsp;">Cree un informe. Vea <a href="04_quick16.html#67050">Creaci&#243;n de su informe</a>. Aseg&#250;rese de que su informe contenga el campo <kbd>Ventas del &#250;ltimo a&#241;o</kbd>, que se encuentra en la tabla <kbd>Cliente</kbd>.
+<a name="58682"></a><li value="2&nbsp;&nbsp;&nbsp;&nbsp;">Cree una secci&#243;n de detalles para cada pa&#237;s que requiera un formato exclusivo. Vea <a href="11_format12.html#83854">Uso de l&#237;neas gu&#237;a</a>.
+<a name="58684"></a><li value="3&nbsp;&nbsp;&nbsp;&nbsp;">Aseg&#250;rese de que cada secci&#243;n de detalles contenga los mismos datos; que cada campo ubicado en la secci&#243;n Detalles A tambi&#233;n est&#233; ubicado en la secci&#243;n Detalles B y en la secci&#243;n Detalles C, etc.
+<a name="58689"></a><li value="4&nbsp;&nbsp;&nbsp;&nbsp;"><img src="images/10_multsec_rep7a.gif">
+
+
+En la secci&#243;n Detalles A, seleccione el campo <kbd>Ventas del &#250;ltimo a&#241;o</kbd> y luego haga clic en <kbd>Propiedades de objeto</kbd> en la barra de herramientas suplementaria.
+<p class="indent"><a name="58690"></a>Aparece el Editor de formato mostrando la ficha N&#250;mero.</p><a name="58691"></a><li value="5&nbsp;&nbsp;&nbsp;&nbsp;">Establezca el estilo de moneda que desea usar para el primer pa&#237;s.
+<a name="58692"></a><li value="6&nbsp;&nbsp;&nbsp;&nbsp;">Haga clic en <kbd>Aceptar</kbd> para volver al informe.
+<a name="58696"></a><li value="7&nbsp;&nbsp;&nbsp;&nbsp;"><img src="images/Bt_secex.gif">
+
+
+Haga clic en el <kbd>Asistente de secci&#243;n</kbd> en la barra de herramientas est&#225;ndar.
+<p class="indent"><a name="58697"></a>Aparece el Asistente de secci&#243;n.</p><a name="58698"></a><li value="8&nbsp;&nbsp;&nbsp;&nbsp;">Seleccione la secci&#243;n Detalles A en el cuadro <kbd>Secciones</kbd>. Seleccione la casilla de verificaci&#243;n <kbd>Suprimir (no profundizar)</kbd>.
+<a name="58702"></a><li value="9&nbsp;&nbsp;&nbsp;&nbsp;"><img src="images/Bt_cdfml.gif">
+
+
+Haga clic en el bot&#243;n <kbd>F&#243;rmula condicional</kbd> a la derecha de la casilla de verificaci&#243;n <kbd>Suprimir (no profundizar)</kbd> y use el Editor de f&#243;rmulas de formato para crear una f&#243;rmula que especifique las condiciones bajo las cuales se eliminar&#225; la secci&#243;n.
+<p class="indent"><a name="58703"></a>Por ejemplo, si la secci&#243;n Detalles A contiene valores monetarios para el Reino Unido, debe crear una f&#243;rmula que especifique que el valor de pa&#237;s no sea igual al del Reino Unido. Es decir, usted crea una f&#243;rmula que elimina la secci&#243;n cuando el valor del pa&#237;s no sea Reino Unido. Esto hace que la secci&#243;n s&#243;lo se imprima cuando el registro contenga un valor Reino Unido.</p></ol>
+
+<hr><br>
+
+<script  language="JavaScript"><!--
+
+var prev = "10_multsec_rep7.html";
+var next = "10_multsec_rep9.html";
+
+function setTopicID() { 
+      var number = "58673"; 
+      return number; 
+}
+
+// --></script>
+
+
+
+
+<SCRIPT>
+
+if (!window.parent.toc && navigator.appName == "Netscape") {
+
+   document.writeln ('<TABLE ALIGN="left" border="0" cellspacing="0" cellpadding="10">');
+   document.writeln ('<TR>');
+   document.write ('<TD ALIGN="left">');
+
+   if (prev != "crw_spTOC.hhc") {
+      document.writeln ('<A HREF="' + prev + '">');
+      document.writeln ('<IMG SRC="prevpage.gif" HEIGHT=17 BORDER=0 ALT="Página anterior"></A>');
+   } else {
+//   window.alert ('no previous page');
+   }
+
+   if (next != "crw_spIX.hhk") {
+      document.writeln ('<A HREF="' + next + '">');
+      document.writeln ('<IMG SRC="nextpage.gif" HEIGHT=17 BORDER=0 ALT="Página siguiente"></A>');
+   } else {
+//   window.alert ('no next page');
+   }
+   document.writeln ('</TD><TD ALIGN="left">');
+   document.writeln ('<A HREF="frameset.htm?TOC">');
+   document.writeln ('<IMG SRC="showtoc.gif" HEIGHT=17 BORDER=0 ALT="Haga clic para ver el contenido"></A></TD>');
+   document.writeln ('<TD ALIGN="left">');
+   document.writeln ('<A HREF="frameset.htm?IDX">');
+   document.writeln ('<IMG SRC="showix.gif" HEIGHT=17 BORDER=0 ALT="Haga clic para ver el índice"></A></TD>');
+   document.writeln ('</TD>');
+   document.writeln ('</TR>');
+   document.writeln ('</TABLE>');
+
+}
+
+</SCRIPT>
+<table align="right" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td align="right"><font size="1">Seagate Software, Inc.<br>
+    <a href="http://www.seagatesoftware.com">http://www.seagatesoftware.com</a><br>
+    Envíe sus comentarios a:<br>
+    <a href="mailto:techpubs@seagatesoftware.com">techpubs@seagatesoftware.com</a><br>
+    </font></td>
+  </tr>
+</table>
+</body>
+</html>
+
+

@@ -1,0 +1,105 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+
+<html>
+<head>
+<title>Uso de los rangos en f&#243;rmulas</title>
+
+<link REL=STYLESHEET TYPE="text/css" HREF="seagate.css">
+
+<!--
+                 ***********************************
+                 * Seagate Software copyright 1999 *
+                 ***********************************
+
+                      Template version: 5.1
+-->
+
+
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" link="#0000FF" vlink="#0000FF" alink="#800080">
+
+
+ 
+<a name="128286"></a><h3 class="newpage"> Uso de los rangos en f&#243;rmulas</h3>
+<p><a name="128288"></a>Existen 27 funciones en Seagate Crystal Reports que especifican rangos de fecha. Por ejemplo, la funci&#243;n LastFullMonth especifica un rango de valores de fechas que incluye todas las fechas desde el primer al &#250;ltimo d&#237;a del mes anterior. As&#237;, si la fecha de hoy fuera 15 de septiembre de 1999, LastFullMonth ser&#237;a el mismo que el valor de rango CDate (#Aug 1, 1999#) To CDate (#Aug 31, 1999#).</p><p><a name="128290"></a>Los rangos a menudo se usan con enunciados If o Select. El siguiente ejemplo calcula las calificaciones con letras de estudiantes seg&#250;n sus calificaciones de prueba. Las calificaciones mayores o iguales a 90 reciben una calificaci&#243;n de "A", las calificaciones de 80 a 90, 90 no incluido, reciben una "B" y as&#237; sucesivamente.</p><PRE><a name="128292"></a>Rem Calcular calificaciones con letras de estudiantes
+<a name="128293"></a>Select Case {Estudiante.Calificaciones de prueba}
+<a name="147484"></a>   Case Is &gt;= 90
+<a name="128295"></a>      formula = "A"
+<a name="128296"></a>   Case 80 To_ 90
+<a name="128297"></a>      formula = "B"
+<a name="128298"></a>   Case 70 To_ 80
+<a name="128299"></a>      formula = "C"
+<a name="128300"></a>   Case 60 To_ 70
+<a name="147487"></a>      formula = "D"
+<a name="128302"></a>   Case Else
+<a name="128303"></a>      formula = "F"
+<a name="128304"></a>End Select
+</PRE><p><a name="128306"></a>El ejemplo anterior usa el enunciado Select, que se analiza en mayor detalle en <a href="20_basicsyntax48.html#132670">Estructuras de control</a>. Puede verificar si un valor se encuentra en un rango usando el operador In. Por ejemplo:</p><PRE><a name="128308"></a>formula = 5 In 2 To 10 'Verdadero
+<a name="128309"></a>formula = 5 In 2 To_ 5 'Falso
+<a name="128310"></a>formula = 5 In 2 To 5 'Verdadero
+</PRE><p><a name="128312"></a>Se pueden usar las funciones Maximum y Minimum para buscar los puntos extremos de un rango:</p><p><code><a name="128313"></a>formula = Maximum (2 To 10) 'Devuelve 10</code></p>
+<hr><br>
+
+<script  language="JavaScript"><!--
+
+var prev = "20_basicsyntax19.html";
+var next = "20_basicsyntax21.html";
+
+function setTopicID() { 
+      var number = "128286"; 
+      return number; 
+}
+
+// --></script>
+
+
+
+
+<SCRIPT>
+
+if (!window.parent.toc && navigator.appName == "Netscape") {
+
+   document.writeln ('<TABLE ALIGN="left" border="0" cellspacing="0" cellpadding="10">');
+   document.writeln ('<TR>');
+   document.write ('<TD ALIGN="left">');
+
+   if (prev != "crw_spTOC.hhc") {
+      document.writeln ('<A HREF="' + prev + '">');
+      document.writeln ('<IMG SRC="prevpage.gif" HEIGHT=17 BORDER=0 ALT="Página anterior"></A>');
+   } else {
+//   window.alert ('no previous page');
+   }
+
+   if (next != "crw_spIX.hhk") {
+      document.writeln ('<A HREF="' + next + '">');
+      document.writeln ('<IMG SRC="nextpage.gif" HEIGHT=17 BORDER=0 ALT="Página siguiente"></A>');
+   } else {
+//   window.alert ('no next page');
+   }
+   document.writeln ('</TD><TD ALIGN="left">');
+   document.writeln ('<A HREF="frameset.htm?TOC">');
+   document.writeln ('<IMG SRC="showtoc.gif" HEIGHT=17 BORDER=0 ALT="Haga clic para ver el contenido"></A></TD>');
+   document.writeln ('<TD ALIGN="left">');
+   document.writeln ('<A HREF="frameset.htm?IDX">');
+   document.writeln ('<IMG SRC="showix.gif" HEIGHT=17 BORDER=0 ALT="Haga clic para ver el índice"></A></TD>');
+   document.writeln ('</TD>');
+   document.writeln ('</TR>');
+   document.writeln ('</TABLE>');
+
+}
+
+</SCRIPT>
+<table align="right" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td align="right"><font size="1">Seagate Software, Inc.<br>
+    <a href="http://www.seagatesoftware.com">http://www.seagatesoftware.com</a><br>
+    Envíe sus comentarios a:<br>
+    <a href="mailto:techpubs@seagatesoftware.com">techpubs@seagatesoftware.com</a><br>
+    </font></td>
+  </tr>
+</table>
+</body>
+</html>
+
+

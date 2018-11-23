@@ -1,0 +1,84 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+
+<html>
+<head>
+
+<title>NextNBusinessDays (#d&#237;as)</title>
+
+<link REL=STYLESHEET TYPE="text/css" HREF="seagate.css">
+
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" link="#0000FF" vlink="#0000FF" alink="#800080">
+
+
+ 
+<a name="1000690745"></a><h3 class="newpage"> NextNBusinessDays (#d&#237;as)</h3>
+<p><a name="1000751087"></a>Sintaxis b&#225;sica y Crystal.</p><p><a name="1000690811"></a><font color="darkblue"><b>Nota:   &nbsp;&nbsp;&nbsp;</b></font>Actualmente, Seagate Info admite el Calendario Comercial.  Ya que Seagate Crystal Reports no admite el Calendario Comercial, si est&#225; usando esta funci&#243;n en Seagate Crystal Reports, o si no ha especificado un Calendario Comercial para su sistema, esta funci&#243;n presupone que todos los d&#237;as son d&#237;as h&#225;biles.</p>
+<a name="1000690746"></a><h5>Argumentos</h5><p><a name="1000690747"></a>#d&#237;as es un n&#250;mero entero positivo que indica el n&#250;mero de d&#237;as h&#225;biles para los que Ud. desear&#237;a saber las fechas si comienza a contar desde hoy d&#237;a.  </p><a name="1000690748"></a><h5>Devuelve </h5><p><a name="1000690749"></a>Una matriz de fechas</p><a name="1000690750"></a><h5>Acci&#243;n</h5><p><a name="1000690751"></a>NextNBusinessDays (x) devuelve una matriz de fechas, que indica el siguiente x n&#250;mero de d&#237;as h&#225;biles a contar de hoy d&#237;a, inclusive, sobre la base del Calendario Comercial que Ud. ha especificado en su sistema. </p><a name="1000690753"></a><h5>Uso(s) t&#237;pico(s)</h5><p><a name="1000690754"></a>Puede pasar un n&#250;mero de d&#237;as calendarios a esta funci&#243;n, la cual retornar&#225; el n&#250;mero de d&#237;as laborales dentro de ese conjunto de d&#237;as calendario (de acuerdo al calendario laboral del programa). </p><a name="1000690755"></a><h5>Ejemplo(s)</h5><p><a name="1000690756"></a>Los siguientes ejemplos son aplicables a las sintaxis b&#225;sica y Crystal:</p><p><a name="1000690757"></a>Suponiendo que la fecha actual es sept. 24, 1999, la que corresponde a un d&#237;a viernes, y que un Calendario Comercial no especifica feriados para el resto de septiembre y que s&#243;lo los s&#225;bados y domingos son d&#237;as no h&#225;biles.</p><p><code><a name="1000690758"></a>NextNBusinessDays(5)</code></p><p class="example"><a name="1000690760"></a>Devuelve una matriz de 5 fechas, incluyendo sept. 24, 27, 28, 29 y 30, 1999.</p><a name="1000690762"></a><h5>Comentario(s) </h5><ul type="disc"><a name="1000690763"></a><li>Observe que (#days) no puede exceder ni +1000 ni -1000.
+<a name="1000690764"></a><li>Esta funci&#243;n presupone que se ha configurado un Calendario Comercial que indica los d&#237;as h&#225;biles, fines de semana y feriados.
+</ul>
+<hr><br>
+
+<script  language="JavaScript"><!--
+
+var prev = "Functions255.html";
+var next = "Operators.html";
+
+function setTopicID() { 
+      var number = "1000690745"; 
+      return number; 
+}
+
+// --></script>
+
+
+
+
+<SCRIPT>
+
+if (!window.parent.toc && navigator.appName == "Netscape") {
+
+   document.writeln ('<TABLE ALIGN="left" border="0" cellspacing="0" cellpadding="10">');
+   document.writeln ('<TR>');
+   document.write ('<TD ALIGN="left">');
+
+   if (prev != "crw_spTOC.hhc") {
+      document.writeln ('<A HREF="' + prev + '">');
+      document.writeln ('<IMG SRC="prevpage.gif" HEIGHT=17 BORDER=0 ALT="Página anterior"></A>');
+   } else {
+//   window.alert ('no previous page');
+   }
+
+   if (next != "crw_spIX.hhk") {
+      document.writeln ('<A HREF="' + next + '">');
+      document.writeln ('<IMG SRC="nextpage.gif" HEIGHT=17 BORDER=0 ALT="Página siguiente"></A>');
+   } else {
+//   window.alert ('no next page');
+   }
+   document.writeln ('</TD><TD ALIGN="left">');
+   document.writeln ('<A HREF="frameset.htm?TOC">');
+   document.writeln ('<IMG SRC="showtoc.gif" HEIGHT=17 BORDER=0 ALT="Haga clic para ver el contenido"></A></TD>');
+   document.writeln ('<TD ALIGN="left">');
+   document.writeln ('<A HREF="frameset.htm?IDX">');
+   document.writeln ('<IMG SRC="showix.gif" HEIGHT=17 BORDER=0 ALT="Haga clic para ver el índice"></A></TD>');
+   document.writeln ('</TD>');
+   document.writeln ('</TR>');
+   document.writeln ('</TABLE>');
+
+}
+
+</SCRIPT>
+<table align="right" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td align="right"><font size="1">Seagate Software, Inc.<br>
+    <a href="http://www.seagatesoftware.com">http://www.seagatesoftware.com</a><br>
+    Envíe sus comentarios a:<br>
+    <a href="mailto:techpubs@seagatesoftware.com">techpubs@seagatesoftware.com</a><br>
+    </font></td>
+  </tr>
+</table>
+</body>
+</html>
+
+

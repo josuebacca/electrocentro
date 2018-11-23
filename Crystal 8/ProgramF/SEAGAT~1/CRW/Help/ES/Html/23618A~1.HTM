@@ -1,0 +1,95 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+
+<html>
+<head>
+<title>Vinculaci&#243;n hacia o desde un campo de f&#243;rmula</title>
+
+<link REL=STYLESHEET TYPE="text/css" HREF="seagate.css">
+
+<!--
+                 ***********************************
+                 * Seagate Software copyright 1999 *
+                 ***********************************
+
+                      Template version: 5.1
+-->
+
+
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" link="#0000FF" vlink="#0000FF" alink="#800080">
+
+
+ 
+<a name="45150"></a><h3 class="newpage"> Vinculaci&#243;n hacia o desde un campo de f&#243;rmula</h3>
+<p><a name="45151"></a>Hay situaciones donde podr&#237;a necesitar vincular hacia o desde un campo de f&#243;rmula (campo calculado). Por ejemplo, la identificaci&#243;n de un empleado podr&#237;a tener un valor de 11 caracteres que consista de un c&#243;digo de departamento de dos caracteres seguido del n&#250;mero de Seguro Social de nueve caracteres (por ejemplo, HR555347487).</p><p><a name="47816"></a>Usando el lenguaje de f&#243;rmulas, es muy f&#225;cil extraer el n&#250;mero de Seguro Social de ese campo:</p><p><code><a name="47817"></a>{empleado.ID DEL EMPLEADO} [-9 to -1]</code></p><p><a name="47818"></a><nobr>-o</nobr>-</p><p><code><a name="45155"></a>{empleado.ID DEL EMPLEADO} [3 to 12]</code></p><p><a name="45156"></a>Para el valor HR555347487, cualquiera de las dos f&#243;rmulas extrae el valor 555347487.</p><p><a name="56714"></a>Si bien el valor retornado es un n&#250;mero de Seguro Social v&#225;lido, el hecho de que fue extra&#237;do con una f&#243;rmula le impide utilizar el campo para vincularlo a un campo de n&#250;mero de Seguro Social en otra tabla. Sin embargo, usando un subinforme, usted puede generar un informe y coordinar los valores en las dos tablas.</p><a name="56715"></a><h6>Para vincular a o desde un campo de f&#243;rmula</h6><ol>
+<a name="56716"></a><li value="1&nbsp;&nbsp;&nbsp;&nbsp;">Cree el informe principal utilizando una tabla que incluya el campo del N&#250;mero de Seguro Social (para este ejemplo, {cliente.No de SS}).
+<a name="45160"></a><li value="2&nbsp;&nbsp;&nbsp;&nbsp;"> Cree o importe un subinforme usando la f&#243;rmula que extrae el n&#250;mero de Seguro Social del campo Id del Empleado (para este ejemplo, {@EXTRACT}). 
+<p class="indent"><a name="53734"></a>Vea <a href="23_subreports6.html#43958">C&#243;mo insertar un subinforme</a>.</p><a name="45164"></a><li value="3&nbsp;&nbsp;&nbsp;&nbsp;">Inserte el subinforme donde desea que aparezca en el informe principal.
+<a name="45165"></a><li value="4&nbsp;&nbsp;&nbsp;&nbsp;">Vincule el subinforme al informe principal, vinculando el campo No de SS en el informe principal ({empleados.No de SS}) con la f&#243;rmula que extrae el n&#250;mero en el subinforme ({@EXTRACT}). Vea <a href="23_subreports11.html#53391">C&#243;mo vincular un subinforme al informe principal sin modificar la f&#243;rmula de selecci&#243;n</a>.
+</ol>
+
+<hr><br>
+
+<script  language="JavaScript"><!--
+
+var prev = "23_subreports14.html";
+var next = "23_subreports16.html";
+
+function setTopicID() { 
+      var number = "45150"; 
+      return number; 
+}
+
+// --></script>
+
+
+
+
+<SCRIPT>
+
+if (!window.parent.toc && navigator.appName == "Netscape") {
+
+   document.writeln ('<TABLE ALIGN="left" border="0" cellspacing="0" cellpadding="10">');
+   document.writeln ('<TR>');
+   document.write ('<TD ALIGN="left">');
+
+   if (prev != "crw_spTOC.hhc") {
+      document.writeln ('<A HREF="' + prev + '">');
+      document.writeln ('<IMG SRC="prevpage.gif" HEIGHT=17 BORDER=0 ALT="Página anterior"></A>');
+   } else {
+//   window.alert ('no previous page');
+   }
+
+   if (next != "crw_spIX.hhk") {
+      document.writeln ('<A HREF="' + next + '">');
+      document.writeln ('<IMG SRC="nextpage.gif" HEIGHT=17 BORDER=0 ALT="Página siguiente"></A>');
+   } else {
+//   window.alert ('no next page');
+   }
+   document.writeln ('</TD><TD ALIGN="left">');
+   document.writeln ('<A HREF="frameset.htm?TOC">');
+   document.writeln ('<IMG SRC="showtoc.gif" HEIGHT=17 BORDER=0 ALT="Haga clic para ver el contenido"></A></TD>');
+   document.writeln ('<TD ALIGN="left">');
+   document.writeln ('<A HREF="frameset.htm?IDX">');
+   document.writeln ('<IMG SRC="showix.gif" HEIGHT=17 BORDER=0 ALT="Haga clic para ver el índice"></A></TD>');
+   document.writeln ('</TD>');
+   document.writeln ('</TR>');
+   document.writeln ('</TABLE>');
+
+}
+
+</SCRIPT>
+<table align="right" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td align="right"><font size="1">Seagate Software, Inc.<br>
+    <a href="http://www.seagatesoftware.com">http://www.seagatesoftware.com</a><br>
+    Envíe sus comentarios a:<br>
+    <a href="mailto:techpubs@seagatesoftware.com">techpubs@seagatesoftware.com</a><br>
+    </font></td>
+  </tr>
+</table>
+</body>
+</html>
+
+

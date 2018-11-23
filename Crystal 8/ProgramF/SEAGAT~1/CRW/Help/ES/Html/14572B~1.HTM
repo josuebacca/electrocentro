@@ -1,0 +1,93 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+
+<html>
+<head>
+<title>Consideraciones generales acerca de OLE </title>
+
+<link REL=STYLESHEET TYPE="text/css" HREF="seagate.css">
+
+<!--
+                 ***********************************
+                 * Seagate Software copyright 1999 *
+                 ***********************************
+
+                      Template version: 5.1
+-->
+
+
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" link="#0000FF" vlink="#0000FF" alink="#800080">
+
+
+ 
+<a name="29136"></a><h3 class="newpage"> Consideraciones generales acerca de OLE </h3>
+<p><a name="29137"></a>Hay varios puntos para tener en cuenta cuando utiliza la funcionalidad de OLE. </p><ul type="disc"><a name="29138"></a><li>Cuando hace doble clic en un objeto OLE incrustado, Report Designer cambia sus men&#250;es y barras de herramientas a aquellas del programa servidor del objeto. Cuando termine de editar, haga clic afuera del objeto y reaparecer&#225;n las herramientas de Report Designer.
+<a name="29139"></a><li>Cuando hace doble clic en un objeto OLE vinculado, el programa abre el programa servidor con el objeto ya listo para ser editado. No es posible editar en contexto un objeto vinculado en Report Designer porque est&#225; trabajando con el objeto original. Como el objeto puede estar vinculado a varios otros documentos y como m&#225;s de una persona puede querer editarlo en un momento dado, mostrar el original en el programa servidor limita el acceso a un editor por vez.
+<a name="29140"></a><li>El sistema Windows 3.1 contiene el programa Microsoft Paintbrush (PBRUSH.EXE) como el editor de im&#225;genes original. Windows 95 y Windows 98 contienen el programa Paint (MSPAINT.EXE) como el nuevo editor de im&#225;genes. Si usted va a usar ambos sistemas operativos y trabajar constantemente entre estas ventanas, es mejor crear los informes en Windows 3.1 en lugar de Windows 95. Porque mientras que Windows 95 y Windows 98 saben como registrar y convertir im&#225;genes OLE de PBRUSH.EXE a im&#225;genes OLE de MSPAINT, no sucede lo mismo a la inversa.
+<a name="29141"></a><li>Usted puede abrir en Windows 95 o Windows 98 un informe creado en Windows 3.1 conteniendo im&#225;genes OLE, pero no puede abrir un informe con im&#225;genes OLE de Windows 95 o Windows 98 en Windows 3.1.
+</ul>
+<hr><br>
+
+<script  language="JavaScript"><!--
+
+var prev = "14_ole4.html";
+var next = "14_ole6.html";
+
+function setTopicID() { 
+      var number = "29136"; 
+      return number; 
+}
+
+// --></script>
+
+
+
+
+<SCRIPT>
+
+if (!window.parent.toc && navigator.appName == "Netscape") {
+
+   document.writeln ('<TABLE ALIGN="left" border="0" cellspacing="0" cellpadding="10">');
+   document.writeln ('<TR>');
+   document.write ('<TD ALIGN="left">');
+
+   if (prev != "crw_spTOC.hhc") {
+      document.writeln ('<A HREF="' + prev + '">');
+      document.writeln ('<IMG SRC="prevpage.gif" HEIGHT=17 BORDER=0 ALT="Página anterior"></A>');
+   } else {
+//   window.alert ('no previous page');
+   }
+
+   if (next != "crw_spIX.hhk") {
+      document.writeln ('<A HREF="' + next + '">');
+      document.writeln ('<IMG SRC="nextpage.gif" HEIGHT=17 BORDER=0 ALT="Página siguiente"></A>');
+   } else {
+//   window.alert ('no next page');
+   }
+   document.writeln ('</TD><TD ALIGN="left">');
+   document.writeln ('<A HREF="frameset.htm?TOC">');
+   document.writeln ('<IMG SRC="showtoc.gif" HEIGHT=17 BORDER=0 ALT="Haga clic para ver el contenido"></A></TD>');
+   document.writeln ('<TD ALIGN="left">');
+   document.writeln ('<A HREF="frameset.htm?IDX">');
+   document.writeln ('<IMG SRC="showix.gif" HEIGHT=17 BORDER=0 ALT="Haga clic para ver el índice"></A></TD>');
+   document.writeln ('</TD>');
+   document.writeln ('</TR>');
+   document.writeln ('</TABLE>');
+
+}
+
+</SCRIPT>
+<table align="right" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td align="right"><font size="1">Seagate Software, Inc.<br>
+    <a href="http://www.seagatesoftware.com">http://www.seagatesoftware.com</a><br>
+    Envíe sus comentarios a:<br>
+    <a href="mailto:techpubs@seagatesoftware.com">techpubs@seagatesoftware.com</a><br>
+    </font></td>
+  </tr>
+</table>
+</body>
+</html>
+
+

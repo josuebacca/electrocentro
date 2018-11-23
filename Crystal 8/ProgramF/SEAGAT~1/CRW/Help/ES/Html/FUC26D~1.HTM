@@ -1,0 +1,185 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+
+<html>
+<head>
+<title>ReplicateString (cadena, #copias) </title>
+
+<link REL=STYLESHEET TYPE="text/css" HREF="seagate.css">
+
+<!--
+                 ***********************************
+                 * Seagate Software copyright 1999 *
+                 ***********************************
+
+                      Template version: 5.1
+-->
+
+
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" link="#0000FF" vlink="#0000FF" alink="#800080">
+
+
+ 
+<a name="1000853365"></a><h3 class="newpage"> ReplicateString (cadena, #copias) </h3>
+<p><a name="1000853366"></a>Sintaxis b&#225;sica y Crystal.</p><a name="1000853367"></a><h5>Argumentos</h5><ul type="disc"><a name="1000853368"></a><li>cadena es una cadena de texto a ser repetida.
+<a name="1000853369"></a><li>#copias es un n&#250;mero entero que indica el n&#250;mero de veces que cadena va a ser repetida.
+</ul><a name="1000853370"></a><h5>Devuelve </h5><p><a name="1000853371"></a>Una cadena de texto.</p><a name="1000853372"></a><h5>Acci&#243;n</h5><p><a name="1000853373"></a>Repite la cadena el n&#250;mero de veces especificado por el # de copias.</p><a name="1000853374"></a><h5>Uso(s) t&#237;pico(s)</h5><p><a name="1000853375"></a>Puede utilizar esta funci&#243;n para insertar una l&#237;nea de caracteres siempre que se necesiten. Algunos usos t&#237;picos son:</p><ul type="disc"><a name="1000853379"></a><li>para poner indicadores en valores cr&#237;ticos en su informes
+<a name="1000853380"></a><li>para construir gr&#225;ficas de barras simples
+<a name="1000853381"></a><li>para dividir su informe en secciones visibles
+<a name="1000853382"></a><li>para resaltar totales, subtotales, y otros res&#250;menes de datos.
+</ul><a name="1000853383"></a><h5>Ejemplo(s)</h5><p><a name="1000853384"></a>Los siguientes ejemplos son aplicables para la sintaxis Crystal:</p><p class="code"><a name="1000853385"></a>If {archivo.VENTAS} &lt; {archivo.COTIZ} Then
+<br><a name="1000853386"></a>&nbsp;&nbsp;&nbsp;&nbsp;ReplicateString("*",10)
+<br><a name="1000853387"></a>Else
+<br><a name="1000853388"></a>&nbsp;&nbsp;&nbsp;&nbsp;""
+</p><p class="example"><a name="1000853389"></a>Imprime el car&#225;cter  * diez veces como un indicador.</p><p><code><a name="1000853390"></a>{archivo.NOMBRE}+ "  " + ReplicateString("*", {archivo.MARCADOR})</code></p><p class="example"><a name="1000853391"></a>Imprime una gr&#225;fica de barras simple que muestra los resultados de prueba. La f&#243;rmula imprime un asterisco para cada punto en un marcador de prueba (el valor del campo archivo.Marcador).</p><p><a name="1000853392"></a>La f&#243;rmula imprime un asterisco por cada punto en un marcador de prueba (el valor del campo {archivo.MARCADOR}). Por ejemplo, dando los siguientes datos:</p><p><a name="1000853418"></a> <Table Border="1">
+<tr><td align="left" valign="TOP"><a name="1000853395"></a>Nombre
+
+</td><td align="left" valign="TOP"><a name="1000853397"></a>Marcador
+
+</td></tr>
+<tr><td align="left" valign="TOP"><P><a name="1000853399"></a>Smith</P>
+
+
+</td><td align="left" valign="TOP"><P><a name="1000853401"></a>23</P>
+
+
+</td></tr>
+<tr><td align="left" valign="TOP"><P><a name="1000853403"></a>Jones</P>
+
+
+</td><td align="left" valign="TOP"><P><a name="1000853405"></a>17</P>
+
+
+</td></tr>
+<tr><td align="left" valign="TOP"><P><a name="1000853407"></a>Brown</P>
+
+
+</td><td align="left" valign="TOP"><P><a name="1000853409"></a>21</P>
+
+
+</td></tr>
+<tr><td align="left" valign="TOP"><P><a name="1000853411"></a>Johnson</P>
+
+
+</td><td align="left" valign="TOP"><P><a name="1000853413"></a>13</P>
+
+
+</td></tr>
+<tr><td align="left" valign="TOP"><P><a name="1000853415"></a>Reynolds</P>
+
+
+</td><td align="left" valign="TOP"><P><a name="1000853417"></a>25</P>
+
+
+</td></tr>
+
+</Table></p>
+<p><a name="1000853419"></a>La f&#243;rmula generar&#225; los siguientes resultados:</p><p><a name="1000853445"></a> <Table Border="1">
+<tr><td align="left" valign="TOP"><a name="1000853422"></a>Nombre
+
+</td><td align="left" valign="TOP"><a name="1000853424"></a>@Marcador
+
+</td></tr>
+<tr><td align="left" valign="TOP"><P><a name="1000853426"></a>Smith</P>
+
+
+</td><td align="left" valign="TOP"><P><a name="1000853428"></a>***********************</P>
+
+
+</td></tr>
+<tr><td align="left" valign="TOP"><P><a name="1000853430"></a>Jones</P>
+
+
+</td><td align="left" valign="TOP"><P><a name="1000853432"></a>******************</P>
+
+
+</td></tr>
+<tr><td align="left" valign="TOP"><P><a name="1000853434"></a>Brown</P>
+
+
+</td><td align="left" valign="TOP"><P><a name="1000853436"></a>**********************</P>
+
+
+</td></tr>
+<tr><td align="left" valign="TOP"><P><a name="1000853438"></a>Johnson</P>
+
+
+</td><td align="left" valign="TOP"><P><a name="1000853440"></a>***************</P>
+
+
+</td></tr>
+<tr><td align="left" valign="TOP"><P><a name="1000853442"></a>Reynolds</P>
+
+
+</td><td align="left" valign="TOP"><P><a name="1000853444"></a>*****************************</P>
+
+
+</td></tr>
+
+</Table></p>
+
+<hr><br>
+
+<script  language="JavaScript"><!--
+
+var prev = "Functions86.html";
+var next = "Functions88.html";
+
+function setTopicID() { 
+      var number = "1000853365"; 
+      return number; 
+}
+
+// --></script>
+
+
+
+
+<SCRIPT>
+
+if (!window.parent.toc && navigator.appName == "Netscape") {
+
+   document.writeln ('<TABLE ALIGN="left" border="0" cellspacing="0" cellpadding="10">');
+   document.writeln ('<TR>');
+   document.write ('<TD ALIGN="left">');
+
+   if (prev != "crw_spTOC.hhc") {
+      document.writeln ('<A HREF="' + prev + '">');
+      document.writeln ('<IMG SRC="prevpage.gif" HEIGHT=17 BORDER=0 ALT="Página anterior"></A>');
+   } else {
+//   window.alert ('no previous page');
+   }
+
+   if (next != "crw_spIX.hhk") {
+      document.writeln ('<A HREF="' + next + '">');
+      document.writeln ('<IMG SRC="nextpage.gif" HEIGHT=17 BORDER=0 ALT="Página siguiente"></A>');
+   } else {
+//   window.alert ('no next page');
+   }
+   document.writeln ('</TD><TD ALIGN="left">');
+   document.writeln ('<A HREF="frameset.htm?TOC">');
+   document.writeln ('<IMG SRC="showtoc.gif" HEIGHT=17 BORDER=0 ALT="Haga clic para ver el contenido"></A></TD>');
+   document.writeln ('<TD ALIGN="left">');
+   document.writeln ('<A HREF="frameset.htm?IDX">');
+   document.writeln ('<IMG SRC="showix.gif" HEIGHT=17 BORDER=0 ALT="Haga clic para ver el índice"></A></TD>');
+   document.writeln ('</TD>');
+   document.writeln ('</TR>');
+   document.writeln ('</TABLE>');
+
+}
+
+</SCRIPT>
+<table align="right" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td align="right"><font size="1">Seagate Software, Inc.<br>
+    <a href="http://www.seagatesoftware.com">http://www.seagatesoftware.com</a><br>
+    Envíe sus comentarios a:<br>
+    <a href="mailto:techpubs@seagatesoftware.com">techpubs@seagatesoftware.com</a><br>
+    </font></td>
+  </tr>
+</table>
+</body>
+</html>
+
+

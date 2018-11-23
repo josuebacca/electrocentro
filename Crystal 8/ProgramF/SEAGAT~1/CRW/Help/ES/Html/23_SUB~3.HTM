@@ -1,0 +1,98 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+
+<html>
+<head>
+<title>C&#243;mo vincular un subinforme al informe principal sin modificar la f&#243;rmula de selecci&#243;n</title>
+
+<link REL=STYLESHEET TYPE="text/css" HREF="seagate.css">
+
+<!--
+                 ***********************************
+                 * Seagate Software copyright 1999 *
+                 ***********************************
+
+                      Template version: 5.1
+-->
+
+
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" link="#0000FF" vlink="#0000FF" alink="#800080">
+
+
+ 
+<a name="53391"></a><h3 class="newpage"> C&#243;mo vincular un subinforme al informe principal sin modificar la f&#243;rmula de selecci&#243;n</h3>
+<p><a name="44779"></a>Seagate Crystal Reports utiliza un mecanismo de campos de par&#225;metro para vincular subinformes a un informe principal.</p><p><a name="44780"></a>Si usted vincula un campo en el informe principal a un campo en el subinforme que no es un campo de par&#225;metro, el programa:</p><ul type="disc"><a name="44781"></a><li>crea autom&#225;ticamente un campo de par&#225;metro para completar la vinculaci&#243;n, y
+<a name="44782"></a><li>modifica la f&#243;rmula de selecci&#243;n de registros del subinforme para que seleccione &#250;nicamente los registros donde el campo del subinforme sea igual al valor del campo de par&#225;metro.
+</ul><p><a name="44783"></a>La necesidad de un campo de par&#225;metro es impl&#237;cita, de all&#237; que a esta situaci&#243;n se le denomina "Vinculaci&#243;n Impl&#237;cita".</p><p><a name="44784"></a>Podr&#237;an haber ocasiones en que usted necesite usar un campo de par&#225;metro vinculado en un subinforme pero no quiere que ese campo sea usado como parte de la f&#243;rmula de selecci&#243;n para el subinforme. Por ejemplo, podr&#237;a necesitar que el informe principal pase un valor de resumen que pueda ser usado en c&#225;lculos por el subinforme, o quiz&#225;s necesite que el informe principal pase el t&#237;tulo del subinforme.</p><p><a name="44785"></a>Cuando vincula un campo en el informe principal al campo de par&#225;metro que usted cre&#243; en el subinforme, el Asistente de V&#237;nculo Visual:</p><ul type="disc"><a name="44786"></a><li>verifica el v&#237;nculo que ha especificado,
+<a name="44787"></a><li>no crea ning&#250;n otro campo de par&#225;metro adicional, y
+<a name="44788"></a><li>no modifica la f&#243;rmula de selecci&#243;n de registros del subinforme.
+</ul><p><a name="44789"></a>Cuando especifica un v&#237;nculo, la situaci&#243;n se denomina "V&#237;nculo Expl&#237;cito".</p><a name="44914"></a><h6>Para vincular un subinforme a un informe principal sin modificar la f&#243;rmula de selecci&#243;n</h6><ol>
+<a name="44916"></a><li value="1&nbsp;&nbsp;&nbsp;&nbsp;">Cree un campo de par&#225;metro en el subinforme.
+<a name="44917"></a><li value="2&nbsp;&nbsp;&nbsp;&nbsp;">Vincule un campo en el informe principal al campo de par&#225;metro.
+</ol>
+
+<hr><br>
+
+<script  language="JavaScript"><!--
+
+var prev = "23_subreports10.html";
+var next = "23_subreports12.html";
+
+function setTopicID() { 
+      var number = "53391"; 
+      return number; 
+}
+
+// --></script>
+
+
+
+
+<SCRIPT>
+
+if (!window.parent.toc && navigator.appName == "Netscape") {
+
+   document.writeln ('<TABLE ALIGN="left" border="0" cellspacing="0" cellpadding="10">');
+   document.writeln ('<TR>');
+   document.write ('<TD ALIGN="left">');
+
+   if (prev != "crw_spTOC.hhc") {
+      document.writeln ('<A HREF="' + prev + '">');
+      document.writeln ('<IMG SRC="prevpage.gif" HEIGHT=17 BORDER=0 ALT="Página anterior"></A>');
+   } else {
+//   window.alert ('no previous page');
+   }
+
+   if (next != "crw_spIX.hhk") {
+      document.writeln ('<A HREF="' + next + '">');
+      document.writeln ('<IMG SRC="nextpage.gif" HEIGHT=17 BORDER=0 ALT="Página siguiente"></A>');
+   } else {
+//   window.alert ('no next page');
+   }
+   document.writeln ('</TD><TD ALIGN="left">');
+   document.writeln ('<A HREF="frameset.htm?TOC">');
+   document.writeln ('<IMG SRC="showtoc.gif" HEIGHT=17 BORDER=0 ALT="Haga clic para ver el contenido"></A></TD>');
+   document.writeln ('<TD ALIGN="left">');
+   document.writeln ('<A HREF="frameset.htm?IDX">');
+   document.writeln ('<IMG SRC="showix.gif" HEIGHT=17 BORDER=0 ALT="Haga clic para ver el índice"></A></TD>');
+   document.writeln ('</TD>');
+   document.writeln ('</TR>');
+   document.writeln ('</TABLE>');
+
+}
+
+</SCRIPT>
+<table align="right" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td align="right"><font size="1">Seagate Software, Inc.<br>
+    <a href="http://www.seagatesoftware.com">http://www.seagatesoftware.com</a><br>
+    Envíe sus comentarios a:<br>
+    <a href="mailto:techpubs@seagatesoftware.com">techpubs@seagatesoftware.com</a><br>
+    </font></td>
+  </tr>
+</table>
+</body>
+</html>
+
+

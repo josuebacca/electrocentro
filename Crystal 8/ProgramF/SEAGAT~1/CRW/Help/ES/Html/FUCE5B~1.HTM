@@ -1,0 +1,95 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+
+<html>
+<head>
+<title>IsNumeric (cadena)</title>
+
+<link REL=STYLESHEET TYPE="text/css" HREF="seagate.css">
+
+<!--
+                 ***********************************
+                 * Seagate Software copyright 1999 *
+                 ***********************************
+
+                      Template version: 5.1
+-->
+
+
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" link="#0000FF" vlink="#0000FF" alink="#800080">
+
+
+ 
+<a name="1000852750"></a><h3 class="newpage"> IsNumeric (cadena)</h3>
+<p><a name="1000852754"></a>IsNumeric y <a href="Functions77.html#1000852800">NumericText (cadena)</a> son funciones equivalentes. Sin embargo, se prefiere IsNumeric en la sintaxis b&#225;sica y NumericText en la sintaxis Crystal.</p><a name="1000852755"></a><h5>Argumento</h5><p><a name="1000852756"></a>cadena es un valor Cadena que debe ser probado.</p><a name="1000852757"></a><h5>Devuelve </h5><p><a name="1000852758"></a>Un valor Booleano. (Verdadero o Falso).</p><a name="1000852759"></a><h5>Acci&#243;n</h5><p><a name="1000852760"></a>IsNumeric devuelve Verdadero si el  argumento de Cadena puede convertirse a un N&#250;mero y Falso en caso contrario.</p><a name="1000852761"></a><h5>Uso t&#237;pico</h5><p><a name="1000852762"></a>Si guarda n&#250;meros (como pesos) en un objeto de Cadena de texto, utilice IsNumeric  para verificar el valor de cada registro y asegurarse de que est&#225; bien para convertirlo mediante ToNumber o <a href="Functions160.html#1000201851">CDbl</a>.</p><a name="1000852766"></a><h5>Ejemplo(s)</h5><p><a name="1000852767"></a>Los siguientes ejemplos son aplicables a las sintaxis b&#225;sica y Crystal:</p><p><code><a name="1000852768"></a>IsNumeric({archivo.REFERENCIA}) </code></p><p class="example"><a name="1000852769"></a>Devuelve FALSO cuando {archivo.Referencia} = "ABCDEFG".</p><p><code><a name="1000852770"></a>IsNumeric({archivo.N&Uacute;MERO DE IDENTIFICACI&Oacute;N}) </code></p><p class="example"><a name="1000852771"></a>Devuelve VERDADERO cuando {archivo.N&Uacute;MERO DE IDENTIFICACI&Oacute;N} =  "12345".</p><p><code><a name="1000852772"></a>IsNumeric({archivo.N&Uacute;MERO DE IDENTIFICACI&Oacute;N}) </code></p><p class="example"><a name="1000852773"></a>Devuelve  VERDADERO cuando {archivo.N&Uacute;MERO DE IDENTIFICACI&Oacute;N} = "12345443". </p><p><code><a name="1000852774"></a>IsNumeric({archivo.N&Uacute;MERO DE IDENTIFICACI&Oacute;N}) </code></p><p class="example"><a name="1000852775"></a>Devuelve FALSO cuando {archivo.N&Uacute;MERO DE IDENTIFICACI&Oacute;N} = "12345-443".</p><p><code><a name="1000852776"></a>IsNumeric ({archivo.N&Uacute;MERO DE IDENTIFICACI&Oacute;N} (1 a 5)) </code></p><p class="example"><a name="1000852777"></a>Devuelve VERDADERO cuando {archivo.N&Uacute;MERO DE IDENTIFICACI&Oacute;N} = "12345-443".</p><p><code><a name="1000852778"></a>IsNumeric ({archivo.N&Uacute;MERO DE IDENTIFICACI&Oacute;N} (6)) </code></p><p class="example"><a name="1000852779"></a>Devuelve FALSO cuando {archivo.N&Uacute;MERO DE IDENTIFICACI&Oacute;N} = "12345-443".</p><p><code><a name="1000852780"></a>IsNumeric ({archivo.N&Uacute;MERO DE IDENTIFICACI&Oacute;N} (7 a  9)) </code></p><p class="example"><a name="1000852781"></a>Devuelve VERDADERO cuando {archivo.N&Uacute;MERO DE IDENTIFICACI&Oacute;N} = "12345-443".</p><p><code><a name="1000852782"></a>IsNumeric({archivo.N&Uacute;MERO DE IDENTIFICACI&Oacute;N}) </code></p><p class="example"><a name="1000852783"></a>Devuelve FALSO cuando {archivo.N&Uacute;MERO DE IDENTIFICACI&Oacute;N} = "12345T".</p><p><a name="1000852786"></a><font color="darkblue"><b>Nota:   &nbsp;&nbsp;&nbsp;</b></font>Puede utilizar esta funci&#243;n en combinaci&#243;n con <a href="Functions78.html#1000852857">ToNumber (num&#233;rico), ToNumber (cadena)</a> o <a href="Functions161.html#1000569614">CStr</a> para evaluar en busca de un n&#250;mero en el campo de Referencia, despu&#233;s imprime la cadena como un n&#250;mero o imprime 0 si la cadena de texto no es un n&#250;mero.</p>
+<p><a name="1000852791"></a>El siguiente ejemplo es aplicable a la sintaxis b&#225;sica:</p><p class="code"><a name="1000852792"></a>If IsNumeric({archivo.N&Uacute;MERO DE IDENTIFICACI&Oacute;N}) Then 
+<br><a name="1000852793"></a>&nbsp;&nbsp;&nbsp;&nbsp;formula = ToNumber({archivo.N&Uacute;MERO DE IDENTIFICACI&Oacute;N})
+<br><a name="1000852794"></a>Else 
+<br><a name="1000852795"></a>&nbsp;&nbsp;&nbsp;&nbsp;formula = 0
+<br><a name="1000852796"></a>End If
+</p>
+<hr><br>
+
+<script  language="JavaScript"><!--
+
+var prev = "Functions75.html";
+var next = "Functions77.html";
+
+function setTopicID() { 
+      var number = "1000852750"; 
+      return number; 
+}
+
+// --></script>
+
+
+
+
+<SCRIPT>
+
+if (!window.parent.toc && navigator.appName == "Netscape") {
+
+   document.writeln ('<TABLE ALIGN="left" border="0" cellspacing="0" cellpadding="10">');
+   document.writeln ('<TR>');
+   document.write ('<TD ALIGN="left">');
+
+   if (prev != "crw_spTOC.hhc") {
+      document.writeln ('<A HREF="' + prev + '">');
+      document.writeln ('<IMG SRC="prevpage.gif" HEIGHT=17 BORDER=0 ALT="Página anterior"></A>');
+   } else {
+//   window.alert ('no previous page');
+   }
+
+   if (next != "crw_spIX.hhk") {
+      document.writeln ('<A HREF="' + next + '">');
+      document.writeln ('<IMG SRC="nextpage.gif" HEIGHT=17 BORDER=0 ALT="Página siguiente"></A>');
+   } else {
+//   window.alert ('no next page');
+   }
+   document.writeln ('</TD><TD ALIGN="left">');
+   document.writeln ('<A HREF="frameset.htm?TOC">');
+   document.writeln ('<IMG SRC="showtoc.gif" HEIGHT=17 BORDER=0 ALT="Haga clic para ver el contenido"></A></TD>');
+   document.writeln ('<TD ALIGN="left">');
+   document.writeln ('<A HREF="frameset.htm?IDX">');
+   document.writeln ('<IMG SRC="showix.gif" HEIGHT=17 BORDER=0 ALT="Haga clic para ver el índice"></A></TD>');
+   document.writeln ('</TD>');
+   document.writeln ('</TR>');
+   document.writeln ('</TABLE>');
+
+}
+
+</SCRIPT>
+<table align="right" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td align="right"><font size="1">Seagate Software, Inc.<br>
+    <a href="http://www.seagatesoftware.com">http://www.seagatesoftware.com</a><br>
+    Envíe sus comentarios a:<br>
+    <a href="mailto:techpubs@seagatesoftware.com">techpubs@seagatesoftware.com</a><br>
+    </font></td>
+  </tr>
+</table>
+</body>
+</html>
+
+

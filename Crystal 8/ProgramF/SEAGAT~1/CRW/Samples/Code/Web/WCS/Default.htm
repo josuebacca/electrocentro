@@ -1,0 +1,391 @@
+<!--#include virtual="/x-objects-new/content/restricted.inc"-->
+<!--#include virtual="/x-objects-new/content/all.inc"-->
+<html>
+<head>
+<script language="javascript">
+<!--
+
+var REPORTS = new Array("/scrreports/General%20Business/Sales%20with%20OnDemand%20Sub2_es.rpt",
+	"/scrreports/General%20Business/Employee%20Profile_es.rpt",
+	"/scrreports/General%20Business/Product%20Catalog_es.rpt",
+	"/scrreports/General%20Business/World%20Sales%20Report_es.rpt");
+
+var CGIREPORTS = new Array("/cgi-bin/wcscgi.exe/scrreports/General%20Business/Sales%20with%20OnDemand%20Sub2_es.rpt",
+	"/cgi-bin/wcscgi.exe/scrreports/General%20Business/Employee%20Profile_es.rpt",
+	"/cgi-bin/wcscgi.exe/scrreports/General%20Business/Product%20Catalog_es.rpt",
+	"/cgi-bin/wcscgi.exe/scrreports/General%20Business/World%20Sales%20Report_es.rpt");
+
+var ASPREPORTS = new Array("/scrsamples/Web%20Component%20Server/report.asp?rpt=Sales%20with%20OnDemand%20Sub2_es.rpt",
+	"/scrsamples/Web%20Component%20Server/report.asp?rpt=Employee%20Profile_es.rpt",
+	"/scrsamples/Web%20Component%20Server/report.asp?rpt=Product%20Catalog_es.rpt",
+	"/scrsamples/Web%20Component%20Server/report.asp?rpt=World%20Sales%20Report_es.rpt");
+
+var RPTSERVER = "RPTSERVER";
+var VIEWER = "VIEWER";
+var rptServerCookie;
+function NewCookie(name, value){
+	var tmp = name + "=" + escape(value);
+	document.cookie = tmp;
+}
+
+function CheckForCookie(cookieName){
+	var cookieFound = false;
+	var start = 0;
+	var end = 0;
+	var cookieString = document.cookie;
+	var val;
+	var i = 0;
+
+	// SCAN THE COOKIES FOR name
+	while(i <= cookieString.length){
+		start = i;
+		end = start + cookieName.length;
+
+		val = cookieString.substring(start, end);
+		if(val.toLowerCase() == cookieName.toLowerCase()){
+			cookieFound = true;
+			break;
+		}
+	i++
+	}
+	if(cookieFound){
+	start = end + 1;
+	end = document.cookie.indexOf(";", start);
+		if(end < start)
+			end = document.cookie.length;
+	if( cookieName == RPTSERVER )
+		this.rptServer = parseInt(document.cookie.substring(start, end));
+	else
+		this.viewer = parseInt(document.cookie.substring(start, end));
+	}
+	else
+		this.cookieExist = false;
+}
+
+function cookieReader(){
+	this.rptServer = 0;
+	this.viewer = 0;
+	this.cookieExist = true;
+	this.NewCookie = NewCookie;
+	this.CheckForCookie = CheckForCookie;
+	this.Location = location.protocol + "//" + location.host;
+	}
+
+function Initialize(){
+	rptServerCookie = new cookieReader();
+	rptServerCookie.CheckForCookie(RPTSERVER);
+	rptServerCookie.CheckForCookie(VIEWER);
+
+}
+
+function AssignViewer(reportURL){
+	switch( document.viewerForm.viewerList.selectedIndex ){
+		case 0:
+			reportURL += "init=actx";
+			break;
+		case 1:
+			reportURL += "init=java";
+			break;
+		case 2:
+			reportURL += "init=java_plugin";
+			break;
+		case 3:
+			reportURL += "init=nav_plugin";
+			break;
+		case 4:
+			reportURL += "init=html_frame";
+			break;
+		case 5:
+			reportURL += "init=html_page";
+			break;
+		default:
+			break;
+		}
+		return reportURL;
+}
+
+
+function LaunchRequest (reportID) {
+	var launchURL = "";
+
+	rptServerCookie.rptServer = document.rptServerForm.rptServerList.selectedIndex;
+	rptServerCookie.viewer = document.viewerForm.viewerList.selectedIndex;
+	rptServerCookie.NewCookie( RPTSERVER, rptServerCookie.rptServer);
+	rptServerCookie.NewCookie( VIEWER, rptServerCookie.viewer);
+
+	switch( document.rptServerForm.rptServerList.selectedIndex ){
+		case 0:
+			LaunchURL = rptServerCookie.Location + AssignViewer( REPORTS[reportID] + "?");
+			break;
+		case 1:
+			LaunchURL = rptServerCookie.Location + AssignViewer( CGIREPORTS[reportID] + "?");
+			break;
+		case 2:
+			LaunchURL = rptServerCookie.Location + AssignViewer( ASPREPORTS[reportID] + "&");
+			break;
+		default:
+			break;
+		}
+	window.location = LaunchURL;
+}
+Initialize();
+//-->
+</script>
+<title>Seagate Crystal Reports Web Samples &amp; Utilities Report Server Samples</title>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<meta name="GENERATOR" content="Microsoft FrontPage 4.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<meta name="SUMMARY" content="$Header: /community/_sharedtemplates/pages/templates/content.asp 9     5/17/99 7:19p Eglass $">
+<meta name="LOCATION" content="$Archive: /community/_sharedtemplates/pages/templates/content.asp $">
+<meta name="REVISION" content="$Revision: 9 $">
+<meta name="MODIFIED" content="$Date: 5/17/99 7:19p $">
+<meta name="AUTHOR" content="$Author: Eglass $">
+<meta name="PUBLISHER" content="Seagate Software">
+<link rel="stylesheet" href="../images/main.css" type="text/css">
+</head>
+<body topmargin="0" leftmargin="0" marginwidth = "0" marginheight = "0" bgcolor="#ffffff" text="#000000" link="#0000ff" vlink="#800080" alink="#ff0000" marginspacing = 0>
+<table border="0" cellpadding="0" cellspacing="0" width="760">
+  <tr align="left" valign="top">
+    <td align="left" valign="top" width="130" height="1" bgcolor="#000000" class="xMASTHEADLOGO"><img src="../images/shim.gif" width="130" height="1" border="0"></td>
+    <td align="left" valign="top" width="10" height="1" bgcolor="#000000" class="xMASTHEADLOGO"><img src="../images/shim.gif" width="10" height="1" border="0"></td>
+    <td align="left" valign="top" width="400" height="1" bgcolor="#000000" class="xMASTHEADLOGO"><img src="../images/shim.gif" width="400" height="1" border="0"></td>
+    <td align="left" valign="top" width="60" height="1" bgcolor="#000000" class="xMASTHEADLOGO"><img src="../images/shim.gif" width="60" height="1" border="0"></td>
+    <td align="left" valign="top" width="10" height="1" bgcolor="#000000" class="xMASTHEADLOGO"><img src="../images/shim.gif" width="10" height="1" border="0"></td>
+    <td align="left" valign="top" width="150" height="1" bgcolor="#000000" class="xMASTHEADLOGO"><img src="../images/shim.gif" width="150" height="1" border="0"></td>
+  </tr>
+  <tr align="left" valign="top">
+    <td align="left" valign="center" height="28" colspan="6" bgcolor="#000000" class="xMASTHEADLOGO"><a href="/homepage/"><img src="../images/logo_seagate_black_small.gif" alt="Seagate Software" border="0" width="140" height="28"></a>
+           </td>
+  </tr>
+  <tr align="left" valign="top">
+    <td align="left" valign="top" height="22" colspan="6" bgcolor="#6699cc" class="xMASTHEADLIGHT">
+            <img border="0" src="../images/titleheader.gif" width="400" height="23" align="middle"></td>
+  </tr>
+  <tr align="left" valign="top">
+    <td align="left" valign="top" bgcolor="#6699cc" class="xMASTHEADLIGHT">&nbsp;</td>
+    <td align="left" valign="top"><img src="../images/nub_topleft_navtomasthead.gif" width="10" height="10"></td>
+    <td align="left" valign="top" colspan="4">
+            </td>
+  </tr>
+  <tr align="left" valign="top">
+    <td align="left" valign="top">
+           <img name="Nnavbarmain_01_01" src="../images/navbar-main_01_01.gif" border="0" width="130" height="16"><a href="../default.htm"><br>
+      <img border="0" src="../images/navbar-main_02_01.gif" width="130" height="16"><br></a><a href="Default.htm"><img border="0" src="../images/navbar-main_03_01.gif" width="130" height="16"></a><br>
+      <a href="../Active%20Server%20Pages/default.htm"><img border="0" src="../images/navbar-main_04_01.gif" width="130" height="16"></a><br>
+      <a href="../Java/Default.htm"><img border="0" src="../images/navbar-main_05_01.gif" width="130" height="16"></a><br>
+      <a href="http://community.seagatesoftware.com"><img border="0" src="../images/navbar-main_06_01.gif" width="130" height="16"></a><br>
+      <a href="http://www.seagatesoftware.com"><img border="0" src="../images/navbar-main_07_01.gif" width="130" height="16"></a><br>
+      <a href="http://www.seagatesoftware.com/ipl/default.asp?destination=technicalsupport&product=crystalreports&version=8&language=ES"><img border="0" src="../images/navbar-main_08_01.gif" width="130" height="16"></a><br>
+      <img border="0" src="../images/navbar-main_09_01.gif" width="130" height="16"></td>
+    <td align="left" valign="top" rowspan="3"></td>
+    <td align="left" valign="top" colspan="2" rowspan="2"><img border="0" src="../images/title-ReportServerSamples.gif" width="440" height="30">
+      <p>&nbsp;</p><FONT size=3></FONT>
+      <TABLE border=0 cellPadding=3 cellSpacing=1 width=74.79% height=159
+            style="HEIGHT: 159px; WIDTH: 74.79%" id=TABLE1>
+        <TR>
+          <TD><font face="Arial, Helvetica, sans-serif"><STRONG><FONT size=3><FONT
+                        color=#6699cc>Seleccionar un tipo de servidor</FONT></FONT></STRONG></font></TD>
+        </TR>
+        <TR>
+          <TD nowrap>
+            <FORM name="rptServerForm">
+              <font face="Arial, Helvetica, sans-serif">
+              <SELECT id=select1
+                        name=rptServerList>
+                <OPTION selected value=0> WCS via ISAPI\NSAPI Extension
+                <OPTION value=1>WCS CGI Extension
+                <OPTION value=2>ASP Reports Server
+              </SELECT>
+              </font>
+            </FORM>
+          </TD>
+        </TR>
+        <TR>
+          <TD><font face="Arial, Helvetica, sans-serif"><STRONG><FONT size=3 color=#6699cc>Seleccionar
+            un visor </FONT></STRONG></font></TD>
+        </TR>
+        <TR>
+          <TD nowrap>
+            <FORM name="viewerForm">
+              <font face="Arial, Helvetica, sans-serif">
+              <SELECT id=select2
+                        name=viewerList
+                               ><OPTION selected value=0>ActiveX
+                                <OPTION value=1>Java using Browser JVM
+                                <OPTION value=2>Java using Java Plug-in
+                                <OPTION value=3>Netscape Plug-in
+                                <OPTION value=4>HTML Frame
+                                <OPTION value=5>HTML
+              </SELECT>
+              </font>
+            </FORM>
+          </TD>
+        </TR>
+      </TABLE>
+      <table bgColor="#ececec" border="0" cellPadding="0" cellSpacing="0" height="76" width="471">
+        <tbody>
+          <tr>
+          <td width="13" bgcolor="#6699cc" valign="top" height="16">
+            <p>&nbsp;</p></td>
+          <td width="371" bgcolor="#6699cc" valign="center" height="16"><font color="#ffffff" size="2"><b><font face="Arial, Helvetica, sans-serif"> Ventas del empleado (Informe trimestral)&nbsp;</font></b></font></td>
+          <td width="16" bgcolor="#6699cc" valign="top" height="16"><img border="0" src="../images/nub_side_r.gif" align="right" hspace="0" width="10" height="20"
+                       ></td>
+          <td width="65" bgcolor="#ffffff" height="16" valign="top">&nbsp;</td>
+        </tr>
+          <tr>
+            <td bgColor="#ececec" colSpan="4" height="34" width="458">
+              <table bgColor="#ececec" border="0" cellPadding="2" width="468">
+                <tbody>
+                  <tr>
+
+                <td align="left" vAlign="top" width="454">
+                  <p align="left"><font size="2" face="Arial, Helvetica, sans-serif">Informe
+                    que muestra las ventas del empleado por tipo de producto durante
+                    cada trimestre. Gráfico de barras que muestra las ventas trimestrales
+                    totales de cada empleado. Profundice en un tipo de producto
+                    para ver las ventas de cada representante de ventas. <br>
+                    </font> <font size="2" face="Arial, Helvetica, sans-serif"><b>\Crystal
+                    Reports\Samples\Reports\General Business\Sales with OnDemand
+                    Sub2_es.rpt</b></font></p>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td bgColor="#ffffff" borderColor="#c0c0c0" borderColorLight="#c0c0c0" colSpan="4" height="26" style="BORDER-BOTTOM: solid 1px; BORDER-LEFT: solid 1px; BORDER-RIGHT: solid 1px" width="460">
+              <p align="right"><A href="Javascript:LaunchRequest(0);"><img border="0" src="../images/but-viewsample.gif" width="100" height="19"></A></p>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <p class="ssiPLACEHOLDER">&nbsp;</p>
+      <table bgColor="#ececec" border="0" cellPadding="0" cellSpacing="0" height="76" width="471">
+        <tbody>
+          <tr>
+          <td width="13" bgcolor="#6699cc" valign="top" height="16">
+            <p>&nbsp;</p></td>
+          <td width="371" bgcolor="#6699cc" valign="center" height="16"><font color="#ffffff" size="2"><b><font face="Arial, Helvetica, sans-serif">Perfil
+            del empleado (orden alfabético con fotografía)</font></b></font></td>
+          <td width="16" bgcolor="#6699cc" valign="top" height="16"><img border="0" src="../images/nub_side_r.gif" align="right" hspace="0" width="10" height="20"
+                       ></td>
+          <td width="65" bgcolor="#ffffff" height="16" valign="top">&nbsp;</td>
+        </tr>
+          <tr>
+            <td bgColor="#ececec" colSpan="4" height="34" width="458">
+              <table bgColor="#ececec" border="0" cellPadding="2" width="468">
+                <tbody>
+                  <tr>
+
+                <td align="left" vAlign="top" width="454"><font size="2" face="Arial, Helvetica, sans-serif">Perfil
+                  del empleado con fotografía, ordenado alfabéticamente por apellidos.
+                  <br>
+                  <b>\Crystal Reports\Samples\Reports\General Business\Employee
+                  Profile_es.rpt</b></font></td>
+                  </tr>
+                </tbody>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td bgColor="#ffffff" borderColor="#c0c0c0" borderColorLight="#c0c0c0" colSpan="4" height="26" style="BORDER-BOTTOM: solid 1px; BORDER-LEFT: solid 1px; BORDER-RIGHT: solid 1px" width="460">
+              <p align="right"><A href="Javascript:LaunchRequest(1);"><img border="0" src="../images/but-viewsample.gif" width="100" height="19"></A></p>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <p class="ssiPLACEHOLDER">&nbsp;</p>
+      <table bgColor="#ececec" border="0" cellPadding="0" cellSpacing="0" height="76" width="471">
+        <tbody>
+          <tr>
+          <td width="13" bgcolor="#6699cc" valign="top" height="16">
+            <p>&nbsp;</p></td>
+          <td width="371" bgcolor="#6699cc" valign="center" height="16"><font color="#ffffff" size="2"><b><font face="Arial, Helvetica, sans-serif">Catálogo
+            de productos &nbsp;</font></b></font></td>
+          <td width="16" bgcolor="#6699cc" valign="top" height="16"><img border="0" src="../images/nub_side_r.gif" align="right" hspace="0" width="10" height="20"
+                       ></td>
+          <td width="65" bgcolor="#ffffff" height="16" valign="top">&nbsp;</td>
+        </tr>
+          <tr>
+            <td bgColor="#ececec" colSpan="4" height="34" width="458">
+              <table bgColor="#ececec" border="0" cellPadding="2" width="468">
+                <tbody>
+                  <tr>
+
+                <td align="left" vAlign="top" width="454"><font size="2" face="Arial, Helvetica, sans-serif">Catálogo
+                  de productos, agrupados por clase, tipo y nombre con imagen
+                  y descripción del producto. Profundice en el nombre del producto
+                  para buscar números, tamaños, etc. <br>
+                  <b>\Crystal Reports\Samples\Reports\General Business\Product
+                  Catalog_es.rpt</b></font></td>
+                  </tr>
+                </tbody>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td bgColor="#ffffff" borderColor="#c0c0c0" borderColorLight="#c0c0c0" colSpan="4" height="26" style="BORDER-BOTTOM: solid 1px; BORDER-LEFT: solid 1px; BORDER-RIGHT: solid 1px" width="460">
+              <p align="right"><A href="Javascript:LaunchRequest(2);"><img border="0" src="../images/but-viewsample.gif" width="100" height="19"></A></p>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <p class="ssiPLACEHOLDER">&nbsp;</p>
+      <table bgColor="#ececec" border="0" cellPadding="0" cellSpacing="0" height="76" width="471">
+        <tbody>
+          <tr>
+          <td width="13" bgcolor="#6699cc" valign="top" height="16">
+            <p>&nbsp;</p></td>
+          <td width="371" bgcolor="#6699cc" valign="center" height="16"><font color="#ffffff" size="2"><b><font face="Arial, Helvetica, sans-serif">Infome
+            de ventas mundiales &nbsp;</font></b></font></td>
+          <td width="16" bgcolor="#6699cc" valign="top" height="16"><img border="0" src="../images/nub_side_r.gif" align="right" hspace="0" width="10" height="20"
+                       ></td>
+          <td width="65" bgcolor="#ffffff" height="16" valign="top">&nbsp;</td>
+        </tr>
+          <tr>
+            <td bgColor="#ececec" colSpan="4" height="34" width="458">
+              <table bgColor="#ececec" border="0" cellPadding="2" width="468">
+                <tbody>
+                  <tr>
+
+                <td align="left" vAlign="top" width="454"><font size="2" face="Arial, Helvetica, sans-serif">5
+                  mejores ventas de países con gráfico circular. Profundice en
+                  un país para ver las ventas regionales con un gráfico circular.
+                  Profundice en una región para ver las ventas por ciudad en la
+                  región con un gráfico circular. Profundice en una ciudad para
+                  ver las ventas de la compañía en esa ciudad. <br>
+                  <b>\Crystal Reports\Samples\Reports\General Business\World Sales
+                  Report_es.rpt</b></font></td>
+                  </tr>
+                </tbody>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td bgColor="#ffffff" borderColor="#c0c0c0" borderColorLight="#c0c0c0" colSpan="4" height="26" style="BORDER-BOTTOM: solid 1px; BORDER-LEFT: solid 1px; BORDER-RIGHT: solid 1px" width="460">
+              <p align="right"><A href="Javascript:LaunchRequest(3);"><img border="0" src="../images/but-viewsample.gif" width="100" height="19"></A></p>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <p class="ssiPLACEHOLDER">&nbsp;</p>
+    </td>
+    <td align="left" valign="top" rowspan="3"></td>
+    <td align="left" valign="top" rowspan="2"><!--webbot bot="PurpleText" PREVIEW="delete this; edit for sidebars" --></td>
+  </tr>
+  <tr align="left" valign="top">
+    <td align="left" valign="top">
+    		<!--webbot bot="PurpleText" PREVIEW="delete this; edit for callouts" -->
+    </td>
+  </tr>
+  <tr align="left" valign="top">
+    <td align="left" valign="top"><!-- do not edit --></td>
+    <td align="left" valign="top" colspan="2">
+    </td>
+    <td align="left" valign="top"><!-- do not edit --></td>
+  </tr>
+</table>
+<!--webbot bot="PurpleText" PREVIEW="Only edit the marked areas in the table above. Do not edit outside the table." -->
+</body>
+</html>

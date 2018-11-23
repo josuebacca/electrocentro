@@ -1,0 +1,141 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+
+<html>
+<head>
+<title>Funcionamiento de los totales acumulados</title>
+
+<link REL=STYLESHEET TYPE="text/css" HREF="seagate.css">
+
+<!--
+                 ***********************************
+                 * Seagate Software copyright 1999 *
+                 ***********************************
+
+                      Template version: 5.1
+-->
+
+
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" link="#0000FF" vlink="#0000FF" alink="#800080">
+
+
+ 
+<a name="31822"></a><h3 class="newpage"> Funcionamiento de los totales acumulados</h3>
+<p><a name="32748"></a>Un campo de total acumulado se crea con el Asistente de Total Acumulado. El asistente le pedir&#225; seleccionar un campo para resumir, la clase de operaci&#243;n de resumen que se ejecutar&#225;, una condici&#243;n sobre la cual basar la evaluaci&#243;n y una condici&#243;n sobre la cual restablecer la evaluaci&#243;n.</p><p><a name="31824"></a><font color="darkblue"><b>Nota:   &nbsp;&nbsp;&nbsp;</b></font>Un campo de total acumulado se puede usar en campos de bases de datos y f&#243;rmulas de primera pasada, pero no se pueden usar en f&#243;rmulas de segunda pasada ni en f&#243;rmulas que hagan referencia a otras f&#243;rmulas de segunda pasada. Para mayor informaci&#243;n <a href="a_rptpm2.html#21348">See Diagrama de flujo de informes de pasada m&#250;ltiple.</a></p>
+<a name="32753"></a><h6>Colocaci&#243;n de campos de total acumulado</h6><p><a name="32754"></a>El c&#225;lculo de un campo de total acumulado est&#225; determinado por los ajustes seleccionados en el Asistente de total acumulado. Sin embargo, la ubicaci&#243;n del total acumulado afectar&#225; al valor que aparece en el informe. Por ejemplo, si un campo de total acumulado que eval&#250;a todos los registros y no se restablece (un total general) en el encabezado del informe, s&#243;lo aparecer&#225; el valor del primer registro. Si coloca el mismo campo de total acumulado en el pie del informe, obtendr&#225; el valor deseado. El campo de total acumulado se calcula correctamente en ambos casos, pero se muestra demasiado pronto en el primero de ellos.</p><p><a name="31859"></a>La siguiente es una lista de secciones de informe y registros que usa el total acumulado.<Table Border="0">
+<tr><td align="left" valign="TOP"><P><a name="31832"></a>Encabezado de informe</P>
+
+
+</td><td align="left" valign="TOP"><P><a name="31834"></a>Devuelve el primer registro del informe</P>
+
+
+</td></tr>
+<tr><td align="left" valign="TOP"><P><a name="31836"></a>Encabezado de p&#225;gina</P>
+
+
+</td><td align="left" valign="TOP"><P><a name="31838"></a>Crea totales acumulados hasta el primer registro de la p&#225;gina actual, &#233;ste incluido.</P>
+
+
+</td></tr>
+<tr><td align="left" valign="TOP"><P><a name="31840"></a>Encabezado de grupo</P>
+
+
+</td><td align="left" valign="TOP"><P><a name="31842"></a>Crea totales acumulados hasta el primer registro del grupo actual, &#233;ste incluido.</P>
+
+
+</td></tr>
+<tr><td align="left" valign="TOP"><P><a name="31844"></a>Detalles</P>
+
+
+</td><td align="left" valign="TOP"><P><a name="31846"></a>Crea totales acumulados para cada registro.</P>
+
+
+</td></tr>
+<tr><td align="left" valign="TOP"><P><a name="31848"></a>Pie de grupo</P>
+
+
+</td><td align="left" valign="TOP"><P><a name="31850"></a>Crea un total general para cada grupo.</P>
+
+
+</td></tr>
+<tr><td align="left" valign="TOP"><P><a name="31852"></a>Pie de p&#225;gina</P>
+
+
+</td><td align="left" valign="TOP"><P><a name="31854"></a>Crea totales acumulados hasta el primer registro de la p&#225;gina siguiente, &#233;ste incluido.</P>
+
+
+</td></tr>
+<tr><td align="left" valign="TOP"><P><a name="31856"></a>Pie de informe</P>
+
+
+</td><td align="left" valign="TOP"><P><a name="31858"></a>Crea un total general que incluye todos los registros.</P>
+
+
+</td></tr>
+
+</Table></p>
+<hr><br>
+
+<script  language="JavaScript"><!--
+
+var prev = "09_runtotal2.html";
+var next = "09_runtotal4.html";
+
+function setTopicID() { 
+      var number = "31822"; 
+      return number; 
+}
+
+// --></script>
+
+
+
+
+<SCRIPT>
+
+if (!window.parent.toc && navigator.appName == "Netscape") {
+
+   document.writeln ('<TABLE ALIGN="left" border="0" cellspacing="0" cellpadding="10">');
+   document.writeln ('<TR>');
+   document.write ('<TD ALIGN="left">');
+
+   if (prev != "crw_spTOC.hhc") {
+      document.writeln ('<A HREF="' + prev + '">');
+      document.writeln ('<IMG SRC="prevpage.gif" HEIGHT=17 BORDER=0 ALT="Página anterior"></A>');
+   } else {
+//   window.alert ('no previous page');
+   }
+
+   if (next != "crw_spIX.hhk") {
+      document.writeln ('<A HREF="' + next + '">');
+      document.writeln ('<IMG SRC="nextpage.gif" HEIGHT=17 BORDER=0 ALT="Página siguiente"></A>');
+   } else {
+//   window.alert ('no next page');
+   }
+   document.writeln ('</TD><TD ALIGN="left">');
+   document.writeln ('<A HREF="frameset.htm?TOC">');
+   document.writeln ('<IMG SRC="showtoc.gif" HEIGHT=17 BORDER=0 ALT="Haga clic para ver el contenido"></A></TD>');
+   document.writeln ('<TD ALIGN="left">');
+   document.writeln ('<A HREF="frameset.htm?IDX">');
+   document.writeln ('<IMG SRC="showix.gif" HEIGHT=17 BORDER=0 ALT="Haga clic para ver el índice"></A></TD>');
+   document.writeln ('</TD>');
+   document.writeln ('</TR>');
+   document.writeln ('</TABLE>');
+
+}
+
+</SCRIPT>
+<table align="right" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td align="right"><font size="1">Seagate Software, Inc.<br>
+    <a href="http://www.seagatesoftware.com">http://www.seagatesoftware.com</a><br>
+    Envíe sus comentarios a:<br>
+    <a href="mailto:techpubs@seagatesoftware.com">techpubs@seagatesoftware.com</a><br>
+    </font></td>
+  </tr>
+</table>
+</body>
+</html>
+
+

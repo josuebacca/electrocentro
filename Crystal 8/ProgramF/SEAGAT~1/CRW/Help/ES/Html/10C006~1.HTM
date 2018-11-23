@@ -1,0 +1,90 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+
+<html>
+<head>
+
+<title>C&#243;mo imprimir mensajes condicionales en carta modelo </title>
+
+<link REL=STYLESHEET TYPE="text/css" HREF="seagate.css">
+
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" link="#0000FF" vlink="#0000FF" alink="#800080">
+
+
+ 
+<a name="61258"></a><h3 class="newpage"> C&#243;mo imprimir mensajes condicionales en carta modelo </h3>
+<p><a name="61259"></a>Muchas veces usted querr&#225; imprimir mensajes condicionales en cartas modelo. Por ejemplo, si quisiera estimular a clientes con cr&#233;dito disponible a comprar m&#225;s y, aconsejar a clientes que han sobrepasado su l&#237;mite de cr&#233;dito, a normalizar sus cuentas, podr&#237;a originar dos cartas, una para cada caso, en un mismo informe.</p><a name="61410"></a><h6>Para crear un mensaje condicional</h6><ol>
+<a name="61415"></a><li value="1&nbsp;&nbsp;&nbsp;&nbsp;"><img src="images/Bt_secex.gif">
+
+
+Utilizando el Asistente de Secci&#243;n, inserte una segunda secci&#243;n Detalles en su informe. Debe tener ahora las secciones Detalles A y Detalles B. Vea <a href="10_multsec_rep3.html#58219">Trabajo con secciones</a>.
+<a name="61419"></a><li value="2&nbsp;&nbsp;&nbsp;&nbsp;">Haga dos cartas modelo diferentes. Ponga la carta que estimula a los clientes a comprar m&#225;s en la secci&#243;n Detalles A de su informe, y la carta que aconseja a los clientes a normalizar sus cuentas, en la secci&#243;n B. Vea <a href="10_multsec_rep15.html#68309">Creaci&#243;n de una carta modelo usando un objeto de texto</a>.
+<a name="61423"></a><li value="3&nbsp;&nbsp;&nbsp;&nbsp;">Usando el Asistente de Secci&#243;n, establezca el formato de la secci&#243;n Detalles de manera que cada una sea suprimida bajo ciertas condiciones. Por ejemplo:
+<p><a name="61435"></a> </p>
+</ol>
+<p><a name="61439"></a>Ahora, cuando un registro indica disponibilidad de cr&#233;dito, se imprime la carta <kbd>comprar m&#225;s</kbd>. Cuando la cuenta est&#225; por encima del l&#237;mite de cr&#233;dito, se imprime la carta <kbd>excedido en el l&#237;mite</kbd>. Cuando el cliente est&#225; justamente en el l&#237;mite de su cr&#233;dito, ninguna de las cartas se imprime.</p><a name="65146"></a><h5>Temas relacionados</h5><p><a name="59642"></a><a href="10_multsec_rep8.html#58673">Formato condicional de objetos</a>.</p><p><a name="15447"></a><a href="11_format43.html#89319">Trabajo con Formato condicional</a>.<EM></EM></p>
+<hr><br>
+
+<script  language="JavaScript"><!--
+
+var prev = "10_multsec_rep19.html";
+var next = "11_format.html";
+
+function setTopicID() { 
+      var number = "61258"; 
+      return number; 
+}
+
+// --></script>
+
+
+
+
+<SCRIPT>
+
+if (!window.parent.toc && navigator.appName == "Netscape") {
+
+   document.writeln ('<TABLE ALIGN="left" border="0" cellspacing="0" cellpadding="10">');
+   document.writeln ('<TR>');
+   document.write ('<TD ALIGN="left">');
+
+   if (prev != "crw_spTOC.hhc") {
+      document.writeln ('<A HREF="' + prev + '">');
+      document.writeln ('<IMG SRC="prevpage.gif" HEIGHT=17 BORDER=0 ALT="Página anterior"></A>');
+   } else {
+//   window.alert ('no previous page');
+   }
+
+   if (next != "crw_spIX.hhk") {
+      document.writeln ('<A HREF="' + next + '">');
+      document.writeln ('<IMG SRC="nextpage.gif" HEIGHT=17 BORDER=0 ALT="Página siguiente"></A>');
+   } else {
+//   window.alert ('no next page');
+   }
+   document.writeln ('</TD><TD ALIGN="left">');
+   document.writeln ('<A HREF="frameset.htm?TOC">');
+   document.writeln ('<IMG SRC="showtoc.gif" HEIGHT=17 BORDER=0 ALT="Haga clic para ver el contenido"></A></TD>');
+   document.writeln ('<TD ALIGN="left">');
+   document.writeln ('<A HREF="frameset.htm?IDX">');
+   document.writeln ('<IMG SRC="showix.gif" HEIGHT=17 BORDER=0 ALT="Haga clic para ver el índice"></A></TD>');
+   document.writeln ('</TD>');
+   document.writeln ('</TR>');
+   document.writeln ('</TABLE>');
+
+}
+
+</SCRIPT>
+<table align="right" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td align="right"><font size="1">Seagate Software, Inc.<br>
+    <a href="http://www.seagatesoftware.com">http://www.seagatesoftware.com</a><br>
+    Envíe sus comentarios a:<br>
+    <a href="mailto:techpubs@seagatesoftware.com">techpubs@seagatesoftware.com</a><br>
+    </font></td>
+  </tr>
+</table>
+</body>
+</html>
+
+

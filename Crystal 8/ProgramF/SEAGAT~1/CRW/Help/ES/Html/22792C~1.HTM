@@ -1,0 +1,103 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+
+<html>
+<head>
+<title>Para incorporar un par&#225;metro en una f&#243;rmula</title>
+
+<link REL=STYLESHEET TYPE="text/css" HREF="seagate.css">
+
+<!--
+                 ***********************************
+                 * Seagate Software copyright 1999 *
+                 ***********************************
+
+                      Template version: 5.1
+-->
+
+
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" link="#0000FF" vlink="#0000FF" alink="#800080">
+
+
+ 
+<a name="47520"></a><h4 class="newpage"> Para incorporar un par&#225;metro en una f&#243;rmula</h4><p><a name="47521"></a>Seagate Crystal Reports le permite crear un T&#237;tulo de Informe que puede cambiar cada vez que el informe es actualizado, usando campos de par&#225;metro.</p><ol>
+<a name="46828"></a><li value="1&nbsp;&nbsp;&nbsp;&nbsp;">Cree el par&#225;metro.
+<a name="46829"></a><li value="2&nbsp;&nbsp;&nbsp;&nbsp;">Verifique que est&#233; trabajando en la ficha Dise&#241;o.
+<a name="46830"></a><li value="3&nbsp;&nbsp;&nbsp;&nbsp;">En el men&#250; <strong>Insertar</strong>, haga clic en<strong> Campo de f&#243;rmula</strong>.
+<p class="indent"><a name="46831"></a>Aparece el Explorador de campos.</p><a name="46832"></a><li value="4&nbsp;&nbsp;&nbsp;&nbsp;">Haga clic en <kbd>Nuevo</kbd>.
+<p class="indent"><a name="46833"></a>Aparece el cuadro de di&#225;logo Nombre de f&#243;rmula.</p><a name="47526"></a><li value="5&nbsp;&nbsp;&nbsp;&nbsp;">Ingrese el nombre de la f&#243;rmula y luego haga clic en <strong>Aceptar</strong>.
+<a name="46835"></a><li value="6&nbsp;&nbsp;&nbsp;&nbsp;">Cree una f&#243;rmula usando el campo de par&#225;metro tal como har&#237;a con cualquier valor constante. Por ejemplo, en vez de crear una f&#243;rmula que tenga el nombre de pa&#237;s como categor&#237;a r&#237;gida:
+<p class="indent"><a name="46836"></a>{cliente.PA&Iacute;S} = "EE.UU."</p><p class="indent"><a name="46837"></a>Use un campo de par&#225;metro en vez de "EE.UU.".</p><p class="indent"><a name="46838"></a>{cliente.PA&Iacute;S} = {?Pa&#237;s}</p><p class="indent"><a name="46839"></a>Para hacer esto, haga doble clic en el campo de base de datos, presione = y luego haga doble clic en el par&#225;metro.</p><a name="46840"></a><li value="7&nbsp;&nbsp;&nbsp;&nbsp;">Haga clic en <kbd>Guardar</kbd> y luego en <kbd>Cerrar</kbd>.
+<p class="indent"><a name="46841"></a>Aparece el cuadro de di&#225;logo Explorador de campos. El nombre de la f&#243;rmula que acaba de crear se destaca en el cuadro de lista F&#243;rmula.</p><a name="46842"></a><li value="8&nbsp;&nbsp;&nbsp;&nbsp;">Arrastre y suelte la f&#243;rmula en el informe.
+<a name="46843"></a><li value="9&nbsp;&nbsp;&nbsp;&nbsp;">Haga clic en <strong>Cerrar </strong>para salir del cuadro de di&#225;logo Explorador de campos.
+<a name="46847"></a><li value="10&nbsp;&nbsp;&nbsp;&nbsp;"><img src="images/bt_refrs.gif">
+
+
+Haga clic en <kbd>Actualizar</kbd> para generar el informe.
+<p class="indent"><a name="47531"></a>Aparece un cuadro de di&#225;logo solicit&#225;ndole valores.</p></ol>
+
+<hr><br>
+
+<script  language="JavaScript"><!--
+
+var prev = "22_param12.html";
+var next = "22_param14.html";
+
+function setTopicID() { 
+      var number = "47520"; 
+      return number; 
+}
+
+// --></script>
+
+
+
+
+<SCRIPT>
+
+if (!window.parent.toc && navigator.appName == "Netscape") {
+
+   document.writeln ('<TABLE ALIGN="left" border="0" cellspacing="0" cellpadding="10">');
+   document.writeln ('<TR>');
+   document.write ('<TD ALIGN="left">');
+
+   if (prev != "crw_spTOC.hhc") {
+      document.writeln ('<A HREF="' + prev + '">');
+      document.writeln ('<IMG SRC="prevpage.gif" HEIGHT=17 BORDER=0 ALT="Página anterior"></A>');
+   } else {
+//   window.alert ('no previous page');
+   }
+
+   if (next != "crw_spIX.hhk") {
+      document.writeln ('<A HREF="' + next + '">');
+      document.writeln ('<IMG SRC="nextpage.gif" HEIGHT=17 BORDER=0 ALT="Página siguiente"></A>');
+   } else {
+//   window.alert ('no next page');
+   }
+   document.writeln ('</TD><TD ALIGN="left">');
+   document.writeln ('<A HREF="frameset.htm?TOC">');
+   document.writeln ('<IMG SRC="showtoc.gif" HEIGHT=17 BORDER=0 ALT="Haga clic para ver el contenido"></A></TD>');
+   document.writeln ('<TD ALIGN="left">');
+   document.writeln ('<A HREF="frameset.htm?IDX">');
+   document.writeln ('<IMG SRC="showix.gif" HEIGHT=17 BORDER=0 ALT="Haga clic para ver el índice"></A></TD>');
+   document.writeln ('</TD>');
+   document.writeln ('</TR>');
+   document.writeln ('</TABLE>');
+
+}
+
+</SCRIPT>
+<table align="right" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td align="right"><font size="1">Seagate Software, Inc.<br>
+    <a href="http://www.seagatesoftware.com">http://www.seagatesoftware.com</a><br>
+    Envíe sus comentarios a:<br>
+    <a href="mailto:techpubs@seagatesoftware.com">techpubs@seagatesoftware.com</a><br>
+    </font></td>
+  </tr>
+</table>
+</body>
+</html>
+
+

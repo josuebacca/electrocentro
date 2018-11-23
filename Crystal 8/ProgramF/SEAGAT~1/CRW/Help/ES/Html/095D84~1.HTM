@@ -1,0 +1,106 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+
+<html>
+<head>
+<title>Creaci&#243;n de totales acumulados</title>
+
+<link REL=STYLESHEET TYPE="text/css" HREF="seagate.css">
+
+<!--
+                 ***********************************
+                 * Seagate Software copyright 1999 *
+                 ***********************************
+
+                      Template version: 5.1
+-->
+
+
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" link="#0000FF" vlink="#0000FF" alink="#800080">
+
+
+ 
+<a name="31864"></a><h2 class="newpage">Creaci&#243;n de totales acumulados</h2><a name="31866"></a><h3>Creaci&#243;n de totales acumulados en una lista </h3>
+<p><a name="32784"></a>Totales acumulados son totales que generalmente se muestran de registro a registro. Totalizan todos los registros (en el informe, en el grupo y as&#237; sucesivamente) hasta e incluyendo el registro corriente. </p><p><a name="32785"></a>El total acumulado m&#225;s b&#225;sico es el total acumulado llevado a trav&#233;s de una lista. En este tutorial usted va a crear este tipo de informe, configurando un total acumulado para una lista de cantidades de pedido.</p><p><a name="35500"></a><font color="darkblue"><b>Nota:   &nbsp;&nbsp;&nbsp;</b></font>Los campos de totales acumulados usan el signo # como prefijo.</p>
+<a name="32787"></a><h6>Para crear un total acumulado en una lista</h6><ol>
+<a name="32788"></a><li value="1&nbsp;&nbsp;&nbsp;&nbsp;">Comience un informe usando los datos de muestra, <strong>Xtreme_es.mdb</strong>, que se encuentra en la carpeta <kbd>File Data Sources </kbd>del cuadro de di&#225;logo Explorador de datos. Vincule las tablas Cliente y Pedidos, y coloque los siguientes campos de izquierda a derecha en la secci&#243;n Detalles:
+<p class="code"><a name="33861"></a>{cliente.NOMBRE DEL CLIENTE}<br>{pedidos.ID DEL PEDIDO}<br>{pedidos.MONTO DEL PEDIDO}<br><a name="32790"></a><li value="2&nbsp;&nbsp;&nbsp;&nbsp;">Elija <strong>Campo de total acumulado</strong> del men&#250; <strong>Insertar</strong>.
+<p class="indent"><a name="32791"></a>El cuadro de di&#225;logo Explorador de Campos aparecer&#225; en su pantalla.</p><a name="31875"></a><li value="3&nbsp;&nbsp;&nbsp;&nbsp;">Haga doble clic en <kbd>Campos de total acumulado</kbd>.
+<p class="indent"><a name="32849"></a>Aparece el cuadro de di&#225;logo Crear campo de total acumulado.</p><a name="32850"></a><li value="4&nbsp;&nbsp;&nbsp;&nbsp;">Introduzca el nombre "TotalPedidos" en el cuadro de texto <strong>Nombre del total acumulado.</strong>
+<a name="32851"></a><li value="5&nbsp;&nbsp;&nbsp;&nbsp;">Seleccione {pedidos.MONTO DEL PEDIDO} del cuadro de lista <strong>Campos y Tablas disponibles</strong> y use el primer bot&#243;n de flecha para introducir ese campo en el cuadro <kbd>Campo para resumir</kbd>.
+<a name="32852"></a><li value="6&nbsp;&nbsp;&nbsp;&nbsp;">Seleccione <strong>suma</strong>, de la lista desplegable <strong>Tipo de resumen</strong>.
+<a name="32853"></a><li value="7&nbsp;&nbsp;&nbsp;&nbsp;">En la secci&#243;n <strong>Evaluar</strong> del cuadro de di&#225;logo, haga clic en <strong>En cambio de campo</strong>, y seleccione {pedidos.ID DEL PEDIDO} como el campo "de cambio". El total acumulado ser&#225; ejecutado cada vez que el campo cambie.
+<a name="32854"></a><li value="8&nbsp;&nbsp;&nbsp;&nbsp;">En la secci&#243;n <strong>Restablecer</strong>, haga clic en la opci&#243;n <strong>Nunca</strong> (esto le dar&#225; un total acumulado que nunca se restablece, es decir, que contin&#250;a a trav&#233;s del informe).
+<a name="32855"></a><li value="9&nbsp;&nbsp;&nbsp;&nbsp;">Haga clic en <strong>Aceptar</strong> para guardar el campo de total acumulado.
+<p class="indent"><a name="32856"></a>El programa vuelve al cuadro de di&#225;logo Insertar Campos.</p></ol>
+<p><a name="32857"></a>Inserte el campo de total acumulado en la secci&#243;n Detalles del informe, justamente a la derecha de {pedidos.MONTO DEL PEDIDO}.</p><p><a name="40876"></a> <img src="images/BASICRT2.gif">
+
+
+</p>
+<p><a name="32876"></a> </p>
+
+<hr><br>
+
+<script  language="JavaScript"><!--
+
+var prev = "09_runtotal3.html";
+var next = "09_runtotal5.html";
+
+function setTopicID() { 
+      var number = "31864"; 
+      return number; 
+}
+
+// --></script>
+
+
+
+
+<SCRIPT>
+
+if (!window.parent.toc && navigator.appName == "Netscape") {
+
+   document.writeln ('<TABLE ALIGN="left" border="0" cellspacing="0" cellpadding="10">');
+   document.writeln ('<TR>');
+   document.write ('<TD ALIGN="left">');
+
+   if (prev != "crw_spTOC.hhc") {
+      document.writeln ('<A HREF="' + prev + '">');
+      document.writeln ('<IMG SRC="prevpage.gif" HEIGHT=17 BORDER=0 ALT="Página anterior"></A>');
+   } else {
+//   window.alert ('no previous page');
+   }
+
+   if (next != "crw_spIX.hhk") {
+      document.writeln ('<A HREF="' + next + '">');
+      document.writeln ('<IMG SRC="nextpage.gif" HEIGHT=17 BORDER=0 ALT="Página siguiente"></A>');
+   } else {
+//   window.alert ('no next page');
+   }
+   document.writeln ('</TD><TD ALIGN="left">');
+   document.writeln ('<A HREF="frameset.htm?TOC">');
+   document.writeln ('<IMG SRC="showtoc.gif" HEIGHT=17 BORDER=0 ALT="Haga clic para ver el contenido"></A></TD>');
+   document.writeln ('<TD ALIGN="left">');
+   document.writeln ('<A HREF="frameset.htm?IDX">');
+   document.writeln ('<IMG SRC="showix.gif" HEIGHT=17 BORDER=0 ALT="Haga clic para ver el índice"></A></TD>');
+   document.writeln ('</TD>');
+   document.writeln ('</TR>');
+   document.writeln ('</TABLE>');
+
+}
+
+</SCRIPT>
+<table align="right" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td align="right"><font size="1">Seagate Software, Inc.<br>
+    <a href="http://www.seagatesoftware.com">http://www.seagatesoftware.com</a><br>
+    Envíe sus comentarios a:<br>
+    <a href="mailto:techpubs@seagatesoftware.com">techpubs@seagatesoftware.com</a><br>
+    </font></td>
+  </tr>
+</table>
+</body>
+</html>
+
+

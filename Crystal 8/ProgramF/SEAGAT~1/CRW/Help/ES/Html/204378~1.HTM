@@ -1,0 +1,105 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+
+<html>
+<head>
+<title>Mecanismo de seguridad de ciclos</title>
+
+<link REL=STYLESHEET TYPE="text/css" HREF="seagate.css">
+
+<!--
+                 ***********************************
+                 * Seagate Software copyright 1999 *
+                 ***********************************
+
+                      Template version: 5.1
+-->
+
+
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" link="#0000FF" vlink="#0000FF" alink="#800080">
+
+
+ 
+<a name="132957"></a><h3 class="newpage"> Mecanismo de seguridad de ciclos</h3>
+<p><a name="132959"></a>Existe un mecanismo de seguridad para evitar que el procesamiento de informes quede bloqueado debido a un ciclo infinito. Toda evaluaci&#243;n de una f&#243;rmula puede tener como m&#225;ximo 30.000 evaluaciones de condici&#243;n de ciclo por evaluaci&#243;n de f&#243;rmula. Por ejemplo:</p><PRE><a name="132961"></a>Dim i
+<a name="132962"></a>i = 1
+<a name="132963"></a>Do While i &lt;= 100000
+<a name="132964"></a>   If i &gt; {pel&#237;cula.ESTRELLAS} Then Exit Do
+<a name="132965"></a>   i = i + 1
+<a name="132966"></a>Loop
+<a name="132967"></a>formula = 20
+</PRE><p><a name="132969"></a>Si {pel&#237;cula.ESTRELLAS} es mayor que 30.000 entonces la condici&#243;n de ciclo (i &lt;= 100000) se eval&#250;a m&#225;s que el n&#250;mero m&#225;ximo de veces y se muestra un mensaje de error. En caso contrario, el ciclo es correcto.</p><p><a name="132971"></a><font color="darkblue"><b>Nota:   &nbsp;&nbsp;&nbsp;</b></font>El mecanismo de seguridad se aplica por f&#243;rmula y no por cada ciclo individual. Por ejemplo:</p>
+<PRE><a name="132973"></a>Dim i
+<a name="132974"></a>i = 1
+<a name="132975"></a>For i = 1 To 10000
+<a name="132976"></a>   formula = Sin (i)
+<a name="132977"></a>Next i
+<a name="132979"></a>Do While i &lt;= 25000
+<a name="132980"></a>   i = i + 1
+<a name="132981"></a>Loop
+</PRE><p><a name="132983"></a>La f&#243;rmula anterior tambi&#233;n activa el mecanismo de seguridad ya que 30.000 se refiere al n&#250;mero total de evaluaciones de condici&#243;n de ciclo de la f&#243;rmula y &#233;sta tendr&#225; 10001 + 25001 de tales evaluaciones.</p>
+<hr><br>
+
+<script  language="JavaScript"><!--
+
+var prev = "20_basicsyntax56.html";
+var next = "20_basicsyntax58.html";
+
+function setTopicID() { 
+      var number = "132957"; 
+      return number; 
+}
+
+// --></script>
+
+
+
+
+<SCRIPT>
+
+if (!window.parent.toc && navigator.appName == "Netscape") {
+
+   document.writeln ('<TABLE ALIGN="left" border="0" cellspacing="0" cellpadding="10">');
+   document.writeln ('<TR>');
+   document.write ('<TD ALIGN="left">');
+
+   if (prev != "crw_spTOC.hhc") {
+      document.writeln ('<A HREF="' + prev + '">');
+      document.writeln ('<IMG SRC="prevpage.gif" HEIGHT=17 BORDER=0 ALT="Página anterior"></A>');
+   } else {
+//   window.alert ('no previous page');
+   }
+
+   if (next != "crw_spIX.hhk") {
+      document.writeln ('<A HREF="' + next + '">');
+      document.writeln ('<IMG SRC="nextpage.gif" HEIGHT=17 BORDER=0 ALT="Página siguiente"></A>');
+   } else {
+//   window.alert ('no next page');
+   }
+   document.writeln ('</TD><TD ALIGN="left">');
+   document.writeln ('<A HREF="frameset.htm?TOC">');
+   document.writeln ('<IMG SRC="showtoc.gif" HEIGHT=17 BORDER=0 ALT="Haga clic para ver el contenido"></A></TD>');
+   document.writeln ('<TD ALIGN="left">');
+   document.writeln ('<A HREF="frameset.htm?IDX">');
+   document.writeln ('<IMG SRC="showix.gif" HEIGHT=17 BORDER=0 ALT="Haga clic para ver el índice"></A></TD>');
+   document.writeln ('</TD>');
+   document.writeln ('</TR>');
+   document.writeln ('</TABLE>');
+
+}
+
+</SCRIPT>
+<table align="right" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td align="right"><font size="1">Seagate Software, Inc.<br>
+    <a href="http://www.seagatesoftware.com">http://www.seagatesoftware.com</a><br>
+    Envíe sus comentarios a:<br>
+    <a href="mailto:techpubs@seagatesoftware.com">techpubs@seagatesoftware.com</a><br>
+    </font></td>
+  </tr>
+</table>
+</body>
+</html>
+
+

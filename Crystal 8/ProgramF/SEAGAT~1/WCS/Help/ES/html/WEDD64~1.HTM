@@ -1,0 +1,98 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+
+<html>
+<head>
+<title>Page Server</title>
+
+<link REL=STYLESHEET TYPE="text/css" HREF="seagate.css">
+
+<!--
+                 ***********************************
+                 * Seagate Software copyright 1999 *
+                 ***********************************
+
+                      Template version: 5.1
+-->
+
+
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" link="#0000FF" vlink="#0000FF" alink="#800080">
+
+
+ 
+<a name="166474"></a><h3 class="newpage"> Page Server</h3>
+<p><a name="166900"></a>El Page Server se ejecuta en su sistema Windows NT como servicio NT. Principalmente es responsable de recibir solicitudes de archivos de informe *.rpt desde el Web Component Server y de devolver las p&#225;ginas al Web Component Server.</p><a name="163066"></a><h4>Formato del Page Server</h4><p><a name="163067"></a>Cuando el Page Server genera un informe, &#233;ste traduce el informe a p&#225;ginas de formato archivo de p&#225;ginas encapsuladas (EPF). EPF es un formato de Seagate Software que se basa en el formato Postscript encapsulado (EPS). Este formato de p&#225;gina es utilizado por los visores de informes para ActiveX y Java.</p><p><a name="163072"></a>El resultado es que los informes EPF pueden manejar complejas descripciones de presentaci&#243;n y dise&#241;o. Cuando se visualizan en el explorador, los informes EPF mantienen la mayor&#237;a, por no decir todos los elementos de dise&#241;o y presentaci&#243;n del informe originalmente creado en Seagate Crystal Reports. Como es un formato patentado, los informes EPF s&#243;lo pueden visualizarse en los visores de informes para ActiveX o Java.</p><p><a name="163073"></a><font color="darkblue"><b>Nota:   &nbsp;&nbsp;&nbsp;</b></font>Los archivos EPF mantienen la informaci&#243;n de formato establecida por controladores de impresora. Esta informaci&#243;n incluye ajustes predeterminados tales como tama&#241;o de p&#225;gina y orientaci&#243;n. </p>
+<a name="166613"></a><h4>Tareas compartidas y almacenamiento de p&#225;ginas en la memoria cach&#233;</h4><p><a name="167565"></a>Esta secci&#243;n proporciona una descripci&#243;n general de c&#243;mo el Page Server almacena informes en la memoria cach&#233; y comparte tareas. </p><p><a name="163092"></a>Cuando un cliente solicita un informe que no ha sido solicitado anteriormente, ocurre lo siguiente:</p><ul type="disc"><a name="163093"></a><li>Se crea una nueva tarea. Cuando esto sucede, se crea una memoria cach&#233;. La memoria cach&#233; almacena las p&#225;ginas de los informes a medida que son solicitadas. Tambi&#233;n se crea una referencia a la tarea de informe. La referencia tiene una identificaci&#243;n &#250;nica (ID de solicitud) que se utiliza para acceder a la tarea si &#233;sta vuelve a ser solicitada en el futuro. 
+<a name="163094"></a><li>Un intervalo de actualizaci&#243;n se asocia a la tarea de informe. &Eacute;ste es el intervalo de tiempo (opci&#243;n Actualizaci&#243;n de base de datos en la aplicaci&#243;n Web Component Manager) despu&#233;s del cual una nueva solicitud del mismo informe produce el acceso a la base de datos para actualizar la informaci&#243;n. En otras palabras, si un nuevo cliente solicita el informe despu&#233;s del intervalo de actualizaci&#243;n de la tarea de informe existente, se crea una nueva tarea. 
+<a name="163095"></a><li>Si un cliente que hace referencia a una tarea de informe existente selecciona actualizar, se crea una nueva tarea de informe y el cliente recibe una referencia a la nueva tarea.
+</ul><a name="163096"></a><h5>Tareas compartidas</h5><p><a name="163097"></a>Las tareas se comparten cuando m&#225;s de un usuario accede a la misma instancia de un informe. Una tarea de informe puede ser compartida si:</p><ul type="disc"><a name="167861"></a><li>El informe contiene datos almacenados y no hay comandos de f&#243;rmula de selecci&#243;n (SF#) ni de f&#243;rmula de selecci&#243;n de grupos (GF#).
+<a name="167831"></a><li>El informe no contiene datos almacenados y no hay comandos de f&#243;rmula de selecci&#243;n (SF#) ni de f&#243;rmula de selecci&#243;n de grupos (GF#).
+<a name="171286"></a><li>Los comandos de f&#243;rmula de selecci&#243;n (SF#) o de f&#243;rmula de selecci&#243;n de grupos (GF#) son id&#233;nticos a las f&#243;rmulas de una tarea existente.
+</ul><p><a name="167606"></a>Un informe deja de ser compartido en los siguientes casos:</p><ul type="disc"><a name="163099"></a><li>Cuando un cliente que comparte una tarea de informe existente hace clic en actualizar. En este caso se crea una nueva tarea de informe y el cliente recibe una referencia a la nueva tarea.
+<a name="163100"></a><li>Cuando un cliente que comparte una tarea de informe existente env&#237;a una solicitud de p&#225;gina que incluye uno de los comandos indicados anteriormente. En este caso se crea una nueva tarea de informe y el cliente recibe una referencia a la nueva tarea.
+</ul><a name="163101"></a><h5>Almacenamiento de p&#225;ginas en memoria cach&#233;</h5><p><a name="171777"></a>Las p&#225;ginas solicitadas se almacenan en una memoria cach&#233; asociada a cada tarea de informe. Las p&#225;ginas son generadas y luego transferidas al cliente y almacenadas en la memoria cach&#233;. Si otro cliente que est&#225; compartiendo la misma tarea de informe solicita una p&#225;gina que ya ha sido almacenada en la memoria cach&#233;, dicho cliente recibe la p&#225;gina almacenada. Esto reduce significativamente el tiempo de acceso.</p>
+<hr><br>
+
+<script  language="JavaScript"><!--
+
+var prev = "WebServerOverview14.html";
+var next = "WebServerOverview16.html";
+
+function setTopicID() { 
+      var number = "166474"; 
+      return number; 
+}
+
+// --></script>
+
+
+
+
+<SCRIPT>
+
+if (!window.parent.toc && navigator.appName == "Netscape") {
+
+   document.writeln ('<TABLE ALIGN="left" border="0" cellspacing="0" cellpadding="10">');
+   document.writeln ('<TR>');
+   document.write ('<TD ALIGN="left">');
+
+   if (prev != "wcmadminTOC.hhc") {
+      document.writeln ('<A HREF="' + prev + '">');
+      document.writeln ('<IMG SRC="prevpage.gif" HEIGHT=17 BORDER=0 ALT="Página anterior"></A>');
+   } else {
+//   window.alert ('no previous page');
+   }
+
+   if (next != "wcmadminIX.hhk") {
+      document.writeln ('<A HREF="' + next + '">');
+      document.writeln ('<IMG SRC="nextpage.gif" HEIGHT=17 BORDER=0 ALT="Página siguiente"></A>');
+   } else {
+//   window.alert ('no next page');
+   }
+   document.writeln ('</TD><TD ALIGN="left">');
+   document.writeln ('<A HREF="frameset.htm?TOC">');
+   document.writeln ('<IMG SRC="showtoc.gif" HEIGHT=17 BORDER=0 ALT="Haga clic para ver el contenido"></A></TD>');
+   document.writeln ('<TD ALIGN="left">');
+   document.writeln ('<A HREF="frameset.htm?IDX">');
+   document.writeln ('<IMG SRC="showix.gif" HEIGHT=17 BORDER=0 ALT="Haga clic para ver el índice"></A></TD>');
+   document.writeln ('</TD>');
+   document.writeln ('</TR>');
+   document.writeln ('</TABLE>');
+
+}
+
+</SCRIPT>
+<table align="right" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td align="right"><font size="1">Seagate Software, Inc.<br>
+    <a href="http://www.seagatesoftware.com">http://www.seagatesoftware.com</a><br>
+    Envíe sus comentarios a:<br>
+    <a href="mailto:techpubs@seagatesoftware.com">techpubs@seagatesoftware.com</a><br>
+    </font></td>
+  </tr>
+</table>
+</body>
+</html>
+
+

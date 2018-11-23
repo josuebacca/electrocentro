@@ -1,0 +1,94 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+
+<html>
+<head>
+<title>Funciones de formato condicional para prop&#243;sitos generales</title>
+
+<link REL=STYLESHEET TYPE="text/css" HREF="seagate.css">
+
+<!--
+                 ***********************************
+                 * Seagate Software copyright 1999 *
+                 ***********************************
+
+                      Template version: 5.1
+-->
+
+
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" link="#0000FF" vlink="#0000FF" alink="#800080">
+
+
+ 
+<a name="147238"></a><h3 class="newpage"> Funciones de formato condicional para prop&#243;sitos generales</h3>
+<p><a name="147240"></a>Existen tres funciones de formato condicional de prop&#243;sito general:</p><ul type="disc"><a name="152368"></a><li>CurrentFieldValue
+<a name="152369"></a><li>DefaultAttribute 
+<a name="152374"></a><li>GridRowColumnValue.
+</ul><p><a name="152393"></a>Estas funciones se muestran en la parte superior del &#225;rbol Funciones cuando corresponde. DefaultAttribute se puede usar para cualquier f&#243;rmula de formato, CurrentFieldValue para cualquier f&#243;rmula de formato donde se d&#233; formato a un valor de campo y GridRowColumnValue para cualquier f&#243;rmula de formato donde se d&#233; formato a un valor de campo en una cuadr&#237;cula de tabla cruzada u OLAP.</p><p><a name="152398"></a>En particular, CurrentFieldValue le permite dar formato a las celdas de una cuadr&#237;cula de tabla cruzada u OLAP de acuerdo a su valor, mientras que GridRowColumnValue le permite dar formato condicional a las celdas de una cuadr&#237;cula de tabla cruzada u OLAP de acuerdo a los encabezados de las filas o columnas. Estas dos funciones son esenciales en esta situaci&#243;n dado que no hay otra forma en el lenguaje de f&#243;rmula de referirse a los valores de estos campos. Por ejemplo, si desea suprimir celdas de tablas cruzadas cuando los valores sean inferiores a 50.000:</p><PRE><a name="147242"></a>//Ejemplo de formato condicional 4
+<a name="147243"></a>CurrentFieldValue &lt; 50000
+</PRE>
+<hr><br>
+
+<script  language="JavaScript"><!--
+
+var prev = "21_crystalsyntax45.html";
+var next = "21_crystalsyntax47.html";
+
+function setTopicID() { 
+      var number = "147238"; 
+      return number; 
+}
+
+// --></script>
+
+
+
+
+<SCRIPT>
+
+if (!window.parent.toc && navigator.appName == "Netscape") {
+
+   document.writeln ('<TABLE ALIGN="left" border="0" cellspacing="0" cellpadding="10">');
+   document.writeln ('<TR>');
+   document.write ('<TD ALIGN="left">');
+
+   if (prev != "crw_spTOC.hhc") {
+      document.writeln ('<A HREF="' + prev + '">');
+      document.writeln ('<IMG SRC="prevpage.gif" HEIGHT=17 BORDER=0 ALT="Página anterior"></A>');
+   } else {
+//   window.alert ('no previous page');
+   }
+
+   if (next != "crw_spIX.hhk") {
+      document.writeln ('<A HREF="' + next + '">');
+      document.writeln ('<IMG SRC="nextpage.gif" HEIGHT=17 BORDER=0 ALT="Página siguiente"></A>');
+   } else {
+//   window.alert ('no next page');
+   }
+   document.writeln ('</TD><TD ALIGN="left">');
+   document.writeln ('<A HREF="frameset.htm?TOC">');
+   document.writeln ('<IMG SRC="showtoc.gif" HEIGHT=17 BORDER=0 ALT="Haga clic para ver el contenido"></A></TD>');
+   document.writeln ('<TD ALIGN="left">');
+   document.writeln ('<A HREF="frameset.htm?IDX">');
+   document.writeln ('<IMG SRC="showix.gif" HEIGHT=17 BORDER=0 ALT="Haga clic para ver el índice"></A></TD>');
+   document.writeln ('</TD>');
+   document.writeln ('</TR>');
+   document.writeln ('</TABLE>');
+
+}
+
+</SCRIPT>
+<table align="right" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td align="right"><font size="1">Seagate Software, Inc.<br>
+    <a href="http://www.seagatesoftware.com">http://www.seagatesoftware.com</a><br>
+    Envíe sus comentarios a:<br>
+    <a href="mailto:techpubs@seagatesoftware.com">techpubs@seagatesoftware.com</a><br>
+    </font></td>
+  </tr>
+</table>
+</body>
+</html>
+
+

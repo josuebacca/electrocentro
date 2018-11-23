@@ -1,0 +1,170 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+
+<html>
+<head>
+<title>Uso del enunciado Exit For</title>
+
+<link REL=STYLESHEET TYPE="text/css" HREF="seagate.css">
+
+<!--
+                 ***********************************
+                 * Seagate Software copyright 1999 *
+                 ***********************************
+
+                      Template version: 5.1
+-->
+
+
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" link="#0000FF" vlink="#0000FF" alink="#800080">
+
+
+ 
+<a name="132883"></a><h4 class="newpage"> Uso del enunciado Exit For</h4><p><a name="132885"></a>Es posible salir de un ciclo For/Next al usar el enunciado Exit For. El siguiente ejemplo busca los nombres de matriz global para el nombre de "Federico". Si lo encuentra, devuelve el &#237;ndice del nombre de la matriz. De lo contrario, devuelve el valor -1. Por ejemplo, si la matriz de nombres es:</p><p><code><a name="132886"></a>Matriz ("Francisco", "Elena", "Federico", "Linda")</code></p><p><a name="132887"></a>Entonces la f&#243;rmula devuelve el valor 3.</p><PRE><a name="132889"></a>Global nombres () As String
+<a name="132890"></a>'La matriz de nombres se ha iniciado y llenado
+<a name="132891"></a>'en otras f&#243;rmulas
+<a name="132892"></a>Dim i
+<a name="132893"></a>formula = -1
+<a name="132894"></a>La funci&#243;n UBound devuelve el tama&#241;o del argumento
+<a name="132895"></a>'de su matriz
+<a name="132896"></a>For i = 1 to UBound (nombres)
+<a name="132897"></a>   If nombres (i) = "Federico" Then
+<a name="132898"></a>      formula = i
+<a name="132899"></a>      Exit For
+<a name="132900"></a>   End If
+<a name="132901"></a>Next i
+</PRE><a name="132903"></a><h3>Ciclos Do</h3>
+<p><a name="132905"></a>Otro mecanismo de ciclo es el ciclo Do. Un ciclo Do se puede usar para ejecutar un bloque de enunciados fijo, una cantidad infinita de veces.</p><a name="133227"></a><h4>4 tipos diferentes de ciclos Do<Table Border="1">
+<tr><th align="left" valign="bottom"><a name="133325"></a><strong>Tipo de ciclo Do
+</strong>
+</th><th align="left" valign="bottom"><a name="133327"></a>Explicaci&#243;n
+
+</th><th align="left" valign="bottom"><a name="133329"></a>Ejemplo
+
+</th></tr>
+<tr><td align="left" valign="TOP"><P><a name="133331"></a>Do While ... Loop</P>
+
+
+</td><td align="left" valign="TOP"><P><a name="133375"></a>El ciclo Do While ... Loop eval&#250;a la condici&#243;n y si &#233;sta es verdadera, entonces eval&#250;a los enunciados que siguen a la condici&#243;n. </P>
+
+
+<P><br></P>
+
+
+<P><a name="133393"></a>Al terminar de hacer esto, eval&#250;a nuevamente la condici&#243;n y si &#233;sta es verdadera, vuelve a evaluar los enunciados. </P>
+
+
+<P><br></P>
+
+
+<P><a name="133395"></a>Contin&#250;a repitiendo este proceso hasta que la condici&#243;n sea falsa.</P>
+
+
+</td><td align="left" valign="TOP"><PRE><a name="133335"></a>Do While <EM>condici&#243;n
+</EM><a name="133336"></a>   <EM>enunciados
+</EM><a name="133337"></a>Loop
+</PRE></td></tr>
+<tr><td align="left" valign="TOP"><P><a name="133339"></a>Do Until ... Loop</P>
+
+
+</td><td align="left" valign="TOP"><P><a name="133401"></a>El ciclo Do Until ... Loop es similar al ciclo Do While ... Loop excepto que &#233;ste sigue evaluando los enunciados <EM>hasta que</EM><EM> </EM>la condici&#243;n sea verdadera en vez de <EM>mientras</EM> es verdadera.</P>
+
+
+</td><td align="left" valign="TOP"><PRE><a name="133343"></a>Do Until <EM>condici&#243;n
+</EM><a name="133344"></a>   <EM>enunciados
+</EM><a name="133345"></a>Loop
+</PRE></td></tr>
+<tr><td align="left" valign="TOP"><P><a name="133347"></a>Do ... Loop While</P>
+
+
+</td><td align="left" valign="TOP"><P><a name="133417"></a>El ciclo Do ... Loop While eval&#250;a los enunciados solamente una vez. </P>
+
+
+<P><br></P>
+
+
+<P><a name="133444"></a>Luego eval&#250;a la condici&#243;n y si &#233;sta es verdadera, eval&#250;a nuevamente los enunciados. Este proceso contin&#250;a hasta que la condici&#243;n sea falsa.</P>
+
+
+</td><td align="left" valign="TOP"><PRE><a name="133351"></a>Do
+<a name="133352"></a>   <EM>enunciados
+</EM><a name="133353"></a>Loop While <EM>condici&#243;n
+</EM></PRE></td></tr>
+<tr><td align="left" valign="TOP"><P><a name="133355"></a>Do ... Loop Until</P>
+
+
+</td><td align="left" valign="TOP"><P><a name="133357"></a>Similar al ciclo Do ... Loop While excepto que eval&#250;a los enunciados hasta que la condici&#243;n sea verdadera.</P>
+
+
+</td><td align="left" valign="TOP"><PRE><a name="133359"></a>Do
+<a name="133360"></a>   <EM>enunciados
+</EM><a name="133361"></a>Loop Until <EM>condici&#243;n
+</EM></PRE></td></tr>
+
+</Table></h4><p><a name="133455"></a><font color="darkblue"><b>Nota:   &nbsp;&nbsp;&nbsp;</b></font>Los ciclos Do admiten un enunciado Exit Do para salir inmediatamente del ciclo. El enunciado Exit Do es similar a Exit For en los ciclos For/Next.</p>
+
+<hr><br>
+
+<script  language="JavaScript"><!--
+
+var prev = "20_basicsyntax53.html";
+var next = "20_basicsyntax55.html";
+
+function setTopicID() { 
+      var number = "132883"; 
+      return number; 
+}
+
+// --></script>
+
+
+
+
+<SCRIPT>
+
+if (!window.parent.toc && navigator.appName == "Netscape") {
+
+   document.writeln ('<TABLE ALIGN="left" border="0" cellspacing="0" cellpadding="10">');
+   document.writeln ('<TR>');
+   document.write ('<TD ALIGN="left">');
+
+   if (prev != "crw_spTOC.hhc") {
+      document.writeln ('<A HREF="' + prev + '">');
+      document.writeln ('<IMG SRC="prevpage.gif" HEIGHT=17 BORDER=0 ALT="Página anterior"></A>');
+   } else {
+//   window.alert ('no previous page');
+   }
+
+   if (next != "crw_spIX.hhk") {
+      document.writeln ('<A HREF="' + next + '">');
+      document.writeln ('<IMG SRC="nextpage.gif" HEIGHT=17 BORDER=0 ALT="Página siguiente"></A>');
+   } else {
+//   window.alert ('no next page');
+   }
+   document.writeln ('</TD><TD ALIGN="left">');
+   document.writeln ('<A HREF="frameset.htm?TOC">');
+   document.writeln ('<IMG SRC="showtoc.gif" HEIGHT=17 BORDER=0 ALT="Haga clic para ver el contenido"></A></TD>');
+   document.writeln ('<TD ALIGN="left">');
+   document.writeln ('<A HREF="frameset.htm?IDX">');
+   document.writeln ('<IMG SRC="showix.gif" HEIGHT=17 BORDER=0 ALT="Haga clic para ver el índice"></A></TD>');
+   document.writeln ('</TD>');
+   document.writeln ('</TR>');
+   document.writeln ('</TABLE>');
+
+}
+
+</SCRIPT>
+<table align="right" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td align="right"><font size="1">Seagate Software, Inc.<br>
+    <a href="http://www.seagatesoftware.com">http://www.seagatesoftware.com</a><br>
+    Envíe sus comentarios a:<br>
+    <a href="mailto:techpubs@seagatesoftware.com">techpubs@seagatesoftware.com</a><br>
+    </font></td>
+  </tr>
+</table>
+</body>
+</html>
+
+

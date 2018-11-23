@@ -1,0 +1,113 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+
+<html>
+<head>
+<title>F&#243;rmula1</title>
+
+<link REL=STYLESHEET TYPE="text/css" HREF="seagate.css">
+
+<!--
+                 ***********************************
+                 * Seagate Software copyright 1999 *
+                 ***********************************
+
+                      Template version: 5.1
+-->
+
+
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" link="#0000FF" vlink="#0000FF" alink="#800080">
+
+
+ 
+<a name="256344"></a><h4 class="newpage"> F&#243;rmula1</h4><ol>
+<a name="256345"></a><li value="1&nbsp;&nbsp;&nbsp;&nbsp;">Primero debe crear un informe usando la tabla "Cliente" de <kbd>Xtreme_es.mdb</kbd> y ubicar los siguientes campos de izquierda a derecha en la secci&#243;n Detalles:
+<p class="code"><a name="256346"></a>{cliente.ID DEL CLIENTE}<br><a name="256347"></a>{cliente.NOMBRE DEL CLIENTE}</p><p class="indent"><a name="256348"></a>Para verificar cada porci&#243;n de la f&#243;rmula, va a colocar un nuevo campo de f&#243;rmula junto a estos dos campos en el informe.</p><a name="256349"></a><li value="2&nbsp;&nbsp;&nbsp;&nbsp;">Cree una nueva f&#243;rmula llamada F&#243;rmula1.
+<a name="256350"></a><li value="3&nbsp;&nbsp;&nbsp;&nbsp;">Escriba lo siguiente en el cuadro de <strong>texto de f&#243;rmula</strong> del Editor de f&#243;rmulas:
+<p class="code"><a name="314806"></a>If ({cliente.NOMBRE DEL CLIENTE} [1 to 2 = "Bi" Then<br></ol>
+<PRE><a name="314807"></a>"TRUE"
+<a name="314808"></a>Else
+<a name="256354"></a>&nbsp;&nbsp;&nbsp;&nbsp;"FALSE"
+</PRE><ol>
+<a name="256358"></a><li value="4&nbsp;&nbsp;&nbsp;&nbsp;"><img src="images/bt_check.gif">
+
+
+Haga clic en <strong>Verificar </strong>para verificar posibles errores. Aparecer&#225; el siguiente mensaje de error:
+<a name="256359"></a><p class="indent"><code>Falta el ].</code></p><a name="256360"></a><li value="5&nbsp;&nbsp;&nbsp;&nbsp;">Corrija la f&#243;rmula insertando el signo " ] " que falta despu&#233;s del 2.
+<a name="256361"></a><li value="6&nbsp;&nbsp;&nbsp;&nbsp;">Vuelva a hacer clic en <strong>Verificar.</strong> Aparecer&#225; el siguiente mensaje:
+<a name="256362"></a><p class="indent"><code>No se encontraron errores.</code></p><a name="256366"></a><li value="7&nbsp;&nbsp;&nbsp;&nbsp;"><img src="images/bt_svcls.gif">
+
+
+Haga clic en <kbd>Guardar y cerrar</kbd> para volver al cuadro de di&#225;logo Insertar campos.
+<a name="256367"></a><li value="8&nbsp;&nbsp;&nbsp;&nbsp;">Inserte el campo de f&#243;rmula corregida a la derecha de los dos campos de datos en la secci&#243;n Detalles de su informe.
+<a name="256371"></a><li value="9&nbsp;&nbsp;&nbsp;&nbsp;"><img src="images/Bt_prevw.gif">
+
+
+Haga clic en <kbd>Vista previa</kbd> en la barra de herramientas est&#225;ndar para verificar los valores del informe y compare los campos para ver si los valores de campo devueltos por  @F&#243;rmula1 son correctos.
+</ol>
+<p><a name="272488"></a>Encontrar&#225; "TRUE" junto a los nombres de clientes que comiencen con "Bi" y "FALSE" junto a todos los dem&#225;s. Ahora va a verificar las otras partes de la f&#243;rmula. Cree F&#243;rmula2, F&#243;rmula3 y F&#243;rmula4 mediante los pasos 1 al 9, usando las f&#243;rmulas especificadas a continuaci&#243;n para cada una de ellas. </p><p><a name="286020"></a>Inserte cada campo de f&#243;rmula en la misma l&#237;nea de la secci&#243;n Detalles para una f&#225;cil comparaci&#243;n. Verifique cada uno de los errores, corrija seg&#250;n sea necesario y aseg&#250;rese de que los valores devueltos sean correctos antes de pasar a la f&#243;rmula siguiente.</p>
+<hr><br>
+
+<script  language="JavaScript"><!--
+
+var prev = "19_introformulas20.html";
+var next = "19_introformulas22.html";
+
+function setTopicID() { 
+      var number = "256344"; 
+      return number; 
+}
+
+// --></script>
+
+
+
+
+<SCRIPT>
+
+if (!window.parent.toc && navigator.appName == "Netscape") {
+
+   document.writeln ('<TABLE ALIGN="left" border="0" cellspacing="0" cellpadding="10">');
+   document.writeln ('<TR>');
+   document.write ('<TD ALIGN="left">');
+
+   if (prev != "crw_spTOC.hhc") {
+      document.writeln ('<A HREF="' + prev + '">');
+      document.writeln ('<IMG SRC="prevpage.gif" HEIGHT=17 BORDER=0 ALT="Página anterior"></A>');
+   } else {
+//   window.alert ('no previous page');
+   }
+
+   if (next != "crw_spIX.hhk") {
+      document.writeln ('<A HREF="' + next + '">');
+      document.writeln ('<IMG SRC="nextpage.gif" HEIGHT=17 BORDER=0 ALT="Página siguiente"></A>');
+   } else {
+//   window.alert ('no next page');
+   }
+   document.writeln ('</TD><TD ALIGN="left">');
+   document.writeln ('<A HREF="frameset.htm?TOC">');
+   document.writeln ('<IMG SRC="showtoc.gif" HEIGHT=17 BORDER=0 ALT="Haga clic para ver el contenido"></A></TD>');
+   document.writeln ('<TD ALIGN="left">');
+   document.writeln ('<A HREF="frameset.htm?IDX">');
+   document.writeln ('<IMG SRC="showix.gif" HEIGHT=17 BORDER=0 ALT="Haga clic para ver el índice"></A></TD>');
+   document.writeln ('</TD>');
+   document.writeln ('</TR>');
+   document.writeln ('</TABLE>');
+
+}
+
+</SCRIPT>
+<table align="right" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td align="right"><font size="1">Seagate Software, Inc.<br>
+    <a href="http://www.seagatesoftware.com">http://www.seagatesoftware.com</a><br>
+    Envíe sus comentarios a:<br>
+    <a href="mailto:techpubs@seagatesoftware.com">techpubs@seagatesoftware.com</a><br>
+    </font></td>
+  </tr>
+</table>
+</body>
+</html>
+
+

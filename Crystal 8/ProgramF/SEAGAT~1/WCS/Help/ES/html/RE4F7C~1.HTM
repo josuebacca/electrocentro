@@ -1,0 +1,89 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+
+<html>
+<head>
+<title>Impresi&#243;n desde visores de informes </title>
+
+<link REL=STYLESHEET TYPE="text/css" HREF="seagate.css">
+
+<!--
+                 ***********************************
+                 * Seagate Software copyright 1999 *
+                 ***********************************
+
+                      Template version: 5.1
+-->
+
+
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" link="#0000FF" vlink="#0000FF" alink="#800080">
+
+
+ 
+<a name="149387"></a><h3 class="newpage"> Impresi&#243;n desde visores de informes </h3>
+<p><a name="149388"></a>Cuando crea un informe en Seagate Crystal Reports, el programa analiza la impresora actualmente seleccionada para su sistema a fin de determinar el tama&#241;o de la fuente y c&#243;mo ajustar el tama&#241;o y la posici&#243;n de objetos, como objetos de campo y objetos de texto, del informe. Si el informe se imprime luego en una impresora distinta de la seleccionada cuando fue creado, puede que se produzcan problemas de tama&#241;o de fuente, texto recortado y paginaci&#243;n.</p><p><a name="149389"></a>Teniendo esto en cuenta, considere lo que puede suceder cuando un informe se crea en una m&#225;quina, se pone en circulaci&#243;n en la red mediante un servidor web que se encuentra en una segunda m&#225;quina y se visualiza o imprime desde un explorador web a trav&#233;s de un visor de informes en una tercera m&#225;quina. Si cada una de estas m&#225;quinas est&#225; conectada a una impresora distinta, los problemas de formato del informe pueden ser varios.</p><p><a name="149390"></a>Considere un informe que ha sido dise&#241;ado y formateado en la primera m&#225;quina, donde los ajustes de impresora se utilizan para determinar el tama&#241;o de la fuente y el tama&#241;o y posici&#243;n de los objetos del informe. Cuando el servidor web genera ese informe, la impresora a la que est&#225; conectado puede producir un cambio forzado en la longitud y tama&#241;o de la fuente. Sin embargo, los objetos de campo y texto mantienen un tama&#241;o y posici&#243;n fijos. As&#237;, la generaci&#243;n del informe en el servidor web puede causar el recorte del texto o crear espacios en blanco adicionales entre los campos.</p><p><a name="149391"></a>Sin embargo, si algunos objetos del informe son formateados con la opci&#243;n de formato <kbd>Puede crecer</kbd>, estos objetos ajustan su tama&#241;o autom&#225;ticamente cuando el tama&#241;o de la fuente del texto se modifica en la nueva impresora. Una vez que se ha ajustado su tama&#241;o, sin embargo, estos objetos pueden cambiar la paginaci&#243;n.</p><p><a name="149392"></a>El visor de informes para Java y el visor de informes para HTML muestran el informe en un explorador web tal como es generado por el servidor web, por lo que estos problemas de formato pueden afectar a la forma en que los informes se presentan a los usuarios. El visor de informes para Java permite a usuarios que utilizan IE 4.0 y Netscape 4.06 o versiones posteriores imprimir los informes.<strong> </strong>El visor de informes para HTML simplemente imprime la p&#225;gina HTML exactamente como aparece en su explorador web. En cambio, el visor de informes para ActiveX le permite imprimir un informe formateado desde un explorador web. Como resultado de esto, en el informe impreso puede aparecer un nivel adicional de problemas de formato si la m&#225;quina en que el explorador web se ejecuta est&#225; conectada a una tercera impresora con ajustes distintos.</p><p><a name="149393"></a>Al dise&#241;ar informes para su visualizaci&#243;n a trav&#233;s de uno de los visores de informes, utilice fuentes de informe comunes a todos los sistemas para evitar problemas de ajuste de tama&#241;o y paginaci&#243;n, y pruebe siempre los informes en la m&#225;quina cliente antes de distribuirlos a los usuarios.</p>
+<hr><br>
+
+<script  language="JavaScript"><!--
+
+var prev = "Report_Viewers4.html";
+var next = "Report_Viewers6.html";
+
+function setTopicID() { 
+      var number = "149387"; 
+      return number; 
+}
+
+// --></script>
+
+
+
+
+<SCRIPT>
+
+if (!window.parent.toc && navigator.appName == "Netscape") {
+
+   document.writeln ('<TABLE ALIGN="left" border="0" cellspacing="0" cellpadding="10">');
+   document.writeln ('<TR>');
+   document.write ('<TD ALIGN="left">');
+
+   if (prev != "wcmadminTOC.hhc") {
+      document.writeln ('<A HREF="' + prev + '">');
+      document.writeln ('<IMG SRC="prevpage.gif" HEIGHT=17 BORDER=0 ALT="Página anterior"></A>');
+   } else {
+//   window.alert ('no previous page');
+   }
+
+   if (next != "wcmadminIX.hhk") {
+      document.writeln ('<A HREF="' + next + '">');
+      document.writeln ('<IMG SRC="nextpage.gif" HEIGHT=17 BORDER=0 ALT="Página siguiente"></A>');
+   } else {
+//   window.alert ('no next page');
+   }
+   document.writeln ('</TD><TD ALIGN="left">');
+   document.writeln ('<A HREF="frameset.htm?TOC">');
+   document.writeln ('<IMG SRC="showtoc.gif" HEIGHT=17 BORDER=0 ALT="Haga clic para ver el contenido"></A></TD>');
+   document.writeln ('<TD ALIGN="left">');
+   document.writeln ('<A HREF="frameset.htm?IDX">');
+   document.writeln ('<IMG SRC="showix.gif" HEIGHT=17 BORDER=0 ALT="Haga clic para ver el índice"></A></TD>');
+   document.writeln ('</TD>');
+   document.writeln ('</TR>');
+   document.writeln ('</TABLE>');
+
+}
+
+</SCRIPT>
+<table align="right" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td align="right"><font size="1">Seagate Software, Inc.<br>
+    <a href="http://www.seagatesoftware.com">http://www.seagatesoftware.com</a><br>
+    Envíe sus comentarios a:<br>
+    <a href="mailto:techpubs@seagatesoftware.com">techpubs@seagatesoftware.com</a><br>
+    </font></td>
+  </tr>
+</table>
+</body>
+</html>
+
+

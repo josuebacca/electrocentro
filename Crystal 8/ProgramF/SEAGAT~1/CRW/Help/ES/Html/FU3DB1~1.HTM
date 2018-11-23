@@ -1,0 +1,109 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+
+<html>
+<head>
+<title>UBound (matriz)</title>
+
+<link REL=STYLESHEET TYPE="text/css" HREF="seagate.css">
+
+<!--
+                 ***********************************
+                 * Seagate Software copyright 1999 *
+                 ***********************************
+
+                      Template version: 5.1
+-->
+
+
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" link="#0000FF" vlink="#0000FF" alink="#800080">
+
+
+ 
+<a name="1000566418"></a><h3 class="newpage"> UBound (matriz)</h3>
+<p><a name="1000750150"></a>Sintaxis b&#225;sica y Crystal.</p><a name="1000566419"></a><h5>Argumento</h5><p><a name="1000566420"></a>matriz es un valor, expresi&#243;n o variable de matriz.   </p><a name="1000566421"></a><h5>Devuelve </h5><p><a name="1000566422"></a>Valor N&#250;mero.</p><a name="1000566423"></a><h5>Acci&#243;n</h5><p><a name="1000566424"></a>UBound devuelve un N&#250;mero que contiene el sub&#237;ndice m&#225;s grande disponible para una matriz dada.  </p><a name="1000566425"></a><h5>Uso t&#237;pico</h5><p><a name="1000566426"></a>Se usa normalmente para obtener el tama&#241;o de una matriz antes de usar un mecanismo de control de bucle para manipular sistem&#225;ticamente los elementos de la matriz.  </p><a name="1000566427"></a><h5>Ejemplo(s)</h5><p><a name="1000566428"></a>Los siguientes ejemplos son aplicables a las sintaxis b&#225;sica y Crystal:</p><p class="code"><a name="1000566429"></a>Sintaxis b&#225;sica Rem
+<br><a name="1000566430"></a>Dim matrizSimple (10) Como N&#250;mero
+<br><a name="1000566431"></a>formula = UBound(matrizSimple)
+<br><a name="1000566432"></a>
+<br><a name="1000566433"></a>//Sintaxis Crystal
+<br><a name="1000566434"></a>Local NumberVar Array matrizSimple;
+<br><a name="1000566435"></a>Redim matrizSimple[10];
+<br><a name="1000566436"></a>UBound(matrizSimple)
+</p><p class="example"><a name="1000566437"></a>Devuelve 10.</p><p class="code"><a name="1000566439"></a>Sintaxis b&#225;sica Rem
+<br><a name="1000566440"></a>Dim matrizFecha () Como Fecha
+<br><a name="1000566441"></a>matrizFecha = Array (CDate(#12/25/1998#), CDate(#12/24/1999#))
+<br><a name="1000566442"></a>formula = UBound(matrizFecha)
+<br><a name="1000566443"></a>
+<br><a name="1000566444"></a>Sintaxis Crystal
+<br><a name="1000566445"></a>Local DateVar Array matrizFecha;
+<br><a name="1000566446"></a>matrizFecha = Array (CDate(#12/25/1998#), CDate(#12/24/1999#))
+<br><a name="1000566447"></a>UBound (matrizFecha)
+</p><p class="example"><a name="1000566448"></a>Devuelve 2.</p><a name="1000566449"></a><h5>Comentario(s) </h5><ul type="disc"><a name="1000566450"></a><li>Esta funci&#243;n est&#225; dise&#241;ada para trabajar exactamente como la funci&#243;n de Visual Basic del mismo nombre. 
+<p class="indent"><a name="1000652458"></a><font color="darkblue"><b>Nota:   &nbsp;&nbsp;&nbsp;</b></font>A diferencia de Visual Basic, s&#243;lo se admite una matriz dimensional en  Seagate Crystal Reports. Adem&#225;s, los sub&#237;ndices de matriz empiezan en 1 en Seagate Crystal Reports y no en 0, como en el valor predeterminado de Visual Basic.</p>
+<a name="1000566451"></a><li>UBound devuelve 1 para una variable de matriz no inicializada; sin embargo, indexar una variable de matriz no inicializada causa un error.   La raz&#243;n de este comportamiento es que de momento Seagate Crystal Reports no admite matrices con cero elementos. Para superar este problema, siempre inicialice sus variables de matriz. Por ejemplo, inicialice variables de matrices globales en una f&#243;rmula localizada en el encabezamiento del informe y variables de matrices locales dentro de la propia f&#243;rmula.  
+</ul>
+<hr><br>
+
+<script  language="JavaScript"><!--
+
+var prev = "Functions153.html";
+var next = "Functions155.html";
+
+function setTopicID() { 
+      var number = "1000566418"; 
+      return number; 
+}
+
+// --></script>
+
+
+
+
+<SCRIPT>
+
+if (!window.parent.toc && navigator.appName == "Netscape") {
+
+   document.writeln ('<TABLE ALIGN="left" border="0" cellspacing="0" cellpadding="10">');
+   document.writeln ('<TR>');
+   document.write ('<TD ALIGN="left">');
+
+   if (prev != "crw_spTOC.hhc") {
+      document.writeln ('<A HREF="' + prev + '">');
+      document.writeln ('<IMG SRC="prevpage.gif" HEIGHT=17 BORDER=0 ALT="Página anterior"></A>');
+   } else {
+//   window.alert ('no previous page');
+   }
+
+   if (next != "crw_spIX.hhk") {
+      document.writeln ('<A HREF="' + next + '">');
+      document.writeln ('<IMG SRC="nextpage.gif" HEIGHT=17 BORDER=0 ALT="Página siguiente"></A>');
+   } else {
+//   window.alert ('no next page');
+   }
+   document.writeln ('</TD><TD ALIGN="left">');
+   document.writeln ('<A HREF="frameset.htm?TOC">');
+   document.writeln ('<IMG SRC="showtoc.gif" HEIGHT=17 BORDER=0 ALT="Haga clic para ver el contenido"></A></TD>');
+   document.writeln ('<TD ALIGN="left">');
+   document.writeln ('<A HREF="frameset.htm?IDX">');
+   document.writeln ('<IMG SRC="showix.gif" HEIGHT=17 BORDER=0 ALT="Haga clic para ver el índice"></A></TD>');
+   document.writeln ('</TD>');
+   document.writeln ('</TR>');
+   document.writeln ('</TABLE>');
+
+}
+
+</SCRIPT>
+<table align="right" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td align="right"><font size="1">Seagate Software, Inc.<br>
+    <a href="http://www.seagatesoftware.com">http://www.seagatesoftware.com</a><br>
+    Envíe sus comentarios a:<br>
+    <a href="mailto:techpubs@seagatesoftware.com">techpubs@seagatesoftware.com</a><br>
+    </font></td>
+  </tr>
+</table>
+</body>
+</html>
+
+

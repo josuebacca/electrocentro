@@ -1,0 +1,88 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+
+<html>
+<head>
+<title>Convirtiendo valores de fecha, hora, y fecha/hora</title>
+
+<link REL=STYLESHEET TYPE="text/css" HREF="seagate.css">
+
+<!--
+                 ***********************************
+                 * Seagate Software copyright 1999 *
+                 ***********************************
+
+                      Template version: 5.1
+-->
+
+
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" link="#0000FF" vlink="#0000FF" alink="#800080">
+
+
+ 
+<a name="1000853282"></a><h4 class="newpage"> Convirtiendo valores de fecha, hora, y fecha/hora</h4><p><a name="1000853283"></a>Cualquier car&#225;cter, a excepci&#243;n de los caracteres de formato de fecha o de hora, puede ser utilizado dentro de la cadena de formato. Por ejemplo, puede desear utilizar una diagonal para separar diferentes elementos (mes, d&#237;a, a&#241;o) de la fecha, como en "12/30/95", o puede desear utilizar dos puntos para separar elementos diferentes (horas, minutos, segundos) de la hora, como en "12:30:10".</p><p><a name="1000853284"></a>Si desea utilizar cualquiera de los caracteres anteriores en la cadena de formato, deben de aparecer entre comillas. Por ejemplo:</p><p><code><a name="1000853285"></a>ToText(DateTime(1995,10,12,13,20,22), "MM/dd/aa hh 'h' mm 'min' ss 'seg' ", 'am', 'pm') = "10/12/95 1 h 20 min 22 seg pm"</code></p>
+<hr><br>
+
+<script  language="JavaScript"><!--
+
+var prev = "Functions83.html";
+var next = "Functions85.html";
+
+function setTopicID() { 
+      var number = "1000853282"; 
+      return number; 
+}
+
+// --></script>
+
+
+
+
+<SCRIPT>
+
+if (!window.parent.toc && navigator.appName == "Netscape") {
+
+   document.writeln ('<TABLE ALIGN="left" border="0" cellspacing="0" cellpadding="10">');
+   document.writeln ('<TR>');
+   document.write ('<TD ALIGN="left">');
+
+   if (prev != "crw_spTOC.hhc") {
+      document.writeln ('<A HREF="' + prev + '">');
+      document.writeln ('<IMG SRC="prevpage.gif" HEIGHT=17 BORDER=0 ALT="Página anterior"></A>');
+   } else {
+//   window.alert ('no previous page');
+   }
+
+   if (next != "crw_spIX.hhk") {
+      document.writeln ('<A HREF="' + next + '">');
+      document.writeln ('<IMG SRC="nextpage.gif" HEIGHT=17 BORDER=0 ALT="Página siguiente"></A>');
+   } else {
+//   window.alert ('no next page');
+   }
+   document.writeln ('</TD><TD ALIGN="left">');
+   document.writeln ('<A HREF="frameset.htm?TOC">');
+   document.writeln ('<IMG SRC="showtoc.gif" HEIGHT=17 BORDER=0 ALT="Haga clic para ver el contenido"></A></TD>');
+   document.writeln ('<TD ALIGN="left">');
+   document.writeln ('<A HREF="frameset.htm?IDX">');
+   document.writeln ('<IMG SRC="showix.gif" HEIGHT=17 BORDER=0 ALT="Haga clic para ver el índice"></A></TD>');
+   document.writeln ('</TD>');
+   document.writeln ('</TR>');
+   document.writeln ('</TABLE>');
+
+}
+
+</SCRIPT>
+<table align="right" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td align="right"><font size="1">Seagate Software, Inc.<br>
+    <a href="http://www.seagatesoftware.com">http://www.seagatesoftware.com</a><br>
+    Envíe sus comentarios a:<br>
+    <a href="mailto:techpubs@seagatesoftware.com">techpubs@seagatesoftware.com</a><br>
+    </font></td>
+  </tr>
+</table>
+</body>
+</html>
+
+

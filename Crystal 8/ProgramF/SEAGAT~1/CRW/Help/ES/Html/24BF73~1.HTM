@@ -1,0 +1,103 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+
+<html>
+<head>
+<title>Procesamiento del lado del servidor</title>
+
+<link REL=STYLESHEET TYPE="text/css" HREF="seagate.css">
+
+<!--
+                 ***********************************
+                 * Seagate Software copyright 1999 *
+                 ***********************************
+
+                      Template version: 5.1
+-->
+
+
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" link="#0000FF" vlink="#0000FF" alink="#800080">
+
+
+ 
+<a name="354119"></a><h2 class="newpage">Procesamiento del lado del servidor</h2><p><a name="354120"></a>El procesamiento del lado del servidor le permite configurar informes que ejecutan la mayor&#237;a de su procesamiento en el servidor y deja s&#243;lo los detalles relevantes a su computadora. El procesamiento del lado del servidor le ofrece los siguientes beneficios:</p><ul type="disc"><a name="323270"></a><li>Menos tiempo de conexi&#243;n con el servidor.
+<a name="323271"></a><li>Menos memoria necesaria para procesar el informe en su computadora.
+<a name="323272"></a><li>Menor tiempo de transferencia del servidor al cliente.
+</ul><p><a name="323273"></a>El procesamiento del lado del servidor trabaja de la siguiente manera: a trav&#233;s del uso de tecnolog&#237;a de paso SQL para enviar un enunciado SQL a ODBC y recuperar un conjunto inicial de datos, Seagate Crystal Reports descarga gran parte del trabajo de recuperaci&#243;n y ordenamiento de los datos al servidor, liberando as&#237; memoria y recursos locales para tareas m&#225;s importantes. Es por eso que el procesamiento del lado del servidor s&#243;lo funciona para aquellos informes que han sido ordenados y agrupados; si el informe ho ha sido agrupado y ordenado (por ejemplo, si el informe consiste de una lista simple), entonces no hay ning&#250;n procesamiento que pasar al servidor. Tambi&#233;n debe quedar claro que el procesamiento del lado del servidor s&#243;lo funciona para informes basados en fuentes de datos SQL (as&#237; por ejemplo, usted no podr&#237;a usar el procesamiento del lado del servidor para un informe basada en una consulta, ya que una consulta no es una fuente de datos SQL).</p><p><a name="323274"></a>Recuerde siempre que para ejecutar el agrupamiento en el servidor, su informe debe satisfacer las siguientes condiciones:</p><ul type="disc"><a name="323275"></a><li>La opci&#243;n Ejecutar agrupamiento en servidor<kbd> </kbd>(en el cuadro de di&#225;logo Opciones) debe estar activada.<a href="24_under_databases34.html#324011">C&#243;mo activar el procesamiento del lado del servidor</a>.
+<a name="323276"></a><li>El informe debe usar alguna forma de agrupamiento.
+<a name="323277"></a><li>El informe debe estar al menos parcialmente oculto (por lo menos, la secci&#243;n Detalles debe estar oculta). Ya que el servidor procesar&#225; aquellas secciones que est&#225;n ocultas, cuanto m&#225;s grande sea la porci&#243;n visible del informe, mayor ser&#225; la cantidad de procesamiento que debe ejecutarse en el lado del cliente. Si la secci&#243;n de Detalles es visible, no ser&#225; posible el procesamiento del lado del servidor.
+<a name="323278"></a><li>En algunos casos, los campos de f&#243;rmula deben ser procesados en lado del cliente. Si el agrupamiento se basa en un campo de f&#243;rmula, o si se usa una f&#243;rmula en un campo de resumen, entonces todos los registros deben ser transferidos al lado del cliente antes de evaluar la f&#243;rmula. Esto aumentar&#225; el tiempo requerido para ejecutar el informe. Por lo tanto, talvez ser&#237;a m&#225;s conveniente para usted usar enunciados SQL como una alternativa para las f&#243;rmulas.
+</ul><p><a name="353962"></a><font color="darkblue"><b>Nota:   &nbsp;&nbsp;&nbsp;</b></font>Las f&#243;rmulas usadas para la selecci&#243;n de registros son una excepci&#243;n y se pueden procesar en el servidor.</p>
+<ul type="disc"><a name="323279"></a><li>Para que el informe pueda ser procesado en el servidor, todos los totales acumulados que aparecen en el informe deben ser basados en campos de resumen (ya que los datos necesarios para los totales acumulados ser&#225;n movidos al lado del cliente).
+<a name="323280"></a><li>Para que el informe sea procesado en el servidor, no debe contener res&#250;menes basados en las funciones Average o Distinct.
+<a name="323281"></a><li>El informe no debe contener valores de N superiores.
+<a name="352636"></a><li>El informe no debe contener agrupamientos de valores espec&#237;ficos.
+</ul><p><a name="352637"></a><font color="darkblue"><b>Nota:   &nbsp;&nbsp;&nbsp;</b></font></p>
+<ul type="disc"><a name="352638"></a><li>Cuando usted traspasa en una secci&#243;n oculta de un informe que usa procesamiento del lado del servidor, la conexi&#243;n al servidor se iniciar&#225; autom&#225;ticamente. Si el cliente est&#225; desconectado del servidor (por ejemplo, si usted descarga un informe a su laptop y trabaja en &#233;l desde una ubicaci&#243;n remota), el traspasar en los datos producir&#225; un error.
+<a name="333200"></a><li>Si usted guarda un informe que ha sido parcialmente procesado en el servidor usando la opci&#243;n <kbd>Guardar los datos con el informe</kbd>, el programa guardar&#225; solamente aquellos registros que han sido tansferidos al lado del cliente. En otras palabras, si usted ha traspasado en los datos del subinforme y hay una ficha para esos datos en Seagate Crystal Reports, esos registros ser&#225;n guardados con el informe.
+</ul>
+<hr><br>
+
+<script  language="JavaScript"><!--
+
+var prev = "24_under_databases31.html";
+var next = "24_under_databases33.html";
+
+function setTopicID() { 
+      var number = "354119"; 
+      return number; 
+}
+
+// --></script>
+
+
+
+
+<SCRIPT>
+
+if (!window.parent.toc && navigator.appName == "Netscape") {
+
+   document.writeln ('<TABLE ALIGN="left" border="0" cellspacing="0" cellpadding="10">');
+   document.writeln ('<TR>');
+   document.write ('<TD ALIGN="left">');
+
+   if (prev != "crw_spTOC.hhc") {
+      document.writeln ('<A HREF="' + prev + '">');
+      document.writeln ('<IMG SRC="prevpage.gif" HEIGHT=17 BORDER=0 ALT="Página anterior"></A>');
+   } else {
+//   window.alert ('no previous page');
+   }
+
+   if (next != "crw_spIX.hhk") {
+      document.writeln ('<A HREF="' + next + '">');
+      document.writeln ('<IMG SRC="nextpage.gif" HEIGHT=17 BORDER=0 ALT="Página siguiente"></A>');
+   } else {
+//   window.alert ('no next page');
+   }
+   document.writeln ('</TD><TD ALIGN="left">');
+   document.writeln ('<A HREF="frameset.htm?TOC">');
+   document.writeln ('<IMG SRC="showtoc.gif" HEIGHT=17 BORDER=0 ALT="Haga clic para ver el contenido"></A></TD>');
+   document.writeln ('<TD ALIGN="left">');
+   document.writeln ('<A HREF="frameset.htm?IDX">');
+   document.writeln ('<IMG SRC="showix.gif" HEIGHT=17 BORDER=0 ALT="Haga clic para ver el índice"></A></TD>');
+   document.writeln ('</TD>');
+   document.writeln ('</TR>');
+   document.writeln ('</TABLE>');
+
+}
+
+</SCRIPT>
+<table align="right" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td align="right"><font size="1">Seagate Software, Inc.<br>
+    <a href="http://www.seagatesoftware.com">http://www.seagatesoftware.com</a><br>
+    Envíe sus comentarios a:<br>
+    <a href="mailto:techpubs@seagatesoftware.com">techpubs@seagatesoftware.com</a><br>
+    </font></td>
+  </tr>
+</table>
+</body>
+</html>
+
+

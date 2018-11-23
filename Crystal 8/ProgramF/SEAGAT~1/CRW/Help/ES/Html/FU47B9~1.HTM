@@ -1,0 +1,172 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+
+<html>
+<head>
+<title>DateAdd (tipoIntervalo, nIntervalos, fechaHoraInicio)</title>
+
+<link REL=STYLESHEET TYPE="text/css" HREF="seagate.css">
+
+<!--
+                 ***********************************
+                 * Seagate Software copyright 1999 *
+                 ***********************************
+
+                      Template version: 5.1
+-->
+
+
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" link="#0000FF" vlink="#0000FF" alink="#800080">
+
+
+ 
+<a name="1000693154"></a><h3 class="newpage"> DateAdd (tipoIntervalo, nIntervalos, fechaHoraInicio)</h3>
+<p><a name="1000693160"></a>Sintaxis b&#225;sica y Crystal.</p><a name="1000693158"></a><h5>Argumentos</h5><p><a name="1000547653"></a>tipoIntervalo es una expresi&#243;n de Cadena que especifica el intervalo que debe agregarse. Los valores pueden ser:</p><p><a name="1000697165"></a> <Table Border="1">
+<tr><th align="left" valign="bottom"><a name="1000697176"></a>Valor tipoIntervalo 
+
+</th><th align="left" valign="bottom"><a name="1000697178"></a>Descripci&#243;n
+
+</th></tr>
+<tr><td align="left" valign="TOP"><P><a name="1000697180"></a>aaaa</P>
+
+
+</td><td align="left" valign="TOP"><P><a name="1000697182"></a>A&#241;o</P>
+
+
+</td></tr>
+<tr><td align="left" valign="TOP"><P><a name="1000697184"></a>t</P>
+
+
+</td><td align="left" valign="TOP"><P><a name="1000697186"></a>Trimestre (per&#237;odo de 3 meses) </P>
+
+
+</td></tr>
+<tr><td align="left" valign="TOP"><P><a name="1000697188"></a>m</P>
+
+
+</td><td align="left" valign="TOP"><P><a name="1000697190"></a>Mes</P>
+
+
+</td></tr>
+<tr><td align="left" valign="TOP"><P><a name="1000697192"></a>a</P>
+
+
+</td><td align="left" valign="TOP"><P><a name="1000697194"></a>D&#237;a del a&#241;o</P>
+
+
+</td></tr>
+<tr><td align="left" valign="TOP"><P><a name="1000697196"></a>d</P>
+
+
+</td><td align="left" valign="TOP"><P><a name="1000697198"></a>D&#237;a</P>
+
+
+</td></tr>
+<tr><td align="left" valign="TOP"><P><a name="1000697200"></a>s</P>
+
+
+</td><td align="left" valign="TOP"><P><a name="1000697202"></a>D&#237;a de la semana</P>
+
+
+</td></tr>
+<tr><td align="left" valign="TOP"><P><a name="1000697204"></a>ss</P>
+
+
+</td><td align="left" valign="TOP"><P><a name="1000697206"></a>Semana (per&#237;odo de 7 d&#237;as)</P>
+
+
+</td></tr>
+<tr><td align="left" valign="TOP"><P><a name="1000697208"></a>h</P>
+
+
+</td><td align="left" valign="TOP"><P><a name="1000697210"></a>Hora</P>
+
+
+</td></tr>
+<tr><td align="left" valign="TOP"><P><a name="1000697212"></a>n</P>
+
+
+</td><td align="left" valign="TOP"><P><a name="1000697214"></a>Minuto</P>
+
+
+</td></tr>
+<tr><td align="left" valign="TOP"><P><a name="1000697216"></a>s</P>
+
+
+</td><td align="left" valign="TOP"><P><a name="1000697218"></a>Segundo</P>
+
+
+</td></tr>
+
+</Table></p>
+<ul type="disc"><a name="1000547664"></a><li>nIntervalos es un N&#250;mero o expresi&#243;n num&#233;rica que especifica el n&#250;mero de intervalos que debe agregarse.    Puede ser un valor positivo (para obtener fechas<nobr>-h</nobr>oras del futuro) o negativo (para obtener fechas<nobr>-h</nobr>oras del pasado).   
+<a name="1000547665"></a><li>fechaHoraInicio es el valor Fecha/hora al que deben agregarse los intervalos.
+</ul><a name="1000547666"></a><h5>Devuelve </h5><p><a name="1000547667"></a>Un valor Fecha/hora.</p><a name="1000547668"></a><h5>Acci&#243;n</h5><p><a name="1000547669"></a>DateAdd devuelve un valor Fecha/hora al que se ha agregado un n&#250;mero especificado de intervalos.   </p><a name="1000547670"></a><h5>Uso t&#237;pico</h5><p><a name="1000547671"></a>DateAdd se usa para agregar intervalos a Fecha/hora. Su principal caracter&#237;stica es que la  Fecha/hora devuelveda ser&#225; siempre v&#225;lida.   Por ejemplo, DateAdd considera factores tales como el n&#250;mero de d&#237;as del mes y los a&#241;os bisiestos.   Si desea sumar o restar d&#237;as a Fecha/hora, puede usar los operadores de suma y resta en lugar de DateAdd con el par&#225;metro "d". Sin embargo, DateAdd tambi&#233;n maneja otros tipos de intervalo, tales como sumar meses u horas a Fecha/hora.</p><a name="1000547672"></a><h5>Ejemplo(s)</h5><p><a name="1000547673"></a>Los siguientes ejemplos son aplicables a las sintaxis b&#225;sica y Crystal:</p><p><code><a name="1000547674"></a>DateAdd("d", -32, #Sept 28, 1999#)</code></p><p class="example"><a name="1000547675"></a>Devuelve el valor Fecha/hora para el 27 de agosto de 1999.</p><p><code><a name="1000547676"></a>DateAdd ("m", 1, #1/31/1996#) </code></p><p class="example"><a name="1000547677"></a>Devuelve el valor Fecha/hora para el 29 de febrero de 1996. Observe que DateAdd no devuelver&#225; el valor inv&#225;lido 31 de febrero de 1996.</p><p><code><a name="1000547678"></a>DateAdd ("q", 17, #Sept 28, 1999#)</code></p><p class="example"><a name="1000547679"></a>Devuelve el valor Fecha/hora para el 28 de diciembre de 2003.  </p><p><code><a name="1000547680"></a>DateAdd ("h", -400, #Sept 28, 1999#)</code></p><p class="example"><a name="1000547681"></a>Devuelve el valor Fecha/hora para el 11 de septiembre de 1999 8:00 AM. En otras palabras, este es el resultado de restar 400 horas al 28 de septiembre de 1999 12:00 AM.</p><a name="1000547682"></a><h5>Comentario(s) </h5><ul type="disc"><a name="1000547683"></a><li>Esta funci&#243;n est&#225; dise&#241;ada para trabajar exactamente como la funci&#243;n de Visual Basic del mismo nombre.
+<a name="1000547684"></a><li>Para sumar d&#237;as a una fecha<nobr>-h</nobr>ora, puede usar cualquiera de los tipos de par&#225;metros de intervalos "a", "d" o "s". Todos tienen el mismo efecto sobre DateAdd. 
+<a name="1000547685"></a><li>DateAdd devuelve un valor Fecha/hora y no un valor Fecha. Sin embargo, podr&#237;a necesitar convertir este valor Fecha/hora a un valor Fecha  en ciertas situaciones (por ejemplo, si deseara asignar el valor devuelto por DateAdd a un tipo de variable Fecha). Para convertir a un valor Fecha, use DateAdd en  combinaci&#243;n con la funci&#243;n de conversi&#243;n de tipo CDate. Por ejemplo, lo siguiente devuelve el valor Fecha para el 6 de octubre de 1997:
+</ul><p><code><a name="1000547686"></a>CDate(DateAdd("yyyy", -2, #octubre 6, 1999#))</code></p>
+<hr><br>
+
+<script  language="JavaScript"><!--
+
+var prev = "Functions127.html";
+var next = "Functions129.html";
+
+function setTopicID() { 
+      var number = "1000693154"; 
+      return number; 
+}
+
+// --></script>
+
+
+
+
+<SCRIPT>
+
+if (!window.parent.toc && navigator.appName == "Netscape") {
+
+   document.writeln ('<TABLE ALIGN="left" border="0" cellspacing="0" cellpadding="10">');
+   document.writeln ('<TR>');
+   document.write ('<TD ALIGN="left">');
+
+   if (prev != "crw_spTOC.hhc") {
+      document.writeln ('<A HREF="' + prev + '">');
+      document.writeln ('<IMG SRC="prevpage.gif" HEIGHT=17 BORDER=0 ALT="Página anterior"></A>');
+   } else {
+//   window.alert ('no previous page');
+   }
+
+   if (next != "crw_spIX.hhk") {
+      document.writeln ('<A HREF="' + next + '">');
+      document.writeln ('<IMG SRC="nextpage.gif" HEIGHT=17 BORDER=0 ALT="Página siguiente"></A>');
+   } else {
+//   window.alert ('no next page');
+   }
+   document.writeln ('</TD><TD ALIGN="left">');
+   document.writeln ('<A HREF="frameset.htm?TOC">');
+   document.writeln ('<IMG SRC="showtoc.gif" HEIGHT=17 BORDER=0 ALT="Haga clic para ver el contenido"></A></TD>');
+   document.writeln ('<TD ALIGN="left">');
+   document.writeln ('<A HREF="frameset.htm?IDX">');
+   document.writeln ('<IMG SRC="showix.gif" HEIGHT=17 BORDER=0 ALT="Haga clic para ver el índice"></A></TD>');
+   document.writeln ('</TD>');
+   document.writeln ('</TR>');
+   document.writeln ('</TABLE>');
+
+}
+
+</SCRIPT>
+<table align="right" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td align="right"><font size="1">Seagate Software, Inc.<br>
+    <a href="http://www.seagatesoftware.com">http://www.seagatesoftware.com</a><br>
+    Envíe sus comentarios a:<br>
+    <a href="mailto:techpubs@seagatesoftware.com">techpubs@seagatesoftware.com</a><br>
+    </font></td>
+  </tr>
+</table>
+</body>
+</html>
+
+

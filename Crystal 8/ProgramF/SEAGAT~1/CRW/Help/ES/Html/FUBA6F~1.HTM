@@ -1,0 +1,97 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+
+<html>
+<head>
+<title>PV</title>
+
+<link REL=STYLESHEET TYPE="text/css" HREF="seagate.css">
+
+<!--
+                 ***********************************
+                 * Seagate Software copyright 1999 *
+                 ***********************************
+
+                      Template version: 5.1
+-->
+
+
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" link="#0000FF" vlink="#0000FF" alink="#800080">
+
+
+ 
+<a name="1000852075"></a><h3 class="newpage"> PV</h3>
+<p><a name="1000852076"></a>Sintaxis b&#225;sica y Crystal.</p><a name="1000852077"></a><h5>Sobrecargas</h5><ul type="disc"><a name="1000852078"></a><li>PV (tasa, nPer&#237;odos, pago)
+<a name="1000852079"></a><li>PV (tasa, nPer&#237;odos, pago, valorFuturo)
+<a name="1000852080"></a><li>PV (tasa, nPer&#237;odos, pago, valorFuturo, tipo)
+</ul><a name="1000852081"></a><h5>Argumentos</h5><ul type="disc"><a name="1000852082"></a><li>tasa es un N&#250;mero que especifica la tasa de inter&#233;s por per&#237;odo.  
+<a name="1000852083"></a><li>nPer&#237;odos es un N&#250;mero positivo que especifica el n&#250;mero total de per&#237;odos de pago en el a&#241;o.  Las unidades utilizadas para especificar la tasa y Per&#237;odos deben ser concordantes. Por ejemplo, si nPer&#237;odos es el n&#250;mero de per&#237;odos en meses, entonces tasa es una tasa de inter&#233;s mensual. 
+<a name="1000852084"></a><li>pago es un N&#250;mero o Moneda que especifica el pago a realizarse cada per&#237;odo.
+<a name="1000852085"></a><li>valorFuturo es un N&#250;mero o Moneda opcional que especifica el valor futuro o saldo de efectivo que usted desea despu&#233;s de haber efectuado el pago final.  Si se omite, se asume 0. 
+<a name="1000852086"></a><li>tipo es un N&#250;mero opcional que especifica cu&#225;ndo vencen los pagos.  Especifique  0 si los pagos vencen al final del per&#237;odo de pago y 1 si vencen al principio del per&#237;odo. Si se omite, se asume 0.
+</ul><a name="1000852087"></a><h5>Devuelve </h5><p><a name="1000852088"></a>Valor num&#233;rico</p><a name="1000852089"></a><h5>Acci&#243;n</h5><p><a name="1000852090"></a>PV devuelve un N&#250;mero especificando el valor presente de una anualidad basada en pagos fijos, peri&#243;dicos a pagarse a futuro y una tasa de inter&#233;s fija.</p><a name="1000852091"></a><h5>Ejemplo</h5><p><a name="1000852092"></a>El siguiente ejemplo es aplicable a las sintaxis b&#225;sica y Crystal:</p><p><a name="1000852093"></a>Supongamos que quiere comprar un condominio y puede realizar pagos de  $1100 dos veces al mes (24 pagos anuales)  Si la tasa hipotecaria es del 7 por ciento y quiere pagar el condominio en 10 a&#241;os &#191;cu&#225;nto es el monto de  pr&#233;stamo m&#225;ximo que puede solicitar? </p><p><code><a name="1000852094"></a>PV (0.07 / 24, 10 * 24, -1100)</code></p><p class="example"><a name="1000852095"></a>Devuelve 189668 (redondeado al d&#243;lar m&#225;s pr&#243;ximo). Por lo tanto, puede solicitar un pr&#233;stamo de  $190,000. F&#237;jese que el argumento del pago es negativo ya que pagar&#225; en forma mensual</p><a name="1000852096"></a><h5>Comentario</h5><p><a name="1000852097"></a>Esta funci&#243;n est&#225; dise&#241;ada para trabajar exactamente como la funci&#243;n de Visual Basic del mismo nombre.</p>
+<hr><br>
+
+<script  language="JavaScript"><!--
+
+var prev = "Functions58.html";
+var next = "Functions60.html";
+
+function setTopicID() { 
+      var number = "1000852075"; 
+      return number; 
+}
+
+// --></script>
+
+
+
+
+<SCRIPT>
+
+if (!window.parent.toc && navigator.appName == "Netscape") {
+
+   document.writeln ('<TABLE ALIGN="left" border="0" cellspacing="0" cellpadding="10">');
+   document.writeln ('<TR>');
+   document.write ('<TD ALIGN="left">');
+
+   if (prev != "crw_spTOC.hhc") {
+      document.writeln ('<A HREF="' + prev + '">');
+      document.writeln ('<IMG SRC="prevpage.gif" HEIGHT=17 BORDER=0 ALT="Página anterior"></A>');
+   } else {
+//   window.alert ('no previous page');
+   }
+
+   if (next != "crw_spIX.hhk") {
+      document.writeln ('<A HREF="' + next + '">');
+      document.writeln ('<IMG SRC="nextpage.gif" HEIGHT=17 BORDER=0 ALT="Página siguiente"></A>');
+   } else {
+//   window.alert ('no next page');
+   }
+   document.writeln ('</TD><TD ALIGN="left">');
+   document.writeln ('<A HREF="frameset.htm?TOC">');
+   document.writeln ('<IMG SRC="showtoc.gif" HEIGHT=17 BORDER=0 ALT="Haga clic para ver el contenido"></A></TD>');
+   document.writeln ('<TD ALIGN="left">');
+   document.writeln ('<A HREF="frameset.htm?IDX">');
+   document.writeln ('<IMG SRC="showix.gif" HEIGHT=17 BORDER=0 ALT="Haga clic para ver el índice"></A></TD>');
+   document.writeln ('</TD>');
+   document.writeln ('</TR>');
+   document.writeln ('</TABLE>');
+
+}
+
+</SCRIPT>
+<table align="right" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td align="right"><font size="1">Seagate Software, Inc.<br>
+    <a href="http://www.seagatesoftware.com">http://www.seagatesoftware.com</a><br>
+    Envíe sus comentarios a:<br>
+    <a href="mailto:techpubs@seagatesoftware.com">techpubs@seagatesoftware.com</a><br>
+    </font></td>
+  </tr>
+</table>
+</body>
+</html>
+
+

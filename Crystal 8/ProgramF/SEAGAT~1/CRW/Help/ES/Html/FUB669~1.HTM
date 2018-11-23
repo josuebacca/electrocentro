@@ -1,0 +1,103 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+
+<html>
+<head>
+<title>Variance (campo), Variance (campo, campoCondicional), Variance (campo, campoCondicional, condici&#243;n), Variance (x)</title>
+
+<link REL=STYLESHEET TYPE="text/css" HREF="seagate.css">
+
+<!--
+                 ***********************************
+                 * Seagate Software copyright 1999 *
+                 ***********************************
+
+                      Template version: 5.1
+-->
+
+
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" link="#0000FF" vlink="#0000FF" alink="#800080">
+
+
+ 
+<a name="1000850862"></a><h3 class="newpage"> Variance (campo), Variance (campo, campoCondicional), Variance (campo, campoCondicional, condici&#243;n), Variance (x)</h3>
+<p><a name="1000850864"></a>Sintaxis b&#225;sica y Crystal.</p><a name="1000850865"></a><h5>Argumentos</h5><ul type="disc"><a name="1000850866"></a><li>campo es cualquier campo de base de datos o de f&#243;rmula que puede ser evaluado por la funci&#243;n.
+<a name="1000850867"></a><li>campoCondicional es un campo utilizado para agrupar los valores del campo.
+<a name="1000850868"></a><li>condici&#243;n es una cadena que indica el tipo de agrupaci&#243;n para campoCondicional. S&#243;lo se especifica este argumento cuando  campoCondicional es un campo de fecha, hora, fecha/hora o booleano. Para obtener m&#225;s informaci&#243;n sobre las cadenas v&#225;lidas para este argumento, v&#233;ase <a href="Functions20.html#1000850529">Condiciones para las funciones de resumen</a>.
+<a name="1000850872"></a><li>x es un arreglo de valores que puede ser evaluado por la funci&#243;n que est&#225; siendo utilizada.
+</ul><a name="1000850873"></a><h5>Devuelve </h5><p><a name="1000850874"></a>Un n&#250;mero fraccionario.</p><a name="1000850875"></a><h5>Acci&#243;n</h5><p><a name="1000850876"></a>Le permite encontrar la variancia de un conjunto de valores en su informe. Por ejemplo:</p><ul type="disc"><a name="1000850877"></a><li>Puede calcular la variancia total para todos los valores de un campo. Para obtener m&#225;s informaci&#243;n sobre esta clase de resumen, v&#233;ase <a href="Functions22.html#1000850599">SummaryFunction (campo)</a>.
+<a name="1000850881"></a><li>Puede calcular la variancia para todos los valores dentro de un grupo (por ejemplo, ventas agrupadas de acuerdo al estado de procedencia). Para obtener m&#225;s informaci&#243;n sobre esta clase de resumen, v&#233;ase <a href="Functions23.html#1000850631">SummaryFunction (campo, campoCondicional)</a>.
+<a name="1000850885"></a><li>Puede calcular la variancia para todos lo valores dentro de un grupo en el cual la agrupaci&#243;n se controle por los cambios en los campos Booleano o de fecha (por ejemplo, ventas agrupadas seg&#250;n el mes en que fueron hechas).  Para obtener m&#225;s informaci&#243;n sobre esta clase de resumen, v&#233;ase <a href="Functions24.html#1000850661">SummaryFunction (campo, campoCondicional, condici&#243;n)</a>.
+<a name="1000850889"></a><li>Si especifica un conjunto de valores individuales, puede calcular la variancia de los valores en el conjunto.  Para obtener m&#225;s informaci&#243;n sobre esta clase de resumen, v&#233;ase <a href="Functions155.html#1000567809">Funciones de resumen de matriz (x)</a>.
+</ul><a name="1000850893"></a><h5>Ejemplo(s)</h5><p><a name="1000850894"></a>Los siguientes ejemplos son aplicables a las sintaxis b&#225;sica y Crystal:</p><p><code><a name="1000850895"></a>Variance({archivo.MONTO})</code></p><p class="example"><a name="1000850896"></a>Calcula la variancia de todos los valores del campo Monto.</p><p><code><a name="1000850897"></a>Variance({archivo.RESULTADOS}, {archivo.FECHA},"diario") </code></p><p class="example"><a name="1000850898"></a>Calcula la variaci&#243;n para cada grupo de resultados de pruebas de laboratorio en el campo Resultados.  Los resultados de la prueba se separan en grupos siempre que el valor del campo de Fecha cambia a un nuevo d&#237;a. </p><p><a name="1000850899"></a>Los siguientes ejemplos se aplican a la sintaxis Crystal:</p><p><code><a name="1000850900"></a>Variance({archivo.PUNTAJES}, {archivo.MAESTROS}) % Variance({archivo.MAESTROS})</code></p><p class="example"><a name="1000850901"></a>Agrupa los valores del campo Puntajes por Profesor y calcula la variancia para cada grupo de maestros como un porcentaje de la variancia de los valores para el informe completo (para todos los maestros en la lista).</p><p><code><a name="1000850902"></a>Variance([{archivo.CANT1}, {archivo.CANT2}, {archivo.CANT3}, {archivo.CANT4}]) </code></p><p class="example"><a name="1000850903"></a>Devuelve 17.00 donde Cant1 = 2, Cant2 = 2, Cant3 = 10, y  Cant4 = 8.</p><a name="1000850904"></a><h5>Comentario(s) </h5><p><a name="1000850905"></a>La variancia se calcula usando la siguiente t&#233;cnica:</p><ul type="disc"><a name="1000850906"></a><li>Calcula el valor promedio (medio) para los elementos en la muestra.
+<a name="1000850907"></a><li>Resta el valor promedio del valor de cada elemento.
+<a name="1000850908"></a><li>Eleva la cuadrado la diferencia de cada elemento. 
+<a name="1000850909"></a><li>Suma el cuadrado de las diferencias para todos los elementos en la muestra. 
+<a name="1000850910"></a><li>Divide la suma por uno menos que el n&#250;mero de elementos de la muestra (N - 1). El resultado es la variancia.  Compare este paso final con la <a href="Functions29.html#1000850920">PopulationVariance (Campo), PopulationVariance (Campo, campoCondicional), PopulationVariance (Campo, campoCondicional, condici&#243;n), PopulationVariance (x)</a>.
+</ul><p><a name="1000850914"></a><font color="darkblue"><b>Nota:   &nbsp;&nbsp;&nbsp;</b></font>El uso de esta funci&#243;n en una f&#243;rmula obliga a que la f&#243;rmula sea evaluada al momento de impresi&#243;n. </p>
+<p><a name="1000850915"></a>Para obtener m&#225;s informaci&#243;n sobre las consideraciones de evaluaci&#243;n de hora, v&#233;ase el <a href="Functions169.html#1000572432">Funciones de tiempo de evaluaci&#243;n</a>.</p>
+<hr><br>
+
+<script  language="JavaScript"><!--
+
+var prev = "Functions27.html";
+var next = "Functions29.html";
+
+function setTopicID() { 
+      var number = "1000850862"; 
+      return number; 
+}
+
+// --></script>
+
+
+
+
+<SCRIPT>
+
+if (!window.parent.toc && navigator.appName == "Netscape") {
+
+   document.writeln ('<TABLE ALIGN="left" border="0" cellspacing="0" cellpadding="10">');
+   document.writeln ('<TR>');
+   document.write ('<TD ALIGN="left">');
+
+   if (prev != "crw_spTOC.hhc") {
+      document.writeln ('<A HREF="' + prev + '">');
+      document.writeln ('<IMG SRC="prevpage.gif" HEIGHT=17 BORDER=0 ALT="Página anterior"></A>');
+   } else {
+//   window.alert ('no previous page');
+   }
+
+   if (next != "crw_spIX.hhk") {
+      document.writeln ('<A HREF="' + next + '">');
+      document.writeln ('<IMG SRC="nextpage.gif" HEIGHT=17 BORDER=0 ALT="Página siguiente"></A>');
+   } else {
+//   window.alert ('no next page');
+   }
+   document.writeln ('</TD><TD ALIGN="left">');
+   document.writeln ('<A HREF="frameset.htm?TOC">');
+   document.writeln ('<IMG SRC="showtoc.gif" HEIGHT=17 BORDER=0 ALT="Haga clic para ver el contenido"></A></TD>');
+   document.writeln ('<TD ALIGN="left">');
+   document.writeln ('<A HREF="frameset.htm?IDX">');
+   document.writeln ('<IMG SRC="showix.gif" HEIGHT=17 BORDER=0 ALT="Haga clic para ver el índice"></A></TD>');
+   document.writeln ('</TD>');
+   document.writeln ('</TR>');
+   document.writeln ('</TABLE>');
+
+}
+
+</SCRIPT>
+<table align="right" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td align="right"><font size="1">Seagate Software, Inc.<br>
+    <a href="http://www.seagatesoftware.com">http://www.seagatesoftware.com</a><br>
+    Envíe sus comentarios a:<br>
+    <a href="mailto:techpubs@seagatesoftware.com">techpubs@seagatesoftware.com</a><br>
+    </font></td>
+  </tr>
+</table>
+</body>
+</html>
+
+

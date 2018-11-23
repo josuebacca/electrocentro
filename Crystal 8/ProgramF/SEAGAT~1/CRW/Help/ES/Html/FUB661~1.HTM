@@ -1,0 +1,93 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+
+<html>
+<head>
+<title>TrimLeft  (cadena)</title>
+
+<link REL=STYLESHEET TYPE="text/css" HREF="seagate.css">
+
+<!--
+                 ***********************************
+                 * Seagate Software copyright 1999 *
+                 ***********************************
+
+                      Template version: 5.1
+-->
+
+
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" link="#0000FF" vlink="#0000FF" alink="#800080">
+
+
+ 
+<a name="1000852478"></a><h3 class="newpage"> TrimLeft  (cadena)</h3>
+<p><a name="1000852482"></a>TrimLeft y <a href="Functions67.html#1000852428">LTrim (Cadena)</a> son funciones equivalentes. Sin embargo, se prefiere TrimLeft en la sintaxis Crystal y LTrim en la sintaxis b&#225;sica.</p><a name="1000852483"></a><h5>Argumentos</h5><p><a name="1000852484"></a>cadena es una cadena de texto.</p><a name="1000852485"></a><h5>Devuelve </h5><p><a name="1000852486"></a>Una cadena de texto.</p><a name="1000852487"></a><h5>Acci&#243;n</h5><p><a name="1000852488"></a>TrimLeft elimina todos los espacios a la izquierda de la cadena o campo de datos que es almacenado como una cadena de texto guardada con justificaci&#243;n a la derecha en una base de datos.</p><a name="1000852489"></a><h5>Uso(s) t&#237;pico(s)</h5><ul type="disc"><a name="1000852490"></a><li>Use esta funci&#243;n siempre que haya espacios en blanco a la izquierda en un objeto de texto que pueda interferir con la alineaci&#243;n de las cadenas de texto, el recuento de caracteres o un c&#225;lculo (si la <a href="glossary.html#19812">Cadena</a> se convierte posteriormente en un N&#250;mero). 
+<a name="1000852494"></a><li>Use esta funci&#243;n siempre que est&#233; combinando (concatenando) cadenas de texto justificadas y quiera tener el espacio apropiado entre cadenas.
+</ul><a name="1000852495"></a><h5>Ejemplo(s)</h5><p><a name="1000852496"></a>Los siguientes ejemplos se aplican a las sintaxis b&#225;sica y Crystal, aunque se prefiere LTrim en esta &#250;ltima:</p><p class="code"><a name="1000852497"></a>TrimLeft("&nbsp;&nbsp;&nbsp;&nbsp;Al/4520/B12") 
+<br><p class="example"><a name="1000852498"></a>Devuelve "A1/4520/B12".</p><a name="1000852499"></a>TrimLeft("&nbsp;&nbsp;&nbsp;&nbsp;200")
+</p><p class="example"><a name="1000852500"></a>Devuelve "200", cuando la cadena de texto " 200" est&#225; justificada a la derecha en el campo con espacios en blanco a la izquierda.</p><p class="indent"><a name="1000852501"></a>Usted tiene dos campos de base de datos justificados a la derecha, {archivo.FOOD1} y {archivo.FOOD2}. Cada campo puede retener hasta 15 caracteres. {archivo.FOOD1} contiene la palabra <EM>pan</EM> y {archivo.FOOD2} contiene la palabra <EM>mantequilla</EM>. Si fuera a imprimir esas palabras, aparecer&#237;an de la siguiente manera&nbsp; : </p><p class="indent"><a name="1000852502"></a>"          pan"                     </p><p class="indent"><a name="1000852503"></a>"          mantequilla"</p><p><a name="1000852504"></a>Por cada campo de 15 caracteres la base de datos incluye el valor de campo, justificado a la derecha m&#225;s los espacios en blanco para llenar el campo. Para utilizar esas palabras sin los espacios a la derecha (para crear la expresi&#243;n pan y mantequilla, por ejemplo) utilice la funci&#243;n TrimLeft de la siguiente manera&nbsp;:</p><p><code><a name="1000852505"></a>TrimLeft({archivo.FOOD1}) + " con " + TrimLeft({archivo.FOOD2}) </code></p><p class="example"><a name="1000852506"></a>Devuelve "pan con mantequilla".</p><p><a name="1000852507"></a>Los espacios encerrados entre comillas antes y despu&#233;s de la palabra <EM>y </EM>aseguran que haya un correcto el espacio entre las tres palabras en la oraci&#243;n resultante.</p><a name="1000852508"></a><h6>Temas relacionados</h6><p><a name="1000852512"></a><a href="Functions66.html#1000852409">Trim (cadena)</a></p><p><a name="1000852516"></a><a href="Functions70.html#1000852557">TrimRight(cadena)</a></p><p><a name="1000852520"></a><a href="19_introformulas42.html#317486">F&#243;rmula 14</a></p>
+<hr><br>
+
+<script  language="JavaScript"><!--
+
+var prev = "Functions67.html";
+var next = "Functions69.html";
+
+function setTopicID() { 
+      var number = "1000852478"; 
+      return number; 
+}
+
+// --></script>
+
+
+
+
+<SCRIPT>
+
+if (!window.parent.toc && navigator.appName == "Netscape") {
+
+   document.writeln ('<TABLE ALIGN="left" border="0" cellspacing="0" cellpadding="10">');
+   document.writeln ('<TR>');
+   document.write ('<TD ALIGN="left">');
+
+   if (prev != "crw_spTOC.hhc") {
+      document.writeln ('<A HREF="' + prev + '">');
+      document.writeln ('<IMG SRC="prevpage.gif" HEIGHT=17 BORDER=0 ALT="Página anterior"></A>');
+   } else {
+//   window.alert ('no previous page');
+   }
+
+   if (next != "crw_spIX.hhk") {
+      document.writeln ('<A HREF="' + next + '">');
+      document.writeln ('<IMG SRC="nextpage.gif" HEIGHT=17 BORDER=0 ALT="Página siguiente"></A>');
+   } else {
+//   window.alert ('no next page');
+   }
+   document.writeln ('</TD><TD ALIGN="left">');
+   document.writeln ('<A HREF="frameset.htm?TOC">');
+   document.writeln ('<IMG SRC="showtoc.gif" HEIGHT=17 BORDER=0 ALT="Haga clic para ver el contenido"></A></TD>');
+   document.writeln ('<TD ALIGN="left">');
+   document.writeln ('<A HREF="frameset.htm?IDX">');
+   document.writeln ('<IMG SRC="showix.gif" HEIGHT=17 BORDER=0 ALT="Haga clic para ver el índice"></A></TD>');
+   document.writeln ('</TD>');
+   document.writeln ('</TR>');
+   document.writeln ('</TABLE>');
+
+}
+
+</SCRIPT>
+<table align="right" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td align="right"><font size="1">Seagate Software, Inc.<br>
+    <a href="http://www.seagatesoftware.com">http://www.seagatesoftware.com</a><br>
+    Envíe sus comentarios a:<br>
+    <a href="mailto:techpubs@seagatesoftware.com">techpubs@seagatesoftware.com</a><br>
+    </font></td>
+  </tr>
+</table>
+</body>
+</html>
+
+

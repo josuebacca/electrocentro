@@ -1,0 +1,45 @@
+VERSION 5.00
+Begin {BD4B4E61-F7B8-11D0-964D-00A0C9273C2A} rptRoomReport 
+   ClientHeight    =   10020
+   ClientLeft      =   0
+   ClientTop       =   0
+   ClientWidth     =   10380
+   OleObjectBlob   =   "rptRoomReport.dsx":0000
+End
+Attribute VB_Name = "rptRoomReport"
+Attribute VB_GlobalNameSpace = False
+Attribute VB_Creatable = False
+Attribute VB_PredeclaredId = True
+Attribute VB_Exposed = False
+' *************************************************************
+' Purpose: This report allows the user to navigate among the hotel records
+'          for each day, filtering by day or customer as desired.  The code
+'          is mainly intended to demonstrate a possible use of the NoData event
+'
+
+Public IsNoData As Boolean                  ' The externally available indicator of no available data in the report
+
+' *************************************************************
+' Set the data location
+'
+Private Sub Report_Initialize()
+    IsNoData = False
+End Sub
+
+' *************************************************************
+' If there is no data available for the displayed time period or
+' customer, display a message informing the user of this (rather than
+' a blank report).
+'
+Private Sub Report_NoData(pCancel As Boolean)
+    If IsNoData = True Then Exit Sub        ' We've already seen this warning message
+    If CustomerName <> "" Then
+        MsgBox "There are no reservations in this time period for " & CustomerName _
+            , vbExclamation, "No reservations to display"
+    Else
+        MsgBox "There are no reservations to display", vbExclamation, "No reservations to display"
+    End If
+    IsNoData = True
+    cmdButton.Enabled = False               ' Prevent the rptCustomer report from being opened with no data (extra precaution)
+End Sub
+

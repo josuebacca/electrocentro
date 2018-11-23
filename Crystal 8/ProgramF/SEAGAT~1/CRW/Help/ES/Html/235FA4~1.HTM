@@ -1,0 +1,107 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+
+<html>
+<head>
+<title>C&#243;mo funciona el vinculamiento de subinformes</title>
+
+<link REL=STYLESHEET TYPE="text/css" HREF="seagate.css">
+
+<!--
+                 ***********************************
+                 * Seagate Software copyright 1999 *
+                 ***********************************
+
+                      Template version: 5.1
+-->
+
+
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" link="#0000FF" vlink="#0000FF" alink="#800080">
+
+
+ 
+<a name="43886"></a><h3 class="newpage"> C&#243;mo funciona el vinculamiento de subinformes</h3>
+<p><a name="45927"></a>Cuando vincula un subinforme a un informe principal, el programa crea el v&#237;nculo por medio de un campo de par&#225;metro. Cuando selecciona un campo de v&#237;nculo de subinforme:</p><ul type="disc"><a name="43901"></a><li>el programa crea en el subinforme un campo de par&#225;metro que es utilizado para recuperar los valores pasados por el informe principal.
+<a name="43902"></a><li>el programa tambi&#233;n crea una f&#243;rmula de selecci&#243;n de registros para el subinforme utilizando el campo de par&#225;metro.
+<a name="43903"></a><li>la f&#243;rmula de selecci&#243;n limita el subinforme a esos registros en que el campo de v&#237;nculo es igual al valor del campo de par&#225;metro.
+</ul><p><a name="43904"></a>Cuando usted elabora el informe, el programa encuentra el primer registro del campo principal que necesita y pasa el valor en el campo de v&#237;nculo al campo de par&#225;metro en el subinforme. El programa entonces crea el subinforme con la selecci&#243;n de registros basada en el valor del campo de par&#225;metro. Por ejemplo:</p><ul type="disc"><a name="43905"></a><li>Puede crear un informe que muestre los datos de clientes y un subinforme que muestre los datos de pedidos, vinculando ambos usando el campo Id del Cliente.
+<a name="43906"></a><li>Cuando elabora el informe, el programa encuentra el primer registro del cliente que necesita y pasa el valor de Id del Cliente de ese registro al campo de par&#225;metro del subinforme.
+<a name="43907"></a><li>Luego, el programa elabora el subinforme Pedidos. Como la f&#243;rmula de selecci&#243;n del subinforme selecciona s&#243;lo los registros en que el valor de Id del Cliente es igual al valor del campo de par&#225;metro y como este valor es igual al de Id del Cliente en el primer registro del informe principal, el subinforme contiene s&#243;lo esos registros que tienen la misma identificaci&#243;n de cliente, es decir, aquellos registros que son pedidos del primer cliente.
+<a name="43908"></a><li>Cuando el subinforme termina, el programa va al segundo registro que necesita del informe principal, imprime los datos del cliente y despu&#233;s pasa este n&#250;mero de Id del Cliente al campo de par&#225;metro.
+<a name="43909"></a><li>El programa entonces elabora un subinforme incluyendo s&#243;lo esos registros de pedido del segundo cliente.
+<a name="43910"></a><li>El proceso contin&#250;a hasta que el informe queda terminado.
+<a name="43911"></a><li>Toda esta manipulaci&#243;n del campo de par&#225;metro toma lugar en el trasfondo. Usted simplemente elige los campos que desea utilizar para vincular el informe principal con el subinforme y el programa hace el resto. Los valores son pasados sin que el campo de par&#225;metro le pida un valor.
+</ul><p><a name="52561"></a><font color="darkblue"><b>Nota:   &nbsp;&nbsp;&nbsp;</b></font><img src="images/Bt_prevw.gif">
+
+
+Si tiene un subinforme vinculado y hace clic en el bot&#243;n <kbd>Vista previa</kbd> en la barra de herramientas est&#225;ndar de la ficha Dise&#241;o del subinforme, el programa elabora el informe por su cuenta, sin primero recibir un valor de campo de par&#225;metro del informe principal. En este caso, el programa muestra el cuadro de di&#225;logo Introducir Valores de Par&#225;metro para el Subinforme, pidi&#233;ndole un valor.</p>
+<p><a name="52642"></a>El valor que se escribe aqu&#237; es el valor que el programa usa para elaborar el subinforme.</p><p><a name="52577"></a> <img src="images/db_eprsb.gif">
+
+
+</p>
+
+<hr><br>
+
+<script  language="JavaScript"><!--
+
+var prev = "23_subreports3.html";
+var next = "23_subreports5.html";
+
+function setTopicID() { 
+      var number = "43886"; 
+      return number; 
+}
+
+// --></script>
+
+
+
+
+<SCRIPT>
+
+if (!window.parent.toc && navigator.appName == "Netscape") {
+
+   document.writeln ('<TABLE ALIGN="left" border="0" cellspacing="0" cellpadding="10">');
+   document.writeln ('<TR>');
+   document.write ('<TD ALIGN="left">');
+
+   if (prev != "crw_spTOC.hhc") {
+      document.writeln ('<A HREF="' + prev + '">');
+      document.writeln ('<IMG SRC="prevpage.gif" HEIGHT=17 BORDER=0 ALT="Página anterior"></A>');
+   } else {
+//   window.alert ('no previous page');
+   }
+
+   if (next != "crw_spIX.hhk") {
+      document.writeln ('<A HREF="' + next + '">');
+      document.writeln ('<IMG SRC="nextpage.gif" HEIGHT=17 BORDER=0 ALT="Página siguiente"></A>');
+   } else {
+//   window.alert ('no next page');
+   }
+   document.writeln ('</TD><TD ALIGN="left">');
+   document.writeln ('<A HREF="frameset.htm?TOC">');
+   document.writeln ('<IMG SRC="showtoc.gif" HEIGHT=17 BORDER=0 ALT="Haga clic para ver el contenido"></A></TD>');
+   document.writeln ('<TD ALIGN="left">');
+   document.writeln ('<A HREF="frameset.htm?IDX">');
+   document.writeln ('<IMG SRC="showix.gif" HEIGHT=17 BORDER=0 ALT="Haga clic para ver el índice"></A></TD>');
+   document.writeln ('</TD>');
+   document.writeln ('</TR>');
+   document.writeln ('</TABLE>');
+
+}
+
+</SCRIPT>
+<table align="right" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td align="right"><font size="1">Seagate Software, Inc.<br>
+    <a href="http://www.seagatesoftware.com">http://www.seagatesoftware.com</a><br>
+    Envíe sus comentarios a:<br>
+    <a href="mailto:techpubs@seagatesoftware.com">techpubs@seagatesoftware.com</a><br>
+    </font></td>
+  </tr>
+</table>
+</body>
+</html>
+
+

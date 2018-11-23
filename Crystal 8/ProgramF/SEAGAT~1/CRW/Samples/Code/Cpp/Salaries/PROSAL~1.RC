@@ -1,0 +1,287 @@
+//Microsoft Developer Studio generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// English (U.S.) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+#ifdef _WIN32
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
+#pragma code_page(1252)
+#endif //_WIN32
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#define _AFX_NO_SPLITTER_RESOURCES\r\n"
+    "#define _AFX_NO_OLE_RESOURCES\r\n"
+    "#define _AFX_NO_TRACKER_RESOURCES\r\n"
+    "#define _AFX_NO_PROPERTY_RESOURCES\r\n"
+    "\r\n"
+    "#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)\r\n"
+    "#ifdef _WIN32\r\n"
+    "LANGUAGE 9, 1\r\n"
+    "#pragma code_page(1252)\r\n"
+    "#endif //_WIN32\r\n"
+    "#include ""res\\ProSalaries.rc2""  // non-Microsoft Visual C++ edited resources\r\n"
+    "#include ""afxres.rc""         // Standard components\r\n"
+    "#endif\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+// Icon with lowest ID value placed first to ensure application icon
+// remains consistent on all systems.
+IDR_MAINFRAME           ICON    DISCARDABLE     "res\\ProSalaries.ico"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_ABOUTBOX DIALOG DISCARDABLE  0, 0, 243, 82
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "About Pro Athlete Salary Report"
+FONT 10, "Arial"
+BEGIN
+    LTEXT           "Pro Athlete Salary Report Version 1.0",IDC_STATIC,36,10,
+                    132,8,SS_NOPREFIX
+    LTEXT           "Seagate Crystal Reports Visual C++ Demo",IDC_STATIC,36,
+                    22,174,8
+    DEFPUSHBUTTON   "OK",IDOK,186,7,50,14,WS_GROUP
+    LTEXT           "By Terry Penner",IDC_STATIC,178,70,58,8
+    LTEXT           "Email:             answers@seagatesoftware.com ",
+                    IDC_STATIC,36,59,184,12
+    LTEXT           "Sales:             1-800-877-2340",IDC_STATIC,36,49,141,
+                    8
+    LTEXT           "Tech Support:  1-604-669-8379",IDC_STATIC,36,39,141,8
+    ICON            IDR_MAINFRAME,IDC_STATIC,11,9,20,20
+END
+
+IDD_REPORT_VIEW DIALOG DISCARDABLE  0, 0, 362, 297
+STYLE DS_3DLOOK | DS_CENTER | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Pro Athlete Salary Report"
+FONT 10, "Arial"
+BEGIN
+    DEFPUSHBUTTON   "&Close",IDOK,303,280,58,15
+    CONTROL         "",IDC_CRVIEWER1,"{C4847596-972C-11D0-9567-00A0C9273C2A}",
+                    WS_TABSTOP,0,1,361,277
+END
+
+IDD_SELECTIONS DIALOG DISCARDABLE  0, 0, 342, 290
+STYLE DS_CENTER | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Pro Athlete Salary Report"
+FONT 9, "Arial"
+BEGIN
+    DEFPUSHBUTTON   "&Show Report",IDC_SHOW_REPORT,154,266,81,21
+    PUSHBUTTON      "&Exit",IDCANCEL,244,266,81,21
+    CONTROL         "Tree1",IDC_TVWSELECT,"SysTreeView32",TVS_HASBUTTONS | 
+                    TVS_HASLINES | TVS_NOTOOLTIPS | TVS_CHECKBOXES | 
+                    WS_BORDER | WS_TABSTOP,0,68,235,194
+    CONTROL         "&Group By Year and Team",IDC_GROUP_BY_TEAM_YEAR,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,242,86,96,10
+    CONTROL         "&Show All",IDC_SHOW_ALL,"Button",BS_AUTORADIOBUTTON | 
+                    WS_GROUP,241,100,43,10
+    CONTROL         "&Highest Paid",IDC_HIGHEST_PAID,"Button",
+                    BS_AUTORADIOBUTTON,241,113,57,10
+    EDITTEXT        IDC_TXTHIGH,298,111,40,12,ES_AUTOHSCROLL | ES_NUMBER
+    CONTROL         "&Lowest Paid",IDC_LOWEST_PAID,"Button",
+                    BS_AUTORADIOBUTTON,241,125,55,10
+    EDITTEXT        IDC_TXTLOW,298,124,40,12,ES_AUTOHSCROLL | ES_NUMBER
+    CONTROL         "S&alary > $",IDC_SALARY_HIGHER,"Button",
+                    BS_AUTORADIOBUTTON,241,137,47,10
+    EDITTEXT        IDC_TXTSALARYHIGHER,290,137,48,12,ES_AUTOHSCROLL | 
+                    ES_NUMBER
+    CONTROL         "&Salary < $",IDC_SALARY_LOWER,"Button",
+                    BS_AUTORADIOBUTTON,241,150,47,10
+    EDITTEXT        IDC_TXTSALARYLOWER,290,150,48,12,ES_AUTOHSCROLL | 
+                    ES_NUMBER
+    CONTROL         "&Player",IDC_CHK_PLAYER,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,243,187,35,10
+    CONTROL         "&Team",IDC_CHK_TEAM,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,243,203,34,10
+    CONTROL         "Sala&ry",IDC_CHK_SALARY,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,243,219,35,10
+    CONTROL         "&Year",IDC_CHK_YEAR,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,243,234,31,10
+    LTEXT           "Fields to Include",IDC_FIELDSLABEL,239,175,84,8
+    LTEXT           "Player Report Options",IDC_PLAYERREPORTLABEL,239,74,91,
+                    11
+    CONTROL         134,IDC_STATIC,"Static",SS_BITMAP,0,0,342,68
+    CONTROL         136,IDC_STATIC,"Static",SS_BITMAP,301,185,36,74
+    PUSHBUTTON      "&About the Sample",IDC_ABOUT,1,266,70,21
+END
+
+
+#ifndef _MAC
+/////////////////////////////////////////////////////////////////////////////
+//
+// Version
+//
+
+VS_VERSION_INFO VERSIONINFO
+ FILEVERSION 1,0,0,1
+ PRODUCTVERSION 1,0,0,1
+ FILEFLAGSMASK 0x3fL
+#ifdef _DEBUG
+ FILEFLAGS 0x1L
+#else
+ FILEFLAGS 0x0L
+#endif
+ FILEOS 0x4L
+ FILETYPE 0x1L
+ FILESUBTYPE 0x0L
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "040904B0"
+        BEGIN
+            VALUE "CompanyName", "\0"
+            VALUE "FileDescription", "Pro Athlete Salaries MFC Application\0"
+            VALUE "FileVersion", "1, 0, 0, 1\0"
+            VALUE "InternalName", "Pro Athlete Salaries\0"
+            VALUE "LegalCopyright", "Copyright (C) Seagate Software 1999\0"
+            VALUE "LegalTrademarks", "\0"
+            VALUE "OriginalFilename", "ProSalaries.EXE\0"
+            VALUE "ProductName", "Pro Athlete Salaries Application\0"
+            VALUE "ProductVersion", "1, 0, 0, 1\0"
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x409, 1200
+    END
+END
+
+#endif    // !_MAC
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO DISCARDABLE 
+BEGIN
+    IDD_ABOUTBOX, DIALOG
+    BEGIN
+        LEFTMARGIN, 5
+        RIGHTMARGIN, 236
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 78
+    END
+
+    IDD_REPORT_VIEW, DIALOG
+    BEGIN
+        RIGHTMARGIN, 361
+        BOTTOMMARGIN, 295
+    END
+
+    IDD_SELECTIONS, DIALOG
+    BEGIN
+        RIGHTMARGIN, 341
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Bitmap
+//
+
+IDB_STATE               BITMAP  DISCARDABLE     "res\\StateImages.bmp"
+IDB_HEADER              BITMAP  DISCARDABLE     "res\\Header.bmp"
+IDB_LOGO                BITMAP  DISCARDABLE     "res\\logo.bmp"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog Info
+//
+
+IDD_REPORT_VIEW DLGINIT
+BEGIN
+    IDC_CRVIEWER1, 0x376, 102, 0
+0x0000, 0x0000, 0x0300, 0x0000, 0x000b, 0x0000, 0x000b, 0xffff, 0x000b, 
+0x0000, 0x000b, 0xffff, 0x000b, 0x0000, 0x000b, 0xffff, 0x000b, 0x0000, 
+0x000b, 0x0000, 0x000b, 0xffff, 0x000b, 0xffff, 0x000b, 0x0000, 0x000b, 
+0xffff, 0x000b, 0xffff, 0x000b, 0x0000, 0x000b, 0xffff, 0x000b, 0xffff, 
+0x000b, 0xffff, 0x000b, 0xffff, 0x0008, 0x0000, 0x0000, 0x000b, 0xffff, 
+0x000b, 0x0000, 0x000b, 0x0000, 0x000b, 0x0000, 
+    0
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDP_OLE_INIT_FAILED     "OLE initialization failed.  Make sure that the OLE libraries are the correct version."
+    IDS_ABOUTBOX            "&About Pro Athlete Salaries..."
+END
+
+#endif    // English (U.S.) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+#define _AFX_NO_SPLITTER_RESOURCES
+#define _AFX_NO_OLE_RESOURCES
+#define _AFX_NO_TRACKER_RESOURCES
+#define _AFX_NO_PROPERTY_RESOURCES
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+#ifdef _WIN32
+LANGUAGE 9, 1
+#pragma code_page(1252)
+#endif //_WIN32
+#include "res\ProSalaries.rc2"  // non-Microsoft Visual C++ edited resources
+#include "afxres.rc"         // Standard components
+#endif
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

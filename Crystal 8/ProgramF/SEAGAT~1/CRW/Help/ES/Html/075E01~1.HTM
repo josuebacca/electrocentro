@@ -1,0 +1,90 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+
+<html>
+<head>
+<title>Inconsistencia de may&#250;sculas y min&#250;sculas</title>
+
+<link REL=STYLESHEET TYPE="text/css" HREF="seagate.css">
+
+<!--
+                 ***********************************
+                 * Seagate Software copyright 1999 *
+                 ***********************************
+
+                      Template version: 5.1
+-->
+
+
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" link="#0000FF" vlink="#0000FF" alink="#800080">
+
+
+ 
+<a name="54682"></a><h4 class="newpage"> Inconsistencia de may&#250;sculas y min&#250;sculas</h4><p><a name="54683"></a>Las f&#243;rmulas de selecci&#243;n de registros distinguen entre may&#250;sculas y min&#250;sculas. Es decir, que "Juan" s&#243;lo coincide con "Juan" y no con "juan", "JUAN", "JuaN", "juaN", "JUan" o "JuAN". As&#237;, si su f&#243;rmula de selecci&#243;n est&#225; definida para incluir s&#243;lo aquellos registros que contengan "JUAN" en el campo {cliente.NOMBRE DEL CONTACTO}, pero los datos en este campo mezclan may&#250;sculas y min&#250;sculas (por ejemplo "Juan"), la f&#243;rmula no encontrar&#225; coincidencias y por lo tanto no imprimir&#225; ning&#250;n registro en el informe.</p><p><a name="54684"></a>Usted puede resolver este problema usando las funciones UpperCase (str) (en el caso de may&#250;sculas) o LowerCase (str) (en el caso de min&#250;sculas) en su f&#243;rmula de selecci&#243;n para convertir datos de campo al formato consistente (may&#250;sculas o min&#250;sculas) antes que el programa comience la selecci&#243;n. Por ejemplo, si est&#225; usando la f&#243;rmula:</p><PRE><a name="54685"></a>{cliente.NOMBRE DEL CONTACTO} = "Juan"
+</PRE><p><a name="54686"></a>puede cambiarla a:</p><PRE><a name="54687"></a>UpperCase ({cliente.NOMBRE DEL CONTACTO}) = "JUAN"
+</PRE><p><a name="54688"></a>Esta &#250;ltima f&#243;rmula convierte el valor del campo {cliente.NOMBRE DEL CONTACTO} a letras may&#250;sculas y despu&#233;s verifica si el valor en ese campo es igual a "JUAN". Usando esta f&#243;rmula, cualquier forma de la palabra "juan" ser&#225; v&#225;lida, sin importar si las letras son may&#250;sculas o min&#250;sculas, ya que todas ser&#225;n convertidas a may&#250;sculas para mantener consistencia en la comparaci&#243;n.</p><p><a name="54689"></a>Tambi&#233;n puede usar la funci&#243;n LowerCase (min&#250;sculas) en forma similar, para establecer coincidencias con "juan".</p><p><a name="54690"></a>Revise su f&#243;rmula de selecci&#243;n cuidadosamente y aseg&#250;rese de estar usando el formato correcto en cualquier texto que est&#225; sometiendo a comparaciones. Si tiene alguna duda, use la funci&#243;n UpperCase (o LowerCase)para asegurar consistencia en las comparaciones.</p><p><a name="54691"></a>Otra f&#243;rmula que produce resultados similares a la anterior es:</p><p><code><a name="54692"></a>"JUAN" in UpperCase ({cliente.NOMBRE DEL CONTACTO}</code></p>
+<hr><br>
+
+<script  language="JavaScript"><!--
+
+var prev = "07_recordgroupsel15.html";
+var next = "07_recordgroupsel17.html";
+
+function setTopicID() { 
+      var number = "54682"; 
+      return number; 
+}
+
+// --></script>
+
+
+
+
+<SCRIPT>
+
+if (!window.parent.toc && navigator.appName == "Netscape") {
+
+   document.writeln ('<TABLE ALIGN="left" border="0" cellspacing="0" cellpadding="10">');
+   document.writeln ('<TR>');
+   document.write ('<TD ALIGN="left">');
+
+   if (prev != "crw_spTOC.hhc") {
+      document.writeln ('<A HREF="' + prev + '">');
+      document.writeln ('<IMG SRC="prevpage.gif" HEIGHT=17 BORDER=0 ALT="Página anterior"></A>');
+   } else {
+//   window.alert ('no previous page');
+   }
+
+   if (next != "crw_spIX.hhk") {
+      document.writeln ('<A HREF="' + next + '">');
+      document.writeln ('<IMG SRC="nextpage.gif" HEIGHT=17 BORDER=0 ALT="Página siguiente"></A>');
+   } else {
+//   window.alert ('no next page');
+   }
+   document.writeln ('</TD><TD ALIGN="left">');
+   document.writeln ('<A HREF="frameset.htm?TOC">');
+   document.writeln ('<IMG SRC="showtoc.gif" HEIGHT=17 BORDER=0 ALT="Haga clic para ver el contenido"></A></TD>');
+   document.writeln ('<TD ALIGN="left">');
+   document.writeln ('<A HREF="frameset.htm?IDX">');
+   document.writeln ('<IMG SRC="showix.gif" HEIGHT=17 BORDER=0 ALT="Haga clic para ver el índice"></A></TD>');
+   document.writeln ('</TD>');
+   document.writeln ('</TR>');
+   document.writeln ('</TABLE>');
+
+}
+
+</SCRIPT>
+<table align="right" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td align="right"><font size="1">Seagate Software, Inc.<br>
+    <a href="http://www.seagatesoftware.com">http://www.seagatesoftware.com</a><br>
+    Envíe sus comentarios a:<br>
+    <a href="mailto:techpubs@seagatesoftware.com">techpubs@seagatesoftware.com</a><br>
+    </font></td>
+  </tr>
+</table>
+</body>
+</html>
+
+

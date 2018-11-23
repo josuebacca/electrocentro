@@ -1,0 +1,93 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+
+<html>
+<head>
+<title>Es posible procesar m&#225;s tipos de f&#243;rmulas de selecci&#243;n de registros en el servidor</title>
+
+<link REL=STYLESHEET TYPE="text/css" HREF="seagate.css">
+
+<!--
+                 ***********************************
+                 * Seagate Software copyright 1999 *
+                 ***********************************
+
+                      Template version: 5.1
+-->
+
+
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" link="#0000FF" vlink="#0000FF" alink="#800080">
+
+
+ 
+<a name="143588"></a><h4 class="newpage"> Es posible procesar m&#225;s tipos de f&#243;rmulas de selecci&#243;n de registros en el servidor</h4><p><a name="143590"></a>En particular, ahora hay compatibilidad con el procesamiento de una f&#243;rmula de selecci&#243;n de registros que involucre la funci&#243;n IsNull y el operador Or. Por ejemplo, se pueden procesar las siguientes f&#243;rmulas de selecci&#243;n:</p><PRE><a name="143592"></a>{Pedidos.ID del pedido} &lt; 1020 Or 
+<a name="143593"></a>{Pedidos.Monto del pedido} &gt;= 1000
+<a name="143595"></a>IsNull ({Cliente.Regi&#243;n}) Or {Cliente.Regi&#243;n} = "BC"
+</PRE><p><a name="143597"></a>El lenguaje de f&#243;rmula tambi&#233;n ejecuta ahora la simplificaci&#243;n de la mayor&#237;a de las expresiones constantes y param&#233;tricas de las f&#243;rmulas durante la compilaci&#243;n en lugar de hacerlo durante la evaluaci&#243;n de la f&#243;rmula. Esto significa que f&#243;rmulas de selecci&#243;n de registros tales como:</p><p><code><a name="143599"></a>{campo de fecha} &gt; <EM>CurrentDate - 3</EM></code></p><PRE><a name="143601"></a>{campo de fecha} In <EM>CDate ({?par&#225;metro de a&#241;o}, 6, 1) To
+</EM><a name="143602"></a>                CDate ({?par&#225;metro de a&#241;o}, 9, 30)
+</PRE><p><a name="143604"></a>se pueden procesar en el servidor dado que las expresiones en cursiva se reemplazan por sus valores cuando se compila la f&#243;rmula; y la f&#243;rmula resultante se puede convertir en una consulta SQL.</p>
+<hr><br>
+
+<script  language="JavaScript"><!--
+
+var prev = "21_crystalsyntax6.html";
+var next = "21_crystalsyntax8.html";
+
+function setTopicID() { 
+      var number = "143588"; 
+      return number; 
+}
+
+// --></script>
+
+
+
+
+<SCRIPT>
+
+if (!window.parent.toc && navigator.appName == "Netscape") {
+
+   document.writeln ('<TABLE ALIGN="left" border="0" cellspacing="0" cellpadding="10">');
+   document.writeln ('<TR>');
+   document.write ('<TD ALIGN="left">');
+
+   if (prev != "crw_spTOC.hhc") {
+      document.writeln ('<A HREF="' + prev + '">');
+      document.writeln ('<IMG SRC="prevpage.gif" HEIGHT=17 BORDER=0 ALT="Página anterior"></A>');
+   } else {
+//   window.alert ('no previous page');
+   }
+
+   if (next != "crw_spIX.hhk") {
+      document.writeln ('<A HREF="' + next + '">');
+      document.writeln ('<IMG SRC="nextpage.gif" HEIGHT=17 BORDER=0 ALT="Página siguiente"></A>');
+   } else {
+//   window.alert ('no next page');
+   }
+   document.writeln ('</TD><TD ALIGN="left">');
+   document.writeln ('<A HREF="frameset.htm?TOC">');
+   document.writeln ('<IMG SRC="showtoc.gif" HEIGHT=17 BORDER=0 ALT="Haga clic para ver el contenido"></A></TD>');
+   document.writeln ('<TD ALIGN="left">');
+   document.writeln ('<A HREF="frameset.htm?IDX">');
+   document.writeln ('<IMG SRC="showix.gif" HEIGHT=17 BORDER=0 ALT="Haga clic para ver el índice"></A></TD>');
+   document.writeln ('</TD>');
+   document.writeln ('</TR>');
+   document.writeln ('</TABLE>');
+
+}
+
+</SCRIPT>
+<table align="right" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td align="right"><font size="1">Seagate Software, Inc.<br>
+    <a href="http://www.seagatesoftware.com">http://www.seagatesoftware.com</a><br>
+    Envíe sus comentarios a:<br>
+    <a href="mailto:techpubs@seagatesoftware.com">techpubs@seagatesoftware.com</a><br>
+    </font></td>
+  </tr>
+</table>
+</body>
+</html>
+
+

@@ -1,0 +1,117 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+
+<html>
+<head>
+<title>Enunciados Select</title>
+
+<link REL=STYLESHEET TYPE="text/css" HREF="seagate.css">
+
+<!--
+                 ***********************************
+                 * Seagate Software copyright 1999 *
+                 ***********************************
+
+                      Template version: 5.1
+-->
+
+
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" link="#0000FF" vlink="#0000FF" alink="#800080">
+
+
+ 
+<a name="132768"></a><h3 class="newpage"> Enunciados Select</h3>
+<p><a name="132770"></a>El enunciado Select es similar al enunciado If. Sin embargo, algunas veces es posible escribir f&#243;rmulas que sean claras y menos repetitivas con el enunciado Select. Este ejemplo eval&#250;a el campo {Cliente.Fax} para determinar si el c&#243;digo postal es del estado de Washington (WA) (206, 360, 509) o de Colombia Brit&#225;nica (BC), Canad&#225; (604, 250):</p><PRE><a name="132772"></a>Rem Ejemplo de enunciado Select 1
+<a name="132773"></a>Select Case Left ({Cliente.Fax}, 3)
+<a name="132774"></a>   Case "604", "250"
+<a name="132775"></a>      formula = "BC"
+<a name="132776"></a>   Case "206", "509", "360"
+<a name="132777"></a>      formula = "WA"
+<a name="132778"></a>End Select
+</PRE><p><a name="132780"></a>La expresi&#243;n inmediatamente despu&#233;s de las palabras clave Select Case se denomina <EM>condici&#243;n de selecci&#243;n</EM>. En el ejemplo anterior es Left ({Cliente.Fax}[1 To 3]). El enunciado Select intenta buscar el primer caso que coincida con la condici&#243;n de selecci&#243;n y luego ejecuta los enunciados que lo siguen hasta el siguiente caso.</p><PRE><a name="132782"></a>Rem Ejemplo de mismo efecto que Select 1
+<a name="132783"></a>Dim aPostal As String
+<a name="132784"></a>aPostal = Left ({Cliente.Fax}, 3)
+<a name="132785"></a>If aPostal In Array ("604", "250") Then
+<a name="132786"></a>   formula = "BC"
+<a name="132787"></a>ElseIf aPostal In Array ("206", "509", "360") Then
+<a name="132788"></a>   formula = "WA"
+<a name="132789"></a>End If
+</PRE><a name="132791"></a><h5>Ejemplo </h5><p><a name="135948"></a>Esta f&#243;rmula agrupa el n&#250;mero de nominaciones al Oscar recibidas por una pel&#237;cula en categor&#237;as baja, media, alta o extrema y, en el proceso, muestra las posibilidades de que la expresi&#243;n liste las siguientes etiquetas de Case. Observe la cl&#225;usula Case Else opcional. Si ninguna de las listas de expresi&#243;n Case coincide con las cl&#225;usulas Case precedentes, entonces se asocia la cl&#225;usula Case Else. Por ejemplo, en el siguiente ejemplo, si {pel&#237;cula.NOM} es 11, entonces la f&#243;rmula devuelve el valor "extrema".</p><PRE><a name="132793"></a>Rem Ejemplo de enunciado Select 2
+<a name="132794"></a>Select Case {pel&#237;cula.NOM}
+<a name="132795"></a>   Case 1,2,3, Is &lt; 1
+<a name="132796"></a>      Rem Puede tener m&#250;ltiples enunciados en los
+<a name="132797"></a>      Rem bloques de enunciado
+<a name="132798"></a>      formula = "baja"
+<a name="132799"></a>   Case 4 To 6, 7, 8, 9
+<a name="132800"></a>      formula = "media"
+<a name="132801"></a>   Case 10
+<a name="132802"></a>      formula = "alta"
+<a name="132803"></a>   Case Else
+<a name="132804"></a>      formula = "extrema"
+<a name="132805"></a>End Select
+</PRE>
+<hr><br>
+
+<script  language="JavaScript"><!--
+
+var prev = "20_basicsyntax50.html";
+var next = "20_basicsyntax52.html";
+
+function setTopicID() { 
+      var number = "132768"; 
+      return number; 
+}
+
+// --></script>
+
+
+
+
+<SCRIPT>
+
+if (!window.parent.toc && navigator.appName == "Netscape") {
+
+   document.writeln ('<TABLE ALIGN="left" border="0" cellspacing="0" cellpadding="10">');
+   document.writeln ('<TR>');
+   document.write ('<TD ALIGN="left">');
+
+   if (prev != "crw_spTOC.hhc") {
+      document.writeln ('<A HREF="' + prev + '">');
+      document.writeln ('<IMG SRC="prevpage.gif" HEIGHT=17 BORDER=0 ALT="Página anterior"></A>');
+   } else {
+//   window.alert ('no previous page');
+   }
+
+   if (next != "crw_spIX.hhk") {
+      document.writeln ('<A HREF="' + next + '">');
+      document.writeln ('<IMG SRC="nextpage.gif" HEIGHT=17 BORDER=0 ALT="Página siguiente"></A>');
+   } else {
+//   window.alert ('no next page');
+   }
+   document.writeln ('</TD><TD ALIGN="left">');
+   document.writeln ('<A HREF="frameset.htm?TOC">');
+   document.writeln ('<IMG SRC="showtoc.gif" HEIGHT=17 BORDER=0 ALT="Haga clic para ver el contenido"></A></TD>');
+   document.writeln ('<TD ALIGN="left">');
+   document.writeln ('<A HREF="frameset.htm?IDX">');
+   document.writeln ('<IMG SRC="showix.gif" HEIGHT=17 BORDER=0 ALT="Haga clic para ver el índice"></A></TD>');
+   document.writeln ('</TD>');
+   document.writeln ('</TR>');
+   document.writeln ('</TABLE>');
+
+}
+
+</SCRIPT>
+<table align="right" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td align="right"><font size="1">Seagate Software, Inc.<br>
+    <a href="http://www.seagatesoftware.com">http://www.seagatesoftware.com</a><br>
+    Envíe sus comentarios a:<br>
+    <a href="mailto:techpubs@seagatesoftware.com">techpubs@seagatesoftware.com</a><br>
+    </font></td>
+  </tr>
+</table>
+</body>
+</html>
+
+

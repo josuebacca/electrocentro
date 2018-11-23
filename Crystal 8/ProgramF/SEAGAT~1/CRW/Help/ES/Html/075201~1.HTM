@@ -1,0 +1,106 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+
+<html>
+<head>
+<title>Estrategias para escribir f&#243;rmulas de selecci&#243;n de registros eficaces</title>
+
+<link REL=STYLESHEET TYPE="text/css" HREF="seagate.css">
+
+<!--
+                 ***********************************
+                 * Seagate Software copyright 1999 *
+                 ***********************************
+
+                      Template version: 5.1
+-->
+
+
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" link="#0000FF" vlink="#0000FF" alink="#800080">
+
+
+ 
+<a name="53648"></a><h3 class="newpage"> Estrategias para escribir f&#243;rmulas de selecci&#243;n de registros eficaces</h3>
+<p><a name="53649"></a>Al crear una f&#243;rmula de selecci&#243;n de registros considere los puntos siguientes:</p><a name="53650"></a><h4>Consideraci&#243;n n&#186; 1</h4><p><a name="53651"></a>Toda f&#243;rmula de selecci&#243;n de registros que pueda generar completamente con el Asistente de selecci&#243;n, sin escribir fragmentos de la f&#243;rmula manualmente, se puede reducir.</p><p><a name="53652"></a>Este caso deriva de los puntos siguientes. Sin embargo, es posible escribir m&#225;s tipos de f&#243;rmulas de selecci&#243;n de registros usando las sugerencias que se ofrecen a continuaci&#243;n que usando el Asistente de selecci&#243;n. Para hacer esto, necesita editar la f&#243;rmula de selecci&#243;n de registros directamente con el Editor de f&#243;rmulas o en la ventana de texto m&#225;s grande del Asistente de selecci&#243;n.</p><a name="53653"></a><h4>Consideraci&#243;n n&#186; 2</h4><p><a name="53654"></a>Se puede reducir toda f&#243;rmula de selecci&#243;n que sea de la forma: <EM>CampoBaseDatos OperadorCompatible EnunciadoParam&#233;tricoOConstante</EM>.</p><p><a name="53655"></a>Naturalmente que <EM>CampoBaseDatos</EM> es simplemente un campo de base de datos. <EM>OperadorCompatible</EM> es cualquiera de =, &lt;&gt;, &lt;, &lt;=, &gt;, &gt;=, StartsWith, Like o In.</p><p><a name="53656"></a><EM>EnunciadoParam&#233;tricoOConstante </EM>es cualquier enunciado que incluya valores constantes, operadores, funciones y campos de par&#225;metro. No puede incluir variables, estructuras de control ni otros campos que no sean campos de par&#225;metro. Por definici&#243;n, se pueden evaluar enunciados constantes y de par&#225;metro sin acceder a la base de datos.</p><p><a name="53657"></a><font color="darkblue"><b>Nota:   &nbsp;&nbsp;&nbsp;</b></font>Se puede evaluar un enunciado constante o de par&#225;metro con un valor simple, un rango de valores, un valor de matriz o una matriz de valores de rango. He aqu&#237; algunos ejemplos de dichos enunciados:</p>
+<PRE><a name="53658"></a>{?par&#225;metro num&#233;rico} - 3
+<a name="53659"></a>Year ({?fecha actual})
+<a name="59764"></a>CurrentDate + 5
+<a name="59765"></a>DateDiff ("q", CurrentDate, CDate("Jan 1, 1996"))
+<a name="59766"></a>Month (Maximum ({?par&#225;metro de rango de fecha}) + 15)
+<a name="59767"></a>["Canad&#225;", "M&#233;xico", "EE.UU.", {?ingresar pa&#237;s}]
+<a name="59768"></a>1000 To 5000
+<a name="59769"></a>[5000 To 10000, 20000 To 30000, 50000 To 60000]
+</PRE><p><a name="53666"></a>Un ejemplo completo:</p><p><code><a name="53667"></a>{Pedidos.Fecha del pedido} &gt;= CurrentDate - 3</code></p><p><a name="53668"></a>El programa tambi&#233;n puede reducir un enunciado que s&#243;lo contenga un campo booleano (sin las partes de constante y operador).</p><PRE><a name="53669"></a>{Pedidos.Enviado}
+<a name="53670"></a>Not {Pedidos.Enviado}
+</PRE><a name="53671"></a><h4>Consideraci&#243;n n&#186; 3</h4><p><a name="53672"></a>IsNull (<EM>CampoBaseDatos</EM>) se puede reducir.</p><a name="53673"></a><h4>Consideraci&#243;n n&#186; 4</h4><p><a name="53674"></a><EM>EnunciadoSql OperadorCompatible EnunciadoParam&#233;tricoOConstante</EM> se pueden<br>reducir.</p><p><a name="53675"></a>Por ejemplo, no es posible reducir la f&#243;rmula {@PrecioFinal} &gt; 1000 si {@PrecioFinal} es Cantidad * Precio. Sin embargo, si se reemplaza la f&#243;rmula @PrecioFinal con el enunciado SQL equivalente, &#233;ste se podr&#225; reducir.</p><a name="53676"></a><h4>Consideraci&#243;n n&#186; 5</h4><p><a name="53677"></a>Enunciados posteriores a las consideraciones anteriores, separados por "And" y "Or". Puede tener varias de cada una y usar par&#233;ntesis para asignar prioridad. Tambi&#233;n puede usar "Not". Por ejemplo:</p><PRE><a name="53678"></a>{Pedidos.ID del pedido} &lt; Minimum({?rango num&#233;rico}) Or
+<a name="53679"></a>{Pedidos.Monto del pedido} &gt;= 1000
+<a name="53680"></a>
+<a name="53681"></a>(IsNull({Cliente.Regi&#243;n}) Or 
+<a name="53682"></a> {Cliente.Regi&#243;n} = "BC") And
+<a name="55192"></a>{Cliente.Ventas del &#250;ltimo a&#241;o} &gt; 2000
+</PRE>
+<hr><br>
+
+<script  language="JavaScript"><!--
+
+var prev = "07_recordgroupsel12.html";
+var next = "07_recordgroupsel14.html";
+
+function setTopicID() { 
+      var number = "53648"; 
+      return number; 
+}
+
+// --></script>
+
+
+
+
+<SCRIPT>
+
+if (!window.parent.toc && navigator.appName == "Netscape") {
+
+   document.writeln ('<TABLE ALIGN="left" border="0" cellspacing="0" cellpadding="10">');
+   document.writeln ('<TR>');
+   document.write ('<TD ALIGN="left">');
+
+   if (prev != "crw_spTOC.hhc") {
+      document.writeln ('<A HREF="' + prev + '">');
+      document.writeln ('<IMG SRC="prevpage.gif" HEIGHT=17 BORDER=0 ALT="Página anterior"></A>');
+   } else {
+//   window.alert ('no previous page');
+   }
+
+   if (next != "crw_spIX.hhk") {
+      document.writeln ('<A HREF="' + next + '">');
+      document.writeln ('<IMG SRC="nextpage.gif" HEIGHT=17 BORDER=0 ALT="Página siguiente"></A>');
+   } else {
+//   window.alert ('no next page');
+   }
+   document.writeln ('</TD><TD ALIGN="left">');
+   document.writeln ('<A HREF="frameset.htm?TOC">');
+   document.writeln ('<IMG SRC="showtoc.gif" HEIGHT=17 BORDER=0 ALT="Haga clic para ver el contenido"></A></TD>');
+   document.writeln ('<TD ALIGN="left">');
+   document.writeln ('<A HREF="frameset.htm?IDX">');
+   document.writeln ('<IMG SRC="showix.gif" HEIGHT=17 BORDER=0 ALT="Haga clic para ver el índice"></A></TD>');
+   document.writeln ('</TD>');
+   document.writeln ('</TR>');
+   document.writeln ('</TABLE>');
+
+}
+
+</SCRIPT>
+<table align="right" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td align="right"><font size="1">Seagate Software, Inc.<br>
+    <a href="http://www.seagatesoftware.com">http://www.seagatesoftware.com</a><br>
+    Envíe sus comentarios a:<br>
+    <a href="mailto:techpubs@seagatesoftware.com">techpubs@seagatesoftware.com</a><br>
+    </font></td>
+  </tr>
+</table>
+</body>
+</html>
+
+

@@ -1,0 +1,91 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+
+<html>
+<head>
+<title>Operador StartsWith</title>
+
+<link REL=STYLESHEET TYPE="text/css" HREF="seagate.css">
+
+<!--
+                 ***********************************
+                 * Seagate Software copyright 1999 *
+                 ***********************************
+
+                      Template version: 5.1
+-->
+
+
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" link="#0000FF" vlink="#0000FF" alink="#800080">
+
+
+ 
+<a name="1000025183"></a><h3 class="newpage"> Operador StartsWith</h3>
+<p><a name="1000025188"></a>Sintaxis Basic y Crystal. </p><p><a name="1000025193"></a>El operador startsWith (Comienza con) es &#250;til para seleccionar registros que se van a incluir o excluir del informe. </p><a name="1000025194"></a><h5>Uso</h5><p class="code"><a name="1000025195"></a>x startsWith y
+<br><a name="1000025196"></a>{fieldname} startsWith "abc"
+</p><p class="example"><a name="1000025197"></a>Este operador&nbsp;&nbsp;&nbsp;&nbsp; verifica si el contenido de {fieldname}<EM> </EM>empieza con una cadena de caracteres espec&#237;fica: "abc". Si el contenido del campo empieza con "abc", entonces la F&Oacute;RMULA retorna el valor VERDADERO. Si el campo empieza con cualquiera otra cosa, la F&Oacute;RMULA retorna FALSO.</p><a name="1000025198"></a><h5>Examplos</h5><p><a name="1000025203"></a>Los siguientes ejemplos son aplicables tanto a sintaxis Basic como a Crystal:</p><p><code><a name="1000025204"></a>{cliente.NOMBRE DEL CLIENTE} startsWith "A"</code></p><p class="example"><a name="1000025205"></a>VERDADERO, donde {cliente.NOMBRE DEL CLIENTE}  = ABC Ltd.</p><p><code><a name="1000025206"></a>{cliente.NOMBRE DEL CLIENTE} startsWith "C"</code></p><p class="example"><a name="1000025207"></a> FALSO, donde {cliente.NOMBRE DEL CLIENTE} = ABC Ltd.</p><p><code><a name="1000025208"></a>{cliente.NOMBRE DEL CLIENTE} startsWith "ABC"</code></p><p class="example"><a name="1000025209"></a>VERDADERO, donde {cliente.NOMBRE DEL CLIENTE}= ABC Inc. or ABC Ltd.</p><p><code><a name="1000025210"></a>{cliente.NOMBRE DEL CLIENTE} startsWith "ABC"</code></p><p class="example"><a name="1000025211"></a>FALSO, donde {cliente.NOMBRE DEL CLIENTE} = XYZ Inc.</p>
+<hr><br>
+
+<script  language="JavaScript"><!--
+
+var prev = "Operators52.html";
+var next = "Operators54.html";
+
+function setTopicID() { 
+      var number = "1000025183"; 
+      return number; 
+}
+
+// --></script>
+
+
+
+
+<SCRIPT>
+
+if (!window.parent.toc && navigator.appName == "Netscape") {
+
+   document.writeln ('<TABLE ALIGN="left" border="0" cellspacing="0" cellpadding="10">');
+   document.writeln ('<TR>');
+   document.write ('<TD ALIGN="left">');
+
+   if (prev != "crw_spTOC.hhc") {
+      document.writeln ('<A HREF="' + prev + '">');
+      document.writeln ('<IMG SRC="prevpage.gif" HEIGHT=17 BORDER=0 ALT="Página anterior"></A>');
+   } else {
+//   window.alert ('no previous page');
+   }
+
+   if (next != "crw_spIX.hhk") {
+      document.writeln ('<A HREF="' + next + '">');
+      document.writeln ('<IMG SRC="nextpage.gif" HEIGHT=17 BORDER=0 ALT="Página siguiente"></A>');
+   } else {
+//   window.alert ('no next page');
+   }
+   document.writeln ('</TD><TD ALIGN="left">');
+   document.writeln ('<A HREF="frameset.htm?TOC">');
+   document.writeln ('<IMG SRC="showtoc.gif" HEIGHT=17 BORDER=0 ALT="Haga clic para ver el contenido"></A></TD>');
+   document.writeln ('<TD ALIGN="left">');
+   document.writeln ('<A HREF="frameset.htm?IDX">');
+   document.writeln ('<IMG SRC="showix.gif" HEIGHT=17 BORDER=0 ALT="Haga clic para ver el índice"></A></TD>');
+   document.writeln ('</TD>');
+   document.writeln ('</TR>');
+   document.writeln ('</TABLE>');
+
+}
+
+</SCRIPT>
+<table align="right" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td align="right"><font size="1">Seagate Software, Inc.<br>
+    <a href="http://www.seagatesoftware.com">http://www.seagatesoftware.com</a><br>
+    Envíe sus comentarios a:<br>
+    <a href="mailto:techpubs@seagatesoftware.com">techpubs@seagatesoftware.com</a><br>
+    </font></td>
+  </tr>
+</table>
+</body>
+</html>
+
+

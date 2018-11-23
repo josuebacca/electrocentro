@@ -1,0 +1,125 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+
+<html>
+<head>
+<title>CTime</title>
+
+<link REL=STYLESHEET TYPE="text/css" HREF="seagate.css">
+
+<!--
+                 ***********************************
+                 * Seagate Software copyright 1999 *
+                 ***********************************
+
+                      Template version: 5.1
+-->
+
+
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" link="#0000FF" vlink="#0000FF" alink="#800080">
+
+
+ 
+<a name="1000570720"></a><h3 class="newpage"> CTime</h3>
+<p><a name="1000706262"></a>Sintaxis b&#225;sica y Crystal.</p><p><a name="1000706267"></a>Las funciones <a href="Functions110.html#1000645674">TimeValue</a> y <a href="Functions107.html#1000686634">Time</a> son equivalentes a CTime. Sin embargo, Time s&#243;lo puede usarse en sintaxis Crystal, ya que en sintaxis b&#225;sica es un nombre tipo.</p><a name="1000570721"></a><h5>Sobrecargas</h5><ul type="disc"><a name="1000570722"></a><li>CTime (n&#250;mero)
+<a name="1000570723"></a><li>CTime (cadena) 
+<a name="1000570724"></a><li>CTime (fechaHora)
+<a name="1000570725"></a><li>CTime (HH, MM, SS)
+</ul><a name="1000752211"></a><h5>Argumentos</h5><p><a name="1000752231"></a> <Table Border="1">
+<tr><td align="left" valign="TOP"><P><a name="1000752214"></a>CTime (n&#250;mero)</P>
+
+
+</td><td align="left" valign="TOP"><ul type="disc"><a name="1000752216"></a><li>Devuelve<strong> </strong>al valor Hora dado un n&#250;mero en unidades de 24 horas.   
+<a name="1000756474"></a><li>n&#250;mero tambi&#233;n puede ser fraccional o negativo
+</ul></td></tr>
+<tr><td align="left" valign="TOP"><P><a name="1000752218"></a>CTime (cadena)</P>
+
+
+</td><td align="left" valign="TOP"><P><a name="1000752220"></a>Devuelve un valor Hora que representa la hora, dada una expresi&#243;n de Cadena que especifique una hora entre 0:00:00 (12:00:00 A.M.) y 23:59:59 (11:59:59 P.M.), inclusive.</P>
+
+
+</td></tr>
+<tr><td align="left" valign="TOP"><P><a name="1000752222"></a>CTime (fechaHora)</P>
+
+
+</td><td align="left" valign="TOP"><P><a name="1000752224"></a>fechaHora es un valor Fecha/hora.</P>
+
+
+</td></tr>
+<tr><td align="left" valign="TOP"><P><a name="1000752226"></a>CTime (hora, min, seg)</P>
+
+
+</td><td align="left" valign="TOP"><ul type="disc"><a name="1000752228"></a><li>Hora es un n&#250;mero entero que representa la hora del d&#237;a.
+<a name="1000752229"></a><li>Min es un n&#250;mero entero que representa un minuto.
+<a name="1000752230"></a><li>Seg es un n&#250;mero entero que representa un segundo.
+</ul></td></tr>
+
+</Table></p>
+<a name="1000570737"></a><h5>Devuelve </h5><p><a name="1000570738"></a>Un valor de hora.</p><a name="1000570739"></a><h5>Acci&#243;n</h5><p><a name="1000570740"></a><strong>CTime (</strong><strong>n&#250;mero) </strong>convierte un n&#250;mero dado a un valor Hora; el n&#250;mero dado est&#225; en unidades de 24 horas, y tambi&#233;n puede ser fraccionario o negativo.  </p><p><a name="1000570742"></a><strong>CTime (</strong><strong>cadena)</strong> convierte y devuelve una hora dada una cadena que identifica un valor Hora.  </p><p><a name="1000570744"></a><strong>CTime </strong><strong>(fechaHora) </strong>convierte y devuelve una hora dado un valor Fecha/hora. </p><p><a name="1000570746"></a><strong>CTime (</strong><strong>hh, mm, ss) </strong>convierte y devuelve una hora dados los argumentos de hora, minuto y segundos.  </p><a name="1000570747"></a><h5>Ejemplo(s)</h5><p><a name="1000570748"></a>Los siguientes ejemplos son aplicables a las sintaxis b&#225;sica y Crystal:</p><p class="code"><a name="1000570749"></a>CTime (.2) 
+<br><a name="1000570750"></a>CTime (1.2)
+</p><p class="example"><a name="1000570751"></a>Ambos devuelven el mismo valor 4:48:00 a.m.</p><p><code><a name="1000570752"></a>CTime (-.2)</code></p><p class="example"><a name="1000570753"></a>Devuelve 7:12:00 pm</p><p><code><a name="1000570754"></a>CTime ("ene. 6, 1999 2:30pm")</code></p><p class="example"><a name="1000570755"></a>Devuelve 2:30:00 pm</p><p><code><a name="1000570756"></a>CTime (#feb. 24, 1999 2:40pm#)</code></p><p class="example"><a name="1000570757"></a>Devuelve 2:40:00 pm</p><p><code><a name="1000570758"></a>CTime (18, 30, 30)</code></p><p class="example"><a name="1000570759"></a>Devuelve 6:30:30 pm</p><a name="1000570760"></a><h5>Comentario(s) </h5><p><a name="1000570762"></a>Puede usar la funci&#243;n  IsTime para verificar si un argumento de Cadena puede convertirse a una Fecha, antes de hacer la conversi&#243;n real.  De esta manera, si no puede hacerse la conversi&#243;n, podr&#225; manejar la situaci&#243;n como corresponda. </p><a name="1000706279"></a><h6>Temas relacionados</h6><p><a name="1000706296"></a><a href="Functions113.html#1000536658">TimeSerial (hora, minuto, segundo)</a></p><p><a name="1000782293"></a><a href="Functions115.html#1000781158">IsTime</a></p>
+<hr><br>
+
+<script  language="JavaScript"><!--
+
+var prev = "Functions162.html";
+var next = "Functions164.html";
+
+function setTopicID() { 
+      var number = "1000570720"; 
+      return number; 
+}
+
+// --></script>
+
+
+
+
+<SCRIPT>
+
+if (!window.parent.toc && navigator.appName == "Netscape") {
+
+   document.writeln ('<TABLE ALIGN="left" border="0" cellspacing="0" cellpadding="10">');
+   document.writeln ('<TR>');
+   document.write ('<TD ALIGN="left">');
+
+   if (prev != "crw_spTOC.hhc") {
+      document.writeln ('<A HREF="' + prev + '">');
+      document.writeln ('<IMG SRC="prevpage.gif" HEIGHT=17 BORDER=0 ALT="Página anterior"></A>');
+   } else {
+//   window.alert ('no previous page');
+   }
+
+   if (next != "crw_spIX.hhk") {
+      document.writeln ('<A HREF="' + next + '">');
+      document.writeln ('<IMG SRC="nextpage.gif" HEIGHT=17 BORDER=0 ALT="Página siguiente"></A>');
+   } else {
+//   window.alert ('no next page');
+   }
+   document.writeln ('</TD><TD ALIGN="left">');
+   document.writeln ('<A HREF="frameset.htm?TOC">');
+   document.writeln ('<IMG SRC="showtoc.gif" HEIGHT=17 BORDER=0 ALT="Haga clic para ver el contenido"></A></TD>');
+   document.writeln ('<TD ALIGN="left">');
+   document.writeln ('<A HREF="frameset.htm?IDX">');
+   document.writeln ('<IMG SRC="showix.gif" HEIGHT=17 BORDER=0 ALT="Haga clic para ver el índice"></A></TD>');
+   document.writeln ('</TD>');
+   document.writeln ('</TR>');
+   document.writeln ('</TABLE>');
+
+}
+
+</SCRIPT>
+<table align="right" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td align="right"><font size="1">Seagate Software, Inc.<br>
+    <a href="http://www.seagatesoftware.com">http://www.seagatesoftware.com</a><br>
+    Envíe sus comentarios a:<br>
+    <a href="mailto:techpubs@seagatesoftware.com">techpubs@seagatesoftware.com</a><br>
+    </font></td>
+  </tr>
+</table>
+</body>
+</html>
+
+

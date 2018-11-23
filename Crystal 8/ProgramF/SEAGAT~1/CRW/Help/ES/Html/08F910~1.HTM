@@ -1,0 +1,113 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+
+<html>
+<head>
+<title>Agrupamiento de datos jer&#225;rquicamente</title>
+
+<link REL=STYLESHEET TYPE="text/css" HREF="seagate.css">
+
+<!--
+                 ***********************************
+                 * Seagate Software copyright 1999 *
+                 ***********************************
+
+                      Template version: 5.1
+-->
+
+
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" link="#0000FF" vlink="#0000FF" alink="#800080">
+
+
+ 
+<a name="245671"></a><h3 class="newpage"> Agrupamiento de datos jer&#225;rquicamente</h3>
+<p><a name="245672"></a>Es posible agrupar datos de un informe para mostrar relaciones de jerarqu&#237;a. Al agrupar datos jer&#225;rquicamente, la informaci&#243;n se ordena seg&#250;n la relaci&#243;n entre dos campos.</p><p><a name="245673"></a>Por ejemplo, si desea mostrar la estructura jer&#225;rquica de un departamento, puede agrupar datos por ID del empleado y especificar la jerarqu&#237;a usando el campo de datos que enumera a qui&#233;n informa el empleado.</p><a name="245674"></a><h6>Para agrupar datos jer&#225;rquicamente</h6><ol>
+<a name="245675"></a><li value="1&nbsp;&nbsp;&nbsp;&nbsp;">En el men&#250; <kbd>Insertar</kbd>, haga clic en <kbd>Grupo</kbd>.
+<a name="245676"></a><li value="2&nbsp;&nbsp;&nbsp;&nbsp;">En el cuadro de di&#225;logo Insertar grupo, seleccione el campo que ser&#225; la base de la jerarqu&#237;a.
+<p class="indent"><a name="245677"></a>Por ejemplo, si desea ver la estructura jer&#225;rquica de un empleado de la compa&#241;&#237;a, seleccione el campo de datos de ID del empleado. Si desea ver la estructura jer&#225;rquica de las oficinas regionales de ventas, seleccione los nombres de oficina.</p><a name="245678"></a><li value="3&nbsp;&nbsp;&nbsp;&nbsp;">Seleccione <kbd>en orden ascendente</kbd>.
+<a name="245679"></a><li value="4&nbsp;&nbsp;&nbsp;&nbsp;">En forma predeterminada, el encabezado del grupo muestra el valor del campo seg&#250;n el cual est&#225; agrupando. Seleccione la casilla de verificaci&#243;n Personalizar campo de nombre de grupo si desea mostrar un valor diferente en el encabezado de grupo.
+<p class="indent"><a name="245680"></a>Por ejemplo, si agrup&#243; por {Empleado.ID del empleado}, en cada cambio de grupo ver&#225; el ID de empleado correspondiente. Si desea mostrar un valor diferente (nombre del empleado en vez de ID del empleado), personalice el campo de nombre de grupo eligiendo un campo de datos alternativo o creando una f&#243;rmula.</p><a name="245681"></a><li value="5&nbsp;&nbsp;&nbsp;&nbsp;">Haga clic en <strong>Aceptar</strong>.
+<p class="indent"><a name="245682"></a>El grupo creado se agrega al informe.</p><a name="245683"></a><li value="6&nbsp;&nbsp;&nbsp;&nbsp;">En el men&#250; <kbd>Informe</kbd>, haga clic en <kbd>Opciones de agrupamiento jer&#225;rquico</kbd>.
+<p class="indent"><a name="245684"></a>Aparece el cuadro de di&#225;logo Opciones jer&#225;rquicas.</p><p><a name="245688"></a> <img src="images/db_hierarchical.gif">
+
+
+</p>
+<a name="245689"></a><li value="7&nbsp;&nbsp;&nbsp;&nbsp;">Seleccione la casilla de verificaci&#243;n <kbd>Ordenar datos por jerarqu&#237;as</kbd>.
+<a name="245690"></a><li value="8&nbsp;&nbsp;&nbsp;&nbsp;">En la lista Campos de ID de instancia, seleccione el grupo que desea organizar por jerarqu&#237;as.
+<p class="indent"><a name="245691"></a><font color="darkblue"><b>Nota:   &nbsp;&nbsp;&nbsp;</b></font>Por lo general ser&#225; el mismo campo por el que agrup&#243;.</p>
+<a name="245692"></a><li value="9&nbsp;&nbsp;&nbsp;&nbsp;">En la lista Campo de ID principal, seleccione el campo por el que desea que se organice el Campo de ID de instancia.
+<p class="indent"><a name="245693"></a>Por ejemplo, para un informe de jerarqu&#237;a de compa&#241;&#237;a, seleccione el campo de datos que enumera a qui&#233;n informa el empleado.</p><p class="indent"><a name="245694"></a><font color="darkblue"><b>Nota:   &nbsp;&nbsp;&nbsp;</b></font>El tipo de ID de instancia y el ID principal deben ser los mismos. Por ejemplo, ambos deben ser cadenas (texto) o n&#250;meros.</p>
+<a name="245695"></a><li value="10&nbsp;&nbsp;&nbsp;&nbsp;">En el campo Sangr&#237;a del grupo, ingrese una sangr&#237;a para cada subgrupo.
+</ol>
+<ol>
+<a name="245696"></a><li value="11&nbsp;&nbsp;&nbsp;&nbsp;">Haga clic en <kbd>Aceptar</kbd>.
+<p class="indent"><a name="245698"></a>Los datos del informe se agrupan por jerarqu&#237;as.</p></ol>
+<p><a name="245699"></a><font color="darkblue"><b>Nota:   &nbsp;&nbsp;&nbsp;</b></font></p>
+<ul type="disc"><a name="245700"></a><li>El nivel superior de la jerarqu&#237;a se determina por instancias de grupo que coincidan con la ID de instancia y la ID principal.
+<a name="245701"></a><li>Si una instancia de grupo no est&#225; asociada a ninguna ID principal, &#233;sta aparece en la parte superior de la jerarqu&#237;a.
+</ul>
+<hr><br>
+
+<script  language="JavaScript"><!--
+
+var prev = "08_sortgrouptotal12.html";
+var next = "08_sortgrouptotal14.html";
+
+function setTopicID() { 
+      var number = "245671"; 
+      return number; 
+}
+
+// --></script>
+
+
+
+
+<SCRIPT>
+
+if (!window.parent.toc && navigator.appName == "Netscape") {
+
+   document.writeln ('<TABLE ALIGN="left" border="0" cellspacing="0" cellpadding="10">');
+   document.writeln ('<TR>');
+   document.write ('<TD ALIGN="left">');
+
+   if (prev != "crw_spTOC.hhc") {
+      document.writeln ('<A HREF="' + prev + '">');
+      document.writeln ('<IMG SRC="prevpage.gif" HEIGHT=17 BORDER=0 ALT="Página anterior"></A>');
+   } else {
+//   window.alert ('no previous page');
+   }
+
+   if (next != "crw_spIX.hhk") {
+      document.writeln ('<A HREF="' + next + '">');
+      document.writeln ('<IMG SRC="nextpage.gif" HEIGHT=17 BORDER=0 ALT="Página siguiente"></A>');
+   } else {
+//   window.alert ('no next page');
+   }
+   document.writeln ('</TD><TD ALIGN="left">');
+   document.writeln ('<A HREF="frameset.htm?TOC">');
+   document.writeln ('<IMG SRC="showtoc.gif" HEIGHT=17 BORDER=0 ALT="Haga clic para ver el contenido"></A></TD>');
+   document.writeln ('<TD ALIGN="left">');
+   document.writeln ('<A HREF="frameset.htm?IDX">');
+   document.writeln ('<IMG SRC="showix.gif" HEIGHT=17 BORDER=0 ALT="Haga clic para ver el índice"></A></TD>');
+   document.writeln ('</TD>');
+   document.writeln ('</TR>');
+   document.writeln ('</TABLE>');
+
+}
+
+</SCRIPT>
+<table align="right" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td align="right"><font size="1">Seagate Software, Inc.<br>
+    <a href="http://www.seagatesoftware.com">http://www.seagatesoftware.com</a><br>
+    Envíe sus comentarios a:<br>
+    <a href="mailto:techpubs@seagatesoftware.com">techpubs@seagatesoftware.com</a><br>
+    </font></td>
+  </tr>
+</table>
+</body>
+</html>
+
+

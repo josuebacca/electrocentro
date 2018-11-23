@@ -1,0 +1,23 @@
+!!! Holos Data Dimension File
+DatafeedDimension
+ Header
+  Version "1.0.0"
+  Name "Mensual"
+  Fields 13
+ End Header
+ Fields
+   "'01'","Ene"
+   "'02'","Feb"
+   "'03'","Mar"
+   "'04'","Abr"
+   "'05'","May"
+   "'06'","Jun"
+   "'07'","Jul"
+   "'08'","Ago"
+   "'09'","Sep"
+   "'10'","Oct"
+   "'11'","Nov"
+   "'12'","Dic"
+   "'Total annual'","Total annual","1:12"
+ End Fields
+End DatafeedDimension

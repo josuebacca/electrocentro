@@ -1,0 +1,95 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+
+<html>
+<head>
+<title>Month (x)</title>
+
+<link REL=STYLESHEET TYPE="text/css" HREF="seagate.css">
+
+<!--
+                 ***********************************
+                 * Seagate Software copyright 1999 *
+                 ***********************************
+
+                      Template version: 5.1
+-->
+
+
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" link="#0000FF" vlink="#0000FF" alink="#800080">
+
+
+ 
+<a name="1000541296"></a><h3 class="newpage"> Month (x)</h3>
+<p><a name="1000692763"></a>Sintaxis b&#225;sica y Crystal.</p><a name="1000541300"></a><h5>Argumentos</h5><p><a name="1000541301"></a><EM>x </EM>es un valor Fecha o un valor de fechaHora.</p><a name="1000541302"></a><h5>Devuelve </h5><p><a name="1000541303"></a>Un n&#250;mero entero.</p><a name="1000541304"></a><h5>Acci&#243;n</h5><p><a name="1000541305"></a>Month extrae el componente mes de una fecha y lo convierte en un n&#250;mero.</p><a name="1000541306"></a><h5>Uso(s) t&#237;pico(s)</h5><p><a name="1000541307"></a>Util&#237;cese siempre que necesite s&#243;lo la componente mes de una fecha. Por ejemplo, si est&#225; rastreando los pagos que caen dentro de un a&#241;o dado, usted s&#243;lo est&#225; interesado en el mes en que arriban; la informaci&#243;n de d&#237;a y a&#241;o podr&#237;an ser redundantes. Tambi&#233;n, si necesita utilizar el n&#250;mero del mes en un c&#225;lculo num&#233;rico (Month({archivo.OCTPMT}) -<strong> </strong>Month({archivo.SEPPMT}), por ejemplo) utilice la funci&#243;n Month para extraer la componente del mes  de la fecha  y la convierte a un n&#250;mero.</p><a name="1000541308"></a><h5>Ejemplo(s) </h5><p><a name="1000541309"></a>Los siguientes ejemplos son aplicables para la sintaxis Crystal:</p><p><code><a name="1000541310"></a>Month({archivo.FACTURA}) - Month({archivo.PAGO})</code></p><p class="example"><a name="1000541311"></a>Calcula el n&#250;mero de meses entre la Factura y el Pago.</p><p class="code"><a name="1000731949"></a>If Month({archivo.&Uacute;LTIMA COMPRA}) &lt; 6 Then
+<br><a name="1000731952"></a>&nbsp;&nbsp;&nbsp;&nbsp;" No hay duda de que ver&#225; algunos cambios desde su &#250;ltima compra en 
+nuestra tienda."
+<br><a name="1000731953"></a>Else 
+<br><a name="1000733154"></a>&nbsp;&nbsp;&nbsp;&nbsp;" Como usted seguramente habr&#225; notado, recientemente hemos estado 
+haciendo muchos cambios en nuestra tienda.";
+</p><p class="example"><a name="1000849462"></a>Imprime "No hay duda de que ver&#225; algunos cambios desde su &#250;ltima compra en nuestra tienda." para aquellos clientes cuya &#250;ltima compra fue en Mayo o antes, e imprime "Como usted seguramente habr&#225; notado, recientemente hemos estado haciendo muchos cambios en nuestra tienda." para clientes que han realizado compras en fecha posterior a Mayo.</p><a name="1000849464"></a><h5>Comentario(s) </h5><p><a name="1000849465"></a>Esta funci&#243;n est&#225; dise&#241;ada para trabajar exactamente como la funci&#243;n de Visual Basic del mismo nombre.</p>
+<hr><br>
+
+<script  language="JavaScript"><!--
+
+var prev = "Functions117.html";
+var next = "Functions119.html";
+
+function setTopicID() { 
+      var number = "1000541296"; 
+      return number; 
+}
+
+// --></script>
+
+
+
+
+<SCRIPT>
+
+if (!window.parent.toc && navigator.appName == "Netscape") {
+
+   document.writeln ('<TABLE ALIGN="left" border="0" cellspacing="0" cellpadding="10">');
+   document.writeln ('<TR>');
+   document.write ('<TD ALIGN="left">');
+
+   if (prev != "crw_spTOC.hhc") {
+      document.writeln ('<A HREF="' + prev + '">');
+      document.writeln ('<IMG SRC="prevpage.gif" HEIGHT=17 BORDER=0 ALT="Página anterior"></A>');
+   } else {
+//   window.alert ('no previous page');
+   }
+
+   if (next != "crw_spIX.hhk") {
+      document.writeln ('<A HREF="' + next + '">');
+      document.writeln ('<IMG SRC="nextpage.gif" HEIGHT=17 BORDER=0 ALT="Página siguiente"></A>');
+   } else {
+//   window.alert ('no next page');
+   }
+   document.writeln ('</TD><TD ALIGN="left">');
+   document.writeln ('<A HREF="frameset.htm?TOC">');
+   document.writeln ('<IMG SRC="showtoc.gif" HEIGHT=17 BORDER=0 ALT="Haga clic para ver el contenido"></A></TD>');
+   document.writeln ('<TD ALIGN="left">');
+   document.writeln ('<A HREF="frameset.htm?IDX">');
+   document.writeln ('<IMG SRC="showix.gif" HEIGHT=17 BORDER=0 ALT="Haga clic para ver el índice"></A></TD>');
+   document.writeln ('</TD>');
+   document.writeln ('</TR>');
+   document.writeln ('</TABLE>');
+
+}
+
+</SCRIPT>
+<table align="right" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td align="right"><font size="1">Seagate Software, Inc.<br>
+    <a href="http://www.seagatesoftware.com">http://www.seagatesoftware.com</a><br>
+    Envíe sus comentarios a:<br>
+    <a href="mailto:techpubs@seagatesoftware.com">techpubs@seagatesoftware.com</a><br>
+    </font></td>
+  </tr>
+</table>
+</body>
+</html>
+
+

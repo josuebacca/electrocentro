@@ -1,0 +1,93 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+
+<html>
+<head>
+<title>Day (x)</title>
+
+<link REL=STYLESHEET TYPE="text/css" HREF="seagate.css">
+
+<!--
+                 ***********************************
+                 * Seagate Software copyright 1999 *
+                 ***********************************
+
+                      Template version: 5.1
+-->
+
+
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" link="#0000FF" vlink="#0000FF" alink="#800080">
+
+
+ 
+<a name="1000542086"></a><h3 class="newpage"> Day (x)</h3>
+<p><a name="1000692787"></a>Sintaxis b&#225;sica y Crystal.</p><a name="1000542090"></a><h5>Argumentos</h5><p><a name="1000542091"></a><EM>x</EM> es un valor de fecha o un valor fecha/hora. </p><a name="1000542092"></a><h5>Devuelve </h5><p><a name="1000542093"></a>Un n&#250;mero entero (el d&#237;a del mes).</p><a name="1000542094"></a><h5>Acci&#243;n</h5><p><a name="1000542095"></a>Day extrae el d&#237;a de un valor de fecha o fecha/hora y devuelve un n&#250;mero entero.</p><a name="1000542096"></a><h5>Uso(s) t&#237;pico(s)</h5><p><a name="1000542097"></a>Util&#237;cese siempre que necesite s&#243;lo la componente del d&#237;a de un valor de fecha o fecha/hora. Por ejemplo, si est&#225; rastreando pagos que caen dentro de un mes dado, a usted s&#243;lo le interesa el d&#237;a en que llegan&nbsp; ; la informaci&#243;n de mes y a&#241;o resultar&#237;a redundante. Tambi&#233;n, si necesita utilizar el d&#237;a del mes en un c&#225;lculo num&#233;rico (por ejemplo, Day({archivo.<EM>OCTPMT</EM>}) - Day ({archivo.SEPPMT})), utilice la funci&#243;n Day para extraer el d&#237;a del mes y convertirlo a un n&#250;mero.</p><a name="1000542098"></a><h5>Ejemplo(s)</h5><p><a name="1000542099"></a>Los siguientes ejemplos son aplicables para la sintaxis Crystal:</p><p><code><a name="1000542100"></a>Day({archivo.ULTIMA FACTURA}) </code></p><p class="example"><a name="1000542101"></a>Devuelve 10 cuando la &#250;ltima fecha de facturaci&#243;n fue el d&#237;a 10 del mes.</p><p class="code"><a name="1000542102"></a>If Day({archivo.ULTIMO PAGO}) &lt; 15 Then 
+<br><a name="1000734355"></a>&nbsp;&nbsp;&nbsp;&nbsp;"Vencido" 
+<br><a name="1000734363"></a>Else 
+<br><a name="1000734376"></a>&nbsp;&nbsp;&nbsp;&nbsp;"" 
+</p><p class="example"><a name="1000542103"></a>Si el d&#237;a del &#250;ltimo pago fue menor que 15, imprime "Vencido", de otra manera no imprime nada.</p><p><code><a name="1000542104"></a>Day(CDateTime(1996, 3, 3, 10, 33, 20)) </code></p><p class="example"><a name="1000542105"></a>Devuelve 3.</p><a name="1000542106"></a><h5>Comentario(s) </h5><p><a name="1000822364"></a>Esta funci&#243;n est&#225; dise&#241;ada para trabajar exactamente como la funci&#243;n de Visual Basic del mismo nombre.</p>
+<hr><br>
+
+<script  language="JavaScript"><!--
+
+var prev = "Functions118.html";
+var next = "Functions120.html";
+
+function setTopicID() { 
+      var number = "1000542086"; 
+      return number; 
+}
+
+// --></script>
+
+
+
+
+<SCRIPT>
+
+if (!window.parent.toc && navigator.appName == "Netscape") {
+
+   document.writeln ('<TABLE ALIGN="left" border="0" cellspacing="0" cellpadding="10">');
+   document.writeln ('<TR>');
+   document.write ('<TD ALIGN="left">');
+
+   if (prev != "crw_spTOC.hhc") {
+      document.writeln ('<A HREF="' + prev + '">');
+      document.writeln ('<IMG SRC="prevpage.gif" HEIGHT=17 BORDER=0 ALT="Página anterior"></A>');
+   } else {
+//   window.alert ('no previous page');
+   }
+
+   if (next != "crw_spIX.hhk") {
+      document.writeln ('<A HREF="' + next + '">');
+      document.writeln ('<IMG SRC="nextpage.gif" HEIGHT=17 BORDER=0 ALT="Página siguiente"></A>');
+   } else {
+//   window.alert ('no next page');
+   }
+   document.writeln ('</TD><TD ALIGN="left">');
+   document.writeln ('<A HREF="frameset.htm?TOC">');
+   document.writeln ('<IMG SRC="showtoc.gif" HEIGHT=17 BORDER=0 ALT="Haga clic para ver el contenido"></A></TD>');
+   document.writeln ('<TD ALIGN="left">');
+   document.writeln ('<A HREF="frameset.htm?IDX">');
+   document.writeln ('<IMG SRC="showix.gif" HEIGHT=17 BORDER=0 ALT="Haga clic para ver el índice"></A></TD>');
+   document.writeln ('</TD>');
+   document.writeln ('</TR>');
+   document.writeln ('</TABLE>');
+
+}
+
+</SCRIPT>
+<table align="right" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td align="right"><font size="1">Seagate Software, Inc.<br>
+    <a href="http://www.seagatesoftware.com">http://www.seagatesoftware.com</a><br>
+    Envíe sus comentarios a:<br>
+    <a href="mailto:techpubs@seagatesoftware.com">techpubs@seagatesoftware.com</a><br>
+    </font></td>
+  </tr>
+</table>
+</body>
+</html>
+
+

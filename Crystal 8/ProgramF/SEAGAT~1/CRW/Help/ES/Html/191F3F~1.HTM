@@ -1,0 +1,120 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+
+<html>
+<head>
+
+<title>F&#243;rmula 17</title>
+
+<link REL=STYLESHEET TYPE="text/css" HREF="seagate.css">
+
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" link="#0000FF" vlink="#0000FF" alink="#800080">
+
+
+ 
+<a name="317677"></a><h3 class="newpage"> F&#243;rmula 17</h3>
+<a name="317678"></a><h4>Funciones y operadores usados</h4><p><a name="317679"></a>If<nobr>-T</nobr>hen<nobr>-E</nobr>lse, Remainder, ToNumber, Igual a (=), Par&#233;ntesis ()</p><a name="317680"></a><h4>Prop&#243;sito de la f&#243;rmula</h4><p><a name="317681"></a>Un minorista desea probar dos ofertas de correo directo distintas para ver cu&#225;l tiene el mejor poder de "atracci&#243;n". Desea enviar una oferta a todos los clientes de su lista de correo con los n&#250;meros de cliente que sean pares y la segunda oferta a todos los clientes con n&#250;meros de clientes impares.</p><a name="317682"></a><h4>F&#243;rmula</h4><PRE><a name="317683"></a>If Remainder(ToNumber({archivo.N&#186; CLIENTE}), 2 )= 0 Then<br>
+&nbsp;&nbsp;&nbsp;&nbsp;{archivo.OFERTA1}<br>
+Else<br>
+&nbsp;&nbsp;&nbsp;&nbsp;{archivo.OFERTA2}
+</PRE><a name="317684"></a><h4>Resultados</h4><p><a name="317704"></a> <Table Border="1">
+<tr><td align="left" valign="TOP"><a name="317687"></a>N&#186; cliente
+
+</td><td align="left" valign="TOP"><a name="317689"></a>Diferencia
+
+</td><td align="left" valign="TOP"><a name="317691"></a>Resultado
+
+</td></tr>
+<tr><td align="left" valign="TOP"><P><a name="317693"></a>203104</P>
+
+
+</td><td align="left" valign="TOP"><P><a name="317695"></a>0</P>
+
+
+</td><td align="left" valign="TOP"><P><a name="317697"></a>Oferta 1 - "Tiene derecho a un descuento del 10%."</P>
+
+
+</td></tr>
+<tr><td align="left" valign="TOP"><P><a name="317699"></a>203105</P>
+
+
+</td><td align="left" valign="TOP"><P><a name="317701"></a>1</P>
+
+
+</td><td align="left" valign="TOP"><P><a name="317703"></a>Oferta 2 - "Tiene derecho a un regalo gratuito."</P>
+
+
+</td></tr>
+
+</Table></p>
+<a name="317705"></a><h4>Explicaci&#243;n</h4><ul type="disc"><a name="317706"></a><li>La funci&#243;n ToNumber convierte el n&#250;mero de cliente (almacenado como texto) en un n&#250;mero.
+<a name="317707"></a><li>La funci&#243;n Remainder toma ese n&#250;mero, lo divide por 2 y devuelve una diferencia.
+<a name="317708"></a><li>El operador de igual prueba la diferencia para ver si es igual a 0.
+<a name="317709"></a><li>Si la diferencia es igual a cero, el n&#250;mero de cliente es divisible por dos y, por ende, es un n&#250;mero par, lo que activa la impresi&#243;n de {archivo.OFERTA1}. 
+<a name="317710"></a><li>Si la diferencia no es igual a cero, el n&#250;mero de cliente no es divisible por dos y, por ende, es un n&#250;mero impar, lo que activa la impresi&#243;n de {archivo.OFERTA2}.
+</ul><a name="317711"></a><h6>Temas relacionados</h6><p><a name="317715"></a><a href="19_introformulas28.html#316471">F&#243;rmulas en acci&#243;n</a></p><p><a name="317716"></a></p><p><a name="317717"></a></p><p><a name="315900"></a></p><p><a name="315901"></a></p><p><a name="315902"></a></p>
+<hr><br>
+
+<script  language="JavaScript"><!--
+
+var prev = "19_introformulas44.html";
+var next = "20_basicsyntax.html";
+
+function setTopicID() { 
+      var number = "317677"; 
+      return number; 
+}
+
+// --></script>
+
+
+
+
+<SCRIPT>
+
+if (!window.parent.toc && navigator.appName == "Netscape") {
+
+   document.writeln ('<TABLE ALIGN="left" border="0" cellspacing="0" cellpadding="10">');
+   document.writeln ('<TR>');
+   document.write ('<TD ALIGN="left">');
+
+   if (prev != "crw_spTOC.hhc") {
+      document.writeln ('<A HREF="' + prev + '">');
+      document.writeln ('<IMG SRC="prevpage.gif" HEIGHT=17 BORDER=0 ALT="Página anterior"></A>');
+   } else {
+//   window.alert ('no previous page');
+   }
+
+   if (next != "crw_spIX.hhk") {
+      document.writeln ('<A HREF="' + next + '">');
+      document.writeln ('<IMG SRC="nextpage.gif" HEIGHT=17 BORDER=0 ALT="Página siguiente"></A>');
+   } else {
+//   window.alert ('no next page');
+   }
+   document.writeln ('</TD><TD ALIGN="left">');
+   document.writeln ('<A HREF="frameset.htm?TOC">');
+   document.writeln ('<IMG SRC="showtoc.gif" HEIGHT=17 BORDER=0 ALT="Haga clic para ver el contenido"></A></TD>');
+   document.writeln ('<TD ALIGN="left">');
+   document.writeln ('<A HREF="frameset.htm?IDX">');
+   document.writeln ('<IMG SRC="showix.gif" HEIGHT=17 BORDER=0 ALT="Haga clic para ver el índice"></A></TD>');
+   document.writeln ('</TD>');
+   document.writeln ('</TR>');
+   document.writeln ('</TABLE>');
+
+}
+
+</SCRIPT>
+<table align="right" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td align="right"><font size="1">Seagate Software, Inc.<br>
+    <a href="http://www.seagatesoftware.com">http://www.seagatesoftware.com</a><br>
+    Envíe sus comentarios a:<br>
+    <a href="mailto:techpubs@seagatesoftware.com">techpubs@seagatesoftware.com</a><br>
+    </font></td>
+  </tr>
+</table>
+</body>
+</html>
+
+

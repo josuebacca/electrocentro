@@ -1,0 +1,123 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+
+<html>
+<head>
+<title>Declaraci&#243;n de variables de matriz</title>
+
+<link REL=STYLESHEET TYPE="text/css" HREF="seagate.css">
+
+<!--
+                 ***********************************
+                 * Seagate Software copyright 1999 *
+                 ***********************************
+
+                      Template version: 5.1
+-->
+
+
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" link="#0000FF" vlink="#0000FF" alink="#800080">
+
+
+ 
+<a name="130410"></a><h3 class="newpage"> Declaraci&#243;n de variables de matriz</h3>
+<p><a name="130411"></a>Existen diferentes formas de declarar variables de matriz. La primera forma es usar par&#233;ntesis vac&#237;os y especificar expl&#237;citamente el tipo de matriz:</p><PRE><a name="130413"></a>'Declarar x para que sea una variable global
+<a name="130414"></a>'de tipo de matriz num&#233;rica
+<a name="130415"></a>Global x () As Number 
+<a name="130416"></a>'Iniciar x
+<a name="130417"></a>x = Array (10, 20, 30)
+<a name="130419"></a>'Declarar y para que sea una variable compartida
+<a name="130420"></a>'de tipo de matriz de rango de cadena
+<a name="130421"></a>Shared y () As String Range
+<a name="130422"></a>'Iniciar y
+<a name="130423"></a>y = Array ("A" To "C", "H" To "J")
+</PRE><p><a name="130425"></a>La segunda forma es declarar la variable sin especificar que es una matriz y sin dar su tipo, esperando que la primera asignaci&#243;n de la variable especifique completamente su tipo:</p><PRE><a name="130427"></a>'Declarar y para que sea una variable local
+<a name="130428"></a>'pero no especificar su tipo
+<a name="130429"></a>Dim y
+<a name="130430"></a>'El tipo de y se establece ahora como matriz de cadena
+<a name="130431"></a>y = Array ("Dom", "Lun", "Mar", "Mi&#233;", "Jue", _
+<a name="130432"></a>           "Vie", "S&#225;b")
+</PRE><p><a name="130434"></a>La tercera forma es declarar que la variable es una matriz, pero no especificar completamente su tipo hasta la primera asignaci&#243;n. Suponiendo la declaraci&#243;n de y anterior:</p><PRE><a name="130436"></a>'Declarar z para que sea una variable local que sea una 
+matriz
+<a name="130437"></a>Local z()
+<a name="130438"></a>'z se establece en matriz ("Lun", "Mar") y es una matriz 
+de cadena
+<a name="130439"></a>z = y(2 to 3)
+</PRE><p><a name="130441"></a>La cuarta forma es especificar expl&#237;citamente el tama&#241;o de la matriz durante la declaraci&#243;n. Si usa esta t&#233;cnica, la matriz se crea autom&#225;ticamente y se usan los valores predeterminados para llenar la matriz. Por ejemplo, para una matriz num&#233;rica, cada elemento se inicia en 0; mientras que para una matriz de cadena cada elemento se inicia en la cadena vac&#237;a "". Como este tipo de declaraci&#243;n realmente crea la matriz, debe especificar su tipo con la cl&#225;usula As, de modo que Seagate Crystal Reports sepa cu&#225;nto espacio ha de reservar para la matriz.</p><PRE><a name="155461"></a>Dim a(2) As String
+<a name="130444"></a>'Asignar un valor al primer elemento de la matriz a
+<a name="130445"></a>a(1) = "buenos"
+<a name="130446"></a>a(2) = "d&#237;as"
+</PRE><p><code><a name="130447"></a>'Se puede usar el operador &amp; para concatenar cadenas</code></p><PRE><a name="130448"></a>'la f&#243;rmula devuelve la cadena "buenos d&#237;as"
+<a name="130449"></a>formula = a(1) &amp; a(2)
+</PRE><a name="130451"></a><h5>Matrices y ciclos For/Next</h5><p><a name="135332"></a>Por lo general, las matrices se usan con ciclos repetidos For/Next (tambi&#233;n llamados bucles). El siguiente ejemplo crea y luego usa la matriz <code>Array (10, 20, 30, ..., 100) </code>con un ciclo For/Next. Para m&#225;s informaci&#243;n, vea <a href="20_basicsyntax52.html#132807">Ciclos For/Next</a>.</p><PRE><a name="130454"></a>Dim b (10) As Number
+<a name="130455"></a>Dim i
+<a name="130456"></a>For i = 1 To 10
+<a name="130457"></a>   b(i) = 10 * i
+<a name="130458"></a>Next i
+<a name="130459"></a>f&#243;rmula = b(2) 'La f&#243;rmula devuelve el n&#250;mero 20
+</PRE><p><a name="130461"></a>Se pueden declarar varias variables en un solo enunciado al separar sus declaraciones con comas.</p>
+<hr><br>
+
+<script  language="JavaScript"><!--
+
+var prev = "20_basicsyntax27.html";
+var next = "20_basicsyntax29.html";
+
+function setTopicID() { 
+      var number = "130410"; 
+      return number; 
+}
+
+// --></script>
+
+
+
+
+<SCRIPT>
+
+if (!window.parent.toc && navigator.appName == "Netscape") {
+
+   document.writeln ('<TABLE ALIGN="left" border="0" cellspacing="0" cellpadding="10">');
+   document.writeln ('<TR>');
+   document.write ('<TD ALIGN="left">');
+
+   if (prev != "crw_spTOC.hhc") {
+      document.writeln ('<A HREF="' + prev + '">');
+      document.writeln ('<IMG SRC="prevpage.gif" HEIGHT=17 BORDER=0 ALT="Página anterior"></A>');
+   } else {
+//   window.alert ('no previous page');
+   }
+
+   if (next != "crw_spIX.hhk") {
+      document.writeln ('<A HREF="' + next + '">');
+      document.writeln ('<IMG SRC="nextpage.gif" HEIGHT=17 BORDER=0 ALT="Página siguiente"></A>');
+   } else {
+//   window.alert ('no next page');
+   }
+   document.writeln ('</TD><TD ALIGN="left">');
+   document.writeln ('<A HREF="frameset.htm?TOC">');
+   document.writeln ('<IMG SRC="showtoc.gif" HEIGHT=17 BORDER=0 ALT="Haga clic para ver el contenido"></A></TD>');
+   document.writeln ('<TD ALIGN="left">');
+   document.writeln ('<A HREF="frameset.htm?IDX">');
+   document.writeln ('<IMG SRC="showix.gif" HEIGHT=17 BORDER=0 ALT="Haga clic para ver el índice"></A></TD>');
+   document.writeln ('</TD>');
+   document.writeln ('</TR>');
+   document.writeln ('</TABLE>');
+
+}
+
+</SCRIPT>
+<table align="right" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td align="right"><font size="1">Seagate Software, Inc.<br>
+    <a href="http://www.seagatesoftware.com">http://www.seagatesoftware.com</a><br>
+    Envíe sus comentarios a:<br>
+    <a href="mailto:techpubs@seagatesoftware.com">techpubs@seagatesoftware.com</a><br>
+    </font></td>
+  </tr>
+</table>
+</body>
+</html>
+
+

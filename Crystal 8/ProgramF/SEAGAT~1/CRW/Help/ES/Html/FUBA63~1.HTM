@@ -1,0 +1,94 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+
+<html>
+<head>
+<title>NthLargest (N, campo), NthLargest (N, campo, campoCondicional), NthLargest (N, campo, campoCondicional, condici&#243;n)</title>
+
+<link REL=STYLESHEET TYPE="text/css" HREF="seagate.css">
+
+<!--
+                 ***********************************
+                 * Seagate Software copyright 1999 *
+                 ***********************************
+
+                      Template version: 5.1
+-->
+
+
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" link="#0000FF" vlink="#0000FF" alink="#800080">
+
+
+ 
+<a name="1000851363"></a><h3 class="newpage"> NthLargest (N, campo), NthLargest (N, campo, campoCondicional), NthLargest (N, campo, campoCondicional, condici&#243;n)</h3>
+<p><a name="1000851365"></a>Sintaxis b&#225;sica y Crystal.</p><a name="1000851366"></a><h5>Argumentos</h5><ul type="disc"><a name="1000851367"></a><li>N es cualquier entero.
+<a name="1000851368"></a><li>campo es cualquier campo de base de datos o de f&#243;rmula que puede ser evaluado por la funci&#243;n.
+<a name="1000851369"></a><li>campoCondicional es un campo utilizado para agrupar los valores del campo.
+<a name="1000851370"></a><li>condici&#243;n es una cadena que indica el tipo de agrupaci&#243;n para campoCondicional. S&#243;lo se especifica este argumento cuando  campoCondicional es un campo de fecha, hora, fecha/hora o booleano.
+<p class="indent"><a name="1000851371"></a>Para obtener m&#225;s informaci&#243;n sobre las cadenas v&#225;lidas para este argumento, v&#233;ase <a href="Functions20.html#1000850529">Condiciones para las funciones de resumen</a>.</p></ul><a name="1000851375"></a><h5>Devuelve </h5><p><a name="1000851376"></a>Un n&#250;mero fraccionario.</p><a name="1000851377"></a><h5>Acci&#243;n</h5><p><a name="1000851378"></a>Determina el en&#233;simo valor m&#225;s grande en un campo dado, ya sea para el informe total o para cada instancia del grupo (campoCondicional).</p><a name="1000851379"></a><h5>Ejemplo(s)</h5><p><a name="1000851380"></a>Los siguientes ejemplos son aplicables a las sintaxis b&#225;sica y Crystal:</p><p><code><a name="1000851381"></a>NthLargest(1, {Cliente.ID DEL CLIENTE}</code></p><p class="example"><a name="1000851382"></a>Devuelve 50, donde el campo Id del cliente contiene valores num&#233;ricos dentro del rango de 12 a 50.</p><p><code><a name="1000851383"></a>NthLargest(5, {Cliente.NOMBRE DEL CLIENTE}, {Cliente.REGI&Oacute;N})</code></p><p class="example"><a name="1000851384"></a>Devuelve el quinto valor m&#225;s grande en el campo Nombre del Cliente, por regi&#243;n.</p><p><code><a name="1000851385"></a>NthLargest(1, {pedidos.MONTO DEL PEDIDO}, {Cliente.REGI&Oacute;N}, "mensual")</code></p><p class="example"><a name="1000851386"></a>Agrupa los valores del campo Monto por regi&#243;n, luego devuelve el valor m&#225;s grande en el campo Monto por cada regi&#243;n, por mes.</p><p><a name="1000851387"></a><font color="darkblue"><b>Nota:   &nbsp;&nbsp;&nbsp;</b></font>El uso de esta funci&#243;n en una f&#243;rmula obliga a que la f&#243;rmula sea evaluada al momento de impresi&#243;n. </p>
+<p><a name="1000851388"></a>Para obtener m&#225;s informaci&#243;n sobre las consideraciones de evaluaci&#243;n de hora, v&#233;ase  <a href="Functions169.html#1000572432">Funciones de tiempo de evaluaci&#243;n</a>.</p>
+<hr><br>
+
+<script  language="JavaScript"><!--
+
+var prev = "Functions38.html";
+var next = "Functions40.html";
+
+function setTopicID() { 
+      var number = "1000851363"; 
+      return number; 
+}
+
+// --></script>
+
+
+
+
+<SCRIPT>
+
+if (!window.parent.toc && navigator.appName == "Netscape") {
+
+   document.writeln ('<TABLE ALIGN="left" border="0" cellspacing="0" cellpadding="10">');
+   document.writeln ('<TR>');
+   document.write ('<TD ALIGN="left">');
+
+   if (prev != "crw_spTOC.hhc") {
+      document.writeln ('<A HREF="' + prev + '">');
+      document.writeln ('<IMG SRC="prevpage.gif" HEIGHT=17 BORDER=0 ALT="Página anterior"></A>');
+   } else {
+//   window.alert ('no previous page');
+   }
+
+   if (next != "crw_spIX.hhk") {
+      document.writeln ('<A HREF="' + next + '">');
+      document.writeln ('<IMG SRC="nextpage.gif" HEIGHT=17 BORDER=0 ALT="Página siguiente"></A>');
+   } else {
+//   window.alert ('no next page');
+   }
+   document.writeln ('</TD><TD ALIGN="left">');
+   document.writeln ('<A HREF="frameset.htm?TOC">');
+   document.writeln ('<IMG SRC="showtoc.gif" HEIGHT=17 BORDER=0 ALT="Haga clic para ver el contenido"></A></TD>');
+   document.writeln ('<TD ALIGN="left">');
+   document.writeln ('<A HREF="frameset.htm?IDX">');
+   document.writeln ('<IMG SRC="showix.gif" HEIGHT=17 BORDER=0 ALT="Haga clic para ver el índice"></A></TD>');
+   document.writeln ('</TD>');
+   document.writeln ('</TR>');
+   document.writeln ('</TABLE>');
+
+}
+
+</SCRIPT>
+<table align="right" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td align="right"><font size="1">Seagate Software, Inc.<br>
+    <a href="http://www.seagatesoftware.com">http://www.seagatesoftware.com</a><br>
+    Envíe sus comentarios a:<br>
+    <a href="mailto:techpubs@seagatesoftware.com">techpubs@seagatesoftware.com</a><br>
+    </font></td>
+  </tr>
+</table>
+</body>
+</html>
+
+

@@ -1,0 +1,93 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+
+<html>
+<head>
+<title>El SABD SQL</title>
+
+<link REL=STYLESHEET TYPE="text/css" HREF="seagate.css">
+
+<!--
+                 ***********************************
+                 * Seagate Software copyright 1999 *
+                 ***********************************
+
+                      Template version: 5.1
+-->
+
+
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" link="#0000FF" vlink="#0000FF" alink="#800080">
+
+
+ 
+<a name="322417"></a><h4 class="newpage"> El SABD SQL</h4><p><a name="322418"></a>Un Sistema de Administraci&#243;n de Base de Datos (SABD) SQL es un ejemplo com&#250;n de un paquete de software cliente/servidor. Un SABD SQL est&#225;ndar incluir&#225; un programa SQL del servidor que controla todo el trabajo real de constrair y trabajar con bases de datos y sus datos. El SABD incluir&#225; por lo menos un conjunto de software SQL de cliente (un sitio) que se puede conectar al servidor SQL por medio de la red. El software de cliente SQL generalmente consiste de, al menos un editor de enunciados SQL que puede utilizar para escribir y ejecutar enunciados SQL y una capa subyacente de comunicaciones que trabaja con el programa del servidor SQL en la red.</p><p><a name="322419"></a>Cuando ejecuta un enunciado SQL, el software de cliente pasa el enunciado a la capa de comunicaciones, la cual lo env&#237;a por la red al servidor de software. El servidor SQL analiza el enunciado, realiza la operaci&#243;n requerida y regresa cualquier dato pedido al software de cliente. Si el software de cliente recibe cualquier dato de regreso, muestra los datos al usuario.</p><a name="322425"></a><h5>Procedimientos almacenados</h5><p><a name="322426"></a>Adem&#225;s de los atributos comunes de base de datos relacionales, tablas, campos, registros, etc., muchos sistemas SABD SQL admiten procedimientos almacenados. Un procedimiento almacenado es un programa SQL compilado, consistente de uno o m&#225;s enunciados SQL. Un procedimiento almacenado puede ser usado para definir una consulta SQL que usted usar&#225; en forma repetida. Adem&#225;s, variables, expresiones condicionales y argumentos de variables pueden ser definidos en procedimientos almacenados de manera tal que usted tenga que proporcionar cierta informaci&#243;n antes de que el procedimiento sea ejecutado.</p><p><a name="342714"></a> </p>
+<p><a name="322431"></a>Ya que los procedimientos almacenados pueden producir un conjunto de resultados, cuando son ejecutados, les es posible proporcionar un conjunto de datos espec&#237;fico. Es m&#225;s, Seagate Crystal Reports le permite ejecutar un procedimiento almacenado en una base de datos SQL y usar los datos recuperados para dise&#241;ar un informe. Si el procedimiento almacenado es dise&#241;ado para pedirle al usuario la informaci&#243;n sobre la que se basar&#225; la consulta, Seagate Crystal Reports le pedir&#225; esa informaci&#243;n cuando seleccione el procedimiento almacenado para su informe. Vea <a href="24_under_databases51.html#326308">C&#243;mo seleccionar un procedimiento almacenado desde una base de datos SQL y cambiar par&#225;metros de procedimiento almacenado</a>.</p><p><a name="315573"></a><font color="darkblue"><b>Nota:   &nbsp;&nbsp;&nbsp;</b></font></p>
+<ul type="disc"><a name="315574"></a><li>S&#243;lo se puede usar un procedimiento almacenado por informe o sub<nobr>-i</nobr>nforme (un informe que contenga sub<nobr>-i</nobr>nformes puede tener un procedimiento diferente almacenado para el informe principal y para cada sub<nobr>-i</nobr>nforme).
+<a name="315575"></a><li>Los procedimientos almacenados no se pueden usar en combinaci&#243;n con otros objetos de base de datos.
+<a name="323206"></a><li>No es posible efectuar la vinculaci&#243;n para procedimientos almacenados.
+</ul>
+<hr><br>
+
+<script  language="JavaScript"><!--
+
+var prev = "24_under_databases28.html";
+var next = "24_under_databases30.html";
+
+function setTopicID() { 
+      var number = "322417"; 
+      return number; 
+}
+
+// --></script>
+
+
+
+
+<SCRIPT>
+
+if (!window.parent.toc && navigator.appName == "Netscape") {
+
+   document.writeln ('<TABLE ALIGN="left" border="0" cellspacing="0" cellpadding="10">');
+   document.writeln ('<TR>');
+   document.write ('<TD ALIGN="left">');
+
+   if (prev != "crw_spTOC.hhc") {
+      document.writeln ('<A HREF="' + prev + '">');
+      document.writeln ('<IMG SRC="prevpage.gif" HEIGHT=17 BORDER=0 ALT="Página anterior"></A>');
+   } else {
+//   window.alert ('no previous page');
+   }
+
+   if (next != "crw_spIX.hhk") {
+      document.writeln ('<A HREF="' + next + '">');
+      document.writeln ('<IMG SRC="nextpage.gif" HEIGHT=17 BORDER=0 ALT="Página siguiente"></A>');
+   } else {
+//   window.alert ('no next page');
+   }
+   document.writeln ('</TD><TD ALIGN="left">');
+   document.writeln ('<A HREF="frameset.htm?TOC">');
+   document.writeln ('<IMG SRC="showtoc.gif" HEIGHT=17 BORDER=0 ALT="Haga clic para ver el contenido"></A></TD>');
+   document.writeln ('<TD ALIGN="left">');
+   document.writeln ('<A HREF="frameset.htm?IDX">');
+   document.writeln ('<IMG SRC="showix.gif" HEIGHT=17 BORDER=0 ALT="Haga clic para ver el índice"></A></TD>');
+   document.writeln ('</TD>');
+   document.writeln ('</TR>');
+   document.writeln ('</TABLE>');
+
+}
+
+</SCRIPT>
+<table align="right" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td align="right"><font size="1">Seagate Software, Inc.<br>
+    <a href="http://www.seagatesoftware.com">http://www.seagatesoftware.com</a><br>
+    Envíe sus comentarios a:<br>
+    <a href="mailto:techpubs@seagatesoftware.com">techpubs@seagatesoftware.com</a><br>
+    </font></td>
+  </tr>
+</table>
+</body>
+</html>
+
+

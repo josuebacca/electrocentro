@@ -1,0 +1,104 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+
+<html>
+<head>
+<title>Relaci&#243;n de las f&#243;rmulas con las funciones en Microsoft Visual Basic</title>
+
+<link REL=STYLESHEET TYPE="text/css" HREF="seagate.css">
+
+<!--
+                 ***********************************
+                 * Seagate Software copyright 1999 *
+                 ***********************************
+
+                      Template version: 5.1
+-->
+
+
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" link="#0000FF" vlink="#0000FF" alink="#800080">
+
+
+ 
+<a name="128067"></a><h4 class="newpage"> Relaci&#243;n de las f&#243;rmulas con las funciones en Microsoft Visual Basic</h4><p><a name="128069"></a>Considere la siguiente f&#243;rmula de sintaxis Basic:</p><PRE><a name="128071"></a>Rem F&#243;rmula que devuelve un valor de cadena
+<a name="128072"></a>Rem La funci&#243;n Rnd devuelve un n&#250;mero aleatorio
+<a name="128073"></a>Rem entre 0 y 1
+<a name="128074"></a>If Rnd &gt; 0.9 Then
+<a name="128075"></a>   formula = "&#161;Ha ganado!"
+<a name="128076"></a>Else
+<a name="128077"></a>   formula = "Lo sentimos, vuelva a intentarlo."
+<a name="128078"></a>End If
+</PRE><p><a name="128080"></a>La f&#243;rmula anterior devuelve el valor de cadena de texto "&#161;Ha ganado!" si el n&#250;mero aleatorio devuelto por Rnd es mayor que 0.9; y el valor de cadena de texto "Lo sentimos, vuelva a intentarlo" en caso contrario.</p><p><a name="128082"></a>El uso de la variable <EM>formula</EM> es similar a escribir una funci&#243;n llamada <EM>formula</EM> en Visual Basic.</p><p><a name="128083"></a>Por ejemplo, la f&#243;rmula anterior podr&#237;a escribirse como funci&#243;n Visual Basic de la siguiente manera:</p><PRE><a name="128085"></a>Rem El siguiente c&#243;digo est&#225; en Visual Basic
+<a name="128086"></a>Function formula()
+<a name="128087"></a>    If Rnd &gt; 0.9 Then
+<a name="128088"></a>       formula = "&#161;Ha ganado!"
+<a name="128089"></a>    Else
+<a name="128090"></a>       formula = "Lo sentimos, vuelva a intentarlo."
+<a name="128091"></a>    End If
+<a name="128092"></a>End Function
+</PRE>
+<hr><br>
+
+<script  language="JavaScript"><!--
+
+var prev = "20_basicsyntax5.html";
+var next = "20_basicsyntax7.html";
+
+function setTopicID() { 
+      var number = "128067"; 
+      return number; 
+}
+
+// --></script>
+
+
+
+
+<SCRIPT>
+
+if (!window.parent.toc && navigator.appName == "Netscape") {
+
+   document.writeln ('<TABLE ALIGN="left" border="0" cellspacing="0" cellpadding="10">');
+   document.writeln ('<TR>');
+   document.write ('<TD ALIGN="left">');
+
+   if (prev != "crw_spTOC.hhc") {
+      document.writeln ('<A HREF="' + prev + '">');
+      document.writeln ('<IMG SRC="prevpage.gif" HEIGHT=17 BORDER=0 ALT="Página anterior"></A>');
+   } else {
+//   window.alert ('no previous page');
+   }
+
+   if (next != "crw_spIX.hhk") {
+      document.writeln ('<A HREF="' + next + '">');
+      document.writeln ('<IMG SRC="nextpage.gif" HEIGHT=17 BORDER=0 ALT="Página siguiente"></A>');
+   } else {
+//   window.alert ('no next page');
+   }
+   document.writeln ('</TD><TD ALIGN="left">');
+   document.writeln ('<A HREF="frameset.htm?TOC">');
+   document.writeln ('<IMG SRC="showtoc.gif" HEIGHT=17 BORDER=0 ALT="Haga clic para ver el contenido"></A></TD>');
+   document.writeln ('<TD ALIGN="left">');
+   document.writeln ('<A HREF="frameset.htm?IDX">');
+   document.writeln ('<IMG SRC="showix.gif" HEIGHT=17 BORDER=0 ALT="Haga clic para ver el índice"></A></TD>');
+   document.writeln ('</TD>');
+   document.writeln ('</TR>');
+   document.writeln ('</TABLE>');
+
+}
+
+</SCRIPT>
+<table align="right" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td align="right"><font size="1">Seagate Software, Inc.<br>
+    <a href="http://www.seagatesoftware.com">http://www.seagatesoftware.com</a><br>
+    Envíe sus comentarios a:<br>
+    <a href="mailto:techpubs@seagatesoftware.com">techpubs@seagatesoftware.com</a><br>
+    </font></td>
+  </tr>
+</table>
+</body>
+</html>
+
+

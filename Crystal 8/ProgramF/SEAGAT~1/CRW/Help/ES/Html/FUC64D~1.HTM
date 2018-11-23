@@ -1,0 +1,277 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+
+<html>
+<head>
+<title>Cadenas de formato</title>
+
+<link REL=STYLESHEET TYPE="text/css" HREF="seagate.css">
+
+<!--
+                 ***********************************
+                 * Seagate Software copyright 1999 *
+                 ***********************************
+
+                      Template version: 5.1
+-->
+
+
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" link="#0000FF" vlink="#0000FF" alink="#800080">
+
+
+ 
+<a name="1000853016"></a><h4 class="newpage"> Cadenas de formato</h4><p><a name="1000853020"></a>Las funciones ToText y <a href="Functions161.html#1000569614">CStr</a> puede utilizar cadenas de formato para controlar como aparecer&#225;n los n&#250;meros fraccionarios, los valores monetarios, de fecha, hora, o de fecha/hora que pasan al argumento x cuando son convertidos a una cadena. Esta secci&#243;n describe como crear cadenas de formato para los varios tipos de datos.</p><a name="1000853021"></a><h5>Cadenas de formato para n&#250;meros fraccionarios y valores monetarios&nbsp;</h5><p><a name="1000853022"></a>Los siguientes caracteres son utilizados para crear cadenas de formato para n&#250;meros fraccionarios y valores monetarios&nbsp; :</p><p><a name="1000853066"></a> <Table Border="1">
+<tr><th align="left" valign="bottom"><a name="1000853025"></a>Car&#225;cter
+
+</th><th align="left" valign="bottom"><a name="1000853027"></a>Descripci&#243;n
+
+</th><th align="left" valign="bottom"><a name="1000853029"></a>Comentario(s) /Ejemplos
+
+</th></tr>
+<tr><td align="left" valign="TOP"><P><a name="1000853031"></a>#</P>
+
+
+</td><td align="left" valign="TOP"><P><a name="1000853033"></a># representa d&#237;gitos num&#233;ricos o espacios. Cuando el n&#250;mero original es convertido, los caracteres # son ignorados a menos que el n&#250;mero de caracteres # en la cadena de formato se extienda m&#225;s all&#225; del n&#250;mero de d&#237;gitos significativos en el valor original. Despu&#233;s, por cada # adicional que aparezca, un espacio es agregado a la cadena.</P>
+
+
+</td><td align="left" valign="TOP"><P><a name="1000853035"></a>Si su valor original es 125.34:</P>
+
+
+<ul type="disc"><a name="1000853036"></a><li>la cadena de formato "#" produce la cadena "125" (el n&#250;mero de d&#237;gitos significativos excede el n&#250;mero de caracteres #)
+<a name="1000853037"></a><li>la cadena formato "###.##" produce la cadena "125.34" (el n&#250;mero de d&#237;gitos significativos es igual al n&#250;mero de caracteres #)
+<a name="1000853038"></a><li>el formato de cadena "####.###" produce la cadena "125.34" (el n&#250;mero de d&#237;gitos significativos es menor que el n&#250;mero de caracteres # ).
+</ul></td></tr>
+<tr><td align="left" valign="TOP"><P><a name="1000853040"></a>0</P>
+
+
+</td><td align="left" valign="TOP"><P><a name="1000853042"></a>0 representa d&#237;gitos num&#233;ricos o ceros (0). Cuando el n&#250;mero original es convertido, los caracteres 0 son ignorados a menos que el n&#250;mero de caracteres 0  en la cadena de formato se extienda m&#225;s all&#225; del n&#250;mero de d&#237;gitos significativos en el valor original. Despu&#233;s, por cada 0 adicional que aparezca, un cero es agregado a la cadena.</P>
+
+
+</td><td align="left" valign="TOP"><P><a name="1000853044"></a>Si su valor original es 125.34:</P>
+
+
+<ul type="disc"><a name="1000853045"></a><li>la cadena de formato "0" produce la cadena "125" (el n&#250;mero de d&#237;gitos significativos excede al n&#250;mero de caracteres 0)
+<a name="1000853046"></a><li>la cadena de formato "000.00" produce la cadena "125.34" (el n&#250;mero de d&#237;gitos significativos es igual al n&#250;mero de caracteres 0)
+<a name="1000853047"></a><li>la cadena de formato "0000.000" produce la cadena "0125.340" (el n&#250;mero de d&#237;gitos significativos es menor que el n&#250;mero de caracteres 0).
+</ul><P><a name="1000853048"></a>los caracteres # y 0 pueden ser combinados en cadenas de formato. Si el valor original es 125.34:</P>
+
+
+<ul type="disc"><a name="1000853049"></a><li>&nbsp;&nbsp;&nbsp;&nbsp;la cadena de formato "####.0000" produce la cadena "125.3400".
+<a name="1000853050"></a><li>Una coma (,) indica d&#243;nde debe de aparecer un separador de miles. El car&#225;cter real que aparece como un separador de miles en la cadena resultante puede ser cambiado. Refi&#233;rase a los argumentos para convertir valores decimales y monetarios con la funci&#243;n ToText en la secci&#243;n Argumentos anterior.
+<a name="1000853051"></a><li>Un punto decimal (.) indica cu&#225;ndo un separador decimal debe aparecer. El car&#225;cter real que aparece como separador decimal en la cadena resultante puede ser cambiado. 
+</ul></td></tr>
+<tr><td align="left" valign="TOP"><P><a name="1000853053"></a>coma (,)</P>
+
+
+</td><td align="left" valign="TOP"><P><a name="1000853055"></a>Muestra d&#243;nde debiera aparecer un indicador de millar. </P>
+
+
+<P><a name="1000853056"></a>En la cadena resultante, se puede cambiar el car&#225;cter actual que aparece como separador de millares.    </P>
+
+
+</td><td align="left" valign="TOP"><P><br></P>
+
+
+</td></tr>
+<tr><td align="left" valign="TOP"><P><a name="1000853060"></a>punto decimal (.)</P>
+
+
+</td><td align="left" valign="TOP"><P><a name="1000853062"></a>Indica d&#243;nde debiera aparecer un separador decimal. </P>
+
+
+<P><a name="1000853063"></a>En la cadena resultante, se puede cambiar el car&#225;cter actual que aparece como separador de decimales.   </P>
+
+
+</td><td align="left" valign="TOP"><P><br></P>
+
+
+</td></tr>
+
+</Table></p>
+<a name="1000853067"></a><h5>C&#243;mo pueden las cadenas de formato afectar a los valores.</h5><p><a name="1000853068"></a>La siguiente tabla ilustra c&#243;mo dar formato a cadenas puede afectar a diferentes n&#250;meros fraccionarios  y valores monetarios que son convertidos. En esta tabla, el car&#225;cter con gui&#243;n bajo (_) representa un espacio en la cadena resultante&nbsp; :</p><p><a name="1000853142"></a> <Table Border="1">
+<tr><td align="left" valign="TOP"><a name="1000853071"></a>Valor Original
+
+</td><td align="left" valign="TOP"><a name="1000853073"></a>Cadena de 
+Formato
+
+</td><td align="left" valign="TOP"><a name="1000853075"></a>Cadena Resultante
+
+</td></tr>
+<tr><td align="left" valign="TOP"><P><a name="1000853077"></a>16.13</P>
+
+
+</td><td align="left" valign="TOP"><P><a name="1000853079"></a>N&#186;</P>
+
+
+</td><td align="left" valign="TOP"><P><a name="1000853081"></a>16</P>
+
+
+</td></tr>
+<tr><td align="left" valign="TOP"><P><a name="1000853083"></a>16.13</P>
+
+
+</td><td align="left" valign="TOP"><P><a name="1000853085"></a>0</P>
+
+
+</td><td align="left" valign="TOP"><P><a name="1000853087"></a>16</P>
+
+
+</td></tr>
+<tr><td align="left" valign="TOP"><P><a name="1000853089"></a>16.13</P>
+
+
+</td><td align="left" valign="TOP"><P><a name="1000853091"></a>##</P>
+
+
+</td><td align="left" valign="TOP"><P><a name="1000853093"></a>16</P>
+
+
+</td></tr>
+<tr><td align="left" valign="TOP"><P><a name="1000853095"></a>16.13</P>
+
+
+</td><td align="left" valign="TOP"><P><a name="1000853097"></a>00</P>
+
+
+</td><td align="left" valign="TOP"><P><a name="1000853099"></a>16</P>
+
+
+</td></tr>
+<tr><td align="left" valign="TOP"><P><a name="1000853101"></a>16.13</P>
+
+
+</td><td align="left" valign="TOP"><P><a name="1000853103"></a>###</P>
+
+
+</td><td align="left" valign="TOP"><P><a name="1000853105"></a>_16</P>
+
+
+</td></tr>
+<tr><td align="left" valign="TOP"><P><a name="1000853107"></a>16.13</P>
+
+
+</td><td align="left" valign="TOP"><P><a name="1000853109"></a>000</P>
+
+
+</td><td align="left" valign="TOP"><P><a name="1000853111"></a>016</P>
+
+
+</td></tr>
+<tr><td align="left" valign="TOP"><P><a name="1000853113"></a>16.13</P>
+
+
+</td><td align="left" valign="TOP"><P><a name="1000853115"></a>#.####</P>
+
+
+</td><td align="left" valign="TOP"><P><a name="1000853117"></a>16.13_</P>
+
+
+</td></tr>
+<tr><td align="left" valign="TOP"><P><a name="1000853119"></a>16.13</P>
+
+
+</td><td align="left" valign="TOP"><P><a name="1000853121"></a>0.0000</P>
+
+
+</td><td align="left" valign="TOP"><P><a name="1000853123"></a>16.1300</P>
+
+
+</td></tr>
+<tr><td align="left" valign="TOP"><P><a name="1000853125"></a>16125.00</P>
+
+
+</td><td align="left" valign="TOP"><P><a name="1000853127"></a>###,###.#</P>
+
+
+</td><td align="left" valign="TOP"><P><a name="1000853129"></a>_16.125,0</P>
+
+
+</td></tr>
+<tr><td align="left" valign="TOP"><P><a name="1000853131"></a>16125.00</P>
+
+
+</td><td align="left" valign="TOP"><P><a name="1000853133"></a>000.000,0</P>
+
+
+</td><td align="left" valign="TOP"><P><a name="1000853135"></a>016.125,0</P>
+
+
+</td></tr>
+<tr><td align="left" valign="TOP"><P><a name="1000853137"></a>16125.00</P>
+
+
+</td><td align="left" valign="TOP"><P><a name="1000853139"></a>000000.0</P>
+
+
+</td><td align="left" valign="TOP"><P><a name="1000853141"></a>016125.0</P>
+
+
+</td></tr>
+
+</Table></p>
+
+<hr><br>
+
+<script  language="JavaScript"><!--
+
+var prev = "Functions79.html";
+var next = "Functions81.html";
+
+function setTopicID() { 
+      var number = "1000853016"; 
+      return number; 
+}
+
+// --></script>
+
+
+
+
+<SCRIPT>
+
+if (!window.parent.toc && navigator.appName == "Netscape") {
+
+   document.writeln ('<TABLE ALIGN="left" border="0" cellspacing="0" cellpadding="10">');
+   document.writeln ('<TR>');
+   document.write ('<TD ALIGN="left">');
+
+   if (prev != "crw_spTOC.hhc") {
+      document.writeln ('<A HREF="' + prev + '">');
+      document.writeln ('<IMG SRC="prevpage.gif" HEIGHT=17 BORDER=0 ALT="Página anterior"></A>');
+   } else {
+//   window.alert ('no previous page');
+   }
+
+   if (next != "crw_spIX.hhk") {
+      document.writeln ('<A HREF="' + next + '">');
+      document.writeln ('<IMG SRC="nextpage.gif" HEIGHT=17 BORDER=0 ALT="Página siguiente"></A>');
+   } else {
+//   window.alert ('no next page');
+   }
+   document.writeln ('</TD><TD ALIGN="left">');
+   document.writeln ('<A HREF="frameset.htm?TOC">');
+   document.writeln ('<IMG SRC="showtoc.gif" HEIGHT=17 BORDER=0 ALT="Haga clic para ver el contenido"></A></TD>');
+   document.writeln ('<TD ALIGN="left">');
+   document.writeln ('<A HREF="frameset.htm?IDX">');
+   document.writeln ('<IMG SRC="showix.gif" HEIGHT=17 BORDER=0 ALT="Haga clic para ver el índice"></A></TD>');
+   document.writeln ('</TD>');
+   document.writeln ('</TR>');
+   document.writeln ('</TABLE>');
+
+}
+
+</SCRIPT>
+<table align="right" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td align="right"><font size="1">Seagate Software, Inc.<br>
+    <a href="http://www.seagatesoftware.com">http://www.seagatesoftware.com</a><br>
+    Envíe sus comentarios a:<br>
+    <a href="mailto:techpubs@seagatesoftware.com">techpubs@seagatesoftware.com</a><br>
+    </font></td>
+  </tr>
+</table>
+</body>
+</html>
+
+

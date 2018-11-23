@@ -1,0 +1,97 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+
+<html>
+<head>
+<title>Array (x,...)</title>
+
+<link REL=STYLESHEET TYPE="text/css" HREF="seagate.css">
+
+<!--
+                 ***********************************
+                 * Seagate Software copyright 1999 *
+                 ***********************************
+
+                      Template version: 5.1
+-->
+
+
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" link="#0000FF" vlink="#0000FF" alink="#800080">
+
+
+ 
+<a name="1000566381"></a><h3 class="newpage"> Array (x,...)</h3>
+<p><a name="1000566670"></a>Sintaxis b&#225;sica</p><p><a name="1000566691"></a>Array  y <a href="Functions153.html#1000566403">MakeArray (x, ..)</a> son funciones equivalentes. Sin embargo, Array no puede usarse en sintaxis Crystal ya que es una palabra clave para declarar variables de matriz en esa sintaxis.  </p><a name="1000566382"></a><h5>Argumentos</h5><p><a name="1000566383"></a>Los argumentos dados son elementos de matriz con los cuales inicializar la matriz.   El n&#250;mero de elementos de matriz puede ser cualquier n&#250;mero entre 1 y 1000.   Todos los argumentos deben ser del mismo tipo.  A diferencia de Visual Basic, no puede tener 0 n&#250;mero de elementos.  </p><a name="1000566384"></a><h5>Devuelve </h5><p><a name="1000566385"></a>Matriz de valores.</p><a name="1000566386"></a><h5>Acci&#243;n</h5><p><a name="1000566387"></a>La funci&#243;n Array crea una matriz, la inicializa con los elementos de matriz dados y la devuelve.  </p><a name="1000566388"></a><h5>Uso t&#237;pico</h5><p><a name="1000566389"></a>Para crear e inicializar variables de matriz en sintaxis b&#225;sica.  </p><p><a name="1000702367"></a>En su lugar, en la sintaxis Crystal puede usar la notaci&#243;n con corchetes para las matrices.</p><a name="1000566390"></a><h5>Ejemplo</h5><p><a name="1000566391"></a>El siguiente ejemplo es aplicable a la sintaxis b&#225;sica:</p><p><a name="1000566392"></a>Lo siguiente crea una matriz de d&#237;as de la semana, empezando con el lunes.  </p><p class="code"><a name="1000566393"></a>Dim semana, primerD&#237;a, &#250;ltimoD&#237;a
+<br><a name="1000566394"></a>semana = Array"Lunes", "Martes", "Mi&#233;rcoles", "Jueves", "Viernes", _
+<br><a name="1000566395"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"S&#225;bado", "Domingo")
+<br><a name="1000566396"></a>Rem primerD&#237;a contiene "Lunes" 
+<br><a name="1000749949"></a>primerD&#237;a = semana(1)
+<br><a name="1000566397"></a>Rem &#250;ltimoD&#237;a contiene "Domingo"
+<br><a name="1000750114"></a>&#250;ltimoD&#237;a = semana(7)
+<br><a name="1000831758"></a>formula = primerD&#237;a
+</p><p class="example"><a name="1000831759"></a>Devuelve "Lunes".</p><a name="1000831760"></a><h5>Comentario(s) </h5><p><a name="1000566401"></a>Esta funci&#243;n est&#225; dise&#241;ada para trabajar exactamente como la funci&#243;n de Visual Basic del mismo nombre.</p>
+<hr><br>
+
+<script  language="JavaScript"><!--
+
+var prev = "Functions151.html";
+var next = "Functions153.html";
+
+function setTopicID() { 
+      var number = "1000566381"; 
+      return number; 
+}
+
+// --></script>
+
+
+
+
+<SCRIPT>
+
+if (!window.parent.toc && navigator.appName == "Netscape") {
+
+   document.writeln ('<TABLE ALIGN="left" border="0" cellspacing="0" cellpadding="10">');
+   document.writeln ('<TR>');
+   document.write ('<TD ALIGN="left">');
+
+   if (prev != "crw_spTOC.hhc") {
+      document.writeln ('<A HREF="' + prev + '">');
+      document.writeln ('<IMG SRC="prevpage.gif" HEIGHT=17 BORDER=0 ALT="Página anterior"></A>');
+   } else {
+//   window.alert ('no previous page');
+   }
+
+   if (next != "crw_spIX.hhk") {
+      document.writeln ('<A HREF="' + next + '">');
+      document.writeln ('<IMG SRC="nextpage.gif" HEIGHT=17 BORDER=0 ALT="Página siguiente"></A>');
+   } else {
+//   window.alert ('no next page');
+   }
+   document.writeln ('</TD><TD ALIGN="left">');
+   document.writeln ('<A HREF="frameset.htm?TOC">');
+   document.writeln ('<IMG SRC="showtoc.gif" HEIGHT=17 BORDER=0 ALT="Haga clic para ver el contenido"></A></TD>');
+   document.writeln ('<TD ALIGN="left">');
+   document.writeln ('<A HREF="frameset.htm?IDX">');
+   document.writeln ('<IMG SRC="showix.gif" HEIGHT=17 BORDER=0 ALT="Haga clic para ver el índice"></A></TD>');
+   document.writeln ('</TD>');
+   document.writeln ('</TR>');
+   document.writeln ('</TABLE>');
+
+}
+
+</SCRIPT>
+<table align="right" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td align="right"><font size="1">Seagate Software, Inc.<br>
+    <a href="http://www.seagatesoftware.com">http://www.seagatesoftware.com</a><br>
+    Envíe sus comentarios a:<br>
+    <a href="mailto:techpubs@seagatesoftware.com">techpubs@seagatesoftware.com</a><br>
+    </font></td>
+  </tr>
+</table>
+</body>
+</html>
+
+

@@ -1,0 +1,97 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+
+<html>
+<head>
+<title>Vinculando tablas indexadas </title>
+
+<link REL=STYLESHEET TYPE="text/css" HREF="seagate.css">
+
+<!--
+                 ***********************************
+                 * Seagate Software copyright 1999 *
+                 ***********************************
+
+                      Template version: 5.1
+-->
+
+
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" link="#0000FF" vlink="#0000FF" alink="#800080">
+
+
+ 
+<a name="320963"></a><h4 class="newpage"> Vinculando tablas indexadas </h4><p><a name="320964"></a>Cuando est&#233; vinculanto tablas de bases de datos de acceso directo, debe vincular desde la tabla principal a un campo indexado en la tabla de comparaci&#243;n. El campo vinculado en la tabla principal puede estar indexado, pero no necesita estarlo. Sin embargo, el campo vinculado en la tabla de comparaci&#243;n, s&#237; debe estar indexado.</p><p><a name="320965"></a>Adem&#225;s, los campos usados para vincular dos tablas deben tener el mismo tipo de datos. Por ejemplo, usted puede vincular un campo de cadena de caracteres en una tabla a un campo de cadena de caracteres de otra tabla, o un campo num&#233;rico en una tabla a un campo num&#233;rico en otra tabla, pero no puede vincular un campo num&#233;rico en una tabla a un campo de cadena de caracteres en otra tabla.</p><p><a name="320966"></a><font color="darkblue"><b>Nota:   &nbsp;&nbsp;&nbsp;</b></font></p>
+<ul type="disc"><a name="320967"></a><li>Algunos programas SABD le permiten convertir el valor en un campo a otro tipo de datos en el &#237;ndice. Por ejemplo, el campo en la tabla puede ser num&#233;rico, mientras el &#237;ndice convierte el valor del campo a cadena de caracteres. Sin embargo, si utiliza ese campo para vincular otra tabla, debe hacerlo a un campo del tipo de datos original. No puede vincular un valor de cadena de caracteres a un campo num&#233;rico que ha sido convertido a cadena de caracteres en el &#237;ndice.
+<a name="320968"></a><li>Si est&#225; vinculando tablas de dos tipos diferentes de fuentes de datos ODBC, por ejemplo, MS SQL Server y Oracle, s&#243;lo puede utilizar campos de cadena de caracteres para vincular las tablas. Los campos de cadena de caracteres son guardados en bases de datos de la misma manera, sin importar la fuente de datos. Sin embargo, otros tipos de valores, pueden no ser guardados de la misma manera en diferentes fuentes de datos, por lo que la &#250;nica manera que puede vincular diferentes fuentes de datos en Seagate Crystal Reports es utilizando valores de cadena de caracteres.
+</ul><a name="320969"></a><h5>Cambiando indices usados en v&#237;nculo</h5><p><a name="332619"></a>Cuando usa Smart Linking para vincular tablas usando un campo que es un componente de varios &#237;ndices (dos o m&#225;s), Seagate Crystal Reports selecciona uno de los &#237;ndices para el v&#237;nculo. Ese &#237;ndice puede o no ser el que usted desea usar. Para determinar el &#237;ndice en uso y cambiarlo si es necesario, utilice la secci&#243;n Indice del cuadro de di&#225;logo Opciones de V&#237;nculo.</p><p><a name="332620"></a>Para activar el cuadro de di&#225;logo, puede:</p><ul type="disc"><a name="320972"></a><li>hacer doble clic en la l&#237;nea de v&#237;nculo de inter&#233;s, o
+<a name="320973"></a><li>seleccionar la l&#237;nea del v&#237;nculo de su inter&#233;s y hacer clic en el bot&#243;n Opciones en la parte inferior del Asistente de V&#237;nculo Visual, o 
+<a name="320974"></a><li>seleccionar la l&#237;nea de v&#237;nculo de su inter&#233;s, hacer clic con el bot&#243;n derecho y seleccionar Opciones del men&#250; contextual que aparece.
+</ul><p><a name="320975"></a>La secci&#243;n Indice del cuadro de di&#225;logo Opciones de V&#237;nculo tiene dos partes:</p><ul type="disc"><a name="315123"></a><li><strong>El cuadro de texto &Iacute;ndice en uso</strong>.<br>Este cuadro de texto muestra el &#237;ndica que est&#225; actualmente en uso. Si hace clic en la flecha, lista los dem&#225;s &#237;ndices que est&#225;n disponibles parea la vinculaci&#243;n as&#237; como tambi&#233;n la opci&#243;n <EM>Sin &#237;ndice espec&#237;fico</EM>. Si est&#225; usando una tabla de base de datos indexada y no desea ver un &#237;ndice en particular que esperar&#237;a encontrar en esta lista, use el bot&#243;n Agregar &#237;ndice.
+<a name="315124"></a><li><strong>El cuadro de texto Campos en &Iacute;ndice</strong>.<br>Este cuadro de texto muestra los campos que se incluyen en el &#237;ndice seleccionado actualmente en el cuadro de lista &Iacute;ndice en uso.
+</ul><p><a name="321282"></a>Si selecciona la opci&#243;n Sin &#237;ndice espec&#237;fico, el programa selecciona un &#237;ndice para usted la pr&#243;xima vez que imprima le informe en la ficha Vista previa.</p><p><a name="321283"></a><font color="darkblue"><b>Nota:   &nbsp;&nbsp;&nbsp;</b></font>No todos los programas SABD admiten tablas indexadas. Verifique que su base de datos utilice &#237;ndices antes de intentar seleccionar un &#237;ndice para vincular. Refi&#233;rase a su documentaci&#243;n de SABD para averiguar si su SABD puede usar &#237;ndices y c&#243;mo crearlos.</p>
+
+<hr><br>
+
+<script  language="JavaScript"><!--
+
+var prev = "24_under_databases13.html";
+var next = "24_under_databases15.html";
+
+function setTopicID() { 
+      var number = "320963"; 
+      return number; 
+}
+
+// --></script>
+
+
+
+
+<SCRIPT>
+
+if (!window.parent.toc && navigator.appName == "Netscape") {
+
+   document.writeln ('<TABLE ALIGN="left" border="0" cellspacing="0" cellpadding="10">');
+   document.writeln ('<TR>');
+   document.write ('<TD ALIGN="left">');
+
+   if (prev != "crw_spTOC.hhc") {
+      document.writeln ('<A HREF="' + prev + '">');
+      document.writeln ('<IMG SRC="prevpage.gif" HEIGHT=17 BORDER=0 ALT="Página anterior"></A>');
+   } else {
+//   window.alert ('no previous page');
+   }
+
+   if (next != "crw_spIX.hhk") {
+      document.writeln ('<A HREF="' + next + '">');
+      document.writeln ('<IMG SRC="nextpage.gif" HEIGHT=17 BORDER=0 ALT="Página siguiente"></A>');
+   } else {
+//   window.alert ('no next page');
+   }
+   document.writeln ('</TD><TD ALIGN="left">');
+   document.writeln ('<A HREF="frameset.htm?TOC">');
+   document.writeln ('<IMG SRC="showtoc.gif" HEIGHT=17 BORDER=0 ALT="Haga clic para ver el contenido"></A></TD>');
+   document.writeln ('<TD ALIGN="left">');
+   document.writeln ('<A HREF="frameset.htm?IDX">');
+   document.writeln ('<IMG SRC="showix.gif" HEIGHT=17 BORDER=0 ALT="Haga clic para ver el índice"></A></TD>');
+   document.writeln ('</TD>');
+   document.writeln ('</TR>');
+   document.writeln ('</TABLE>');
+
+}
+
+</SCRIPT>
+<table align="right" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td align="right"><font size="1">Seagate Software, Inc.<br>
+    <a href="http://www.seagatesoftware.com">http://www.seagatesoftware.com</a><br>
+    Envíe sus comentarios a:<br>
+    <a href="mailto:techpubs@seagatesoftware.com">techpubs@seagatesoftware.com</a><br>
+    </font></td>
+  </tr>
+</table>
+</body>
+</html>
+
+

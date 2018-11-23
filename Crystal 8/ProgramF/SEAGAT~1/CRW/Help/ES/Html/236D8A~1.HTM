@@ -1,0 +1,109 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+
+<html>
+<head>
+<title>C&#243;mo agregar t&#237;tulos a los subinformes</title>
+
+<link REL=STYLESHEET TYPE="text/css" HREF="seagate.css">
+
+<!--
+                 ***********************************
+                 * Seagate Software copyright 1999 *
+                 ***********************************
+
+                      Template version: 5.1
+-->
+
+
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" link="#0000FF" vlink="#0000FF" alink="#800080">
+
+
+ 
+<a name="45493"></a><h3 class="newpage"> C&#243;mo agregar t&#237;tulos a los subinformes</h3>
+<p><a name="47108"></a>Para organizar m&#225;s un informe, se pueden crear t&#237;tulos para la ficha de Vista Previa del subinforme y para el marco de ubicaci&#243;n del subinforme.</p><p><a name="47109"></a>Los t&#237;tulos del marco de ubicaci&#243;n y los t&#237;tulos de la ficha Vista previa del Subinforme pueden incluir nombres de campos del informe principal.</p><p><a name="45496"></a><font color="darkblue"><b>Nota:   &nbsp;&nbsp;&nbsp;</b></font>Note que los t&#237;tulos del marco de ubicaci&#243;n son aplicables solamente para los subinformes a la orden, mientras que los t&#237;tulos de texto de ficha son aplicables a ambos, subinformes a la orden y subinformes regulares. Ya que los datos de un subinforme regular se ubican y est&#225;n visibles en la ficha Vista previa, (mientras que los del subinforme a la orden se representan por el marco de ubicaci&#243;n), no hay necesidad un t&#237;tulo de marco cuando formatea un subinforme regular.</p>
+<p><a name="45497"></a>Un t&#237;tulo de texto de ficha reemplaza el nombre del archivo del subinforme en la ficha Vista previa del Subinforme.</p><a name="45589"></a><h6>Para agregar un t&#237;tulo</h6><ol>
+<a name="45590"></a><li value="1&nbsp;&nbsp;&nbsp;&nbsp;"><img src="images/23_subreports6a.gif">
+
+
+Seleccione el subinforme y haga clic en el bot&#243;n <kbd>Propiedades del objeto</kbd> en la barra de herramientas suplementarias.
+<p class="indent"><a name="45591"></a>El Editor de Formato aparecer&#225; en su pantalla.</p><a name="45592"></a><li value="2&nbsp;&nbsp;&nbsp;&nbsp;">Haga clic en la ficha Subinforme.
+<a name="45593"></a><li value="3&nbsp;&nbsp;&nbsp;&nbsp;">Usted puede introducir ya sea un t&#237;tulo de subinforme a la orden o un t&#237;tulo de ficha, haciendo clic bot&#243;n de <kbd>F&#243;rmula</kbd> apropiado y abriendo el Editor de Formato de F&#243;rmula.
+<a name="45594"></a><li value="4&nbsp;&nbsp;&nbsp;&nbsp;">Escriba su f&#243;rmula en el cuadro <kbd>Texto de f&#243;rmula</kbd>.
+<p class="indent"><a name="45612"></a>Ejemplo de f&#243;rmula de sintaxis Crystal:</p><a name="45613"></a><p class="indent"><code>"M&#225;s Informaci&#243;n Acerca de" + {Cliente.Nombre del Cliente}</code></p><p class="indent"><a name="45618"></a>Ejemplo de f&#243;rmula de sintaxis Basic:</p><a name="53942"></a><p class="indent"><code>formula = "M&#225;s informaci&#243;n acerca de" + {Cliente.Nombre del cliente}</code></p><p class="indent"><a name="45619"></a>Usando la base de datos de muestra xtreme_es.mdb, esta f&#243;rmula le dar&#237;a un t&#237;tulo tal como "M&#225;s Informaci&#243;n Acerca de Pathfinders" o "M&#225;s informaci&#243;n Acerca de Rockshocks for Jocks".</p><a name="45620"></a><li value="5&nbsp;&nbsp;&nbsp;&nbsp;"><img src="images/bt_check.gif">
+
+
+Haga clic en <kbd>Verificar</kbd> para ver si la f&#243;rmula tiene errores. Si el programa encuentra un error, le mostrar&#225; un cuadro de mensajes con los detalles explicando de la naturaleza del error.
+<a name="45621"></a><li value="6&nbsp;&nbsp;&nbsp;&nbsp;"><img src="images/bt_sclfe.gif">
+
+
+Despu&#233;s de arreglar los errores, haga clic en el bot&#243;n <kbd>Guardar y cerrar</kbd>.
+<a name="45626"></a><li value="7&nbsp;&nbsp;&nbsp;&nbsp;">Haga clic en <strong>Aceptar</strong> para retorna al Editor de Formato.
+</ol>
+<p><a name="46892"></a><font color="darkblue"><b>Nota:   &nbsp;&nbsp;&nbsp;</b></font>Una f&#243;rmula de texto en una ficha es solamente evaluada cuando se traspasa a un subinforme. Si hace una vista previa de un subinforme separado del informe principal, la f&#243;rmula no ser&#225; evaluada.</p>
+
+<hr><br>
+
+<script  language="JavaScript"><!--
+
+var prev = "23_subreports17.html";
+var next = "23_subreports19.html";
+
+function setTopicID() { 
+      var number = "45493"; 
+      return number; 
+}
+
+// --></script>
+
+
+
+
+<SCRIPT>
+
+if (!window.parent.toc && navigator.appName == "Netscape") {
+
+   document.writeln ('<TABLE ALIGN="left" border="0" cellspacing="0" cellpadding="10">');
+   document.writeln ('<TR>');
+   document.write ('<TD ALIGN="left">');
+
+   if (prev != "crw_spTOC.hhc") {
+      document.writeln ('<A HREF="' + prev + '">');
+      document.writeln ('<IMG SRC="prevpage.gif" HEIGHT=17 BORDER=0 ALT="Página anterior"></A>');
+   } else {
+//   window.alert ('no previous page');
+   }
+
+   if (next != "crw_spIX.hhk") {
+      document.writeln ('<A HREF="' + next + '">');
+      document.writeln ('<IMG SRC="nextpage.gif" HEIGHT=17 BORDER=0 ALT="Página siguiente"></A>');
+   } else {
+//   window.alert ('no next page');
+   }
+   document.writeln ('</TD><TD ALIGN="left">');
+   document.writeln ('<A HREF="frameset.htm?TOC">');
+   document.writeln ('<IMG SRC="showtoc.gif" HEIGHT=17 BORDER=0 ALT="Haga clic para ver el contenido"></A></TD>');
+   document.writeln ('<TD ALIGN="left">');
+   document.writeln ('<A HREF="frameset.htm?IDX">');
+   document.writeln ('<IMG SRC="showix.gif" HEIGHT=17 BORDER=0 ALT="Haga clic para ver el índice"></A></TD>');
+   document.writeln ('</TD>');
+   document.writeln ('</TR>');
+   document.writeln ('</TABLE>');
+
+}
+
+</SCRIPT>
+<table align="right" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td align="right"><font size="1">Seagate Software, Inc.<br>
+    <a href="http://www.seagatesoftware.com">http://www.seagatesoftware.com</a><br>
+    Envíe sus comentarios a:<br>
+    <a href="mailto:techpubs@seagatesoftware.com">techpubs@seagatesoftware.com</a><br>
+    </font></td>
+  </tr>
+</table>
+</body>
+</html>
+
+

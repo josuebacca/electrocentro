@@ -1,0 +1,93 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+
+<html>
+<head>
+<title>IsTime</title>
+
+<link REL=STYLESHEET TYPE="text/css" HREF="seagate.css">
+
+<!--
+                 ***********************************
+                 * Seagate Software copyright 1999 *
+                 ***********************************
+
+                      Template version: 5.1
+-->
+
+
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" link="#0000FF" vlink="#0000FF" alink="#800080">
+
+
+ 
+<a name="1000781158"></a><h3 class="newpage"> IsTime</h3>
+<p><a name="1000691296"></a>Sintaxis b&#225;sica y Crystal.</p><a name="1000539587"></a><h5>Sobrecargas</h5><ul type="disc"><a name="1000537843"></a><li>IsTime (cadena)
+<a name="1000537844"></a><li>IsTime (n&#250;mero)
+</ul><a name="1000537845"></a><h5>Argumentos</h5><ul type="disc"><a name="1000537846"></a><li>cadena es un valor o expresi&#243;n Cadena a ser probada en cuanto a su convertibilidad a un valor Hora. Se aceptan diversas formas.
+<a name="1000537847"></a><li>cadena es un valor o expresi&#243;n Cadena a ser probada en cuanto a su convertibilidad a un valor Hora. Puede ser positivo, negativo o fraccional.. Se interpreta como unidades de 24 horas. Esto significa que 0 son las 12 de la noche y 0.5 las 12 del mediod&#237;a.
+</ul><a name="1000537848"></a><h5>Devuelve </h5><p><a name="1000537849"></a>Valor Booleano (Verdadero o Falso).</p><a name="1000537850"></a><h5>Acci&#243;n</h5><p><a name="1000537851"></a>IsTime devuelve Verdadero si un valor Cadena o Num&#233;rico dado pueden convertirse a un valor Hora v&#225;lido; de lo contrario, devuelve Falso. </p><a name="1000537852"></a><h5>Uso t&#237;pico</h5><p><a name="1000537853"></a>Si desea convertir un valor Cadena a uno Date usando las funciones <a href="Functions163.html#1000570720">CTime</a> o <a href="Functions110.html#1000645674">TimeValue</a>, primero use la funci&#243;n IsTime para verificar si la conversi&#243;n podr&#225; hacerse. Examine en la secci&#243;n de ejemplos de  <a href="Functions116.html#1000540723">IsDate</a> los ejemplos de este tipo.</p><a name="1000537854"></a><h5>Ejemplo(s)</h5><p><a name="1000537855"></a>Los siguientes ejemplos son aplicables a las sintaxis b&#225;sica y Crystal:</p><p><code><a name="1000537856"></a>IsTime ("10:30 pm")</code></p><p class="example"><a name="1000537857"></a>Devuelve Verdadero.</p><p><code><a name="1000537858"></a>IsTime ("septiembre 30,1999") </code></p><p class="example"><a name="1000537859"></a>Devuelve Verdadero ya que el argumento de Cadena dado se interpreta como las 12:00:00 am.</p><p><code><a name="1000537860"></a>IsTime (3.2) </code></p><p class="example"><a name="1000537861"></a>Tambi&#233;n devuelve Verdadero ya que el argumento de N&#250;mero dado se interpreta como 3.2 unidades de 24 horas, lo que es 4:48:00am.</p><a name="1000537862"></a><h5>Comentario</h5><p><a name="1000537863"></a>Esta funci&#243;n es similar a la funci&#243;n IsDate de Visual Basic, excepto que trabaja espec&#237;ficamente con el tipo Time de Seagate Crystal Report, el cual s&#243;lo admite valores Hora.  </p>
+<hr><br>
+
+<script  language="JavaScript"><!--
+
+var prev = "Functions114.html";
+var next = "Functions116.html";
+
+function setTopicID() { 
+      var number = "1000781158"; 
+      return number; 
+}
+
+// --></script>
+
+
+
+
+<SCRIPT>
+
+if (!window.parent.toc && navigator.appName == "Netscape") {
+
+   document.writeln ('<TABLE ALIGN="left" border="0" cellspacing="0" cellpadding="10">');
+   document.writeln ('<TR>');
+   document.write ('<TD ALIGN="left">');
+
+   if (prev != "crw_spTOC.hhc") {
+      document.writeln ('<A HREF="' + prev + '">');
+      document.writeln ('<IMG SRC="prevpage.gif" HEIGHT=17 BORDER=0 ALT="Página anterior"></A>');
+   } else {
+//   window.alert ('no previous page');
+   }
+
+   if (next != "crw_spIX.hhk") {
+      document.writeln ('<A HREF="' + next + '">');
+      document.writeln ('<IMG SRC="nextpage.gif" HEIGHT=17 BORDER=0 ALT="Página siguiente"></A>');
+   } else {
+//   window.alert ('no next page');
+   }
+   document.writeln ('</TD><TD ALIGN="left">');
+   document.writeln ('<A HREF="frameset.htm?TOC">');
+   document.writeln ('<IMG SRC="showtoc.gif" HEIGHT=17 BORDER=0 ALT="Haga clic para ver el contenido"></A></TD>');
+   document.writeln ('<TD ALIGN="left">');
+   document.writeln ('<A HREF="frameset.htm?IDX">');
+   document.writeln ('<IMG SRC="showix.gif" HEIGHT=17 BORDER=0 ALT="Haga clic para ver el índice"></A></TD>');
+   document.writeln ('</TD>');
+   document.writeln ('</TR>');
+   document.writeln ('</TABLE>');
+
+}
+
+</SCRIPT>
+<table align="right" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td align="right"><font size="1">Seagate Software, Inc.<br>
+    <a href="http://www.seagatesoftware.com">http://www.seagatesoftware.com</a><br>
+    Envíe sus comentarios a:<br>
+    <a href="mailto:techpubs@seagatesoftware.com">techpubs@seagatesoftware.com</a><br>
+    </font></td>
+  </tr>
+</table>
+</body>
+</html>
+
+

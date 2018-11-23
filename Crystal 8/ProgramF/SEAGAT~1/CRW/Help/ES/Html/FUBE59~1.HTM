@@ -1,0 +1,104 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+
+<html>
+<head>
+<title>StdDev (Campo), StdDev (Campo, campoCondicional), StdDev (Campo, campoCondicional, condici&#243;n), StdDev (x)</title>
+
+<link REL=STYLESHEET TYPE="text/css" HREF="seagate.css">
+
+<!--
+                 ***********************************
+                 * Seagate Software copyright 1999 *
+                 ***********************************
+
+                      Template version: 5.1
+-->
+
+
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" link="#0000FF" vlink="#0000FF" alink="#800080">
+
+
+ 
+<a name="1000850740"></a><h3 class="newpage"> StdDev (Campo), StdDev (Campo, campoCondicional), StdDev (Campo, campoCondicional, condici&#243;n), StdDev (x)</h3>
+<p><a name="1000850743"></a>Sintaxis b&#225;sica y Crystal.</p><a name="1000850744"></a><h5>Argumentos</h5><ul type="disc"><a name="1000850745"></a><li>campo es cualquier campo de base de datos o de f&#243;rmula que puede ser evaluado por la funci&#243;n.campo es cualquier campo de base de datos o de f&#243;rmula que puede ser evaluado por la funci&#243;n.
+<a name="1000850746"></a><li>campoCondicional es un campo utilizado para agrupar los valores del campo.
+<a name="1000850747"></a><li>Las cadenas v&#225;lidas para este argumento dependen del contenido de campoCondicional, el cual puede ser fecha o booleano. S&#243;lo se especifica este argumento cuando  campoCondicional es un campo de fecha, hora, fecha/hora o booleano. Para obtener m&#225;s informaci&#243;n sobre las cadenas v&#225;lidas para este argumento, v&#233;ase <a href="Functions20.html#1000850529">Condiciones para las funciones de resumen</a>.
+<a name="1000850751"></a><li>x es un arreglo de valores que puede ser evaluado por la funci&#243;n que est&#225; siendo utilizada.
+</ul><a name="1000850752"></a><h5>Devuelve </h5><p><a name="1000850753"></a>Un n&#250;mero fraccionario.</p><a name="1000850754"></a><h5>Acci&#243;n</h5><p><a name="1000850755"></a>Le permite encontrar la desviaci&#243;n est&#225;ndar de un conjunto de valores en su informe. Por ejemplo:</p><ul type="disc"><a name="1000850756"></a><li>Puede calcular el Total general de la desviaci&#243;n est&#225;ndar para todos los valores de un campo. Para obtener m&#225;s informaci&#243;n sobre esta clase de resumen, v&#233;ase <a href="Functions22.html#1000850599">SummaryFunction (campo)</a>.
+<a name="1000850760"></a><li>Puede calcular la desviaci&#243;n est&#225;ndar para todos los valores dentro de un grupo (por ejemplo, ventas agrupadas por el estado de procedencia). Para obtener m&#225;s informaci&#243;n sobre esta clase de resumen, v&#233;ase <a href="Functions23.html#1000850631">SummaryFunction (campo, campoCondicional)</a>.
+<a name="1000850764"></a><li>Puede calcular la desviaci&#243;n est&#225;ndar para todos los valores dentro de un grupo en el cual la agrupaci&#243;n est&#225; controlada mediante cambios en el campo Booleano o de fecha (por ejemplo, ventas agrupadas por el mes en que fueron realizadas). Para obtener m&#225;s informaci&#243;n sobre esta clase de resumen, v&#233;ase <a href="Functions24.html#1000850661">SummaryFunction (campo, campoCondicional, condici&#243;n)</a>.
+<a name="1000850768"></a><li>Si especifica un conjunto de valores individuales,  puede calcular la desviaci&#243;n est&#225;ndar de los valores del conjunto. Para obtener m&#225;s informaci&#243;n sobre esta clase de resumen, v&#233;ase <a href="Functions155.html#1000567809">Funciones de resumen de matriz (x)</a>.
+</ul><a name="1000850772"></a><h5>Ejemplo(s)</h5><p><a name="1000850773"></a>Los siguientes ejemplos son aplicables a las sintaxis b&#225;sica y Crystal:</p><p><code><a name="1000850774"></a>StdDev({archivo.RESULTADOS})</code></p><p class="example"><a name="1000850775"></a>Calcula la desviaci&#243;n est&#225;ndar de todos los valores del campo Resultados.</p><p><code><a name="1000850776"></a>StdDev({pedidos.MONTO DEL PEDIDO}, {pedidos.ID DEL CLIENTECalcula la desviaci&#243;n est&#225;ndar de los pedidos en cada grupo de pedidos en el campo Pedidos. Los pedidos se dividen en grupos siempre que cambia el valor del campo Id del cliente.</code></p><p><code><a name="1000850777"></a>StdDev({archivo.RESULTADOS}, {archivo.FECHA}, "daily")</code></p><p class="example"><a name="1000850778"></a>Calcula la desviaci&#243;n est&#225;ndar de cada grupo de resultados de pruebas de laboratorio en el campo Resultados. Los resultados de las pruebas son separados en grupos siempre que el valor del campo Fecha cambia a un nuevo d&#237;a.</p><p><code><a name="1000850779"></a>StdDev({archivo.PUNTAJE}, {archivo.NATURALIZADO}, "alg&#250;n cambio")</code></p><p class="example"><a name="1000850780"></a>Agrupa los valores del campo Puntaje dependiendo de si el examinando es un ciudadano naturalizado o no, y calcula la desviaci&#243;n est&#225;ndar para cada grupo de puntajes.</p><p><a name="1000850781"></a>El siguiente ejemplo es aplicable a la sintaxis Crystal:</p><p><code><a name="1000850782"></a>StdDev([({archivo.CANT1} * {archivo.PRECIO1}),({archivo.CANT2} * {archivo.PRECIO2}),({archivo.CANT3} * {archivo.PRECIO3}), ({archivo.CANT4} * {archivo.PRECIO4})]) </code></p><p class="example"><a name="1000850783"></a>Devuelve 36.60 donde Cant1 = 2, Precio = 10.00, Cant2 = 2, Precio2 = 2.00,Cant3 = 10, Precio3 = 3.00, y Cant4 = 8, Precio4 = 11.00.</p><a name="1000850784"></a><h5>Comentario(s) </h5><p><a name="1000850785"></a>La desviaci&#243;n est&#225;ndar es calculada por Crystal Reports utilizando la t&#233;cnica siguiente:</p><ul type="disc"><a name="1000850786"></a><li>Calcula el valor promedio (media) de los elementos de la muestra.
+<a name="1000850787"></a><li>Resta el valor promedio al valor de cada elemento.
+<a name="1000850788"></a><li>Eleva al cuadrado la diferencia para cada elemento.
+<a name="1000850789"></a><li>Agrega las diferencias cuadr&#225;ticas para todos los elementos en la muestra.
+<a name="1000850790"></a><li>Divide la suma entre el n&#250;mero de elementos en la muestra menos uno (N - 1). El resultado es la variancia. Compare este paso con la <a href="Functions27.html#1000850801">PopulationStdDev (Campo), PopulationStdDev (Campo, campoCondicional), PopulationStdDev (Campo, campoCondicional, condici&#243;n), PopulationStdDev (x)</a>.
+<a name="1000850794"></a><li>Calcula la ra&#237;z cuadrada de la variancia para llegar a la desviaci&#243;n est&#225;ndar.
+</ul><p><a name="1000850795"></a><font color="darkblue"><b>Nota:   &nbsp;&nbsp;&nbsp;</b></font>El uso de esta funci&#243;n en una f&#243;rmula obliga a que la f&#243;rmula sea evaluada al momento de impresi&#243;n. </p>
+<p><a name="1000850796"></a>Para obtener m&#225;s informaci&#243;n sobre las consideraciones de evaluaci&#243;n de hora, v&#233;ase el <a href="Functions169.html#1000572432">Funciones de tiempo de evaluaci&#243;n</a>.</p>
+<hr><br>
+
+<script  language="JavaScript"><!--
+
+var prev = "Functions25.html";
+var next = "Functions27.html";
+
+function setTopicID() { 
+      var number = "1000850740"; 
+      return number; 
+}
+
+// --></script>
+
+
+
+
+<SCRIPT>
+
+if (!window.parent.toc && navigator.appName == "Netscape") {
+
+   document.writeln ('<TABLE ALIGN="left" border="0" cellspacing="0" cellpadding="10">');
+   document.writeln ('<TR>');
+   document.write ('<TD ALIGN="left">');
+
+   if (prev != "crw_spTOC.hhc") {
+      document.writeln ('<A HREF="' + prev + '">');
+      document.writeln ('<IMG SRC="prevpage.gif" HEIGHT=17 BORDER=0 ALT="Página anterior"></A>');
+   } else {
+//   window.alert ('no previous page');
+   }
+
+   if (next != "crw_spIX.hhk") {
+      document.writeln ('<A HREF="' + next + '">');
+      document.writeln ('<IMG SRC="nextpage.gif" HEIGHT=17 BORDER=0 ALT="Página siguiente"></A>');
+   } else {
+//   window.alert ('no next page');
+   }
+   document.writeln ('</TD><TD ALIGN="left">');
+   document.writeln ('<A HREF="frameset.htm?TOC">');
+   document.writeln ('<IMG SRC="showtoc.gif" HEIGHT=17 BORDER=0 ALT="Haga clic para ver el contenido"></A></TD>');
+   document.writeln ('<TD ALIGN="left">');
+   document.writeln ('<A HREF="frameset.htm?IDX">');
+   document.writeln ('<IMG SRC="showix.gif" HEIGHT=17 BORDER=0 ALT="Haga clic para ver el índice"></A></TD>');
+   document.writeln ('</TD>');
+   document.writeln ('</TR>');
+   document.writeln ('</TABLE>');
+
+}
+
+</SCRIPT>
+<table align="right" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td align="right"><font size="1">Seagate Software, Inc.<br>
+    <a href="http://www.seagatesoftware.com">http://www.seagatesoftware.com</a><br>
+    Envíe sus comentarios a:<br>
+    <a href="mailto:techpubs@seagatesoftware.com">techpubs@seagatesoftware.com</a><br>
+    </font></td>
+  </tr>
+</table>
+</body>
+</html>
+
+

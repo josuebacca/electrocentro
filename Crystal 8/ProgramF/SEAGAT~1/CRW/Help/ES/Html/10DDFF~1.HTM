@@ -1,0 +1,104 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+
+<html>
+<head>
+<title>Intercambio de colores de fondo para las filas</title>
+
+<link REL=STYLESHEET TYPE="text/css" HREF="seagate.css">
+
+<!--
+                 ***********************************
+                 * Seagate Software copyright 1999 *
+                 ***********************************
+
+                      Template version: 5.1
+-->
+
+
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" link="#0000FF" vlink="#0000FF" alink="#800080">
+
+
+ 
+<a name="58706"></a><h3 class="newpage"> Intercambio de colores de fondo para las filas</h3>
+<p><a name="64705"></a>Otro uso t&#237;pico de la seci&#243;n m&#250;ltiple ser&#237;a el variar alternadamente el color de fondo de las l&#237;neas en la secci&#243;n Detalles de su informe para mejorar la legibilidad (un efecto de papel de barras verdes).</p><a name="60370"></a><h6>Para alternar colores de fondo para filas</h6><ol>
+<a name="60375"></a><li value="1&nbsp;&nbsp;&nbsp;&nbsp;"><img src="images/Bt_secex.gif">
+
+
+Usando el Asistente de Secci&#243;n, inserte una segunda secci&#243;n Detalles. Ahora debe tener las secciones Detalles A y Detalles B. Vea <a href="10_multsec_rep3.html#58219">Trabajo con secciones</a>.
+<a name="65649"></a><li value="2&nbsp;&nbsp;&nbsp;&nbsp;">Mientras est&#233; en el Asistente de Secci&#243;n, resalte la secci&#243;n Detalles A en el cuadro de lista <kbd>Secciones</kbd>, haga clic en la ficha <kbd>Color</kbd> y seleccione el color de fondo Blanco.
+<a name="60387"></a><li value="3&nbsp;&nbsp;&nbsp;&nbsp;"><img src="images/Bt_cdfml.gif">
+
+
+Haga clic en la ficha <kbd>Com&#250;n</kbd>, haga clic en el bot&#243;n <kbd>F&#243;rmula condicional</kbd> a la derecha de la opci&#243;n <kbd>Suprimir (No Traspasar)</kbd> y escriba esta f&#243;rmula en el Editor de F&#243;rmulas cuando &#233;ste aparezca.
+<a name="60388"></a><p class="indent"><code>Remainder (RecordNumber, 2)&lt;&gt;0</code></p><p class="indent"><a name="60389"></a>&#171;Esta f&#243;rmula divide el n&#250;mero de Registros entre 2 y si el residuo es diferente de cero (cosa que suceder&#225; para cada registro impar), le dice al programa que suprima la secci&#243;n&#187;.</p><a name="60523"></a><li value="4&nbsp;&nbsp;&nbsp;&nbsp;">Haga clic en <kbd>Guardar y cerrar</kbd>.
+<a name="60524"></a><li value="5&nbsp;&nbsp;&nbsp;&nbsp;">Ahora resalte la secci&#243;n de Detalles B y seleccione el color de fondo verde.
+<a name="60525"></a><li value="6&nbsp;&nbsp;&nbsp;&nbsp;">Utilizando la t&#233;cnica del paso 3, configure la propiedad <kbd>Suprimir</kbd> para esta secci&#243;n con la siguiente f&#243;rmula:
+<a name="60526"></a><p class="indent"><code>Remainder (RecordNumber, 2) = 0</code></p><p class="indent"><a name="60527"></a>&#171;Esta f&#243;rmula divide el n&#250;mero de Registros entre 2 y si el residuo es cero (cosa que suceder&#225; para cada registro par), le dice al programa que suprima la secci&#243;n&#187;.</p><a name="60528"></a><li value="7&nbsp;&nbsp;&nbsp;&nbsp;">Haga su informe y aseg&#250;rese de que la informaci&#243;n y la presentaci&#243;n de cada una de las secciones sea id&#233;ntica. En otras palabras, lo que ponga en la secci&#243;n Detalles A, p&#243;ngalo en la secci&#243;n Detalles B.
+<p class="indent"><a name="60529"></a>Ahora cuando ejecute su informe, el programa imprimir&#225; cada l&#237;nea para con fondo blanco y cada l&#237;nea impar con un fondo verde.</p></ol>
+
+<hr><br>
+
+<script  language="JavaScript"><!--
+
+var prev = "10_multsec_rep8.html";
+var next = "10_multsec_rep10.html";
+
+function setTopicID() { 
+      var number = "58706"; 
+      return number; 
+}
+
+// --></script>
+
+
+
+
+<SCRIPT>
+
+if (!window.parent.toc && navigator.appName == "Netscape") {
+
+   document.writeln ('<TABLE ALIGN="left" border="0" cellspacing="0" cellpadding="10">');
+   document.writeln ('<TR>');
+   document.write ('<TD ALIGN="left">');
+
+   if (prev != "crw_spTOC.hhc") {
+      document.writeln ('<A HREF="' + prev + '">');
+      document.writeln ('<IMG SRC="prevpage.gif" HEIGHT=17 BORDER=0 ALT="Página anterior"></A>');
+   } else {
+//   window.alert ('no previous page');
+   }
+
+   if (next != "crw_spIX.hhk") {
+      document.writeln ('<A HREF="' + next + '">');
+      document.writeln ('<IMG SRC="nextpage.gif" HEIGHT=17 BORDER=0 ALT="Página siguiente"></A>');
+   } else {
+//   window.alert ('no next page');
+   }
+   document.writeln ('</TD><TD ALIGN="left">');
+   document.writeln ('<A HREF="frameset.htm?TOC">');
+   document.writeln ('<IMG SRC="showtoc.gif" HEIGHT=17 BORDER=0 ALT="Haga clic para ver el contenido"></A></TD>');
+   document.writeln ('<TD ALIGN="left">');
+   document.writeln ('<A HREF="frameset.htm?IDX">');
+   document.writeln ('<IMG SRC="showix.gif" HEIGHT=17 BORDER=0 ALT="Haga clic para ver el índice"></A></TD>');
+   document.writeln ('</TD>');
+   document.writeln ('</TR>');
+   document.writeln ('</TABLE>');
+
+}
+
+</SCRIPT>
+<table align="right" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td align="right"><font size="1">Seagate Software, Inc.<br>
+    <a href="http://www.seagatesoftware.com">http://www.seagatesoftware.com</a><br>
+    Envíe sus comentarios a:<br>
+    <a href="mailto:techpubs@seagatesoftware.com">techpubs@seagatesoftware.com</a><br>
+    </font></td>
+  </tr>
+</table>
+</body>
+</html>
+
+

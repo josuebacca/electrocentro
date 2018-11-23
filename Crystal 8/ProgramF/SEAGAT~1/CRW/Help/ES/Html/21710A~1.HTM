@@ -1,0 +1,121 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+
+<html>
+<head>
+<title>Ejemplo If</title>
+
+<link REL=STYLESHEET TYPE="text/css" HREF="seagate.css">
+
+<!--
+                 ***********************************
+                 * Seagate Software copyright 1999 *
+                 ***********************************
+
+                      Template version: 5.1
+-->
+
+
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" link="#0000FF" vlink="#0000FF" alink="#800080">
+
+
+ 
+<a name="147365"></a><h4 class="newpage"> Ejemplo If</h4><p><a name="147367"></a>Supongamos que una compa&#241;&#237;a desea calcular el estimado del importe de impuestos que los empleados han de pagar y escribir adem&#225;s un mensaje apropiado. Los ingresos inferiores a $8.000 no est&#225;n sujetos a impuestos; los ingresos entre $8.000 y $20.000 lo est&#225;n al 20%; los ingresos entre $20.000 y $35.000 est&#225;n sujetos al 29%; y los ingresos superiores a $35.000 lo est&#225;n al 40%.</p><PRE><a name="147369"></a>//Ejemplo de expresi&#243;n If 5
+<a name="147370"></a>Local CurrencyVar impuestos := 0;
+<a name="147371"></a>Local CurrencyVar ingresos := {Empleado.Salario};
+<a name="147372"></a>Local StringVar mensaje := "";
+<a name="147374"></a>If ingresos &lt; 8000 Then
+<a name="147375"></a>(
+<a name="147376"></a>   mensaje := "no";
+<a name="147377"></a>   impuestos := 0
+<a name="147378"></a>)
+<a name="147379"></a>Else If ingresos &gt;= 8000 And ingresos &lt; 20000 Then
+<a name="147380"></a>(
+<a name="147381"></a>   mensaje := "la m&#225;s baja";
+<a name="147382"></a>   impuestos := (ingresos - 8000)*0.20
+<a name="147383"></a>)
+<a name="147384"></a>Else If ingresos &gt;= 20000 And ingresos &lt; 35000 Then
+<a name="147385"></a>(
+<a name="147386"></a>   mensaje := "la intermedia";
+<a name="147387"></a>   impuestos := (20000 - 8000)*0.20 + (ingresos - 
+20000)*0.29
+<a name="147388"></a>)
+<a name="147389"></a>Else
+<a name="147390"></a>(
+<a name="147391"></a>   mensaje := "la m&#225;s alta";
+<a name="147392"></a>   impuestos := (20000 - 8000)*0.20 + (35000 - 
+20000)*0.29 +
+<a name="147393"></a>          (ingresos - 35000)*0.40
+<a name="147394"></a>);
+<a name="147396"></a>//Usar 2 decimales y el punto como
+<a name="147397"></a>//separador de miles
+<a name="147398"></a>Local StringVar cadenaImpuestos := CStr (impuestos, 2, ".");
+<a name="147400"></a>"Usted est&#225; en " &amp; mensaje &amp; " cuota impositiva. " &amp;
+<a name="147401"></a>"Sus impuestos estimados son " &amp; cadenaImpuestos &amp; "."
+</PRE><p><a name="147403"></a><font color="darkblue"><b>Nota:   &nbsp;&nbsp;&nbsp;</b></font>El uso de variables simplifica la l&#243;gica del c&#225;lculo. Adem&#225;s, hay 2 expresiones que se ejecutan cuando se cumple una de las condiciones; una asigna la variable impuestos y la otra asigna la variable mensaje. A menudo es &#250;til que se ejecuten expresiones m&#250;ltiples como resultado de una condici&#243;n.</p>
+
+<hr><br>
+
+<script  language="JavaScript"><!--
+
+var prev = "21_crystalsyntax53.html";
+var next = "21_crystalsyntax55.html";
+
+function setTopicID() { 
+      var number = "147365"; 
+      return number; 
+}
+
+// --></script>
+
+
+
+
+<SCRIPT>
+
+if (!window.parent.toc && navigator.appName == "Netscape") {
+
+   document.writeln ('<TABLE ALIGN="left" border="0" cellspacing="0" cellpadding="10">');
+   document.writeln ('<TR>');
+   document.write ('<TD ALIGN="left">');
+
+   if (prev != "crw_spTOC.hhc") {
+      document.writeln ('<A HREF="' + prev + '">');
+      document.writeln ('<IMG SRC="prevpage.gif" HEIGHT=17 BORDER=0 ALT="Página anterior"></A>');
+   } else {
+//   window.alert ('no previous page');
+   }
+
+   if (next != "crw_spIX.hhk") {
+      document.writeln ('<A HREF="' + next + '">');
+      document.writeln ('<IMG SRC="nextpage.gif" HEIGHT=17 BORDER=0 ALT="Página siguiente"></A>');
+   } else {
+//   window.alert ('no next page');
+   }
+   document.writeln ('</TD><TD ALIGN="left">');
+   document.writeln ('<A HREF="frameset.htm?TOC">');
+   document.writeln ('<IMG SRC="showtoc.gif" HEIGHT=17 BORDER=0 ALT="Haga clic para ver el contenido"></A></TD>');
+   document.writeln ('<TD ALIGN="left">');
+   document.writeln ('<A HREF="frameset.htm?IDX">');
+   document.writeln ('<IMG SRC="showix.gif" HEIGHT=17 BORDER=0 ALT="Haga clic para ver el índice"></A></TD>');
+   document.writeln ('</TD>');
+   document.writeln ('</TR>');
+   document.writeln ('</TABLE>');
+
+}
+
+</SCRIPT>
+<table align="right" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td align="right"><font size="1">Seagate Software, Inc.<br>
+    <a href="http://www.seagatesoftware.com">http://www.seagatesoftware.com</a><br>
+    Envíe sus comentarios a:<br>
+    <a href="mailto:techpubs@seagatesoftware.com">techpubs@seagatesoftware.com</a><br>
+    </font></td>
+  </tr>
+</table>
+</body>
+</html>
+
+

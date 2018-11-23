@@ -1,0 +1,236 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+
+<html>
+<head>
+<title>Uni&#243;n Menor que [&lt;]</title>
+
+<link REL=STYLESHEET TYPE="text/css" HREF="seagate.css">
+
+<!--
+                 ***********************************
+                 * Seagate Software copyright 1999 *
+                 ***********************************
+
+                      Template version: 5.1
+-->
+
+
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" link="#0000FF" vlink="#0000FF" alink="#800080">
+
+
+ 
+<a name="321992"></a><h4 class="newpage"> Uni&#243;n Menor que [&lt;]</h4><p><a name="321993"></a>El conjunto de resultados de una uni&#243;n Menor que incluye todos los registros en que el valor del campo vinculado de la tabla principal es menor que el valor del campo vinculado en la tabla de comparaci&#243;n. Utilizando la uni&#243;n Menor que, podemos comparar los sueldos de los agentes de ventas y los gerentes en una direcci&#243;n diferente. Una vez m&#225;s, el campo Sueldo en cada tabla es usado como campo de v&#237;nculo. Esta vez, vinculamos desde la tabla Gerentes a la tabla Agente de Ventas utilizando una uni&#243;n Menor que en los campos Sueldos vinculados:</p><PRE><a name="321994"></a>SELECT Gerente.'Apellido',<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Gerente.'Sueldo',<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Agente de Ventas.'Apellido',<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Agente de Ventas.'Sueldo'<br>
+FROM 'Gerente' Gerente',<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Agente de Ventas' Agente de Ventas<br>
+WHERE Gerente.'Sueldo' &lt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Agente de Ventas.'Sueldo'
+</PRE><p><a name="322084"></a>Este enunciado SQL produce una tabla ligeramente diferente a la de la uni&#243;n Mayor que:</p><p><a name="342541"></a> <Table Border="1">
+<tr><th align="left" valign="bottom"><a name="321997"></a>Tabla Gerente
+
+</th><th align="left" valign="bottom"><a name="321999"></a>Tabla Gerente
+
+</th><th align="left" valign="bottom"><a name="322001"></a>Tabla Agente de 
+Ventas
+
+</th><th align="left" valign="bottom"><a name="322003"></a>Tabla Agente 
+de Ventas
+
+</th></tr>
+<tr><th align="left" valign="bottom"><a name="322005"></a>Apellido
+
+</th><th align="left" valign="bottom"><a name="322007"></a>Sueldo
+
+</th><th align="left" valign="bottom"><a name="322009"></a>Apellido
+
+</th><th align="left" valign="bottom"><a name="322011"></a>Sueldo
+
+</th></tr>
+<tr><td align="left" valign="TOP"><P><a name="322013"></a>Fuller</P>
+
+
+</td><td align="left" valign="TOP"><P><a name="322015"></a>$32,000.00</P>
+
+
+</td><td align="left" valign="TOP"><P><a name="322017"></a>Davolio</P>
+
+
+</td><td align="left" valign="TOP"><P><a name="322019"></a>$35,000.00</P>
+
+
+</td></tr>
+<tr><td align="left" valign="TOP"><P><a name="322021"></a>Fuller</P>
+
+
+</td><td align="left" valign="TOP"><P><a name="322023"></a>$32,000.00</P>
+
+
+</td><td align="left" valign="TOP"><P><a name="322025"></a>Dodsworth</P>
+
+
+</td><td align="left" valign="TOP"><P><a name="322027"></a>$48,300.00</P>
+
+
+</td></tr>
+<tr><td align="left" valign="TOP"><P><a name="322029"></a>Brid</P>
+
+
+</td><td align="left" valign="TOP"><P><a name="322031"></a>$30,000.00</P>
+
+
+</td><td align="left" valign="TOP"><P><a name="322033"></a>Davolio</P>
+
+
+</td><td align="left" valign="TOP"><P><a name="322035"></a>$35,000.00</P>
+
+
+</td></tr>
+<tr><td align="left" valign="TOP"><P><a name="322037"></a>Brid</P>
+
+
+</td><td align="left" valign="TOP"><P><a name="322039"></a>$30,000.00</P>
+
+
+</td><td align="left" valign="TOP"><P><a name="322041"></a>Dodsworth</P>
+
+
+</td><td align="left" valign="TOP"><P><a name="322043"></a>$48,300.00</P>
+
+
+</td></tr>
+<tr><td align="left" valign="TOP"><P><a name="322045"></a>Buchanan</P>
+
+
+</td><td align="left" valign="TOP"><P><a name="322047"></a>$29,500.00</P>
+
+
+</td><td align="left" valign="TOP"><P><a name="322049"></a>Davolio</P>
+
+
+</td><td align="left" valign="TOP"><P><a name="322051"></a>$35,000.00</P>
+
+
+</td></tr>
+<tr><td align="left" valign="TOP"><P><a name="322053"></a>Buchanan</P>
+
+
+</td><td align="left" valign="TOP"><P><a name="322055"></a>$29,500.00</P>
+
+
+</td><td align="left" valign="TOP"><P><a name="322057"></a>Dodsworth</P>
+
+
+</td><td align="left" valign="TOP"><P><a name="322059"></a>$48,300.00</P>
+
+
+</td></tr>
+<tr><td align="left" valign="TOP"><P><a name="322061"></a>Buchanan</P>
+
+
+</td><td align="left" valign="TOP"><P><a name="322063"></a>$29,500.00</P>
+
+
+</td><td align="left" valign="TOP"><P><a name="322065"></a>Patterson</P>
+
+
+</td><td align="left" valign="TOP"><P><a name="322067"></a>$30,000.00</P>
+
+
+</td></tr>
+<tr><td align="left" valign="TOP"><P><a name="322069"></a>Martin</P>
+
+
+</td><td align="left" valign="TOP"><P><a name="322071"></a>$35,000.00</P>
+
+
+</td><td align="left" valign="TOP"><P><a name="322073"></a>Dodsworth</P>
+
+
+</td><td align="left" valign="TOP"><P><a name="322075"></a>$48,300.00</P>
+
+
+</td></tr>
+<tr><td align="left" valign="TOP"><P><a name="322077"></a>Hellstern</P>
+
+
+</td><td align="left" valign="TOP"><P><a name="322079"></a>$45,000.00</P>
+
+
+</td><td align="left" valign="TOP"><P><a name="322081"></a>Dodsworth</P>
+
+
+</td><td align="left" valign="TOP"><P><a name="322083"></a>$48,300.00</P>
+
+
+</td></tr>
+
+</Table></p>
+
+<hr><br>
+
+<script  language="JavaScript"><!--
+
+var prev = "24_under_databases23.html";
+var next = "24_under_databases25.html";
+
+function setTopicID() { 
+      var number = "321992"; 
+      return number; 
+}
+
+// --></script>
+
+
+
+
+<SCRIPT>
+
+if (!window.parent.toc && navigator.appName == "Netscape") {
+
+   document.writeln ('<TABLE ALIGN="left" border="0" cellspacing="0" cellpadding="10">');
+   document.writeln ('<TR>');
+   document.write ('<TD ALIGN="left">');
+
+   if (prev != "crw_spTOC.hhc") {
+      document.writeln ('<A HREF="' + prev + '">');
+      document.writeln ('<IMG SRC="prevpage.gif" HEIGHT=17 BORDER=0 ALT="Página anterior"></A>');
+   } else {
+//   window.alert ('no previous page');
+   }
+
+   if (next != "crw_spIX.hhk") {
+      document.writeln ('<A HREF="' + next + '">');
+      document.writeln ('<IMG SRC="nextpage.gif" HEIGHT=17 BORDER=0 ALT="Página siguiente"></A>');
+   } else {
+//   window.alert ('no next page');
+   }
+   document.writeln ('</TD><TD ALIGN="left">');
+   document.writeln ('<A HREF="frameset.htm?TOC">');
+   document.writeln ('<IMG SRC="showtoc.gif" HEIGHT=17 BORDER=0 ALT="Haga clic para ver el contenido"></A></TD>');
+   document.writeln ('<TD ALIGN="left">');
+   document.writeln ('<A HREF="frameset.htm?IDX">');
+   document.writeln ('<IMG SRC="showix.gif" HEIGHT=17 BORDER=0 ALT="Haga clic para ver el índice"></A></TD>');
+   document.writeln ('</TD>');
+   document.writeln ('</TR>');
+   document.writeln ('</TABLE>');
+
+}
+
+</SCRIPT>
+<table align="right" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td align="right"><font size="1">Seagate Software, Inc.<br>
+    <a href="http://www.seagatesoftware.com">http://www.seagatesoftware.com</a><br>
+    Envíe sus comentarios a:<br>
+    <a href="mailto:techpubs@seagatesoftware.com">techpubs@seagatesoftware.com</a><br>
+    </font></td>
+  </tr>
+</table>
+</body>
+</html>
+
+

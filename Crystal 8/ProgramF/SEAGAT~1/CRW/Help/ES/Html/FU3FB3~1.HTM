@@ -1,0 +1,147 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+
+<html>
+<head>
+<title>CStr</title>
+
+<link REL=STYLESHEET TYPE="text/css" HREF="seagate.css">
+
+<!--
+                 ***********************************
+                 * Seagate Software copyright 1999 *
+                 ***********************************
+
+                      Template version: 5.1
+-->
+
+
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" link="#0000FF" vlink="#0000FF" alink="#800080">
+
+
+ 
+<a name="1000569614"></a><h3 class="newpage"> CStr</h3>
+<p><a name="1000648927"></a>Sintaxis b&#225;sica y Crystal. </p><p><a name="1000702750"></a>CStr y <a href="Functions79.html#1000852914">ToText</a> son funciones equivalentes.</p><a name="1000569615"></a><h5>Sobrecargas</h5><ul type="disc"><a name="1000569616"></a><li>CStr (x) 
+<a name="1000569617"></a><li>CStr (x, y) 
+<a name="1000569618"></a><li>CStr (x, y, z) 
+<a name="1000569619"></a><li>CStr (x, y, z, w) 
+<a name="1000569620"></a><li>CStr (x, y, z, w, q) 
+</ul><a name="1000743980"></a><h5>Argumentos</h5><p><a name="1000744036"></a> <Table Border="1">
+<tr><th align="left" valign="bottom"><a name="1000743983"></a>Convirtiendo . . .
+
+</th><th align="left" valign="bottom"><a name="1000743985"></a>Descripci&#243;n
+
+</th></tr>
+<tr><td align="left" valign="TOP"><P><a name="1000743987"></a>Valores Booleanos</P>
+
+
+</td><td align="left" valign="TOP"><ul type="disc"><a name="1000743989"></a><li>x es un valor Booleano que es convertido a cadena de caracteres, ya sea "Verdadero" o "Falso".
+</ul></td></tr>
+<tr><td align="left" valign="TOP"><P><a name="1000743991"></a>Valores Num&#233;ricos y de Moneda </P>
+
+
+</td><td align="left" valign="TOP"><ul type="disc"><a name="1000743993"></a><li>x es un valor fraccionario o monetario a ser convertido a cadena de caracteres de texto; puede ser un valor entero o fraccionario.
+<a name="1000743994"></a><li>y es un n&#250;mero entero que indica el n&#250;mero de lugares decimales para llevar el valor en x. (Este argumento es opcional.)
+<a name="1000743995"></a><li>z es un solo car&#225;cter de cadena de caracteres de texto que indica el car&#225;cter utilizado para separar los miles en x. En forma predeterminada es el car&#225;cter especificado en su panel de control Internacional o Regional. (Este argumento es opcional.)
+<a name="1000743996"></a><li>w es un s&#243;lo car&#225;cter de cadena de caracteres de texto que indica el car&#225;cter a ser utilizado como separador decimal en x. En forma predeterminada este car&#225;cter es especificado en su panel de control Internacional o Regional. (Este argumento es opcional.)
+</ul></td></tr>
+<tr><td align="left" valign="TOP"><P><a name="1000743998"></a>Valores num&#233;ricos y de moneda (con formato)</P>
+
+
+</td><td align="left" valign="TOP"><ul type="disc"><a name="1000744000"></a><li>x es un valor fraccionario o monetario a ser convertido a cadena de texto; puede ser un valor entero o fraccionario.
+<a name="1000744001"></a><li>y es una cadena de caracteres de texto a ser utilizada para indicar el formato para mostrar el valor en x. Vea <a href="Functions80.html#1000853016">Cadenas de formato</a> para informaci&#243;n sobre c&#243;mo crear una cadena con formato.
+<a name="1000744005"></a><li>z es un n&#250;mero entero que indica el n&#250;mero de lugares decimales para llevar al valor en x. (Este argumento es opcional.)
+<a name="1000744006"></a><li>w es un solo car&#225;cter de cadena de texto que indica el car&#225;cter utilizado para separar los miles en x. En forma predeterminada es el car&#225;cter especificado en su panel de control Internacional o Regional. (Este argumento es opcional.)
+<a name="1000744007"></a><li>q es un solo car&#225;cter de cadena de texto que indica el car&#225;cter a ser utilizado como separador decimal en x. En forma predeterminada este car&#225;cter es especificado en su panel de control Internacional o Regional. (Este argumento es opcional.)
+</ul></td></tr>
+<tr><td align="left" valign="TOP"><P><a name="1000744009"></a>Valores de fecha</P>
+
+
+</td><td align="left" valign="TOP"><ul type="disc"><a name="1000744011"></a><li>x es un valor Fecha a ser convertido en una cadena de texto.
+<a name="1000744012"></a><li>y es una cadena de texto que define c&#243;mo va a ser formateado el valor x. Vea <a href="Functions81.html#1000853143">Cadenas de formato para valores de fecha, hora, y fecha/hora</a> para informaci&#243;n sobre c&#243;mo crear una cadena con formato. (Este argumento es opcional.)
+</ul></td></tr>
+<tr><td align="left" valign="TOP"><P><a name="1000744017"></a>Valores de hora</P>
+
+
+</td><td align="left" valign="TOP"><ul type="disc"><a name="1000744019"></a><li>x es un valor de hora a ser convertido en cadena de caracteres de texto.
+<a name="1000744020"></a><li>y es una cadena de texto que define c&#243;mo va a ser formateado el valor x. Vea <a href="Functions81.html#1000853143">Cadenas de formato para valores de fecha, hora, y fecha/hora</a> para informaci&#243;n sobre c&#243;mo crear una cadena con formato. (Este argumento es opcional.)
+<a name="1000744024"></a><li>z es una cadena de texto a ser utilizada como una etiqueta para las horas A.M. (ma&#241;ana). (Este argumento es opcional)
+<a name="1000744025"></a><li>w es una cadena de texto a ser utilizada como etiqueta para las horas P.M. (tarde). (Este argumento es opcional.)
+</ul></td></tr>
+<tr><td align="left" valign="TOP"><P><a name="1000744027"></a>Valores de fecha/hora</P>
+
+
+</td><td align="left" valign="TOP"><ul type="disc"><a name="1000744029"></a><li>x es un valor Fecha/hora a ser convertido a cadena de texto.
+<a name="1000744030"></a><li>y es una cadena de texto que indica c&#243;mo va a ser formateada la cadena resultante. Vea <a href="Functions81.html#1000853143">Cadenas de formato para valores de fecha, hora, y fecha/hora</a> para informaci&#243;n sobre c&#243;mo crear una cadena con formato. (Este argumento es opcional.)
+<a name="1000744034"></a><li>z es una cadena de texto a ser utilizada como etiqueta para las horas A.M. (ma&#241;ana). (Este argumento es opcional.)
+<a name="1000744035"></a><li>w es una cadena de texto a ser utilizada como etiqueta para las horas P.M. (tarde). (Este argumento es opcional.)
+</ul></td></tr>
+
+</Table></p>
+<a name="1000569648"></a><h5>Devuelve </h5><p><a name="1000569649"></a>Una cadena de texto.</p><a name="1000569650"></a><h5>Acci&#243;n</h5><p><a name="1000569651"></a>La funci&#243;n CStr convierte n&#250;meros fraccionarios, valor monetario, fecha, hora y valores de fecha/hora a cadenas de caracteres de texto.</p><a name="1000569652"></a><h5>Uso(s) t&#237;pico(s)</h5><p><a name="1000569653"></a>Utilice est&#225; funci&#243;n para convertir un n&#250;mero fraccionario, un valor monetario, de fecha, hora, o de fecha/hora a una cadena de texto para que aparezca como un texto en su informe (formas de carta, comentarios, etc.).</p><a name="1000569654"></a><h5>Ejemplo(s)</h5><p><a name="1000569655"></a>Los siguientes ejemplos son aplicables a las sintaxis b&#225;sica y Crystal:</p><p><code><a name="1000569656"></a>CStr ({Pedidos.Enviados}) </code></p><p class="example"><a name="1000569657"></a>Devuelve Verdadero cuando el valor en ({pedidos.ENVIADOS}) es Verdadero.</p><p><code><a name="1000569658"></a>CStr(123,45) </code></p><p class="example"><a name="1000569659"></a>Devuelve "123.45".</p><p><code><a name="1000569660"></a>CStr(12345,6749.2) </code></p><p class="example"><a name="1000569661"></a>Devuelve "12345.67".</p><p><code><a name="1000569662"></a>CStr(12345,6750.2)</code></p><p class="example"><a name="1000569663"></a>Devuelve "12345.68".</p><p><code><a name="1000569664"></a>CStr(12345,4999,0) </code></p><p class="example"><a name="1000569665"></a>Devuelve "12345".</p><p><code><a name="1000569666"></a>CStr(12345,5000,0) </code></p><p class="example"><a name="1000569667"></a>Devuelve "12346".</p><p><code><a name="1000569668"></a>CStr({archivo.MONTO} * {archivo.CANTIDAD}) </code></p><p class="example"><a name="1000569669"></a>Devuelve "44,890.20" cuando Monto = 24.45 y Cantidad = 1836.</p><p><a name="1000569670"></a>CStr es &#250;til cuando quiera construir una oraci&#243;n combinando (concatenando) un n&#250;mero convertido u otro valor con otra cadena de texto&nbsp; :</p><p><code><a name="1000569671"></a>"El precio base del elemento # " + {archivo.N&Uacute;MERO DE ELEMENTO} + " es $" + CStr({archivo.PRECIO BASE}) + "." </code></p><p class="example"><a name="1000569672"></a>Imprime la oraci&#243;n "El precio base del elemento A1/4520/B12 es $50.00." cuando el N&#250;mero de Elemento es A1/4520/B12 y Precio Base es 50.00, convertido a texto y con formato de dos lugares decimales.</p><p><code><a name="1000569673"></a>CStr(CDate(1996, 11, 1), "aa MMM dd, dddd") </code></p><p class="example"><a name="1000569674"></a>Devuelve "96 Nov 01, Lunes".</p><p><code><a name="1000569675"></a>CStr(CDateTime(1995,10,12,3,30,11),"HH:mm, aa MMMM ddd") </code></p><p class="example"><a name="1000569676"></a>Devuelve 03:30, Lun. Octubre 95.</p><p><code><a name="1000569677"></a>CStr(CTime(12, 10, 10), "HH*mm*ss tt", "amStr", "pmStr") </code></p><p class="example"><a name="1000569678"></a>Devuelve "12*10*10 pmStr".</p><a name="1000569830"></a><h5>Comentario(s) </h5><p><a name="1000569831"></a>Las sobrecargas de CStr que s&#243;lo admiten un argumento operan como la funci&#243;n de Visual Basic del mismo nombre.</p><p><a name="1000569832"></a>Convirtiendo valores Booleanos:</p><ul type="disc"><ul type="disc"><a name="1000569833"></a><li>La funci&#243;n CStr, cuando utiliza valores Booleanos, es m&#225;s &#250;til para combinar (concatenar) un valor Booleano con otro texto. De otra manera, un campo Booleano puede ser formateado para aparecer como <EM>Verdadero</EM> o <EM>Falso</EM> en su informe simplemente cambiando el formato en la ficha Booleano del Editor de Formato.</ul></ul><p><a name="1000569834"></a>Convirtiendo n&#250;meros fraccionarios y valores monetarios:</p><ul type="disc"><ul type="disc"><a name="1000569835"></a><li>Si el n&#250;mero de lugares decimales es especificado, esta funci&#243;n no trunca el n&#250;mero cuando es convertido a texto, pero lo redondea al n&#250;mero de lugares decimales especificados. Vea <a href="Functions6.html#1000850039">Round (x), Round (x, #lugares)</a> para obtener m&#225;s informaci&#243;n sobre el procedimiento de redondeo de Crystal Reports.</ul></ul><p><a name="1000569836"></a>Convirtiendo valores de fecha, hora, y fecha/hora:</p><ul type="disc"><ul type="disc"><a name="1000569837"></a><li>Cualquier car&#225;cter, a excepci&#243;n de los caracteres de formato de fecha o de hora, puede ser utilizado dentro de la cadena de formato. Por ejemplo, puede desear utilizar una diagonal para separar diferentes elementos (mes, d&#237;a, a&#241;o) de la fecha, como en "12/30/95", o puede desear utilizar dos puntos para separar elementos diferentes (horas, minutos, segundos) de la hora, como en "12:30:10".<a name="1000569838"></a><li>Si desea utilizar cualquiera de los caracteres anteriores en la cadena de formato, deben de aparecer entre comillas. Por ejemplo: CStr(CDateTime(1995,10,12,13,20,22), "MM/dd/aa hh 'h' mm 'min' ss 'sec' ", 'am', 'pm') = "10/12/95 1 h 20 min 22 sec pm"</ul></ul><p><a name="1000569839"></a>Argumentos opcionales de paso:</p><ul type="disc"><a name="1000569840"></a><li>Varios argumentos para la funci&#243;n CStr han sido especificados como opcionales. De cualquier forma, un argumento no puede estar en blanco si un argumento es suministrado despu&#233;s de que est&#225; en la funci&#243;n. En otras palabras, usted no puede dejar los argumentos y y z en blanco y proporcionar un argumento para w. Es posible, de cualquier forma, dejar uno, dos, o todos los argumentos opcionales en blanco, mientras no se suministren argumentos despu&#233;s de los argumentos en blanco. Las siguientes combinaciones son posibles cuando se suministran argumentos a la funci&#243;n CStr:
+<ul type="disc"><ul type="disc"><a name="1000569841"></a><li>CStr (x)<a name="1000569842"></a><li>CStr (x, y)<a name="1000569843"></a><li>CStr (x, y, z)<a name="1000569844"></a><li>CStr (x, y, z, w)<a name="1000569845"></a><li>CStr (x, y, z, w, q)<a name="1000569846"></a><li>Utilizando los caracteres de formato "t" o "tt" en una cadena de formato de tiempo proporciona cadenas predeterminadas para indicar horas a.m. (ma&#241;ana) y p.m. (tarde). "t" produce un car&#225;cter sencillo, "a" o "p", mientras que "tt" produce la cadena completa, "am" o "pm". Usted pueda pasar su propia cadena personalizada para indicar cadenas am/pm. (Vera los argumentos para convertir valores de hora y de fecha/hora con CStr en la secci&#243;n Argumentos anterior.) Si pasa sus propias cadenas am/pm, los caracteres de formato  "t" y "tt" tendr&#225;n el mismo efecto en ellos (produciendo cadenas de car&#225;cter sencillo contra caracteres m&#250;ltiples). De cualquier forma los caracteres de formato "t" y "tt" son opcionales y s&#243;lo son necesarios cuando las cadenas predeterminadas am/pm son necesarias.</ul></ul></ul>
+<hr><br>
+
+<script  language="JavaScript"><!--
+
+var prev = "Functions160.html";
+var next = "Functions162.html";
+
+function setTopicID() { 
+      var number = "1000569614"; 
+      return number; 
+}
+
+// --></script>
+
+
+
+
+<SCRIPT>
+
+if (!window.parent.toc && navigator.appName == "Netscape") {
+
+   document.writeln ('<TABLE ALIGN="left" border="0" cellspacing="0" cellpadding="10">');
+   document.writeln ('<TR>');
+   document.write ('<TD ALIGN="left">');
+
+   if (prev != "crw_spTOC.hhc") {
+      document.writeln ('<A HREF="' + prev + '">');
+      document.writeln ('<IMG SRC="prevpage.gif" HEIGHT=17 BORDER=0 ALT="Página anterior"></A>');
+   } else {
+//   window.alert ('no previous page');
+   }
+
+   if (next != "crw_spIX.hhk") {
+      document.writeln ('<A HREF="' + next + '">');
+      document.writeln ('<IMG SRC="nextpage.gif" HEIGHT=17 BORDER=0 ALT="Página siguiente"></A>');
+   } else {
+//   window.alert ('no next page');
+   }
+   document.writeln ('</TD><TD ALIGN="left">');
+   document.writeln ('<A HREF="frameset.htm?TOC">');
+   document.writeln ('<IMG SRC="showtoc.gif" HEIGHT=17 BORDER=0 ALT="Haga clic para ver el contenido"></A></TD>');
+   document.writeln ('<TD ALIGN="left">');
+   document.writeln ('<A HREF="frameset.htm?IDX">');
+   document.writeln ('<IMG SRC="showix.gif" HEIGHT=17 BORDER=0 ALT="Haga clic para ver el índice"></A></TD>');
+   document.writeln ('</TD>');
+   document.writeln ('</TR>');
+   document.writeln ('</TABLE>');
+
+}
+
+</SCRIPT>
+<table align="right" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td align="right"><font size="1">Seagate Software, Inc.<br>
+    <a href="http://www.seagatesoftware.com">http://www.seagatesoftware.com</a><br>
+    Envíe sus comentarios a:<br>
+    <a href="mailto:techpubs@seagatesoftware.com">techpubs@seagatesoftware.com</a><br>
+    </font></td>
+  </tr>
+</table>
+</body>
+</html>
+
+

@@ -1,0 +1,98 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+
+<html>
+<head>
+<title>Sugerencias sobre el aprendizaje de sintaxis Basic</title>
+
+<link REL=STYLESHEET TYPE="text/css" HREF="seagate.css">
+
+<!--
+                 ***********************************
+                 * Seagate Software copyright 1999 *
+                 ***********************************
+
+                      Template version: 5.1
+-->
+
+
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" link="#0000FF" vlink="#0000FF" alink="#800080">
+
+
+ 
+<a name="127598"></a><h3 class="newpage"> Sugerencias sobre el aprendizaje de sintaxis Basic</h3>
+<a name="127600"></a><h4>Si no tiene experiencia en programaci&#243;n</h4><p><a name="127602"></a>En muchos casos es posible que no necesite usar el lenguaje de f&#243;rmulas. Seagate Crystal Reports incluye varios asistentes que manejan autom&#225;ticamente situaciones donde se podr&#237;an usar f&#243;rmulas. Entre ellos se incluyen los Asistentes de Selecci&#243;n, B&#250;squeda, Totales acumulados y Resaltado, as&#237; como tambi&#233;n los cuadros de di&#225;logo Insertar resumen e Insertar total general. Antes de crear f&#243;rmulas, verifique si puede usar alguna de estas herramientas.</p><p><a name="127604"></a>Sin embargo, es posible que necesite crear f&#243;rmulas sin la ayuda de un asistente. Consulte este secci&#243;n para aprender acerca de la sintaxis Basic y las reglas que necesita seguir para crear una f&#243;rmula.</p><a name="127606"></a><h4>Si conoce Microsoft Visual Basic, VBScript u otra versi&#243;n de Basic</h4><p><a name="127608"></a>Para crear f&#243;rmulas usando sintaxis Basic, necesita comprender lo siguiente:</p><ul type="disc"><a name="127609"></a><li>C&#243;mo una f&#243;rmula con sintaxis Basic hace referencia a otros campos del informe, como campos de base de datos, de par&#225;metros, de resumen, de totales acumulados y de otras f&#243;rmulas.
+<a name="127610"></a><li>C&#243;mo devolver un valor de una f&#243;rmula al configurar la variable especial llamada <EM>formula</EM>.
+<a name="147493"></a><li>C&#243;mo usar funciones espec&#237;ficas del procesamiento de informes, tales como ReportTitle y OnFirstRecord.
+<a name="147494"></a><li>C&#243;mo usar el sistema tipo. La sintaxis Basic se escribe en forma enfatizada, similar a usar Option Explicit en Visual Basic y no hay tipo Variante. La sintaxis Basic admite tipos separados de fecha, hora y fechahora, a diferencia de s&#243;lo el tipo fecha en Visual Basic. Tambi&#233;n admite tipos de rango como <EM>10 To 20</EM> para permitir rangos de valores que son comunes en muchas aplicaciones de elaboraci&#243;n de informes.
+</ul><p><a name="134426"></a>Consulte este secci&#243;n para familiarizarse con los detalles anteriores.</p><a name="127614"></a><h5>Funciones familiares</h5><p><a name="134509"></a> </p>
+<ul type="disc"><a name="147501"></a><li>Muchas de las funciones de la sintaxis Basic funcionan igual que sus hom&#243;logas en Visual Basic. Entre ellas se incluyen funciones de cadena como Len, Mid y Filter, funciones matem&#225;ticas como Abs, Rnd y Sin, funciones financieras como PV, funciones de accesos directos de programaci&#243;n como IIF y funciones de fecha como DateSerial, DateAdd y DateDiff.
+<a name="147502"></a><li>La mayor&#237;a de los operadores compatibles con Visual Basic son tambi&#233;n compatibles con la sintaxis Basic. Por ejemplo, la concatenaci&#243;n de cadena (&amp;) y literales fecha<nobr>-h</nobr>ora (#...#).
+<a name="127617"></a><li>La mayor&#237;a de las estructuras de control y enunciados usan la misma sintaxis que Visual Basic. Entre ellos se incluyen los enunciados If, Select, Do While, Do Until, While y For/Next.
+<a name="127618"></a><li>La apariencia general de la f&#243;rmula ser&#225; inconfundiblemente parecida a Basic. Por ejemplo, se admiten los comentarios de estilo y caracteres de continuaci&#243;n de l&#237;nea de Basic, as&#237; como el uso de lenguaje Basic de nuevas l&#237;neas, dos puntos y el signo igual.
+</ul><a name="127622"></a><h4>Si ya conoce la sintaxis Crystal</h4><p><a name="127624"></a>El principal ajuste es acostumbrarse a las partes del lenguaje Basic que son comunes a toda versi&#243;n de Basic. Para una introducci&#243;n detallada, consulte este secci&#243;n .</p>
+<hr><br>
+
+<script  language="JavaScript"><!--
+
+var prev = "20_basicsyntax2.html";
+var next = "20_basicsyntax4.html";
+
+function setTopicID() { 
+      var number = "127598"; 
+      return number; 
+}
+
+// --></script>
+
+
+
+
+<SCRIPT>
+
+if (!window.parent.toc && navigator.appName == "Netscape") {
+
+   document.writeln ('<TABLE ALIGN="left" border="0" cellspacing="0" cellpadding="10">');
+   document.writeln ('<TR>');
+   document.write ('<TD ALIGN="left">');
+
+   if (prev != "crw_spTOC.hhc") {
+      document.writeln ('<A HREF="' + prev + '">');
+      document.writeln ('<IMG SRC="prevpage.gif" HEIGHT=17 BORDER=0 ALT="Página anterior"></A>');
+   } else {
+//   window.alert ('no previous page');
+   }
+
+   if (next != "crw_spIX.hhk") {
+      document.writeln ('<A HREF="' + next + '">');
+      document.writeln ('<IMG SRC="nextpage.gif" HEIGHT=17 BORDER=0 ALT="Página siguiente"></A>');
+   } else {
+//   window.alert ('no next page');
+   }
+   document.writeln ('</TD><TD ALIGN="left">');
+   document.writeln ('<A HREF="frameset.htm?TOC">');
+   document.writeln ('<IMG SRC="showtoc.gif" HEIGHT=17 BORDER=0 ALT="Haga clic para ver el contenido"></A></TD>');
+   document.writeln ('<TD ALIGN="left">');
+   document.writeln ('<A HREF="frameset.htm?IDX">');
+   document.writeln ('<IMG SRC="showix.gif" HEIGHT=17 BORDER=0 ALT="Haga clic para ver el índice"></A></TD>');
+   document.writeln ('</TD>');
+   document.writeln ('</TR>');
+   document.writeln ('</TABLE>');
+
+}
+
+</SCRIPT>
+<table align="right" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td align="right"><font size="1">Seagate Software, Inc.<br>
+    <a href="http://www.seagatesoftware.com">http://www.seagatesoftware.com</a><br>
+    Envíe sus comentarios a:<br>
+    <a href="mailto:techpubs@seagatesoftware.com">techpubs@seagatesoftware.com</a><br>
+    </font></td>
+  </tr>
+</table>
+</body>
+</html>
+
+

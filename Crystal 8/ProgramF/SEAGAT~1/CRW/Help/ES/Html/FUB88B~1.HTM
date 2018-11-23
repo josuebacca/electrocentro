@@ -1,0 +1,94 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+
+<html>
+<head>
+<title>Truncate (x), Truncate (x, #lugares)</title>
+
+<link REL=STYLESHEET TYPE="text/css" HREF="seagate.css">
+
+<!--
+                 ***********************************
+                 * Seagate Software copyright 1999 *
+                 ***********************************
+
+                      Template version: 5.1
+-->
+
+
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" link="#0000FF" vlink="#0000FF" alink="#800080">
+
+
+ 
+<a name="1000850115"></a><h3 class="newpage"> Truncate (x), Truncate (x, #lugares)</h3>
+<p><a name="1000850119"></a>Truncate y <a href="Functions8.html#1000850182">Fix</a> son funciones equivalentes. No obstante, se prefiere Truncate en la sintaxis Crystal y Fix en la sintaxis b&#225;sica.</p><a name="1000850120"></a><h5>Argumentos</h5><ul type="disc"><a name="1000850121"></a><li><EM>x</EM> es un n&#250;mero fraccionario para ser truncado.
+<a name="1000850122"></a><li><EM>#lugares</EM> es un n&#250;mero entero que indica cu&#225;ntos lugares decimales van a quedar despu&#233;s de que el valor sea truncado. (Este argumento es opcional.)
+</ul><a name="1000850123"></a><h5>Devuelve </h5><p><a name="1000850124"></a>Un n&#250;mero fraccionario.</p><a name="1000850125"></a><h5>Acci&#243;n</h5><p><a name="1000850126"></a>Truncate(x) devuelve un n&#250;mero entero truncando el n&#250;mero en el punto decimal. Si se especifica el argumento #lugares, el n&#250;mero es truncado al lugar decimal indicado y la funci&#243;n devuelve un n&#250;mero fraccionario. Si #lugares es negativo, el n&#250;mero es redondeado a la primera decena, centena y as&#237; sucesivamente.</p><a name="1000850127"></a><h5>Uso(s) t&#237;pico(s) </h5><p><a name="1000850128"></a>Utilice esta funci&#243;n siempre que los caracteres a la derecha del punto decimal no sean necesarios para un informe o un c&#225;lculo.</p><a name="1000850129"></a><h5>Ejemplo(s) </h5><p><a name="1000850130"></a>Los siguientes ejemplos se aplican a las sintaxis b&#225;sica y Crystal, aunque se prefiere Fix en esta &#250;ltima:</p><p><code><a name="1000850131"></a>Truncate(1.23456) </code></p><p class="indent"><a name="1000850132"></a>Devuelve 1.</p><p><code><a name="1000850133"></a>Truncate(1.499)</code></p><p class="example"><a name="1000850134"></a>Devuelve 1.</p><p><code><a name="1000850135"></a>Truncate(1.599)</code></p><p class="example"><a name="1000850136"></a>Devuelve 1.</p><p><code><a name="1000850137"></a>Truncate(1.999)</code></p><p class="example"><a name="1000850138"></a>Devuelve 1.</p><p><code><a name="1000850139"></a>Truncate(12346.33, 1)</code></p><p class="example"><a name="1000850140"></a>Devuelve 12346.3.</p><p><code><a name="1000850141"></a>Truncate(12345.33, -2)</code></p><p class="example"><a name="1000850142"></a>Devuelve 12300.00.</p><p><a name="1000850143"></a>Si tiene 147 pelotas de golf en bodega y desea saber cu&#225;ntas docenas est&#225;n disponibles a la venta, su c&#225;lculo es 147/12=12.25 12.25 (truncado) = 12 docenas disponibles a la venta. Si vende pelotas por docena, el .25 de docena que se trunca no es importante.</p><p><code><a name="1000850144"></a>Truncate({archivo.INVENTARIO DE PELOTAS} / 12)</code></p><p class="example"><a name="1000850145"></a>Devuelve 12 donde inventario de pelotas = 147 (147 / 12 = 12.25, 12.25 truncado = 12).</p><p><code><a name="1000850146"></a>Truncate({archivo.INVENTARIO DE PELOTAS} / 12)</code></p><p class="example"><a name="1000850147"></a>Devuelve 12 donde inventario de pelotas = 155 (155/12 = 12.92, 12.92 truncado = 12).</p><p><code><a name="1000850148"></a>Truncate({archivo.INVENTARIO DE PELOTAS} / 12)</code></p><p class="example"><a name="1000850149"></a>Devuelve 13 donde inventario de pelotas = 157 (157/12 = 13.08, 13.08 truncado = 13).</p><a name="1000850150"></a><h5>Comentarios</h5><ul type="disc"><a name="1000850151"></a><li>&Eacute;sta no es una funci&#243;n de redondeo; Truncate simplemente elimina todos los caracteres a la derecha del punto decimal. 
+<p class="indent"><a name="1000850155"></a>V&#233;ase <a href="Functions6.html#1000850039">Round (x), Round (x, #lugares)</a> para una explicaci&#243;n sobre el redondeo.</p><a name="1000850159"></a><li>Truncate (n) y <a href="Functions5.html#1000850004">Int (n&#250;mero)</a> son sin&#243;nimos excepto cuando  n (n&#250;mero) es negativo, en cuyo caso Truncate devuelve al primer entero mayor o igual a n e  Int devuelve al primer entero menor o igual a  n. Por ejemplo,
+</ul><p><code><a name="1000850160"></a>Truncate (-10.2)</code></p><p class="example"><a name="1000850161"></a>Devuelve -10.</p><p><code><a name="1000850162"></a>Int (-10.2)</code></p><p class="example"><a name="1000850163"></a>Devuelve -11.</p><ul type="disc"><a name="1000850164"></a><li>Truncate es tambi&#233;n una caracter&#237;stica disponible como opci&#243;n de formato para valores num&#233;ricos en campos. Tenga en cuenta que utilizar caracter&#237;sticas de formato de campos puede afectar a la forma en que son utilizados los valores en las f&#243;rmulas. Para obtener m&#225;s informaci&#243;n sobre la conversi&#243;n a n&#250;meros y a valor monetario, v&#233;ase la funci&#243;n <a href="Functions78.html#1000852857">ToNumber (num&#233;rico), ToNumber (cadena)</a> y el operador  <a href="Operators13.html#1000024397">To currency operator</a>.
+</ul><a name="1000850171"></a><h6>Temas relacionados</h6><p><a name="1000850175"></a><a href="Functions5.html#1000850004">Int (n&#250;mero)</a></p><p><a name="1000850179"></a><a href="19_introformulas41.html#317444">F&#243;rmula 13</a></p>
+<hr><br>
+
+<script  language="JavaScript"><!--
+
+var prev = "Functions6.html";
+var next = "Functions8.html";
+
+function setTopicID() { 
+      var number = "1000850115"; 
+      return number; 
+}
+
+// --></script>
+
+
+
+
+<SCRIPT>
+
+if (!window.parent.toc && navigator.appName == "Netscape") {
+
+   document.writeln ('<TABLE ALIGN="left" border="0" cellspacing="0" cellpadding="10">');
+   document.writeln ('<TR>');
+   document.write ('<TD ALIGN="left">');
+
+   if (prev != "crw_spTOC.hhc") {
+      document.writeln ('<A HREF="' + prev + '">');
+      document.writeln ('<IMG SRC="prevpage.gif" HEIGHT=17 BORDER=0 ALT="Página anterior"></A>');
+   } else {
+//   window.alert ('no previous page');
+   }
+
+   if (next != "crw_spIX.hhk") {
+      document.writeln ('<A HREF="' + next + '">');
+      document.writeln ('<IMG SRC="nextpage.gif" HEIGHT=17 BORDER=0 ALT="Página siguiente"></A>');
+   } else {
+//   window.alert ('no next page');
+   }
+   document.writeln ('</TD><TD ALIGN="left">');
+   document.writeln ('<A HREF="frameset.htm?TOC">');
+   document.writeln ('<IMG SRC="showtoc.gif" HEIGHT=17 BORDER=0 ALT="Haga clic para ver el contenido"></A></TD>');
+   document.writeln ('<TD ALIGN="left">');
+   document.writeln ('<A HREF="frameset.htm?IDX">');
+   document.writeln ('<IMG SRC="showix.gif" HEIGHT=17 BORDER=0 ALT="Haga clic para ver el índice"></A></TD>');
+   document.writeln ('</TD>');
+   document.writeln ('</TR>');
+   document.writeln ('</TABLE>');
+
+}
+
+</SCRIPT>
+<table align="right" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td align="right"><font size="1">Seagate Software, Inc.<br>
+    <a href="http://www.seagatesoftware.com">http://www.seagatesoftware.com</a><br>
+    Envíe sus comentarios a:<br>
+    <a href="mailto:techpubs@seagatesoftware.com">techpubs@seagatesoftware.com</a><br>
+    </font></td>
+  </tr>
+</table>
+</body>
+</html>
+
+

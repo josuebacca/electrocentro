@@ -1,0 +1,98 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+
+<html>
+<head>
+<title>MIRR (valores, tasaFinanciera, tasaDeReinversi&#243;n)</title>
+
+<link REL=STYLESHEET TYPE="text/css" HREF="seagate.css">
+
+<!--
+                 ***********************************
+                 * Seagate Software copyright 1999 *
+                 ***********************************
+
+                      Template version: 5.1
+-->
+
+
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" link="#0000FF" vlink="#0000FF" alink="#800080">
+
+
+ 
+<a name="1000851922"></a><h3 class="newpage"> MIRR (valores, tasaFinanciera, tasaDeReinversi&#243;n)</h3>
+<p><a name="1000851923"></a>Sintaxis b&#225;sica y Crystal.</p><a name="1000851924"></a><h5>Argumentos</h5><ul type="disc"><a name="1000851925"></a><li>valores es una matriz de tipo N&#250;mero o Moneda que especifica los valores del flujo de caja.  La matriz debe contener por lo menos un valor negativo (un pago) y  un valor positivo (un ingreso). El flujo de caja debe realizarse a intervalos regulares tales como mensual o anualmente.
+<a name="1000851926"></a><li>tasaFinanciera es un N&#250;mero que especifica la tasa de inter&#233;s pagada como coste de financiaci&#243;n.  
+<a name="1000851927"></a><li>tasaDeReinversi&#243;n es un N&#250;mero que especifica la tasa de inter&#233;s recibida sobre las ganancias de reinversiones de efectivo. 
+</ul><a name="1000851928"></a><h5>Devuelve </h5><p><a name="1000851929"></a>Valor num&#233;rico</p><a name="1000851930"></a><h5>Acci&#243;n</h5><p><a name="1000851931"></a>MIRR devuelve un N&#250;mero especificando la tasa interna de devoluci&#243;n modificada para una  serie de flujos de efectivo peri&#243;dicos (pagos e ingresos). </p><a name="1000851932"></a><h5>Ejemplo</h5><p><a name="1000851933"></a>El siguiente ejemplo es aplicable a las sintaxis b&#225;sica y Crystal:</p><p><a name="1000851934"></a>Supongamos que tiene un negocio que realiza inversiones de equipo, el cual tiene p&#233;rdidas el primer y cuarto a&#241;os. Sus devoluciones anuales previstas son: -$50,000, $40,000, $65,000, -$60,000, $50,000, $70,000. Sus p&#233;rdidas se financian al 10 por ciento mientra reinvierte sus ganancias en una cuenta al 6 por ciento.  La tasa interna de devoluci&#243;n modificada es:</p><p class="code"><a name="1000851935"></a>Sintaxis b&#225;sica Rem
+<br><a name="1000851936"></a>formula = MIRR(Array(-50000, 40000, 65000, -60000, 50000, 70000), 0.10, 
+0.06)
+<br><a name="1000851937"></a>
+<br><a name="1000851938"></a>Sintaxis Crystal
+<br><a name="1000851939"></a>MIRR([-50000, 40000, 65000, -60000, 50000, 70000], 0.10, 0.06)
+</p><p class="example"><a name="1000851940"></a>Devuelve  0.214 (redondeado a  3 decimales) o 21.4 por ciento.</p><a name="1000851941"></a><h5>Comentario</h5><p><a name="1000851942"></a>Esta funci&#243;n est&#225; dise&#241;ada para trabajar exactamente como la funci&#243;n de Visual Basic del mismo nombre.</p>
+<hr><br>
+
+<script  language="JavaScript"><!--
+
+var prev = "Functions53.html";
+var next = "Functions55.html";
+
+function setTopicID() { 
+      var number = "1000851922"; 
+      return number; 
+}
+
+// --></script>
+
+
+
+
+<SCRIPT>
+
+if (!window.parent.toc && navigator.appName == "Netscape") {
+
+   document.writeln ('<TABLE ALIGN="left" border="0" cellspacing="0" cellpadding="10">');
+   document.writeln ('<TR>');
+   document.write ('<TD ALIGN="left">');
+
+   if (prev != "crw_spTOC.hhc") {
+      document.writeln ('<A HREF="' + prev + '">');
+      document.writeln ('<IMG SRC="prevpage.gif" HEIGHT=17 BORDER=0 ALT="Página anterior"></A>');
+   } else {
+//   window.alert ('no previous page');
+   }
+
+   if (next != "crw_spIX.hhk") {
+      document.writeln ('<A HREF="' + next + '">');
+      document.writeln ('<IMG SRC="nextpage.gif" HEIGHT=17 BORDER=0 ALT="Página siguiente"></A>');
+   } else {
+//   window.alert ('no next page');
+   }
+   document.writeln ('</TD><TD ALIGN="left">');
+   document.writeln ('<A HREF="frameset.htm?TOC">');
+   document.writeln ('<IMG SRC="showtoc.gif" HEIGHT=17 BORDER=0 ALT="Haga clic para ver el contenido"></A></TD>');
+   document.writeln ('<TD ALIGN="left">');
+   document.writeln ('<A HREF="frameset.htm?IDX">');
+   document.writeln ('<IMG SRC="showix.gif" HEIGHT=17 BORDER=0 ALT="Haga clic para ver el índice"></A></TD>');
+   document.writeln ('</TD>');
+   document.writeln ('</TR>');
+   document.writeln ('</TABLE>');
+
+}
+
+</SCRIPT>
+<table align="right" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td align="right"><font size="1">Seagate Software, Inc.<br>
+    <a href="http://www.seagatesoftware.com">http://www.seagatesoftware.com</a><br>
+    Envíe sus comentarios a:<br>
+    <a href="mailto:techpubs@seagatesoftware.com">techpubs@seagatesoftware.com</a><br>
+    </font></td>
+  </tr>
+</table>
+</body>
+</html>
+
+

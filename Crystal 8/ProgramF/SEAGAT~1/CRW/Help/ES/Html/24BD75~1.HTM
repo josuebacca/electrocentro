@@ -1,0 +1,236 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+
+<html>
+<head>
+<title>Uni&#243;n Mayor que [&gt;]</title>
+
+<link REL=STYLESHEET TYPE="text/css" HREF="seagate.css">
+
+<!--
+                 ***********************************
+                 * Seagate Software copyright 1999 *
+                 ***********************************
+
+                      Template version: 5.1
+-->
+
+
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" link="#0000FF" vlink="#0000FF" alink="#800080">
+
+
+ 
+<a name="321894"></a><h4 class="newpage"> Uni&#243;n Mayor que [&gt;]</h4><p><a name="321895"></a>El conjunto de resultados de una uni&#243;n Mayor que incluye todos los registros en que el valor del campo vinculado de la tabla principal es mayor que el valor del campo vinculado en la tabla de comparaci&#243;n. Como un ejemplo, una compa&#241;&#237;a puede desear comparar los salarios de todos sus agentes de ventas con los salarios de sus gerentes de ventas. Los ejecutivos de la compa&#241;&#237;a quieren asegurarse de que ning&#250;n agente de ventas gane m&#225;s que uno de los gerentes. Con esto en mente, usted puede vincular la tabla Agente de Ventas a la tabla Gerente, por el campo Sueldo en cada tabla, utilizando una uni&#243;n Mayor que:</p><PRE><a name="352881"></a>SELECT Agente de Ventas.'Apellido',<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Agente de Ventas.'Sueldo',<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Gerente.'Apellido',<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Gerente.'Sueldo'<br>
+FROM 'Agente de Ventas' Agente de Ventas,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;'Gerente' Gerente<br>
+WHERE Agente de Ventas.'Sueldo' &gt;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Gerente.'Sueldo'
+</PRE><p><a name="352882"></a>Este enunciado SQL puede producir datos similares a &#233;stos:</p><p><a name="321987"></a> <Table Border="1">
+<tr><th align="left" valign="bottom"><a name="321900"></a>Tabla Agente de 
+Ventas
+
+</th><th align="left" valign="bottom"><a name="321902"></a>Tabla Agente de 
+Ventas
+
+</th><th align="left" valign="bottom"><a name="321904"></a>Tabla Gerente
+
+</th><th align="left" valign="bottom"><a name="321906"></a>Tabla Gerente
+
+</th></tr>
+<tr><th align="left" valign="bottom"><a name="321908"></a>Apellido
+
+</th><th align="left" valign="bottom"><a name="321910"></a>Sueldo
+
+</th><th align="left" valign="bottom"><a name="321912"></a>Apellido
+
+</th><th align="left" valign="bottom"><a name="321914"></a>Sueldo
+
+</th></tr>
+<tr><td align="left" valign="TOP"><P><a name="321916"></a>Davolio</P>
+
+
+</td><td align="left" valign="TOP"><P><a name="321918"></a>$35,000.00</P>
+
+
+</td><td align="left" valign="TOP"><P><a name="321920"></a>Fuller</P>
+
+
+</td><td align="left" valign="TOP"><P><a name="321922"></a>$32,000.00</P>
+
+
+</td></tr>
+<tr><td align="left" valign="TOP"><P><a name="321924"></a>Davolio</P>
+
+
+</td><td align="left" valign="TOP"><P><a name="321926"></a>$35,000.00</P>
+
+
+</td><td align="left" valign="TOP"><P><a name="321928"></a>Brid</P>
+
+
+</td><td align="left" valign="TOP"><P><a name="321930"></a>$30,000.00</P>
+
+
+</td></tr>
+<tr><td align="left" valign="TOP"><P><a name="321932"></a>Davolio</P>
+
+
+</td><td align="left" valign="TOP"><P><a name="321934"></a>$35,000.00</P>
+
+
+</td><td align="left" valign="TOP"><P><a name="321936"></a>Buchanan</P>
+
+
+</td><td align="left" valign="TOP"><P><a name="321938"></a>$29,500.00</P>
+
+
+</td></tr>
+<tr><td align="left" valign="TOP"><P><a name="321940"></a>Dodsworth</P>
+
+
+</td><td align="left" valign="TOP"><P><a name="321942"></a>$48,300.00</P>
+
+
+</td><td align="left" valign="TOP"><P><a name="321944"></a>Hellstern</P>
+
+
+</td><td align="left" valign="TOP"><P><a name="321946"></a>$45,000.00</P>
+
+
+</td></tr>
+<tr><td align="left" valign="TOP"><P><a name="321948"></a>Dodsworth</P>
+
+
+</td><td align="left" valign="TOP"><P><a name="321950"></a>$48,300.00</P>
+
+
+</td><td align="left" valign="TOP"><P><a name="321952"></a>Fuller</P>
+
+
+</td><td align="left" valign="TOP"><P><a name="321954"></a>$32,000.00</P>
+
+
+</td></tr>
+<tr><td align="left" valign="TOP"><P><a name="321956"></a>Dodsworth</P>
+
+
+</td><td align="left" valign="TOP"><P><a name="321958"></a>$48,300.00</P>
+
+
+</td><td align="left" valign="TOP"><P><a name="321960"></a>Brid</P>
+
+
+</td><td align="left" valign="TOP"><P><a name="321962"></a>$30,000.00</P>
+
+
+</td></tr>
+<tr><td align="left" valign="TOP"><P><a name="321964"></a>Dodsworth</P>
+
+
+</td><td align="left" valign="TOP"><P><a name="321966"></a>$48,300.00</P>
+
+
+</td><td align="left" valign="TOP"><P><a name="321968"></a>Buchanan</P>
+
+
+</td><td align="left" valign="TOP"><P><a name="321970"></a>$29,500.00</P>
+
+
+</td></tr>
+<tr><td align="left" valign="TOP"><P><a name="321972"></a>Dodsworth</P>
+
+
+</td><td align="left" valign="TOP"><P><a name="321974"></a>$48,300.00</P>
+
+
+</td><td align="left" valign="TOP"><P><a name="321976"></a>Martin</P>
+
+
+</td><td align="left" valign="TOP"><P><a name="321978"></a>$35,000.00</P>
+
+
+</td></tr>
+<tr><td align="left" valign="TOP"><P><a name="321980"></a>Patterson</P>
+
+
+</td><td align="left" valign="TOP"><P><a name="321982"></a>$30,000.00</P>
+
+
+</td><td align="left" valign="TOP"><P><a name="321984"></a>Buchanan</P>
+
+
+</td><td align="left" valign="TOP"><P><a name="321986"></a>$29,500.00</P>
+
+
+</td></tr>
+
+</Table></p>
+<p><a name="321988"></a>En esta tabla no se ha establecido una relaci&#243;n entre los agentes de ventas y los gerentes. Ya que los gerentes est&#225;n en un nivel superior al de los agentes de ventas, una compa&#241;&#237;a quiz&#225;s encuentre necesario indagar si es que cualquier agente de ventas gana m&#225;s que un gerente lo que indicar&#237;a un problema salarial que debe ser resuelto.</p>
+<hr><br>
+
+<script  language="JavaScript"><!--
+
+var prev = "24_under_databases22.html";
+var next = "24_under_databases24.html";
+
+function setTopicID() { 
+      var number = "321894"; 
+      return number; 
+}
+
+// --></script>
+
+
+
+
+<SCRIPT>
+
+if (!window.parent.toc && navigator.appName == "Netscape") {
+
+   document.writeln ('<TABLE ALIGN="left" border="0" cellspacing="0" cellpadding="10">');
+   document.writeln ('<TR>');
+   document.write ('<TD ALIGN="left">');
+
+   if (prev != "crw_spTOC.hhc") {
+      document.writeln ('<A HREF="' + prev + '">');
+      document.writeln ('<IMG SRC="prevpage.gif" HEIGHT=17 BORDER=0 ALT="Página anterior"></A>');
+   } else {
+//   window.alert ('no previous page');
+   }
+
+   if (next != "crw_spIX.hhk") {
+      document.writeln ('<A HREF="' + next + '">');
+      document.writeln ('<IMG SRC="nextpage.gif" HEIGHT=17 BORDER=0 ALT="Página siguiente"></A>');
+   } else {
+//   window.alert ('no next page');
+   }
+   document.writeln ('</TD><TD ALIGN="left">');
+   document.writeln ('<A HREF="frameset.htm?TOC">');
+   document.writeln ('<IMG SRC="showtoc.gif" HEIGHT=17 BORDER=0 ALT="Haga clic para ver el contenido"></A></TD>');
+   document.writeln ('<TD ALIGN="left">');
+   document.writeln ('<A HREF="frameset.htm?IDX">');
+   document.writeln ('<IMG SRC="showix.gif" HEIGHT=17 BORDER=0 ALT="Haga clic para ver el índice"></A></TD>');
+   document.writeln ('</TD>');
+   document.writeln ('</TR>');
+   document.writeln ('</TABLE>');
+
+}
+
+</SCRIPT>
+<table align="right" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td align="right"><font size="1">Seagate Software, Inc.<br>
+    <a href="http://www.seagatesoftware.com">http://www.seagatesoftware.com</a><br>
+    Envíe sus comentarios a:<br>
+    <a href="mailto:techpubs@seagatesoftware.com">techpubs@seagatesoftware.com</a><br>
+    </font></td>
+  </tr>
+</table>
+</body>
+</html>
+
+

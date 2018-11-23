@@ -1,0 +1,104 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+
+<html>
+<head>
+<title>Uso del proceso de establecer la ubicaci&#243;n</title>
+
+<link REL=STYLESHEET TYPE="text/css" HREF="seagate.css">
+
+<!--
+                 ***********************************
+                 * Seagate Software copyright 1999 *
+                 ***********************************
+
+                      Template version: 5.1
+-->
+
+
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" link="#0000FF" vlink="#0000FF" alink="#800080">
+
+
+ 
+<a name="324200"></a><h4 class="newpage"> Uso del proceso de establecer la ubicaci&#243;n</h4><p><a name="324201"></a>Cuando usted elije el comando Establecer ubicaci&#243;n del men&#250; Base de datos y especifica una nueva ubicaci&#243;n para la base datos activa, el programa revisa la base de datos para ver si hay cambios.</p><p><a name="324202"></a>El comando Establecer ubicaci&#243;n mostrar&#225; el cuadro de di&#225;logo Asignar Campos si detecta alguno de los siguientes cambios en la estructura de la base de datos:</p><ul type="disc"><a name="324203"></a><li>un campo de la base de datos ha sido eliminado,
+<a name="324204"></a><li>el nombre de un campo de la base de datos ha sido cambiado, o
+<a name="324205"></a><li>la base de datos es completamente nueva.
+</ul><p><a name="328866"></a><font color="darkblue"><b>Nota:   &nbsp;&nbsp;&nbsp;</b></font>El programa buscar&#225; estos cambios solamente si la base de datos tiene un nombre diferente o si el nombre ha sido cambiado. Si la base de datos tiene el mismo nombre, el cuadro de di&#225;logo Asignar Campos no aparecer&#225;, y usted tendr&#225; que verificar la base de datos cuando haya terminado de establecer la ubicaci&#243;n. Para m&#225;s informaci&#243;n, vea <a href="24_under_databases38.html#324179">Uso del proceso de verificaci&#243;n de base de datos</a>.</p>
+<p><a name="324219"></a>Para mayor informaci&#243;n, busque por el comando Establecer ubicaci&#243;n en al Ayuda en l&#237;nea de Seagate Crystal Reports.</p><a name="324220"></a><h3>C&#243;mo reasignar campos alterados</h3>
+<p><a name="328937"></a>Use el cuadro de di&#225;logo Asignar Campos para reasignar campos del informe existentes a la base de datos activa, si es que han sido alterados.</p><a name="324520"></a><h6>Para reasignar un campo de base de datos alterado</h6><ol>
+<a name="324521"></a><li value="1&nbsp;&nbsp;&nbsp;&nbsp;">Con el informe activo en la ficha Dise&#241;o, elija <kbd>Verificar base de datos</kbd> del men&#250; Base de datos.
+<p class="indent"><a name="324522"></a>El cuadro de mensaje Verificar Base de Datos aparecer&#225; en su pantalla.</p><ul type="disc"><ul type="disc"><a name="324523"></a><li>Si el programa no detecta cambios en la base de datos activa, el cuadro de mensaje mostrar&#225; el siguiente mensaje: "La base de datos est&#225; actualizada." En este caso, simplemente haga clic en Aceptar y vuelva a su trabajo.<a name="324524"></a><li>Si el programa detecta alg&#250;n cambio en la base de datos activa, el cuadro de mensaje muestra el siguiente mensaje: "El archivo de base de datos ["nombre de la base de datos"] ha cambiado. &#191;Desea proceder a reparar el informe?"</ul></ul><a name="324525"></a><li value="2&nbsp;&nbsp;&nbsp;&nbsp;">Haga clic en <kbd>S&#237;</kbd>.
+<p class="indent"><a name="324526"></a>Si el programa detecta que un nombre de campo ha sido alterado en la base de datos activa, el cuadro de di&#225;logo Asignar Campos aparecer&#225; en su pantalla.</p><p class="indent"><a name="328960"></a><font color="darkblue"><b>Nota:   &nbsp;&nbsp;&nbsp;</b></font>El programa autom&#225;ticamente adapta el informe a los cambios en los datos dentro de la base de datos (n&#250;mero de campos, posici&#243;n de campos, tipo de datos, etc.). No es necesario reasignar los campos en los cuales se han efectuado estos cambios. </p>
+<a name="324537"></a><li value="3&nbsp;&nbsp;&nbsp;&nbsp;">En la lista de la parte superior izquierda, resalte el primer campo del informe que quiere reasignar.
+<a name="324538"></a><li value="4&nbsp;&nbsp;&nbsp;&nbsp;">En la lista de la parte superior derecha, resalte los campos no asignados a los cuales quiere reasignar los campos del informe seleccionados.
+<a name="324539"></a><li value="5&nbsp;&nbsp;&nbsp;&nbsp;">Haga clic en el bot&#243;n <kbd>Asignar</kbd>.
+<p class="indent"><a name="324540"></a>Los campos resaltados del informe y de la base de datos desaparecen de las listas mencionadas y aparecen en las listas correspondientes de la parte inferior.</p><a name="324541"></a><li value="6&nbsp;&nbsp;&nbsp;&nbsp;">Repita los pasos del 3 al 5 por cada campo no asignado que desee reasignar.
+<p class="indent"><a name="328995"></a><font color="darkblue"><b>Nota:   &nbsp;&nbsp;&nbsp;</b></font>Si el nombre de alg&#250;n campo del informe permanece en la lista de la parte superior izquierda cuando sale del cuadro de di&#225;logo, el programa lo quita del informe.</p>
+<a name="324552"></a><li value="7&nbsp;&nbsp;&nbsp;&nbsp;">Haga clic en <kbd>Aceptar</kbd>.
+<p class="indent"><a name="324553"></a>El programa reasigna los campos del informe a los campos alterados de la base de datos.</p></ol>
+
+<hr><br>
+
+<script  language="JavaScript"><!--
+
+var prev = "24_under_databases39.html";
+var next = "24_under_databases41.html";
+
+function setTopicID() { 
+      var number = "324200"; 
+      return number; 
+}
+
+// --></script>
+
+
+
+
+<SCRIPT>
+
+if (!window.parent.toc && navigator.appName == "Netscape") {
+
+   document.writeln ('<TABLE ALIGN="left" border="0" cellspacing="0" cellpadding="10">');
+   document.writeln ('<TR>');
+   document.write ('<TD ALIGN="left">');
+
+   if (prev != "crw_spTOC.hhc") {
+      document.writeln ('<A HREF="' + prev + '">');
+      document.writeln ('<IMG SRC="prevpage.gif" HEIGHT=17 BORDER=0 ALT="Página anterior"></A>');
+   } else {
+//   window.alert ('no previous page');
+   }
+
+   if (next != "crw_spIX.hhk") {
+      document.writeln ('<A HREF="' + next + '">');
+      document.writeln ('<IMG SRC="nextpage.gif" HEIGHT=17 BORDER=0 ALT="Página siguiente"></A>');
+   } else {
+//   window.alert ('no next page');
+   }
+   document.writeln ('</TD><TD ALIGN="left">');
+   document.writeln ('<A HREF="frameset.htm?TOC">');
+   document.writeln ('<IMG SRC="showtoc.gif" HEIGHT=17 BORDER=0 ALT="Haga clic para ver el contenido"></A></TD>');
+   document.writeln ('<TD ALIGN="left">');
+   document.writeln ('<A HREF="frameset.htm?IDX">');
+   document.writeln ('<IMG SRC="showix.gif" HEIGHT=17 BORDER=0 ALT="Haga clic para ver el índice"></A></TD>');
+   document.writeln ('</TD>');
+   document.writeln ('</TR>');
+   document.writeln ('</TABLE>');
+
+}
+
+</SCRIPT>
+<table align="right" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td align="right"><font size="1">Seagate Software, Inc.<br>
+    <a href="http://www.seagatesoftware.com">http://www.seagatesoftware.com</a><br>
+    Envíe sus comentarios a:<br>
+    <a href="mailto:techpubs@seagatesoftware.com">techpubs@seagatesoftware.com</a><br>
+    </font></td>
+  </tr>
+</table>
+</body>
+</html>
+
+

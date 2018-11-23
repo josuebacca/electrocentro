@@ -1,0 +1,96 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+
+<html>
+<head>
+<title>DDB</title>
+
+<link REL=STYLESHEET TYPE="text/css" HREF="seagate.css">
+
+<!--
+                 ***********************************
+                 * Seagate Software copyright 1999 *
+                 ***********************************
+
+                      Template version: 5.1
+-->
+
+
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" link="#0000FF" vlink="#0000FF" alink="#800080">
+
+
+ 
+<a name="1000851801"></a><h3 class="newpage"> DDB</h3>
+<p><a name="1000851802"></a>Sintaxis b&#225;sica y Crystal.</p><a name="1000851803"></a><h5>Sobrecargas</h5><ul type="disc"><a name="1000851804"></a><li>DDB (coste, rescate, vida, per&#237;odo)
+<a name="1000851805"></a><li>DDB (coste, rescate, vida, per&#237;odo, factor)
+</ul><a name="1000851806"></a><h5>Argumentos</h5><ul type="disc"><a name="1000851807"></a><li>coste es un N&#250;mero o Moneda que especifica el coste inicial del activo.  El valor es no negativo y mayor que o igual a rescate.
+<a name="1000851808"></a><li>rescate es un N&#250;mero o Moneda que especifica el valor del activo al final de su vida &#250;til.  El valor es no negativo.
+<a name="1000851809"></a><li>vida es un N&#250;mero positivo que especifica la duraci&#243;n de la vida &#250;til del activo.
+<a name="1000851810"></a><li>per&#237;odo es un N&#250;mero que especifica el per&#237;odo por el cual se calcula la depreciaci&#243;n del activo.  El valor es positivo y menor que o igual a vida. Los argumentos vida y per&#237;odo deben tener las mismas unidades. 
+<a name="1000851811"></a><li>factor es un N&#250;mero positivo opcional que especifica la tasa a la cual disminuye el saldo. Si se omite, se asume 2 (m&#233;todo de disminuci&#243;n doble).
+</ul><a name="1000851812"></a><h5>Devuelve </h5><p><a name="1000851813"></a>Valor num&#233;rico</p><a name="1000851814"></a><h5>Acci&#243;n</h5><p><a name="1000851815"></a>DDB devuelve un n&#250;mero especificando la depreciaci&#243;n de un activo por un per&#237;odo de tiempo espec&#237;fico, utilizando el m&#233;todo de saldo de disminuci&#243;n doble u otro m&#233;todo seg&#250;n lo especifique el argumento factor.  </p><a name="1000851816"></a><h5>Ejemplo(s) </h5><p><a name="1000851817"></a>Los siguientes ejemplos son aplicables a las sintaxis b&#225;sica y Crystal:</p><p><a name="1000851818"></a>Supongamos que una compa&#241;&#237;a compra una flota de autom&#243;viles por $500,000. Los autom&#243;viless tienen una duraci&#243;n de 10 a&#241;os y un valor de rescate de $60,000. Se deprecian usando el m&#233;todo de disminuci&#243;n doble. </p><p><code><a name="1000851819"></a>DDB (500000, 60000, 10, 1)</code></p><p class="example"><a name="1000851820"></a>Devuelve 100000. La depreciaci&#243;n del primer a&#241;o es de $100,000.</p><p><code><a name="1000851821"></a>DDB (500000, 60000, 10, 4)</code></p><p class="example"><a name="1000851822"></a>Devuelve 51200. La depreciaci&#243;n del cuarto a&#241;o es de $51,200.</p><p><code><a name="1000851823"></a>DDB (500000, 60000, 10, 10)</code></p><p class="example"><a name="1000851824"></a>Devuelve 7108.864. La depreciaci&#243;n final es de $7,108.86.</p><a name="1000851825"></a><h5>Comentario</h5><p><a name="1000851826"></a>Esta funci&#243;n est&#225; dise&#241;ada para trabajar exactamente como la funci&#243;n de Visual Basic del mismo nombre.</p>
+<hr><br>
+
+<script  language="JavaScript"><!--
+
+var prev = "Functions49.html";
+var next = "Functions51.html";
+
+function setTopicID() { 
+      var number = "1000851801"; 
+      return number; 
+}
+
+// --></script>
+
+
+
+
+<SCRIPT>
+
+if (!window.parent.toc && navigator.appName == "Netscape") {
+
+   document.writeln ('<TABLE ALIGN="left" border="0" cellspacing="0" cellpadding="10">');
+   document.writeln ('<TR>');
+   document.write ('<TD ALIGN="left">');
+
+   if (prev != "crw_spTOC.hhc") {
+      document.writeln ('<A HREF="' + prev + '">');
+      document.writeln ('<IMG SRC="prevpage.gif" HEIGHT=17 BORDER=0 ALT="Página anterior"></A>');
+   } else {
+//   window.alert ('no previous page');
+   }
+
+   if (next != "crw_spIX.hhk") {
+      document.writeln ('<A HREF="' + next + '">');
+      document.writeln ('<IMG SRC="nextpage.gif" HEIGHT=17 BORDER=0 ALT="Página siguiente"></A>');
+   } else {
+//   window.alert ('no next page');
+   }
+   document.writeln ('</TD><TD ALIGN="left">');
+   document.writeln ('<A HREF="frameset.htm?TOC">');
+   document.writeln ('<IMG SRC="showtoc.gif" HEIGHT=17 BORDER=0 ALT="Haga clic para ver el contenido"></A></TD>');
+   document.writeln ('<TD ALIGN="left">');
+   document.writeln ('<A HREF="frameset.htm?IDX">');
+   document.writeln ('<IMG SRC="showix.gif" HEIGHT=17 BORDER=0 ALT="Haga clic para ver el índice"></A></TD>');
+   document.writeln ('</TD>');
+   document.writeln ('</TR>');
+   document.writeln ('</TABLE>');
+
+}
+
+</SCRIPT>
+<table align="right" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td align="right"><font size="1">Seagate Software, Inc.<br>
+    <a href="http://www.seagatesoftware.com">http://www.seagatesoftware.com</a><br>
+    Envíe sus comentarios a:<br>
+    <a href="mailto:techpubs@seagatesoftware.com">techpubs@seagatesoftware.com</a><br>
+    </font></td>
+  </tr>
+</table>
+</body>
+</html>
+
+

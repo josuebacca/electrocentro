@@ -1,0 +1,91 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+
+<html>
+<head>
+<title>Tipos de datos de matriz</title>
+
+<link REL=STYLESHEET TYPE="text/css" HREF="seagate.css">
+
+<!--
+                 ***********************************
+                 * Seagate Software copyright 1999 *
+                 ***********************************
+
+                      Template version: 5.1
+-->
+
+
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" link="#0000FF" vlink="#0000FF" alink="#800080">
+
+
+ 
+<a name="128315"></a><h2 class="newpage">Tipos de datos de matriz</h2><p><a name="128317"></a>Las matrices de Seagate Crystal Reports son listas ordenadas de valores de un mismo tipo. Estos valores se conocen como <EM>elementos</EM> de la matriz. Los elementos de una matriz pueden ser cualquier tipo simple o tipo de rango. Una forma de crear una matriz es usando la funci&#243;n Array.</p><a name="135258"></a><h5>Ejemplos</h5><p><a name="128319"></a>Una matriz de 3 valores num&#233;ricos. El primer elemento es 10, el segundo es 5 y el tercero es 20.</p><p><code><a name="128320"></a>Array (10, 5, 20)</code></p><p><a name="128322"></a>Una matriz de 7 valores de cadena:</p><p><code><a name="128323"></a>Array ("Dom", "Lun", "Mar", "Mi&#233;", "Jue", "Vie", "S&#225;b")</code></p><p><a name="128325"></a>Una matriz de 2 valores de rango de fechahora (observe el car&#225;cter de continuaci&#243;n de l&#237;nea que se usa para facilitar la lectura):</p><PRE><a name="128326"></a>Array (#Jan 1, 1998# To #Jan 31, 1998#, _
+<a name="128327"></a>       #Feb 1, 1999# To #Feb 28, 1999#)
+</PRE><p><a name="128329"></a>Puede extraer elementos individuales de una matriz usando par&#233;ntesis que contengan el &#237;ndice de los elementos que desea. Esto se denomina <EM>indexar</EM> la matriz:</p><p><code><a name="128330"></a>Array (10, 5, 20) (2) 'Igual a 5</code></p><p><a name="128332"></a><font color="darkblue"><b>Nota:   &nbsp;&nbsp;&nbsp;</b></font>Las matrices de la sintaxis Basic se indexan desde 1 (esto significa que el primer elemento tiene &#237;ndice 1). Esto difiere de Visual Basic donde las matrices se indexan predeterminadamente desde 0. Sin embargo, en Visual Basic, las matrices se pueden indexar desde 1 usando el enunciado <EM>Option Base</EM>.</p>
+<p><a name="128334"></a>Tambi&#233;n se pueden usar rangos de n&#250;mero para indexar matrices. El resultado es otra matriz. Por ejemplo:</p><p><code><a name="128335"></a>Array (10, 5, 20) (2 To 3) 'Igual que matriz (5, 20)</code></p><p><a name="128337"></a>Las matrices son m&#225;s &#250;tiles cuando se usan con variables. Al usar variables, puede cambiar los elementos individuales de una matriz y cambiar su tama&#241;o para acomodar m&#225;s elementos. Esta posibilidad aumenta notablemente las capacidades del lenguaje de la f&#243;rmula para efectuar c&#225;lculos complejos.</p><p><a name="130235"></a>Por ejemplo, puede acumular valores de campo de base de datos en una variable de matriz global de una f&#243;rmula de nivel de detalle y luego usar una f&#243;rmula de un pie de grupo para efectuar un c&#225;lculo seg&#250;n esos valores. As&#237; podr&#225; efectuar una amplia variedad de operaciones de resumen personalizadas.</p>
+<hr><br>
+
+<script  language="JavaScript"><!--
+
+var prev = "20_basicsyntax20.html";
+var next = "20_basicsyntax22.html";
+
+function setTopicID() { 
+      var number = "128315"; 
+      return number; 
+}
+
+// --></script>
+
+
+
+
+<SCRIPT>
+
+if (!window.parent.toc && navigator.appName == "Netscape") {
+
+   document.writeln ('<TABLE ALIGN="left" border="0" cellspacing="0" cellpadding="10">');
+   document.writeln ('<TR>');
+   document.write ('<TD ALIGN="left">');
+
+   if (prev != "crw_spTOC.hhc") {
+      document.writeln ('<A HREF="' + prev + '">');
+      document.writeln ('<IMG SRC="prevpage.gif" HEIGHT=17 BORDER=0 ALT="Página anterior"></A>');
+   } else {
+//   window.alert ('no previous page');
+   }
+
+   if (next != "crw_spIX.hhk") {
+      document.writeln ('<A HREF="' + next + '">');
+      document.writeln ('<IMG SRC="nextpage.gif" HEIGHT=17 BORDER=0 ALT="Página siguiente"></A>');
+   } else {
+//   window.alert ('no next page');
+   }
+   document.writeln ('</TD><TD ALIGN="left">');
+   document.writeln ('<A HREF="frameset.htm?TOC">');
+   document.writeln ('<IMG SRC="showtoc.gif" HEIGHT=17 BORDER=0 ALT="Haga clic para ver el contenido"></A></TD>');
+   document.writeln ('<TD ALIGN="left">');
+   document.writeln ('<A HREF="frameset.htm?IDX">');
+   document.writeln ('<IMG SRC="showix.gif" HEIGHT=17 BORDER=0 ALT="Haga clic para ver el índice"></A></TD>');
+   document.writeln ('</TD>');
+   document.writeln ('</TR>');
+   document.writeln ('</TABLE>');
+
+}
+
+</SCRIPT>
+<table align="right" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td align="right"><font size="1">Seagate Software, Inc.<br>
+    <a href="http://www.seagatesoftware.com">http://www.seagatesoftware.com</a><br>
+    Envíe sus comentarios a:<br>
+    <a href="mailto:techpubs@seagatesoftware.com">techpubs@seagatesoftware.com</a><br>
+    </font></td>
+  </tr>
+</table>
+</body>
+</html>
+
+

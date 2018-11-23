@@ -1,0 +1,93 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+
+<html>
+<head>
+<title>Adici&#243;n del visor de informes a una p&#225;gina web</title>
+
+<link REL=STYLESHEET TYPE="text/css" HREF="seagate.css">
+
+<!--
+                 ***********************************
+                 * Seagate Software copyright 1999 *
+                 ***********************************
+
+                      Template version: 5.1
+-->
+
+
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" link="#0000FF" vlink="#0000FF" alink="#800080">
+
+
+ 
+<a name="153815"></a><h3 class="newpage"> Adici&#243;n del visor de informes a una p&#225;gina web</h3>
+<p><a name="153816"></a>El explorador web Microsoft Internet Explorer acepta la etiqueta OBJECT en HTML. Esta etiqueta puede utilizarse para agregar el visor de informes para ActiveX a una p&#225;gina web. Utilice un c&#243;digo similar al siguiente:</p><p><a name="153817"></a>&lt;OBJECT ID="CRViewer" WIDTH=100% HEIGHT=95%<br>&nbsp;&nbsp;&nbsp;&nbsp;CLASSID="CLSID:C4847596-972C-11D0-9567-00A0C9273C2A"&gt;<br>&lt;/OBJECT&gt;</p><p><a name="153819"></a>Cuando se instala el Web Component Server, el visor de informes para ActiveX queda instalado en:</p><PRE><a name="158335"></a>\Archivos de programa\Seagate 
+Software\Viewers\ActiveXViewer
+</PRE><p><a name="157285"></a>Tambi&#233;n se crea un directorio virtual llamado:</p><PRE><a name="158342"></a>/viewer 
+</PRE><p><a name="158344"></a>en su servidor web, que apunta a:</p><PRE><a name="158350"></a>\Archivos de programa\Seagate Software\Viewers
+</PRE>
+<hr><br>
+
+<script  language="JavaScript"><!--
+
+var prev = "Report_Viewers8.html";
+var next = "Report_Viewers10.html";
+
+function setTopicID() { 
+      var number = "153815"; 
+      return number; 
+}
+
+// --></script>
+
+
+
+
+<SCRIPT>
+
+if (!window.parent.toc && navigator.appName == "Netscape") {
+
+   document.writeln ('<TABLE ALIGN="left" border="0" cellspacing="0" cellpadding="10">');
+   document.writeln ('<TR>');
+   document.write ('<TD ALIGN="left">');
+
+   if (prev != "wcmadminTOC.hhc") {
+      document.writeln ('<A HREF="' + prev + '">');
+      document.writeln ('<IMG SRC="prevpage.gif" HEIGHT=17 BORDER=0 ALT="Página anterior"></A>');
+   } else {
+//   window.alert ('no previous page');
+   }
+
+   if (next != "wcmadminIX.hhk") {
+      document.writeln ('<A HREF="' + next + '">');
+      document.writeln ('<IMG SRC="nextpage.gif" HEIGHT=17 BORDER=0 ALT="Página siguiente"></A>');
+   } else {
+//   window.alert ('no next page');
+   }
+   document.writeln ('</TD><TD ALIGN="left">');
+   document.writeln ('<A HREF="frameset.htm?TOC">');
+   document.writeln ('<IMG SRC="showtoc.gif" HEIGHT=17 BORDER=0 ALT="Haga clic para ver el contenido"></A></TD>');
+   document.writeln ('<TD ALIGN="left">');
+   document.writeln ('<A HREF="frameset.htm?IDX">');
+   document.writeln ('<IMG SRC="showix.gif" HEIGHT=17 BORDER=0 ALT="Haga clic para ver el índice"></A></TD>');
+   document.writeln ('</TD>');
+   document.writeln ('</TR>');
+   document.writeln ('</TABLE>');
+
+}
+
+</SCRIPT>
+<table align="right" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td align="right"><font size="1">Seagate Software, Inc.<br>
+    <a href="http://www.seagatesoftware.com">http://www.seagatesoftware.com</a><br>
+    Envíe sus comentarios a:<br>
+    <a href="mailto:techpubs@seagatesoftware.com">techpubs@seagatesoftware.com</a><br>
+    </font></td>
+  </tr>
+</table>
+</body>
+</html>
+
+

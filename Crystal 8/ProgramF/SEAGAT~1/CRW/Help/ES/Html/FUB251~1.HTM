@@ -1,0 +1,88 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+
+<html>
+<head>
+<title>Funciones de cadena</title>
+
+<link REL=STYLESHEET TYPE="text/css" HREF="seagate.css">
+
+<!--
+                 ***********************************
+                 * Seagate Software copyright 1999 *
+                 ***********************************
+
+                      Template version: 5.1
+-->
+
+
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" link="#0000FF" vlink="#0000FF" alink="#800080">
+
+
+ 
+<a name="1000852175"></a><h2 class="newpage">Funciones de cadena</h2><p><a name="1000852176"></a>Las funciones de cadena se usan para la evaluaci&#243;n, manipulaci&#243;n y conversi&#243;n de cadenas de texto.</p><p><a name="1000852183"></a><a href="Functions64.html#1000852310">Len (cadena)</a></p><p><a name="1000852187"></a><a href="Functions65.html#1000852352">Length (cadena))</a></p><p><a name="1000852191"></a><a href="Functions66.html#1000852409">Trim (cadena)</a></p><p><a name="1000852195"></a><a href="Functions67.html#1000852428">LTrim (Cadena)</a></p><p><a name="1000852199"></a><a href="Functions68.html#1000852478">TrimLeft (cadena)</a></p><p><a name="1000852203"></a><a href="Functions69.html#1000852523">RTrim (cadena)</a></p><p><a name="1000852207"></a><a href="Functions70.html#1000852557">TrimRight(cadena)</a></p><p><a name="1000852211"></a><a href="Functions71.html#1000852590">UCase (cadena)</a></p><p><a name="1000852215"></a><a href="Functions72.html#1000852625">UpperCase (cadena)</a></p><p><a name="1000852219"></a><a href="Functions73.html#1000852664">LCase (cadena)</a></p><p><a name="1000852223"></a><a href="Functions74.html#1000852700">LowerCase (cadena)</a></p><p><a name="1000852227"></a><a href="Functions75.html#1000852734">StrReverse (cadenaDeEntrada)</a></p><p><a name="1000852231"></a><a href="Functions76.html#1000852750">IsNumeric (cadena)</a></p><p><a name="1000852235"></a><a href="Functions77.html#1000852800">NumericText (cadena)</a></p><p><a name="1000852239"></a><a href="Functions78.html#1000852857">ToNumber (num&#233;rico), ToNumber (cadena)</a></p><p><a name="1000852243"></a><a href="Functions79.html#1000852914">ToText</a></p><p><a name="1000852247"></a><a href="Functions86.html#1000853326">ToWords (x), ToWords (x, #lugares)</a></p><p><a name="1000852251"></a><a href="Functions87.html#1000853365">ReplicateString (cadena, #copias)</a></p><p><a name="1000852255"></a><a href="Functions88.html#1000853449">Space (x)</a></p><p><a name="1000852259"></a><a href="Functions89.html#1000853469">InStr (cadena1, cadena2), InStr (inicio, cadena1, cadena2)</a></p><p><a name="1000852263"></a><a href="Functions90.html#1000853495">InStrRev</a></p><p><a name="1000852267"></a><a href="Functions91.html#1000853534">StrCmp (cadena1, cadena2), StrCmp (cadena1, cadena2, comparar)</a></p><p><a name="1000852271"></a><a href="Functions92.html#1000853567">Mid (cadena, inicio), Mid (cadena, inicio, longitud)</a></p><p><a name="1000852275"></a><a href="Functions93.html#1000853588">Left (cadena, longitud)</a></p><p><a name="1000852279"></a><a href="Functions94.html#1000853610">Right (cadena, longitud)</a></p><p><a name="1000852283"></a><a href="Functions95.html#1000853631">Val (cadena)</a></p><p><a name="1000852287"></a><a href="Functions96.html#1000853650">Chr (x)</a></p><p><a name="1000852291"></a><a href="Functions97.html#1000853669">Asc (cadena)</a></p><p><a name="1000852295"></a><a href="Functions98.html#1000853687">Filter</a></p><p><a name="1000852299"></a><a href="Functions99.html#1000853722">Replace</a></p><p><a name="1000852303"></a><a href="Functions100.html#1000853762">Join</a></p><p><a name="1000852307"></a><a href="Functions101.html#1000853792">Split</a></p>
+<hr><br>
+
+<script  language="JavaScript"><!--
+
+var prev = "Functions62.html";
+var next = "Functions64.html";
+
+function setTopicID() { 
+      var number = "1000852175"; 
+      return number; 
+}
+
+// --></script>
+
+
+
+
+<SCRIPT>
+
+if (!window.parent.toc && navigator.appName == "Netscape") {
+
+   document.writeln ('<TABLE ALIGN="left" border="0" cellspacing="0" cellpadding="10">');
+   document.writeln ('<TR>');
+   document.write ('<TD ALIGN="left">');
+
+   if (prev != "crw_spTOC.hhc") {
+      document.writeln ('<A HREF="' + prev + '">');
+      document.writeln ('<IMG SRC="prevpage.gif" HEIGHT=17 BORDER=0 ALT="Página anterior"></A>');
+   } else {
+//   window.alert ('no previous page');
+   }
+
+   if (next != "crw_spIX.hhk") {
+      document.writeln ('<A HREF="' + next + '">');
+      document.writeln ('<IMG SRC="nextpage.gif" HEIGHT=17 BORDER=0 ALT="Página siguiente"></A>');
+   } else {
+//   window.alert ('no next page');
+   }
+   document.writeln ('</TD><TD ALIGN="left">');
+   document.writeln ('<A HREF="frameset.htm?TOC">');
+   document.writeln ('<IMG SRC="showtoc.gif" HEIGHT=17 BORDER=0 ALT="Haga clic para ver el contenido"></A></TD>');
+   document.writeln ('<TD ALIGN="left">');
+   document.writeln ('<A HREF="frameset.htm?IDX">');
+   document.writeln ('<IMG SRC="showix.gif" HEIGHT=17 BORDER=0 ALT="Haga clic para ver el índice"></A></TD>');
+   document.writeln ('</TD>');
+   document.writeln ('</TR>');
+   document.writeln ('</TABLE>');
+
+}
+
+</SCRIPT>
+<table align="right" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td align="right"><font size="1">Seagate Software, Inc.<br>
+    <a href="http://www.seagatesoftware.com">http://www.seagatesoftware.com</a><br>
+    Envíe sus comentarios a:<br>
+    <a href="mailto:techpubs@seagatesoftware.com">techpubs@seagatesoftware.com</a><br>
+    </font></td>
+  </tr>
+</table>
+</body>
+</html>
+
+

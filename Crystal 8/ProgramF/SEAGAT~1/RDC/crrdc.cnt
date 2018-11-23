@@ -1,0 +1,73 @@
+:Base CRRDC.hlp
+1 Report Designer Component Online Help Topics=ABCNT1
+1 What is New for Developers
+2 Index=ACCNT1
+2 What's New for Developers overview=ACCNT2
+2 Report Integration controls for Visual InterDev=ACCNT3
+2 Serving up Reports from Lotus Domino Applications=ACCNT4
+2 Enhancements to the Crystal Report Print Engine API=ACCNT5
+2 Enhancements to Report Designer Component=ACCNT6
+2 API Enhancements from Seagate Crystal Reports 7 or earlier=ACCNT7
+2 A Closer Look at Some of the New Features=ACCNT8
+1 Integration Methods
+2 Index=ADCNT1
+2 Integration Methods overview=ADCNT2
+2 Integration methods=ADCNT3
+2 Using the Best Technology - The Report Designer Component=ADCNT4
+2 The Best Tool for Your Needs=ADCNT5
+1 Introducing the Report Designer Component
+2 Index=AECNT1
+2 The Report Designer Component=AECNT2
+2 How to Get Additional Information=AECNT3
+1 Quick Start for using the RDC
+2 Overview=AFCNT1
+2 Bullet Point Quick Start=AFCNT2
+2 Open an Existing Report=AFCNT3
+2 Create and Modify a Report=AFCNT4
+1 Data Access
+2 Index=AGCNT1
+2 Data Access overview=AGCNT2
+2 The Data Explorer=AGCNT3
+2 Active Data Sources=AGCNT4
+2 Data Environments=AGCNT5
+2 Database Drivers=AGCNT6
+1 Understanding the RDC Object Model
+2 Index=AHCNT1
+2 Understanding the RDC Object Model overview=AHCNT2
+2 The Primary Objects and Collections=AHCNT3
+2 RDC Object Model special considerations=AHCNT4
+1 RDC Programming
+2 Index=AICNT1
+2 RDC Programming overview=AICNT2
+2 Special Considerations for RDC Programming=AICNT3
+2 Two Methods to Access an Object in a Report or Subreport=AICNT4
+2 Runtime Examples=AICNT5
+1 Programming the Report Viewer
+2 Index=AJCNT1
+2 Programming the Report Viewer overview=AJCNT2
+1 Migrating to the RDC from the OCX
+2 Index=AKCNT1
+2 Migrating to the RDC from the OCX overview=AKCNT2
+2 OCX=AKCNT3
+1 Working with Visual C++ Visual InterDev and Lotus Domino
+2 Index=ALCNT1
+2 Working with Visual C++ Visual InterDev and Lotus Domino overview=ALCNT2
+2 Using the RDC with Visual C++=ALCNT3
+2 Using the RDC with Visual InterDev=ALCNT4
+2 Working with Lotus Domino=ALCNT5
+1 Report Designer Component Object Model Reference
+2 Index=AMCNT1
+2 The Report Designer Object Model overview=AMCNT2
+2 Objects and Collections=AMCNT3
+2 Enumerated Types for the RDC Object Model=AMCNT4
+1 Report Viewer Object Model Reference
+2 Index=ANCNT1
+2 Report Viewer/ActiveX Object Model=ANCNT2
+2 The Report Viewer/Java Bean=ANCNT3
+1 Dialog box Index
+2 Index=XAO998893@DIALOGBX.rtf
+2 Select Data Source dialog box=RAO027692@DIALOGBOX.rtf
+2 Advanced Options dialog box=RAO047169@DIALOGBOX.rtf
+2 Database Definition Tool dialog box=RAO084072@DIALOGBX.rtf
+2 Select Recordset dialog box=RAO051998@DIALOGBX.rtf
+2 Crystal Report Expert dialog box=RAO82331@DIALOGBX.rtf

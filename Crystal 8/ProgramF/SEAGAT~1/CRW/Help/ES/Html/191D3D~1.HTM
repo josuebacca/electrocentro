@@ -1,0 +1,135 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+
+<html>
+<head>
+<title>F&#243;rmula 2</title>
+
+<link REL=STYLESHEET TYPE="text/css" HREF="seagate.css">
+
+<!--
+                 ***********************************
+                 * Seagate Software copyright 1999 *
+                 ***********************************
+
+                      Template version: 5.1
+-->
+
+
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" link="#0000FF" vlink="#0000FF" alink="#800080">
+
+
+ 
+<a name="316614"></a><h3 class="newpage"> F&#243;rmula 2</h3>
+<a name="316615"></a><h4>Funciones y operadores usados</h4><p><a name="316616"></a>If<nobr>-T</nobr>hen<nobr>-E</nobr>lse, Indexar [], Menor que (&lt;), Concatenar (+), Calcular rango (to), ToNumber, Sustraer (-), ToText, Par&#233;ntesis ()</p><a name="316617"></a><h4>Prop&#243;sito de la f&#243;rmula</h4><p><a name="316618"></a>Tiene la fecha de la primera compra codificada como los caracteres cuarto y quinto del n&#250;mero de cliente (por ejemplo, 1971 como el 71 en ABC7101234, 1988 codificado como el 88 en ABC880544, etc.) y desea personalizar una carta para agradecer a los clientes por la cantidad de a&#241;os de fidelidad a su comercio. Desea que aparezca la siguiente oraci&#243;n en su carta:</p><PRE><a name="316619"></a>"Ha sido un valioso cliente durante" [x] "a&#241;os."
+<a name="316620"></a>&#171;Donde x es la cantidad de a&#241;os.&#187;
+</PRE><a name="316621"></a><h4>F&#243;rmula</h4><PRE><a name="316622"></a>If {archivo.N&Uacute;MERO DEL CLIENTE}[4 to 5] &lt; "90" Then
+<a name="316623"></a>"ha sido un valioso cliente durante " + ToText(91
+<a name="316624"></a>- ToNumber({archivo.N&Uacute;MERO DEL CLIENTE}[4 to 5]))
+<a name="316625"></a>+ " a&#241;os."
+<a name="316626"></a>Else 
+<a name="316627"></a>"Ud. es uno de nuestros clientes m&#225;s recientes y queremos 
+comunicarle cu&#225;nto valoramos su creciente fidelidad."
+</PRE><a name="316628"></a><h4>Resultado</h4><p><a name="316646"></a> <Table Border="1">
+<tr><td align="left" valign="TOP"><a name="316631"></a>N&#186; de cliente
+
+</td><td align="left" valign="TOP"><a name="316633"></a>Oraci&#243;n resultante
+
+</td></tr>
+<tr><td align="left" valign="TOP"><P><a name="316635"></a>ABC7801234</P>
+
+
+</td><td align="left" valign="TOP"><P><a name="316637"></a>"Ha sido un valioso cliente durante 13 a&#241;os."</P>
+
+
+</td></tr>
+<tr><td align="left" valign="TOP"><P><a name="316639"></a>ABD890337</P>
+
+
+</td><td align="left" valign="TOP"><P><a name="316641"></a>"Ud. ha sido un valioso cliente durante 2 a&#241;os."</P>
+
+
+</td></tr>
+<tr><td align="left" valign="TOP"><P><a name="316643"></a>ABD904331</P>
+
+
+</td><td align="left" valign="TOP"><P><a name="316645"></a>"Ud. es uno de nuestros clientes m&#225;s recientes y queremos comunicarle cu&#225;nto valoramos su creciente fidelidad."</P>
+
+
+</td></tr>
+
+</Table></p>
+<a name="316647"></a><h4>Explicaci&#243;n</h4><ul type="disc"><a name="316648"></a><li>La expresi&#243;n If<nobr>-T</nobr>hen<nobr>-E</nobr>lse dice: "Si el 4&#186; y 5&#186; elemento del n&#250;mero de cliente, expresados como n&#250;meros, son menores que 90, imprimir una frase que incluya la fecha de la primera compra, de lo contrario imprimir la oraci&#243;n de 'cliente m&#225;s reciente'."
+<a name="316649"></a><li>La f&#243;rmula anterior usa el operador de indexaci&#243;n [ ] para extraer los caracteres 4&#186; y 5&#186; (su c&#243;digo de fecha) de los n&#250;meros de cliente que est&#225;n almacenados como texto en campos de caracteres. _&nbsp;&nbsp;&nbsp;&nbsp;El operador de c&#225;lculo de rangos (to) se usa para establecer el rango 4 a 5.
+<a name="316650"></a><li>En el primer ejemplo (ABC7801234) el 4&#186; y 5&#186; d&#237;gitos son 78, lo que representa el a&#241;o de la primera compra como 1978.
+<a name="316651"></a><li>En el segundo ejemplo (ABC78903337) el 4&#186; y 5&#186; d&#237;gitos son 89, lo que representa el a&#241;o de la primera compra como 1989.
+<a name="316652"></a><li>Si los caracteres extra&#237;dos son inferiores a "90" (Then), se imprime una cadena de texto concatenada (una oraci&#243;n) que est&#225; personalizada para indicar la cantidad de a&#241;os que la persona ha sido cliente. La cadena de texto dice: "Ha sido un valioso cliente durante (cantidad calculada, expresada como texto) a&#241;os." 
+<a name="316653"></a><li>El c&#225;lculo de la cantidad de a&#241;os como cliente involucra varios pasos:
+<ul type="disc"><ul type="disc"><a name="316654"></a><li>Como se hizo anteriormente, el operador de indexaci&#243;n [ ] extrae los caracteres 4&#186; y 5&#186; (su c&#243;digo de fecha) de los n&#250;meros de cliente, los cuales est&#225;n almacenados como texto en los campos de caracteres. _&nbsp;&nbsp;&nbsp;&nbsp;El operador de c&#225;lculo de rangos (to) se usa para establecer el rango 4 a 5.<a name="316655"></a><li>La funci&#243;n ToNumber convierte el c&#243;digo de fecha extra&#237;do en un n&#250;mero, de modo que pueda usarse en el c&#225;lculo 91<nobr>-x</nobr>, donde x = el c&#243;digo de fecha expresado como n&#250;mero.<a name="316656"></a><li>91<nobr>-x</nobr> resta el a&#241;o de la primera compra de 91 (como ejemplo de a&#241;o actual) para obtener la cantidad de a&#241;os que la persona ha sido cliente.<a name="316657"></a><li>La funci&#243;n ToText entonces vuelve a convertir el resultado de ese c&#225;lculo en texto, de modo que pueda usarse en la expresi&#243;n "Ha sido un valioso cliente durante (x) a&#241;os." </ul></ul><a name="316658"></a><li>Si los caracteres son "90" o m&#225;s (Else), se imprime la cadena de texto fija "Ud. es uno de nuestros clientes m&#225;s recientes y queremos comunicarle cu&#225;nto valoramos su creciente fidelidad".
+<a name="316659"></a><li>Los par&#233;ntesis () controlan el orden del c&#225;lculo de la f&#243;rmula.
+</ul><a name="316660"></a><h6>Temas relacionados</h6><p><a name="316664"></a><a href="19_introformulas28.html#316471">F&#243;rmulas en acci&#243;n</a></p>
+<hr><br>
+
+<script  language="JavaScript"><!--
+
+var prev = "19_introformulas29.html";
+var next = "19_introformulas31.html";
+
+function setTopicID() { 
+      var number = "316614"; 
+      return number; 
+}
+
+// --></script>
+
+
+
+
+<SCRIPT>
+
+if (!window.parent.toc && navigator.appName == "Netscape") {
+
+   document.writeln ('<TABLE ALIGN="left" border="0" cellspacing="0" cellpadding="10">');
+   document.writeln ('<TR>');
+   document.write ('<TD ALIGN="left">');
+
+   if (prev != "crw_spTOC.hhc") {
+      document.writeln ('<A HREF="' + prev + '">');
+      document.writeln ('<IMG SRC="prevpage.gif" HEIGHT=17 BORDER=0 ALT="Página anterior"></A>');
+   } else {
+//   window.alert ('no previous page');
+   }
+
+   if (next != "crw_spIX.hhk") {
+      document.writeln ('<A HREF="' + next + '">');
+      document.writeln ('<IMG SRC="nextpage.gif" HEIGHT=17 BORDER=0 ALT="Página siguiente"></A>');
+   } else {
+//   window.alert ('no next page');
+   }
+   document.writeln ('</TD><TD ALIGN="left">');
+   document.writeln ('<A HREF="frameset.htm?TOC">');
+   document.writeln ('<IMG SRC="showtoc.gif" HEIGHT=17 BORDER=0 ALT="Haga clic para ver el contenido"></A></TD>');
+   document.writeln ('<TD ALIGN="left">');
+   document.writeln ('<A HREF="frameset.htm?IDX">');
+   document.writeln ('<IMG SRC="showix.gif" HEIGHT=17 BORDER=0 ALT="Haga clic para ver el índice"></A></TD>');
+   document.writeln ('</TD>');
+   document.writeln ('</TR>');
+   document.writeln ('</TABLE>');
+
+}
+
+</SCRIPT>
+<table align="right" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td align="right"><font size="1">Seagate Software, Inc.<br>
+    <a href="http://www.seagatesoftware.com">http://www.seagatesoftware.com</a><br>
+    Envíe sus comentarios a:<br>
+    <a href="mailto:techpubs@seagatesoftware.com">techpubs@seagatesoftware.com</a><br>
+    </font></td>
+  </tr>
+</table>
+</body>
+</html>
+
+

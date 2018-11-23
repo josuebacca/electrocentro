@@ -1,0 +1,105 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+
+<html>
+<head>
+<title>C&#243;mo trabajar con bases de datos</title>
+
+<link REL=STYLESHEET TYPE="text/css" HREF="seagate.css">
+
+<!--
+                 ***********************************
+                 * Seagate Software copyright 1999 *
+                 ***********************************
+
+                      Template version: 5.1
+-->
+
+
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" link="#0000FF" vlink="#0000FF" alink="#800080">
+
+
+ 
+<a name="317522"></a><h2 class="newpage">C&#243;mo trabajar con bases de datos</h2><p><a name="317525"></a>Este secci&#243;n presenta varios procedimientos comunes relacionados con el acceso a archivos de base de datos desde Seagate Crystal Reports. Cuando resulta pr&#225;ctico, se ofrecen instrucciones paso a paso.</p><a name="324628"></a><h3>C&#243;mo usar las consultas de Access</h3>
+<a name="324634"></a><h4>C&#243;mo abrir consultas de Access a trav&#233;s de DAO</h4><p><a name="324635"></a>Las consultas de Microsoft Access pueden ser usadas en Seagate Crystal Reports como conjuntos de datos separados, al igual que las tablas de Access. Cuando abra una base de datos Access a trav&#233;s del motor DAO (vea <a href="25_access_sources9.html#116245">Microsoft Access</a>), cualquier consulta en la base de datos puede ser le.</p><a name="324656"></a><h6>Para abrir una consulta de Access mediante DAO</h6><ol>
+<a name="324658"></a><li value="1&nbsp;&nbsp;&nbsp;&nbsp;">Haga clic en el bot&#243;n <kbd>Nuevo</kbd> en la barra de herramientas est&#225;ndar.
+<p class="indent"><a name="324659"></a>Galeria de Seagate Crystal Reports aparecer&#225; en su pantalla.</p><p><a name="343353"></a> <img src="images/db_rptg1.gif">
+
+
+</p>
+<a name="324721"></a><li value="2&nbsp;&nbsp;&nbsp;&nbsp;">Haga clic en <kbd>Como informe en blanco</kbd> y luego en <kbd>Aceptar</kbd>.
+<a name="324722"></a><li value="3&nbsp;&nbsp;&nbsp;&nbsp;">Ubique y seleccione el archivo de base de datos Microsoft Access (*.MDB) que contiene la consulta que desea utilizar en su informe.
+<p class="indent"><a name="324723"></a><font color="darkblue"><b>Nota:   &nbsp;&nbsp;&nbsp;</b></font>Si su base de datos requiere de un nombre de usuario y contrase&#241;a, aparecer&#225; un cuadro de dialogo de conexi&#243;n.</p>
+<a name="324724"></a><li value="4&nbsp;&nbsp;&nbsp;&nbsp;">Resalte la consulta y las tablas que quiere incluir de la lista y haga clic en <kbd>Aceptar</kbd>. 
+<a name="317681"></a><li value="5&nbsp;&nbsp;&nbsp;&nbsp;">Haga clic en <kbd>Cerrar</kbd> al finalizar con el cuadro de di&#225;logo Explorador de datos.
+<p class="indent"><a name="317682"></a>Aparece el cuadro de di&#225;logo Explorador de campo con <EM>Campos de base de datos</EM> seleccionado y expandido.</p><p class="indent"><a name="317683"></a><font color="darkblue"><b>Nota:   &nbsp;&nbsp;&nbsp;</b></font>Aparece el cuadro de di&#225;logo Asistente de vinculaci&#243;n visual si ha seleccionado varias consultas y tablas.</p>
+<p class="indent"><a name="324755"></a>Todas las consultas y tablas que usted destaca en su base de datos Access aparecen en el cuadro de di&#225;logo Explorador de campo.</p><a name="324756"></a><li value="6&nbsp;&nbsp;&nbsp;&nbsp;">Ubique su consulta en la ficha <kbd>Base de Datos</kbd> y haga doble clic en el nombre de la consulta. 
+<p class="indent"><a name="353425"></a>La consulta se expande para mostrar todos los campos que contiene.</p><a name="324757"></a><li value="7&nbsp;&nbsp;&nbsp;&nbsp;">Seleccione cualquier campo que desee utilizar en su informe y agr&#233;guelo en la ficha Dise&#241;o.
+</ol>
+<p><a name="329086"></a><font color="darkblue"><b>Nota:   &nbsp;&nbsp;&nbsp;</b></font>No puede utilizar consultas de acci&#243;n Access o actualizar consultas en Seagate Crystal Reports. Pero s&#237; puede usar consultas de selecci&#243;n Access y consultas de tablas cruzadas.</p>
+
+<hr><br>
+
+<script  language="JavaScript"><!--
+
+var prev = "24_under_databases41.html";
+var next = "24_under_databases43.html";
+
+function setTopicID() { 
+      var number = "317522"; 
+      return number; 
+}
+
+// --></script>
+
+
+
+
+<SCRIPT>
+
+if (!window.parent.toc && navigator.appName == "Netscape") {
+
+   document.writeln ('<TABLE ALIGN="left" border="0" cellspacing="0" cellpadding="10">');
+   document.writeln ('<TR>');
+   document.write ('<TD ALIGN="left">');
+
+   if (prev != "crw_spTOC.hhc") {
+      document.writeln ('<A HREF="' + prev + '">');
+      document.writeln ('<IMG SRC="prevpage.gif" HEIGHT=17 BORDER=0 ALT="Página anterior"></A>');
+   } else {
+//   window.alert ('no previous page');
+   }
+
+   if (next != "crw_spIX.hhk") {
+      document.writeln ('<A HREF="' + next + '">');
+      document.writeln ('<IMG SRC="nextpage.gif" HEIGHT=17 BORDER=0 ALT="Página siguiente"></A>');
+   } else {
+//   window.alert ('no next page');
+   }
+   document.writeln ('</TD><TD ALIGN="left">');
+   document.writeln ('<A HREF="frameset.htm?TOC">');
+   document.writeln ('<IMG SRC="showtoc.gif" HEIGHT=17 BORDER=0 ALT="Haga clic para ver el contenido"></A></TD>');
+   document.writeln ('<TD ALIGN="left">');
+   document.writeln ('<A HREF="frameset.htm?IDX">');
+   document.writeln ('<IMG SRC="showix.gif" HEIGHT=17 BORDER=0 ALT="Haga clic para ver el índice"></A></TD>');
+   document.writeln ('</TD>');
+   document.writeln ('</TR>');
+   document.writeln ('</TABLE>');
+
+}
+
+</SCRIPT>
+<table align="right" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td align="right"><font size="1">Seagate Software, Inc.<br>
+    <a href="http://www.seagatesoftware.com">http://www.seagatesoftware.com</a><br>
+    Envíe sus comentarios a:<br>
+    <a href="mailto:techpubs@seagatesoftware.com">techpubs@seagatesoftware.com</a><br>
+    </font></td>
+  </tr>
+</table>
+</body>
+</html>
+
+

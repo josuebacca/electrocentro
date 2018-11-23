@@ -1,0 +1,96 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+
+<html>
+<head>
+<title>Prevenci&#243;n de interrupciones en un texto sin espaciado dentro de un objeto</title>
+
+<link REL=STYLESHEET TYPE="text/css" HREF="seagate.css">
+
+<!--
+                 ***********************************
+                 * Seagate Software copyright 1999 *
+                 ***********************************
+
+                      Template version: 5.1
+-->
+
+
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" link="#0000FF" vlink="#0000FF" alink="#800080">
+
+
+ 
+<a name="83622"></a><h4 class="newpage"> Prevenci&#243;n de interrupciones en un texto sin espaciado dentro de un objeto</h4><p><a name="83623"></a>Para las cadenas de texto que no contienen espacios, como palabras solas, la cadena de texto se interrumpe al borde del marco de un objeto antes de que la l&#237;nea comience a ajustarse autom&#225;ticamente.</p><p><a name="83627"></a> <img src="images/dw_txt.gif">
+
+
+</p>
+<a name="83628"></a><h6>Para impedir interrupciones en un texto sin espacios dentro <br>de un objeto</h6><ol>
+<a name="83629"></a><li value="1&nbsp;&nbsp;&nbsp;&nbsp;">Seleccione un objeto al que desee dar formato.
+<a name="87444"></a><li value="2&nbsp;&nbsp;&nbsp;&nbsp;">Expanda el marco del objeto para que sea m&#225;s ancho que el bloque m&#225;s ancho de texto.
+</ol>
+<p><a name="87445"></a>Por ejemplo, al campo {tabla.APELLIDO} se le asigna un tama&#241;o de 80 caracteres, mientras que el nombre m&#225;s largo en la base de datos s&#243;lo tiene 28 caracteres. En este caso, cuando usted pone este campo por primera vez en su informe, el marco ser&#225; 80 veces el ancho del car&#225;cter promedio de la fuente. Reduzca el ancho del campo, pero no lo estreche a tal grado que s&#243;lo pueda acomodar la cadena de texto m&#225;s larga. D&#233;jelo un poco m&#225;s ancho para que el texto tenga como desplegarse en caso de crecer en anchura.</p><p><a name="87446"></a>Mientras que cada una de estas soluciones ofrece una soluci&#243;n efectiva cuando se est&#225; trabajando con un solo objeto base<nobr>-t</nobr>exto en una secci&#243;n, existen todav&#237;a otras consideraciones para el caso cuando se trabaja con m&#225;s de un objeto base<nobr>-t</nobr>exto en una secci&#243;n. Al ajustar el tama&#241;o de un objeto, debe considerar su ubicaci&#243;n con respecto a los otros objetos en la secci&#243;n.</p><p><a name="87447"></a>Evite dise&#241;ar informes donde el espacio entre los objetos es muy estrecho. Deje espacio para crecimiento, expandiendo el ancho de los objetos un 5% aproximadamente. Alternativamente, podr&#237;a considerar reducir el tama&#241;o de la fuente.</p>
+<hr><br>
+
+<script  language="JavaScript"><!--
+
+var prev = "11_format7.html";
+var next = "11_format9.html";
+
+function setTopicID() { 
+      var number = "83622"; 
+      return number; 
+}
+
+// --></script>
+
+
+
+
+<SCRIPT>
+
+if (!window.parent.toc && navigator.appName == "Netscape") {
+
+   document.writeln ('<TABLE ALIGN="left" border="0" cellspacing="0" cellpadding="10">');
+   document.writeln ('<TR>');
+   document.write ('<TD ALIGN="left">');
+
+   if (prev != "crw_spTOC.hhc") {
+      document.writeln ('<A HREF="' + prev + '">');
+      document.writeln ('<IMG SRC="prevpage.gif" HEIGHT=17 BORDER=0 ALT="Página anterior"></A>');
+   } else {
+//   window.alert ('no previous page');
+   }
+
+   if (next != "crw_spIX.hhk") {
+      document.writeln ('<A HREF="' + next + '">');
+      document.writeln ('<IMG SRC="nextpage.gif" HEIGHT=17 BORDER=0 ALT="Página siguiente"></A>');
+   } else {
+//   window.alert ('no next page');
+   }
+   document.writeln ('</TD><TD ALIGN="left">');
+   document.writeln ('<A HREF="frameset.htm?TOC">');
+   document.writeln ('<IMG SRC="showtoc.gif" HEIGHT=17 BORDER=0 ALT="Haga clic para ver el contenido"></A></TD>');
+   document.writeln ('<TD ALIGN="left">');
+   document.writeln ('<A HREF="frameset.htm?IDX">');
+   document.writeln ('<IMG SRC="showix.gif" HEIGHT=17 BORDER=0 ALT="Haga clic para ver el índice"></A></TD>');
+   document.writeln ('</TD>');
+   document.writeln ('</TR>');
+   document.writeln ('</TABLE>');
+
+}
+
+</SCRIPT>
+<table align="right" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td align="right"><font size="1">Seagate Software, Inc.<br>
+    <a href="http://www.seagatesoftware.com">http://www.seagatesoftware.com</a><br>
+    Envíe sus comentarios a:<br>
+    <a href="mailto:techpubs@seagatesoftware.com">techpubs@seagatesoftware.com</a><br>
+    </font></td>
+  </tr>
+</table>
+</body>
+</html>
+
+

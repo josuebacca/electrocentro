@@ -1,0 +1,93 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+
+<html>
+<head>
+<title>Biblioteca de Merant DataDirect</title>
+
+<link REL=STYLESHEET TYPE="text/css" HREF="seagate.css">
+
+<!--
+                 ***********************************
+                 * Seagate Software copyright 1999 *
+                 ***********************************
+
+                      Template version: 5.1
+-->
+
+
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" link="#0000FF" vlink="#0000FF" alink="#800080">
+
+
+ 
+<a name="1974"></a><h4 class="newpage"> Biblioteca de Merant DataDirect</h4><p><a name="1976"></a>En vez de comunicarse directamente con ODBC mediante el archivo P2sodbc.dll, Seagate Crystal Reports puede usar la biblioteca de Merant DataDirect adjunta con Seagate Crystal Reports. Estos controladores de usuario usan el est&#225;ndar ODBC como capa subyacente. Sin embargo, en vez de usar el archivo P2sodbc.dll para comunicarse con ODBC, Seagate Crystal Reports usa un archivo P2s*.dll espec&#237;fico apropiado a la base de datos SQL a la cual se accede.</p><a name="1978"></a><h5>Biblioteca de DataDirect en relaci&#243;n con ODBC</h5><p><a name="197527"></a>La ventaja de la biblioteca de DataDirect respecto de ODBC direct es principalmente su capacidad de pasar sintaxis SQL propia a servidores espec&#237;ficos. Por ejemplo, como Oracle tiene su propio controlador PDS, un desarrollador de SQL que trabaje con datos de Oracle a veces puede pasar enunciados SQL m&#225;s precisos al servidor. Con la biblioteca de DataDirect, un desarrollador puede pasar funciones de lenguaje SQL que son exclusivas de un DBMS particular desde Seagate Crystal Reports. Al usar ODBC direct, el archivo P2sodbc.dll es una DLL com&#250;n que usan todos los tipos de DBMS, as&#237; que el uso de sintaxis SQL propia basada en servidores espec&#237;ficos puede que no sea posible del todo.</p><a name="1984"></a><h5>Estructura de la biblioteca de DataDirect</h5><p><a name="1986"></a>Con la biblioteca de Merant DataDirect, Seagate Crystal Reports usa un traductor ODBC espec&#237;fico del formato de base de datos SQL al cual se accede. Este archivo, a su vez, se comunica con la biblioteca de DataDirect. Esta biblioteca hace la traducci&#243;n final del enunciado SQL a ODBC.</p><p><a name="271915"></a> </p>
+<p><a name="306155"></a><font color="darkblue"><b>Nota:   &nbsp;&nbsp;&nbsp;</b></font>Seagate Crystal Reports proporciona controladores Merant para acceder a las bases de datos SQL. Estos se denominan Cr*13.DLL.</p>
+<a name="11205"></a><h5>Bases de datos de la biblioteca de Merant DataDirect</h5><p><a name="1994"></a>A continuaci&#243;n se listan algunas de las bases de datos disponibles para la biblioteca de Merant DataDirect:</p><ul type="disc"><a name="319743"></a><li>Oracle
+<a name="1996"></a><li>Sybase SQL Server
+<a name="2004"></a><li>DB2/2.
+</ul>
+<hr><br>
+
+<script  language="JavaScript"><!--
+
+var prev = "25_access_sources38.html";
+var next = "25_access_sources40.html";
+
+function setTopicID() { 
+      var number = "1974"; 
+      return number; 
+}
+
+// --></script>
+
+
+
+
+<SCRIPT>
+
+if (!window.parent.toc && navigator.appName == "Netscape") {
+
+   document.writeln ('<TABLE ALIGN="left" border="0" cellspacing="0" cellpadding="10">');
+   document.writeln ('<TR>');
+   document.write ('<TD ALIGN="left">');
+
+   if (prev != "crw_spTOC.hhc") {
+      document.writeln ('<A HREF="' + prev + '">');
+      document.writeln ('<IMG SRC="prevpage.gif" HEIGHT=17 BORDER=0 ALT="Página anterior"></A>');
+   } else {
+//   window.alert ('no previous page');
+   }
+
+   if (next != "crw_spIX.hhk") {
+      document.writeln ('<A HREF="' + next + '">');
+      document.writeln ('<IMG SRC="nextpage.gif" HEIGHT=17 BORDER=0 ALT="Página siguiente"></A>');
+   } else {
+//   window.alert ('no next page');
+   }
+   document.writeln ('</TD><TD ALIGN="left">');
+   document.writeln ('<A HREF="frameset.htm?TOC">');
+   document.writeln ('<IMG SRC="showtoc.gif" HEIGHT=17 BORDER=0 ALT="Haga clic para ver el contenido"></A></TD>');
+   document.writeln ('<TD ALIGN="left">');
+   document.writeln ('<A HREF="frameset.htm?IDX">');
+   document.writeln ('<IMG SRC="showix.gif" HEIGHT=17 BORDER=0 ALT="Haga clic para ver el índice"></A></TD>');
+   document.writeln ('</TD>');
+   document.writeln ('</TR>');
+   document.writeln ('</TABLE>');
+
+}
+
+</SCRIPT>
+<table align="right" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td align="right"><font size="1">Seagate Software, Inc.<br>
+    <a href="http://www.seagatesoftware.com">http://www.seagatesoftware.com</a><br>
+    Envíe sus comentarios a:<br>
+    <a href="mailto:techpubs@seagatesoftware.com">techpubs@seagatesoftware.com</a><br>
+    </font></td>
+  </tr>
+</table>
+</body>
+</html>
+
+

@@ -1,0 +1,129 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+
+<html>
+<head>
+<title>F&#243;rmula 3</title>
+
+<link REL=STYLESHEET TYPE="text/css" HREF="seagate.css">
+
+<!--
+                 ***********************************
+                 * Seagate Software copyright 1999 *
+                 ***********************************
+
+                      Template version: 5.1
+-->
+
+
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" link="#0000FF" vlink="#0000FF" alink="#800080">
+
+
+ 
+<a name="316667"></a><h3 class="newpage"> F&#243;rmula 3</h3>
+<a name="316668"></a><h4>Funciones y operadores usados</h4><p><a name="316669"></a>Concatenar (+), ToText, ToNumber, Multiplicar (*), Calcular rango (to), Indexar [], Par&#233;ntesis ()</p><a name="316670"></a><h4>Prop&#243;sito de la f&#243;rmula</h4><p><a name="316671"></a>Un fabricante de velas, como parte de su contrato de pr&#233;stamo con su banco, tiene que presentar un an&#225;lisis mensual de inventario. El an&#225;lisis debe incluir el costo de la tela en inventario de materia prima y el costo de la tela por n&#250;mero de elemento para cada uno de los elementos en el inventario de productos terminados.</p><p><a name="316672"></a>La compa&#241;&#237;a usa una tela para todas las velas que fabrica y usa los caracteres 5&#186; y 6&#186; del n&#250;mero de elemento de cada producto para representar la cantidad de metros de tela (redondeado al metro m&#225;s cercano) necesaria para fabricar dicho elemento. </p><p><a name="316673"></a>En la carta modelo que el gerente le env&#237;a a su banco cada mes quiere que el computador inserte autom&#225;ticamente la cantidad disponible, el n&#250;mero de elemento y el valor monetario de la tela para cada n&#250;mero de elemento.</p><a name="316674"></a><h4>F&#243;rmula</h4><PRE><a name="316675"></a>ToText({archivo.CANTIDAD}) + " unidades, Elemento " + 
+{archivo.ELEMENTO} +
+<a name="316676"></a>", $ " + ToText({archivo.CANTIDAD} * 
+ToNumber({archivo.ELEMENTO}[5
+<a name="316677"></a>to 6]) * {archivo.COSTO DE LA TELA})
+</PRE><a name="316678"></a><h4>Resultado</h4><p><a name="316679"></a>Con un costo de tela de 14,88 d&#243;lares por metro, la f&#243;rmula entrega el siguiente resultado:</p><p><a name="316699"></a> <Table Border="1">
+<tr><td align="left" valign="TOP"><a name="316682"></a>Cantidad
+
+</td><td align="left" valign="TOP"><a name="316684"></a>Elemento 
+
+</td><td align="left" valign="TOP"><a name="316686"></a>Texto de la carta
+
+</td></tr>
+<tr><td align="left" valign="TOP"><P><a name="316688"></a>46</P>
+
+
+</td><td align="left" valign="TOP"><P><a name="316690"></a>4423141006</P>
+
+
+</td><td align="left" valign="TOP"><P><a name="316692"></a>"46 unidades, Elemento 4423141006, $ 9582,72"</P>
+
+
+</td></tr>
+<tr><td align="left" valign="TOP"><P><a name="316694"></a>27</P>
+
+
+</td><td align="left" valign="TOP"><P><a name="316696"></a>4423081009</P>
+
+
+</td><td align="left" valign="TOP"><P><a name="316698"></a>"27 unidades, Elemento 4423081009, $ 3214,08"</P>
+
+
+</td></tr>
+
+</Table></p>
+<a name="316700"></a><h4>Explicaci&#243;n</h4><ul type="disc"><a name="316701"></a><li>Esta ecuaci&#243;n usa ToText para convertir el valor de {archivo.CANTIDAD} (un campo num&#233;rico) en texto, de modo que se pueda usar como parte de una cadena de texto concatenada.
+<a name="316702"></a><li>Luego usa el operador de concatenaci&#243;n (+) para unir la versi&#243;n en texto {archivo.CANTIDAD}con la cadena " unidades, Elemento ".
+<a name="316703"></a><li>Vuelve a usar el operador (+) para unir la cadena resultante con el n&#250;mero de elemento, almacenado como el valor del objeto de texto {archivo.ELEMENTO}.
+<a name="316704"></a><li>Usa el operador (+) una &#250;ltima vez para unir la cadena de texto concatenada con el costo de tela calculado (expresado como texto).
+<a name="316705"></a><li>Para calcular el costo de tela:
+<ul type="disc"><ul type="disc"><a name="316706"></a><li>La f&#243;rmula usa el operador de indexaci&#243;n [] para extraer los elementos 5&#186; y 6&#186; (metros de tela usados) de {archivo.ELEMENTO} (un objeto de texto). <a name="321392"></a><li>El operador de c&#225;lculo de rangos (to) se usa para establecer el rango 5 a 6.<a name="321393"></a><li>La funci&#243;n ToNumber convierte esos elementos en un n&#250;mero, de modo que se pueda usar en un c&#225;lculo num&#233;rico. <a name="316709"></a><li>Usa el operador de multiplicaci&#243;n (*) para multiplicar ese n&#250;mero por el valor de {archivo.COSTO DE LA TELA} por la cantidad de unidades en inventario ({archivo.CANTIDAD}) para llegar al precio total.<a name="316710"></a><li>Finalmente, usa la funci&#243;n ToText para convertir el precio total (un n&#250;mero) a texto que se pueda usar en la cadena concatenada.</ul></ul></ul><a name="316711"></a><h6>Temas relacionados</h6><p><a name="316715"></a><a href="19_introformulas28.html#316471">F&#243;rmulas en acci&#243;n</a></p>
+<hr><br>
+
+<script  language="JavaScript"><!--
+
+var prev = "19_introformulas30.html";
+var next = "19_introformulas32.html";
+
+function setTopicID() { 
+      var number = "316667"; 
+      return number; 
+}
+
+// --></script>
+
+
+
+
+<SCRIPT>
+
+if (!window.parent.toc && navigator.appName == "Netscape") {
+
+   document.writeln ('<TABLE ALIGN="left" border="0" cellspacing="0" cellpadding="10">');
+   document.writeln ('<TR>');
+   document.write ('<TD ALIGN="left">');
+
+   if (prev != "crw_spTOC.hhc") {
+      document.writeln ('<A HREF="' + prev + '">');
+      document.writeln ('<IMG SRC="prevpage.gif" HEIGHT=17 BORDER=0 ALT="Página anterior"></A>');
+   } else {
+//   window.alert ('no previous page');
+   }
+
+   if (next != "crw_spIX.hhk") {
+      document.writeln ('<A HREF="' + next + '">');
+      document.writeln ('<IMG SRC="nextpage.gif" HEIGHT=17 BORDER=0 ALT="Página siguiente"></A>');
+   } else {
+//   window.alert ('no next page');
+   }
+   document.writeln ('</TD><TD ALIGN="left">');
+   document.writeln ('<A HREF="frameset.htm?TOC">');
+   document.writeln ('<IMG SRC="showtoc.gif" HEIGHT=17 BORDER=0 ALT="Haga clic para ver el contenido"></A></TD>');
+   document.writeln ('<TD ALIGN="left">');
+   document.writeln ('<A HREF="frameset.htm?IDX">');
+   document.writeln ('<IMG SRC="showix.gif" HEIGHT=17 BORDER=0 ALT="Haga clic para ver el índice"></A></TD>');
+   document.writeln ('</TD>');
+   document.writeln ('</TR>');
+   document.writeln ('</TABLE>');
+
+}
+
+</SCRIPT>
+<table align="right" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td align="right"><font size="1">Seagate Software, Inc.<br>
+    <a href="http://www.seagatesoftware.com">http://www.seagatesoftware.com</a><br>
+    Envíe sus comentarios a:<br>
+    <a href="mailto:techpubs@seagatesoftware.com">techpubs@seagatesoftware.com</a><br>
+    </font></td>
+  </tr>
+</table>
+</body>
+</html>
+
+

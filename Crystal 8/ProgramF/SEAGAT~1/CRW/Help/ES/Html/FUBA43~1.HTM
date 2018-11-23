@@ -1,0 +1,98 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+
+<html>
+<head>
+<title>Minimum (campo), Minimum (campo, campoCondicional), Minimum (campo, campoCondicional, condici&#243;n), Minimum (x)</title>
+
+<link REL=STYLESHEET TYPE="text/css" HREF="seagate.css">
+
+<!--
+                 ***********************************
+                 * Seagate Software copyright 1999 *
+                 ***********************************
+
+                      Template version: 5.1
+-->
+
+
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" link="#0000FF" vlink="#0000FF" alink="#800080">
+
+
+ 
+<a name="1000851030"></a><h3 class="newpage"> Minimum (campo), Minimum (campo, campoCondicional), Minimum (campo, campoCondicional, condici&#243;n), Minimum (x)</h3>
+<p><a name="1000851032"></a>Sintaxis b&#225;sica y Crystal.</p><a name="1000851033"></a><h5>Argumentos</h5><ul type="disc"><a name="1000851034"></a><li>campo es cualquier campo de base de datos o de f&#243;rmula que puede ser evaluado por la funci&#243;n.
+<a name="1000851035"></a><li>campoCondicional es un campo utilizado para agrupar los valores del campo.
+<a name="1000851036"></a><li>condici&#243;n es una cadena que indica el tipo de agrupaci&#243;n para campoCondicional. S&#243;lo se especifica este argumento cuando  campoCondicional es un campo de fecha, hora, fecha/hora o booleano. Para obtener m&#225;s informaci&#243;n sobre las cadenas v&#225;lidas para este argumento, v&#233;ase <a href="Functions20.html#1000850529">Condiciones para las funciones de resumen</a>.
+<a name="1000851040"></a><li>x es un arreglo de valores que puede ser evaluado por la funci&#243;n que est&#225; siendo utilizada.
+</ul><a name="1000851041"></a><h5>Devuelve </h5><p><a name="1000851042"></a>Un n&#250;mero fraccionario.</p><a name="1000851043"></a><h5>Acci&#243;n</h5><p><a name="1000851044"></a>Crystal Reports le permite encontrar el valor m&#237;nimo que aparece en un conjunto de valores. Por ejemplo:</p><ul type="disc"><a name="1000851045"></a><li>Si un informe de ventas incluye un campo que muestra la cantidad de cada pedido, puede encontrar el pedido de cantidad menor de todos los pedidos que aparecen en su informe (un Total general de cantidad m&#237;nima). Para obtener m&#225;s informaci&#243;n acerca de c&#243;mo encontrar esta clase de m&#237;nimo, v&#233;ase <a href="Functions22.html#1000850599">SummaryFunction (campo)</a>.
+<a name="1000851049"></a><li>Si divide los pedidos en grupos (por ejemplo, pedidos agrupados por el estado del que vinieron), puede encontrar la cantidad m&#237;nima de los pedidos por grupo (en este caso, por estado). Para obtener m&#225;s informaci&#243;n acerca de c&#243;mo encontrar esta clase de m&#237;nimo, v&#233;ase <a href="Functions23.html#1000850631">SummaryFunction (campo, campoCondicional)</a>.
+<a name="1000851053"></a><li>Si divide los pedidos en grupos de fecha o Booleanos (por ejemplo, pedidos agrupados por el mes en que fueron colocados), puede encontrar el pedido con menor cantidad por grupo basado en un cambio espec&#237;fico en el campo de fecha o Booleano (en este caso, por mes). Para obtener m&#225;s informaci&#243;n acerca de c&#243;mo encontrar esta clase de m&#237;nimo, v&#233;ase <a href="Functions24.html#1000850661">SummaryFunction (campo, campoCondicional, condici&#243;n)</a>.
+<a name="1000851057"></a><li>Si especifica un conjunto de valores individuales, puede encontrar el valor menor del conjunto. Para obtener m&#225;s informaci&#243;n acerca de c&#243;mo encontrar esta clase de m&#237;nimo, v&#233;ase <a href="Functions155.html#1000567809">Funciones de resumen de matriz (x)</a>.
+</ul><a name="1000851061"></a><h5>Ejemplo(s)</h5><p><a name="1000851062"></a>Los siguientes ejemplos son aplicables a las sintaxis b&#225;sica y Crystal:</p><p><code><a name="1000851063"></a>Minimum({archivo.CANT})</code></p><p class="example"><a name="1000851064"></a>Devuelve el valor m&#225;s bajo en el campo CANT.</p><p><code><a name="1000851065"></a>Minimum({pedidos.MONTO DEL PEDIDO}, {pedidos.ID DEL CLIENTE})</code></p><p class="example"><a name="1000851066"></a>@@@Identifies el pedido m&#225;s bajo en cada grupo de pedidos en el campo Monto (el pedido m&#225;s peque&#241;o de cada mes). Los pedidos son separados en grupos siempre que cambia el valor del campo Id del cliente.</p><p><code><a name="1000851067"></a>Minimum{pedidos.MONTO DEL PEDIDO}, {pedidos.FECHA DEL PEDIDO}, "mensual")</code></p><p class="example"><a name="1000851068"></a>Identifies el pedido m&#225;s peque&#241;o en cada grupo de pedidos del campo Monto (el pedido m&#225;s peque&#241;o de cada mes). Los pedidos son separados en grupos siempre que cambia el valor del campo Fecha a un nuevo mes.</p><p><a name="1000851069"></a>El siguiente ejemplo es aplicable a la sintaxis Crystal:</p><p><a name="1000851070"></a>La funci&#243;n Minimum tambi&#233;n le permite establecer un l&#237;mite superior. Por ejemplo: Minimum([{archivo.COMMISSION}, 2500]) devuelve la comisi&#243;n calculada hasta un l&#237;mite superior de 2500. Una vez que la comisi&#243;n pasa la marca $2500, esta expresi&#243;n devuelve siempre 2500. As&#237;:</p><p><code><a name="1000851071"></a>Minimum([{archivo.COMISI&Oacute;N}, 2500]) </code></p><p class="example"><a name="1000851072"></a>Devuelve 1575, donde comisi&#243;n = 1575.</p><p><a name="1000851073"></a><font color="darkblue"><b>Nota:   &nbsp;&nbsp;&nbsp;</b></font>El uso de esta funci&#243;n en una f&#243;rmula obliga a que la f&#243;rmula sea evaluada al momento de impresi&#243;n. </p>
+<p><a name="1000851074"></a>Para obtener m&#225;s informaci&#243;n sobre las consideraciones de evaluaci&#243;n de hora, v&#233;ase el <a href="Functions169.html#1000572432">Funciones de tiempo de evaluaci&#243;n</a>.</p>
+<hr><br>
+
+<script  language="JavaScript"><!--
+
+var prev = "Functions30.html";
+var next = "Functions32.html";
+
+function setTopicID() { 
+      var number = "1000851030"; 
+      return number; 
+}
+
+// --></script>
+
+
+
+
+<SCRIPT>
+
+if (!window.parent.toc && navigator.appName == "Netscape") {
+
+   document.writeln ('<TABLE ALIGN="left" border="0" cellspacing="0" cellpadding="10">');
+   document.writeln ('<TR>');
+   document.write ('<TD ALIGN="left">');
+
+   if (prev != "crw_spTOC.hhc") {
+      document.writeln ('<A HREF="' + prev + '">');
+      document.writeln ('<IMG SRC="prevpage.gif" HEIGHT=17 BORDER=0 ALT="Página anterior"></A>');
+   } else {
+//   window.alert ('no previous page');
+   }
+
+   if (next != "crw_spIX.hhk") {
+      document.writeln ('<A HREF="' + next + '">');
+      document.writeln ('<IMG SRC="nextpage.gif" HEIGHT=17 BORDER=0 ALT="Página siguiente"></A>');
+   } else {
+//   window.alert ('no next page');
+   }
+   document.writeln ('</TD><TD ALIGN="left">');
+   document.writeln ('<A HREF="frameset.htm?TOC">');
+   document.writeln ('<IMG SRC="showtoc.gif" HEIGHT=17 BORDER=0 ALT="Haga clic para ver el contenido"></A></TD>');
+   document.writeln ('<TD ALIGN="left">');
+   document.writeln ('<A HREF="frameset.htm?IDX">');
+   document.writeln ('<IMG SRC="showix.gif" HEIGHT=17 BORDER=0 ALT="Haga clic para ver el índice"></A></TD>');
+   document.writeln ('</TD>');
+   document.writeln ('</TR>');
+   document.writeln ('</TABLE>');
+
+}
+
+</SCRIPT>
+<table align="right" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td align="right"><font size="1">Seagate Software, Inc.<br>
+    <a href="http://www.seagatesoftware.com">http://www.seagatesoftware.com</a><br>
+    Envíe sus comentarios a:<br>
+    <a href="mailto:techpubs@seagatesoftware.com">techpubs@seagatesoftware.com</a><br>
+    </font></td>
+  </tr>
+</table>
+</body>
+</html>
+
+

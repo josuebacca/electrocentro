@@ -1,0 +1,31 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; iso-8859-1">
+<title></title>
+</head>
+
+<script  language="JavaScript"><!--
+var url = window.location.href
+var toc = url.substring(url.search("?")+1, url.length);
+
+document.write('<frameset cols="32%,68%">');
+
+if (toc == "IDX") {
+	document.write('<frame src="JavaControlIX.htm" name="frmControl">');
+} else {
+	document.write('<frame src="JavaControl.htm" name="frmControl">');
+}
+
+document.write('<FRAME SRC="'+document.referrer+'" NAME="frmTopic" MARGINHEIGHT=15 MARGINWIDTH=20>');
+
+// --></script>
+
+<noframes>
+	    <body>
+	    <p>This web page uses frames, but your browser doesn't support them.</p>
+	    </body>
+    </noframes>
+</frameset>
+
+</html>

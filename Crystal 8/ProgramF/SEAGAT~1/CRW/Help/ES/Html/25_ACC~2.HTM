@@ -1,0 +1,93 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+
+<html>
+<head>
+<title>DAO</title>
+
+<link REL=STYLESHEET TYPE="text/css" HREF="seagate.css">
+
+<!--
+                 ***********************************
+                 * Seagate Software copyright 1999 *
+                 ***********************************
+
+                      Template version: 5.1
+-->
+
+
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" link="#0000FF" vlink="#0000FF" alink="#800080">
+
+
+ 
+<a name="1782"></a><h4 class="newpage"> DAO</h4><p><a name="1784"></a>El motor Data Access Object (DAO) de Microsoft para las versiones de Access 2.0 y posteriores, es la parte del sistema de administraci&#243;n de bases de datos de Microsoft Access que realmente maneja los datos de su base de datos. Como usuario, generalmente no trabaja con el motor DAO. &Eacute;ste act&#250;a como salida mediante la cual los datos de Access est&#225;n disponibles para las aplicaciones. Como el motor DAO est&#225; tan vinculado a los datos de Access, Seagate Crystal Reports lo considera como parte de la base de datos real.</p><p><a name="1794"></a>DAO usa la tecnolog&#237;a de vinculaci&#243;n e incrustaci&#243;n de objetos (OLE) de Microsoft (instalado con Windows 95, Windows 98 y Windows NT) para ofrecer acceso a los datos de Access mediante un enfoque orientado al objeto.</p><p><a name="1796"></a>Adem&#225;s de las tablas de la base de datos de Access, Seagate Crystal Reports puede abrir y usar las consultas de Access mediante DAO. Si no est&#225; familiarizado con las consultas de Access, vea la documentaci&#243;n de Access. Vea tambi&#233;n <a href="24_under_databases42.html#324634">C&#243;mo abrir consultas de Access a trav&#233;s de DAO</a>.</p><p><a name="305231"></a><font color="darkblue"><b>Nota:   &nbsp;&nbsp;&nbsp;</b></font></p>
+<ul type="disc"><a name="333736"></a><li>Las consultas de Access Parameter y de tablas cruzadas s&#243;lo se pueden abrir usando una conexi&#243;n ODBC. Vea <a href="24_under_databases44.html#325041">C&#243;mo abrir consultas de par&#225;metros Access</a>. Las consultas de Access Action no son compatibles con Seagate Crystal Reports.
+<a name="305250"></a><li>Al abrir consultas de Access en un informe, aseg&#250;rese de que las opciones Vistas y Procedimientos almacenados est&#233;n activadas en la ficha Base de datos del cuadro de di&#225;logo Opciones de Seagate Crystal Reports. Esto asegura que las consultas est&#233;n visibles al abrir la base de datos de Access.
+</ul><p><a name="71049"></a>Para traducir informaci&#243;n y datos desde y hacia DAO, Report Designer usa los archivos de traducci&#243;n DAO P2bdao.dll, P2ctdao.dll y P2irdao.dll.</p><p><a name="333072"></a> </p>
+<p><a name="305296"></a><font color="darkblue"><b>Nota:   &nbsp;&nbsp;&nbsp;</b></font>Seagate Crystal Reports proporciona todos los archivos necesarios para leer datos de Access con el motor DAO. Dado que el programa es compatible con la versi&#243;n m&#225;s reciente de DAO, tambi&#233;n cuenta con soporte nativo para VSFoxPro (vea <a href="25_access_sources40.html#27030">Visual FoxPro</a>). Para obtener m&#225;s informaci&#243;n sobre los archivos necesarios, vea la ayuda en l&#237;nea sobre los requisitos de los archivos de ejecuci&#243;n (Runtime.hlp).</p>
+<a name="28736"></a><h5>Bases de datos aseguradas de Microsoft Access</h5><p><a name="28737"></a>Si va a usar bases de datos aseguradas de Access, el par&#225;metro SystemDB de la base de datos del Registro de Windows debe establecerse en la ruta donde se encuentre el archivo System.mda o el archivo System.mdw (Access 95). En los sistemas Windows 95, Windows 98 y Windows NT, el par&#225;metro SystemDB se encuentra en la siguiente clave de registro:</p><p><code><a name="28738"></a>\\HKEY_LOCAL_MACHINE\SOFTWARE\Seagate&nbsp;Software\Jet\3.0\ Engines\Jet</code></p><p><a name="28739"></a>Seagate Crystal Reports incluye la utilidad Sysdb32.exe, que se encarga de establecer este par&#225;metro autom&#225;ticamente. Basta con ejecutar la utilidad correspondiente y establecerla en la ubicaci&#243;n del archivo System.mda o System.mdw.</p>
+<hr><br>
+
+<script  language="JavaScript"><!--
+
+var prev = "25_access_sources9.html";
+var next = "25_access_sources11.html";
+
+function setTopicID() { 
+      var number = "1782"; 
+      return number; 
+}
+
+// --></script>
+
+
+
+
+<SCRIPT>
+
+if (!window.parent.toc && navigator.appName == "Netscape") {
+
+   document.writeln ('<TABLE ALIGN="left" border="0" cellspacing="0" cellpadding="10">');
+   document.writeln ('<TR>');
+   document.write ('<TD ALIGN="left">');
+
+   if (prev != "crw_spTOC.hhc") {
+      document.writeln ('<A HREF="' + prev + '">');
+      document.writeln ('<IMG SRC="prevpage.gif" HEIGHT=17 BORDER=0 ALT="Página anterior"></A>');
+   } else {
+//   window.alert ('no previous page');
+   }
+
+   if (next != "crw_spIX.hhk") {
+      document.writeln ('<A HREF="' + next + '">');
+      document.writeln ('<IMG SRC="nextpage.gif" HEIGHT=17 BORDER=0 ALT="Página siguiente"></A>');
+   } else {
+//   window.alert ('no next page');
+   }
+   document.writeln ('</TD><TD ALIGN="left">');
+   document.writeln ('<A HREF="frameset.htm?TOC">');
+   document.writeln ('<IMG SRC="showtoc.gif" HEIGHT=17 BORDER=0 ALT="Haga clic para ver el contenido"></A></TD>');
+   document.writeln ('<TD ALIGN="left">');
+   document.writeln ('<A HREF="frameset.htm?IDX">');
+   document.writeln ('<IMG SRC="showix.gif" HEIGHT=17 BORDER=0 ALT="Haga clic para ver el índice"></A></TD>');
+   document.writeln ('</TD>');
+   document.writeln ('</TR>');
+   document.writeln ('</TABLE>');
+
+}
+
+</SCRIPT>
+<table align="right" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td align="right"><font size="1">Seagate Software, Inc.<br>
+    <a href="http://www.seagatesoftware.com">http://www.seagatesoftware.com</a><br>
+    Envíe sus comentarios a:<br>
+    <a href="mailto:techpubs@seagatesoftware.com">techpubs@seagatesoftware.com</a><br>
+    </font></td>
+  </tr>
+</table>
+</body>
+</html>
+
+

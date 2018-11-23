@@ -1,0 +1,104 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+
+<html>
+<head>
+<title>Uso de SQL y bases de datos SQL</title>
+
+<link REL=STYLESHEET TYPE="text/css" HREF="seagate.css">
+
+<!--
+                 ***********************************
+                 * Seagate Software copyright 1999 *
+                 ***********************************
+
+                      Template version: 5.1
+-->
+
+
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" link="#0000FF" vlink="#0000FF" alink="#800080">
+
+
+ 
+<a name="322386"></a><h3 class="newpage"> Uso de SQL y bases de datos SQL</h3>
+<p><a name="322387"></a>Quiz&#225;s los formatos m&#225;s populares y poderosos de bases de datos son los programas SABD basados en el Lenguaje Estructurado de Consultas (SQL, siglas en ingl&#233;s). Las bases de datos SQL generalmente trabajan en la arquitectura de red cliente/ servidor, proporcionando un Servidor SQL para crear, guardar y manipular los archivos de base de datos, tablas y registros y una interfaz de Cliente SQL permitiendo a los usuarios de estaciones de trabajo no s&#243;lo dise&#241;ar y trabajar con archivos de base de datos, sino tambi&#233;n recuperar datos &#250;tiles e importantes que les ayudar&#225;n con su trabajo de cada d&#237;a.</p><a name="322389"></a><h4>&#191;Qu&#233; es SQL?</h4><p><a name="322390"></a>SQL es un lenguaje de consulta dise&#241;ado para organizar, administrar, desarrollar y consultar grandes bases de datos relacionales en redes de computadoras. SQL es un lenguaje com&#250;n en la Ciencia de la Informaci&#243;n y la industria de la Administraci&#243;n de la Informaci&#243;n. El lenguaje ha sido estandarizado por el American National Standards Institute (ANSI) y la International Standards Organization (ISO), esto significa que hay caracter&#237;sticas espec&#237;ficas que deben estar presentes en cualquier versi&#243;n de SQL producida por una compa&#241;&#237;a de software para que esa versi&#243;n sea oficialmente llamada SQL. Muchos distribuidores de software agregan caracter&#237;sticas m&#225;s avanzadas a su versi&#243;n de SQL en un esfuerzo de mejorar el lenguaje y atraer clientes, pero debe, como m&#237;nimo, retener los est&#225;ndares originales establecidos por ANSI e ISO.</p><p><a name="322391"></a>Usted debe comprender que SQL no es un verdadero lenguaje de computadora. No puede ser utilizado para crear sistemas operativos o programas de computadora que funcionen por si mismos. SQL es referido algunas veces como un sublenguaje que puede ser usado desde otros lenguajes o programa; el prop&#243;sito del lenguaje SQL es espec&#237;fico para trabajar con bases de datos relacionales.</p><p><a name="322392"></a>La sintaxis del lenguaje SQL est&#225; construida en un sistema de mandar enunciados SQL al servidor de la base de datos SQL. Cada enunciado es una petici&#243;n para realizar una operaci&#243;n de base de datos como crear un archivo de base de datos, agregar tablas y campos a la base de datos o recuperar datos desde bases de datos. El servidor SQL analiza el enunciado SQL y realiza la operaci&#243;n requerida. Si el enunciado es una petici&#243;n de datos, el servidor re&#250;ne los datos y los regresa a la estaci&#243;n de trabajo del cliente para que el usuario pueda verlos.</p><p><a name="356344"></a> <img src="images/SQLSTATE.gif">
+
+
+</p>
+<p><a name="322396"></a> </p>
+<p><a name="322398"></a>Una consulta SQL es un enunciado SQL dise&#241;ada espec&#237;ficamente para pedir datos de una o m&#225;s bases de datos SQL. Algunos programas SQL requieren que usted escriba una consulta SQL directamente utilizando un editor de texto, mientras que otros proporcionan interfaces gr&#225;ficas que gu&#237;an al usuario a trav&#233;s del proceso de consultar una base de datos. En este &#250;ltimo caso, el programa debe crear un enunciado SQL basada en la informaci&#243;n que usted proporciona. Este enunciado es la consulta SQL real y es la que es utilizada para pedir los datos. Seagate Crystal Reports pertenece a esta &#250;ltima categor&#237;a de programas compatibles con SQL.</p><a name="322400"></a><h5>Arquitectura cliente/servidor </h5><p><a name="322401"></a>Una de las caracter&#237;sticas m&#225;s poderosas de los programas SQL SABD es su habilidad para usar eficientemente la arquitectura de la red de cliente/servidor.</p><p><a name="356713"></a> <img src="images/CLNTSERV.gif">
+
+
+</p>
+<p><a name="322405"></a> </p>
+<p><a name="322407"></a>Una sencilla estructura de red consiste en uno o m&#225;s servidores de red que proporcionan a todos los usuarios en la red una localizaci&#243;n com&#250;n para obtener datos y programas. Muchos servidores de red tambi&#233;n proporcionan seguridad de red, servicios automatizados tales como hacer copias de seguridad de datos y recursos de supervisi&#243;n de red para proporcionar el mejor servicio posible a todas las estaciones de trabajo de la red. Debido a las altas demandas de procesos requeridos por un servidor de red, la computadora utilizada como servidor a menudo es una m&#225;quina poderosa y r&#225;pida que puede tener varios procesadores, varias unidades de disco duro y varias unidades CD<nobr>-R</nobr>OM.</p><p><a name="322408"></a>Un cliente de red es una estaci&#243;n de trabajo de una sola computadora usada regularmente por uno o m&#225;s empleados de la compa&#241;&#237;a. Un usuario trabaja en el cliente y tiene acceso a los datos y programas del servidor por medio de la red. Los procesamientos voluminosos que requieren mucho tiempo y recursos son manejados por el servidor y los resultados finales son enviados de regreso al cliente. Esto proporciona a los usuarios una administraci&#243;n m&#225;s eficiente del tiempo porque la estaci&#243;n de trabajo local ocupa menos tiempo en procesamiento y tiene m&#225;s tiempo "libre" disponible para el usuario.</p><p><a name="322409"></a>Muchos programas computaci&#243;n de modernos est&#225;n basados en la arquitectura operacional cliente/servidor. Un programa cliente/servidor tiene dos partes, un programa basado en el servidor que est&#225; localizado en un servidor de red y un programa basado en el cliente que est&#225; localizado en la estaci&#243;n de trabajo del usuario. El programa del servidor maneja complejos procesos que consumen mucho tiempo y requieren mucha capacidad de procesamiento, pudiendo aprovechar los recursos y capacidad de procesamiento de la computadora del servidor de la red, mientras que el programa de cliente provee una interfaz f&#225;cil de usar, dise&#241;ada para ayudarles a hacer el trabajo m&#225;s r&#225;pido y mejor de lo que podr&#237;a ser hecho de otra manera.</p><p><a name="356964"></a> <img src="images/CLNTSRV2.gif">
+
+
+</p>
+<p><a name="342635"></a> </p>
+<p><a name="322414"></a>A menudo, un programa de cliente/servidor estar&#225; disponible para un cierto n&#250;mero de sitios, dependiendo de cu&#225;nto a pagado por el programa. Cada sitio es una estaci&#243;n de trabajo de cliente o un solo usuario de cliente, que puede ser conectado y utilizar el software de cliente/servidor, dependiendo de lo que haya elegido el distribuidor. Muchas veces, los distribuidores de software venden sitios adicionales para sus programas y cada sitio contenie un juego completo de software del programa del cliente.</p><p><a name="322415"></a>No confunda los programas servidores con una computadora servidora de red. Ambos son referidos frecuentemente como servidores. Sin embargo, un programa servidor reside en el servidor de la red, tomando en cuenta las capacidades del equipo y sistemas operativos del servidor. Un servidor es una m&#225;quina f&#237;sica a la que los clientes de la red est&#225;n conectados por cables o alg&#250;n otro dispositivo de conexi&#243;n.</p>
+<hr><br>
+
+<script  language="JavaScript"><!--
+
+var prev = "24_under_databases27.html";
+var next = "24_under_databases29.html";
+
+function setTopicID() { 
+      var number = "322386"; 
+      return number; 
+}
+
+// --></script>
+
+
+
+
+<SCRIPT>
+
+if (!window.parent.toc && navigator.appName == "Netscape") {
+
+   document.writeln ('<TABLE ALIGN="left" border="0" cellspacing="0" cellpadding="10">');
+   document.writeln ('<TR>');
+   document.write ('<TD ALIGN="left">');
+
+   if (prev != "crw_spTOC.hhc") {
+      document.writeln ('<A HREF="' + prev + '">');
+      document.writeln ('<IMG SRC="prevpage.gif" HEIGHT=17 BORDER=0 ALT="Página anterior"></A>');
+   } else {
+//   window.alert ('no previous page');
+   }
+
+   if (next != "crw_spIX.hhk") {
+      document.writeln ('<A HREF="' + next + '">');
+      document.writeln ('<IMG SRC="nextpage.gif" HEIGHT=17 BORDER=0 ALT="Página siguiente"></A>');
+   } else {
+//   window.alert ('no next page');
+   }
+   document.writeln ('</TD><TD ALIGN="left">');
+   document.writeln ('<A HREF="frameset.htm?TOC">');
+   document.writeln ('<IMG SRC="showtoc.gif" HEIGHT=17 BORDER=0 ALT="Haga clic para ver el contenido"></A></TD>');
+   document.writeln ('<TD ALIGN="left">');
+   document.writeln ('<A HREF="frameset.htm?IDX">');
+   document.writeln ('<IMG SRC="showix.gif" HEIGHT=17 BORDER=0 ALT="Haga clic para ver el índice"></A></TD>');
+   document.writeln ('</TD>');
+   document.writeln ('</TR>');
+   document.writeln ('</TABLE>');
+
+}
+
+</SCRIPT>
+<table align="right" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td align="right"><font size="1">Seagate Software, Inc.<br>
+    <a href="http://www.seagatesoftware.com">http://www.seagatesoftware.com</a><br>
+    Envíe sus comentarios a:<br>
+    <a href="mailto:techpubs@seagatesoftware.com">techpubs@seagatesoftware.com</a><br>
+    </font></td>
+  </tr>
+</table>
+</body>
+</html>
+
+

@@ -1,0 +1,98 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+
+<html>
+<head>
+<title>Soundex (cadena)</title>
+
+<link REL=STYLESHEET TYPE="text/css" HREF="seagate.css">
+
+<!--
+                 ***********************************
+                 * Seagate Software copyright 1999 *
+                 ***********************************
+
+                      Template version: 5.1
+-->
+
+
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" link="#0000FF" vlink="#0000FF" alink="#800080">
+
+
+ 
+<a name="1000593084"></a><h3 class="newpage"> Soundex (cadena)</h3>
+<p><a name="1000724033"></a>Sintaxis b&#225;sica y Crystal.</p><a name="1000593087"></a><h5>Argumentos</h5><p><a name="1000593088"></a>cadena  es una de dos o m&#225;s cadenas que suenan parecidos.</p><a name="1000593089"></a><h5>Devuelve </h5><p><a name="1000593090"></a>Una cadena de texto.</p><a name="1000593091"></a><h5>Acci&#243;n</h5><p><a name="1000593093"></a>Soundex (cadena) val&#250;a una cadena de texto y devuelve un valor de cuatro caracteres que simboliza la forma en que suena la cadena.</p><a name="1000593094"></a><h5>Uso(s) t&#237;pico(s)</h5><p><a name="1000593095"></a>Utilice esta funci&#243;n siempre que quiera ubicar registros basados en dos o m&#225;s valores de campo que son deletreados diferente pero suenan parecido. </p><p><a name="1000724050"></a>Esta funci&#243;n puede tambi&#233;n ser utilizada para encontrar nombres de clientes que han sido mal escritos.</p><a name="1000593096"></a><h5>Ejemplo(s)</h5><p><a name="1000593097"></a>Los siguientes ejemplos son aplicables para la sintaxis Crystal:</p><p class="code"><a name="1000593098"></a>If Soundex{cliente.APELLIDO} = Soundex ("Snider") Then
+<br><a name="1000750977"></a>&nbsp;&nbsp;&nbsp;&nbsp;{cliente.APELLIDO}
+<br><a name="1000751000"></a>Else
+<br><a name="1000751023"></a>&nbsp;&nbsp;&nbsp;&nbsp;""
+</p><p class="example"><a name="1000593099"></a>Ejecuta un Soundex en cada valor del campo Apellido e imprime s&#243;lo aquellos valores que tienen un valor Soundex igual a el valor Soundex del nombre Snider. Esta f&#243;rmula devuelve los nombres Sneider, Schneider, Snyder, y Snider si todos est&#225;n en la base de datos.</p><a name="1000593100"></a><h5>Comentario(s) </h5><ul type="disc"><a name="1000593101"></a><li>El valor cadena debe de estar entre comillas.
+<a name="1000593102"></a><li>Soundex trabaja s&#243;lo con valores que comienzan con la misma letra&nbsp; : Por ejemplo, Soundex retornar&#225; el mismo valor para Chris y Cris (C620) pero no para Kris (K620)
+<a name="1000593103"></a><li>Soundex crea un c&#243;digo basado en el primer car&#225;cter en la cadena m&#225;s tres caracteres basados en lo siguiente&nbsp; :
+<ul type="disc"><ul type="disc"><a name="1000593104"></a><li>Caracteres no alfab&#233;ticos (por ejemplo n&#250;meros y puntuaci&#243;n) se vuelve -1.<a name="1000593105"></a><li>Los caracteres a, e, i, o, u, y, h, y w son ignoradas (excepto cuando sea el primer car&#225;cter en la cadena original).<a name="1000593106"></a><li>Los caracteres b, f, p, y v se vuelven 1.<a name="1000593107"></a><li>Los caracteres c, g, j, k, q, s, x, y z se vuelven  2.<a name="1000593108"></a><li>Los caracteres d y t se vuelven 3.<a name="1000593109"></a><li>&nbsp;&nbsp;&nbsp;&nbsp;El car&#225;cter l se vuelve 4.<a name="1000593110"></a><li>Los caracteres m y n se vuelven 5.<a name="1000593111"></a><li>El car&#225;cter r se vuelve 6.</ul></ul><a name="1000593112"></a><li>Si el c&#243;digo resultante es s&#243;lo de 2 o 3 caracteres de longitud, Soundex utiliza ceros para llenar el c&#243;digo a cuatro caracteres. Por ejemplo, en el nombre Lauren, s&#243;lo la L, r, y n son traducidos (Lrn), por lo que el c&#243;digo Soundex resultante se vuelve L650.
+<a name="1000593113"></a><li>Si el c&#243;digo resultante es de m&#225;s de cuatro caracteres de longitud, todos los caracteres despu&#233;s del cuarto car&#225;cter son ignorados. Por ejemplo, en el nombre Patrick, la P, t, r, c, y k pueden ser traducidas (Ptrck), pero el c&#243;digo Soundex resultante ser&#225; s&#243;lo de cuatro caracteres: P362.
+</ul>
+<hr><br>
+
+<script  language="JavaScript"><!--
+
+var prev = "Functions238.html";
+var next = "Functions240.html";
+
+function setTopicID() { 
+      var number = "1000593084"; 
+      return number; 
+}
+
+// --></script>
+
+
+
+
+<SCRIPT>
+
+if (!window.parent.toc && navigator.appName == "Netscape") {
+
+   document.writeln ('<TABLE ALIGN="left" border="0" cellspacing="0" cellpadding="10">');
+   document.writeln ('<TR>');
+   document.write ('<TD ALIGN="left">');
+
+   if (prev != "crw_spTOC.hhc") {
+      document.writeln ('<A HREF="' + prev + '">');
+      document.writeln ('<IMG SRC="prevpage.gif" HEIGHT=17 BORDER=0 ALT="Página anterior"></A>');
+   } else {
+//   window.alert ('no previous page');
+   }
+
+   if (next != "crw_spIX.hhk") {
+      document.writeln ('<A HREF="' + next + '">');
+      document.writeln ('<IMG SRC="nextpage.gif" HEIGHT=17 BORDER=0 ALT="Página siguiente"></A>');
+   } else {
+//   window.alert ('no next page');
+   }
+   document.writeln ('</TD><TD ALIGN="left">');
+   document.writeln ('<A HREF="frameset.htm?TOC">');
+   document.writeln ('<IMG SRC="showtoc.gif" HEIGHT=17 BORDER=0 ALT="Haga clic para ver el contenido"></A></TD>');
+   document.writeln ('<TD ALIGN="left">');
+   document.writeln ('<A HREF="frameset.htm?IDX">');
+   document.writeln ('<IMG SRC="showix.gif" HEIGHT=17 BORDER=0 ALT="Haga clic para ver el índice"></A></TD>');
+   document.writeln ('</TD>');
+   document.writeln ('</TR>');
+   document.writeln ('</TABLE>');
+
+}
+
+</SCRIPT>
+<table align="right" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td align="right"><font size="1">Seagate Software, Inc.<br>
+    <a href="http://www.seagatesoftware.com">http://www.seagatesoftware.com</a><br>
+    Envíe sus comentarios a:<br>
+    <a href="mailto:techpubs@seagatesoftware.com">techpubs@seagatesoftware.com</a><br>
+    </font></td>
+  </tr>
+</table>
+</body>
+</html>
+
+

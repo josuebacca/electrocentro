@@ -1,0 +1,93 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+
+<html>
+<head>
+<title>PrintDate</title>
+
+<link REL=STYLESHEET TYPE="text/css" HREF="seagate.css">
+
+<!--
+                 ***********************************
+                 * Seagate Software copyright 1999 *
+                 ***********************************
+
+                      Template version: 5.1
+-->
+
+
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" link="#0000FF" vlink="#0000FF" alink="#800080">
+
+
+ 
+<a name="1000582066"></a><h3 class="newpage"> PrintDate</h3>
+<p><a name="1000650821"></a>Sintaxis b&#225;sica y Crystal.</p><a name="1000582068"></a><h5>Devuelve </h5><p><a name="1000582069"></a>Un valor de fecha.</p><a name="1000582070"></a><h5>Acci&#243;n</h5><p><a name="1000582072"></a>PrintDate inserta la fecha en que el informe es impreso como un campo en una f&#243;rmula</p><a name="1000582073"></a><h5>Uso(s) t&#237;pico(s)</h5><p><a name="1000582074"></a>Puede utilizar esta funci&#243;n siempre que quiera imprimir la fecha de impresi&#243;n en el informe, o para condicionar algo en el informe en la fecha de impresi&#243;n.</p><a name="1000582075"></a><h5>Ejemplo(s) </h5><p><a name="1000582076"></a>Los siguientes ejemplos son aplicables para la sintaxis Crystal:</p><p><code><a name="1000582078"></a>PrintDate</code></p><p class="example"><a name="1000675327"></a>Crea un campo que contiene la fecha en la que el informe es impreso que usted puede colocar en su informe. Utilizar esta f&#243;rmula es equivalente a utilizar el campo PrintDate en la carpeta en el Explorador de Campos.</p><p class="code"><a name="1000675334"></a>If PrintDate &gt;= CDate(1992,01,01) Then
+<br><a name="1000750854"></a>&nbsp;&nbsp;&nbsp;&nbsp;"Por favor disculpe el informe retrasado." 
+<br><a name="1000750855"></a>Else
+<br><a name="1000750856"></a>&nbsp;&nbsp;&nbsp;&nbsp;""
+</p><p class="example"><a name="1000582083"></a>Imprime el mensaje de disculpa por el retraso si el informe se imprime despu&#233;s de Enero 1, 1992, y no imprime nada si el informe se imprime antes de la fecha.</p><a name="1000582084"></a><h5>Comentario(s) </h5><p><a name="1000582087"></a>La funci&#243;n PrintDate recupera un valor desde la configuraci&#243;n establecida en el informe v&#237;a el comando Establecer fecha/hora de impresi&#243;n en el men&#250; Informe. En forma predeterminada, este valor coincide con la configuraci&#243;n en el panel de control Fecha/Hora de Windows a menos que sea cambiado por el usuario.</p>
+<hr><br>
+
+<script  language="JavaScript"><!--
+
+var prev = "Functions192.html";
+var next = "Functions194.html";
+
+function setTopicID() { 
+      var number = "1000582066"; 
+      return number; 
+}
+
+// --></script>
+
+
+
+
+<SCRIPT>
+
+if (!window.parent.toc && navigator.appName == "Netscape") {
+
+   document.writeln ('<TABLE ALIGN="left" border="0" cellspacing="0" cellpadding="10">');
+   document.writeln ('<TR>');
+   document.write ('<TD ALIGN="left">');
+
+   if (prev != "crw_spTOC.hhc") {
+      document.writeln ('<A HREF="' + prev + '">');
+      document.writeln ('<IMG SRC="prevpage.gif" HEIGHT=17 BORDER=0 ALT="Página anterior"></A>');
+   } else {
+//   window.alert ('no previous page');
+   }
+
+   if (next != "crw_spIX.hhk") {
+      document.writeln ('<A HREF="' + next + '">');
+      document.writeln ('<IMG SRC="nextpage.gif" HEIGHT=17 BORDER=0 ALT="Página siguiente"></A>');
+   } else {
+//   window.alert ('no next page');
+   }
+   document.writeln ('</TD><TD ALIGN="left">');
+   document.writeln ('<A HREF="frameset.htm?TOC">');
+   document.writeln ('<IMG SRC="showtoc.gif" HEIGHT=17 BORDER=0 ALT="Haga clic para ver el contenido"></A></TD>');
+   document.writeln ('<TD ALIGN="left">');
+   document.writeln ('<A HREF="frameset.htm?IDX">');
+   document.writeln ('<IMG SRC="showix.gif" HEIGHT=17 BORDER=0 ALT="Haga clic para ver el índice"></A></TD>');
+   document.writeln ('</TD>');
+   document.writeln ('</TR>');
+   document.writeln ('</TABLE>');
+
+}
+
+</SCRIPT>
+<table align="right" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td align="right"><font size="1">Seagate Software, Inc.<br>
+    <a href="http://www.seagatesoftware.com">http://www.seagatesoftware.com</a><br>
+    Envíe sus comentarios a:<br>
+    <a href="mailto:techpubs@seagatesoftware.com">techpubs@seagatesoftware.com</a><br>
+    </font></td>
+  </tr>
+</table>
+</body>
+</html>
+
+

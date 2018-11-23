@@ -1,0 +1,111 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+
+<html>
+<head>
+<title>Agrupamiento y ordenamiento</title>
+
+<link REL=STYLESHEET TYPE="text/css" HREF="seagate.css">
+
+<!--
+                 ***********************************
+                 * Seagate Software copyright 1999 *
+                 ***********************************
+
+                      Template version: 5.1
+-->
+
+
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" link="#0000FF" vlink="#0000FF" alink="#800080">
+
+
+ 
+<a name="69878"></a><h3 class="newpage"> Agrupamiento y ordenamiento</h3>
+<p><a name="69879"></a>Los informes pueden ser agrupados y ordenados en una variedad de formas. Las herramientas para agrupar y ordenar le proveen mucha flexibilidad para personalizar sus informes.</p><a name="69880"></a><h4>Agrupaci&#243;n de su informe</h4><p><a name="69881"></a>En muchos informes usted necesita dividir los datos en grupos para hacerlos m&#225;s f&#225;cil de leer y entender. Seagate Crystal Reports le permite hacer esto f&#225;cilmente. En este ejemplo, agrupar&#225; los clientes por regi&#243;n y luego los ordenar&#225; alfab&#233;ticamente dentro de cada grupo.</p><a name="82584"></a><h6>Para agrupar un informe</h6><ol>
+<a name="82588"></a><li value="1&nbsp;&nbsp;&nbsp;&nbsp;"><img src="images/04_quick26a.gif">
+
+
+En la ficha <strong>Dise&#241;o</strong>, haga clic en el bot&#243;n <strong>Insertar grupo</strong> de la barra de herramientas suplementaria.
+<p class="indent"><a name="69892"></a>El cuadro de di&#225;logo Insertar Grupo aparecer&#225; en su pantalla.</p><p><a name="69896"></a> <img src="images/db_ingrp.gif">
+
+
+</p>
+<a name="69897"></a><li value="2&nbsp;&nbsp;&nbsp;&nbsp;">Seleccione el campo Regi&#243;n de la tabla Cliente en el primer cuadro desplegable. El programa tomar&#225; todos los registros con el mismo valor en el campo Regi&#243;n y los pondr&#225; juntos en un grupo en su informe.
+<a name="69899"></a><li value="3&nbsp;&nbsp;&nbsp;&nbsp;">Seleccione <strong>en orden ascendente</strong> del segundo cuadro desplegable. El agrupamiento por regi&#243;n ser&#225; desplegado en su informe en orden alfab&#233;tico ascendente.
+<a name="69900"></a><li value="4&nbsp;&nbsp;&nbsp;&nbsp;">Haga clic en <strong>Aceptar</strong>.
+<p class="indent"><a name="69901"></a>Observe que ahora aparecen dos nuevas regiones en la ficha Dise&#241;o: EG1 (Encabezado de grupo) y PG1 (Pie de grupo). El programa muestra de esta manera que el informe ha sido agrupado.</p><a name="69905"></a><li value="5&nbsp;&nbsp;&nbsp;&nbsp;">Haga clic en la ficha <strong>Vista previa</strong> para ver c&#243;mo luce su informe.<img src="images/pw_tutr7.gif">
+
+
+
+<a name="69910"></a><li value="6&nbsp;&nbsp;&nbsp;&nbsp;"><img src="images/Bt_tree.gif">
+
+
+Si el Arbol de Grupos no est&#225; visible, haga clic en el bot&#243;n <strong>Mostrar/Ocultar &#225;rbol de grupos </strong>de la barra de formato para ver los grupos incluidos en el informe.
+</ol>
+<p><a name="69911"></a>Puede ver cualquier grupo que le interese haciendo clic en el nombre del grupo en el Arbol de Grupos. Por ejemplo, si le gustar&#237;a ver el grupo de clientes de Texas, simplemente haga clic en TX en el Arbol de Grupos. El programa se adelantar&#225; al grupo de Texas, despleg&#225;ndolo en la ficha Vista previa. El Arbol de Grupos le permite adelantarse r&#225;pidamente a cualquier grupo espec&#237;fico de su inter&#233;s, en lugar de tener que desplazarse a trav&#233;s del informe en busca de dicho grupo. Para mayor informaci&#243;n acerca del Arbol de Grupos, vea <a href="06_create_rpt6.html#208571">Vista de &#225;rbol</a>.</p><p><a name="69915"></a><font color="darkblue"><b>Nota:   &nbsp;&nbsp;&nbsp;</b></font>En muchos de sus informes, quiz&#225;s quiera insertar res&#250;menes, subtotales y totales generales. Por ejemplo, si estuviera creando un informe de ventas en lugar de una lista de clientes, ser&#237;a bueno calcular el total de ventas para cada regi&#243;n. Vea <kbd><a href="08_sortgrouptotal.html#246744">Ordenamiento, Agrupamiento y Totalizaci&#243;n</a></kbd>.</p>
+
+<hr><br>
+
+<script  language="JavaScript"><!--
+
+var prev = "04_quick31.html";
+var next = "04_quick33.html";
+
+function setTopicID() { 
+      var number = "69878"; 
+      return number; 
+}
+
+// --></script>
+
+
+
+
+<SCRIPT>
+
+if (!window.parent.toc && navigator.appName == "Netscape") {
+
+   document.writeln ('<TABLE ALIGN="left" border="0" cellspacing="0" cellpadding="10">');
+   document.writeln ('<TR>');
+   document.write ('<TD ALIGN="left">');
+
+   if (prev != "crw_spTOC.hhc") {
+      document.writeln ('<A HREF="' + prev + '">');
+      document.writeln ('<IMG SRC="prevpage.gif" HEIGHT=17 BORDER=0 ALT="Página anterior"></A>');
+   } else {
+//   window.alert ('no previous page');
+   }
+
+   if (next != "crw_spIX.hhk") {
+      document.writeln ('<A HREF="' + next + '">');
+      document.writeln ('<IMG SRC="nextpage.gif" HEIGHT=17 BORDER=0 ALT="Página siguiente"></A>');
+   } else {
+//   window.alert ('no next page');
+   }
+   document.writeln ('</TD><TD ALIGN="left">');
+   document.writeln ('<A HREF="frameset.htm?TOC">');
+   document.writeln ('<IMG SRC="showtoc.gif" HEIGHT=17 BORDER=0 ALT="Haga clic para ver el contenido"></A></TD>');
+   document.writeln ('<TD ALIGN="left">');
+   document.writeln ('<A HREF="frameset.htm?IDX">');
+   document.writeln ('<IMG SRC="showix.gif" HEIGHT=17 BORDER=0 ALT="Haga clic para ver el índice"></A></TD>');
+   document.writeln ('</TD>');
+   document.writeln ('</TR>');
+   document.writeln ('</TABLE>');
+
+}
+
+</SCRIPT>
+<table align="right" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td align="right"><font size="1">Seagate Software, Inc.<br>
+    <a href="http://www.seagatesoftware.com">http://www.seagatesoftware.com</a><br>
+    Envíe sus comentarios a:<br>
+    <a href="mailto:techpubs@seagatesoftware.com">techpubs@seagatesoftware.com</a><br>
+    </font></td>
+  </tr>
+</table>
+</body>
+</html>
+
+

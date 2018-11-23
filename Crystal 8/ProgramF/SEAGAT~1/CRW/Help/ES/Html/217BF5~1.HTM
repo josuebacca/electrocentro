@@ -1,0 +1,94 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+
+<html>
+<head>
+<title>Tipos de datos de matriz</title>
+
+<link REL=STYLESHEET TYPE="text/css" HREF="seagate.css">
+
+<!--
+                 ***********************************
+                 * Seagate Software copyright 1999 *
+                 ***********************************
+
+                      Template version: 5.1
+-->
+
+
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" link="#0000FF" vlink="#0000FF" alink="#800080">
+
+
+ 
+<a name="145346"></a><h2 class="newpage">Tipos de datos de matriz</h2><p><a name="145348"></a>Las matrices de Seagate Crystal Reports son listas ordenadas de valores de un mismo tipo. Estos valores se conocen como <EM>elementos</EM> de la matriz. Los elementos de una matriz pueden ser cualquier tipo simple o tipo rango. Las matrices se pueden crear usando corchetes ([ ]).</p><a name="151264"></a><h5>Ejemplos</h5><p><a name="145350"></a>Una matriz de 3 valores num&#233;ricos. El primer elemento es 10, el segundo es 5 y el tercero es 20.</p><PRE><a name="145351"></a>[10, 5, 20]
+</PRE><p><a name="145353"></a>Una matriz de 7 valores de cadena:</p><PRE><a name="145354"></a>["Dom", "Lun", "Mar", "Mi&#233;", "Jue", "Vie", "S&#225;b"]
+</PRE><p><a name="145356"></a>Una matriz de 2 valores de rango de fechahora:</p><PRE><a name="145357"></a>[#Jan 1, 1998# To #Jan 31, 1998#,
+<a name="145358"></a> #Feb 1, 1999# To #Feb 28, 1999#]
+</PRE><p><a name="145360"></a>Puede extraer elementos individuales de una matriz usando corchetes que contengan el &#237;ndice del elemento que desea. Esto se denomina <EM>indexar</EM> la matriz:</p><PRE><a name="145361"></a>[10, 5, 20] [2] //Igual a 5
+</PRE><p><a name="145363"></a>Los rangos num&#233;ricos tambi&#233;n se pueden usar para indexar matrices. El resultado es otra matriz. Por ejemplo:</p><PRE><a name="145364"></a>[10, 5, 20] [2 To 3] //Igual a [5, 20]
+</PRE><p><a name="145366"></a>Las matrices son m&#225;s &#250;tiles cuando se usan con variables. Para m&#225;s informaci&#243;n, vea la secci&#243;n <a href="21_crystalsyntax27.html#145368">Variables</a>. Al usar variables, puede cambiar los elementos individuales de una matriz y cambiar su tama&#241;o para acomodar m&#225;s elementos. Por ejemplo, puede acumular valores de campo de base de datos en una variable de matriz global de una f&#243;rmula de nivel de detalle y luego usar una f&#243;rmula de un pie de grupo para efectuar un c&#225;lculo seg&#250;n esos valores. As&#237; podr&#225; efectuar una amplia variedad de operaciones de resumen personalizadas.</p>
+<hr><br>
+
+<script  language="JavaScript"><!--
+
+var prev = "21_crystalsyntax25.html";
+var next = "21_crystalsyntax27.html";
+
+function setTopicID() { 
+      var number = "145346"; 
+      return number; 
+}
+
+// --></script>
+
+
+
+
+<SCRIPT>
+
+if (!window.parent.toc && navigator.appName == "Netscape") {
+
+   document.writeln ('<TABLE ALIGN="left" border="0" cellspacing="0" cellpadding="10">');
+   document.writeln ('<TR>');
+   document.write ('<TD ALIGN="left">');
+
+   if (prev != "crw_spTOC.hhc") {
+      document.writeln ('<A HREF="' + prev + '">');
+      document.writeln ('<IMG SRC="prevpage.gif" HEIGHT=17 BORDER=0 ALT="Página anterior"></A>');
+   } else {
+//   window.alert ('no previous page');
+   }
+
+   if (next != "crw_spIX.hhk") {
+      document.writeln ('<A HREF="' + next + '">');
+      document.writeln ('<IMG SRC="nextpage.gif" HEIGHT=17 BORDER=0 ALT="Página siguiente"></A>');
+   } else {
+//   window.alert ('no next page');
+   }
+   document.writeln ('</TD><TD ALIGN="left">');
+   document.writeln ('<A HREF="frameset.htm?TOC">');
+   document.writeln ('<IMG SRC="showtoc.gif" HEIGHT=17 BORDER=0 ALT="Haga clic para ver el contenido"></A></TD>');
+   document.writeln ('<TD ALIGN="left">');
+   document.writeln ('<A HREF="frameset.htm?IDX">');
+   document.writeln ('<IMG SRC="showix.gif" HEIGHT=17 BORDER=0 ALT="Haga clic para ver el índice"></A></TD>');
+   document.writeln ('</TD>');
+   document.writeln ('</TR>');
+   document.writeln ('</TABLE>');
+
+}
+
+</SCRIPT>
+<table align="right" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td align="right"><font size="1">Seagate Software, Inc.<br>
+    <a href="http://www.seagatesoftware.com">http://www.seagatesoftware.com</a><br>
+    Envíe sus comentarios a:<br>
+    <a href="mailto:techpubs@seagatesoftware.com">techpubs@seagatesoftware.com</a><br>
+    </font></td>
+  </tr>
+</table>
+</body>
+</html>
+
+

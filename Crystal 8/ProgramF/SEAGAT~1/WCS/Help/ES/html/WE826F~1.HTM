@@ -1,0 +1,95 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+
+<html>
+<head>
+<title>Comando Prompt# </title>
+
+<link REL=STYLESHEET TYPE="text/css" HREF="seagate.css">
+
+<!--
+                 ***********************************
+                 * Seagate Software copyright 1999 *
+                 ***********************************
+
+                      Template version: 5.1
+-->
+
+
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" link="#0000FF" vlink="#0000FF" alink="#800080">
+
+
+ 
+<a name="150018"></a><h4 class="newpage"> Comando Prompt# </h4><p><a name="150019"></a>Especifica valores para campos de par&#225;metro en el informe. Los valores de par&#225;metro se asignan a los par&#225;metros en el orden en que est&#225;n en el informe.</p><PRE><a name="150020"></a>PROMPT#=&lt;valor&gt;
+<a name="150021"></a>&#171;&lt;valor&gt; es una cadena.&#187;
+</PRE><p><a name="150022"></a>Por ejemplo:</p><PRE><a name="150023"></a>prompt0=CA
+</PRE><p><a name="150024"></a><font color="darkblue"><b>Nota:   &nbsp;&nbsp;&nbsp;</b></font>No escriba los valores de par&#225;metro entre comillas para indicar que son valores de cadena. Todos los valores de par&#225;metro son transferidos al informe como cadenas. El informe traduce los valores num&#233;ricos a cadenas.</p>
+<p><a name="150025"></a>Si el informe contiene m&#225;s de un campo de par&#225;metro, se pueden asignar varios valores a los par&#225;metros incrementando el valor de &#237;ndice PROMPT. Por ejemplo:</p><PRE><a name="150026"></a>prompt0=CA&amp;prompt1=1000
+</PRE><p><a name="151672"></a><font color="darkblue"><b>Nota:   &nbsp;&nbsp;&nbsp;</b></font>Aseg&#250;rese de que los valores de par&#225;metro aparezcan en la URL en el mismo orden que los campos de par&#225;metro y los procedimientos almacenados aparecen en el informe. Si los valores de par&#225;metro no se env&#237;an utilizando la direcci&#243;n URL, se le pedir&#225; al usuario que est&#225; solicitando el informe que introduzca valores durante la ejecuci&#243;n.</p>
+<p><a name="162743"></a><font color="darkblue"><b>Nota:   &nbsp;&nbsp;&nbsp;</b></font>Los informes a los que se les ha aplicado el comando PROMPT# no comparten sus p&#225;ginas. El almacenamiento temporal de la informaci&#243;n en la memoria cach&#233; tiene lugar en la m&#225;quina del usuario.</p>
+
+<hr><br>
+
+<script  language="JavaScript"><!--
+
+var prev = "WebServerCommands13.html";
+var next = "WebServerCommands15.html";
+
+function setTopicID() { 
+      var number = "150018"; 
+      return number; 
+}
+
+// --></script>
+
+
+
+
+<SCRIPT>
+
+if (!window.parent.toc && navigator.appName == "Netscape") {
+
+   document.writeln ('<TABLE ALIGN="left" border="0" cellspacing="0" cellpadding="10">');
+   document.writeln ('<TR>');
+   document.write ('<TD ALIGN="left">');
+
+   if (prev != "wcmadminTOC.hhc") {
+      document.writeln ('<A HREF="' + prev + '">');
+      document.writeln ('<IMG SRC="prevpage.gif" HEIGHT=17 BORDER=0 ALT="Página anterior"></A>');
+   } else {
+//   window.alert ('no previous page');
+   }
+
+   if (next != "wcmadminIX.hhk") {
+      document.writeln ('<A HREF="' + next + '">');
+      document.writeln ('<IMG SRC="nextpage.gif" HEIGHT=17 BORDER=0 ALT="Página siguiente"></A>');
+   } else {
+//   window.alert ('no next page');
+   }
+   document.writeln ('</TD><TD ALIGN="left">');
+   document.writeln ('<A HREF="frameset.htm?TOC">');
+   document.writeln ('<IMG SRC="showtoc.gif" HEIGHT=17 BORDER=0 ALT="Haga clic para ver el contenido"></A></TD>');
+   document.writeln ('<TD ALIGN="left">');
+   document.writeln ('<A HREF="frameset.htm?IDX">');
+   document.writeln ('<IMG SRC="showix.gif" HEIGHT=17 BORDER=0 ALT="Haga clic para ver el índice"></A></TD>');
+   document.writeln ('</TD>');
+   document.writeln ('</TR>');
+   document.writeln ('</TABLE>');
+
+}
+
+</SCRIPT>
+<table align="right" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td align="right"><font size="1">Seagate Software, Inc.<br>
+    <a href="http://www.seagatesoftware.com">http://www.seagatesoftware.com</a><br>
+    Envíe sus comentarios a:<br>
+    <a href="mailto:techpubs@seagatesoftware.com">techpubs@seagatesoftware.com</a><br>
+    </font></td>
+  </tr>
+</table>
+</body>
+</html>
+
+

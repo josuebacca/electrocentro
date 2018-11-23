@@ -1,0 +1,102 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+
+<html>
+<head>
+<title>Count (campo), Count (campo, campoCondicional), Count (campo, campoCondicional, condici&#243;n), Count (x)</title>
+
+<link REL=STYLESHEET TYPE="text/css" HREF="seagate.css">
+
+<!--
+                 ***********************************
+                 * Seagate Software copyright 1999 *
+                 ***********************************
+
+                      Template version: 5.1
+-->
+
+
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" link="#0000FF" vlink="#0000FF" alink="#800080">
+
+
+ 
+<a name="1000851079"></a><h3 class="newpage"> Count (campo), Count (campo, campoCondicional), Count (campo, campoCondicional, condici&#243;n), Count (x)</h3>
+<p><a name="1000851081"></a>Sintaxis b&#225;sica y Crystal.</p><a name="1000851082"></a><h5>Argumentos</h5><ul type="disc"><a name="1000851083"></a><li>campo es cualquier campo de base de datos o de f&#243;rmula que puede ser evaluado por la funci&#243;n.
+<a name="1000851084"></a><li>campoCondicional es un campo utilizado para agrupar los valores del campo.
+<a name="1000851085"></a><li>condici&#243;n es una cadena de texto que indica la condici&#243;n de campoCondicional que controla la agrupaci&#243;n. S&#243;lo se especifica este argumento cuando campoCondicional es un campo de fecha, hora, fecha/hora o booleano. Para obtener m&#225;s informaci&#243;n sobre las cadenas v&#225;lidas para este argumento, vea <a href="Functions20.html#1000850529">Condiciones para las funciones de resumen</a>
+<a name="1000851089"></a><li>x es un arreglo de valores que puede ser evaluado por la funci&#243;n que est&#225; siendo utilizada.
+</ul><a name="1000851090"></a><h5>Devuelve </h5><p><a name="1000851091"></a>Un n&#250;mero fraccionario.</p><a name="1000851092"></a><h5>Acci&#243;n</h5><p><a name="1000851093"></a>Crystal Reports le permite contar los valores que aparecen en su informe. Por ejemplo:</p><ul type="disc"><a name="1000851094"></a><li>Si un informe de ventas incluye todos los pedidos hechos y la cantidad de cada pedido, puede calcular el n&#250;mero total de pedidos que aparecen en su informe (una cuenta de Total general). Para obtener m&#225;s informaci&#243;n sobre esta clase de conteo, vea <a href="Functions22.html#1000850599">SummaryFunction (campo)</a>.
+<a name="1000851098"></a><li>Si divide los pedidos en grupos (por ejemplo, pedidos agrupados por el estado del que vienen), puede calcular el n&#250;mero de pedidos por grupo (en este caso, por estado). Para obtener m&#225;s informaci&#243;n sobre esta clase de conteo, vea <a href="Functions23.html#1000850631">SummaryFunction (campo, campoCondicional)</a>.
+<a name="1000851102"></a><li>Si divide los pedidos en grupos de fecha o Booleanos (por ejemplo, pedidos agrupados por el mes en que fueron colocados), puede calcular el n&#250;mero de pedidos por grupo basado en un cambio en particular en el campo fecha o Booleano (en este caso, por mes). Para obtener m&#225;s informaci&#243;n sobre esta clase de conteo, vea <a href="Functions24.html#1000850661">SummaryFunction (campo, campoCondicional, condici&#243;n)</a>.
+<a name="1000851106"></a><li>Si especifica un conjunto de valores individuales, puede calcular el n&#250;mero de valores del conjunto. Para obtener m&#225;s informaci&#243;n sobre esta clase de conteo, vea <a href="Functions23.html#1000850631">SummaryFunction (campo, campoCondicional)</a>. 
+</ul><a name="1000851110"></a><h5>Ejemplo(s)</h5><p><a name="1000851111"></a>Los siguientes ejemplos son aplicables a las sintaxis b&#225;sica y Crystal:</p><p><code><a name="1000851112"></a>Count({pedidos.MONTO DEL PEDIDO}, {pedidos.ID DEL CLIENTE})</code></p><p class="example"><a name="1000851113"></a>Esta f&#243;rmula cuenta el n&#250;mero de pedidos en cada grupo de pedidos en el campo Monto (el total de pedidos de cada mes). Los pedidos son separados en grupos siempre que cambia el valor del campo Id del cliente.</p><p><code><a name="1000851114"></a>Count{pedidos.MONTO DEL PEDIDO}, {pedidos FECHA DEL PEDIDO}, "mensual")</code></p><p class="example"><a name="1000851115"></a>Cuenta el n&#250;mero de pedidos en cada grupo de pedidos en el campo Monto (el total de pedidos de cada mes). Los pedidos son separados en grupos siempre que el valor del campo Fecha cambia a un nuevo mes.</p><p><a name="1000851116"></a>Los siguientes ejemplos son aplicables a la sintaxis Crystal:</p><p class="code"><a name="1000851117"></a>If Count({pedidos.ID DEL PEDIDO}) &gt;= 100 Then
+<br><a name="1000851118"></a>&nbsp;&nbsp;&nbsp;&nbsp;"&#161;Felicidades por cumplir su cuota!"
+<br><a name="1000851119"></a>Else
+<br><a name="1000851120"></a>&nbsp;&nbsp;&nbsp;&nbsp;""
+</p><p class="example"><a name="1000851121"></a>Imprime el mensaje de felicitaci&#243;n si el n&#250;mero de pedidos es 100 o m&#225;s y no imprime nada si el n&#250;mero de pedidos es menor que 100.</p><p><code><a name="1000851122"></a>Count([1,2,3,4,5])</code></p><p class="example"><a name="1000851123"></a>Devuelve 5. Cuenta el n&#250;mero total de valores de la matriz.  </p><p><a name="1000851124"></a><font color="darkblue"><b>Nota:   &nbsp;&nbsp;&nbsp;</b></font>El uso de esta funci&#243;n en una f&#243;rmula obliga a que la f&#243;rmula sea evaluada al momento de impresi&#243;n. </p>
+<p><a name="1000851125"></a>Para obtener m&#225;s informaci&#243;n sobre las consideraciones de evaluaci&#243;n de hora, vea el <a href="Functions169.html#1000572432">Funciones de tiempo de evaluaci&#243;n</a>.</p>
+<hr><br>
+
+<script  language="JavaScript"><!--
+
+var prev = "Functions31.html";
+var next = "Functions33.html";
+
+function setTopicID() { 
+      var number = "1000851079"; 
+      return number; 
+}
+
+// --></script>
+
+
+
+
+<SCRIPT>
+
+if (!window.parent.toc && navigator.appName == "Netscape") {
+
+   document.writeln ('<TABLE ALIGN="left" border="0" cellspacing="0" cellpadding="10">');
+   document.writeln ('<TR>');
+   document.write ('<TD ALIGN="left">');
+
+   if (prev != "crw_spTOC.hhc") {
+      document.writeln ('<A HREF="' + prev + '">');
+      document.writeln ('<IMG SRC="prevpage.gif" HEIGHT=17 BORDER=0 ALT="Página anterior"></A>');
+   } else {
+//   window.alert ('no previous page');
+   }
+
+   if (next != "crw_spIX.hhk") {
+      document.writeln ('<A HREF="' + next + '">');
+      document.writeln ('<IMG SRC="nextpage.gif" HEIGHT=17 BORDER=0 ALT="Página siguiente"></A>');
+   } else {
+//   window.alert ('no next page');
+   }
+   document.writeln ('</TD><TD ALIGN="left">');
+   document.writeln ('<A HREF="frameset.htm?TOC">');
+   document.writeln ('<IMG SRC="showtoc.gif" HEIGHT=17 BORDER=0 ALT="Haga clic para ver el contenido"></A></TD>');
+   document.writeln ('<TD ALIGN="left">');
+   document.writeln ('<A HREF="frameset.htm?IDX">');
+   document.writeln ('<IMG SRC="showix.gif" HEIGHT=17 BORDER=0 ALT="Haga clic para ver el índice"></A></TD>');
+   document.writeln ('</TD>');
+   document.writeln ('</TR>');
+   document.writeln ('</TABLE>');
+
+}
+
+</SCRIPT>
+<table align="right" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td align="right"><font size="1">Seagate Software, Inc.<br>
+    <a href="http://www.seagatesoftware.com">http://www.seagatesoftware.com</a><br>
+    Envíe sus comentarios a:<br>
+    <a href="mailto:techpubs@seagatesoftware.com">techpubs@seagatesoftware.com</a><br>
+    </font></td>
+  </tr>
+</table>
+</body>
+</html>
+
+

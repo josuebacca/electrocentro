@@ -1,0 +1,100 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+
+<html>
+<head>
+<title>Alcances de variable para sintaxis Crystal</title>
+
+<link REL=STYLESHEET TYPE="text/css" HREF="seagate.css">
+
+<!--
+                 ***********************************
+                 * Seagate Software copyright 1999 *
+                 ***********************************
+
+                      Template version: 5.1
+-->
+
+
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" link="#0000FF" vlink="#0000FF" alink="#800080">
+
+
+ 
+<a name="1000020794"></a><h3 class="newpage"> Alcances de variable para sintaxis Crystal</h3>
+<p><a name="1000020795"></a>Declarar un alcance para la variable regula su disponibilidad a trav&#233;s de diferentes partes del informe. Vea <a href="21_crystalsyntax29.html#145424">Alcance de las variables</a> (Sintaxis Crystal).</p><p><a name="1000020799"></a>Los alcances de variable disponibles son:</p><ul type="disc"><a name="1000020800"></a><li>Global<br>La variable est&#225; disponible para f&#243;rmulas a trav&#233;s de todo el informe actual.
+<a name="1000020801"></a><li>Shared<br>La variable se puede compartir con un subinforme as&#237; como tambi&#233;n el informe actual completo.
+<a name="1000020802"></a><li>Local<br>La variable es espec&#237;fica y s&#243;lo se puede usar en la f&#243;rmula en la cual est&#225; definida.
+</ul><p><a name="1000020803"></a>Para usar alcances de variable se agrega el alcance que se desea declarar con su variable al inicio del enunciado de declaraci&#243;n de variable. Tambi&#233;n puede omitir la palabra clave de alcance y comenzar la declaraci&#243;n de la variable con el nombre del tipo. Esto es como declarar una variable Global.</p><a name="1000020804"></a><h5>Ejemplos</h5><p><code><a name="1000020805"></a>NumberVar Monto;</code></p><p class="example"><a name="1000020806"></a>Declara una variable global denominada Monto que puede contener cualquier valor de un tipo de datos entero o decimal. </p><p><code><a name="1000020807"></a>Global NumberVar Monto;</code></p><p class="example"><a name="1000020808"></a>Declara una variable global denominada Monto que puede contener cualquier valor de un tipo de datos entero o decimal. Esta variable estar&#237;a disponible para las f&#243;rmulas en todo el informe actual</p><p><code><a name="1000020809"></a>BooleanVar Pendiente;</code></p><p class="example"><a name="1000020810"></a>Declara una variable global denominada Pendiente que puede contiene un valor VERDADERO o FALSO.</p><p><code><a name="1000020811"></a>Shared BooleanVar Pendiente;</code></p><p class="example"><a name="1000020812"></a>Declara una variable compartida denominada Pendiente que puede contiene un valor VERDADERO o FALSO. Esta variable estar&#237;a disponible tanto en el informe principal como en cualquier subinforme contenido en el informe principal.</p><p><code><a name="1000020813"></a>StringVar Apellido := "Ad&#225;n";</code></p><p class="example"><a name="1000020814"></a>Declara una variable global denominada Apellido que puede contener un valor de cadena y asigna la cadena "Ad&#225;n" a esa variable.</p><p><code><a name="1000020815"></a>Local StringVar Apellido : = "Ad&#225;n";</code></p><p class="example"><a name="1000020816"></a>Declara una variable local denominada Apellido que puede contener un valor de cadena y asigna la cadena "Ad&#225;n" a esa variable. Esta variable estar&#237;a disponible s&#243;lo dentro de la f&#243;rmula en la que fue declarada.</p><a name="1000020817"></a><h5>Comentarios </h5><ul type="disc"><a name="1000020818"></a><li>El enunciado de declaraci&#243;n de variable se usa para separar un bloque de memoria y contener as&#237; el valor asignado a la variable y para asignar un valor predeterminado a ese bloque de memoria. El valor predeterminado asignado depende del tipo de datos almacenados por el declarador de variable particular usado y de si se asign&#243; un valor cuando se declar&#243; la variable.
+<a name="1000020819"></a><li>Una variable declarada en dos f&#243;rmulas usa el mismo bloque de memoria (es decir, se refiere al mismo valor). Por ejemplo:
+</ul><p class="code"><a name="1000020820"></a>//F&#243;rmula n&#186; 1
+<br><a name="1000020821"></a>NumberVar x;
+<br><a name="1000020822"></a>x:=5
+</p><p class="code"><a name="1000020823"></a>//F&#243;rmula n&#186; 2
+<br><a name="1000020824"></a>NumberVar x;
+<br><a name="1000020825"></a>x:=x+15
+</p><p class="example"><a name="1000020826"></a>x ahora tiene el valor de 20.</p><a name="1000020827"></a><h6>Temas relacionados</h6><p><a name="1000020831"></a><a href="21_crystalsyntax28.html#145381">Declaraciones de variables</a> (Sintaxis Crystal)</p>
+<hr><br>
+
+<script  language="JavaScript"><!--
+
+var prev = "Operators66.html";
+var next = "Operators68.html";
+
+function setTopicID() { 
+      var number = "1000020794"; 
+      return number; 
+}
+
+// --></script>
+
+
+
+
+<SCRIPT>
+
+if (!window.parent.toc && navigator.appName == "Netscape") {
+
+   document.writeln ('<TABLE ALIGN="left" border="0" cellspacing="0" cellpadding="10">');
+   document.writeln ('<TR>');
+   document.write ('<TD ALIGN="left">');
+
+   if (prev != "crw_spTOC.hhc") {
+      document.writeln ('<A HREF="' + prev + '">');
+      document.writeln ('<IMG SRC="prevpage.gif" HEIGHT=17 BORDER=0 ALT="Página anterior"></A>');
+   } else {
+//   window.alert ('no previous page');
+   }
+
+   if (next != "crw_spIX.hhk") {
+      document.writeln ('<A HREF="' + next + '">');
+      document.writeln ('<IMG SRC="nextpage.gif" HEIGHT=17 BORDER=0 ALT="Página siguiente"></A>');
+   } else {
+//   window.alert ('no next page');
+   }
+   document.writeln ('</TD><TD ALIGN="left">');
+   document.writeln ('<A HREF="frameset.htm?TOC">');
+   document.writeln ('<IMG SRC="showtoc.gif" HEIGHT=17 BORDER=0 ALT="Haga clic para ver el contenido"></A></TD>');
+   document.writeln ('<TD ALIGN="left">');
+   document.writeln ('<A HREF="frameset.htm?IDX">');
+   document.writeln ('<IMG SRC="showix.gif" HEIGHT=17 BORDER=0 ALT="Haga clic para ver el índice"></A></TD>');
+   document.writeln ('</TD>');
+   document.writeln ('</TR>');
+   document.writeln ('</TABLE>');
+
+}
+
+</SCRIPT>
+<table align="right" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td align="right"><font size="1">Seagate Software, Inc.<br>
+    <a href="http://www.seagatesoftware.com">http://www.seagatesoftware.com</a><br>
+    Envíe sus comentarios a:<br>
+    <a href="mailto:techpubs@seagatesoftware.com">techpubs@seagatesoftware.com</a><br>
+    </font></td>
+  </tr>
+</table>
+</body>
+</html>
+
+

@@ -1,0 +1,179 @@
+:BASE DEVELOPR.hlp
+1 Developer Help Index
+2 Overview=ABCNT1
+1 What is New for Developers Index
+2 Overview=ACCNT1
+2 What's New for Developers overview=ACCNT2
+2 Report Integration controls for Visual InterDev=ACCNT3
+2 Serving up Reports from Lotus Domino Applications=ACCNT4
+2 Enhancements to the Crystal Report Print Engine API=ACCNT5
+2 Enhancements to Report Designer Component=ACCNT6
+2 API Enhancements from Seagate Crystal Reports 7 or earlier=ACCNT7
+2 A Closer Look at Some of the New Features=ACCNT8
+1 Integration Methods Index
+2 Overview=ADCNT1
+2 Integration Methods overview=ADCNT2
+2 Integration methods=ADCNT3
+2 Using the Best Technology - The Report Designer Component=ADCNT4
+2 The Best Tool for Your Needs=ADCNT5
+1 Introducing the Report Designer Component Index
+2 Overview=AECNT1
+2 The Report Designer Component=AECNT2
+2 How to Get Additional Information=AECNT3
+1 Quick Start for using the RDC
+2 Overview=AFCNT1
+2 Bullet Point Quick Start=AFCNT2
+2 Open an Existing Report=AFCNT3
+2 Create and Modify a Report=AFCNT4
+1 Data Access Index
+2 Overview=AGCNT1
+2 Data Access overview=AGCNT2
+2 The Data Explorer=AGCNT3
+2 Active Data Sources=AGCNT4
+2 Data Environments=AGCNT5
+2 Database Drivers=AGCNT6
+1 Understanding the RDC Object Model Index
+2 Overview=AHCNT1
+2 Understanding the RDC Object Model overview=AHCNT2
+2 The Primary Objects and Collections=AHCNT3
+2 RDC Object Model special considerations=AHCNT4
+1 RDC Programming Index
+2 Overview=AICNT1
+2 RDC Programming overview=AICNT2
+2 Special Considerations for RDC Programming=AICNT3
+2 Two Methods to Access an Object in a Report or Subreport=AICNT4
+2 Runtime Examples=AICNT5
+1 Programming the Report Viewer Index
+2 Overview=AJCNT1
+2 Programming the Report Viewer overview=AJCNT2
+1 Migrating to the RDC from the OCX Index
+2 Overview=AKCNT1
+2 Migrating to the RDC from the OCX overview=AKCNT2
+2 OCX=AKCNT3
+1 Working with Visual C++ Visual InterDev and Lotus Domino Index
+2 Overview=ALCNT1
+2 Working with Visual C++ Visual InterDev and Lotus Domino overview=ALCNT2
+2 Using the RDC with Visual C++=ALCNT3
+2 Using the RDC with Visual InterDev=ALCNT4
+2 Working with Lotus Domino=ALCNT5
+1 Report Designer Component Object Model Index
+2 Overview=AOCNT1
+2 The Report Designer Object Model overview=AOCNT2
+2 Objects and Collections=AOCNT3
+2 Enumerated Types for the RDC Object Model=AOCNT4
+1 Crystal Report Engine Index
+2 Overview=AMCNT1
+2 Introduction to the Crystal Report Engine=AMCNT2
+2 Before using the Crystal Report Engine in your application=AMCNT3
+2 Using the Crystal Report Engine=AMCNT4
+2 Crystal Report Engine API=AMCNT5
+2 Exporting reports=AMCNT6
+2 Handling preview window events=AMCNT7
+2 Distributing Crystal Report Engine applications=AMCNT8
+2 Additional sources of information=AMCNT9
+1 Visual Basic Solutions Index
+2 Overview=ANCNT1
+2 Using the Crystal Report Engine API in Visual Basic=ANCNT2
+2 Crystal ActiveX Controls=ANCNT3
+2 Crystal Report Engine Automation Server=ANCNT4
+2 Active Data Driver=ANCNT5
+2 Crystal Data Object=ANCNT6
+2 Crystal Data Source Type Library=ANCNT7
+2 Grid Controls and the Crystal Report Engine=ANCNT8
+1 Seagate Crystal Report Engine Index
+2 Overview=APCNT1
+2 Print Engine Functions Index=APCNT2
+2 Print Engine Structures Index=AQCNT1
+2 Microsoft Windows Structures=ARCNT1
+2 Print Engine Constants=ASCNT1
+2 Obsolete Functions, Structures, and Constants=ASCNT2
+1 The Crystal Report Engine Class Library Reference Index
+2 Overview=AZCNT1
+2 The Crystal Report Engine Class Library=AZCNT2
+2 class CRPEngine=AZCNT3
+2 class CRPEJob=AZCNT4
+1 Using Crystal Report Viewers in Applications Index
+2 Overview=ATCNT1
+2 Application Development with Crystal Report Viewers=ATCNT2
+2 Seagate Crystal Report Viewer for ActiveX=ATCNT3
+2 The Crystal Report Viewer Java Bean=ATCNT4
+1 Report Viewer Object Model Index
+2 Overview=AUCNT1
+2 Report Viewer/ActiveX Object Model=AUCNT2
+2 The Report Viewer/Java Bean=AUCNT3
+1 Crystal Data Source Object Models Index
+2 Overview=AVCNT1
+2 Crystal Data Source Object Models=AVCNT2
+2 Crystal Data Objects=AVCNT3
+2 Crystal Data Source Type Library=AVCNT4
+1 Crystal ActiveX Control Reference Index
+2 Overview=BACNT1
+2 Overview of Section Codes=BACNT2
+2 ActiveX Controls Properties=BACNT3
+2 ActiveX Controls Methods=BACNT4
+2 ActiveX Controls Error Messages=BACNT5
+1 The Crystal Custom Control Index
+2 Overview=BKCNT1
+1 Crystal Report Engine Object Model for the Automation Server Index
+2 Overview=BBCNT1
+2 Overview of the Crystal Report Engine Object Model=BBCNT2
+2 Crystal Report Engine Object Model Reference=BBCNT3
+2 Error Codes CRE Object Model for the Automation Server=BBCNT4
+1 Crystal Class Library for NewEra Reference Index
+2 Overview=BCCNT1
+2 The Crystal NewEra Class Library=BCCNT2
+2 Other NewEra Classes=BCCNT3
+2 Class Constants=BCCNT4
+1 The Crystal Active Data Driver Reference
+2 Overview=BICNT1
+1 Visual Basic Wrapper for the Crystal Report Engine
+2 Overview=BJCNT1
+2 Visual Basic Wrapper for the Crystal Report Engine Structures Index=BJCNT2
+2 Visual Basic Wrapper for the Crystal Report Engine Functions Index=BJCNT3
+1 Creating User-Defined Functions in C Index
+2 Overview=AWCNT1
+2 Overview of User-Defined Functions in C=AWCNT2
+2 Programming User-Defined Functions in C=AWCNT3
+2 Programming the UFL=AWCNT4
+2 Picture Function - a sample UFL function=AWCNT5
+2 Module Definition (.def) File=AWCNT6
+2 UFJOB Modules=AWCNT7
+1 Creating User-Defined Functions in Visual Basic Index
+2 Overview=AXCNT1
+2 Overview of User-Defined Functions in Visual Basic=AXCNT2
+2 Programming User-Defined Functions in Visual Basic=AXCNT3
+2 Visual Basic and Seagate Crystal Reports=AXCNT4
+2 Sample UFL Automation Server=AXCNT5
+1 Creating User-Defined Functions in Delphi 3.0 Index
+2 Overview=AYCNT1
+2 Overview of User-Defined Functions in Delphi=AYCNT2
+2 Programming User-Defined Functions in Delphi=AYCNT3
+2 Delphi and Seagate Crystal Reports=AYCNT4
+2 Sample UFL=AYCNT5
+1 Report Engine Automation Server Sample Code in Visual Basic Index
+2 Overview=BDCNT1
+1 Report Engine Functions Sample Code in C Index
+2 Overview=BECNT1
+1 Report Engine Functions Sample Code in dBASE Index
+2 Overview=BFCNT1
+1 Report Engine Functions Sample Code in Delphi Index
+2 Overview=BGCNT1
+1 Report Engine Functions Sample Code in Visual Basic Index
+2 Overview=BHCNT1
+1 Product Support Index
+2 Overview=BLCNT1
+2 Product registration=BLCNT2
+2 Product support=BLCNT3
+2 Web support=BLCNT4
+2 Newsletter Service=BLCNT5
+2 Email support=BLCNT6
+2 Fax support=BLCNT7
+2 Technical support=BLCNT8
+2 Seagate Knowledge Link=BLCNT9
+2 Product return policy=BLCNT10
+2 Product replacement policy=BLCNT11
+1 Seagate Software International Office Directory
+2 Overview=BMCNT1
+2 North/South American Head Office=BMCNT2
+2 Asia/Pacific Offices=BMCNT3
+2 Europe/Middle East/Africa Offices=BMCNT4

@@ -1,0 +1,89 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+
+<html>
+<head>
+<title>EvaluateAfter (x)</title>
+
+<link REL=STYLESHEET TYPE="text/css" HREF="seagate.css">
+
+<!--
+                 ***********************************
+                 * Seagate Software copyright 1999 *
+                 ***********************************
+
+                      Template version: 5.1
+-->
+
+
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" link="#0000FF" vlink="#0000FF" alink="#800080">
+
+
+ 
+<a name="1000575618"></a><h3 class="newpage"> EvaluateAfter (x)</h3>
+<p><a name="1000649745"></a>Sintaxis b&#225;sica y Crystal.</p><a name="1000574919"></a><h5>Argumentos</h5><p><a name="1000573891"></a>x es cualquier nombre de f&#243;rmula v&#225;lido.</p><a name="1000573892"></a><h5>Devuelve </h5><p><a name="1000573893"></a>Nada</p><a name="1000573894"></a><h5>Acci&#243;n</h5><p><a name="1000824816"></a>Esta funci&#243;n puede ser usada para obligar una f&#243;rmula a que sea evaluada despu&#233;s de otra. Por ejemplo, dos f&#243;rmulas separadas en su informe pueden tener el mismo tiempo de evaluaci&#243;n, BeforeReadingRecords, WhileReadingRecords o WhilePrintingRecords, o estas aparecen en la misma secci&#243;n del informe y, por lo tanto, ambas son autom&#225;ticamente evaluadas mientras se imprimen los registros. En tales casos, frecuentemente no es seguro cual f&#243;rmula se eval&#250;a primero.</p><p><a name="1000573896"></a>En muchas situaciones, puede que no tenga importancia cual f&#243;rmula se eval&#250;a primero. Sin embargo, algunas situaciones pueden requerir que una f&#243;rmula sea evaluada despu&#233;s de la otra. Por ejemplo, podr&#237;a ser que una f&#243;rmula establezca el valor de una variable mientras que la otra f&#243;rmula lea el valor de esa variable. La funci&#243;n EvaluateAfter puede ser usada para obligar la segunda f&#243;rmula a que sea evaluada despu&#233;s que la primera f&#243;rmula ha terminado.</p><a name="1000573897"></a><h5>Ejemplo(s)</h5><p><a name="1000573898"></a>Los siguientes ejemplos son aplicables a las sintaxis b&#225;sica y Crystal:</p><p><code><a name="1000573899"></a>EvaluateAfter({@SetVariable})</code></p><p class="example"><a name="1000573900"></a>Obliga la f&#243;rmula a esperar hasta que la f&#243;rmula @SetVariable haya terminado los c&#225;lculos.</p>
+<hr><br>
+
+<script  language="JavaScript"><!--
+
+var prev = "Functions172.html";
+var next = "Functions174.html";
+
+function setTopicID() { 
+      var number = "1000575618"; 
+      return number; 
+}
+
+// --></script>
+
+
+
+
+<SCRIPT>
+
+if (!window.parent.toc && navigator.appName == "Netscape") {
+
+   document.writeln ('<TABLE ALIGN="left" border="0" cellspacing="0" cellpadding="10">');
+   document.writeln ('<TR>');
+   document.write ('<TD ALIGN="left">');
+
+   if (prev != "crw_spTOC.hhc") {
+      document.writeln ('<A HREF="' + prev + '">');
+      document.writeln ('<IMG SRC="prevpage.gif" HEIGHT=17 BORDER=0 ALT="Página anterior"></A>');
+   } else {
+//   window.alert ('no previous page');
+   }
+
+   if (next != "crw_spIX.hhk") {
+      document.writeln ('<A HREF="' + next + '">');
+      document.writeln ('<IMG SRC="nextpage.gif" HEIGHT=17 BORDER=0 ALT="Página siguiente"></A>');
+   } else {
+//   window.alert ('no next page');
+   }
+   document.writeln ('</TD><TD ALIGN="left">');
+   document.writeln ('<A HREF="frameset.htm?TOC">');
+   document.writeln ('<IMG SRC="showtoc.gif" HEIGHT=17 BORDER=0 ALT="Haga clic para ver el contenido"></A></TD>');
+   document.writeln ('<TD ALIGN="left">');
+   document.writeln ('<A HREF="frameset.htm?IDX">');
+   document.writeln ('<IMG SRC="showix.gif" HEIGHT=17 BORDER=0 ALT="Haga clic para ver el índice"></A></TD>');
+   document.writeln ('</TD>');
+   document.writeln ('</TR>');
+   document.writeln ('</TABLE>');
+
+}
+
+</SCRIPT>
+<table align="right" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td align="right"><font size="1">Seagate Software, Inc.<br>
+    <a href="http://www.seagatesoftware.com">http://www.seagatesoftware.com</a><br>
+    Envíe sus comentarios a:<br>
+    <a href="mailto:techpubs@seagatesoftware.com">techpubs@seagatesoftware.com</a><br>
+    </font></td>
+  </tr>
+</table>
+</body>
+</html>
+
+

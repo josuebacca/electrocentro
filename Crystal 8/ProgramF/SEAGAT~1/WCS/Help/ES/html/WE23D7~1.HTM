@@ -1,0 +1,99 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+
+<html>
+<head>
+<title>Microsoft Internet Information Server 4.0</title>
+
+<link REL=STYLESHEET TYPE="text/css" HREF="seagate.css">
+
+<!--
+                 ***********************************
+                 * Seagate Software copyright 1999 *
+                 ***********************************
+
+                      Template version: 5.1
+-->
+
+
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" link="#0000FF" vlink="#0000FF" alink="#800080">
+
+
+ 
+<a name="149432"></a><h4 class="newpage"> Microsoft Internet Information Server 4.0</h4><p><a name="149433"></a>Para determinar si el Web Component Server est&#225; configurado correctamente para la versi&#243;n 4.0 de Microsoft IIS, siga el procedimiento que se describe a continuaci&#243;n:</p><ol>
+<a name="149434"></a><li value="1&nbsp;&nbsp;&nbsp;&nbsp;">Inicie el administrador Internet Service Manager.
+<a name="149435"></a><li value="2&nbsp;&nbsp;&nbsp;&nbsp;">En el directorio Console Root, expanda la carpeta Internet Information Server para visualizar la m&#225;quina que usa como servidor.
+<a name="149436"></a><li value="3&nbsp;&nbsp;&nbsp;&nbsp;">Haga clic con el bot&#243;n derecho en el icono de m&#225;quina y luego haga clic en la opci&#243;n <kbd>Properties</kbd> del men&#250; contextual para acceder a las propiedades.
+<p class="indent"><a name="163459"></a>Aparecer&#225; el cuadro de di&#225;logo Properties con la ficha Internet Information Server activada.</p><a name="149437"></a><li value="4&nbsp;&nbsp;&nbsp;&nbsp;">En la lista desplegable <kbd>Master Properties</kbd>, seleccione <kbd>WWW</kbd>.
+<a name="163467"></a><li value="5&nbsp;&nbsp;&nbsp;&nbsp;">Haga clic en <kbd>Edit</kbd> para editar.
+<p class="indent"><a name="163468"></a>Aparecer&#225; el cuadro de di&#225;logo Service Master Properties con una lista de las propiedades principales.</p><a name="149438"></a><li value="6&nbsp;&nbsp;&nbsp;&nbsp;">Haga clic en la ficha <kbd>Home Directory</kbd> para el directorio principal.
+<a name="149439"></a><li value="7&nbsp;&nbsp;&nbsp;&nbsp;">Haga clic en <kbd>Configuration</kbd>.
+<p class="indent"><a name="163476"></a>Aparecer&#225; el cuadro de di&#225;logo Application Configuration con detalles sobre la configuraci&#243;n.</p><a name="149440"></a><li value="8&nbsp;&nbsp;&nbsp;&nbsp;">Localice la extensi&#243;n <kbd>.rpt</kbd> y aseg&#250;rese de que est&#233; en la ruta correcta para wcsinsapi.dll. 
+<p class="indent"><a name="163477"></a>La ruta predeterminada es:</p><p class="indent"><a name="163478"></a>C:\Archivos de programa\Seagate Software\WCS\wcsinsapi.dll</p><a name="165260"></a><li value="9&nbsp;&nbsp;&nbsp;&nbsp;">Verifique que la extensi&#243;n <kbd>.cri</kbd> tambi&#233;n est&#233; en el mismo lugar.
+</ol>
+
+<hr><br>
+
+<script  language="JavaScript"><!--
+
+var prev = "WebServerImplementation20.html";
+var next = "WebServerImplementation22.html";
+
+function setTopicID() { 
+      var number = "149432"; 
+      return number; 
+}
+
+// --></script>
+
+
+
+
+<SCRIPT>
+
+if (!window.parent.toc && navigator.appName == "Netscape") {
+
+   document.writeln ('<TABLE ALIGN="left" border="0" cellspacing="0" cellpadding="10">');
+   document.writeln ('<TR>');
+   document.write ('<TD ALIGN="left">');
+
+   if (prev != "wcmadminTOC.hhc") {
+      document.writeln ('<A HREF="' + prev + '">');
+      document.writeln ('<IMG SRC="prevpage.gif" HEIGHT=17 BORDER=0 ALT="Página anterior"></A>');
+   } else {
+//   window.alert ('no previous page');
+   }
+
+   if (next != "wcmadminIX.hhk") {
+      document.writeln ('<A HREF="' + next + '">');
+      document.writeln ('<IMG SRC="nextpage.gif" HEIGHT=17 BORDER=0 ALT="Página siguiente"></A>');
+   } else {
+//   window.alert ('no next page');
+   }
+   document.writeln ('</TD><TD ALIGN="left">');
+   document.writeln ('<A HREF="frameset.htm?TOC">');
+   document.writeln ('<IMG SRC="showtoc.gif" HEIGHT=17 BORDER=0 ALT="Haga clic para ver el contenido"></A></TD>');
+   document.writeln ('<TD ALIGN="left">');
+   document.writeln ('<A HREF="frameset.htm?IDX">');
+   document.writeln ('<IMG SRC="showix.gif" HEIGHT=17 BORDER=0 ALT="Haga clic para ver el índice"></A></TD>');
+   document.writeln ('</TD>');
+   document.writeln ('</TR>');
+   document.writeln ('</TABLE>');
+
+}
+
+</SCRIPT>
+<table align="right" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td align="right"><font size="1">Seagate Software, Inc.<br>
+    <a href="http://www.seagatesoftware.com">http://www.seagatesoftware.com</a><br>
+    Envíe sus comentarios a:<br>
+    <a href="mailto:techpubs@seagatesoftware.com">techpubs@seagatesoftware.com</a><br>
+    </font></td>
+  </tr>
+</table>
+</body>
+</html>
+
+

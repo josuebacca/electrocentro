@@ -1,0 +1,153 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+
+<html>
+<head>
+<title>M&#225;s detalles sobre las expresiones If </title>
+
+<link REL=STYLESHEET TYPE="text/css" HREF="seagate.css">
+
+<!--
+                 ***********************************
+                 * Seagate Software copyright 1999 *
+                 ***********************************
+
+                      Template version: 5.1
+-->
+
+
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" link="#0000FF" vlink="#0000FF" alink="#800080">
+
+
+ 
+<a name="147405"></a><h4 class="newpage"> M&#225;s detalles sobre las expresiones If </h4><p><a name="147407"></a>La expresi&#243;n <EM>If </EM>es una expresi&#243;n. Es decir, eval&#250;a un valor de un tipo dado. Si no hay cl&#225;usula Else y la condici&#243;n no es verdadera, entonces el valor ser&#225; el predeterminado para el tipo. Por ejemplo:</p><PRE><a name="147409"></a>If Length ({Empleado.Nombre}) &lt; 5 Then
+<a name="147410"></a>   "corto"
+</PRE><p><a name="147412"></a>La expresi&#243;n If anterior devuelve un valor de cadena. El valor de cadena es "corto" si el nombre del empleado tiene menos de 5 letras y ser&#225; la cadena vac&#237;a "" si no es as&#237;. </p><p><a name="159815"></a>Considere la f&#243;rmula:</p><PRE><a name="147414"></a>If A&#241;o({Pedidos.Fecha del pedido}) &gt;= 1995 Then
+<a name="147415"></a>   {Pedidos.Fecha del pedido}
+</PRE><p><a name="147417"></a>Para las fechas de pedidos anteriores a 1995, la expresi&#243;n If anterior devuelve el valor fechahora nulo. Es un valor de fechahora en lugar de un valor de fecha, dado que {Pedidos.Fecha del pedido} es un campo de fechahora de base de datos. Seagate Crystal Reports no imprime el valor nulo de fechahora, de modo que si se incluye la f&#243;rmula anterior en un informe, el campo de f&#243;rmula quedar&#237;a en blanco para las fechas de pedidos anteriores a 1995. Los valores nulos de hora y los valores nulos de fecha se comportan en forma similar.</p><p><a name="147419"></a>Este ejemplo ilustra el uso de par&#233;ntesis para que se ejecute m&#225;s de una expresi&#243;n como resultado de una condici&#243;n If. Una compa&#241;&#237;a de EE.UU. cobra una tarifa del 5 por ciento por pedidos enviados en un plazo de 3 d&#237;as y un 2 por ciento cuando no es as&#237;. Desea imprimir mensajes como "El env&#237;o urgente cuesta $100,00" o "El env&#237;o est&#225;ndar cuesta $20,00", seg&#250;n sea el caso.</p><PRE><a name="147421"></a>Local StringVar mensaje;
+<a name="147422"></a>Local CurrencyVar env&#237;o;
+<a name="147424"></a>If {Pedidos.Fecha del env&#237;o} - {Pedidos.Fecha del pedido} 
+&lt;= 3 Then
+<a name="147425"></a>(
+<a name="147426"></a>   mensaje := "urgente";
+<a name="147427"></a>   //Un punto y coma al final de la siguiente l&#237;nea
+<a name="147428"></a>   //es opcional
+<a name="147429"></a>   env&#237;o := {Pedidos.Monto del pedido} * 0.05
+<a name="147430"></a>) //Aqu&#237; no se puede poner un punto y coma
+<a name="147431"></a>Else
+<a name="147432"></a>(
+<a name="147433"></a>   mensaje := "est&#225;ndar";
+<a name="147434"></a>   env&#237;o := {Pedidos.Monto del pedido} * 0.02;
+<a name="147435"></a>);
+<a name="147436"></a>//El punto y coma anterior es necesario para separar la 
+<a name="147437"></a>//expresi&#243;n If de la expresi&#243;n final siguiente
+<a name="147438"></a>"El env&#237;o " &amp; mensaje &amp; " cuesta " &amp; CStr (enviar)
+</PRE><p><a name="147440"></a>Cuando se agrupan expresiones con par&#233;ntesis, se considera todo el grupo como una sola expresi&#243;n y su valor y tipo son el valor y tipo de la expresi&#243;n final dentro del par&#233;ntesis.</p><PRE><a name="147442"></a>//La expresi&#243;n de grupo de par&#233;ntesis como un todo tiene
+<a name="147443"></a>//tipo monetario
+<a name="147444"></a>(
+<a name="147445"></a>   //La primera expresi&#243;n entre par&#233;ntesis tiene
+<a name="147446"></a>   //tipo de cadena
+<a name="147447"></a>   mensaje := "urgente";
+<a name="147448"></a>   //La segunda y &#250;ltima expresi&#243;n entre par&#233;ntesis
+<a name="147449"></a>   //tiene tipo monetario
+<a name="147450"></a>   env&#237;o := {Pedidos.Monto del pedido} * 0.05;
+<a name="147451"></a>)
+</PRE><p><a name="147453"></a>Por eso, por ejemplo, la siguiente f&#243;rmula da un error. La raz&#243;n es que la parte Then de la expresi&#243;n If devuelve un valor monetario mientras que la parte Else devuelve un valor de cadena. Esto no est&#225; permitido, dado que la expresi&#243;n If es una expresi&#243;n y, por lo tanto, siempre debe devolver un valor de un s&#243;lo tipo.</p><PRE><a name="147455"></a>//Una f&#243;rmula err&#243;nea
+<a name="147456"></a>Local StringVar mensaje;
+<a name="147457"></a>Local CurrencyVar env&#237;o;
+<a name="147459"></a>If {Pedidos.Fecha de env&#237;o} - {Pedidos.Fecha del pedido} 
+&lt;= 3 Then
+<a name="147460"></a>(
+<a name="147461"></a>   mensaje := "urgente";
+<a name="147462"></a>   env&#237;o := {Pedidos.Monto del pedido} * 0.05
+<a name="147463"></a>)
+<a name="147464"></a>Else
+<a name="147465"></a>(
+<a name="147466"></a>   //Las 2 l&#237;neas siguientes se intercambiaron
+<a name="147467"></a>   env&#237;o := {Pedidos.Monto del pedido} * 0.02;
+<a name="147468"></a>   mensaje := "est&#225;ndar";
+<a name="147469"></a>);
+<a name="147470"></a>"El env&#237;o " &amp; mensaje &amp; " cuesta " &amp; CStr (enviar)
+</PRE><p><a name="147472"></a>Una forma de corregir una f&#243;rmula err&#243;nea sin preocuparse del orden de la expresi&#243;n es simplemente hacer que la expresi&#243;n If devuelva un valor constante del mismo tipo en cada rama. Por ejemplo, la expresi&#243;n If ahora devuelve el valor num&#233;rico 0:</p><PRE><a name="147474"></a>//F&#243;rmula err&#243;nea corregida
+<a name="147475"></a>Local StringVar mensaje;
+<a name="147476"></a>Local CurrencyVar env&#237;o;
+<a name="147478"></a>If {Pedidos.Fecha de env&#237;o} - {Pedidos.Fecha del pedido} 
+&lt;= 3 Then
+<a name="147479"></a>(
+<a name="147480"></a>   mensaje := "urgente";
+<a name="147481"></a>   env&#237;o := {Pedidos.Monto del pedido} * 0.05;
+<a name="147482"></a>   0
+<a name="147483"></a>)
+<a name="147484"></a>Else
+<a name="147485"></a>(
+<a name="147486"></a>   env&#237;o := {Pedidos.Monto del pedido} * 0.02;
+<a name="147487"></a>   mensaje := "est&#225;ndar";
+<a name="147488"></a>   0
+<a name="147489"></a>);
+<a name="147490"></a>"El env&#237;o " &amp; mensaje &amp; " cuesta " &amp; CStr (enviar)
+</PRE>
+<hr><br>
+
+<script  language="JavaScript"><!--
+
+var prev = "21_crystalsyntax54.html";
+var next = "21_crystalsyntax56.html";
+
+function setTopicID() { 
+      var number = "147405"; 
+      return number; 
+}
+
+// --></script>
+
+
+
+
+<SCRIPT>
+
+if (!window.parent.toc && navigator.appName == "Netscape") {
+
+   document.writeln ('<TABLE ALIGN="left" border="0" cellspacing="0" cellpadding="10">');
+   document.writeln ('<TR>');
+   document.write ('<TD ALIGN="left">');
+
+   if (prev != "crw_spTOC.hhc") {
+      document.writeln ('<A HREF="' + prev + '">');
+      document.writeln ('<IMG SRC="prevpage.gif" HEIGHT=17 BORDER=0 ALT="Página anterior"></A>');
+   } else {
+//   window.alert ('no previous page');
+   }
+
+   if (next != "crw_spIX.hhk") {
+      document.writeln ('<A HREF="' + next + '">');
+      document.writeln ('<IMG SRC="nextpage.gif" HEIGHT=17 BORDER=0 ALT="Página siguiente"></A>');
+   } else {
+//   window.alert ('no next page');
+   }
+   document.writeln ('</TD><TD ALIGN="left">');
+   document.writeln ('<A HREF="frameset.htm?TOC">');
+   document.writeln ('<IMG SRC="showtoc.gif" HEIGHT=17 BORDER=0 ALT="Haga clic para ver el contenido"></A></TD>');
+   document.writeln ('<TD ALIGN="left">');
+   document.writeln ('<A HREF="frameset.htm?IDX">');
+   document.writeln ('<IMG SRC="showix.gif" HEIGHT=17 BORDER=0 ALT="Haga clic para ver el índice"></A></TD>');
+   document.writeln ('</TD>');
+   document.writeln ('</TR>');
+   document.writeln ('</TABLE>');
+
+}
+
+</SCRIPT>
+<table align="right" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td align="right"><font size="1">Seagate Software, Inc.<br>
+    <a href="http://www.seagatesoftware.com">http://www.seagatesoftware.com</a><br>
+    Envíe sus comentarios a:<br>
+    <a href="mailto:techpubs@seagatesoftware.com">techpubs@seagatesoftware.com</a><br>
+    </font></td>
+  </tr>
+</table>
+</body>
+</html>
+
+

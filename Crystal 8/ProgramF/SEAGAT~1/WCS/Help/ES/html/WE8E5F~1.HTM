@@ -1,0 +1,91 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+
+<html>
+<head>
+<title>Procedimientos almacenados de SQL y campos de par&#225;metro </title>
+
+<link REL=STYLESHEET TYPE="text/css" HREF="seagate.css">
+
+<!--
+                 ***********************************
+                 * Seagate Software copyright 1999 *
+                 ***********************************
+
+                      Template version: 5.1
+-->
+
+
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" link="#0000FF" vlink="#0000FF" alink="#800080">
+
+
+ 
+<a name="162243"></a><h3 class="newpage"> Procedimientos almacenados de SQL y campos de par&#225;metro </h3>
+<p><a name="149994"></a>Seagate Crystal Reports permite dise&#241;ar informes basados en procedimientos almacenados en bases de datos SQL. Adem&#225;s, Report Designer permite crear campos de par&#225;metro en el informe mismo. Tanto los procedimientos almacenados como los campos de par&#225;metro pueden solicitar a los usuarios que introduzcan un valor en el cual basar el informe durante la ejecuci&#243;n. Por ejemplo, es preferible que un vendedor vea solamente informaci&#243;n de ventas de su regi&#243;n. Cuando se solicita un informe, &#233;ste puede pedirle al vendedor que introduzca un nombre de regi&#243;n. En este caso, el informe s&#243;lo mostrar&#225; datos de dicha regi&#243;n.</p><p><a name="161912"></a>Para evitar que los usuarios especifiquen sus propios valores de campos de par&#225;metro o procedimientos almacenados, use el comando PROMPT# al especificar la URL de un informe. PROMPT# permite especificar valores de uno o m&#225;s campos de par&#225;metro de un informe. Alternativamente, puede dise&#241;ar sus propios formularios basados en el web que acepten la introducci&#243;n de datos por parte del usuario, y de esta forma crear din&#225;micamente la URL que incluya el par&#225;metro y el valor PROMPT#.</p><p><a name="150004"></a><font color="darkblue"><b>Nota:   &nbsp;&nbsp;&nbsp;</b></font>Los usuarios no deben escribir los valores de par&#225;metro entre comillas. Todos los valores se env&#237;an al informe como cadenas, independientemente del tipo de datos. Los par&#225;metros que esperan valores num&#233;ricos interpretan la cadena recibida cuando es necesario.</p>
+<p><a name="150005"></a>El Web Component Server no valida ning&#250;n valor de par&#225;metro especificado para procedimientos almacenados ni campos de par&#225;metro. Si el valor que le asigna al par&#225;metro no es v&#225;lido, como al proporcionar informaci&#243;n de texto cuando se espera un n&#250;mero, por ejemplo, el explorador web no recibir&#225; un error como respuesta. Adem&#225;s, el Web Component Server no permite cambiar el formato esperado por los par&#225;metros. Aseg&#250;rese de probar cualquier sitio web que acceda a informes con procedimientos almacenados o campos de par&#225;metro antes de permitir que los usuarios soliciten dichos informes.</p><p><a name="150006"></a><font color="darkblue"><b>Nota:   &nbsp;&nbsp;&nbsp;</b></font>Los campos de par&#225;metro y los procedimientos almacenados de SQL limitan la efectividad del almacenamiento temporal de informes y de las tareas compartidas. Puesto que cualquier informe que contenga procedimientos almacenados o campos de par&#225;metro puede generar un conjunto de datos distinto cada vez que se solicita, es posible que las solicitudes m&#250;ltiples para el mismo informe no sean distribuibles entre varios usuarios.</p>
+
+<hr><br>
+
+<script  language="JavaScript"><!--
+
+var prev = "WebServerCommands12.html";
+var next = "WebServerCommands14.html";
+
+function setTopicID() { 
+      var number = "162243"; 
+      return number; 
+}
+
+// --></script>
+
+
+
+
+<SCRIPT>
+
+if (!window.parent.toc && navigator.appName == "Netscape") {
+
+   document.writeln ('<TABLE ALIGN="left" border="0" cellspacing="0" cellpadding="10">');
+   document.writeln ('<TR>');
+   document.write ('<TD ALIGN="left">');
+
+   if (prev != "wcmadminTOC.hhc") {
+      document.writeln ('<A HREF="' + prev + '">');
+      document.writeln ('<IMG SRC="prevpage.gif" HEIGHT=17 BORDER=0 ALT="Página anterior"></A>');
+   } else {
+//   window.alert ('no previous page');
+   }
+
+   if (next != "wcmadminIX.hhk") {
+      document.writeln ('<A HREF="' + next + '">');
+      document.writeln ('<IMG SRC="nextpage.gif" HEIGHT=17 BORDER=0 ALT="Página siguiente"></A>');
+   } else {
+//   window.alert ('no next page');
+   }
+   document.writeln ('</TD><TD ALIGN="left">');
+   document.writeln ('<A HREF="frameset.htm?TOC">');
+   document.writeln ('<IMG SRC="showtoc.gif" HEIGHT=17 BORDER=0 ALT="Haga clic para ver el contenido"></A></TD>');
+   document.writeln ('<TD ALIGN="left">');
+   document.writeln ('<A HREF="frameset.htm?IDX">');
+   document.writeln ('<IMG SRC="showix.gif" HEIGHT=17 BORDER=0 ALT="Haga clic para ver el índice"></A></TD>');
+   document.writeln ('</TD>');
+   document.writeln ('</TR>');
+   document.writeln ('</TABLE>');
+
+}
+
+</SCRIPT>
+<table align="right" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td align="right"><font size="1">Seagate Software, Inc.<br>
+    <a href="http://www.seagatesoftware.com">http://www.seagatesoftware.com</a><br>
+    Envíe sus comentarios a:<br>
+    <a href="mailto:techpubs@seagatesoftware.com">techpubs@seagatesoftware.com</a><br>
+    </font></td>
+  </tr>
+</table>
+</body>
+</html>
+
+

@@ -1,0 +1,97 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+
+<html>
+<head>
+<title>RGB (rojo, verde, azul)</title>
+
+<link REL=STYLESHEET TYPE="text/css" HREF="seagate.css">
+
+<!--
+                 ***********************************
+                 * Seagate Software copyright 1999 *
+                 ***********************************
+
+                      Template version: 5.1
+-->
+
+
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" link="#0000FF" vlink="#0000FF" alink="#800080">
+
+
+ 
+<a name="1000649793"></a><h3 class="newpage"> RGB (rojo, verde, azul)</h3>
+<p><a name="1000725671"></a>RGB y <a href="Functions253.html#1000725861">Color</a> son funciones equivalentes. Sin embargo, en la sintaxis b&#225;sica se prefiere RGB y en Crystal, Color.  </p><a name="1000232492"></a><h5>Argumentos</h5><ul type="disc"><a name="1000232493"></a><li>rojo es un valor Num&#233;rico que representa el componente rojo del color resultante, con un valor entre 0 y 255.  
+<a name="1000232494"></a><li>verde es un valor Num&#233;rico que representa el componente verde del color resultante, con un valor entre 0 y 255.  
+<a name="1000232495"></a><li>azul es un valor Num&#233;rico que representa el componente azul del color resultante, con un valor entre 0 y 255.  
+</ul><a name="1000232496"></a><h5>Devuelve </h5><p><a name="1000232497"></a>Atributo de color de fuente.</p><a name="1000232498"></a><h5>Acci&#243;n</h5><p><a name="1000232499"></a>RGB devuelve el atributo de color como se especifica en los componentes rojo, verde y azul.  </p><a name="1000232500"></a><h5>Uso t&#237;pico</h5><p><a name="1000232501"></a>Para especificar un color personalizado al escribir f&#243;rmulas de formato condicional para el color de fuente o de fondo de un campo de informe.   </p><a name="1000232502"></a><h5>Ejemplo</h5><p><a name="1000232503"></a>El siguiente ejemplo es aplicable a la sintaxis b&#225;sica:</p><p class="code"><a name="1000232504"></a>If CurrentFieldValue &gt; 10000 Then
+<br><a name="1000232505"></a>&nbsp;&nbsp;&nbsp;&nbsp;formula = RGB (150,230,150)
+<br><a name="1000232506"></a>Else
+<br><a name="1000232507"></a>&nbsp;&nbsp;&nbsp;&nbsp;formula = RGB (10,19,200)
+<br><a name="1000232508"></a>End If
+</p><p class="example"><a name="1000725817"></a>Esta f&#243;rmula formatea el campo Num&#233;rico para que se despliegue en el color que especifica RGB (150,230,150) si su valor actual es mayor que 10000; de lo contrario se despliega en RGB (10,19,200).</p><a name="1000725935"></a><h6>Temas relacionados</h6><p><a name="1000725936"></a><a href="Functions253.html#1000725861">Color</a></p>
+<hr><br>
+
+<script  language="JavaScript"><!--
+
+var prev = "Functions251.html";
+var next = "Functions253.html";
+
+function setTopicID() { 
+      var number = "1000649793"; 
+      return number; 
+}
+
+// --></script>
+
+
+
+
+<SCRIPT>
+
+if (!window.parent.toc && navigator.appName == "Netscape") {
+
+   document.writeln ('<TABLE ALIGN="left" border="0" cellspacing="0" cellpadding="10">');
+   document.writeln ('<TR>');
+   document.write ('<TD ALIGN="left">');
+
+   if (prev != "crw_spTOC.hhc") {
+      document.writeln ('<A HREF="' + prev + '">');
+      document.writeln ('<IMG SRC="prevpage.gif" HEIGHT=17 BORDER=0 ALT="Página anterior"></A>');
+   } else {
+//   window.alert ('no previous page');
+   }
+
+   if (next != "crw_spIX.hhk") {
+      document.writeln ('<A HREF="' + next + '">');
+      document.writeln ('<IMG SRC="nextpage.gif" HEIGHT=17 BORDER=0 ALT="Página siguiente"></A>');
+   } else {
+//   window.alert ('no next page');
+   }
+   document.writeln ('</TD><TD ALIGN="left">');
+   document.writeln ('<A HREF="frameset.htm?TOC">');
+   document.writeln ('<IMG SRC="showtoc.gif" HEIGHT=17 BORDER=0 ALT="Haga clic para ver el contenido"></A></TD>');
+   document.writeln ('<TD ALIGN="left">');
+   document.writeln ('<A HREF="frameset.htm?IDX">');
+   document.writeln ('<IMG SRC="showix.gif" HEIGHT=17 BORDER=0 ALT="Haga clic para ver el índice"></A></TD>');
+   document.writeln ('</TD>');
+   document.writeln ('</TR>');
+   document.writeln ('</TABLE>');
+
+}
+
+</SCRIPT>
+<table align="right" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td align="right"><font size="1">Seagate Software, Inc.<br>
+    <a href="http://www.seagatesoftware.com">http://www.seagatesoftware.com</a><br>
+    Envíe sus comentarios a:<br>
+    <a href="mailto:techpubs@seagatesoftware.com">techpubs@seagatesoftware.com</a><br>
+    </font></td>
+  </tr>
+</table>
+</body>
+</html>
+
+

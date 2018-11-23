@@ -1,0 +1,104 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+
+<html>
+<head>
+<title>PopulationStdDev (Campo), PopulationStdDev (Campo, campoCondicional), PopulationStdDev (Campo, campoCondicional, condici&#243;n), PopulationStdDev (x)</title>
+
+<link REL=STYLESHEET TYPE="text/css" HREF="seagate.css">
+
+<!--
+                 ***********************************
+                 * Seagate Software copyright 1999 *
+                 ***********************************
+
+                      Template version: 5.1
+-->
+
+
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" link="#0000FF" vlink="#0000FF" alink="#800080">
+
+
+ 
+<a name="1000850801"></a><h3 class="newpage"> PopulationStdDev (Campo), PopulationStdDev (Campo, campoCondicional), PopulationStdDev (Campo, campoCondicional, condici&#243;n), PopulationStdDev (x)</h3>
+<p><a name="1000850804"></a>Sintaxis b&#225;sica y Crystal.</p><a name="1000850805"></a><h5>Argumentos</h5><ul type="disc"><a name="1000850806"></a><li>campo es cualquier campo de base de datos o de f&#243;rmula que puede ser evaluado por la funci&#243;n.
+<a name="1000850807"></a><li>campoCondicional es un campo utilizado para agrupar los valores del campo.
+<a name="1000850808"></a><li>condici&#243;n es una cadena que indica el tipo de agrupaci&#243;n para campoCondicional. S&#243;lo se especifica este argumento cuando  campoCondicional es un campo de fecha, hora, fecha/hora o booleano. 
+<p class="indent"><a name="1000850809"></a>Para obtener m&#225;s informaci&#243;n sobre las cadenas v&#225;lidas para este argumento, v&#233;ase <a href="Functions20.html#1000850529">Condiciones para las funciones de resumen</a>.</p><a name="1000850813"></a><li>x es un arreglo de valores que puede ser evaluado por la funci&#243;n que est&#225; siendo utilizada.
+</ul><a name="1000850814"></a><h5>Devuelve </h5><p><a name="1000850815"></a>Un n&#250;mero fraccionario.</p><a name="1000850816"></a><h5>Acci&#243;n</h5><p><a name="1000850817"></a>Le permite encontrar la desviaci&#243;n est&#225;ndar de la poblaci&#243;n de un conjunto de valores en su informe. Por ejemplo:</p><ul type="disc"><a name="1000850818"></a><li>Puede calcular la desviaci&#243;n est&#225;ndar de la poblaci&#243;n para todos los valores de un campo. Para obtener m&#225;s informaci&#243;n sobre esta clase de desviaci&#243;n est&#225;ndar de poblaci&#243;n, v&#233;ase <a href="Functions22.html#1000850599">SummaryFunction (campo)</a>.
+<a name="1000850822"></a><li>Puede calcular la desviaci&#243;n est&#225;ndar de poblaci&#243;n para todos los valores dentro de un grupo (por ejemplo, ventas agrupadas por el estado de procedencia). Para obtener m&#225;s informaci&#243;n sobre esta clase de desviaci&#243;n est&#225;ndar de poblaci&#243;n, v&#233;ase <a href="Functions23.html#1000850631">SummaryFunction (campo, campoCondicional)</a>.
+<a name="1000850826"></a><li>Puede calcular la desviaci&#243;n est&#225;ndar de poblaci&#243;n para todos los valores dentro de un grupo en el cual la agrupaci&#243;n est&#225; controlada mediante cambios en el campo Booleano o de fecha (por ejemplo, ventas agrupadas por el mes en que fueron realizadas). Para obtener m&#225;s informaci&#243;n sobre esta clase de desviaci&#243;n est&#225;ndar de poblaci&#243;n, v&#233;ase <a href="Functions24.html#1000850661">SummaryFunction (campo, campoCondicional, condici&#243;n)</a>.
+<a name="1000850830"></a><li>Si especifica un conjunto de valores individuales, puede calcular la desviaci&#243;n est&#225;ndar de la poblaci&#243;n de los valores en el conjunto.  Para obtener m&#225;s informaci&#243;n sobre esta clase de resumen, v&#233;ase <a href="Functions155.html#1000567809">Funciones de resumen de matriz (x)</a>
+</ul><a name="1000850834"></a><h5>Ejemplo(s)</h5><p><a name="1000850835"></a>Los siguientes ejemplos son aplicables a las sintaxis b&#225;sica y Crystal:</p><p><code><a name="1000850836"></a>PopulationStdDev({archivo.PUNTAJE})</code></p><p class="example"><a name="1000850837"></a>Calcula la desviaci&#243;n est&#225;ndar de la poblaci&#243;n de todos los valores del campo Puntaje de todo el informe.</p><p><code><a name="1000850838"></a>PopulationStdDev({pedidos. MONTO}, {pedidos.ID DEL CLIENTE})</code></p><p class="example"><a name="1000850839"></a>Calcula la desviaci&#243;n est&#225;ndar de los pedidos en cada grupo de pedidos en el campo Monto. Los pedidos se separan en grupos siempre que cambia el valor del campo Id del cliente.</p><p><code><a name="1000850840"></a>PopulationStdDev({archivo.RESULTADOS}, {archivo.FECHA}, "diario")</code></p><p class="example"><a name="1000850841"></a>Calcula la variancia de cada grupo de resultados de pruebas de laboratorio en el campo Resultados. Los resultados de pruebas son separados en grupos siempre que el valor del campo Fecha cambia a un nuevo d&#237;a.</p><p><a name="1000850842"></a>El siguiente ejemplo es aplicable a la sintaxis Crystal:</p><p><code><a name="1000850843"></a>PopulationStdDev([{archivo.CANT1}, {archivo.CANT2}, {archivo.CANT3}, {archivo.CANT4}]) </code></p><p class="example"><a name="1000850844"></a>Devuelve 3.57 donde Cant1 = 2, Cant2 = 2, Cant3 = 10, y Cant4 = 8.</p><a name="1000850845"></a><h5>Comentario(s) </h5><p><a name="1000850846"></a>La desviaci&#243;n est&#225;ndar de poblaci&#243;n es calculada por Crystal Reports utilizando la t&#233;cnica siguiente:</p><ul type="disc"><a name="1000850847"></a><li>Calcula el valor promedio (media) de los elementos en la poblaci&#243;n.
+<a name="1000850848"></a><li>Resta el valor promedio al valor de cada elemento.
+<a name="1000850849"></a><li>Eleva al cuadrado la diferencia para cada elemento.
+<a name="1000850850"></a><li>Agrega las diferencias cuadr&#225;ticas para todos los elementos en la poblaci&#243;n.
+<a name="1000850851"></a><li>Divide la suma entre el n&#250;mero de elementos en la poblaci&#243;n (N). El resultado es la variancia de poblaci&#243;n. Compare este paso con  <a href="Functions26.html#1000850740">StdDev (Campo), StdDev (Campo, campoCondicional), StdDev (Campo, campoCondicional, condici&#243;n), StdDev (x)</a>.
+<a name="1000850855"></a><li>Calcula la ra&#237;z cuadrada de la variancia de poblaci&#243;n para obtener la desviaci&#243;n est&#225;ndar de poblaci&#243;n.
+</ul><p><a name="1000850856"></a><font color="darkblue"><b>Nota:   &nbsp;&nbsp;&nbsp;</b></font>El uso de esta funci&#243;n en una f&#243;rmula obliga a que la f&#243;rmula sea evaluada al momento de impresi&#243;n.</p>
+<p><a name="1000850857"></a>Para obtener m&#225;s informaci&#243;n sobre las consideraciones de evaluaci&#243;n de hora, v&#233;ase el  <a href="Functions169.html#1000572432">Funciones de tiempo de evaluaci&#243;n</a>.</p>
+<hr><br>
+
+<script  language="JavaScript"><!--
+
+var prev = "Functions26.html";
+var next = "Functions28.html";
+
+function setTopicID() { 
+      var number = "1000850801"; 
+      return number; 
+}
+
+// --></script>
+
+
+
+
+<SCRIPT>
+
+if (!window.parent.toc && navigator.appName == "Netscape") {
+
+   document.writeln ('<TABLE ALIGN="left" border="0" cellspacing="0" cellpadding="10">');
+   document.writeln ('<TR>');
+   document.write ('<TD ALIGN="left">');
+
+   if (prev != "crw_spTOC.hhc") {
+      document.writeln ('<A HREF="' + prev + '">');
+      document.writeln ('<IMG SRC="prevpage.gif" HEIGHT=17 BORDER=0 ALT="Página anterior"></A>');
+   } else {
+//   window.alert ('no previous page');
+   }
+
+   if (next != "crw_spIX.hhk") {
+      document.writeln ('<A HREF="' + next + '">');
+      document.writeln ('<IMG SRC="nextpage.gif" HEIGHT=17 BORDER=0 ALT="Página siguiente"></A>');
+   } else {
+//   window.alert ('no next page');
+   }
+   document.writeln ('</TD><TD ALIGN="left">');
+   document.writeln ('<A HREF="frameset.htm?TOC">');
+   document.writeln ('<IMG SRC="showtoc.gif" HEIGHT=17 BORDER=0 ALT="Haga clic para ver el contenido"></A></TD>');
+   document.writeln ('<TD ALIGN="left">');
+   document.writeln ('<A HREF="frameset.htm?IDX">');
+   document.writeln ('<IMG SRC="showix.gif" HEIGHT=17 BORDER=0 ALT="Haga clic para ver el índice"></A></TD>');
+   document.writeln ('</TD>');
+   document.writeln ('</TR>');
+   document.writeln ('</TABLE>');
+
+}
+
+</SCRIPT>
+<table align="right" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td align="right"><font size="1">Seagate Software, Inc.<br>
+    <a href="http://www.seagatesoftware.com">http://www.seagatesoftware.com</a><br>
+    Envíe sus comentarios a:<br>
+    <a href="mailto:techpubs@seagatesoftware.com">techpubs@seagatesoftware.com</a><br>
+    </font></td>
+  </tr>
+</table>
+</body>
+</html>
+
+

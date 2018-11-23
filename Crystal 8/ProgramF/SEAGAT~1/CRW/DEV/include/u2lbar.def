@@ -1,0 +1,27 @@
+LIBRARY     U2LBAR
+Description 'Bar code User Function Library for Crystal Reports'
+
+ExeType     Windows
+
+HeapSize    1024
+
+Code        Moveable Discardable PreLoad
+Data        Moveable Preload
+
+Segments    _TEXT    Preload
+
+EXPORTS
+            DllMain
+            UFInitialize
+            UFTerminate
+            UFGetVersion
+            UFStartJob
+            UFEndJob
+            UFGetFunctionDefStrings
+            UFGetFunctionExamples
+            UFGetFunctionTemplates
+            UFErrorRecovery
+            NumberToPostnet
+	        StringToPostnet
+            StringToCode39
+            NumberToCode39

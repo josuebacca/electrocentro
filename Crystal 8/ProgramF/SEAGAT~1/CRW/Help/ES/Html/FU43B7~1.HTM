@@ -1,0 +1,123 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+
+<html>
+<head>
+<title>Time </title>
+
+<link REL=STYLESHEET TYPE="text/css" HREF="seagate.css">
+
+<!--
+                 ***********************************
+                 * Seagate Software copyright 1999 *
+                 ***********************************
+
+                      Template version: 5.1
+-->
+
+
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" link="#0000FF" vlink="#0000FF" alink="#800080">
+
+
+ 
+<a name="1000686634"></a><h3 class="newpage"> Time </h3>
+<p><a name="1000690028"></a>Sintaxis Crystal.</p><p><a name="1000730871"></a>Las funciones <a href="Functions163.html#1000570720">CTime</a> y <a href="Functions110.html#1000645674">TimeValue</a> son equivalentes a Time. Sin embargo, Time s&#243;lo puede usarse en sintaxis Crystal, ya que en sintaxis b&#225;sica es un nombre tipo.</p><a name="1000781132"></a><h5>Sobrecargas</h5><ul type="disc"><a name="1000781133"></a><li>Time (n&#250;mero)
+<a name="1000781134"></a><li>Time (cadena)
+<a name="1000781135"></a><li>Time (fechaHora)
+<a name="1000781136"></a><li>Time (HH, MM, SS) 
+</ul><a name="1000755111"></a><h5>Argumentos</h5><p><a name="1000755131"></a> <Table Border="1">
+<tr><td align="left" valign="TOP"><P><a name="1000755114"></a>Time (n&#250;mero)</P>
+
+
+</td><td align="left" valign="TOP"><ul type="disc"><a name="1000755116"></a><li>Devuelve<strong> </strong>un valor Hora dado un n&#250;mero en unidades de 24 horas.
+<a name="1000755389"></a><li>n&#250;mero tambi&#233;n puede ser fraccional o negativo
+</ul></td></tr>
+<tr><td align="left" valign="TOP"><P><a name="1000755118"></a>Time (cadena)</P>
+
+
+</td><td align="left" valign="TOP"><P><a name="1000755120"></a>Devuelve un valor Hora que representa la hora, dada un expresi&#243;n de Cadena que especifique una hora entre 0:00:00 (12:00:00 A.M.) y 23:59:59 (11:59:59 P.M.), inclusive.</P>
+
+
+</td></tr>
+<tr><td align="left" valign="TOP"><P><a name="1000755122"></a>Time (fechaHora)</P>
+
+
+</td><td align="left" valign="TOP"><P><a name="1000755124"></a>fechaHora es el valor Fecha/hora.</P>
+
+
+</td></tr>
+<tr><td align="left" valign="TOP"><P><a name="1000755126"></a>Time (hora, min, seg)</P>
+
+
+</td><td align="left" valign="TOP"><ul type="disc"><a name="1000755128"></a><li>Hora es un n&#250;mero entero que representa la hora del d&#237;a.
+<a name="1000755129"></a><li>Min es un n&#250;mero entero que representa un minuto.
+<a name="1000755130"></a><li>Seg es un n&#250;mero entero que representa un segundo.
+</ul></td></tr>
+
+</Table></p>
+<a name="1000686647"></a><h5>Devuelve </h5><p><a name="1000686648"></a>TimeValue</p><a name="1000686649"></a><h5>Acci&#243;n</h5><p><a name="1000686650"></a>Crea un valor Hora a partir de la informaci&#243;n proporcionada.  </p><a name="1000686651"></a><h5>Uso(s) t&#237;pico(s)</h5><p><a name="1000686652"></a>Use esta funci&#243;n siempre que necesite trabajar con un valor Hora que se obtenga del valor Fecha/hora o de elementos individuales de hora (es decir, hora, minuto, segundo).</p><a name="1000686653"></a><h5>Ejemplo(s)</h5><p><a name="1000686654"></a>Los siguientes ejemplos son aplicables para la sintaxis Crystal:</p><p><code><a name="1000686655"></a>Time(.2) y Time (1.2)</code></p><p class="example"><a name="1000686656"></a>Ambas devuelven  4:48:00 AM</p><p><code><a name="1000686657"></a>Time(-.2) </code></p><p class="example"><a name="1000686658"></a>Devuelve 7:12:00 PM</p><p><code><a name="1000686659"></a>Time("3:05pm") </code></p><p class="example"><a name="1000686660"></a>Devuelve 3:05:00 PM</p><p><code><a name="1000686661"></a>Time(DateTime(1996, 1, 1, 12, 10, 10) </code></p><p class="example"><a name="1000686662"></a>Devuelve 12:10:10.</p><p><code><a name="1000686663"></a>Time(10, 20, 22) </code></p><p class="example"><a name="1000686664"></a>Devuelve 10:20:22.</p><a name="1000686665"></a><h6>Temas relacionados</h6><p><a name="1000690061"></a><a href="Functions110.html#1000645674">TimeValue</a></p>
+<hr><br>
+
+<script  language="JavaScript"><!--
+
+var prev = "Functions106.html";
+var next = "Functions108.html";
+
+function setTopicID() { 
+      var number = "1000686634"; 
+      return number; 
+}
+
+// --></script>
+
+
+
+
+<SCRIPT>
+
+if (!window.parent.toc && navigator.appName == "Netscape") {
+
+   document.writeln ('<TABLE ALIGN="left" border="0" cellspacing="0" cellpadding="10">');
+   document.writeln ('<TR>');
+   document.write ('<TD ALIGN="left">');
+
+   if (prev != "crw_spTOC.hhc") {
+      document.writeln ('<A HREF="' + prev + '">');
+      document.writeln ('<IMG SRC="prevpage.gif" HEIGHT=17 BORDER=0 ALT="Página anterior"></A>');
+   } else {
+//   window.alert ('no previous page');
+   }
+
+   if (next != "crw_spIX.hhk") {
+      document.writeln ('<A HREF="' + next + '">');
+      document.writeln ('<IMG SRC="nextpage.gif" HEIGHT=17 BORDER=0 ALT="Página siguiente"></A>');
+   } else {
+//   window.alert ('no next page');
+   }
+   document.writeln ('</TD><TD ALIGN="left">');
+   document.writeln ('<A HREF="frameset.htm?TOC">');
+   document.writeln ('<IMG SRC="showtoc.gif" HEIGHT=17 BORDER=0 ALT="Haga clic para ver el contenido"></A></TD>');
+   document.writeln ('<TD ALIGN="left">');
+   document.writeln ('<A HREF="frameset.htm?IDX">');
+   document.writeln ('<IMG SRC="showix.gif" HEIGHT=17 BORDER=0 ALT="Haga clic para ver el índice"></A></TD>');
+   document.writeln ('</TD>');
+   document.writeln ('</TR>');
+   document.writeln ('</TABLE>');
+
+}
+
+</SCRIPT>
+<table align="right" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td align="right"><font size="1">Seagate Software, Inc.<br>
+    <a href="http://www.seagatesoftware.com">http://www.seagatesoftware.com</a><br>
+    Envíe sus comentarios a:<br>
+    <a href="mailto:techpubs@seagatesoftware.com">techpubs@seagatesoftware.com</a><br>
+    </font></td>
+  </tr>
+</table>
+</body>
+</html>
+
+

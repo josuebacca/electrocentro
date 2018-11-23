@@ -1,0 +1,156 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+
+<html>
+<head>
+<title>WeekToDateFromSun</title>
+
+<link REL=STYLESHEET TYPE="text/css" HREF="seagate.css">
+
+<!--
+                 ***********************************
+                 * Seagate Software copyright 1999 *
+                 ***********************************
+
+                      Template version: 5.1
+-->
+
+
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" link="#0000FF" vlink="#0000FF" alink="#800080">
+
+
+ 
+<a name="1000553928"></a><h3 class="newpage"> WeekToDateFromSun</h3>
+<p><a name="1000693397"></a>Sintaxis b&#225;sica y Crystal.</p><a name="1000553931"></a><h5>Devuelve </h5><p><a name="1000553932"></a>Nada</p><a name="1000553933"></a><h5>Acci&#243;n</h5><p><a name="1000553934"></a>Especifica un rango de valores de fecha que incluye todos los d&#237;as del &#250;ltimo domingo a hoy (incluyendo hoy).</p><a name="1000553935"></a><h5>Ejemplo(s)</h5><p><a name="1000553936"></a>Los siguientes ejemplos son aplicables para la sintaxis Crystal:</p><p class="code"><a name="1000553938"></a>If {pedidos.FECHA DEL PEDIDO}en WeekToDateFromSun Then
+<br><a name="1000735558"></a>&nbsp;&nbsp;&nbsp;&nbsp;{pedidos.MONTO DEL PEDIDO}
+<br><a name="1000735563"></a>Else
+<br><a name="1000735596"></a>&nbsp;&nbsp;&nbsp;&nbsp;0
+</p><p class="indent"><a name="1000553939"></a>Devuelve el Monto si la fecha cae dentro del rango del &#250;ltimo Domingo a Hoy (incluyendo hoy). La siguiente tabla identifica la primera y la &#250;ltima fecha incluida en el rango de fechas si hoy es igual a 04/13/95.</p><p><a name="1000553977"></a> <Table Border="1">
+<tr><td align="left" valign="TOP"><a name="1000553942"></a>Si hoy = 04/13/95
+
+</td><td align="left" valign="TOP"><a name="1000553944"></a>{pedidos.FECHA DEL 
+PEDIDO}
+
+</td><td align="left" valign="TOP"><a name="1000553946"></a>{pedidos.MONTO DEL 
+PEDIDO}
+
+</td></tr>
+<tr><td align="left" valign="TOP"><P><a name="1000553948"></a>fuera de rango<br>(S&#225;bado previo)</P>
+
+
+</td><td align="left" valign="TOP"><P><a name="1000553950"></a>04/08/95</P>
+
+
+</td><td align="left" valign="TOP"><P><a name="1000553952"></a>0</P>
+
+
+</td></tr>
+<tr><td align="left" valign="TOP"><P><a name="1000553954"></a>primera fecha incluida<br>(Domingo previo)</P>
+
+
+</td><td align="left" valign="TOP"><P><a name="1000553956"></a>04/09/95</P>
+
+
+</td><td align="left" valign="TOP"><P><a name="1000553958"></a>1252.24</P>
+
+
+</td></tr>
+<tr><td align="left" valign="TOP"><P><br></P>
+
+
+</td><td align="left" valign="TOP"><P><a name="1000553962"></a>04/11/95</P>
+
+
+</td><td align="left" valign="TOP"><P><a name="1000553964"></a>1597.87</P>
+
+
+</td></tr>
+<tr><td align="left" valign="TOP"><P><br></P>
+
+
+</td><td align="left" valign="TOP"><P><a name="1000553968"></a>04/12/95</P>
+
+
+</td><td align="left" valign="TOP"><P><a name="1000553970"></a>2546.35</P>
+
+
+</td></tr>
+<tr><td align="left" valign="TOP"><P><a name="1000553972"></a>&#250;ltima fecha incluida</P>
+
+
+</td><td align="left" valign="TOP"><P><a name="1000553974"></a>04/13/95</P>
+
+
+</td><td align="left" valign="TOP"><P><a name="1000553976"></a>5462.21</P>
+
+
+</td></tr>
+
+</Table></p>
+<p><a name="1000675528"></a><font color="darkblue"><b>Nota:   &nbsp;&nbsp;&nbsp;</b></font>Si quiere basar el rango de fechas en una fecha distinta a la fecha de hoy, debe de cambiar la fecha o v&#237;a la opci&#243;n Fecha/Hora en el Panel de Control de Windows o cambiar la fecha de impresi&#243;n del informe v&#237;a el comando Establecer fecha de impresi&#243;n en el men&#250; Informe.</p>
+
+<hr><br>
+
+<script  language="JavaScript"><!--
+
+var prev = "Functions132.html";
+var next = "Functions134.html";
+
+function setTopicID() { 
+      var number = "1000553928"; 
+      return number; 
+}
+
+// --></script>
+
+
+
+
+<SCRIPT>
+
+if (!window.parent.toc && navigator.appName == "Netscape") {
+
+   document.writeln ('<TABLE ALIGN="left" border="0" cellspacing="0" cellpadding="10">');
+   document.writeln ('<TR>');
+   document.write ('<TD ALIGN="left">');
+
+   if (prev != "crw_spTOC.hhc") {
+      document.writeln ('<A HREF="' + prev + '">');
+      document.writeln ('<IMG SRC="prevpage.gif" HEIGHT=17 BORDER=0 ALT="Página anterior"></A>');
+   } else {
+//   window.alert ('no previous page');
+   }
+
+   if (next != "crw_spIX.hhk") {
+      document.writeln ('<A HREF="' + next + '">');
+      document.writeln ('<IMG SRC="nextpage.gif" HEIGHT=17 BORDER=0 ALT="Página siguiente"></A>');
+   } else {
+//   window.alert ('no next page');
+   }
+   document.writeln ('</TD><TD ALIGN="left">');
+   document.writeln ('<A HREF="frameset.htm?TOC">');
+   document.writeln ('<IMG SRC="showtoc.gif" HEIGHT=17 BORDER=0 ALT="Haga clic para ver el contenido"></A></TD>');
+   document.writeln ('<TD ALIGN="left">');
+   document.writeln ('<A HREF="frameset.htm?IDX">');
+   document.writeln ('<IMG SRC="showix.gif" HEIGHT=17 BORDER=0 ALT="Haga clic para ver el índice"></A></TD>');
+   document.writeln ('</TD>');
+   document.writeln ('</TR>');
+   document.writeln ('</TABLE>');
+
+}
+
+</SCRIPT>
+<table align="right" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td align="right"><font size="1">Seagate Software, Inc.<br>
+    <a href="http://www.seagatesoftware.com">http://www.seagatesoftware.com</a><br>
+    Envíe sus comentarios a:<br>
+    <a href="mailto:techpubs@seagatesoftware.com">techpubs@seagatesoftware.com</a><br>
+    </font></td>
+  </tr>
+</table>
+</body>
+</html>
+
+

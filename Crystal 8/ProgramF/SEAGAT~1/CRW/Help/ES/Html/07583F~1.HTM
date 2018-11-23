@@ -1,0 +1,88 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+
+<html>
+<head>
+<title>Para Seleccionar Registros Utilizando Cadenas de Caracteres</title>
+
+<link REL=STYLESHEET TYPE="text/css" HREF="seagate.css">
+
+<!--
+                 ***********************************
+                 * Seagate Software copyright 1999 *
+                 ***********************************
+
+                      Template version: 5.1
+-->
+
+
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" link="#0000FF" vlink="#0000FF" alink="#800080">
+
+
+ 
+<a name="54327"></a><h4 class="newpage"> Para Seleccionar Registros Utilizando Cadenas de Caracteres</h4><p><code><a name="54328"></a>{archivo.CAMPO} startswith "C"</code></p><p class="indent"><a name="54329"></a>Selecciona aquellos registros en los cuales, el valor en el campo {archivo.CAMPO} comienza con el car&#225;cter "C" (incluye valores como CyclePath, Corp. y Cyclist's Trail Co., excluye valores como Bob's Bikes Ltd., y Feel Great Bikes, Inc.). </p><p><code><a name="54330"></a>not ({archivo.CAMPO}startswith "C")</code></p><p class="indent"><a name="54331"></a>Selecciona aquellos registros en los cuales, el valor en el campo {archivo.CAMPO} no comienza con el car&#225;cter "C" (incluye valores como Bob's Bikes Ltd., and Feel Great Bikes, Inc., excluye valores como CyclePath, Corp. y Cyclist's Trail Co.).</p><p><code><a name="54332"></a>"999" in {archivo.CAMPO}[3 to 5]</code></p><p class="indent"><a name="54333"></a>Selecciona aquellos registros en los cuales, del tercero al quinto d&#237;gito del campo {archivo.CAMPO} es igual a"999"(incluye valores como 10999, 70999, y 00999, excluye valores como 99901 y 19990).</p><p><code><a name="54334"></a>"Cycle" in {archivo.CAMPO}</code></p><p class="indent"><a name="54335"></a>Selecciona aquellos registros en los cuales el valor en el campo {archivo.CAMPO} contiene la cadena "Cycle" (incluye valores como CyclePath Corp. y CycleSporin, Inc., excluye valores como Cyclist's Trail Co. y Feel Great Bikes, Inc.).</p>
+<hr><br>
+
+<script  language="JavaScript"><!--
+
+var prev = "07_recordgroupsel7.html";
+var next = "07_recordgroupsel9.html";
+
+function setTopicID() { 
+      var number = "54327"; 
+      return number; 
+}
+
+// --></script>
+
+
+
+
+<SCRIPT>
+
+if (!window.parent.toc && navigator.appName == "Netscape") {
+
+   document.writeln ('<TABLE ALIGN="left" border="0" cellspacing="0" cellpadding="10">');
+   document.writeln ('<TR>');
+   document.write ('<TD ALIGN="left">');
+
+   if (prev != "crw_spTOC.hhc") {
+      document.writeln ('<A HREF="' + prev + '">');
+      document.writeln ('<IMG SRC="prevpage.gif" HEIGHT=17 BORDER=0 ALT="Página anterior"></A>');
+   } else {
+//   window.alert ('no previous page');
+   }
+
+   if (next != "crw_spIX.hhk") {
+      document.writeln ('<A HREF="' + next + '">');
+      document.writeln ('<IMG SRC="nextpage.gif" HEIGHT=17 BORDER=0 ALT="Página siguiente"></A>');
+   } else {
+//   window.alert ('no next page');
+   }
+   document.writeln ('</TD><TD ALIGN="left">');
+   document.writeln ('<A HREF="frameset.htm?TOC">');
+   document.writeln ('<IMG SRC="showtoc.gif" HEIGHT=17 BORDER=0 ALT="Haga clic para ver el contenido"></A></TD>');
+   document.writeln ('<TD ALIGN="left">');
+   document.writeln ('<A HREF="frameset.htm?IDX">');
+   document.writeln ('<IMG SRC="showix.gif" HEIGHT=17 BORDER=0 ALT="Haga clic para ver el índice"></A></TD>');
+   document.writeln ('</TD>');
+   document.writeln ('</TR>');
+   document.writeln ('</TABLE>');
+
+}
+
+</SCRIPT>
+<table align="right" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td align="right"><font size="1">Seagate Software, Inc.<br>
+    <a href="http://www.seagatesoftware.com">http://www.seagatesoftware.com</a><br>
+    Envíe sus comentarios a:<br>
+    <a href="mailto:techpubs@seagatesoftware.com">techpubs@seagatesoftware.com</a><br>
+    </font></td>
+  </tr>
+</table>
+</body>
+</html>
+
+

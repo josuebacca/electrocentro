@@ -1,0 +1,112 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+
+<html>
+<head>
+
+<title>Para definir el ordenamiento usando campos de par&#225;metro</title>
+
+<link REL=STYLESHEET TYPE="text/css" HREF="seagate.css">
+
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" link="#0000FF" vlink="#0000FF" alink="#800080">
+
+
+ 
+<a name="47537"></a><h4 class="newpage"> Para definir el ordenamiento usando campos de par&#225;metro</h4><p><a name="47538"></a>Para establecer el criterio de ordenamiento usando campos de par&#225;metro, necesita crear una f&#243;rmula que incluya un campo de par&#225;metro para luego ordenar con esa f&#243;rmula. Por ejemplo, asuma que usted tiene un informe de lista de clientes basado en la tabla Cliente. Para cada cliente, usted muestra el Nombre de Cliente, Ciudad, Regi&#243;n, Pa&#237;s y N&#250;mero Telef&#243;nico. Usted puede ordenar el informe por Pa&#237;s, o Regi&#243;n, o Ciudad dependiendo de sus necesidades en el momento. Para hacer esto:</p><ol>
+<a name="47539"></a><li value="1&nbsp;&nbsp;&nbsp;&nbsp;">Establezca un campo de par&#225;metro y n&#243;mbrelo "SortField" .
+<a name="47540"></a><li value="2&nbsp;&nbsp;&nbsp;&nbsp;">En el cuadro <kbd>Texto solicitado</kbd><EM>,</EM> escriba un mensaje similar a:
+<a name="47541"></a><p class="indent"><code>Escriba R para ordenar por Regi&#243;n o C para ordenar por Ciudad, de otra manera los datos ser&#225;n ordenados por Pa&#237;s.</code></p><a name="47542"></a><li value="3&nbsp;&nbsp;&nbsp;&nbsp;">Seleccione Cadena de la lista desplegable <kbd>Tipo de valor</kbd>.
+<a name="47543"></a><li value="4&nbsp;&nbsp;&nbsp;&nbsp;">Si quisiera, podr&#237;a limitar el n&#250;mero de caracteres que el usuario puede introducir a uno. Para hacerlo, active la casilla de verificaci&#243;n <kbd>L&#237;mite de largo</kbd><EM> </EM>y escriba el n&#250;mero 1 en el cuadro de texto <kbd>Largo Max.</kbd> Ahora, el campo de par&#225;metro s&#243;lo aceptar&#225; valores de un car&#225;cter. El campo aceptar&#225; "C" como valor, pero no "Ciudad".
+<a name="47544"></a><li value="5&nbsp;&nbsp;&nbsp;&nbsp;">Origine una f&#243;rmula similar a &#233;sta y ll&#225;mela "Sort" (Ordenar):
+<p class="code"><a name="47545"></a>If {?SortField} = "C" Then <br>&nbsp;&nbsp;&nbsp;&nbsp;{cliente.CIUDAD}<br>Else<br>&nbsp;&nbsp;&nbsp;&nbsp;If {?SortField} = "R" Then<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{cliente.REGION}<br>&nbsp;&nbsp;&nbsp;&nbsp;Else<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{cliente.PAIS}<br><p class="indent"><a name="49881"></a>&#171;Esta f&#243;rmula pide un valor para el campo de par&#225;metro {?SortField}. Si usted escribe "C", la f&#243;rmula retorna el campo Ciudad. Si escribe "R" retorna el campo Regi&#243;n. Si escribe cualquier otra cosa, o no escribe nada, la f&#243;rmula retorna el campo Pa&#237;s.</p><a name="49890"></a><li value="6&nbsp;&nbsp;&nbsp;&nbsp;"><img src="images/Bt_secex.gif">
+
+
+Coloque la f&#243;rmula en la secci&#243;n Encabezado de Informe y active la opci&#243;n <kbd>Suprimir</kbd> en el Asistente de Selecci&#243;n para que no se imprima. 
+<a name="47560"></a><li value="7&nbsp;&nbsp;&nbsp;&nbsp;"><img src="images/Bt_sordr.gif">
+
+
+Haga clic en el bot&#243;n <kbd>Ordenar registros</kbd> en la barra de herramientas est&#225;ndar.
+<a name="47561"></a><li value="8&nbsp;&nbsp;&nbsp;&nbsp;">Seleccione la f&#243;rmula.
+</ol>
+<p><a name="49578"></a>Ahora cuando usted elabore el informe, el programa le pedir&#225; un campo de ordenamiento, la f&#243;rmula retornar&#225; un valor basado en su selecci&#243;n y el procedimiento de ordenamiento usar&#225; ese valor como su campo de ordenamiento.</p><a name="47606"></a><h6>Para definir el formato y tipo de entrada usando la m&#225;scara de edici&#243;n</h6><ol>
+<a name="46983"></a><li value="1&nbsp;&nbsp;&nbsp;&nbsp;">En el men&#250;<strong> Insertar</strong>, haga clic en el <strong>Campo de par&#225;metro</strong>.
+<a name="46984"></a><li value="2&nbsp;&nbsp;&nbsp;&nbsp;">Haga clic en <strong>Nuevo</strong>.
+<a name="46985"></a><li value="3&nbsp;&nbsp;&nbsp;&nbsp;">Ingrese el nombre, texto de confirmaci&#243;n y tipo de valor.
+<a name="47612"></a><li value="4&nbsp;&nbsp;&nbsp;&nbsp;">Haga clic en <strong>Establecer valores predeterminados</strong>.
+<p class="indent"><a name="48096"></a><font color="darkblue"><b>Nota:   &nbsp;&nbsp;&nbsp;</b></font>Si usted especifica limitaciones de rango despu&#233;s de seleccionar una tabla y un campo predeterminado, la lista Valores a ser agregados ser&#225; modificada de modo que aparezcan s&#243;lo aquellos valores comprendidos dentro del rango.</p>
+<a name="47622"></a><li value="5&nbsp;&nbsp;&nbsp;&nbsp;">Para un campo de par&#225;metro de cadena, usted puede elegir introducir una M&#225;scara de Edici&#243;n en el cuadro de texto<kbd> </kbd>Editar m&#225;scara, en lugar de especificar un rango. La m&#225;scara puede ser cualquiera de un conjunto de caracteres m&#225;scara usados para restringir los valores que usted puede introducir como valores de par&#225;metro (la m&#225;scara de edici&#243;n tambi&#233;n limita los valores que puede introducir como valores solicitados predeterminados). 
+<p class="indent"><a name="47623"></a>Usted puede introducir cualquiera de los siguientes caracteres (m&#225;scara) o cualquier combinaci&#243;n de ellos:</p><ul type="disc"><ul type="disc"><a name="47624"></a><li>"A" (permite caracteres alfanum&#233;ricos y requiere la entrada de un car&#225;cter en el valor de par&#225;metro)<a name="47625"></a><li>"a" (permite un car&#225;cter alfanum&#233;rico y no requiere la entrada de un car&#225;cter en el valor de par&#225;metro)<a name="47626"></a><li>"0" (permite un d&#237;gito (del 0 al 9) y requiere la entrada de un car&#225;cter en el valor de par&#225;metro)<a name="47627"></a><li>"9" (permite un d&#237;gito o un espacio y no requiere la entrada de un car&#225;cter en el valor de par&#225;metro)<a name="47628"></a><li>"#" (permite un d&#237;gito, espacio o signo m&#225;s o menos y no requiere la entrada de un car&#225;cter en el valor de par&#225;metro)<a name="47629"></a><li>"L" (permite una letra (de la A a la Z) y requiere la entrada de un car&#225;cter en el valor de par&#225;metro)<a name="47630"></a><li>"?" (permite una letra y no requiere la entrada de un car&#225;cter en el valor de par&#225;metro)<a name="47631"></a><li>"&amp;" (permite cualquier car&#225;cter o espacio y requiere la entrada de un car&#225;cter en el valor de par&#225;metro)<a name="47632"></a><li>"C" (permite cualquier car&#225;cter o espacio y no requiere la entrada de un car&#225;cter en el valor de par&#225;metro)<a name="47633"></a><li>".  ,  :  ;  -  /" (caracteres separadores)<a name="47634"></a><li>La inserci&#243;n de caracteres separadores en una m&#225;scara de edici&#243;n es algo similar a codificar el formato de un campo de par&#225;metro. Cuando el campo es ubicado en el informe, el car&#225;cter separador aparece en el marco del campo, como esto: LLLL/0000. Este ejemplo muestra una m&#225;scara de edici&#243;n que requiere cuatro letras seguidas por cuatro n&#250;meros.<a name="47635"></a><li>"&lt;" (hace que los caracteres subsiguientes se conviertan a min&#250;sculas)<a name="47636"></a><li>"&gt;" (hace que los caracteres subsiguientes se conviertan a may&#250;sculas)<a name="47637"></a><li>"\" (hace que el car&#225;cter siguiente sea mostrado literalmente. Por ejemplo, la m&#225;scara de edici&#243;n "\A" mostrar&#225; un valor de par&#225;metro de "A". Si la m&#225;scara de edici&#243;n es "00\A00," entonces un valor de par&#225;metro v&#225;lido consistir&#237;a de dos d&#237;gitos, la letra "A" y luego dos d&#237;gitos m&#225;s.)<a name="47638"></a><li>"Contrase&#241;a". Si usted establece la m&#225;scara de edici&#243;n a "Contrase&#241;a", puede crear f&#243;rmulas condicionales especificando que ciertas secciones del informe se vuelvan visibles solamente cuando se introduzcan ciertas contrase&#241;as de usuarios.<p class="indent"><a name="47639"></a><font color="darkblue"><b>Nota:   &nbsp;&nbsp;&nbsp;</b></font>Algunos de los caracteres para m&#225;scara de edici&#243;n requieren que usted introduzca un car&#225;cter en su lugar (al introducir un valor de par&#225;metro), mientras que otros le permiten dejar un espacio, si es necesario. Por ejemplo, si la m&#225;scara de edici&#243;n es 000099, usted puede introducir un valor de par&#225;metro con cuatro, cinco o seis d&#237;gitos, ya que el car&#225;cter '9' no requiere la entrada de un car&#225;cter. Sin embargo, ya que '0' si requiere tal entrada, usted no podr&#237;a introducir un valor de par&#225;metro con menos de cuatro d&#237;gitos.</p>
+<p class="indent"><a name="48104"></a><font color="darkblue"><b>Nota:   &nbsp;&nbsp;&nbsp;</b></font>Cuando usted introduce una m&#225;scara de edici&#243;n, los cuadros de texto para el rango se vuelven inactivos.</p>
+</ul></ul><a name="47649"></a><li value="6&nbsp;&nbsp;&nbsp;&nbsp;">Introduzca el valor solicitado predeterminado agregando o seleccionando valores de la lista "Seleccionar o introducir valor a agregar" y usando los botones <kbd>Agregar</kbd><kbd> </kbd>(&gt;) o<kbd> </kbd><kbd>Agregar todo </kbd>(&gt;&gt;) para agregar estos valores a la lista <kbd>Valores predeterminados</kbd>. Usted puede usar los botones <kbd>Quitar</kbd> (&lt;) o <kbd>Quitar todo </kbd>(&lt;&lt;) para quitar valores de la lista. El programa llenar&#225; una lista desplegable en el cuadro de di&#225;logo Introducir Valores de Par&#225;metro con el valor solicitado predeterminado que usted especific&#243;.
+<a name="47659"></a><li value="7&nbsp;&nbsp;&nbsp;&nbsp;">Cuando usted tiene m&#225;s de un elemento en la lista <kbd>Valores predeterminados</kbd>, aparece la casilla de verificaci&#243;n <kbd>Permitir edici&#243;n de valores predeterminados</kbd><EM>.</EM> Esta casilla es activada predeterminadamente para especificar que usted puede editar o introducir nuevos valores cuando el programa le solicita valores de par&#225;metro. Active o desactive esta casilla de acuerdo a sus necesidades.
+<p class="indent"><a name="47740"></a><font color="darkblue"><b>Nota:   &nbsp;&nbsp;&nbsp;</b></font>Esta casilla de verificaci&#243;n est&#225; inactiva hasta que ingrese por lo menos dos valores de solicitud predeterminados.</p>
+<a name="47117"></a><li value="8&nbsp;&nbsp;&nbsp;&nbsp;">Haga clic en <strong>Aceptar</strong>.
+<p class="indent"><a name="47118"></a>Aparece el cuadro de di&#225;logo Crear campo de par&#225;metro.</p><a name="47119"></a><li value="9&nbsp;&nbsp;&nbsp;&nbsp;">Haga clic en <strong>Aceptar</strong>.
+<p class="indent"><a name="47120"></a>El Explorador de campos aparece con el par&#225;metro seleccionado.</p><a name="47989"></a><li value="10&nbsp;&nbsp;&nbsp;&nbsp;">Arrastre y suelte el par&#225;metro en el informe.
+</ol>
+<p><a name="52733"></a></p>
+<hr><br>
+
+<script  language="JavaScript"><!--
+
+var prev = "22_param13.html";
+var next = "23_subreports.html";
+
+function setTopicID() { 
+      var number = "47537"; 
+      return number; 
+}
+
+// --></script>
+
+
+
+
+<SCRIPT>
+
+if (!window.parent.toc && navigator.appName == "Netscape") {
+
+   document.writeln ('<TABLE ALIGN="left" border="0" cellspacing="0" cellpadding="10">');
+   document.writeln ('<TR>');
+   document.write ('<TD ALIGN="left">');
+
+   if (prev != "crw_spTOC.hhc") {
+      document.writeln ('<A HREF="' + prev + '">');
+      document.writeln ('<IMG SRC="prevpage.gif" HEIGHT=17 BORDER=0 ALT="Página anterior"></A>');
+   } else {
+//   window.alert ('no previous page');
+   }
+
+   if (next != "crw_spIX.hhk") {
+      document.writeln ('<A HREF="' + next + '">');
+      document.writeln ('<IMG SRC="nextpage.gif" HEIGHT=17 BORDER=0 ALT="Página siguiente"></A>');
+   } else {
+//   window.alert ('no next page');
+   }
+   document.writeln ('</TD><TD ALIGN="left">');
+   document.writeln ('<A HREF="frameset.htm?TOC">');
+   document.writeln ('<IMG SRC="showtoc.gif" HEIGHT=17 BORDER=0 ALT="Haga clic para ver el contenido"></A></TD>');
+   document.writeln ('<TD ALIGN="left">');
+   document.writeln ('<A HREF="frameset.htm?IDX">');
+   document.writeln ('<IMG SRC="showix.gif" HEIGHT=17 BORDER=0 ALT="Haga clic para ver el índice"></A></TD>');
+   document.writeln ('</TD>');
+   document.writeln ('</TR>');
+   document.writeln ('</TABLE>');
+
+}
+
+</SCRIPT>
+<table align="right" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td align="right"><font size="1">Seagate Software, Inc.<br>
+    <a href="http://www.seagatesoftware.com">http://www.seagatesoftware.com</a><br>
+    Envíe sus comentarios a:<br>
+    <a href="mailto:techpubs@seagatesoftware.com">techpubs@seagatesoftware.com</a><br>
+    </font></td>
+  </tr>
+</table>
+</body>
+</html>
+
+

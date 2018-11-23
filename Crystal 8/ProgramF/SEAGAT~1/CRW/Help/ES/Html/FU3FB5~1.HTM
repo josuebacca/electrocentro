@@ -1,0 +1,124 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+
+<html>
+<head>
+<title>CDate</title>
+
+<link REL=STYLESHEET TYPE="text/css" HREF="seagate.css">
+
+<!--
+                 ***********************************
+                 * Seagate Software copyright 1999 *
+                 ***********************************
+
+                      Template version: 5.1
+-->
+
+
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" link="#0000FF" vlink="#0000FF" alink="#800080">
+
+
+ 
+<a name="1000568875"></a><h3 class="newpage"> CDate</h3>
+<p><a name="1000648932"></a>Sintaxis b&#225;sica y Crystal.</p><p><a name="1000706226"></a>Las funciones <a href="Functions109.html#1000531915">DateValue</a> y <a href="Functions106.html#1000821699">Date</a> son equivalentes a CDate. Sin embargo, Date s&#243;lo puede usarse en sintaxis Crystal, ya que en sintaxis b&#225;sica es un nombre tipo.</p><a name="1000201875"></a><h5>Sobrecargas</h5><ul type="disc"><a name="1000201876"></a><li>CDate (n&#250;mero) 
+<a name="1000201877"></a><li>CDate (cadena) 
+<a name="1000201878"></a><li>CDate (fechaHora)
+<a name="1000201879"></a><li>CDate (AAAA, MM, DD)
+</ul><a name="1000751168"></a><h5>Argumentos</h5><p><a name="1000751188"></a> <Table Border="1">
+<tr><td align="left" valign="TOP"><P><a name="1000751171"></a>CDate (n&#250;mero)</P>
+
+
+</td><td align="left" valign="TOP"><P><a name="1000751173"></a>N&#250;mero es un valor que representa el n&#250;mero de d&#237;as a contar del 30 de diciembre de 1899.   Puede ser positivo o negativo, y se trunca si es fraccional.</P>
+
+
+</td></tr>
+<tr><td align="left" valign="TOP"><P><a name="1000751175"></a>CDate (cadena)</P>
+
+
+</td><td align="left" valign="TOP"><P><a name="1000751340"></a>cadena es una cadena de texto que representa una fecha; por ejemplo: "20 de septiembre de 1999"; la cadena admite diversos formatos</P>
+
+
+</td></tr>
+<tr><td align="left" valign="TOP"><P><a name="1000751179"></a>CDate (fechaHora)</P>
+
+
+</td><td align="left" valign="TOP"><P><a name="1000751181"></a>fechaHora es un valor Fecha/hora.</P>
+
+
+</td></tr>
+<tr><td align="left" valign="TOP"><P><a name="1000751183"></a>CDate (AA,MM,DD)</P>
+
+
+</td><td align="left" valign="TOP"><ul type="disc"><a name="1000751185"></a><li>a&#241;o es un n&#250;mero entero que representa un a&#241;o calendario; ejemplo: 1996.
+<a name="1000751186"></a><li>MM es un n&#250;mero entero que representa un mes; por ejemplo: 12 por diciembre.
+<a name="1000751187"></a><li>d&#237;a es un n&#250;mero entero que representa un d&#237;a del mes; ejemplo: 10.
+</ul></td></tr>
+
+</Table></p>
+<a name="1000201891"></a><h5>Devuelve </h5><p><a name="1000201892"></a>Valor de fecha</p><a name="1000201893"></a><h5>Acci&#243;n</h5><p><a name="1000201894"></a><strong>CDate (n&#250;mero)</strong> convierte y devuelve una Fecha dada en un n&#250;mero, que<EM> </EM>es el n&#250;mero de d&#237;as a contar del 30 de diciembre de 1899.   </p><p><a name="1000201896"></a><strong>CDate (cadena) </strong>convierte y devuelve una Fecha dada una cadena.</p><p><a name="1000201898"></a><strong>CDate (fechaHora)</strong> convierte y devuelve una Fecha dado un valor Fecha/hora.</p><p><a name="1000201900"></a><strong>CDate (AAAA, MM, DD)</strong> usa los argumentos dados para crear un valor de Fecha.</p><a name="1000201901"></a><h5>Ejemplo(s)</h5><p><a name="1000201902"></a>Los siguientes ejemplos son aplicables a las sintaxis b&#225;sica y Crystal:</p><p><code><a name="1000201903"></a>CDate ("dic. 31, 1999") </code></p><p class="example"><a name="1000201904"></a>Devuelve el valor Fecha para dic.  31, 1999.</p><p><code><a name="1000201905"></a>CDate (50) </code></p><p class="example"><a name="1000201906"></a>Devuelve el valor Fecha del 18 de febrero de 1900.  </p><p><code><a name="1000201907"></a>CDate (#oct. 20, 1999 12:02pm#) </code></p><p class="example"><a name="1000201908"></a>Devuelve el valor Fecha del 20 de octubre de 1999.</p><p><code><a name="1000201909"></a>CDate (1930, 7, 30) </code></p><p class="example"><a name="1000201910"></a>Devuelve el valor Fecha del 30 de julio de 1930.  </p><a name="1000201911"></a><h5>Comentario(s) </h5><p><a name="1000201913"></a>Puede usar la funci&#243;n <a href="Functions116.html#1000540723">IsDate</a> para verificar si un argumento de Cadena puede ser convertido a una Fecha antes de hacer la conversi&#243;n real.  De esta manera, si no puede hacerse la conversi&#243;n, podr&#225; manejar la situaci&#243;n como corresponda. </p><a name="1000706240"></a><h6>Temas relacionados</h6><p><a name="1000201914"></a><a href="Functions112.html#1000535456">DateSerial (a&#241;o, mes, d&#237;a)</a></p>
+<hr><br>
+
+<script  language="JavaScript"><!--
+
+var prev = "Functions161.html";
+var next = "Functions163.html";
+
+function setTopicID() { 
+      var number = "1000568875"; 
+      return number; 
+}
+
+// --></script>
+
+
+
+
+<SCRIPT>
+
+if (!window.parent.toc && navigator.appName == "Netscape") {
+
+   document.writeln ('<TABLE ALIGN="left" border="0" cellspacing="0" cellpadding="10">');
+   document.writeln ('<TR>');
+   document.write ('<TD ALIGN="left">');
+
+   if (prev != "crw_spTOC.hhc") {
+      document.writeln ('<A HREF="' + prev + '">');
+      document.writeln ('<IMG SRC="prevpage.gif" HEIGHT=17 BORDER=0 ALT="Página anterior"></A>');
+   } else {
+//   window.alert ('no previous page');
+   }
+
+   if (next != "crw_spIX.hhk") {
+      document.writeln ('<A HREF="' + next + '">');
+      document.writeln ('<IMG SRC="nextpage.gif" HEIGHT=17 BORDER=0 ALT="Página siguiente"></A>');
+   } else {
+//   window.alert ('no next page');
+   }
+   document.writeln ('</TD><TD ALIGN="left">');
+   document.writeln ('<A HREF="frameset.htm?TOC">');
+   document.writeln ('<IMG SRC="showtoc.gif" HEIGHT=17 BORDER=0 ALT="Haga clic para ver el contenido"></A></TD>');
+   document.writeln ('<TD ALIGN="left">');
+   document.writeln ('<A HREF="frameset.htm?IDX">');
+   document.writeln ('<IMG SRC="showix.gif" HEIGHT=17 BORDER=0 ALT="Haga clic para ver el índice"></A></TD>');
+   document.writeln ('</TD>');
+   document.writeln ('</TR>');
+   document.writeln ('</TABLE>');
+
+}
+
+</SCRIPT>
+<table align="right" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td align="right"><font size="1">Seagate Software, Inc.<br>
+    <a href="http://www.seagatesoftware.com">http://www.seagatesoftware.com</a><br>
+    Envíe sus comentarios a:<br>
+    <a href="mailto:techpubs@seagatesoftware.com">techpubs@seagatesoftware.com</a><br>
+    </font></td>
+  </tr>
+</table>
+</body>
+</html>
+
+

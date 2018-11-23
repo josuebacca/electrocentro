@@ -1,0 +1,108 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+
+<html>
+<head>
+<title>IsDate</title>
+
+<link REL=STYLESHEET TYPE="text/css" HREF="seagate.css">
+
+<!--
+                 ***********************************
+                 * Seagate Software copyright 1999 *
+                 ***********************************
+
+                      Template version: 5.1
+-->
+
+
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" link="#0000FF" vlink="#0000FF" alink="#800080">
+
+
+ 
+<a name="1000540723"></a><h3 class="newpage"> IsDate</h3>
+<p><a name="1000691353"></a>Sintaxis b&#225;sica y Crystal.</p><a name="1000540724"></a><h5>Sobrecargas</h5><ul type="disc"><a name="1000540725"></a><li>IsDate (cadena)
+<a name="1000540726"></a><li>IsDate (n&#250;mero)
+</ul><a name="1000540727"></a><h5>Argumentos</h5><ul type="disc"><a name="1000540728"></a><li>cadena es un valor o expresi&#243;n Cadena a ser probada en cuanto a su convertibilidad a un valor Fecha. Se aceptan diversas formas.
+<a name="1000540729"></a><li>n&#250;mero es un valor o expresi&#243;n N&#250;mero a ser probada en cuanto a su convertibilidad a un valor Fecha. Puede ser positivo, negativo o fraccional.. Se interpreta como un n&#250;mero de d&#237;as a contar del 30 de diciembre de 1899.
+</ul><a name="1000540730"></a><h5>Devuelve </h5><p><a name="1000540731"></a>Valor Booleano (Verdadero o Falso).</p><a name="1000540732"></a><h5>Acci&#243;n</h5><p><a name="1000540733"></a>IsDate devuelve Verdadero si un valor Cadena o Num&#233;rico dado pueden convertirse a un valor Hora v&#225;lido; de lo contrario, devuelve Falso.  Un valor Fecha v&#225;lido es cualquier fecha entre el 1 de enero de 100 y el 31 d diciembre de 9999.</p><a name="1000540734"></a><h5>Uso t&#237;pico</h5><p><a name="1000540735"></a>Si desea convertir un valor Cadena a uno Fecha usando las funciones <a href="Functions162.html#1000568875">CDate</a> o <a href="Functions109.html#1000531915">DateValue</a>, primero use la funci&#243;n IsDate para verificar si la conversi&#243;n podr&#225; hacerse. Examine los ejemplos siguientes.</p><a name="1000540736"></a><h5>Ejemplo(s)</h5><p><a name="1000540737"></a>Los siguientes ejemplos son aplicables a las sintaxis b&#225;sica y Crystal:</p><p><code><a name="1000540738"></a>IsDate ("ene 1, 1999") </code></p><p class="example"><a name="1000540739"></a>Devuelve Verdadero.</p><p><code><a name="1000540740"></a>IsDate (100)</code></p><p class="example"><a name="1000540741"></a>Tambi&#233;n devuelve Verdadero ya que el n&#250;mero 100 se interpreta como 100 d&#237;as a contar de diciembre. 30, 1899, que es el 9 de abril de 1900.</p><p><code><a name="1000540742"></a>IsDate ("feb 29, 1999")</code></p><p class="example"><a name="1000540743"></a>Devuelve Falso ya que 1999 no es a&#241;o bisiesto, por lo que la Cadena no puede convertirse a Fecha.</p><p><a name="1000540745"></a>Suponga que un informe de pedidos se agrupa mensual por la fecha del pedido.   Esta es la f&#243;rmula que devuelve el valor Fecha que se extrae del campo de Cadena GroupName.   Si el informe es un TopN, el campo GroupName puede tener un valor  "Otros". Este no puede convertirse a Fecha, por lo que se usa IsDate para evitar que se genere un error en la llamada a CDate:  </p><p class="code"><a name="1000540746"></a>Sintaxis b&#225;sica Rem
+<br><a name="1000540747"></a>Dim s como cadena
+<br><a name="1000540748"></a>s = GroupName ({pedidos.FECHA DEL PEDIDO}, "mensual")
+<br><a name="1000540749"></a>If IsDate(s) Then
+<br><a name="1000540750"></a>&nbsp;&nbsp;&nbsp;&nbsp;formula = CDate(s)
+<br><a name="1000540751"></a>Else
+<br><a name="1000540752"></a>&nbsp;&nbsp;&nbsp;&nbsp;formula = CDate(0,0,0)
+<br><a name="1000540753"></a>End If
+<br><a name="1000540754"></a>
+<br><a name="1000540755"></a>Sintaxis Crystal
+<br><a name="1000540756"></a>Local StringVar s := GroupName ({pedidos.FECHA DEL PEDIDO}, "mensual");
+<br><a name="1000540757"></a>If IsDate(s) Then
+<br><a name="1000540758"></a>&nbsp;&nbsp;&nbsp;&nbsp;CDate(s)
+<br><a name="1000540759"></a>Else
+<br><a name="1000540760"></a>&nbsp;&nbsp;&nbsp;&nbsp;CDate(0,0,0)
+</p><p class="example"><a name="1000540761"></a>Devuelve el valor Fecha 1 de mayo de 1998 si el valor del campo GroupName es "Mayo - 1998". Devuelve Date nulo (un valor Fecha que no se imprime, si el valor del campo GroupName es "Otros".</p><a name="1000540763"></a><h5>Comentario</h5><p><a name="1000821734"></a>Esta funci&#243;n es similar a la funci&#243;n de Visual Basic del mismo nombre, excepto que trabaja espec&#237;ficamente con el tipo Fecha de Seagate Crystal Report, que s&#243;lo admite valores de fecha.  </p>
+<hr><br>
+
+<script  language="JavaScript"><!--
+
+var prev = "Functions115.html";
+var next = "Functions117.html";
+
+function setTopicID() { 
+      var number = "1000540723"; 
+      return number; 
+}
+
+// --></script>
+
+
+
+
+<SCRIPT>
+
+if (!window.parent.toc && navigator.appName == "Netscape") {
+
+   document.writeln ('<TABLE ALIGN="left" border="0" cellspacing="0" cellpadding="10">');
+   document.writeln ('<TR>');
+   document.write ('<TD ALIGN="left">');
+
+   if (prev != "crw_spTOC.hhc") {
+      document.writeln ('<A HREF="' + prev + '">');
+      document.writeln ('<IMG SRC="prevpage.gif" HEIGHT=17 BORDER=0 ALT="Página anterior"></A>');
+   } else {
+//   window.alert ('no previous page');
+   }
+
+   if (next != "crw_spIX.hhk") {
+      document.writeln ('<A HREF="' + next + '">');
+      document.writeln ('<IMG SRC="nextpage.gif" HEIGHT=17 BORDER=0 ALT="Página siguiente"></A>');
+   } else {
+//   window.alert ('no next page');
+   }
+   document.writeln ('</TD><TD ALIGN="left">');
+   document.writeln ('<A HREF="frameset.htm?TOC">');
+   document.writeln ('<IMG SRC="showtoc.gif" HEIGHT=17 BORDER=0 ALT="Haga clic para ver el contenido"></A></TD>');
+   document.writeln ('<TD ALIGN="left">');
+   document.writeln ('<A HREF="frameset.htm?IDX">');
+   document.writeln ('<IMG SRC="showix.gif" HEIGHT=17 BORDER=0 ALT="Haga clic para ver el índice"></A></TD>');
+   document.writeln ('</TD>');
+   document.writeln ('</TR>');
+   document.writeln ('</TABLE>');
+
+}
+
+</SCRIPT>
+<table align="right" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td align="right"><font size="1">Seagate Software, Inc.<br>
+    <a href="http://www.seagatesoftware.com">http://www.seagatesoftware.com</a><br>
+    Envíe sus comentarios a:<br>
+    <a href="mailto:techpubs@seagatesoftware.com">techpubs@seagatesoftware.com</a><br>
+    </font></td>
+  </tr>
+</table>
+</body>
+</html>
+
+

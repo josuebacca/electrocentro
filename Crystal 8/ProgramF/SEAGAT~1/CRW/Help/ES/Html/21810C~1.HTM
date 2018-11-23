@@ -1,0 +1,103 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+
+<html>
+<head>
+<title>Uso de Exit For</title>
+
+<link REL=STYLESHEET TYPE="text/css" HREF="seagate.css">
+
+<!--
+                 ***********************************
+                 * Seagate Software copyright 1999 *
+                 ***********************************
+
+                      Template version: 5.1
+-->
+
+
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" link="#0000FF" vlink="#0000FF" alink="#800080">
+
+
+ 
+<a name="147615"></a><h4 class="newpage"> Uso de Exit For</h4><p><a name="147617"></a>Es posible salir de un ciclo For al usar Exit For. El siguiente ejemplo busca los nombres de matriz global para el nombre de "Federico". Si lo encuentra, devuelve el &#237;ndice del nombre de la matriz. De lo contrario devuelve -1. Por ejemplo, si la matriz de nombre es:</p><p><code><a name="147618"></a>["Francisco", "Elena", "Federico", "Linda"]</code></p><p><a name="147619"></a>Entonces la f&#243;rmula devuelve el valor 3.</p><p><code><a name="147621"></a>Global StringVar Array nombres;</code></p><PRE><a name="147623"></a>//La matriz de nombres se ha iniciado y llenado
+<a name="147624"></a>//en otras f&#243;rmulas
+<a name="147625"></a>Local NumberVar i;
+<a name="147626"></a>Local NumberVar resultado := -1;
+<a name="147628"></a>//La funci&#243;n UBound devuelve el tama&#241;o del argumento
+<a name="147629"></a>//de su matriz
+<a name="147630"></a>For i := 1 to UBound (nombres) Do
+<a name="147631"></a>(
+<a name="147632"></a>   If nombres [i] = "Federico" Then
+<a name="147633"></a>   (
+<a name="147634"></a>      resultado := i;
+<a name="147635"></a>      Exit For
+<a name="147636"></a>   )
+<a name="147637"></a>);
+<a name="147638"></a>resultado
+</PRE><p><a name="147640"></a>Cuando se considera como expresi&#243;n, el ciclo For siempre devuelve el valor booleano Verdadero. Por eso casi nunca un ciclo For debe ser la &#250;ltima expresi&#243;n de una f&#243;rmula, dado que entonces &#233;sta simplemente mostrar&#225; el valor Verdadero en lugar del resultado esperado.</p>
+<hr><br>
+
+<script  language="JavaScript"><!--
+
+var prev = "21_crystalsyntax58.html";
+var next = "21_crystalsyntax60.html";
+
+function setTopicID() { 
+      var number = "147615"; 
+      return number; 
+}
+
+// --></script>
+
+
+
+
+<SCRIPT>
+
+if (!window.parent.toc && navigator.appName == "Netscape") {
+
+   document.writeln ('<TABLE ALIGN="left" border="0" cellspacing="0" cellpadding="10">');
+   document.writeln ('<TR>');
+   document.write ('<TD ALIGN="left">');
+
+   if (prev != "crw_spTOC.hhc") {
+      document.writeln ('<A HREF="' + prev + '">');
+      document.writeln ('<IMG SRC="prevpage.gif" HEIGHT=17 BORDER=0 ALT="Página anterior"></A>');
+   } else {
+//   window.alert ('no previous page');
+   }
+
+   if (next != "crw_spIX.hhk") {
+      document.writeln ('<A HREF="' + next + '">');
+      document.writeln ('<IMG SRC="nextpage.gif" HEIGHT=17 BORDER=0 ALT="Página siguiente"></A>');
+   } else {
+//   window.alert ('no next page');
+   }
+   document.writeln ('</TD><TD ALIGN="left">');
+   document.writeln ('<A HREF="frameset.htm?TOC">');
+   document.writeln ('<IMG SRC="showtoc.gif" HEIGHT=17 BORDER=0 ALT="Haga clic para ver el contenido"></A></TD>');
+   document.writeln ('<TD ALIGN="left">');
+   document.writeln ('<A HREF="frameset.htm?IDX">');
+   document.writeln ('<IMG SRC="showix.gif" HEIGHT=17 BORDER=0 ALT="Haga clic para ver el índice"></A></TD>');
+   document.writeln ('</TD>');
+   document.writeln ('</TR>');
+   document.writeln ('</TABLE>');
+
+}
+
+</SCRIPT>
+<table align="right" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td align="right"><font size="1">Seagate Software, Inc.<br>
+    <a href="http://www.seagatesoftware.com">http://www.seagatesoftware.com</a><br>
+    Envíe sus comentarios a:<br>
+    <a href="mailto:techpubs@seagatesoftware.com">techpubs@seagatesoftware.com</a><br>
+    </font></td>
+  </tr>
+</table>
+</body>
+</html>
+
+

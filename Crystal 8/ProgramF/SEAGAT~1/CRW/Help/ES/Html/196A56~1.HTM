@@ -1,0 +1,97 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+
+<html>
+<head>
+<title>Usos t&#237;picos para f&#243;rmulas</title>
+
+<link REL=STYLESHEET TYPE="text/css" HREF="seagate.css">
+
+<!--
+                 ***********************************
+                 * Seagate Software copyright 1999 *
+                 ***********************************
+
+                      Template version: 5.1
+-->
+
+
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" link="#0000FF" vlink="#0000FF" alink="#800080">
+
+
+ 
+<a name="100435"></a><h3 class="newpage"> Usos t&#237;picos para f&#243;rmulas</h3>
+<p><a name="226780"></a>Existen muchos usos para las f&#243;rmulas. Si Ud. necesita manipulaci&#243;n especializada de datos, puede hacerlo con una f&#243;rmula.</p><a name="100436"></a><h5>C&#243;mo crear campos calculados para agregarlos a su informe </h5><p><a name="263497"></a>Para calcular un precio con un descuento del 15%:</p><p><a name="175032"></a>Ejemplo de sintaxis Crystal:</p><PRE><a name="263502"></a><code>{Detalle de pedidos.Precio unitario}*.85
+</code></PRE><p><a name="248311"></a>Ejemplo de sintaxis Basic:</p><PRE><a name="263503"></a><code>formula = {Detalle de pedidos.Precio unitario}*.85
+</code></PRE><a name="100439"></a><h5>C&#243;mo dar formato al texto de un informe</h5><p><a name="100440"></a>Para cambiar a may&#250;scula todos los valores en el campo Nombre de cliente:</p><p><a name="263514"></a>Ejemplo de sintaxis Crystal:</p><PRE><a name="263529"></a><code>UpperCase ({Cliente.Nombre de cliente})
+</code></PRE><p><a name="248308"></a>Ejemplo de sintaxis Basic:</p><PRE><a name="263542"></a><code>formula = UCase ({Cliente.Nombre de cliente})
+</code></PRE><a name="248319"></a><h5>C&#243;mo sacar una porci&#243;n o porciones de una cadena de texto</h5><p><a name="100446"></a>Para extraer la primera letra del nombre del cliente:</p><p><a name="263543"></a>Ejemplo de sintaxis Crystal:</p><PRE><a name="263548"></a><code>{Cliente.Nombre de cliente} [1]
+</code></PRE><p><a name="248326"></a>Ejemplo de sintaxis Basic:</p><PRE><a name="263549"></a><code>formula = {Cliente.Nombre de cliente} (1)
+</code></PRE><a name="100454"></a><h5>C&#243;mo extraer partes de una fecha</h5><p><a name="100455"></a>Para determinar en qu&#233; mes se hizo un pedido:</p><p><a name="263602"></a>Ejemplo de sintaxis Crystal:</p><PRE><a name="263621"></a><code>Month ({Pedidos.Fecha de pedido})
+</code></PRE><p><a name="248335"></a>Ejemplo de sintaxis Basic:</p><PRE><a name="263622"></a><code>formula = Month ({Pedidos.Fecha de pedido})
+</code></PRE>
+<hr><br>
+
+<script  language="JavaScript"><!--
+
+var prev = "19_introformulas2.html";
+var next = "19_introformulas4.html";
+
+function setTopicID() { 
+      var number = "100435"; 
+      return number; 
+}
+
+// --></script>
+
+
+
+
+<SCRIPT>
+
+if (!window.parent.toc && navigator.appName == "Netscape") {
+
+   document.writeln ('<TABLE ALIGN="left" border="0" cellspacing="0" cellpadding="10">');
+   document.writeln ('<TR>');
+   document.write ('<TD ALIGN="left">');
+
+   if (prev != "crw_spTOC.hhc") {
+      document.writeln ('<A HREF="' + prev + '">');
+      document.writeln ('<IMG SRC="prevpage.gif" HEIGHT=17 BORDER=0 ALT="Página anterior"></A>');
+   } else {
+//   window.alert ('no previous page');
+   }
+
+   if (next != "crw_spIX.hhk") {
+      document.writeln ('<A HREF="' + next + '">');
+      document.writeln ('<IMG SRC="nextpage.gif" HEIGHT=17 BORDER=0 ALT="Página siguiente"></A>');
+   } else {
+//   window.alert ('no next page');
+   }
+   document.writeln ('</TD><TD ALIGN="left">');
+   document.writeln ('<A HREF="frameset.htm?TOC">');
+   document.writeln ('<IMG SRC="showtoc.gif" HEIGHT=17 BORDER=0 ALT="Haga clic para ver el contenido"></A></TD>');
+   document.writeln ('<TD ALIGN="left">');
+   document.writeln ('<A HREF="frameset.htm?IDX">');
+   document.writeln ('<IMG SRC="showix.gif" HEIGHT=17 BORDER=0 ALT="Haga clic para ver el índice"></A></TD>');
+   document.writeln ('</TD>');
+   document.writeln ('</TR>');
+   document.writeln ('</TABLE>');
+
+}
+
+</SCRIPT>
+<table align="right" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td align="right"><font size="1">Seagate Software, Inc.<br>
+    <a href="http://www.seagatesoftware.com">http://www.seagatesoftware.com</a><br>
+    Envíe sus comentarios a:<br>
+    <a href="mailto:techpubs@seagatesoftware.com">techpubs@seagatesoftware.com</a><br>
+    </font></td>
+  </tr>
+</table>
+</body>
+</html>
+
+

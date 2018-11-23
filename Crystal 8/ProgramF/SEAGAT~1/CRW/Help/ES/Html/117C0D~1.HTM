@@ -1,0 +1,119 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+
+<html>
+<head>
+<title>Trabajo con Formato condicional</title>
+
+<link REL=STYLESHEET TYPE="text/css" HREF="seagate.css">
+
+<!--
+                 ***********************************
+                 * Seagate Software copyright 1999 *
+                 ***********************************
+
+                      Template version: 5.1
+-->
+
+
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" link="#0000FF" vlink="#0000FF" alink="#800080">
+
+
+ 
+<a name="89319"></a><h2 class="newpage">Trabajo con Formato condicional</h2><p><a name="89320"></a>El formato condicional es un formato que se aplica s&#243;lo bajo ciertas condiciones. Por ejemplo, usted puede desear:</p><ul type="disc"><a name="89321"></a><li>balances de clientes impresos en rojo si est&#225;n vencidos,
+<a name="89322"></a><li>que las fechas aparezcan en el formato D&#237;a, Mes, A&#241;o si el cliente es canadiense, o
+<a name="89323"></a><li>que el color de fondo aparezca cada segunda l&#237;nea.
+</ul><p><a name="89324"></a>Seagate Crystal Reports le facilita la aplicaci&#243;n de formato condicional en &#233;sta y cientos de otras situaciones.</p><p><a name="89328"></a>Con formato absoluto, usted sigue el procedimiento de <kbd>seleccionar y luego aplicar</kbd>. Para dar formato condicional se sigue el mismo procedimiento, pero se va un paso m&#225;s adelante y se configuran condiciones que determinan cu&#225;ndo ser&#225; aplicado el formato. Usted especifica esas condiciones utilizando f&#243;rmulas sencillas. Para mayor informaci&#243;n acerca de la creaci&#243;n de f&#243;rmulas con la sintaxis Crystal o Basic, vea <a href="21_crystalsyntax9.html#144695">Aspectos fundamentales de la sintaxis Crystal</a> o <a href="20_basicsyntax4.html#128034">Aspectos fundamentales de la sintaxis Basic</a>.</p><p><a name="91449"></a>Cuando configura una f&#243;rmula de formato condicional, la f&#243;rmula pasa por alto cualquier configuraci&#243;n fija que haya hecho en el cuadro de di&#225;logo. Por ejemplo, si activa la propiedad <kbd>Suprimir</kbd> y despu&#233;s configura una f&#243;rmula condicional para la opci&#243;n <kbd>Suprimir</kbd>, la propiedad ser&#225; aplicada s&#243;lo si se cumple la condici&#243;n en la f&#243;rmula.</p><p><a name="89333"></a>El programa le permite configurar condicionalmente propiedades de activar o desactivar y propiedades de atributo. Sin embargo, cada una de &#233;stas requiere un tipo diferente de f&#243;rmula.</p><a name="89335"></a><h3>Propiedades condicionales de activar o desactivar</h3>
+<p><a name="89336"></a>Una propiedad condicional de activar o desactivar prueba para ver si una condici&#243;n ha sido cumplida. Est&#225; activada si la condici&#243;n fue cumplida o desactivada si la condici&#243;n no es cumplida. No hay t&#233;rminos medios. Use f&#243;rmulas booleanas para este tipo de formato.</p><a name="85864"></a><h5>Ejemplo de sintaxis Crystal </h5><p><code><a name="85865"></a>condici&#243;n</code></p><a name="85866"></a><h5>Ejemplo de sintaxis Basic </h5><p><code><a name="89440"></a>formula = condici&#243;n</code></p><p><a name="89442"></a>El programa prueba cada valor para ver si cumple la condici&#243;n y regresa una respuesta de s&#237; o no. Despu&#233;s aplica la propiedad a cada valor que regresa un s&#237;.</p><a name="89444"></a><h3>Propiedades de atributo condicional</h3>
+<p><a name="89445"></a>Una propiedad de atributo condicional verifica para ver cu&#225;l de dos o m&#225;s condiciones fue cumplida. El programa entonces aplica el formato apropiado a la condici&#243;n. Por ejemplo, asuma que usted quiere los valores bajo cierta cuota impresos en rojo y todos los dem&#225;s valores impresos en negro. El programa verifica cuando el valor est&#225; bajo la cuota o no. Si est&#225; bajo la cuota, aplica el atributo rojo, si no, se aplica el atributo negro.</p><p><a name="89448"></a>Use una f&#243;rmula If<nobr>-T</nobr>hen<nobr>-E</nobr>lse para este tipo de formato condicional.</p><a name="89484"></a><h5>Ejemplo de sintaxis Crystal</h5><PRE><a name="89485"></a>If Condici&#243;n A Then<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Red<br>
+Else<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Black
+</PRE><a name="85944"></a><h5>Ejemplo de sintaxis Basic</h5><PRE><a name="85945"></a>If Condici&#243;n A Then
+<a name="85946"></a>&nbsp;&nbsp;&nbsp;&nbsp;formula = crRed
+<a name="85947"></a>Else
+<a name="85948"></a>&nbsp;&nbsp;&nbsp;&nbsp;formula = crBlack
+<a name="89490"></a>End If
+</PRE><p><a name="91487"></a>Cuando configura propiedades de atributo condicional, el programa carga una selecci&#243;n de atributos en la lista <kbd>Funciones</kbd> en el Editor de F&#243;rmulas. Usted puede hacer doble clic en cualquiera de esos atributos para agregarlos a su f&#243;rmula. Por ejemplo, si usted est&#225; configurando alineamiento horizontal condicionalmente, la lista <kbd>Funciones</kbd> contendr&#225; atributos tales como Alineado horizontal predeterminado, alineamiento izquierdo, justificado, etc.; si usted est&#225; configurando bordes condicionalmente, la lista mostrar&#225; atributos tales como No l&#237;nea, L&#237;nea simple, L&#237;nea punteada, etc.</p><p><a name="89492"></a>Usted puede ir m&#225;s adelante con este tipo de propiedad. Puede especificar una lista de condiciones y una propiedad por cada una de ellas; usted no est&#225; limitado a dos o tres condiciones. Por ejemplo, si tiene un campo num&#233;rico en su informe que contiene cifras de ventas de pa&#237;ses alrededor del mundo, puede especificar el n&#250;mero de atributo(s) que desea aplicar a cada pa&#237;s. En este caso, sus condiciones van a especificar que si es del Pa&#237;s A, aplicar el atributo del Pa&#237;s A; Pa&#237;s B, aplicar atributo del Pa&#237;s B; Pa&#237;s C, aplicar atributo del Pa&#237;s C, y as&#237; sucesivamente.</p><p><a name="89493"></a>Con m&#225;s de una alternativa, use esta clase de f&#243;rmula:</p><a name="89511"></a><h5>Ejemplo de sintaxis Crystal</h5><PRE><a name="89512"></a>If Condici&#243;n A Then<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Red or<br>
+If Condici&#243;n B Then<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Black or<br>
+If Condici&#243;n C Then<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Green<br>
+Else<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Blue
+</PRE><a name="85994"></a><h5>Ejemplo de sintaxis Basic</h5><PRE><a name="85995"></a>If Condici&#243;n A Then
+<a name="85996"></a>&nbsp;&nbsp;&nbsp;&nbsp;formula = crRed
+<a name="85997"></a>ElseIf Condici&#243;n B Then
+<a name="85998"></a>&nbsp;&nbsp;&nbsp;&nbsp;formula = crBlack
+<a name="85999"></a>ElseIf Condici&#243;n C Then
+<a name="86000"></a>&nbsp;&nbsp;&nbsp;&nbsp;formula = crGreen
+<a name="86001"></a>Else
+<a name="86002"></a>&nbsp;&nbsp;&nbsp;&nbsp;formula = crBlue
+<a name="89517"></a>End If
+</PRE><p><a name="89518"></a>Use una f&#243;rmula de condici&#243;n If<nobr>-T</nobr>hen<nobr>-E</nobr>lse m&#250;ltiple para esta clase de formato condicional.</p>
+<hr><br>
+
+<script  language="JavaScript"><!--
+
+var prev = "11_format42.html";
+var next = "11_format44.html";
+
+function setTopicID() { 
+      var number = "89319"; 
+      return number; 
+}
+
+// --></script>
+
+
+
+
+<SCRIPT>
+
+if (!window.parent.toc && navigator.appName == "Netscape") {
+
+   document.writeln ('<TABLE ALIGN="left" border="0" cellspacing="0" cellpadding="10">');
+   document.writeln ('<TR>');
+   document.write ('<TD ALIGN="left">');
+
+   if (prev != "crw_spTOC.hhc") {
+      document.writeln ('<A HREF="' + prev + '">');
+      document.writeln ('<IMG SRC="prevpage.gif" HEIGHT=17 BORDER=0 ALT="Página anterior"></A>');
+   } else {
+//   window.alert ('no previous page');
+   }
+
+   if (next != "crw_spIX.hhk") {
+      document.writeln ('<A HREF="' + next + '">');
+      document.writeln ('<IMG SRC="nextpage.gif" HEIGHT=17 BORDER=0 ALT="Página siguiente"></A>');
+   } else {
+//   window.alert ('no next page');
+   }
+   document.writeln ('</TD><TD ALIGN="left">');
+   document.writeln ('<A HREF="frameset.htm?TOC">');
+   document.writeln ('<IMG SRC="showtoc.gif" HEIGHT=17 BORDER=0 ALT="Haga clic para ver el contenido"></A></TD>');
+   document.writeln ('<TD ALIGN="left">');
+   document.writeln ('<A HREF="frameset.htm?IDX">');
+   document.writeln ('<IMG SRC="showix.gif" HEIGHT=17 BORDER=0 ALT="Haga clic para ver el índice"></A></TD>');
+   document.writeln ('</TD>');
+   document.writeln ('</TR>');
+   document.writeln ('</TABLE>');
+
+}
+
+</SCRIPT>
+<table align="right" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td align="right"><font size="1">Seagate Software, Inc.<br>
+    <a href="http://www.seagatesoftware.com">http://www.seagatesoftware.com</a><br>
+    Envíe sus comentarios a:<br>
+    <a href="mailto:techpubs@seagatesoftware.com">techpubs@seagatesoftware.com</a><br>
+    </font></td>
+  </tr>
+</table>
+</body>
+</html>
+
+

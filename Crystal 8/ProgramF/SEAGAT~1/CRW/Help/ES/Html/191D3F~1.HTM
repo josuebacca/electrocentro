@@ -1,0 +1,155 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+
+<html>
+<head>
+<title>F&#243;rmula 7</title>
+
+<link REL=STYLESHEET TYPE="text/css" HREF="seagate.css">
+
+<!--
+                 ***********************************
+                 * Seagate Software copyright 1999 *
+                 ***********************************
+
+                      Template version: 5.1
+-->
+
+
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" link="#0000FF" vlink="#0000FF" alink="#800080">
+
+
+ 
+<a name="316988"></a><h3 class="newpage"> F&#243;rmula 7</h3>
+<a name="316989"></a><h4>Funciones y operadores usados</h4><p><a name="316990"></a>If<nobr>-T</nobr>hen<nobr>-E</nobr>lse, Sustraer (-), Mayor que (&gt;), Maximum ([matriz]), Multiplicar (*), Par&#233;ntesis ().</p><a name="316991"></a><h4>Prop&#243;sito de la f&#243;rmula</h4><p><a name="316992"></a>Una compa&#241;&#237;a tiene la siguiente estructura de bonos/comisiones para su personal de ventas: cuando un representante de ventas vende su cuota o un monto superior a &#233;sta, el representante gana un bono de $250 o un 15% de comisi&#243;n (sobre el monto que excede la cuota), el que sea mayor. La compa&#241;&#237;a no paga bono o comisi&#243;n por ventas inferiores a la cuota. El gerente de ventas desea que el bono o comisi&#243;n se calcule y se incluya en un informe.</p><a name="316993"></a><h4>F&#243;rmula</h4><PRE><a name="316994"></a>If ({archivo.VENTAS}-{archivo.CUOTA})&gt;=0 Then <br>
+&nbsp;&nbsp;&nbsp;&nbsp;Maximum([250,.15*({archivo.VENTAS} - 
+{archivo.CUOTA})])<br>
+Else <br>
+&nbsp;&nbsp;&nbsp;&nbsp;0
+</PRE><a name="316995"></a><h4>Resultado</h4><p><a name="317029"></a> <Table Border="1">
+<tr><td align="left" valign="TOP"><a name="316998"></a>Ventas
+
+</td><td align="left" valign="TOP"><a name="317000"></a>Cuota
+
+</td><td align="left" valign="TOP"><a name="317002"></a>15%
+
+</td><td align="left" valign="TOP"><a name="317004"></a>Monto pagado
+
+</td></tr>
+<tr><td align="left" valign="TOP"><P><a name="317006"></a>10.000</P>
+
+
+</td><td align="left" valign="TOP"><P><a name="317008"></a>8000</P>
+
+
+</td><td align="left" valign="TOP"><P><a name="317010"></a>300</P>
+
+
+</td><td align="left" valign="TOP"><P><a name="317012"></a>540 (comisi&#243;n calculada)</P>
+
+
+</td></tr>
+<tr><td align="left" valign="TOP"><P><a name="317014"></a>8000</P>
+
+
+</td><td align="left" valign="TOP"><P><a name="317016"></a>8000</P>
+
+
+</td><td align="left" valign="TOP"><P><a name="317018"></a>0</P>
+
+
+</td><td align="left" valign="TOP"><P><a name="317020"></a>250 (bono garantizado)</P>
+
+
+</td></tr>
+<tr><td align="left" valign="TOP"><P><a name="317022"></a>7999</P>
+
+
+</td><td align="left" valign="TOP"><P><a name="317024"></a>8000</P>
+
+
+</td><td align="left" valign="TOP"><P><a name="317026"></a>0 </P>
+
+
+</td><td align="left" valign="TOP"><P><a name="317028"></a>0 (ventas no son &gt;= cuota)</P>
+
+
+</td></tr>
+
+</Table></p>
+<a name="317030"></a><h4>Explicaci&#243;n</h4><ul type="disc"><a name="317031"></a><li>Esta f&#243;rmula usa el operador If<nobr>-T</nobr>hen<nobr>-E</nobr>lse para probar las ventas y ver si son mayores o iguales que la cuota. 
+<a name="317032"></a><li>Si as&#237; es (Then), calcula la comisi&#243;n y paga el mayor importe entre la comisi&#243;n o el bono garantizado. 
+<a name="317033"></a><li>Si no es as&#237; (Else), no hace nada.
+<a name="317034"></a><li>Para probar las ventas y ver si por lo menos son iguales que la cuota, la f&#243;rmula usa el operador de sustracci&#243;n (-) para restar {archivo.CUOTA} de {archivo.VENTAS}.
+<a name="317035"></a><li>Si {archivo.VENTAS} es mayor o igual que {archivo.CUOTA}, dicha resta va a producir un resultado cero o un n&#250;mero positivo (&gt;=0). Esto va a activar la parte Then de la f&#243;rmula.
+<a name="317036"></a><li>Si {archivo.VENTAS} es menor que {archivo.CUOTA}, dicha resta va a producir un resultado negativo. Esto va a activar la parte Else de la f&#243;rmula.
+<a name="317037"></a><li>La parte Then de la f&#243;rmula usa el operador de multiplicaci&#243;n (*) para calcular un 15% de comisi&#243;n sobre el monto de ventas que supere la cuota: .15 * ({archivo.VENTAS} - {archivo.CUOTA}).
+<a name="317038"></a><li>Luego usa la funci&#243;n Maximum([matriz]) para determinar si la comisi&#243;n calculada o el bono garantizado de $250 ofrece el mayor pago Maximum([comisi&#243;n, 250]), y devuelve el valor m&#225;s alto.
+<a name="317039"></a><li>El c&#225;lculo del pago m&#225;s alto es el resultado final de la parte Then de la f&#243;rmula.
+<a name="317040"></a><li>La parte Else de la f&#243;rmula no realiza ning&#250;n c&#225;lculo y devuelve 0.
+</ul><a name="317041"></a><h6>Temas relacionados</h6><p><a name="317045"></a><a href="19_introformulas28.html#316471">F&#243;rmulas en acci&#243;n</a></p>
+<hr><br>
+
+<script  language="JavaScript"><!--
+
+var prev = "19_introformulas34.html";
+var next = "19_introformulas36.html";
+
+function setTopicID() { 
+      var number = "316988"; 
+      return number; 
+}
+
+// --></script>
+
+
+
+
+<SCRIPT>
+
+if (!window.parent.toc && navigator.appName == "Netscape") {
+
+   document.writeln ('<TABLE ALIGN="left" border="0" cellspacing="0" cellpadding="10">');
+   document.writeln ('<TR>');
+   document.write ('<TD ALIGN="left">');
+
+   if (prev != "crw_spTOC.hhc") {
+      document.writeln ('<A HREF="' + prev + '">');
+      document.writeln ('<IMG SRC="prevpage.gif" HEIGHT=17 BORDER=0 ALT="Página anterior"></A>');
+   } else {
+//   window.alert ('no previous page');
+   }
+
+   if (next != "crw_spIX.hhk") {
+      document.writeln ('<A HREF="' + next + '">');
+      document.writeln ('<IMG SRC="nextpage.gif" HEIGHT=17 BORDER=0 ALT="Página siguiente"></A>');
+   } else {
+//   window.alert ('no next page');
+   }
+   document.writeln ('</TD><TD ALIGN="left">');
+   document.writeln ('<A HREF="frameset.htm?TOC">');
+   document.writeln ('<IMG SRC="showtoc.gif" HEIGHT=17 BORDER=0 ALT="Haga clic para ver el contenido"></A></TD>');
+   document.writeln ('<TD ALIGN="left">');
+   document.writeln ('<A HREF="frameset.htm?IDX">');
+   document.writeln ('<IMG SRC="showix.gif" HEIGHT=17 BORDER=0 ALT="Haga clic para ver el índice"></A></TD>');
+   document.writeln ('</TD>');
+   document.writeln ('</TR>');
+   document.writeln ('</TABLE>');
+
+}
+
+</SCRIPT>
+<table align="right" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td align="right"><font size="1">Seagate Software, Inc.<br>
+    <a href="http://www.seagatesoftware.com">http://www.seagatesoftware.com</a><br>
+    Envíe sus comentarios a:<br>
+    <a href="mailto:techpubs@seagatesoftware.com">techpubs@seagatesoftware.com</a><br>
+    </font></td>
+  </tr>
+</table>
+</body>
+</html>
+
+

@@ -1,0 +1,96 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+
+<html>
+<head>
+<title>NumericText (cadena)</title>
+
+<link REL=STYLESHEET TYPE="text/css" HREF="seagate.css">
+
+<!--
+                 ***********************************
+                 * Seagate Software copyright 1999 *
+                 ***********************************
+
+                      Template version: 5.1
+-->
+
+
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" link="#0000FF" vlink="#0000FF" alink="#800080">
+
+
+ 
+<a name="1000852800"></a><h3 class="newpage"> NumericText (cadena)</h3>
+<p><a name="1000852804"></a>NumericText y <a href="Functions76.html#1000852750">IsNumeric (cadena)</a> son funciones equivalentes. Sin embargo, se prefiere NumeriText en la sintaxis Crystal y IsNumeric en la sintaxis b&#225;sica.</p><a name="1000852805"></a><h5>Argumentos</h5><p><a name="1000852806"></a><EM>cadena</EM> es una cadena de texto siendo probada para un texto num&#233;rico.</p><a name="1000852807"></a><h5>Devuelve </h5><p><a name="1000852808"></a>Un valor Booleano.</p><p><a name="1000852809"></a>NumericText prueba para ver si el contenido de un objeto de texto es un n&#250;mero.</p><ul type="disc"><a name="1000852810"></a><li>Si el contenido total de un campo es un N&#250;mero <nobr>-o</nobr> si los caracteres extra&#237;dos a trav&#233;s de la <a href="Operators24.html#1000019201">Sub&#237;ndice para matrices y cadenas</a> son en su totalidad un N&#250;mero- la funci&#243;n devuelve el <a href="glossary.html#44012">Valor</a> TRUE (VERDADERO). 
+<a name="1000852817"></a><li>Si cualquier parte del contenido de un campo, o los caracteres extra&#237;dos, no son num&#233;ricos, la expresi&#243;n devuelve el valor FALSE (FALSO).
+</ul><a name="1000852818"></a><h5>Uso(s) t&#237;pico(s)</h5><p><a name="1000852819"></a>Si almacena (como peso) en un objeto de texto, utilice NumericText para verificar el valor de cada registro para asegurarse que este de acuerdo para ser convertido utilizando <a href="Functions78.html#1000852857">ToNumber (num&#233;rico), ToNumber (cadena)</a>.</p><a name="1000852823"></a><h5>Ejemplo(s)</h5><p><a name="1000852824"></a>Los siguientes ejemplos se aplican a las sintaxis b&#225;sica y Crystal, aunque se prefiere IsNumeric en esta &#250;ltima:</p><p><code><a name="1000852825"></a>NumericText({archivo.REFERENCIA}) </code></p><p class="example"><a name="1000852826"></a>Devuelve FALSO cuando {archivo.REFERENCIA} = "ABCDEFG".</p><p><code><a name="1000852827"></a>NumericText({archivo.N&Uacute;MERO DE IDENTIFICACI&Oacute;N}) </code></p><p class="example"><a name="1000852828"></a>Devuelve VERDADERO cuando {archivo.N&Uacute;MERO DE IDENTIFICACI&Oacute;N} =  "12345".</p><p><code><a name="1000852829"></a>NumericText({archivo.N&Uacute;MERO DE IDENTIFICACI&Oacute;N}) </code></p><p class="example"><a name="1000852830"></a>Devuelve  VERDADERO cuando {archivo.N&Uacute;MERO DE IDENTIFICACI&Oacute;N} = "12345443". </p><p><code><a name="1000852831"></a>NumericText({archivo.N&Uacute;MERO DE IDENTIFICACI&Oacute;N}) </code></p><p class="example"><a name="1000852832"></a>Devuelve FALSO cuando {archivo.N&Uacute;MERO DE IDENTIFICACI&Oacute;N} = "12345-443".</p><p><code><a name="1000852833"></a>NumericText ({archivo.N&Uacute;MERO DE IDENTIFICACI&Oacute;N} [1 a 5]) </code></p><p class="example"><a name="1000852834"></a>Devuelve VERDADERO cuando {archivo.N&Uacute;MERO DE IDENTIFICACI&Oacute;N} = "12345-443".</p><p><code><a name="1000852835"></a>NumericText ({archivo.N&Uacute;MERO DE IDENTIFICACI&Oacute;N} [6]) </code></p><p class="example"><a name="1000852836"></a>Devuelve FALSO cuando {archivo.N&Uacute;MERO DE IDENTIFICACI&Oacute;N} = "12345-443".</p><p><code><a name="1000852837"></a>NumericText ({archivo.N&Uacute;MERO DE IDENTIFICACI&Oacute;N} [7 a  9]) </code></p><p class="example"><a name="1000852838"></a>Devuelve VERDADERO cuando {archivo.N&Uacute;MERO DE IDENTIFICACI&Oacute;N} = "12345-443".</p><p><code><a name="1000852839"></a>NumericText({archivo.N&Uacute;MERO DE IDENTIFICACI&Oacute;N}) </code></p><p class="example"><a name="1000852840"></a>Devuelve FALSO cuando {archivo.N&Uacute;MERO DE IDENTIFICACI&Oacute;N} = "12345T".</p><p><a name="1000852843"></a><font color="darkblue"><b>Nota:   &nbsp;&nbsp;&nbsp;</b></font>Puede utilizar esta funci&#243;n en combinaci&#243;n con <a href="Functions78.html#1000852857">ToNumber (num&#233;rico), ToNumber (cadena)</a> para evaluar en busca de un n&#250;mero en el campo de Referencia, despu&#233;s imprime la cadena como un n&#250;mero o imprime 0 si la cadena de texto no es un n&#250;mero.</p>
+<p><a name="1000852845"></a>El siguiente ejemplo es aplicable a la sintaxis Crystal: </p><p class="code"><a name="1000852846"></a>If NumericText({archivo.REFERENCIA}) Then
+<br><a name="1000852847"></a>&nbsp;&nbsp;&nbsp;&nbsp;ToNumber({archivo.REFERENCIA})
+<br><a name="1000852848"></a>Else
+<br><a name="1000852849"></a>&nbsp;&nbsp;&nbsp;&nbsp;0;
+</p><a name="1000852850"></a><h6>Temas relacionados</h6><p><a name="1000852854"></a><a href="19_introformulas37.html#317136">F&#243;rmula 9</a></p>
+<hr><br>
+
+<script  language="JavaScript"><!--
+
+var prev = "Functions76.html";
+var next = "Functions78.html";
+
+function setTopicID() { 
+      var number = "1000852800"; 
+      return number; 
+}
+
+// --></script>
+
+
+
+
+<SCRIPT>
+
+if (!window.parent.toc && navigator.appName == "Netscape") {
+
+   document.writeln ('<TABLE ALIGN="left" border="0" cellspacing="0" cellpadding="10">');
+   document.writeln ('<TR>');
+   document.write ('<TD ALIGN="left">');
+
+   if (prev != "crw_spTOC.hhc") {
+      document.writeln ('<A HREF="' + prev + '">');
+      document.writeln ('<IMG SRC="prevpage.gif" HEIGHT=17 BORDER=0 ALT="Página anterior"></A>');
+   } else {
+//   window.alert ('no previous page');
+   }
+
+   if (next != "crw_spIX.hhk") {
+      document.writeln ('<A HREF="' + next + '">');
+      document.writeln ('<IMG SRC="nextpage.gif" HEIGHT=17 BORDER=0 ALT="Página siguiente"></A>');
+   } else {
+//   window.alert ('no next page');
+   }
+   document.writeln ('</TD><TD ALIGN="left">');
+   document.writeln ('<A HREF="frameset.htm?TOC">');
+   document.writeln ('<IMG SRC="showtoc.gif" HEIGHT=17 BORDER=0 ALT="Haga clic para ver el contenido"></A></TD>');
+   document.writeln ('<TD ALIGN="left">');
+   document.writeln ('<A HREF="frameset.htm?IDX">');
+   document.writeln ('<IMG SRC="showix.gif" HEIGHT=17 BORDER=0 ALT="Haga clic para ver el índice"></A></TD>');
+   document.writeln ('</TD>');
+   document.writeln ('</TR>');
+   document.writeln ('</TABLE>');
+
+}
+
+</SCRIPT>
+<table align="right" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td align="right"><font size="1">Seagate Software, Inc.<br>
+    <a href="http://www.seagatesoftware.com">http://www.seagatesoftware.com</a><br>
+    Envíe sus comentarios a:<br>
+    <a href="mailto:techpubs@seagatesoftware.com">techpubs@seagatesoftware.com</a><br>
+    </font></td>
+  </tr>
+</table>
+</body>
+</html>
+
+

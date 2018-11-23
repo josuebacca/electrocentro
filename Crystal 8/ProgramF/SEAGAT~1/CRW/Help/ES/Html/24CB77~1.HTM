@@ -1,0 +1,216 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+
+<html>
+<head>
+<title>Buscar todas las combinaciones de los archivos</title>
+
+<link REL=STYLESHEET TYPE="text/css" HREF="seagate.css">
+
+<!--
+                 ***********************************
+                 * Seagate Software copyright 1999 *
+                 ***********************************
+
+                      Template version: 5.1
+-->
+
+
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" link="#0000FF" vlink="#0000FF" alink="#800080">
+
+
+ 
+<a name="345535"></a><h4 class="newpage"> Buscar todas las combinaciones de los archivos</h4><p><a name="345536"></a>Por cada registro en la tabla Clientes, esta opci&#243;n busca un registro coincidente en la tabla Cr&#233;dito, despu&#233;s busca todos los registros coincidentes en la tabla Pedidos, repite el proceso con el siguiente registro en la tabla Cr&#233;dito, despu&#233;s el siguiente, etc. Cuando encuentra los registros de Pedidos coincidentes para todos los registros de Cr&#233;dito que coinciden con el primer registro de Clientes, se mueve al siguiente registro de Clientes y repite el proceso.</p><p><a name="321559"></a> .<Table Border="1">
+<tr><th align="left" valign="bottom"><a name="321482"></a>Tabla Clientes
+
+</th><th align="left" valign="bottom"><a name="321484"></a>Tabla Cr&#233;dito
+
+</th><th align="left" valign="bottom"><a name="321486"></a>Tabla Pedidos
+
+</th></tr>
+<tr><th align="left" valign="bottom"><a name="321488"></a>Nombre del Cliente
+
+</th><th align="left" valign="bottom"><a name="321490"></a>Cantidad
+
+</th><th align="left" valign="bottom"><a name="321492"></a>Monto del Pedido
+
+</th></tr>
+<tr><td align="left" valign="TOP"><P><a name="321494"></a>Cyclists Incorporated</P>
+
+
+</td><td align="left" valign="TOP"><P><a name="321496"></a>($1088.56)</P>
+
+
+</td><td align="left" valign="TOP"><P><a name="321498"></a>$1529.70</P>
+
+
+</td></tr>
+<tr><td align="left" valign="TOP"><P><a name="321500"></a>Cyclists Incorporated</P>
+
+
+</td><td align="left" valign="TOP"><P><a name="321502"></a>($1088.56)</P>
+
+
+</td><td align="left" valign="TOP"><P><a name="321504"></a>$23.50</P>
+
+
+</td></tr>
+<tr><td align="left" valign="TOP"><P><a name="321506"></a>Cyclists Incorporated</P>
+
+
+</td><td align="left" valign="TOP"><P><a name="321508"></a>($1250.12)</P>
+
+
+</td><td align="left" valign="TOP"><P><a name="321510"></a>$1529.70</P>
+
+
+</td></tr>
+<tr><td align="left" valign="TOP"><P><a name="321512"></a>Cyclists Incorporated</P>
+
+
+</td><td align="left" valign="TOP"><P><a name="321514"></a>($1250.12)</P>
+
+
+</td><td align="left" valign="TOP"><P><a name="321516"></a>$23.50</P>
+
+
+</td></tr>
+<tr><td align="left" valign="TOP"><P><a name="321518"></a>CyclePath Corp</P>
+
+
+</td><td align="left" valign="TOP"><P><a name="321520"></a>($1958.03)</P>
+
+
+</td><td align="left" valign="TOP"><P><a name="321522"></a>$49.50</P>
+
+
+</td></tr>
+<tr><td align="left" valign="TOP"><P><a name="321524"></a>CyclePath Corp</P>
+
+
+</td><td align="left" valign="TOP"><P><a name="321526"></a>($1958.03)</P>
+
+
+</td><td align="left" valign="TOP"><P><a name="321528"></a>$1702.60</P>
+
+
+</td></tr>
+<tr><td align="left" valign="TOP"><P><a name="321530"></a>CyclePath Corp</P>
+
+
+</td><td align="left" valign="TOP"><P><a name="321532"></a>($1076.43)</P>
+
+
+</td><td align="left" valign="TOP"><P><a name="321534"></a>$49.50</P>
+
+
+</td></tr>
+<tr><td align="left" valign="TOP"><P><a name="321536"></a>CyclePath Corp</P>
+
+
+</td><td align="left" valign="TOP"><P><a name="321538"></a>($1076.43)</P>
+
+
+</td><td align="left" valign="TOP"><P><a name="321540"></a>$1702.60</P>
+
+
+</td></tr>
+<tr><td align="left" valign="TOP"><P><a name="321542"></a>CyclePath Corp</P>
+
+
+</td><td align="left" valign="TOP"><P><a name="321544"></a>($75.04)</P>
+
+
+</td><td align="left" valign="TOP"><P><a name="321546"></a>$49.50</P>
+
+
+</td></tr>
+<tr><td align="left" valign="TOP"><P><a name="321548"></a>CyclePath Corp</P>
+
+
+</td><td align="left" valign="TOP"><P><a name="321550"></a>($75.04)</P>
+
+
+</td><td align="left" valign="TOP"><P><a name="321552"></a>$1702.60</P>
+
+
+</td></tr>
+<tr><td align="left" valign="TOP"><P><a name="321554"></a>The Great Bike Shop</P>
+
+
+</td><td align="left" valign="TOP"><P><a name="321556"></a>($138.98)</P>
+
+
+</td><td align="left" valign="TOP"><P><a name="321558"></a>$3259.70</P>
+
+
+</td></tr>
+
+</Table></p>
+<p><a name="327821"></a><font color="darkblue"><b>Nota:   &nbsp;&nbsp;&nbsp;</b></font>Si desea que el programa busque el primer registro coincidente en la tabla C (tabla Pedidos en este ejemplo), y que despu&#233;s busque todos los registros coincidentes en la tabla B (tabla Cr&#233;dito), lo contrario del proceso actual, necesitar&#225; cambiar sus v&#237;nculos para que el v&#237;nculo A a C est&#233; primero, despu&#233;s el v&#237;nculo A a B. Usted hace esto por medio del cuadro de di&#225;logo Asistente de V&#237;nculo Visual. Para cambiar el orden de los v&#237;nculos, elimine los v&#237;nculos existentes y configure los v&#237;nculos en el orden que desea.</p>
+
+<hr><br>
+
+<script  language="JavaScript"><!--
+
+var prev = "24_under_databases17.html";
+var next = "24_under_databases19.html";
+
+function setTopicID() { 
+      var number = "345535"; 
+      return number; 
+}
+
+// --></script>
+
+
+
+
+<SCRIPT>
+
+if (!window.parent.toc && navigator.appName == "Netscape") {
+
+   document.writeln ('<TABLE ALIGN="left" border="0" cellspacing="0" cellpadding="10">');
+   document.writeln ('<TR>');
+   document.write ('<TD ALIGN="left">');
+
+   if (prev != "crw_spTOC.hhc") {
+      document.writeln ('<A HREF="' + prev + '">');
+      document.writeln ('<IMG SRC="prevpage.gif" HEIGHT=17 BORDER=0 ALT="Página anterior"></A>');
+   } else {
+//   window.alert ('no previous page');
+   }
+
+   if (next != "crw_spIX.hhk") {
+      document.writeln ('<A HREF="' + next + '">');
+      document.writeln ('<IMG SRC="nextpage.gif" HEIGHT=17 BORDER=0 ALT="Página siguiente"></A>');
+   } else {
+//   window.alert ('no next page');
+   }
+   document.writeln ('</TD><TD ALIGN="left">');
+   document.writeln ('<A HREF="frameset.htm?TOC">');
+   document.writeln ('<IMG SRC="showtoc.gif" HEIGHT=17 BORDER=0 ALT="Haga clic para ver el contenido"></A></TD>');
+   document.writeln ('<TD ALIGN="left">');
+   document.writeln ('<A HREF="frameset.htm?IDX">');
+   document.writeln ('<IMG SRC="showix.gif" HEIGHT=17 BORDER=0 ALT="Haga clic para ver el índice"></A></TD>');
+   document.writeln ('</TD>');
+   document.writeln ('</TR>');
+   document.writeln ('</TABLE>');
+
+}
+
+</SCRIPT>
+<table align="right" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td align="right"><font size="1">Seagate Software, Inc.<br>
+    <a href="http://www.seagatesoftware.com">http://www.seagatesoftware.com</a><br>
+    Envíe sus comentarios a:<br>
+    <a href="mailto:techpubs@seagatesoftware.com">techpubs@seagatesoftware.com</a><br>
+    </font></td>
+  </tr>
+</table>
+</body>
+</html>
+
+

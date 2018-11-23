@@ -1,0 +1,154 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+
+<html>
+<head>
+<title>Calendar1stQtr, Calendar2ndQtr, Calendar3rdQtr, Calendar4thQtr</title>
+
+<link REL=STYLESHEET TYPE="text/css" HREF="seagate.css">
+
+<!--
+                 ***********************************
+                 * Seagate Software copyright 1999 *
+                 ***********************************
+
+                      Template version: 5.1
+-->
+
+
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" link="#0000FF" vlink="#0000FF" alink="#800080">
+
+
+ 
+<a name="1000647380"></a><h3 class="newpage"> Calendar1stQtr, Calendar2ndQtr, Calendar3rdQtr, Calendar4thQtr</h3>
+<p><a name="1000696868"></a>Sintaxis b&#225;sica y Crystal.</p><a name="1000647392"></a><h5>Devuelve </h5><p><a name="1000564695"></a>Nada</p><a name="1000564696"></a><h5>Acci&#243;n</h5><p><a name="1000564697"></a>Especifica un rango de valores de fecha que caen dentro del primer, segundo, tercer o cuarto  trimestre del a&#241;o. El primer trimestre del a&#241;o incluye todas las fechas desde el 1o de enero al 31 de  marzo. El segundo trimestre del a&#241;o incluye todas las fechas desde el 1ro de abril al 30 de  junio. El tercer trimestre del calendario incluye todas las fechas desde el 1ro de julio al 30 de septiembre. El cuarto trimestre del a&#241;o incluye todas las fechas desde el 1ro de octubre al 31 de diciembre.</p><a name="1000564698"></a><h5>Ejemplo(s)</h5><p><a name="1000749874"></a>Los siguientes ejemplos son aplicables para la sintaxis Crystal:</p><p class="code"><a name="1000749875"></a>If {pedidos.FECHA DEL PEDIDO}en Calendar1stQtr Then
+<br><a name="1000749882"></a>&nbsp;&nbsp;&nbsp;&nbsp;{pedidos.MONTO DEL PEDIDO}
+<br><a name="1000749895"></a>Else
+<br><a name="1000749904"></a>&nbsp;&nbsp;&nbsp;&nbsp;0
+</p><p class="indent"><a name="1000564702"></a>Devuelve el Monto si la fecha cae en cualquier fecha dentro del primer trimestre del calendario anual. La siguiente tabla identifica la primera y la &#250;ltima fecha incluida en el rango de fechas si hoy es igual a 04/10/98.</p><p><a name="1000564740"></a> <Table Border="1">
+<tr><td align="left" valign="TOP"><a name="1000564705"></a>Si hoy = 04/10/98
+
+</td><td align="left" valign="TOP"><a name="1000564707"></a>{pedidos.FECHA DEL 
+PEDIDO}
+
+</td><td align="left" valign="TOP"><a name="1000564709"></a>{pedidos.MONTO DEL PEDIDO}
+
+</td></tr>
+<tr><td align="left" valign="TOP"><P><a name="1000564711"></a>fuera de rango</P>
+
+
+</td><td align="left" valign="TOP"><P><a name="1000564713"></a>12/10/97</P>
+
+
+</td><td align="left" valign="TOP"><P><a name="1000564715"></a>0</P>
+
+
+</td></tr>
+<tr><td align="left" valign="TOP"><P><a name="1000564717"></a>primera fecha incluida</P>
+
+
+</td><td align="left" valign="TOP"><P><a name="1000564719"></a>01/01/98</P>
+
+
+</td><td align="left" valign="TOP"><P><a name="1000564721"></a>1252.24</P>
+
+
+</td></tr>
+<tr><td align="left" valign="TOP"><P><br></P>
+
+
+</td><td align="left" valign="TOP"><P><a name="1000564725"></a>02/05/98</P>
+
+
+</td><td align="left" valign="TOP"><P><a name="1000564727"></a>1597.87</P>
+
+
+</td></tr>
+<tr><td align="left" valign="TOP"><P><br></P>
+
+
+</td><td align="left" valign="TOP"><P><a name="1000564731"></a>03/15/98</P>
+
+
+</td><td align="left" valign="TOP"><P><a name="1000564733"></a>2546.35</P>
+
+
+</td></tr>
+<tr><td align="left" valign="TOP"><P><a name="1000564735"></a>&#250;ltima fecha incluida</P>
+
+
+</td><td align="left" valign="TOP"><P><a name="1000564737"></a>03/31/98</P>
+
+
+</td><td align="left" valign="TOP"><P><a name="1000564739"></a>5462.21</P>
+
+
+</td></tr>
+
+</Table></p>
+
+<hr><br>
+
+<script  language="JavaScript"><!--
+
+var prev = "Functions146.html";
+var next = "Functions148.html";
+
+function setTopicID() { 
+      var number = "1000647380"; 
+      return number; 
+}
+
+// --></script>
+
+
+
+
+<SCRIPT>
+
+if (!window.parent.toc && navigator.appName == "Netscape") {
+
+   document.writeln ('<TABLE ALIGN="left" border="0" cellspacing="0" cellpadding="10">');
+   document.writeln ('<TR>');
+   document.write ('<TD ALIGN="left">');
+
+   if (prev != "crw_spTOC.hhc") {
+      document.writeln ('<A HREF="' + prev + '">');
+      document.writeln ('<IMG SRC="prevpage.gif" HEIGHT=17 BORDER=0 ALT="Página anterior"></A>');
+   } else {
+//   window.alert ('no previous page');
+   }
+
+   if (next != "crw_spIX.hhk") {
+      document.writeln ('<A HREF="' + next + '">');
+      document.writeln ('<IMG SRC="nextpage.gif" HEIGHT=17 BORDER=0 ALT="Página siguiente"></A>');
+   } else {
+//   window.alert ('no next page');
+   }
+   document.writeln ('</TD><TD ALIGN="left">');
+   document.writeln ('<A HREF="frameset.htm?TOC">');
+   document.writeln ('<IMG SRC="showtoc.gif" HEIGHT=17 BORDER=0 ALT="Haga clic para ver el contenido"></A></TD>');
+   document.writeln ('<TD ALIGN="left">');
+   document.writeln ('<A HREF="frameset.htm?IDX">');
+   document.writeln ('<IMG SRC="showix.gif" HEIGHT=17 BORDER=0 ALT="Haga clic para ver el índice"></A></TD>');
+   document.writeln ('</TD>');
+   document.writeln ('</TR>');
+   document.writeln ('</TABLE>');
+
+}
+
+</SCRIPT>
+<table align="right" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td align="right"><font size="1">Seagate Software, Inc.<br>
+    <a href="http://www.seagatesoftware.com">http://www.seagatesoftware.com</a><br>
+    Envíe sus comentarios a:<br>
+    <a href="mailto:techpubs@seagatesoftware.com">techpubs@seagatesoftware.com</a><br>
+    </font></td>
+  </tr>
+</table>
+</body>
+</html>
+
+

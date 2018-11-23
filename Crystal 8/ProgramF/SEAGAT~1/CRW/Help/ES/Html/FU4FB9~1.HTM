@@ -1,0 +1,121 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+
+<html>
+<head>
+<title>Switch (expr1, valor1, expr2, valor2, ..., exprN, valorN)</title>
+
+<link REL=STYLESHEET TYPE="text/css" HREF="seagate.css">
+
+<!--
+                 ***********************************
+                 * Seagate Software copyright 1999 *
+                 ***********************************
+
+                      Template version: 5.1
+-->
+
+
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" link="#0000FF" vlink="#0000FF" alink="#800080">
+
+
+ 
+<a name="1000571589"></a><h3 class="newpage"> Switch (expr1, valor1, expr2, valor2, ..., exprN, valorN)</h3>
+<p><a name="1000711495"></a>Sintaxis b&#225;sica y Crystal.</p><a name="1000571590"></a><h5>Argumentos</h5><ul type="disc"><a name="1000571591"></a><li>expr1, expr2, .., exprN son expresiones Booleanas. 
+<a name="1000571592"></a><li>valor1, valor2, .., valorN son los posibles valores que pueden retornarse. Los valores deben ser del mismo tipo.  Un valor puede ser de cualquier tipo simple (N&#250;mero, Moneda, Cadena, Booleana, Fecha, Hora, o FechaHora) o un tipo de rango (Rango de N&#250;meros, Rango de Monedas, Rango de Cadenas, Rango de fechas, Rango de Horas o Rango de fechaHora), pero no puede ser una matriz.  
+</ul><a name="1000571593"></a><h5>Devuelve </h5><p><a name="1000571594"></a>Uno de los valores de la lista de valores valor1, valor2, .., valorN. El tipo del valor devuelto es el mismo que el tipo de los valores.  </p><a name="1000571595"></a><h5>Acci&#243;n</h5><p><a name="1000571596"></a>La lista de argumentos de Switch est&#225; compuesta de pares de expresiones y valores.  Switch eval&#250;a las expresiones de izquierda a derecha, y devuelve el valor asociado con la primera expresi&#243;n evaluada como Verdadera.   </p><p><a name="1000709883"></a>Por ejemplo, si la expresi&#243;n1 es Verdadera, Swith devuelve el valor 1.   Si la expresi&#243;n1 es Falsa y la expresi&#243;n2 es Verdadera, Switch devuelve el valor2.   Si la expresi&#243;n2 es Falsa y la expresi&#243;n3 es Verdadera, Switch devuelve el valor3.   </p><p><a name="1000709884"></a>Si todas las expresiones son Falsas, Switch devuelve el valor preestablecido.   (El valor preestablecido devuelto depende del tipo de los valores de la lista de valores. Por ejemplo, si los valores son de tipo Num&#233;rico, el valor preestablecido es 0; si los valores son del tipo de Cadena, el valor preestablecido es una cadena vac&#237;a ("").)</p><a name="1000709898"></a><h5>Uso(s) t&#237;pico(s)</h5><p><a name="1000709917"></a>Puede usarse Switch en lugar de <a href="Operators56.html#1000025244">Operador If<nobr>-T</nobr>hen<nobr>-E</nobr>lse</a> o <a href="20_basicsyntax51.html#132768">Enunciados Select</a> (sintaxis b&#225;sica) y <a href="21_crystalsyntax56.html#147492">Expresiones Select</a> (sintaxis Crystal) en algunas situaciones. </p><p><a name="1000571599"></a>Una situaci&#243;n en la que Switch puede ser mejor que una estructura de control es cuando se escriben f&#243;rmulas de selecci&#243;n de registros para instalarlas en el servidor de la base de datos.   Vea el ejemplo a continuaci&#243;n y tambi&#233;n <a href="07_recordgroupsel12.html#53628">F&#243;rmulas avanzadas de selecci&#243;n de registros</a> para una explicaci&#243;n de las t&#233;cnicas involucradas.  </p><a name="1000571600"></a><h5>Ejemplo(s)</h5><p><a name="1000571601"></a>Los siguientes ejemplos son aplicables a las sintaxis b&#225;sica y Crystal:</p><p><a name="1000571603"></a>Suponga que una compa&#241;&#237;a desea clasificar los pedidos como  "grandes", "medianos" y "peque&#241;os" seg&#250;n el tama&#241;o del pedido:</p><p class="code"><a name="1000571604"></a>Sintaxis b&#225;sica Rem
+<br><a name="1000571605"></a>formula = Switch ({pedidos.MONTO DEL PEDIDO} &gt; 5000, "grande", _
+<br><a name="1000571606"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{pedidos.MONTO DEL PEDIDO} &gt; 1000, "mediano", _
+<br><a name="1000571607"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Verdadero, "peque&#241;o")
+<br><a name="1000571608"></a>
+<br><a name="1000571609"></a>Sintaxis Crystal
+<br><a name="1000571610"></a>Switch ({pedidos.MONTO DEL PEDIDO} &gt; 5000, "grande",
+<br><a name="1000571611"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{pedidos.MONTO DEL PEDIDO} &gt; 1000, "mediano", _
+<br><a name="1000571612"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Verdadero, "peque&#241;o")
+</p><p class="example"><a name="1000571613"></a>Si {pedidos.MONTO DEL PEDIDO} es mayor que $5.000, la f&#243;rmula devuelve el valor Cadena "alto". De lo contrario, si {pedidos.MONTO DEL PEDIDO} es mayor que $1.000, la f&#243;rmula devuelve la Cadena "mediano". De lo contrario, la f&#243;rmula devuelve "peque&#241;o".</p><p><a name="1000709043"></a>Este es un ejemplo de c&#243;mo usar la funci&#243;n Switch para escribir f&#243;rmulas de selecci&#243;n de registros eficaces que pueden instalarse en el servidor de la base de datos. Si se escribe esta f&#243;rmula usando <a href="Operators56.html#1000025244">Operador If<nobr>-T</nobr>hen<nobr>-E</nobr>lse</a> o  <a href="20_basicsyntax51.html#132768">Enunciados Select</a> (sintaxis b&#225;sica) y <a href="21_crystalsyntax56.html#147492">Expresiones Select</a> (sintaxis Crystal) no se permitir&#225; su instalaci&#243;n.  </p><p><a name="1000571852"></a>Vea <a href="07_recordgroupsel12.html#53628">F&#243;rmulas avanzadas de selecci&#243;n de registros</a> para una explicaci&#243;n m&#225;s detallada de las t&#233;cnicas involucradas.   </p><p><a name="1000571853"></a><font color="darkblue"><b>Nota:   &nbsp;&nbsp;&nbsp;</b></font>Este ejemplo est&#225; en sintaxis Crystal porque las f&#243;rmulas de selecci&#243;n de registros editadas con el Editor de F&#243;rmulas deben escribirse en sintaxis Crystal solamente.  </p>
+<a name="1000712300"></a><h5>Informes de muestra</h5><p><a name="1000712301"></a>En el informe de muestra llamado Date Range Formula.rpt.se ofrece una versi&#243;n m&#225;s completa de este ejemplo, con 27 condiciones Switch.</p><p><a name="1000790441"></a>Los informes de muestra est&#225;n ubicados en el directorio Crystal Reports en \Muestras\Informes.</p><p><a name="1000712302"></a>Al realizar una vista previa del informe, Ud. da un par&#225;metro de referencia de la fecha del pedido  {?fecha de referencia} y una condici&#243;n de rango {?condici&#243;n de referencia}, para indicar un rango de fechas alrededor de la fecha del pedido.   El informe genera una vista previa con los registros que incluyen fechas de pedido dentro del rango especificado.   </p><p><a name="1000712303"></a>La selecci&#243;n completa de registros se realiza en el servido de la base de datos.  La raz&#243;n es que la funci&#243;n Switch y todos sus argumentos pueden evaluarse antes de acceder a la base de datos.   </p><p><a name="1000712438"></a><font color="darkblue"><b>Nota:   &nbsp;&nbsp;&nbsp;</b></font></p>
+<ul type="disc"><a name="1000712434"></a><li>En este informe de muestra, la funci&#243;n Switch devuelve un valor de Rango de fecha.  
+<a name="1000712437"></a><li> El estilo de sangr&#237;a del c&#243;digo hace que la invocaci&#243;n de la funci&#243;n busque una estructura de control y que su lectura sea m&#225;s f&#225;cil.   
+<a name="1000712441"></a><li>La &#250;ltima expresi&#243;n es el valor Booleano Verdadero.   
+<p class="indent"><a name="1000712442"></a>Esta invocaci&#243;n de la funci&#243;n Switch incluye un valor preestablecido expl&#237;cito, ya que si Nada en la otra expresi&#243;n es Verdadero, la &#250;ltima expresi&#243;n es autom&#225;ticamente Verdadera y, de esta manera, se devuelve el Rango de fecha CDate (1899, 12, 30) A CDate(1899, 12, 30).</p></ul><p class="code"><a name="1000571617"></a>//F&#243;rmula de selecci&#243;n de registros en sintaxis Crystal  
+<br><a name="1000571618"></a>{pedidos.FECHA DEL PEDIDO} en
+<br><a name="1000571619"></a>Switch
+<br><a name="1000571620"></a>(
+<br><a name="1000571621"></a>&nbsp;&nbsp;&nbsp;&nbsp;{?condici&#243;n de referencia} = "Antig&#252;edad 0 a 30 d&#237;as",
+<br><a name="1000571622"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;({?fecha de referencia} - 30) A {?fecha de referencia},
+<br><a name="1000571623"></a>&nbsp;&nbsp;&nbsp;&nbsp;{?condici&#243;n de referencia} = "Antig&#252;edad 31 a 60 d&#237;as",
+<br><a name="1000571624"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;({?referencia date} - 60) A ({?referencia date} - 31),
+<br><a name="1000571625"></a>&nbsp;&nbsp;&nbsp;&nbsp;{?condici&#243;n de referencia} = "Antig&#252;edad 61 a 90 d&#237;as",
+<br><a name="1000571626"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;({?fecha de referencia} - 90) A ({?fecha de referencia} - 61),
+<br><a name="1000571627"></a>&nbsp;&nbsp;&nbsp;&nbsp;Verdadero, // proporcionar manejo preestablecido y especificar un 
+rango v&#225;lido. 
+<br><a name="1000571628"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;CDate(1899, 12, 30) A CDate(1899, 12, 30)
+<br><a name="1000571629"></a>)
+</p><a name="1000571630"></a><h5>Comentario(s) </h5><ul type="disc"><a name="1000571631"></a><li>Esta funci&#243;n est&#225; dise&#241;ada para trabajar exactamente como la funci&#243;n de Visual Basic del mismo nombre. Una diferencia es que la funci&#243;n no devuelve una Variante y, en consecuencia, los valores deben ser del mismo tipo.
+<a name="1000571632"></a><li>Cada argumento de la funci&#243;n Switch se eval&#250;a antes de retornarse el resultado. Por lo tanto, cuando use la funci&#243;n Switch, debe estar atento a los efectos secundarios no deseados.   
+<p class="indent"><a name="1000712447"></a>Por ejemplo, si uno de los valores resulta en una divisi&#243;n por cero, se generar&#225; un error, aun si ese valor no es el valor devuelto por la funci&#243;n Switch.  </p></ul><a name="1000648958"></a><h6>Temas relacionados</h6><p><a name="1000709059"></a><a href="Functions166.html#1000571527">Choose (&#237;ndice, opci&#243;n1, opci&#243;n2, .., opci&#243;nN)</a></p><p><a name="1000712452"></a><a href="Functions167.html#1000571561">IIF (expresi&#243;n, parteVerdadero, parteFalso)</a></p><p><a name="1000712451"></a><a href="20_basicsyntax51.html#132768">Enunciados Select</a> (Sintaxis b&#225;sica)</p><p><a name="1000709063"></a><a href="21_crystalsyntax56.html#147492">Expresiones Select</a> (Sintaxis Crystal)</p>
+<hr><br>
+
+<script  language="JavaScript"><!--
+
+var prev = "Functions167.html";
+var next = "Functions169.html";
+
+function setTopicID() { 
+      var number = "1000571589"; 
+      return number; 
+}
+
+// --></script>
+
+
+
+
+<SCRIPT>
+
+if (!window.parent.toc && navigator.appName == "Netscape") {
+
+   document.writeln ('<TABLE ALIGN="left" border="0" cellspacing="0" cellpadding="10">');
+   document.writeln ('<TR>');
+   document.write ('<TD ALIGN="left">');
+
+   if (prev != "crw_spTOC.hhc") {
+      document.writeln ('<A HREF="' + prev + '">');
+      document.writeln ('<IMG SRC="prevpage.gif" HEIGHT=17 BORDER=0 ALT="Página anterior"></A>');
+   } else {
+//   window.alert ('no previous page');
+   }
+
+   if (next != "crw_spIX.hhk") {
+      document.writeln ('<A HREF="' + next + '">');
+      document.writeln ('<IMG SRC="nextpage.gif" HEIGHT=17 BORDER=0 ALT="Página siguiente"></A>');
+   } else {
+//   window.alert ('no next page');
+   }
+   document.writeln ('</TD><TD ALIGN="left">');
+   document.writeln ('<A HREF="frameset.htm?TOC">');
+   document.writeln ('<IMG SRC="showtoc.gif" HEIGHT=17 BORDER=0 ALT="Haga clic para ver el contenido"></A></TD>');
+   document.writeln ('<TD ALIGN="left">');
+   document.writeln ('<A HREF="frameset.htm?IDX">');
+   document.writeln ('<IMG SRC="showix.gif" HEIGHT=17 BORDER=0 ALT="Haga clic para ver el índice"></A></TD>');
+   document.writeln ('</TD>');
+   document.writeln ('</TR>');
+   document.writeln ('</TABLE>');
+
+}
+
+</SCRIPT>
+<table align="right" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td align="right"><font size="1">Seagate Software, Inc.<br>
+    <a href="http://www.seagatesoftware.com">http://www.seagatesoftware.com</a><br>
+    Envíe sus comentarios a:<br>
+    <a href="mailto:techpubs@seagatesoftware.com">techpubs@seagatesoftware.com</a><br>
+    </font></td>
+  </tr>
+</table>
+</body>
+</html>
+
+

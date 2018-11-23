@@ -1,0 +1,99 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+
+<html>
+<head>
+<title>Tres capas</title>
+
+<link REL=STYLESHEET TYPE="text/css" HREF="seagate.css">
+
+<!--
+                 ***********************************
+                 * Seagate Software copyright 1999 *
+                 ***********************************
+
+                      Template version: 5.1
+-->
+
+
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" link="#0000FF" vlink="#0000FF" alink="#800080">
+
+
+ 
+<a name="30901"></a><h3 class="newpage"> Tres capas</h3>
+<p><a name="30902"></a>El acceso directo de archivos de base de datos desde Seagate Crystal Reports requiere de tres capas: </p><ul type="disc"><a name="72233"></a><li><a href="25_access_sources6.html#1740">Seagate Crystal Reports</a>
+<a name="72234"></a><li><a href="25_access_sources6.html#11328">Traducci&#243;n de datos</a>
+<a name="72235"></a><li><a href="25_access_sources6.html#1748">Base de datos</a>.
+<p><a name="376463"></a> </p>
+<p><a name="355293"></a> <img src="images/3LAYERS.gif">
+
+
+</p>
+</ul><p><a name="59374"></a>Seagate Crystal Reports usa la capa de traducci&#243;n de datos para comunicarse con la base de datos y acceder a sus datos.</p><a name="1740"></a><h4>Seagate Crystal Reports</h4><p><a name="11327"></a>Seagate Crystal Reports funciona como interfaz mediante la cual puede dar formato, organizar, seleccionar y ordenar los datos almacenados en los archivos de bases de datos. Obtiene datos al comunicarse con uno o m&#225;s archivos de la capa de traducci&#243;n de datos que puede leer la base de datos. Ya que Seagate Crystal Reports puede trabajar con muchas formas de datos, debe depender de otros archivos para poder funcionar directamente con los datos. Seagate Crystal Reports puede usar un m&#233;todo de comunicaci&#243;n nativo para comunicarse con los archivos de traducci&#243;n.</p><a name="11328"></a><h4>Traducci&#243;n de datos</h4><p><a name="11329"></a>Los datos se traducen mediante un conjunto de DLL espec&#237;fico de Seagate Crystal Reports. El programa usa las DLL espec&#237;ficas de cierto tipo de datos para comprender c&#243;mo se organizan los datos para dicho tipo y presentarlos correctamente cuando el informe se imprime, se ve previamente o se exporta.</p><p><a name="390816"></a><font color="darkblue"><b>Nota:   &nbsp;&nbsp;&nbsp;</b></font>Seagate Crystal Reports cuenta con todos los archivos de traducci&#243;n de datos para cada uno de los tipos de bases de datos de acceso directo que admite. Para obtener m&#225;s informaci&#243;n sobre los archivos necesarios, vea la ayuda en l&#237;nea sobre los requisitos de los archivos de ejecuci&#243;n (Runtime.hlp).</p>
+<a name="1748"></a><h4>Base de datos</h4><p><a name="1750"></a>El archivo de base de datos consiste en una o m&#225;s tablas. Las aplicaciones DBMS diferentes almacenan la informaci&#243;n de base de datos de forma diferente. Por ejemplo, dBASE almacena cada tabla de base de datos como archivo separado. Access, por otra parte, puede almacenar varias tablas junto con consultas, macros y otros elementos de bases de datos, todo en un solo archivo.</p><p><a name="11698"></a>Cuando Seagate Crystal Reports accede directamente a un archivo de base de datos, recupera autom&#225;ticamente la informaci&#243;n de todas las tablas y campos de dicho archivo. Es posible que no use todas las tablas o campos, pero el programa los tendr&#225; disponibles. Es decir, cuando se abre un archivo dBASE, s&#243;lo hay una tabla disponible en el archivo dBASE. Sin embargo, cuando se abre un archivo de Access, cada tabla de dicho archivo est&#225; disponible, aunque nunca las use todas.</p><p><a name="304970"></a><font color="darkblue"><b>Nota:   &nbsp;&nbsp;&nbsp;</b></font>Seagate Crystal Reports tambi&#233;n abre las consultas en una base de datos Access mediante el motor DAO o ODBC y le permite generar un informe sobre los campos de consulta, as&#237; como los campos de tabla. Vea <a href="25_access_sources10.html#1782">DAO</a> y <a href="25_access_sources35.html#98286">Access</a>.</p>
+
+<hr><br>
+
+<script  language="JavaScript"><!--
+
+var prev = "25_access_sources5.html";
+var next = "25_access_sources7.html";
+
+function setTopicID() { 
+      var number = "30901"; 
+      return number; 
+}
+
+// --></script>
+
+
+
+
+<SCRIPT>
+
+if (!window.parent.toc && navigator.appName == "Netscape") {
+
+   document.writeln ('<TABLE ALIGN="left" border="0" cellspacing="0" cellpadding="10">');
+   document.writeln ('<TR>');
+   document.write ('<TD ALIGN="left">');
+
+   if (prev != "crw_spTOC.hhc") {
+      document.writeln ('<A HREF="' + prev + '">');
+      document.writeln ('<IMG SRC="prevpage.gif" HEIGHT=17 BORDER=0 ALT="Página anterior"></A>');
+   } else {
+//   window.alert ('no previous page');
+   }
+
+   if (next != "crw_spIX.hhk") {
+      document.writeln ('<A HREF="' + next + '">');
+      document.writeln ('<IMG SRC="nextpage.gif" HEIGHT=17 BORDER=0 ALT="Página siguiente"></A>');
+   } else {
+//   window.alert ('no next page');
+   }
+   document.writeln ('</TD><TD ALIGN="left">');
+   document.writeln ('<A HREF="frameset.htm?TOC">');
+   document.writeln ('<IMG SRC="showtoc.gif" HEIGHT=17 BORDER=0 ALT="Haga clic para ver el contenido"></A></TD>');
+   document.writeln ('<TD ALIGN="left">');
+   document.writeln ('<A HREF="frameset.htm?IDX">');
+   document.writeln ('<IMG SRC="showix.gif" HEIGHT=17 BORDER=0 ALT="Haga clic para ver el índice"></A></TD>');
+   document.writeln ('</TD>');
+   document.writeln ('</TR>');
+   document.writeln ('</TABLE>');
+
+}
+
+</SCRIPT>
+<table align="right" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td align="right"><font size="1">Seagate Software, Inc.<br>
+    <a href="http://www.seagatesoftware.com">http://www.seagatesoftware.com</a><br>
+    Envíe sus comentarios a:<br>
+    <a href="mailto:techpubs@seagatesoftware.com">techpubs@seagatesoftware.com</a><br>
+    </font></td>
+  </tr>
+</table>
+</body>
+</html>
+
+

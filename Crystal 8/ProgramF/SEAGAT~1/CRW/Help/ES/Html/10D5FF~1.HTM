@@ -1,0 +1,93 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+
+<html>
+<head>
+<title>C&#243;mo evitar que objetos de longitud variable se sobrescriban unos con otros</title>
+
+<link REL=STYLESHEET TYPE="text/css" HREF="seagate.css">
+
+<!--
+                 ***********************************
+                 * Seagate Software copyright 1999 *
+                 ***********************************
+
+                      Template version: 5.1
+-->
+
+
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" link="#0000FF" vlink="#0000FF" alink="#800080">
+
+
+ 
+<a name="60197"></a><h3 class="newpage"> C&#243;mo evitar que objetos de longitud variable se sobrescriban unos con otros</h3>
+<p><a name="60198"></a>Cuando en una secci&#243;n de su informe usted pone objetos de longitud variable o subinformes sobre otros objetos, y la opci&#243;n <kbd>Puede crecer</kbd> para objetos de longitud variable est&#225; activada en el Editor de Formato, los primeros podr&#237;an imprimirse sobre los objetos de abajo, a menos que usted:</p><ul type="disc"><a name="60199"></a><li>Expanda la secci&#243;n para ajustarse al tama&#241;o m&#225;ximo del objeto, y
+<a name="60200"></a><li>Espacie los objetos, dejando suficiente lugar para que el primer objeto se imprima por completo, sin traslaparse con el segundo.
+</ul><p><a name="60201"></a>Usted puede eliminar este problema de sobreescritura creando una seci&#243;n m&#250;ltiple en un &#225;rea y colocando objetos en sus propias secciones, debajo del objeto de longitud variable.</p><p><a name="60205"></a> </p>
+<p><a name="60207"></a>Ahora, cuando el informe se ejecute, la secci&#243;n con el objeto de longitud variable se imprimir&#225; antes que la secci&#243;n que est&#225; debajo, d&#225;ndole los resultados que usted desea. Vea <a href="23_subreports12.html#44935">Combinaci&#243;n de informes no relacionados usando subinformes</a>.</p><p><a name="64695"></a><font color="darkblue"><b>Nota:   &nbsp;&nbsp;&nbsp;</b></font>Campos memo y BLOB, al igual que los subinformes, tambi&#233;n pueden causar problemas de sobrescritura.</p>
+
+<hr><br>
+
+<script  language="JavaScript"><!--
+
+var prev = "10_multsec_rep6.html";
+var next = "10_multsec_rep8.html";
+
+function setTopicID() { 
+      var number = "60197"; 
+      return number; 
+}
+
+// --></script>
+
+
+
+
+<SCRIPT>
+
+if (!window.parent.toc && navigator.appName == "Netscape") {
+
+   document.writeln ('<TABLE ALIGN="left" border="0" cellspacing="0" cellpadding="10">');
+   document.writeln ('<TR>');
+   document.write ('<TD ALIGN="left">');
+
+   if (prev != "crw_spTOC.hhc") {
+      document.writeln ('<A HREF="' + prev + '">');
+      document.writeln ('<IMG SRC="prevpage.gif" HEIGHT=17 BORDER=0 ALT="Página anterior"></A>');
+   } else {
+//   window.alert ('no previous page');
+   }
+
+   if (next != "crw_spIX.hhk") {
+      document.writeln ('<A HREF="' + next + '">');
+      document.writeln ('<IMG SRC="nextpage.gif" HEIGHT=17 BORDER=0 ALT="Página siguiente"></A>');
+   } else {
+//   window.alert ('no next page');
+   }
+   document.writeln ('</TD><TD ALIGN="left">');
+   document.writeln ('<A HREF="frameset.htm?TOC">');
+   document.writeln ('<IMG SRC="showtoc.gif" HEIGHT=17 BORDER=0 ALT="Haga clic para ver el contenido"></A></TD>');
+   document.writeln ('<TD ALIGN="left">');
+   document.writeln ('<A HREF="frameset.htm?IDX">');
+   document.writeln ('<IMG SRC="showix.gif" HEIGHT=17 BORDER=0 ALT="Haga clic para ver el índice"></A></TD>');
+   document.writeln ('</TD>');
+   document.writeln ('</TR>');
+   document.writeln ('</TABLE>');
+
+}
+
+</SCRIPT>
+<table align="right" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td align="right"><font size="1">Seagate Software, Inc.<br>
+    <a href="http://www.seagatesoftware.com">http://www.seagatesoftware.com</a><br>
+    Envíe sus comentarios a:<br>
+    <a href="mailto:techpubs@seagatesoftware.com">techpubs@seagatesoftware.com</a><br>
+    </font></td>
+  </tr>
+</table>
+</body>
+</html>
+
+

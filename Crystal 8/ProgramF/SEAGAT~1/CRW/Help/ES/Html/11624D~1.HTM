@@ -1,0 +1,133 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+
+<html>
+<head>
+<title>C&#243;mo hacer que un objeto se expanda a las siguientes secciones</title>
+
+<link REL=STYLESHEET TYPE="text/css" HREF="seagate.css">
+
+<!--
+                 ***********************************
+                 * Seagate Software copyright 1999 *
+                 ***********************************
+
+                      Template version: 5.1
+-->
+
+
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" link="#0000FF" vlink="#0000FF" alink="#800080">
+
+
+ 
+<a name="86734"></a><h3 class="newpage"> C&#243;mo hacer que un objeto se expanda a las siguientes secciones</h3>
+<p><a name="86735"></a>En este ejemplo usted har&#225; que el logotipo de Xtreme (xtreme.bmp) se expanda a varias secciones del informe. Este es un proceso similar al que seguir&#237;a cuando quiere usar la marca de agua de la compa&#241;&#237;a como fondo del informe.</p><p><a name="86736"></a>Para hacer que un objeto se expanda a la siguiente secci&#243;n, p&#243;ngalo en la secci&#243;n que est&#225; arriba de la que quiere "invadir". Luego active la opci&#243;n Ocupar la siguiente secci&#243;n en el Asistente de Secci&#243;n de la secci&#243;n en la cual ubic&#243; la imagen.</p><a name="83017"></a><h6>Para crear un informe b&#225;sico</h6><ol>
+<a name="86784"></a><li value="1&nbsp;&nbsp;&nbsp;&nbsp;">Para empezar su informe, use la tabla Cliente de <kbd>Xtreme_es.mdb</kbd>.
+<p class="indent"><a name="86789"></a>El archivo Xtreme_es.mdb est&#225; localizada en el directorio Archivos de Programa\Seagate Software\Crystal Reports\Samples\Databases, o el directorio en el cual reside el programa.</p><a name="86790"></a><li value="2&nbsp;&nbsp;&nbsp;&nbsp;">Ponga {cliente.NOMBRE DEL CLIENTE} y {cliente.VENTAS DEL A&Ntilde;O PASADO} lado a lado en la secci&#243;n Detalles de su informe. 
+<a name="86791"></a><li value="3&nbsp;&nbsp;&nbsp;&nbsp;">Para eliminar objetos innecesarios en este ejemplo, elimine el campo de t&#237;tulos que el programa pone en el Encabezado de p&#225;gina para cada uno de estos campos.
+<a name="83077"></a><li value="4&nbsp;&nbsp;&nbsp;&nbsp;">En el men&#250; <kbd>Insertar</kbd>, haga clic en <kbd>Grupo</kbd> para dividir los datos en grupos regionales.
+<a name="83078"></a><li value="5&nbsp;&nbsp;&nbsp;&nbsp;">En la ficha <kbd>Com&#250;n</kbd> del cuadro de di&#225;logo Insertar grupo, seleccione {cliente.REGI&Oacute;N} como campo de agrupamiento y ordenamiento.
+<a name="86809"></a><li value="6&nbsp;&nbsp;&nbsp;&nbsp;">Haga clic en <kbd>Aceptar</kbd>.
+</ol>
+<a name="86834"></a><h6>Para insertar una imagen en un informe</h6><ol>
+<a name="83147"></a><li value="1&nbsp;&nbsp;&nbsp;&nbsp;"><EM><img src="images/bt_insertpicture.gif">
+
+
+</EM>En el men&#250; <kbd>Insertar</kbd>, haga clic en <kbd>Imagen</kbd>.
+<a name="83148"></a><li value="2&nbsp;&nbsp;&nbsp;&nbsp;">Seleccione el archivo <kbd>Xtreme.bmp</kbd>, luego ub&#237;quelo en la secci&#243;n Encabezado de p&#225;gina, a la derecha del cuerpo del informe.
+<p class="indent"><a name="86839"></a>El archivo Xtreme.bmp est&#225; ubicado en el directorio Archivos de Programa\Seagate Software\ Crystal Reports\Samples\Databases o en el directorio en el que reside el programa.</p><p class="indent"><a name="86846"></a><font color="darkblue"><b>Nota:   &nbsp;&nbsp;&nbsp;</b></font>En este ejemplo, la imagen es ubicada a la derecha de los campos porque no se intenta usarla como fondo para el texto. Cuando est&#225; trabajando con una marca de agua (una imagen muy tenue dise&#241;ada para ser casi invisible), ponga la imagen directamente encima del texto.</p>
+<a name="83184"></a><li value="3&nbsp;&nbsp;&nbsp;&nbsp;"><img src="images/Bt_prevw.gif">
+
+
+En la barra de herramientas est&#225;ndar, haga clic en <kbd>Vista previa</kbd>.
+<p class="indent"><a name="83185"></a>Primero se imprime la imagen (completamente en la secci&#243;n Encabezado de p&#225;gina), luego contin&#250;a el cuerpo del informe.</p><a name="86881"></a><li value="4&nbsp;&nbsp;&nbsp;&nbsp;">Una vez terminada la vista previa del informe, vuelva a la ficha <kbd>Dise&#241;o</kbd>.
+</ol>
+<a name="86887"></a><h6>Para hacer subyacer a la imagen a la secci&#243;n siguiente</h6><ol>
+<a name="86892"></a><li value="1&nbsp;&nbsp;&nbsp;&nbsp;">Haga clic en el bot&#243;n <kbd>Asistente de secciones</kbd> de la barra de herramientas est&#225;ndar.
+<p class="indent"><a name="86893"></a>El Asistente de Secci&#243;n aparecer&#225; en su pantalla.</p><a name="86940"></a><li value="2&nbsp;&nbsp;&nbsp;&nbsp;">En la lista <kbd>Secciones</kbd>, haga clic en <kbd>Encabezado de p&#225;gina</kbd>, luego seleccione la casilla de verificaci&#243;n <kbd>Subyacer la secci&#243;n siguiente</kbd>.
+<a name="83272"></a><li value="3&nbsp;&nbsp;&nbsp;&nbsp;">Haga clic en <kbd>Aceptar</kbd> para obtener una nueva vista previa del informe.
+<p class="indent"><a name="86945"></a>Ahora la imagen se imprime en las secciones Encabezado de grupo y Detalles, junto a (en lugar de sobre) el texto del cuerpo del informe.</p><p class="indent"><a name="90359"></a><font color="darkblue"><b>Nota:   &nbsp;&nbsp;&nbsp;</b></font>Poner la imagen a la derecha del cuerpo del informe, tal como lo hizo aqu&#237;, es la misma t&#233;cnica que seguir&#237;a si quisiera que un gr&#225;fico o la foto de un empleado apareciera a la par de los detalles correspondientes al gr&#225;fico o al empleado.</p>
+<a name="86967"></a><li value="4&nbsp;&nbsp;&nbsp;&nbsp;">Una vez que ha terminado la vista previa del informe, vuelva a la ficha <kbd>Dise&#241;o</kbd>.
+<a name="86968"></a><li value="5&nbsp;&nbsp;&nbsp;&nbsp;">Regrese a la ficha Dise&#241;o y ajuste el objeto verticalmente de modo que sea dos o tres veces m&#225;s grande y examine de nuevo su informe en la ficha Vista previa.
+<p class="indent"><a name="86969"></a>Esta vez, la imagen se extiende a m&#225;s secciones.</p><p><a name="86970"></a>  </p>
+</ol>
+<p><a name="86972"></a>El &#225;rea a la que la imagen se extiende es determinada por:</p><ul type="disc"><a name="86973"></a><li>el tama&#241;o de la imagen,
+<a name="86974"></a><li>la secci&#243;n donde usted pone la imagen originalmente, y
+<a name="86975"></a><li>la posici&#243;n en la secci&#243;n en cual la pone.
+</ul><p><a name="86976"></a>Al modificar el tama&#241;o y la ubicaci&#243;n de un objeto, puede crear diferentes e impactantes efectos usando la capacidad de dicho objeto de extenderse a otras secciones.</p><a name="86978"></a><h3>Formas preimpresas</h3>
+<p><a name="86979"></a>Si imprime sobre formas preimpresas, debe ser capaz de:</p><ul type="disc"><a name="86980"></a><li>Digitalizar una forma.
+<a name="86981"></a><li>Ponerla en su informe como un mapa de bits (formato *.BMP).
+<a name="86982"></a><li>Alinear el mapa de bits y el informe usando la capacidad de extensi&#243;n y la habilidad de mover objetos hacia donde quiera.
+<a name="86983"></a><li>Imprimir su informe y la forma como una sola unidad, eliminando as&#237;, la necesidad de imprimir las formas separadamente.
+</ul><a name="86985"></a><h3>Secciones ocultas</h3>
+<p><a name="86986"></a>Seagate Crystal Reports tiene tres propiedades que usted puede establecer en el Asistente de Secci&#243;n para ocultar secciones del informe.</p><a name="86988"></a><h4>Ocultar (Se permite Traspasar) </h4><p><a name="86989"></a>Esta propiedad oculta la secci&#243;n cada vez que usted ejecuta el informe. Puede ser usada, por ejemplo, en un informe resumen donde quiere mostrar solamente los res&#250;menes pero no los detalles detr&#225;s de ellos. Cuando aplica la propiedad Ocultar a una secci&#243;n, &#233;sta puede volverse visible si traspasa para ver el contenido de la secci&#243;n. Esta propiedad s&#243;lo se puede aplicar en forma absoluta, es decir, que su aplicaci&#243;n no puede estar condicionada por una f&#243;rmula.</p><a name="86991"></a><h4>Suprimir (No Traspasar)</h4><p><a name="86992"></a>La propiedad Suprimir tambi&#233;n oculta una secci&#243;n cuando ejecuta el informe. Sin embargo, a diferencia de la propiedad Ocultar, usted no puede aplicar la propiedad Suprimir y despu&#233;s traspasar para revelar el contenido de la secci&#243;n. La propiedad puede ser aplicada en forma absoluta o condicional usando una f&#243;rmula. Una Carta Modelo es un buen ejemplo de la opci&#243;n Suprimir. Usted puede crear dos secciones de detalles, una que ser&#225; suprimida si las ventas est&#225;n sobre $X y otra que ser&#225; suprimida si las ventas est&#225;n debajo de $X.</p><a name="90419"></a><h4>Suprimir secci&#243;n en blanco</h4><p><a name="83377"></a>Esta propiedad oculta una secci&#243;n cuando no hay nada en ella.Si se ubica alg&#250;n elemento dentro de la secci&#243;n, entonces queda visible.</p><a name="87148"></a><h3>Objetos ocultos</h3>
+<p><a name="87149"></a>Seagate Crystal Reports tiene tres opciones de formato en el Editor de Formato que usted puede usar para ocultar objetos individualmente.</p><a name="87150"></a><h4>Suprimir si se duplica (ficha Com&#250;n)</h4><p><a name="87151"></a>La propriedad Suprimir si se duplica previene que se imprima el valor de un campo si &#233;ste es id&#233;ntico (un duplicado) al valor que lo precede.</p><p><a name="87152"></a>El valor no se imprime pero aparece el espacio en blanco donde dicho valor tendr&#237;a que aparecer en la impresi&#243;n.</p><p><a name="87161"></a> <img src="images/11_format49a.gif">
+
+
+</p>
+
+<hr><br>
+
+<script  language="JavaScript"><!--
+
+var prev = "11_format3.html";
+var next = "11_format5.html";
+
+function setTopicID() { 
+      var number = "86734"; 
+      return number; 
+}
+
+// --></script>
+
+
+
+
+<SCRIPT>
+
+if (!window.parent.toc && navigator.appName == "Netscape") {
+
+   document.writeln ('<TABLE ALIGN="left" border="0" cellspacing="0" cellpadding="10">');
+   document.writeln ('<TR>');
+   document.write ('<TD ALIGN="left">');
+
+   if (prev != "crw_spTOC.hhc") {
+      document.writeln ('<A HREF="' + prev + '">');
+      document.writeln ('<IMG SRC="prevpage.gif" HEIGHT=17 BORDER=0 ALT="Página anterior"></A>');
+   } else {
+//   window.alert ('no previous page');
+   }
+
+   if (next != "crw_spIX.hhk") {
+      document.writeln ('<A HREF="' + next + '">');
+      document.writeln ('<IMG SRC="nextpage.gif" HEIGHT=17 BORDER=0 ALT="Página siguiente"></A>');
+   } else {
+//   window.alert ('no next page');
+   }
+   document.writeln ('</TD><TD ALIGN="left">');
+   document.writeln ('<A HREF="frameset.htm?TOC">');
+   document.writeln ('<IMG SRC="showtoc.gif" HEIGHT=17 BORDER=0 ALT="Haga clic para ver el contenido"></A></TD>');
+   document.writeln ('<TD ALIGN="left">');
+   document.writeln ('<A HREF="frameset.htm?IDX">');
+   document.writeln ('<IMG SRC="showix.gif" HEIGHT=17 BORDER=0 ALT="Haga clic para ver el índice"></A></TD>');
+   document.writeln ('</TD>');
+   document.writeln ('</TR>');
+   document.writeln ('</TABLE>');
+
+}
+
+</SCRIPT>
+<table align="right" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td align="right"><font size="1">Seagate Software, Inc.<br>
+    <a href="http://www.seagatesoftware.com">http://www.seagatesoftware.com</a><br>
+    Envíe sus comentarios a:<br>
+    <a href="mailto:techpubs@seagatesoftware.com">techpubs@seagatesoftware.com</a><br>
+    </font></td>
+  </tr>
+</table>
+</body>
+</html>
+
+

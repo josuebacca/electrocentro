@@ -1,0 +1,186 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+
+<html>
+<head>
+<title>F&#243;rmula 11</title>
+
+<link REL=STYLESHEET TYPE="text/css" HREF="seagate.css">
+
+<!--
+                 ***********************************
+                 * Seagate Software copyright 1999 *
+                 ***********************************
+
+                      Template version: 5.1
+-->
+
+
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" link="#0000FF" vlink="#0000FF" alink="#800080">
+
+
+ 
+<a name="317288"></a><h3 class="newpage"> F&#243;rmula 11</h3>
+<a name="317289"></a><h4>Funciones y operadores usados</h4><p><a name="317290"></a>If<nobr>-T</nobr>hen<nobr>-E</nobr>lse, Indexar [], No igual a (&lt;&gt;), Maximum([matriz]), Multiplicar (*), Par&#233;ntesis ()</p><a name="317291"></a><h4>Prop&#243;sito de la f&#243;rmula</h4><p><a name="317292"></a>Como parte de un fondo de caridad, una compa&#241;&#237;a acuerda donar el 1% del monto de la factura (o $1,00, el que sea mayor) por cada factura emitida durante el trimestre anterior. Las &#250;nicas facturas que ha dejado exentas son las facturas a cr&#233;dito (identificadas con la letra "C" como el 6&#186; car&#225;cter en el n&#250;mero de la factura) y las facturas para agencias sin fines de lucro (identificadas con la letra "N" como el 6&#186; car&#225;cter en el n&#250;mero de la factura). La gerencia quiere que aparezca una columna "Contribuci&#243;n" en el informe trimestral detallado de ventas.</p><a name="317293"></a><h4>F&#243;rmula</h4><PRE><a name="317294"></a>If {archivo.N&#186; FACTURA}[6]&lt;&gt; "C" and {archivo.N&#186; 
+FACTURA}[6]&lt;&gt;"N" Then<br>
+&nbsp;&nbsp;&nbsp;&nbsp;$(Maximum([.01 * {archivo.MONTO}), 1])<br>
+Else<br>
+&nbsp;&nbsp;&nbsp;&nbsp;0
+</PRE><a name="317295"></a><h4>Resultado</h4><p><a name="317347"></a> <Table Border="1">
+<tr><td align="left" valign="TOP"><a name="317298"></a>N&#186; factura
+
+</td><td align="left" valign="TOP"><a name="317300"></a>Monto
+
+</td><td align="left" valign="TOP"><a name="317302"></a>Monto * 1%
+
+</td><td align="left" valign="TOP"><a name="317304"></a>Donaci&#243;n
+
+</td><td align="left" valign="TOP"><a name="317306"></a>Raz&#243;n
+
+</td></tr>
+<tr><td align="left" valign="TOP"><P><a name="317308"></a>21523R</P>
+
+
+</td><td align="left" valign="TOP"><P><a name="317310"></a>143.27</P>
+
+
+</td><td align="left" valign="TOP"><P><a name="317312"></a>1.43</P>
+
+
+</td><td align="left" valign="TOP"><P><a name="317314"></a>$1,43</P>
+
+
+</td><td align="left" valign="TOP"><P><br></P>
+
+
+</td></tr>
+<tr><td align="left" valign="TOP"><P><a name="317318"></a>21524C</P>
+
+
+</td><td align="left" valign="TOP"><P><a name="317320"></a>223.46</P>
+
+
+</td><td align="left" valign="TOP"><P><a name="317322"></a>N/D</P>
+
+
+</td><td align="left" valign="TOP"><P><a name="317324"></a>0 </P>
+
+
+</td><td align="left" valign="TOP"><P><a name="317326"></a>&#171;cr&#233;dito&#187;</P>
+
+
+</td></tr>
+<tr><td align="left" valign="TOP"><P><a name="317328"></a>21538R</P>
+
+
+</td><td align="left" valign="TOP"><P><a name="317330"></a>47.15</P>
+
+
+</td><td align="left" valign="TOP"><P><a name="317332"></a>0.47</P>
+
+
+</td><td align="left" valign="TOP"><P><a name="317334"></a>$1,00</P>
+
+
+</td><td align="left" valign="TOP"><P><br></P>
+
+
+</td></tr>
+<tr><td align="left" valign="TOP"><P><a name="317338"></a>21575N</P>
+
+
+</td><td align="left" valign="TOP"><P><a name="317340"></a>1312.49</P>
+
+
+</td><td align="left" valign="TOP"><P><a name="317342"></a>N/D</P>
+
+
+</td><td align="left" valign="TOP"><P><a name="317344"></a>0 </P>
+
+
+</td><td align="left" valign="TOP"><P><a name="317346"></a>&#171;no lucro&#187;</P>
+
+
+</td></tr>
+
+</Table></p>
+<a name="317348"></a><h4>Explicaci&#243;n</h4><ul type="disc"><a name="317349"></a><li>La parte If de la expresi&#243;n prueba dos condiciones: que la factura no sea una factura a cr&#233;dito y que no sea para una empresa sin fines lucrativos. Ambas condiciones deben ser verdaderas para activar la consecuencia Then.
+<a name="317350"></a><li>Condici&#243;n A: {archivo.N&#186; FACTURA} [6] &lt;&gt; "C" usa el operador de indexaci&#243;n [] para extraer el 6&#186; car&#225;cter del valor almacenado en {archivo.N&#186; FACTURA}. Luego compara ese car&#225;cter con "C". Si el car&#225;cter no es C (no es una factura a cr&#233;dito), se cumple la condici&#243;n A.
+<a name="317351"></a><li>Condici&#243;n B: {archivo.N&#186; FACTURA} [6] &lt;&gt; "C" usa el operador de indexaci&#243;n [] para extraer el 6&#186; car&#225;cter del valor almacenado en {archivo.N&#186; FACTURA}. Luego compara ese  car&#225;cter con "N". Si el car&#225;cter no es N (no es una factura a una empresa sin fines lucrativo), se cumple la condici&#243;n B.
+<a name="317352"></a><li>El operador booleano and indica que tanto la condici&#243;n A como la condici&#243;n B deben ser VERDADERAS con el fin de cumplir la parte If de la expresi&#243;n.
+<a name="317353"></a><li>Si la condici&#243;n A y la condici&#243;n B son VERDADERAS, se cumple la parte If de la expresi&#243;n, por ende, se activa la consecuencia Then.
+<a name="317354"></a><li>.01 * {archivo.MONTO} usa el operador de multiplicaci&#243;n (*) para multiplicar el monto de la factura por 1% (.01).
+<a name="317355"></a><li>Maximum([.01 * {archivo.MONTO}, 1]) devuelve la contribuci&#243;n m&#225;s alta para una determinada factura: ya sea 1% del monto de la factura o $1,00. 
+<a name="317356"></a><li>El operador de d&#243;lar ($) convierte el monto en un valor monetario.
+<a name="317357"></a><li>Si una de las condiciones A o B es FALSA, o ambas son FALSAS, no se cumple la parte If de la expresi&#243;n, de modo que se activan las consecuencias Else.
+<a name="317358"></a><li>Si no se cumple la parte If de la expresi&#243;n, la f&#243;rmula devuelve el valor 0.
+</ul><a name="317359"></a><h4>Comentarios</h4><p><a name="317360"></a>Una representaci&#243;n alternativa:</p><PRE><a name="317361"></a>If {archivo.N&#186; FACTURA}[6] in ["C", "N"] Then<br>
+&nbsp;&nbsp;&nbsp;&nbsp;0<br>
+Else<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Maximum([.01*{archivo.MONTO}, 1])
+</PRE><a name="317362"></a><h6>Temas relacionados</h6><p><a name="317366"></a><a href="19_introformulas28.html#316471">F&#243;rmulas en acci&#243;n</a></p>
+<hr><br>
+
+<script  language="JavaScript"><!--
+
+var prev = "19_introformulas38.html";
+var next = "19_introformulas40.html";
+
+function setTopicID() { 
+      var number = "317288"; 
+      return number; 
+}
+
+// --></script>
+
+
+
+
+<SCRIPT>
+
+if (!window.parent.toc && navigator.appName == "Netscape") {
+
+   document.writeln ('<TABLE ALIGN="left" border="0" cellspacing="0" cellpadding="10">');
+   document.writeln ('<TR>');
+   document.write ('<TD ALIGN="left">');
+
+   if (prev != "crw_spTOC.hhc") {
+      document.writeln ('<A HREF="' + prev + '">');
+      document.writeln ('<IMG SRC="prevpage.gif" HEIGHT=17 BORDER=0 ALT="Página anterior"></A>');
+   } else {
+//   window.alert ('no previous page');
+   }
+
+   if (next != "crw_spIX.hhk") {
+      document.writeln ('<A HREF="' + next + '">');
+      document.writeln ('<IMG SRC="nextpage.gif" HEIGHT=17 BORDER=0 ALT="Página siguiente"></A>');
+   } else {
+//   window.alert ('no next page');
+   }
+   document.writeln ('</TD><TD ALIGN="left">');
+   document.writeln ('<A HREF="frameset.htm?TOC">');
+   document.writeln ('<IMG SRC="showtoc.gif" HEIGHT=17 BORDER=0 ALT="Haga clic para ver el contenido"></A></TD>');
+   document.writeln ('<TD ALIGN="left">');
+   document.writeln ('<A HREF="frameset.htm?IDX">');
+   document.writeln ('<IMG SRC="showix.gif" HEIGHT=17 BORDER=0 ALT="Haga clic para ver el índice"></A></TD>');
+   document.writeln ('</TD>');
+   document.writeln ('</TR>');
+   document.writeln ('</TABLE>');
+
+}
+
+</SCRIPT>
+<table align="right" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td align="right"><font size="1">Seagate Software, Inc.<br>
+    <a href="http://www.seagatesoftware.com">http://www.seagatesoftware.com</a><br>
+    Envíe sus comentarios a:<br>
+    <a href="mailto:techpubs@seagatesoftware.com">techpubs@seagatesoftware.com</a><br>
+    </font></td>
+  </tr>
+</table>
+</body>
+</html>
+
+

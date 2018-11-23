@@ -1,0 +1,105 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+
+<html>
+<head>
+<title>Variables globales</title>
+
+<link REL=STYLESHEET TYPE="text/css" HREF="seagate.css">
+
+<!--
+                 ***********************************
+                 * Seagate Software copyright 1999 *
+                 ***********************************
+
+                      Template version: 5.1
+-->
+
+
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" link="#0000FF" vlink="#0000FF" alink="#800080">
+
+
+ 
+<a name="130370"></a><h4 class="newpage"> Variables globales</h4><p><a name="130371"></a>Las variables globales usan el mismo bloque de memoria para almacenar un valor en todo el informe principal. Este valor se hace disponible para todas las f&#243;rmulas que declaran la variable, excepto para aquellas que est&#225;n en los subinformes. Declare una variable global como en el ejemplo siguiente:</p><p><code><a name="130372"></a>Global y As String</code></p><p><a name="130373"></a>Como las variables globales comparten sus valores en todo el informe principal, no puede declarar una variable global en una f&#243;rmula con un tipo y luego declarar una variable global con el mismo nombre en otra f&#243;rmula distinta con un tipo diferente.</p><a name="135312"></a><h5>Ejemplo</h5><PRE><a name="130375"></a>Rem F&#243;rmula A
+<a name="130376"></a>Global z As Date
+<a name="130377"></a>z = CDate (1999, 9, 18)
+<a name="130378"></a>formula = 10
+<a name="130380"></a>Rem F&#243;rmula B
+<a name="130381"></a>Global z As Number
+<a name="130382"></a>formula = True
+</PRE><p><a name="130383"></a>En este caso, si ingresa y guarda primero la F&#243;rmula A, Seagate Crystal Reports devuelve un mensaje de error cuando verifica o trata de guardar la F&#243;rmula B. Esto se debe a que la declaraci&#243;n de la variable Global z como n&#250;mero entra en conflicto con su declaraci&#243;n anterior en la F&#243;rmula A, donde actuaba como fecha.</p><a name="130384"></a><h5>Uso de las variables globales</h5><p><a name="130385"></a>Las variables globales a menudo se usan para efectuar c&#225;lculos complejos donde los resultados de una f&#243;rmula dependen del agrupamiento y dise&#241;o de p&#225;gina del informe impreso real. Esto se logra al crear varias f&#243;rmulas, coloc&#225;ndolas en diferentes secciones del informe y haciendo que las diferentes f&#243;rmulas interact&#250;en mediante las variables globales.</p><p><a name="142615"></a>He aqu&#237; un ejemplo del tipo de efectos que se pueden producir:</p><PRE><a name="130386"></a>Rem F&#243;rmula C
+<a name="130387"></a>Global x as Number
+<a name="130388"></a>x = 10
+<a name="130389"></a>f&#243;rmula = x
+<a name="155458"></a>Rem F&#243;rmula D
+<a name="130392"></a>'llamar a la funci&#243;n WhileReadingRecords
+<a name="130393"></a>WhileReadingRecords
+<a name="130394"></a>Global x as Number
+<a name="130395"></a>x = x + 1
+<a name="130396"></a>formula = x
+</PRE><p><a name="130397"></a>Si se coloca la F&#243;rmula C en el encabezado de informe y luego se coloca la F&#243;rmula D en una secci&#243;n de detalle, la F&#243;rmula C se eval&#250;a antes que la F&#243;rmula D. La F&#243;rmula C se evaluar&#225; una vez y luego se evaluar&#225; la F&#243;rmula D para cada registro que aparezca en la secci&#243;n de detalle. La F&#243;rmula C devuelve 10. Para el primer registro de detalle, la F&#243;rmula D devuelve 11. Esto se debe a que el valor de 10 de x se retuvo de cuando fue establecido por la F&#243;rmula C. Entonces la F&#243;rmula D agrega 1 a este valor, estableciendo x en 11 y, a continuaci&#243;n, devuelve 11. Para el segundo registro de detalle, la F&#243;rmula D devuelve 12, agregando 1 al valor de x retenido anteriormente, que era 11. Este proceso contin&#250;a para los registros de detalle restantes.</p><p><a name="130399"></a>La llamada a WhileReadingRecords indica a Seagate Crystal Reports que vuelva a evaluar la F&#243;rmula D mientras &#233;ste lee cada registro del informe. De lo contrario, como la f&#243;rmula no contiene ning&#250;n campo de base de datos, el programa la evaluar&#225; s&#243;lo una vez antes de leer los registros de la base de datos. Entonces la f&#243;rmula devuelve el valor de 11 en vez de 11, 12, 13,... mientras se procesan los registros sucesivos.</p><p><a name="130401"></a>Si se remplaza el enunciado <code>x = x + 1</code> por<code> x = x + {Detalles del pedido.Cantidad}</code>, usted crea el efecto de un total acumulado basado en {Detalles del pedido.Cantidad}, aunque sea uno que comience en 10 en vez de 0 debido a la F&#243;rmula C. En este caso, puede omitir la llamada a WhileReadingRecords, ya que &#233;sta se producir&#225; autom&#225;ticamente porque la f&#243;rmula contiene un campo de base de datos.</p>
+<hr><br>
+
+<script  language="JavaScript"><!--
+
+var prev = "20_basicsyntax25.html";
+var next = "20_basicsyntax27.html";
+
+function setTopicID() { 
+      var number = "130370"; 
+      return number; 
+}
+
+// --></script>
+
+
+
+
+<SCRIPT>
+
+if (!window.parent.toc && navigator.appName == "Netscape") {
+
+   document.writeln ('<TABLE ALIGN="left" border="0" cellspacing="0" cellpadding="10">');
+   document.writeln ('<TR>');
+   document.write ('<TD ALIGN="left">');
+
+   if (prev != "crw_spTOC.hhc") {
+      document.writeln ('<A HREF="' + prev + '">');
+      document.writeln ('<IMG SRC="prevpage.gif" HEIGHT=17 BORDER=0 ALT="Página anterior"></A>');
+   } else {
+//   window.alert ('no previous page');
+   }
+
+   if (next != "crw_spIX.hhk") {
+      document.writeln ('<A HREF="' + next + '">');
+      document.writeln ('<IMG SRC="nextpage.gif" HEIGHT=17 BORDER=0 ALT="Página siguiente"></A>');
+   } else {
+//   window.alert ('no next page');
+   }
+   document.writeln ('</TD><TD ALIGN="left">');
+   document.writeln ('<A HREF="frameset.htm?TOC">');
+   document.writeln ('<IMG SRC="showtoc.gif" HEIGHT=17 BORDER=0 ALT="Haga clic para ver el contenido"></A></TD>');
+   document.writeln ('<TD ALIGN="left">');
+   document.writeln ('<A HREF="frameset.htm?IDX">');
+   document.writeln ('<IMG SRC="showix.gif" HEIGHT=17 BORDER=0 ALT="Haga clic para ver el índice"></A></TD>');
+   document.writeln ('</TD>');
+   document.writeln ('</TR>');
+   document.writeln ('</TABLE>');
+
+}
+
+</SCRIPT>
+<table align="right" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td align="right"><font size="1">Seagate Software, Inc.<br>
+    <a href="http://www.seagatesoftware.com">http://www.seagatesoftware.com</a><br>
+    Envíe sus comentarios a:<br>
+    <a href="mailto:techpubs@seagatesoftware.com">techpubs@seagatesoftware.com</a><br>
+    </font></td>
+  </tr>
+</table>
+</body>
+</html>
+
+

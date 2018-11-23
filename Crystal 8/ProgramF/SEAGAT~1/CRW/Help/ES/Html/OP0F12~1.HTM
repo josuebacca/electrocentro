@@ -1,0 +1,118 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+
+<html>
+<head>
+<title>Operador de Asignaci&#243;n</title>
+
+<link REL=STYLESHEET TYPE="text/css" HREF="seagate.css">
+
+<!--
+                 ***********************************
+                 * Seagate Software copyright 1999 *
+                 ***********************************
+
+                      Template version: 5.1
+-->
+
+
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" link="#0000FF" vlink="#0000FF" alink="#800080">
+
+
+ 
+<a name="1000020459"></a><h3 class="newpage"> Operador de Asignaci&#243;n</h3>
+<a name="1000025411"></a><h4>Sintaxis Basic (x = y)</h4><p><a name="1000025416"></a>Puede usar el operador de asignaci&#243;n (=) y la palabra clave de asignaci&#243;n "Let" (Let x=y) s&#243;lo con sintaxis Basic. La sintaxis Crystal usa el otro operador de asignaci&#243;n (:=).</p><a name="1000025417"></a><h5>Uso</h5><p><code><a name="1000025418"></a>x = y </code></p><p class="example"><a name="1000025423"></a>Asigna y a la variable x. x debe haber sido declarada antes de la asignaci&#243;n. y debe ser del mismo tipo que x, o de un tipo compatible con x.</p><p><code><a name="1000025424"></a>Let x = y </code></p><p class="example"><a name="1000025429"></a>Asigna y a la variable x. x debe haber sido declarada antes de la asignaci&#243;n. y debe ser del mismo tipo que x, o de un tipo compatible con x.</p><a name="1000025430"></a><h5>Examplos</h5><p><a name="1000025435"></a>El siguiente ejemplo es aplicable a la sintaxis Basic:</p><p class="code"><a name="1000020470"></a>Dim n As Number
+<br><a name="1000020471"></a>Dim b As Boolean
+<br><a name="1000020472"></a>Dim c As Currency
+<br><a name="1000020473"></a>Dim d As Date
+<br><a name="1000020474"></a>Dim t As Time
+<br><a name="1000020475"></a>Dim s As String
+<br><a name="1000020476"></a>Dim matrizNum () As Number
+<br><a name="1000020477"></a>'a n se le asigna 100
+<br><a name="1000020478"></a>n = 100
+<br><a name="1000020479"></a>'a b se le asigna el valor booleano verdadero
+<br><a name="1000020480"></a>b = True
+<br><a name="1000020481"></a>'a c se le asigna el valor monetario 5000
+<br><a name="1000020482"></a>c = CCur (5000)
+<br><a name="1000020483"></a>'a d se le asigna el valor de fecha de 10 de octubre de 1999
+<br><a name="1000020484"></a>d = CDate ("10, 10, 1999")
+<br><a name="1000020485"></a>'a t se le asigna el valor de hora 00:50
+<br><a name="1000020486"></a>t = CTime ("12:50am")
+<br><a name="1000020487"></a>
+<br><a name="1000020488"></a>'a s se le asigna una cadena que es una concatenaci&#243;n de 2 subcadenas y un 
+valor de campo
+<br><a name="1000020489"></a>s = "Las ventas totales ascienden a " &amp; {Pedidos.Monto del pedido} &amp; " 
+millones."
+<br><a name="1000020490"></a>
+<br><a name="1000020491"></a>'a matrizNum se le asigna una matriz de valores num&#233;ricos 
+<br><a name="1000020492"></a>matrizNum = Array (10, 20, 30)
+<br><a name="1000020493"></a>
+<br><a name="1000025440"></a>formula = s
+</p><a name="1000025441"></a><h5>Comentarios</h5><ul type="disc"><a name="1000020496"></a><li>Una variable debe declararse en un enunciado separado antes de asignarle ning&#250;n valor en sintaxis Basic.
+<a name="1000025446"></a><li>La asignaci&#243;n s&#243;lo asigna un valor a una variable. Cuando una f&#243;rmula devuelve, el valor asignado a la variable f&#243;rmula se formatea de acuerdo al formato especificado para ese campo de f&#243;rmula del tipo correspondiente.
+</ul><a name="1000025448"></a><h4>Crystal syntax (x := y)</h4><p><a name="1000025453"></a>Puede usar el operador de asignaci&#243;n (:=) s&#243;lo con sintaxis Crystal. Para obtener m&#225;s informaci&#243;n, vea <a href="21_crystalsyntax28.html#145381">Declaraciones de variables</a>.</p><a name="1000025454"></a><h5>Uso</h5><p><code><a name="1000025455"></a>x := n</code></p><p class="example"><a name="1000025456"></a>Asigna el valor n a la variable <EM>x</EM>. (x tiene que haber sido declarado en la misma f&#243;rmula.)</p><a name="1000025457"></a><h5>Examplos</h5><p><a name="1000025462"></a>Los siguientes ejemplos son aplicables a sintaxis Crystal:</p><p><code><a name="1000025463"></a>Cantidad:= 0</code></p><p class="example"><a name="1000025464"></a>Inicializa la variable llamada Cantidad.</p><p><code><a name="1000025465"></a>Cantidad:= 100</code></p><p class="example"><a name="1000025466"></a>Asigna el valor 100 a la variable llamada Cantidad.</p><p><code><a name="1000025467"></a>Cantidad:= Cantidad + {archivo.CNTD}</code></p><p class="example"><a name="1000025468"></a>Asigna el resultado de un c&#225;lculo a la variable llamada Cantidad. El c&#225;lculo suma el valor de la cantidad del campo ({archivo.CNTD}) al valor vigente de la variable Cantidad.</p><p><code><a name="1000025469"></a>Cantidad:= {archivo.CNTD1} + {archivo.CNTD2} + {archivo.CNTD3}</code></p><p class="example"><a name="1000025470"></a>Suma el total de los tres campos de cantidad y asigna el total a la variable llamada Cantidad</p><p><code><a name="1000025471"></a>Cliente:= "Westside Motors"</code></p><p class="example"><a name="1000025472"></a>Asigna la Cadena "Westside Motors" a la variable llamada Cliente.</p><p><code><a name="1000025473"></a>Cliente:= {cliente.NOMBRE} + {cliente.APELLIDO}</code></p><p class="example"><a name="1000025474"></a>Concatena dos campos y asigna el valor concatenado de ambos campos a la variable llamada Cliente.</p><p><code><a name="1000025475"></a>Cliente:= TrimRight({cliente.NOMBRE}) + {cliente.APELLIDO}</code></p><p class="example"><a name="1000025476"></a>Recorta los espacios en blanco del campo del nombre propio({cliente.NOMBRE}), concatena el campo de apellidos({cliente.APELLIDO}) y asigna el valor concatenado a ambos campos de la variable llamada Cliente.</p><p><code><a name="1000025477"></a>Cliente:= "Mr. " + {cliente.APELLIDO}</code></p><p class="example"><a name="1000025478"></a>Concatena la Cadena "Mr. " con el valor de campo de apellidos{cliente.APELLIDO}, y asigna el valor concatenado a la variable llamada Cliente.</p><p><code><a name="1000025479"></a>Cantidad:= 100; Cliente:= "Westside Motors"</code></p><p class="example"><a name="1000025480"></a>Asigna la constante 100 a la variable de n&#250;mero llamada Cantidad, y asigna la cadena "Westside Motors" a la variable de cadena llamada Cliente. Se puede asignar valores a las variables m&#250;ltiples, separando los enunciados de asignaci&#243;n&nbsp;&nbsp;&nbsp;&nbsp; con puntos y coma.</p>
+<hr><br>
+
+<script  language="JavaScript"><!--
+
+var prev = "Operators58.html";
+var next = "Operators60.html";
+
+function setTopicID() { 
+      var number = "1000020459"; 
+      return number; 
+}
+
+// --></script>
+
+
+
+
+<SCRIPT>
+
+if (!window.parent.toc && navigator.appName == "Netscape") {
+
+   document.writeln ('<TABLE ALIGN="left" border="0" cellspacing="0" cellpadding="10">');
+   document.writeln ('<TR>');
+   document.write ('<TD ALIGN="left">');
+
+   if (prev != "crw_spTOC.hhc") {
+      document.writeln ('<A HREF="' + prev + '">');
+      document.writeln ('<IMG SRC="prevpage.gif" HEIGHT=17 BORDER=0 ALT="Página anterior"></A>');
+   } else {
+//   window.alert ('no previous page');
+   }
+
+   if (next != "crw_spIX.hhk") {
+      document.writeln ('<A HREF="' + next + '">');
+      document.writeln ('<IMG SRC="nextpage.gif" HEIGHT=17 BORDER=0 ALT="Página siguiente"></A>');
+   } else {
+//   window.alert ('no next page');
+   }
+   document.writeln ('</TD><TD ALIGN="left">');
+   document.writeln ('<A HREF="frameset.htm?TOC">');
+   document.writeln ('<IMG SRC="showtoc.gif" HEIGHT=17 BORDER=0 ALT="Haga clic para ver el contenido"></A></TD>');
+   document.writeln ('<TD ALIGN="left">');
+   document.writeln ('<A HREF="frameset.htm?IDX">');
+   document.writeln ('<IMG SRC="showix.gif" HEIGHT=17 BORDER=0 ALT="Haga clic para ver el índice"></A></TD>');
+   document.writeln ('</TD>');
+   document.writeln ('</TR>');
+   document.writeln ('</TABLE>');
+
+}
+
+</SCRIPT>
+<table align="right" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td align="right"><font size="1">Seagate Software, Inc.<br>
+    <a href="http://www.seagatesoftware.com">http://www.seagatesoftware.com</a><br>
+    Envíe sus comentarios a:<br>
+    <a href="mailto:techpubs@seagatesoftware.com">techpubs@seagatesoftware.com</a><br>
+    </font></td>
+  </tr>
+</table>
+</body>
+</html>
+
+

@@ -1,0 +1,95 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+
+<html>
+<head>
+<title>Campos</title>
+
+<link REL=STYLESHEET TYPE="text/css" HREF="seagate.css">
+
+<!--
+                 ***********************************
+                 * Seagate Software copyright 1999 *
+                 ***********************************
+
+                      Template version: 5.1
+-->
+
+
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" link="#0000FF" vlink="#0000FF" alink="#800080">
+
+
+ 
+<a name="144479"></a><h2 class="newpage">Campos</h2><p><a name="144481"></a>En las f&#243;rmulas tambi&#233;n se puede hacer referencia a muchos de los campos que se usan al crear un informe. Por ejemplo, en una f&#243;rmula se pueden usar los campos de base de datos, de par&#225;metro, de total acumulado, de expresi&#243;n SQL, de resumen y de nombre de grupo. Tambi&#233;n se puede hacer referencia a otros campos de f&#243;rmula dentro de la f&#243;rmula.</p><p><a name="151654"></a>La manera m&#225;s f&#225;cil de insertar un campo en un informe es hacer doble clic en el nombre del campo en el &#225;rbol Campos de informe. De ese modo se asegurar&#225; de que usa la sintaxis correcta para el campo.</p><a name="144483"></a><h4>Apariencia de los campos en las f&#243;rmulas</h4><p><a name="160255"></a>Los campos de base de datos, de par&#225;metro, de f&#243;rmula, de total acumulado y de expresi&#243;n SQL tienen sus nombres entre llaves. Los nombres del campo de base de datos se toman de la base de datos. Por ejemplo: </p><ul type="disc"><a name="160256"></a><li>campo de base de datos: <code>{Empleado.Apellido}</code>
+</ul><p><a name="160257"></a>Los nombres de los campos de par&#225;metro, de f&#243;rmula, de total acumulado y de expresi&#243;n SQL se especifican al crear los campos. </p><ul type="disc"><a name="160258"></a><li>los campos de par&#225;metro tambi&#233;n incluyen un signo de interrogaci&#243;n: <code>{?mi campo de par&#225;metro}</code>
+<a name="160259"></a><li>los campos de f&#243;rmula incluyen un signo arroba: <code>{@otra f&#243;rmula }</code>
+<a name="160260"></a><li>los campos de total acumulado incluyen un signo almohadilla: <code>{#mi total acumulado}</code>
+<a name="160261"></a><li>los campos de expresi&#243;n SQL incluyen un signo de porcentaje: <code>{%mi expresi&#243;n SQL}</code>
+</ul><p><a name="160262"></a>Los campos de nombre de grupo y resumen se asemejan a las llamadas de funci&#243;n. Sin embargo, son en realidad anotaciones abreviadas de un campo de informe.</p><ul type="disc"><a name="160263"></a><li>campo de resumen de suma: <code>Sum({Pedidos.Monto del pedido}</code>, <code>{Pedidos.Enviar v&#237;a})</code>
+<a name="160264"></a><li>campo de nombre de grupo: GroupName<code>({Pedidos.Enviar v&#237;a})</code>
+</ul>
+<hr><br>
+
+<script  language="JavaScript"><!--
+
+var prev = "21_crystalsyntax11.html";
+var next = "21_crystalsyntax13.html";
+
+function setTopicID() { 
+      var number = "144479"; 
+      return number; 
+}
+
+// --></script>
+
+
+
+
+<SCRIPT>
+
+if (!window.parent.toc && navigator.appName == "Netscape") {
+
+   document.writeln ('<TABLE ALIGN="left" border="0" cellspacing="0" cellpadding="10">');
+   document.writeln ('<TR>');
+   document.write ('<TD ALIGN="left">');
+
+   if (prev != "crw_spTOC.hhc") {
+      document.writeln ('<A HREF="' + prev + '">');
+      document.writeln ('<IMG SRC="prevpage.gif" HEIGHT=17 BORDER=0 ALT="Página anterior"></A>');
+   } else {
+//   window.alert ('no previous page');
+   }
+
+   if (next != "crw_spIX.hhk") {
+      document.writeln ('<A HREF="' + next + '">');
+      document.writeln ('<IMG SRC="nextpage.gif" HEIGHT=17 BORDER=0 ALT="Página siguiente"></A>');
+   } else {
+//   window.alert ('no next page');
+   }
+   document.writeln ('</TD><TD ALIGN="left">');
+   document.writeln ('<A HREF="frameset.htm?TOC">');
+   document.writeln ('<IMG SRC="showtoc.gif" HEIGHT=17 BORDER=0 ALT="Haga clic para ver el contenido"></A></TD>');
+   document.writeln ('<TD ALIGN="left">');
+   document.writeln ('<A HREF="frameset.htm?IDX">');
+   document.writeln ('<IMG SRC="showix.gif" HEIGHT=17 BORDER=0 ALT="Haga clic para ver el índice"></A></TD>');
+   document.writeln ('</TD>');
+   document.writeln ('</TR>');
+   document.writeln ('</TABLE>');
+
+}
+
+</SCRIPT>
+<table align="right" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td align="right"><font size="1">Seagate Software, Inc.<br>
+    <a href="http://www.seagatesoftware.com">http://www.seagatesoftware.com</a><br>
+    Envíe sus comentarios a:<br>
+    <a href="mailto:techpubs@seagatesoftware.com">techpubs@seagatesoftware.com</a><br>
+    </font></td>
+  </tr>
+</table>
+</body>
+</html>
+
+

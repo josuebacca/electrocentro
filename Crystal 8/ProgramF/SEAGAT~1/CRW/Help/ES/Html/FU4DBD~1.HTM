@@ -1,0 +1,90 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+
+<html>
+<head>
+<title>SummaryFunction (x)</title>
+
+<link REL=STYLESHEET TYPE="text/css" HREF="seagate.css">
+
+<!--
+                 ***********************************
+                 * Seagate Software copyright 1999 *
+                 ***********************************
+
+                      Template version: 5.1
+-->
+
+
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" link="#0000FF" vlink="#0000FF" alink="#800080">
+
+
+ 
+<a name="1000702387"></a><h3 class="newpage"> SummaryFunction (x)</h3>
+<p><a name="1000648793"></a>Sintaxis b&#225;sica y Crystal.</p><a name="1000567820"></a><h5>Argumentos</h5><p><a name="1000567821"></a>x es un arreglo de valores que puede ser evaluado por la funci&#243;n que est&#225; siendo utilizada.</p><a name="1000567822"></a><h5>Devuelve </h5><p><a name="1000567823"></a>Un n&#250;mero fraccionario.</p><a name="1000567824"></a><h5>Acci&#243;n </h5><p><a name="1000567826"></a>SummaryFunction (x) resume los valores dentro de una matriz de constantes, valores de campos de datos o f&#243;rmulas (a*b, c/d, etc.) separadas por comas.</p><a name="1000567827"></a><h5>Uso(s) t&#237;pico(s) </h5><p><a name="1000567828"></a>&Uacute;sela siempre que desee resumir dos o m&#225;s valores.  </p><a name="1000567829"></a><h5>Ejemplo(s) </h5><p><a name="1000567830"></a>Los siguientes ejemplos son aplicables para la sintaxis Crystal:</p><p><a name="1000750165"></a><font color="darkblue"><b>Nota:   &nbsp;&nbsp;&nbsp;</b></font>Use la funci&#243;n <a href="Functions152.html#1000566381">Array (x,...)</a> para crear matrices en lugar de corchetes para crear ejemplos de sintaxis b&#225;sica.  </p>
+<p><code><a name="1000567831"></a>SummaryFunction([25,50,75,100])</code></p><p class="example"><a name="1000567832"></a>Resume los valores de una matriz de constantes.</p><p><code><a name="1000567833"></a>SummaryFunction([{archivo.PERIODO 8}, {archivo.PERIODO 9}, {archivo.PERIODO 10}])</code></p><p class="example"><a name="1000567834"></a>Resume los valores de una matriz de valores de campo.</p><p><code><a name="1000567835"></a>Average ([10,12,32,48])</code></p><p class="example"><a name="1000567836"></a>Calcula el promedio de los valores de una matriz de constantes.</p><p><code><a name="1000567837"></a>Count([1,2,3,4,5]) </code></p><p class="example"><a name="1000567838"></a>Devuelve 5. Cuenta el n&#250;mero total de valores de la matriz.  </p><p><code><a name="1000567839"></a>DistinctCount([1,3,5,3,2,5]) </code></p><p class="example"><a name="1000567840"></a>Devuelve 4. Cuenta el n&#250;mero de valores distintivos de la matriz.   Los valores duplicados se pasan por alto.</p><p><code><a name="1000567841"></a>Variance([{archivo.CANT1}, {archivo.CANT2}, {archivo.CANT3}, {archivo.CANT4}]) </code></p><p class="example"><a name="1000567842"></a>Devuelve 17.00 donde Cant1 = 2, Cant2 = 2, Cant3 = 10 y  Cant4 = 8.</p>
+<hr><br>
+
+<script  language="JavaScript"><!--
+
+var prev = "Functions155.html";
+var next = "Functions157.html";
+
+function setTopicID() { 
+      var number = "1000702387"; 
+      return number; 
+}
+
+// --></script>
+
+
+
+
+<SCRIPT>
+
+if (!window.parent.toc && navigator.appName == "Netscape") {
+
+   document.writeln ('<TABLE ALIGN="left" border="0" cellspacing="0" cellpadding="10">');
+   document.writeln ('<TR>');
+   document.write ('<TD ALIGN="left">');
+
+   if (prev != "crw_spTOC.hhc") {
+      document.writeln ('<A HREF="' + prev + '">');
+      document.writeln ('<IMG SRC="prevpage.gif" HEIGHT=17 BORDER=0 ALT="Página anterior"></A>');
+   } else {
+//   window.alert ('no previous page');
+   }
+
+   if (next != "crw_spIX.hhk") {
+      document.writeln ('<A HREF="' + next + '">');
+      document.writeln ('<IMG SRC="nextpage.gif" HEIGHT=17 BORDER=0 ALT="Página siguiente"></A>');
+   } else {
+//   window.alert ('no next page');
+   }
+   document.writeln ('</TD><TD ALIGN="left">');
+   document.writeln ('<A HREF="frameset.htm?TOC">');
+   document.writeln ('<IMG SRC="showtoc.gif" HEIGHT=17 BORDER=0 ALT="Haga clic para ver el contenido"></A></TD>');
+   document.writeln ('<TD ALIGN="left">');
+   document.writeln ('<A HREF="frameset.htm?IDX">');
+   document.writeln ('<IMG SRC="showix.gif" HEIGHT=17 BORDER=0 ALT="Haga clic para ver el índice"></A></TD>');
+   document.writeln ('</TD>');
+   document.writeln ('</TR>');
+   document.writeln ('</TABLE>');
+
+}
+
+</SCRIPT>
+<table align="right" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td align="right"><font size="1">Seagate Software, Inc.<br>
+    <a href="http://www.seagatesoftware.com">http://www.seagatesoftware.com</a><br>
+    Envíe sus comentarios a:<br>
+    <a href="mailto:techpubs@seagatesoftware.com">techpubs@seagatesoftware.com</a><br>
+    </font></td>
+  </tr>
+</table>
+</body>
+</html>
+
+

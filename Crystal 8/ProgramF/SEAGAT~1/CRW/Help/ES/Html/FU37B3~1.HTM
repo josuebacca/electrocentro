@@ -1,0 +1,101 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+
+<html>
+<head>
+<title>DayOfWeek</title>
+
+<link REL=STYLESHEET TYPE="text/css" HREF="seagate.css">
+
+<!--
+                 ***********************************
+                 * Seagate Software copyright 1999 *
+                 ***********************************
+
+                      Template version: 5.1
+-->
+
+
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" link="#0000FF" vlink="#0000FF" alink="#800080">
+
+
+ 
+<a name="1000822416"></a><h3 class="newpage"> DayOfWeek</h3>
+<p><a name="1000822420"></a>DayOfWeek y <a href="Functions120.html#1000822382">WeekDay</a> son funciones equivalentes. Sin embargo, en la sintaxis b&#225;sica se prefiere WeekDay y en sintaxis Crystal, DayOfWeek.</p><a name="1000781171"></a><h5>Sobrecargas</h5><ul type="disc"><a name="1000781172"></a><li>DayOfWeek (fecha)
+<a name="1000781173"></a><li>DayOfWeek (fecha, primerD&#237;aDeLaSemana)
+</ul><a name="1000593765"></a><h5>Argumentos</h5><p><a name="1000593766"></a>fecha es un valor Fecha o valor de fechaHora.</p><a name="1000593767"></a><h5>Devuelve </h5><p><a name="1000593768"></a>Un n&#250;mero entero.</p><a name="1000593769"></a><h5>Acci&#243;n</h5><p><a name="1000593770"></a>DayOfWeek determina el d&#237;a de la semana en que cae y lo convierte a un n&#250;mero (1 a 7). Opcionalmente, puede especificarse un valor num&#233;rico para el primer d&#237;a de la semana.   Si no se especifica el primer d&#237;a de la semana, se presupone el d&#237;a domingo.</p><a name="1000593771"></a><h5>Uso(s) t&#237;pico(s)</h5><p><a name="1000593772"></a>Utilice esta funci&#243;n siempre que necesite utilizar el d&#237;a de la semana como un n&#250;mero en una expresi&#243;n num&#233;rica.</p><a name="1000593773"></a><h5>Ejemplo(s)</h5><p><a name="1000593774"></a>Los siguientes ejemplos son aplicables para la sintaxis Crystal:</p><p><code><a name="1000593775"></a>DayOfWeek(Date(1990,10,1))</code></p><p class="example"><a name="1000593776"></a>Devuelve 2 cuando Octubre 1, 1990 es un Lunes.</p><p class="code"><a name="1000593777"></a>Ifi DayOfWeek({pedidos.FECHA DEL PEDIDO}) = 3 Then 
+<br><a name="1000735531"></a>&nbsp;&nbsp;&nbsp;&nbsp;"Sam"
+<br><a name="1000735535"></a>Else
+<br><a name="1000735542"></a>&nbsp;&nbsp;&nbsp;&nbsp;"Bill"
+</p><p class="example"><a name="1000593778"></a>En la determinaci&#243;n de si Sam o Bill estuvieron en servicio en Septiembre 8, 1990.</p><p class="code"><a name="1000593779"></a>Ifi DayOfWeek({pedidos.FECHA DEL PEDIDO}) = 7 Then 
+<br><a name="1000735551"></a>&nbsp;&nbsp;&nbsp;&nbsp;"S&#225;bado" 
+<br><a name="1000735552"></a>Else 
+<br><a name="1000735553"></a>&nbsp;&nbsp;&nbsp;&nbsp;""
+<br><a name="1000735554"></a>
+<br><a name="1000593780"></a>DayOfWeek(#sept. 24, 1999#, crMonday)
+</p><p class="example"><a name="1000593781"></a>Devuelve 5 cuando sept.  24, 1999, es un viernes y se ha especificado el lunes como el primer d&#237;a de la semana. </p><a name="1000674409"></a><h5>Comentario(s) </h5><p><a name="1000593786"></a>Si desea que aparezca el d&#237;a de la semana abreviado, utilice esta f&#243;rmula:</p><p><code><a name="1000593787"></a>["Dom", "Lun", "Mar",..] [DayOfWeek(Fecha)]</code></p><p class="example"><a name="1000593788"></a>Establece una matriz (["Dom",..]) y utiliza el n&#250;mero del d&#237;a de la semana (Dom = 1, Sab = 7) para seleccionar el nombre de fecha deseado desde la matriz. </p><a name="1000692992"></a><h6>Temas relacionados</h6><p><a name="1000692996"></a><a href="19_introformulas38.html#317211">F&#243;rmula 10</a></p>
+<hr><br>
+
+<script  language="JavaScript"><!--
+
+var prev = "Functions120.html";
+var next = "Functions122.html";
+
+function setTopicID() { 
+      var number = "1000822416"; 
+      return number; 
+}
+
+// --></script>
+
+
+
+
+<SCRIPT>
+
+if (!window.parent.toc && navigator.appName == "Netscape") {
+
+   document.writeln ('<TABLE ALIGN="left" border="0" cellspacing="0" cellpadding="10">');
+   document.writeln ('<TR>');
+   document.write ('<TD ALIGN="left">');
+
+   if (prev != "crw_spTOC.hhc") {
+      document.writeln ('<A HREF="' + prev + '">');
+      document.writeln ('<IMG SRC="prevpage.gif" HEIGHT=17 BORDER=0 ALT="Página anterior"></A>');
+   } else {
+//   window.alert ('no previous page');
+   }
+
+   if (next != "crw_spIX.hhk") {
+      document.writeln ('<A HREF="' + next + '">');
+      document.writeln ('<IMG SRC="nextpage.gif" HEIGHT=17 BORDER=0 ALT="Página siguiente"></A>');
+   } else {
+//   window.alert ('no next page');
+   }
+   document.writeln ('</TD><TD ALIGN="left">');
+   document.writeln ('<A HREF="frameset.htm?TOC">');
+   document.writeln ('<IMG SRC="showtoc.gif" HEIGHT=17 BORDER=0 ALT="Haga clic para ver el contenido"></A></TD>');
+   document.writeln ('<TD ALIGN="left">');
+   document.writeln ('<A HREF="frameset.htm?IDX">');
+   document.writeln ('<IMG SRC="showix.gif" HEIGHT=17 BORDER=0 ALT="Haga clic para ver el índice"></A></TD>');
+   document.writeln ('</TD>');
+   document.writeln ('</TR>');
+   document.writeln ('</TABLE>');
+
+}
+
+</SCRIPT>
+<table align="right" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td align="right"><font size="1">Seagate Software, Inc.<br>
+    <a href="http://www.seagatesoftware.com">http://www.seagatesoftware.com</a><br>
+    Envíe sus comentarios a:<br>
+    <a href="mailto:techpubs@seagatesoftware.com">techpubs@seagatesoftware.com</a><br>
+    </font></td>
+  </tr>
+</table>
+</body>
+</html>
+
+

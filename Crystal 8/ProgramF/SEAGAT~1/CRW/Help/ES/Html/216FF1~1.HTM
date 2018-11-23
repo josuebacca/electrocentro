@@ -1,0 +1,98 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+
+<html>
+<head>
+<title>Rangos de fecha</title>
+
+<link REL=STYLESHEET TYPE="text/css" HREF="seagate.css">
+
+<!--
+                 ***********************************
+                 * Seagate Software copyright 1999 *
+                 ***********************************
+
+                      Template version: 5.1
+-->
+
+
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" link="#0000FF" vlink="#0000FF" alink="#800080">
+
+
+ 
+<a name="147168"></a><h3 class="newpage"> Rangos de fecha</h3>
+<p><a name="147170"></a>Esta categor&#237;a de funciones se analiz&#243; en la secci&#243;n <a href="21_crystalsyntax24.html#145295">Tipos de datos de rango</a>. Como comentario adicional, decir que los rangos de fecha producidos por estas funciones dependen de la fecha actual. Por ejemplo, si la fecha de hoy es 18 de septiembre de 1999, entonces LastFullMonth es el valor de rango de fecha:</p><p><code><a name="147171"></a>CDate(#Aug 1, 1999#) To CDate(#Aug 31, 1999#)</code></p><p><a name="147172"></a>Esta funcionalidad a menudo resulta &#250;til, pero, &#191;y si desea determinar un rango de fechas seg&#250;n un campo de base de datos como {Pedidos.Fecha del pedido}? Se pueden usar en su lugar las funciones de fecha/hora. </p><p><a name="158881"></a>Por ejemplo:</p><PRE><a name="147174"></a>Local DateVar f := CDate ({Pedidos.Fecha del pedido});
+<a name="147175"></a>Local DateVar Range rf;
+<a name="147176"></a>rf := DateSerial (Year(d), Month(d) - 1, 1) To
+<a name="147177"></a>      DateSerial (Year(d), Month(d), 1 - 1);
+<a name="147178"></a>//En este punto rf es el valor de rango de fecha que 
+contiene
+<a name="147179"></a>//el &#250;ltimo mes completo antes de {Pedidos.Fecha del 
+pedido}
+</PRE><p><a name="147181"></a>La funci&#243;n DateSerial facilita la tarea ya que usted no tiene que preocuparse de los casos especiales. Nunca le permite crear una fecha no v&#225;lida. Por ejemplo, DateSerial (1999, 1 - 1, 1) es 1 de diciembre de 1998.</p><p><a name="148144"></a><font color="darkblue"><b>Nota:   &nbsp;&nbsp;&nbsp;</b></font>En el ejemplo anterior, {Pedidos.Fecha del pedido} es realmente un campo de fechahora, de modo que la funci&#243;n CDate se usa para convertirla a una fecha truncando la parte de hora.</p>
+
+<hr><br>
+
+<script  language="JavaScript"><!--
+
+var prev = "21_crystalsyntax39.html";
+var next = "21_crystalsyntax41.html";
+
+function setTopicID() { 
+      var number = "147168"; 
+      return number; 
+}
+
+// --></script>
+
+
+
+
+<SCRIPT>
+
+if (!window.parent.toc && navigator.appName == "Netscape") {
+
+   document.writeln ('<TABLE ALIGN="left" border="0" cellspacing="0" cellpadding="10">');
+   document.writeln ('<TR>');
+   document.write ('<TD ALIGN="left">');
+
+   if (prev != "crw_spTOC.hhc") {
+      document.writeln ('<A HREF="' + prev + '">');
+      document.writeln ('<IMG SRC="prevpage.gif" HEIGHT=17 BORDER=0 ALT="Página anterior"></A>');
+   } else {
+//   window.alert ('no previous page');
+   }
+
+   if (next != "crw_spIX.hhk") {
+      document.writeln ('<A HREF="' + next + '">');
+      document.writeln ('<IMG SRC="nextpage.gif" HEIGHT=17 BORDER=0 ALT="Página siguiente"></A>');
+   } else {
+//   window.alert ('no next page');
+   }
+   document.writeln ('</TD><TD ALIGN="left">');
+   document.writeln ('<A HREF="frameset.htm?TOC">');
+   document.writeln ('<IMG SRC="showtoc.gif" HEIGHT=17 BORDER=0 ALT="Haga clic para ver el contenido"></A></TD>');
+   document.writeln ('<TD ALIGN="left">');
+   document.writeln ('<A HREF="frameset.htm?IDX">');
+   document.writeln ('<IMG SRC="showix.gif" HEIGHT=17 BORDER=0 ALT="Haga clic para ver el índice"></A></TD>');
+   document.writeln ('</TD>');
+   document.writeln ('</TR>');
+   document.writeln ('</TABLE>');
+
+}
+
+</SCRIPT>
+<table align="right" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td align="right"><font size="1">Seagate Software, Inc.<br>
+    <a href="http://www.seagatesoftware.com">http://www.seagatesoftware.com</a><br>
+    Envíe sus comentarios a:<br>
+    <a href="mailto:techpubs@seagatesoftware.com">techpubs@seagatesoftware.com</a><br>
+    </font></td>
+  </tr>
+</table>
+</body>
+</html>
+
+

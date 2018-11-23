@@ -1,0 +1,96 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+
+<html>
+<head>
+<title>Se debe asignar un valor a la variable formula</title>
+
+<link REL=STYLESHEET TYPE="text/css" HREF="seagate.css">
+
+<!--
+                 ***********************************
+                 * Seagate Software copyright 1999 *
+                 ***********************************
+
+                      Template version: 5.1
+-->
+
+
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" link="#0000FF" vlink="#0000FF" alink="#800080">
+
+
+ 
+<a name="128940"></a><h4 class="newpage"> Se debe asignar un valor a la variable formula</h4><p><a name="128941"></a>Si no se asigna un valor a la variable <EM>formula,</EM> no ser&#225; una f&#243;rmula completa de sintaxis Basic.</p><p><a name="128942"></a><font color="darkblue"><b>Nota:   &nbsp;&nbsp;&nbsp;</b></font>Algunos ejemplos de este secci&#243;n no son f&#243;rmulas completas de sintaxis Basic, sino m&#225;s bien fragmentos cuya intenci&#243;n es explicar una caracter&#237;stica en particular.</p>
+<a name="128938"></a><h4>&#191;Y si no deseo usar el valor devuelto por una f&#243;rmula?</h4><p><a name="128096"></a>Algunas veces es preferible escribir una f&#243;rmula que declare e inicie algunas variables globales. Estas f&#243;rmulas se insertan com&#250;nmente en la secci&#243;n de encabezado de un informe. En dichos casos, asigne cualquier valor a la variable especial <EM>formula</EM>. Cada f&#243;rmula debe devolver un valor, aunque usted no est&#233; interesado en usar dicho valor. </p><p><a name="143666"></a>Por ejemplo:</p><PRE><a name="128098"></a>Rem Algunas declaraciones de variable global
+<a name="128099"></a>Rem Recuerde establecer el valor de 'formula'
+<a name="128100"></a>Global x As String, y As Number, z As DateTime
+<a name="128101"></a>x = "hola"
+<a name="128102"></a>y = 10.5
+<a name="128103"></a>z = #Aug 6, 1976#
+<a name="128104"></a>formula = 10
+</PRE>
+<hr><br>
+
+<script  language="JavaScript"><!--
+
+var prev = "20_basicsyntax6.html";
+var next = "20_basicsyntax8.html";
+
+function setTopicID() { 
+      var number = "128940"; 
+      return number; 
+}
+
+// --></script>
+
+
+
+
+<SCRIPT>
+
+if (!window.parent.toc && navigator.appName == "Netscape") {
+
+   document.writeln ('<TABLE ALIGN="left" border="0" cellspacing="0" cellpadding="10">');
+   document.writeln ('<TR>');
+   document.write ('<TD ALIGN="left">');
+
+   if (prev != "crw_spTOC.hhc") {
+      document.writeln ('<A HREF="' + prev + '">');
+      document.writeln ('<IMG SRC="prevpage.gif" HEIGHT=17 BORDER=0 ALT="Página anterior"></A>');
+   } else {
+//   window.alert ('no previous page');
+   }
+
+   if (next != "crw_spIX.hhk") {
+      document.writeln ('<A HREF="' + next + '">');
+      document.writeln ('<IMG SRC="nextpage.gif" HEIGHT=17 BORDER=0 ALT="Página siguiente"></A>');
+   } else {
+//   window.alert ('no next page');
+   }
+   document.writeln ('</TD><TD ALIGN="left">');
+   document.writeln ('<A HREF="frameset.htm?TOC">');
+   document.writeln ('<IMG SRC="showtoc.gif" HEIGHT=17 BORDER=0 ALT="Haga clic para ver el contenido"></A></TD>');
+   document.writeln ('<TD ALIGN="left">');
+   document.writeln ('<A HREF="frameset.htm?IDX">');
+   document.writeln ('<IMG SRC="showix.gif" HEIGHT=17 BORDER=0 ALT="Haga clic para ver el índice"></A></TD>');
+   document.writeln ('</TD>');
+   document.writeln ('</TR>');
+   document.writeln ('</TABLE>');
+
+}
+
+</SCRIPT>
+<table align="right" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td align="right"><font size="1">Seagate Software, Inc.<br>
+    <a href="http://www.seagatesoftware.com">http://www.seagatesoftware.com</a><br>
+    Envíe sus comentarios a:<br>
+    <a href="mailto:techpubs@seagatesoftware.com">techpubs@seagatesoftware.com</a><br>
+    </font></td>
+  </tr>
+</table>
+</body>
+</html>
+
+

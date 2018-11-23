@@ -1,0 +1,108 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+
+<html>
+<head>
+<title>C&#243;mo abrir consultas Access a trav&#233;s de ODBC</title>
+
+<link REL=STYLESHEET TYPE="text/css" HREF="seagate.css">
+
+<!--
+                 ***********************************
+                 * Seagate Software copyright 1999 *
+                 ***********************************
+
+                      Template version: 5.1
+-->
+
+
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" link="#0000FF" vlink="#0000FF" alink="#800080">
+
+
+ 
+<a name="324770"></a><h4 class="newpage"> C&#243;mo abrir consultas Access a trav&#233;s de ODBC</h4><p><a name="324771"></a>ODBC le proporciona mejor control sobre que partes de una base de datos intenta utilizar. Por esta raz&#243;n, utilizar una consulta de Access a trav&#233;s ODBC requiere varios pasos extra.</p><a name="324824"></a><h6>Para abrir una consulta de Access usando ODBC</h6><ol>
+<a name="317763"></a><li value="1&nbsp;&nbsp;&nbsp;&nbsp;">En el men&#250; <kbd>Archivo</kbd>, haga clic en <kbd>Opciones</kbd>.
+<a name="324829"></a><li value="2&nbsp;&nbsp;&nbsp;&nbsp;">Haga clic en la ficha <kbd>Base de datos</kbd>.<img src="images/db_fopt3.gif">
+
+
+
+<a name="324834"></a><li value="3&nbsp;&nbsp;&nbsp;&nbsp;">Seleccione las casillas de verificaci&#243;n <kbd>Vistas</kbd> y/o <kbd>Volver a preguntar al usuario al conectar</kbd>.
+<ul type="disc"><ul type="disc"><a name="324846"></a><li>La opci&#243;n <kbd>Vistas</kbd> muestra autom&#225;ticamente cualquier consulta disponible en su base de datos Access.<a name="324847"></a><li>La opci&#243;n <EM>Volver a preguntar al usuario al conectar</EM><kbd> </kbd>muestra el cuadro de di&#225;logo Permitir Elaborar Informes, cada vez que inicia sesi&#243;n en una fuente de datos ODBC. Este cuadro de di&#225;logo proporciona las mismas opciones que la secci&#243;n Permitir Elaborar Informes en el cuadro de di&#225;logo Opciones, pero lo hace tambi&#233;n para cada fuente de datos ODBC en que usted inicia sesi&#243;n.</ul></ul><a name="324848"></a><li value="4&nbsp;&nbsp;&nbsp;&nbsp;">Adem&#225;s, puede especificar las opciones <kbd>Nombre de tabla LIKE</kbd> y <kbd>Propietario LIKE</kbd> si lo desea.
+<ul type="disc"><ul type="disc"><a name="324849"></a><li>El <kbd>Nombre de tabla LIKE</kbd> est&#225; basado en la cl&#225;usula SQL LIKE. Esta opci&#243;n le permite especificar los tipos de nombres de tablas que desea que aparezcan en el cuadro de di&#225;logo Elegir Tabla SQL. Utilice el car&#225;cter de gui&#243;n bajo (_) o el car&#225;cter de signo de porcentaje (%) como comodines con esta funci&#243;n. El car&#225;cter de gui&#243;n bajo especifica cualquier car&#225;cter, mientras que el signo de porcentaje significa cualquier cadena de caracteres. Por ejemplo, DAV_ coincide solamente con DAVE, mientras que DAV% coincide con DAVE y DAVID. El Nombre de tabla LIKE C% s&#243;lo mostrar&#237;a aquellas tablas cuyo nombre de tabla comienza con la letra C.<a name="324850"></a><li>El <kbd>Propietario LIKE</kbd> tambi&#233;n est&#225; basado en la cl&#225;usula SQL LIKE. La opci&#243;n Propietario LIKE le permite seleccionar el Propietario (o Creador o Alias) de la tabla, no el nombre de la tabla. Por ejemplo el Propietario LIKE C% s&#243;lo mostrar&#237;a aquellas tablas cuyo Propietario tuviera un nombre comenzando con la letra C.</ul></ul><a name="324851"></a><li value="5&nbsp;&nbsp;&nbsp;&nbsp;">Haga clic en <kbd>Aceptar</kbd> para salir del cuadro de di&#225;logo Opciones.
+<a name="340897"></a><li value="6&nbsp;&nbsp;&nbsp;&nbsp;">Seleccione la fuente de datos ODBC para su base de datos Access, despu&#233;s haga clic en Aceptar.
+<p class="indent"><a name="324855"></a>Si no especific&#243; un archivo de base de datos Access en particular con su fuente de datos ODBC de Access, aparecer&#225; el cuadro de di&#225;logo Seleccionar Base de Datos.</p><p class="indent"><a name="324962"></a><font color="darkblue"><b>Nota:   &nbsp;&nbsp;&nbsp;</b></font>Si su base de datos requiere de un nombre de usuario y contrase&#241;a, aparecer&#225; un cuadro de dialogo de conexi&#243;n.</p>
+<a name="324963"></a><li value="7&nbsp;&nbsp;&nbsp;&nbsp;">Ubique y seleccione la base de datos que contenga la consulta de Access que desea utilizar y exp&#225;ndala.
+<p class="indent"><a name="329281"></a>Si selecciona la casilla de verificaci&#243;n <EM>Volver a preguntar al usuario al conectar</EM> en el cuadro de di&#225;logo Opciones, aparece ahora el cuadro de di&#225;logo Permitir Elaborar Informe. De otra manera, dir&#237;jase al paso 9.</p><p><a name="324968"></a> <img src="images/db_alwrp.gif">
+
+
+</p>
+<a name="317901"></a><li value="8&nbsp;&nbsp;&nbsp;&nbsp;">Aseg&#250;rese de que est&#233; seleccionada la casilla de verificaci&#243;n <kbd>Vistas</kbd> y haga clic en <kbd>Aceptar</kbd> al finalizar.
+<a name="325026"></a><li value="9&nbsp;&nbsp;&nbsp;&nbsp;">Destaque su consulta, haga clic en <kbd>Agregar</kbd> y luego en <kbd>Cerrar</kbd>.
+<p class="indent"><a name="325028"></a>La ficha Dise&#241;o aparece con el cuadro de di&#225;logo Explorador de datos. Su consulta de Access y todos los campos asociados con esa consulta, aparecen en la ficha Base de Datos.</p></ol>
+<p><a name="329332"></a><font color="darkblue"><b>Nota:   &nbsp;&nbsp;&nbsp;</b></font>No puede utilizar consultas de acci&#243;n Access o actualizar consultas en Seagate Crystal Reports. Pero s&#237; puede usar consultas de selecci&#243;n Access y consultas de tablas cruzadas.</p>
+
+<hr><br>
+
+<script  language="JavaScript"><!--
+
+var prev = "24_under_databases42.html";
+var next = "24_under_databases44.html";
+
+function setTopicID() { 
+      var number = "324770"; 
+      return number; 
+}
+
+// --></script>
+
+
+
+
+<SCRIPT>
+
+if (!window.parent.toc && navigator.appName == "Netscape") {
+
+   document.writeln ('<TABLE ALIGN="left" border="0" cellspacing="0" cellpadding="10">');
+   document.writeln ('<TR>');
+   document.write ('<TD ALIGN="left">');
+
+   if (prev != "crw_spTOC.hhc") {
+      document.writeln ('<A HREF="' + prev + '">');
+      document.writeln ('<IMG SRC="prevpage.gif" HEIGHT=17 BORDER=0 ALT="Página anterior"></A>');
+   } else {
+//   window.alert ('no previous page');
+   }
+
+   if (next != "crw_spIX.hhk") {
+      document.writeln ('<A HREF="' + next + '">');
+      document.writeln ('<IMG SRC="nextpage.gif" HEIGHT=17 BORDER=0 ALT="Página siguiente"></A>');
+   } else {
+//   window.alert ('no next page');
+   }
+   document.writeln ('</TD><TD ALIGN="left">');
+   document.writeln ('<A HREF="frameset.htm?TOC">');
+   document.writeln ('<IMG SRC="showtoc.gif" HEIGHT=17 BORDER=0 ALT="Haga clic para ver el contenido"></A></TD>');
+   document.writeln ('<TD ALIGN="left">');
+   document.writeln ('<A HREF="frameset.htm?IDX">');
+   document.writeln ('<IMG SRC="showix.gif" HEIGHT=17 BORDER=0 ALT="Haga clic para ver el índice"></A></TD>');
+   document.writeln ('</TD>');
+   document.writeln ('</TR>');
+   document.writeln ('</TABLE>');
+
+}
+
+</SCRIPT>
+<table align="right" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td align="right"><font size="1">Seagate Software, Inc.<br>
+    <a href="http://www.seagatesoftware.com">http://www.seagatesoftware.com</a><br>
+    Envíe sus comentarios a:<br>
+    <a href="mailto:techpubs@seagatesoftware.com">techpubs@seagatesoftware.com</a><br>
+    </font></td>
+  </tr>
+</table>
+</body>
+</html>
+
+

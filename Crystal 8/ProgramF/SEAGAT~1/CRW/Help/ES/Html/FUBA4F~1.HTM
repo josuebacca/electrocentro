@@ -1,0 +1,97 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+
+<html>
+<head>
+<title>FV</title>
+
+<link REL=STYLESHEET TYPE="text/css" HREF="seagate.css">
+
+<!--
+                 ***********************************
+                 * Seagate Software copyright 1999 *
+                 ***********************************
+
+                      Template version: 5.1
+-->
+
+
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" link="#0000FF" vlink="#0000FF" alink="#800080">
+
+
+ 
+<a name="1000851829"></a><h3 class="newpage"> FV</h3>
+<p><a name="1000851830"></a>Sintaxis b&#225;sica y Crystal.</p><a name="1000851831"></a><h5>Sobrecargas</h5><ul type="disc"><a name="1000851832"></a><li>FV (tasa, nPer&#237;odos, pago)
+<a name="1000851833"></a><li>FV (tasa, nPer&#237;odos, pago, Valor presente)
+<a name="1000851834"></a><li>FV (tasa, nPer&#237;odos, pago, Valor presente, tipo)
+</ul><a name="1000851835"></a><h5>Argumentos</h5><ul type="disc"><a name="1000851836"></a><li>tasa es un N&#250;mero que especifica la tasa de inter&#233;s por per&#237;odo.  
+<a name="1000851837"></a><li>nPer&#237;odos es un N&#250;mero positivo que especifica el n&#250;mero total de per&#237;odos de pago en el a&#241;o.  Las unidades utilizadas para especificar la tasa y nPer&#237;odos deben ser concordantes. Por ejemplo, si nPer&#237;odos es el n&#250;mero de per&#237;odos en meses, entonces tasa es una tasa de inter&#233;s mensual. 
+<a name="1000851838"></a><li>pago es un N&#250;mero o Moneda que especifica el pago que debe realizarse cada per&#237;odo. 
+<a name="1000851839"></a><li>valorPresente es un N&#250;mero o Moneda opcional que especifica el valor presente de una serie de pagos futuros.  
+<a name="1000851840"></a><li>tipo es un N&#250;mero opcional que especifica cu&#225;ndo vencen los pagos.  Especifique  0 si los pagos vencen al final del per&#237;odo de pago y 1 si vencen al principio del per&#237;odo. Si se omite, se asume 0.
+</ul><a name="1000851841"></a><h5>Devuelve </h5><p><a name="1000851842"></a>Valor num&#233;rico</p><a name="1000851843"></a><h5>Acci&#243;n</h5><p><a name="1000851844"></a>FV devuelve un N&#250;mero especificando el valor futuro de una anualidad basado en pagos fijos peri&#243;dicos y una tasa de inter&#233;s fija. </p><a name="1000851845"></a><h5>Ejemplo(s)</h5><p><a name="1000851846"></a>Los siguientes ejemplos son aplicables a las sintaxis b&#225;sica y Crystal:</p><p><a name="1000851847"></a>Supongamos que ahorra $1000 mensuales en un plan de pensiones que paga un 6 por ciento de inter&#233;s anual compuesto mensualmente.  &#191;Cu&#225;nto valdr&#225; la cuenta en 20 a&#241;os? </p><p><code><a name="1000851848"></a>FV (0.06 / 12, 20 * 12, -1000)</code></p><p class="example"><a name="1000851849"></a>Devuelve 462041 (redondeado al entero m&#225;s pr&#243;ximo). Su cuenta tendr&#225;  $462,041. El pago  (-1000) es negativo ya que est&#225; depositando dinero en el plan. </p><p><a name="1000851850"></a>El ejemplo anterior supone que usted hace sus dep&#243;sitos en el plan a fin de mes.  Por lo que despu&#233;s del primer mes, su plan tendr&#225; s&#243;lo $1000 ya que no hubo tiempo para acumular intereses.  Supongamos por el contrario que hace sus dep&#243;sitos a principios de mes. </p><p><code><a name="1000851851"></a>FV (0.06 / 12, 20 * 12, -1000, 0, 1)</code></p><p class="example"><a name="1000851852"></a>Devuelve  464351 (redondeado al entero m&#225;s pr&#243;ximo). Su cuenta ser&#225; entonces  $464,351. Ahorrar&#225;  $2,310 m&#225;s al hacer sus dep&#243;sitos a principios del mes. </p><p><a name="1000851853"></a>Ahora, supongamos que adem&#225;s de hacer los dep&#243;sitos a principios de mes, usted abre su plan con un dep&#243;sito inicial de  $20,000.</p><p><code><a name="1000851854"></a>FV (0.06 / 12, 20 * 12, -1000, 0, 1)</code></p><p class="example"><a name="1000851855"></a>Devuelve 530555 (redondeado al entero m&#225;s pr&#243;ximo). Al cabo de 20 a&#241;os su cuenta tendr&#225; $530,555.</p><p><a name="1000851856"></a>Tambi&#233;n puede usar la funci&#243;n FV para calcular el valor futuro de un dep&#243;sito global. Por ejemplo, si deposita  $20,000 en un plan que paga un 6 por ciento de inter&#233;s anual compuesto mensualmente por 20 a&#241;os:</p><p><code><a name="1000851857"></a>FV (0.06 / 12, 20 * 12, 0, -20000)</code></p><p class="example"><a name="1000851858"></a>Devuelve 66204 (redondeado al entero m&#225;s pr&#243;ximo). Por lo tanto, tendr&#225; $66,204 en su cuenta. Esto tambi&#233;n es igual a la diferencia de los dos ejemplos anteriores ($530,555 - $464,351).</p><a name="1000851859"></a><h5>Comentario</h5><p><a name="1000851860"></a>Esta funci&#243;n est&#225; dise&#241;ada para trabajar exactamente como la funci&#243;n de Visual Basic del mismo nombre.</p>
+<hr><br>
+
+<script  language="JavaScript"><!--
+
+var prev = "Functions50.html";
+var next = "Functions52.html";
+
+function setTopicID() { 
+      var number = "1000851829"; 
+      return number; 
+}
+
+// --></script>
+
+
+
+
+<SCRIPT>
+
+if (!window.parent.toc && navigator.appName == "Netscape") {
+
+   document.writeln ('<TABLE ALIGN="left" border="0" cellspacing="0" cellpadding="10">');
+   document.writeln ('<TR>');
+   document.write ('<TD ALIGN="left">');
+
+   if (prev != "crw_spTOC.hhc") {
+      document.writeln ('<A HREF="' + prev + '">');
+      document.writeln ('<IMG SRC="prevpage.gif" HEIGHT=17 BORDER=0 ALT="Página anterior"></A>');
+   } else {
+//   window.alert ('no previous page');
+   }
+
+   if (next != "crw_spIX.hhk") {
+      document.writeln ('<A HREF="' + next + '">');
+      document.writeln ('<IMG SRC="nextpage.gif" HEIGHT=17 BORDER=0 ALT="Página siguiente"></A>');
+   } else {
+//   window.alert ('no next page');
+   }
+   document.writeln ('</TD><TD ALIGN="left">');
+   document.writeln ('<A HREF="frameset.htm?TOC">');
+   document.writeln ('<IMG SRC="showtoc.gif" HEIGHT=17 BORDER=0 ALT="Haga clic para ver el contenido"></A></TD>');
+   document.writeln ('<TD ALIGN="left">');
+   document.writeln ('<A HREF="frameset.htm?IDX">');
+   document.writeln ('<IMG SRC="showix.gif" HEIGHT=17 BORDER=0 ALT="Haga clic para ver el índice"></A></TD>');
+   document.writeln ('</TD>');
+   document.writeln ('</TR>');
+   document.writeln ('</TABLE>');
+
+}
+
+</SCRIPT>
+<table align="right" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td align="right"><font size="1">Seagate Software, Inc.<br>
+    <a href="http://www.seagatesoftware.com">http://www.seagatesoftware.com</a><br>
+    Envíe sus comentarios a:<br>
+    <a href="mailto:techpubs@seagatesoftware.com">techpubs@seagatesoftware.com</a><br>
+    </font></td>
+  </tr>
+</table>
+</body>
+</html>
+
+

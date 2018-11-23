@@ -1,0 +1,111 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+
+<html>
+<head>
+<title>CCur</title>
+
+<link REL=STYLESHEET TYPE="text/css" HREF="seagate.css">
+
+<!--
+                 ***********************************
+                 * Seagate Software copyright 1999 *
+                 ***********************************
+
+                      Template version: 5.1
+-->
+
+
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" link="#0000FF" vlink="#0000FF" alink="#800080">
+
+
+ 
+<a name="1000201826"></a><h3 class="newpage"> CCur</h3>
+<p><a name="1000648797"></a>Sintaxis b&#225;sica y Crystal.</p><a name="1000201827"></a><h5>Sobrecargas</h5><ul type="disc"><a name="1000201828"></a><li>CCur (n&#250;mero o moneda)
+<a name="1000201829"></a><li>CCur (cadena)
+</ul><a name="1000201830"></a><h5>Argumentos</h5><p><a name="1000648826"></a> <Table Border="1">
+<tr><td align="left" valign="TOP"><P><a name="1000648842"></a>CCur (n&#250;mero o moneda)</P>
+
+
+</td><td align="left" valign="TOP"><P><a name="1000648862"></a>n&#250;mero o moneda es un N&#250;mero o valor o expresi&#243;n de Moneda.</P>
+
+
+</td></tr>
+<tr><td align="left" valign="TOP"><P><a name="1000648849"></a>CCur (cadena)</P>
+
+
+</td><td align="left" valign="TOP"><P><a name="1000648869"></a>cadena es un valor o expresi&#243;n de Cadena. </P>
+
+
+</td></tr>
+
+</Table></p>
+<a name="1000201835"></a><h5>Devuelve </h5><p><a name="1000201836"></a>Valor de moneda </p><a name="1000201837"></a><h5>Acci&#243;n</h5><p><a name="1000201838"></a>CCur devuelve un valor de Moneda creado al convertir el N&#250;mero, Moneda o tipo de argumento de Cadena dado a un valor de Moneda.   Si no puede realizarse la conversi&#243;n, se genera un error.  </p><a name="1000201839"></a><h5>Ejemplo(s)</h5><p><a name="1000201840"></a>Los siguientes ejemplos son aplicables a las sintaxis b&#225;sica y Crystal:</p><p><code><a name="1000201841"></a>CCur (200.20)</code></p><p class="example"><a name="1000201842"></a>En sintaxis Crystal, esto equivale a escribir $200.20. En sintaxis b&#225;sica, CCur (200.20) es la forma de crear directamente un valor de Moneda de 200.20. </p><p><code><a name="1000201843"></a>CCur ("$200.20")</code></p><p class="example"><a name="1000201844"></a>Devuelve un valor de Moneda CCur (200.20) dado el valor Cadena "$200.20". </p><p><code><a name="1000201845"></a>CCur ("doscientos d&#243;lares")</code></p><p class="example"><a name="1000201846"></a>Genera un error.   La funci&#243;n CCur no puede convertir la Cadena "doscientos d&#243;lares" a un valor de Moneda.</p><a name="1000201848"></a><h5>Comentario(s) </h5><ul type="disc"><a name="1000201849"></a><li>Esta funci&#243;n est&#225; dise&#241;ada para trabajar exactamente como la funci&#243;n de Visual Basic del mismo nombre.
+<a name="1000201850"></a><li>Puede usar la funci&#243;n <a href="Functions76.html#1000852750">IsNumeric (cadena)</a> o <a href="Functions77.html#1000852800">NumericText (cadena)</a> para verificar si el argumento de Cadena puede convertirse a una Moneda, antes de hacer la conversi&#243;n real.   De esta manera, si no puede hacerse la conversi&#243;n, podr&#225; manejar la situaci&#243;n como corresponda. 
+<a name="1000750169"></a><li>En sintaxis Crystal, puede usar el operador  en lugar de CCur cuando desee convertir un valor de N&#250;mero a uno de Moneda.  
+</ul>
+<hr><br>
+
+<script  language="JavaScript"><!--
+
+var prev = "Functions158.html";
+var next = "Functions160.html";
+
+function setTopicID() { 
+      var number = "1000201826"; 
+      return number; 
+}
+
+// --></script>
+
+
+
+
+<SCRIPT>
+
+if (!window.parent.toc && navigator.appName == "Netscape") {
+
+   document.writeln ('<TABLE ALIGN="left" border="0" cellspacing="0" cellpadding="10">');
+   document.writeln ('<TR>');
+   document.write ('<TD ALIGN="left">');
+
+   if (prev != "crw_spTOC.hhc") {
+      document.writeln ('<A HREF="' + prev + '">');
+      document.writeln ('<IMG SRC="prevpage.gif" HEIGHT=17 BORDER=0 ALT="Página anterior"></A>');
+   } else {
+//   window.alert ('no previous page');
+   }
+
+   if (next != "crw_spIX.hhk") {
+      document.writeln ('<A HREF="' + next + '">');
+      document.writeln ('<IMG SRC="nextpage.gif" HEIGHT=17 BORDER=0 ALT="Página siguiente"></A>');
+   } else {
+//   window.alert ('no next page');
+   }
+   document.writeln ('</TD><TD ALIGN="left">');
+   document.writeln ('<A HREF="frameset.htm?TOC">');
+   document.writeln ('<IMG SRC="showtoc.gif" HEIGHT=17 BORDER=0 ALT="Haga clic para ver el contenido"></A></TD>');
+   document.writeln ('<TD ALIGN="left">');
+   document.writeln ('<A HREF="frameset.htm?IDX">');
+   document.writeln ('<IMG SRC="showix.gif" HEIGHT=17 BORDER=0 ALT="Haga clic para ver el índice"></A></TD>');
+   document.writeln ('</TD>');
+   document.writeln ('</TR>');
+   document.writeln ('</TABLE>');
+
+}
+
+</SCRIPT>
+<table align="right" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td align="right"><font size="1">Seagate Software, Inc.<br>
+    <a href="http://www.seagatesoftware.com">http://www.seagatesoftware.com</a><br>
+    Envíe sus comentarios a:<br>
+    <a href="mailto:techpubs@seagatesoftware.com">techpubs@seagatesoftware.com</a><br>
+    </font></td>
+  </tr>
+</table>
+</body>
+</html>
+
+

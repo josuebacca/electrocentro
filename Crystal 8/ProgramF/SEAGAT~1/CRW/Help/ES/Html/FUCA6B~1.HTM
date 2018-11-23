@@ -1,0 +1,146 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+
+<html>
+<head>
+<title>ToText</title>
+
+<link REL=STYLESHEET TYPE="text/css" HREF="seagate.css">
+
+<!--
+                 ***********************************
+                 * Seagate Software copyright 1999 *
+                 ***********************************
+
+                      Template version: 5.1
+-->
+
+
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" link="#0000FF" vlink="#0000FF" alink="#800080">
+
+
+ 
+<a name="1000852914"></a><h3 class="newpage"> ToText</h3>
+<p><a name="1000852915"></a>Sintaxis b&#225;sica y Crystal. </p><p><a name="1000852919"></a>ToText y <a href="Functions161.html#1000569614">CStr</a> son funciones equivalentes.</p><a name="1000852920"></a><h5>Sobrecargas</h5><ul type="disc"><a name="1000852921"></a><li>ToText (x) 
+<a name="1000852922"></a><li>ToText (x, y) 
+<a name="1000852923"></a><li>ToText (x, y, z) 
+<a name="1000852924"></a><li>ToText (x, y, z, w) 
+<a name="1000852925"></a><li>ToText (x, y, z, w, q) 
+</ul><a name="1000852926"></a><h5>Argumentos</h5><p><a name="1000852982"></a> <Table Border="1">
+<tr><th align="left" valign="bottom"><a name="1000852929"></a>Convirtiendo . . .
+
+</th><th align="left" valign="bottom"><a name="1000852931"></a>Descripci&#243;n
+
+</th></tr>
+<tr><td align="left" valign="TOP"><P><a name="1000852933"></a>Valor Booleano</P>
+
+
+</td><td align="left" valign="TOP"><ul type="disc"><a name="1000852935"></a><li>x es un valor Booleano que es convertido a cadena de caracteres, ya sea "Verdadero" o "Falso"
+</ul></td></tr>
+<tr><td align="left" valign="TOP"><P><a name="1000852937"></a>Valores Num&#233;ricos y de Moneda </P>
+
+
+</td><td align="left" valign="TOP"><ul type="disc"><a name="1000852939"></a><li>x es un valor Num&#233;rico o de Moneda que ser&#225; convertido en una cadena de texto; puede ser un valor entero o s&#243;lo una fracci&#243;n.
+<a name="1000852940"></a><li><EM>y</EM> es un n&#250;mero entero que indica el n&#250;mero de lugares decimales para llevar el valor en x. (Este argumento es opcional.)
+<a name="1000852941"></a><li><EM>z</EM> es un solo car&#225;cter de cadena de caracteres de texto que indica el car&#225;cter utilizado para separar los miles en x. En forma predeterminada es el car&#225;cter especificado en su panel de control Internacional o Regional. (Este argumento es opcional.)
+<a name="1000852942"></a><li><EM>w</EM> es un s&#243;lo car&#225;cter de cadena de caracteres de texto que indica el car&#225;cter a ser utilizado como separador decimal en x. En forma predeterminada este car&#225;cter es especificado en su panel de control Internacional o Regional. (Este argumento es opcional.)
+</ul></td></tr>
+<tr><td align="left" valign="TOP"><P><a name="1000852944"></a>Valores num&#233;ricos y de moneda (con formato)</P>
+
+
+</td><td align="left" valign="TOP"><ul type="disc"><a name="1000852946"></a><li>x es un valor num&#233;rico o de moneda que ser&#225; convertido en una cadena de texto; puede ser un valor entero o s&#243;lo una fracci&#243;n.
+<a name="1000852947"></a><li><EM>y</EM> es una cadena de caracteres de texto a ser utilizada para indicar el formato para mostrar el valor en x. Vea <a href="Functions80.html#1000853016">Cadenas de formato</a> para obtener m&#225;s informaci&#243;n sobre c&#243;mo crear una cadena de formato.
+<a name="1000852951"></a><li><EM>z</EM> es un n&#250;mero entero que indica el n&#250;mero de lugares decimales para llevar al valor en x. (Este argumento es opcional.)
+<a name="1000852952"></a><li><EM>w</EM> es un solo car&#225;cter de cadena de texto que indica el car&#225;cter utilizado para separar los miles en x. En forma predeterminada es el car&#225;cter especificado en su panel de control Internacional o Regional. (Este argumento es opcional.)
+<a name="1000852953"></a><li><EM>q</EM> es un solo car&#225;cter de cadena de texto que indica el car&#225;cter a ser utilizado como separador decimal en x. En forma predeterminada este car&#225;cter es especificado en su panel de control Internacional o Regional. (Este argumento es opcional.)
+</ul></td></tr>
+<tr><td align="left" valign="TOP"><P><a name="1000852955"></a>Valores de fecha </P>
+
+
+</td><td align="left" valign="TOP"><ul type="disc"><a name="1000852957"></a><li>x es un valor Fecha a ser convertido en una cadena de texto.
+<a name="1000852958"></a><li>y es una cadena de texto que define c&#243;mo va a ser formateado el valor x. Vea <a href="Functions81.html#1000853143">Cadenas de formato para valores de fecha, hora, y fecha/hora</a> para obtener m&#225;s informaci&#243;n sobre c&#243;mo crear esta cadena de formato.  (Este argumento es opcional.)
+</ul></td></tr>
+<tr><td align="left" valign="TOP"><P><a name="1000852963"></a>Valores de hora</P>
+
+
+</td><td align="left" valign="TOP"><ul type="disc"><a name="1000852965"></a><li>x es un valor de hora a ser convertido en cadena de caracteres de texto.
+<a name="1000852966"></a><li>y es una cadena de texto que define c&#243;mo va a ser formateado el valor x. Vea <a href="Functions81.html#1000853143">Cadenas de formato para valores de fecha, hora, y fecha/hora</a> para obtener m&#225;s informaci&#243;n sobre c&#243;mo crear esta cadena de formato.  (Este argumento es opcional.)
+<a name="1000852970"></a><li>z es una cadena de texto para ser utilizada como una etiqueta para las horas A.M. (ma&#241;ana). (Este argumento es opcional)
+<a name="1000852971"></a><li>w es una cadena de texto a ser utilizada como etiqueta para las horas P.M. (tarde). (Este argumento es opcional.)
+</ul></td></tr>
+<tr><td align="left" valign="TOP"><P><a name="1000852973"></a>Valores de fecha/hora</P>
+
+
+</td><td align="left" valign="TOP"><ul type="disc"><a name="1000852975"></a><li>x es un valor Fecha/hora a ser convertido a cadena de texto.
+<a name="1000852976"></a><li>y es una cadena de texto que indica c&#243;mo va a ser formateada la cadena resultante. Vea <a href="Functions81.html#1000853143">Cadenas de formato para valores de fecha, hora, y fecha/hora</a> para obtener m&#225;s informaci&#243;n sobre c&#243;mo crear una cadena de formato. (Este argumento es opcional.)
+<a name="1000852980"></a><li>z es una cadena de texto para ser utilizada como etiqueta para las horas A.M. (ma&#241;ana). (Este argumento es opcional)
+<a name="1000852981"></a><li>w es una cadena de texto a ser utilizada como etiqueta para las horas P.M. (tarde). (Este argumento es opcional.)
+</ul></td></tr>
+
+</Table></p>
+<a name="1000852983"></a><h5>Devuelve </h5><p><a name="1000852984"></a>Una cadena de texto.</p><a name="1000852985"></a><h5>Acci&#243;n</h5><p><a name="1000852986"></a>La funci&#243;n ToText convierte n&#250;meros fraccionarios, valor monetario, fecha, hora y valores de fecha/hora a cadenas de caracteres de texto.</p><a name="1000852987"></a><h5>Uso(s) t&#237;pico(s)</h5><p><a name="1000852988"></a>Utilice est&#225; funci&#243;n para convertir un n&#250;mero fraccionario, un valor monetario, de fecha, hora, o de fecha/hora a una cadena de texto para que aparezca como un texto en su informe (formas de carta, comentarios, etc.).</p><a name="1000852989"></a><h5>Ejemplo(s)</h5><p><a name="1000852990"></a>Los siguientes ejemplos son aplicables a las sintaxis b&#225;sica y Crystal:</p><p><code><a name="1000852991"></a>ToText({pedidos.ENVIADOS}) </code></p><p class="example"><a name="1000852992"></a>Devuelve Verdadero cuando el valor en ({pedidos.ENVIADOS}) es Verdadero.</p><p><code><a name="1000852993"></a>ToText(123.45) </code></p><p class="example"><a name="1000852994"></a>Devuelve "123.45".</p><p><code><a name="1000852995"></a>ToText(12345.6749,2) </code></p><p class="example"><a name="1000852996"></a>Devuelve "12345.67".</p><p><code><a name="1000852997"></a>ToText(12345.6750,2)</code></p><p class="example"><a name="1000852998"></a>Devuelve "12345.68".</p><p><code><a name="1000852999"></a>ToText(12345.4999,0) </code></p><p class="example"><a name="1000853000"></a>Devuelve "12345".</p><p><code><a name="1000853001"></a>ToText(12345.5000,0) </code></p><p class="example"><a name="1000853002"></a>Devuelve "12346".</p><p><code><a name="1000853003"></a>ToText({archivo.AMT} * {archivo.CANTIDAD}) </code></p><p class="example"><a name="1000853004"></a>Devuelve 44,890.20 cuando Amt = 24.45 y Cantidad = 1836.</p><p><a name="1000853005"></a>ToText es &#250;til cuando quiera construir una oraci&#243;n combinando (concatenando) un n&#250;mero convertido u otro valor con otra cadena de texto&nbsp; :</p><p><code><a name="1000853006"></a>"El precio base del elemento # " + {archivo.NUMERO DE ELEMENTO} + " es $" + ToText({archivo.PRECIO BASE}) + "." </code></p><p class="example"><a name="1000853007"></a>Imprime la oraci&#243;n "El precio base del elemento A1/4520/B12 es $50.00." cuando el N&#250;mero de Elemento es A1/4520/B12 y Precio Base es 50.00, convertido a texto y con formato de dos lugares decimales.</p><p><a name="1000853008"></a>Los siguientes ejemplos son aplicables para la sintaxis Crystal:</p><p><code><a name="1000853009"></a>ToText(CDate(1,11,1996), "ddd, dd MMM aa") </code></p><p class="example"><a name="1000853010"></a>Devuelve  Lunes, 01 Nov 96.</p><p><code><a name="1000853011"></a>ToText(DateTime(1995,10,12,3,30,11),"HH:mm,ddd MMMM aa") </code></p><p class="example"><a name="1000853012"></a>Devuelve 03:30, Lun. Octubre 95.</p><p><code><a name="1000853013"></a>ToText(Time(12, 10, 10), "HH*mm*ss tt", "amStr", "pmStr") </code></p><p class="example"><a name="1000853014"></a>Devuelve 12*10*10 pmStr.</p>
+<hr><br>
+
+<script  language="JavaScript"><!--
+
+var prev = "Functions78.html";
+var next = "Functions80.html";
+
+function setTopicID() { 
+      var number = "1000852914"; 
+      return number; 
+}
+
+// --></script>
+
+
+
+
+<SCRIPT>
+
+if (!window.parent.toc && navigator.appName == "Netscape") {
+
+   document.writeln ('<TABLE ALIGN="left" border="0" cellspacing="0" cellpadding="10">');
+   document.writeln ('<TR>');
+   document.write ('<TD ALIGN="left">');
+
+   if (prev != "crw_spTOC.hhc") {
+      document.writeln ('<A HREF="' + prev + '">');
+      document.writeln ('<IMG SRC="prevpage.gif" HEIGHT=17 BORDER=0 ALT="Página anterior"></A>');
+   } else {
+//   window.alert ('no previous page');
+   }
+
+   if (next != "crw_spIX.hhk") {
+      document.writeln ('<A HREF="' + next + '">');
+      document.writeln ('<IMG SRC="nextpage.gif" HEIGHT=17 BORDER=0 ALT="Página siguiente"></A>');
+   } else {
+//   window.alert ('no next page');
+   }
+   document.writeln ('</TD><TD ALIGN="left">');
+   document.writeln ('<A HREF="frameset.htm?TOC">');
+   document.writeln ('<IMG SRC="showtoc.gif" HEIGHT=17 BORDER=0 ALT="Haga clic para ver el contenido"></A></TD>');
+   document.writeln ('<TD ALIGN="left">');
+   document.writeln ('<A HREF="frameset.htm?IDX">');
+   document.writeln ('<IMG SRC="showix.gif" HEIGHT=17 BORDER=0 ALT="Haga clic para ver el índice"></A></TD>');
+   document.writeln ('</TD>');
+   document.writeln ('</TR>');
+   document.writeln ('</TABLE>');
+
+}
+
+</SCRIPT>
+<table align="right" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td align="right"><font size="1">Seagate Software, Inc.<br>
+    <a href="http://www.seagatesoftware.com">http://www.seagatesoftware.com</a><br>
+    Envíe sus comentarios a:<br>
+    <a href="mailto:techpubs@seagatesoftware.com">techpubs@seagatesoftware.com</a><br>
+    </font></td>
+  </tr>
+</table>
+</body>
+</html>
+
+

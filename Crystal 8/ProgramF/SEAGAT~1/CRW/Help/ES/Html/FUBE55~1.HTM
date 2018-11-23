@@ -1,0 +1,102 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+
+<html>
+<head>
+<title>PercentOfMinimum</title>
+
+<link REL=STYLESHEET TYPE="text/css" HREF="seagate.css">
+
+<!--
+                 ***********************************
+                 * Seagate Software copyright 1999 *
+                 ***********************************
+
+                      Template version: 5.1
+-->
+
+
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" link="#0000FF" vlink="#0000FF" alink="#800080">
+
+
+ 
+<a name="1000851621"></a><h3 class="newpage"> PercentOfMinimum</h3>
+<p><a name="1000851622"></a>Sintaxis b&#225;sica y Crystal.</p><a name="1000851623"></a><h5>Sobrecargas</h5><ul type="disc"><a name="1000851624"></a><li>PercentOfMinimum (campo, campoCondicional)
+<a name="1000851625"></a><li>PercentOfMinimum (campo, campoCondicional, condici&#243;n)
+<a name="1000851626"></a><li>PercentOfMinimum (campo, campoCondicionalInterno, campoCondicionalExterno)
+<a name="1000851627"></a><li>PercentOfMinimum (campo, campoCondicionalInterno, condici&#243;nInterna, campoCondicionalExterno)
+<a name="1000851628"></a><li>PercentOfMinimum (campo, campoCondicionalInterno, campoCondicionalExterno, condici&#243;nExterna)
+<a name="1000851629"></a><li>PercentOfMinimum (campo, campoCondicionalInterno, condici&#243;nInterna, campoCondicionalExterno, condici&#243;nExterna)
+</ul><a name="1000851630"></a><h5>Argumentos</h5><ul type="disc"><a name="1000851631"></a><li>campo es un campo num&#233;rico o de moneda que puede ser evaluado por la funci&#243;n.
+<a name="1000851632"></a><li>campoCondicional es un campo utilizado para agrupar los valores del campo.
+<a name="1000851633"></a><li>condici&#243;n es una cadena que indica el tipo de agrupaci&#243;n para campoCondicional. S&#243;lo se especifica este argumento cuando  campoCondicional es un campo de fecha, hora, fecha/hora o booleano. Para obtener m&#225;s informaci&#243;n sobre las cadenas v&#225;lidas para este argumento, v&#233;ase <a href="Functions20.html#1000850529">Condiciones para las funciones de resumen</a>
+<a name="1000851637"></a><li>campoCondicionalInterno es un campo utilizado para agrupar los valores del campo.
+<a name="1000851638"></a><li>condici&#243;nInterna es una cadena que indica el tipo de agrupaci&#243;n para campoCondicionalInterno. S&#243;lo se especifica este argumento cuando campoCondicionalInterno sea un campo de fecha, hora, fecha/hora o booleano. Para obtener m&#225;s informaci&#243;n sobre las cadenas v&#225;lidas para este argumento, v&#233;ase <a href="Functions20.html#1000850529">Condiciones para las funciones de resumen</a>
+<a name="1000851642"></a><li>campoCondicionalExterno es un campo utilizado para agrupar los valores del campo.
+<a name="1000851643"></a><li>condici&#243;nExterna es una cadena que indica el tipo de agrupaci&#243;n para campoCondicionalExterno. S&#243;lo se especifica este argumento cuando campoCondicionalExterno es un campo de fecha, hora, fecha/hora o booleano. Para obtener m&#225;s informaci&#243;n sobre las cadenas v&#225;lidas para este argumento, v&#233;ase <a href="Functions20.html#1000850529">Condiciones para las funciones de resumen</a>
+</ul><a name="1000851647"></a><h5>Devuelve </h5><p><a name="1000851648"></a>Valor num&#233;rico.</p><a name="1000851649"></a><h5>Acci&#243;n</h5><p><a name="1000851650"></a><strong>PercentOfMinimum (</strong><strong>campo, campoCondicional) </strong>tiene el mismo efecto que: 100 * Minimum (campo, campoCondicional) / Minimum (campo). Expresa el m&#237;nimo de los valores del campo campo para el grupo determinado por campoCondicional como un porcentaje del m&#237;nimo de todos los valores del campo.</p><p><a name="1000851651"></a><strong>PercentOfMinimum (</strong><strong>campo, campoCondicional, condici&#243;n) </strong>tiene el mismo efecto que: 100 * Minimum (campo, campoCondicional, condici&#243;n) / Minimum (campo). La cadena condicional de argumento expresa informaci&#243;n adicional para especificar la agrupaci&#243;n en forma precisa.  Por ejemplo, si campoCondicional es un campo de fecha, es la agrupaci&#243;n "diaria", "semanal", "mensual", etc.</p><p><a name="1000851652"></a><strong>PercentOfMinimum (</strong><strong>campo, campoCondicionalInterno, campoCondicionalExterno) </strong>tiene el mismo efecto que: 100 * Minimum (campo, campoCondicionalInterno) / Minimum (campo, campoCondicionalExterno). Expresa el m&#237;nimo de los valores del campo campo para el grupo determinado por campoCondicionalInterno como un porcentaje del m&#237;nimo para el grupo determinado por campoCondicionalExterno.</p><p><a name="1000851653"></a><strong>PercentOfMinimum (</strong><strong>campo, campoCondicionalInterno, condici&#243;nInterna, campoCondicionalExterno) </strong>tiene el mismo efecto que: 100 * Minimum (campo, campoCondicionalInterno, condici&#243;nInterna) / Minimum (campo, campoCondicionalExterno).</p><p><a name="1000851654"></a><strong>PercentOfMinimum (</strong><strong>campo, campoCondicionalInterno, campoCondicionalExterno, condici&#243;nExterna) </strong>tiene el mismo efecto que: 100 * Minimum (campo, campoCondicionalInterno) / Minimum (campo, campoCondicionalExterno, condici&#243;nExterna).</p><p><a name="1000851655"></a><strong>PercentOfMinimum (</strong><strong>campo, campoCondicionalInterno, condici&#243;nInterna, campoCondicionalExterno, condici&#243;nExterna) </strong>tiene el mismo efecto que: 100 * Minimum (campo, campoCondicionalInterno, condici&#243;nInterna) / Minimum (campo, campoCondicionalExterno, condici&#243;nExterna).</p><a name="1000851656"></a><h5>Comentario</h5><p><a name="1000851657"></a>Esta funci&#243;n y otras funciones de porcentajes fueron creadas para apoyar los campos de resumen porcentual. Las agrupaciones entregadas como argumentos deben existir realmente en el informe para que la funci&#243;n de resumen llamada  tenga &#233;xito.</p>
+<hr><br>
+
+<script  language="JavaScript"><!--
+
+var prev = "Functions45.html";
+var next = "Functions47.html";
+
+function setTopicID() { 
+      var number = "1000851621"; 
+      return number; 
+}
+
+// --></script>
+
+
+
+
+<SCRIPT>
+
+if (!window.parent.toc && navigator.appName == "Netscape") {
+
+   document.writeln ('<TABLE ALIGN="left" border="0" cellspacing="0" cellpadding="10">');
+   document.writeln ('<TR>');
+   document.write ('<TD ALIGN="left">');
+
+   if (prev != "crw_spTOC.hhc") {
+      document.writeln ('<A HREF="' + prev + '">');
+      document.writeln ('<IMG SRC="prevpage.gif" HEIGHT=17 BORDER=0 ALT="Página anterior"></A>');
+   } else {
+//   window.alert ('no previous page');
+   }
+
+   if (next != "crw_spIX.hhk") {
+      document.writeln ('<A HREF="' + next + '">');
+      document.writeln ('<IMG SRC="nextpage.gif" HEIGHT=17 BORDER=0 ALT="Página siguiente"></A>');
+   } else {
+//   window.alert ('no next page');
+   }
+   document.writeln ('</TD><TD ALIGN="left">');
+   document.writeln ('<A HREF="frameset.htm?TOC">');
+   document.writeln ('<IMG SRC="showtoc.gif" HEIGHT=17 BORDER=0 ALT="Haga clic para ver el contenido"></A></TD>');
+   document.writeln ('<TD ALIGN="left">');
+   document.writeln ('<A HREF="frameset.htm?IDX">');
+   document.writeln ('<IMG SRC="showix.gif" HEIGHT=17 BORDER=0 ALT="Haga clic para ver el índice"></A></TD>');
+   document.writeln ('</TD>');
+   document.writeln ('</TR>');
+   document.writeln ('</TABLE>');
+
+}
+
+</SCRIPT>
+<table align="right" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td align="right"><font size="1">Seagate Software, Inc.<br>
+    <a href="http://www.seagatesoftware.com">http://www.seagatesoftware.com</a><br>
+    Envíe sus comentarios a:<br>
+    <a href="mailto:techpubs@seagatesoftware.com">techpubs@seagatesoftware.com</a><br>
+    </font></td>
+  </tr>
+</table>
+</body>
+</html>
+
+

@@ -1,0 +1,94 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+
+<html>
+<head>
+<title>TimeSerial (hora, minuto, segundo)</title>
+
+<link REL=STYLESHEET TYPE="text/css" HREF="seagate.css">
+
+<!--
+                 ***********************************
+                 * Seagate Software copyright 1999 *
+                 ***********************************
+
+                      Template version: 5.1
+-->
+
+
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" link="#0000FF" vlink="#0000FF" alink="#800080">
+
+
+ 
+<a name="1000536658"></a><h3 class="newpage"> TimeSerial (hora, minuto, segundo)</h3>
+<p><a name="1000691222"></a>Sintaxis b&#225;sica y Crystal.</p><a name="1000536659"></a><h5>Argumentos</h5><ul type="disc"><a name="1000536660"></a><li>hora es un N&#250;mero o expresi&#243;n num&#233;rica que especifica la hora. 
+<a name="1000536661"></a><li>minuto es un N&#250;mero o expresi&#243;n num&#233;rica que especifica el n&#250;mero de minutos. 
+<a name="1000536662"></a><li>segundo es un N&#250;mero o expresi&#243;n num&#233;rica que especifica el n&#250;mero de segundos.
+</ul><a name="1000536663"></a><h5>Devuelve </h5><p><a name="1000536664"></a>Valor Hora.</p><a name="1000536665"></a><h5>Acci&#243;n</h5><p><a name="1000536666"></a>TimeSerial devuelve un valor Hora que especifica la hora para una hora, minuto y segundo espec&#237;ficos. </p><a name="1000536667"></a><h5>Uso(s) t&#237;pico(s)</h5><p><a name="1000536668"></a>TimeSerial puede usarse en lugar de <a href="Functions163.html#1000570720">CTime</a> o <a href="Functions110.html#1000645674">TimeValue</a> para crear un valor Hora a partir de una hora, minuto y segundo.  </p><p><a name="1000536669"></a>Una funci&#243;n &#250;til de TimeSerial es que los argumentos de hora, minuto y segundo no necesitan caer dentro de los rangos normalmente v&#225;lidos. Esto es, la hora no necesita ser entre 0 y 24, y el minuto y segundo no necesitan ser entre 0 y 59. Estas horas se interpretan como horas relativas, y TimeSerial producir&#225; valores Hora v&#225;lidos.  Esta funci&#243;n puede usarse para realizar con facilidad diversos c&#225;lculos de tiempo. </p><a name="1000536670"></a><h5>Ejemplo(s)</h5><p><a name="1000536671"></a>Los siguientes ejemplos son aplicables a las sintaxis b&#225;sica y Crystal:</p><p class="code"><a name="1000536672"></a>TimeSerial (18, 45, 0) 
+<br><a name="1000536673"></a>TimeSerial (22 - 3, 15 - 30, 0)
+</p><p class="example"><a name="1000536674"></a>Ambas devuelven la misma hora 6:45 PM. La segunda tiene la interpretaci&#243;n que 3 horas y 30 minutos antes de las 10:15 PM son las 6:45 PM.</p><p><code><a name="1000536675"></a>TimeSerial (10 + 20, 30 + 55, 0)</code></p><p class="example"><a name="1000536676"></a>Devuelve 7:25 AM. Lo que significa es que 20 horas y 55 minutos despu&#233;s de las 10:30 AM son las  7:25 AM (del d&#237;a siguiente).</p><a name="1000536677"></a><h5>Comentario</h5><p><a name="1000536678"></a>Esta funci&#243;n es similar a la funci&#243;n de Visual Basic del mismo nombre.   Existe una diferencia cuando las horas relativas se extienden a m&#225;s de un d&#237;a.   Por ejemplo, en Seagate Crystal Reports,</p><p><code><a name="1000536679"></a>TimeSerial (1, 0 - 180, 0)</code></p><p><a name="1000536680"></a>Devuelve las 10:00 PM. Esto se interpreta como que 180 minutos antes de la 1:00 AM son las  10:00 PM. Sin embargo, la misma funci&#243;n invocada en Visual Basic devuelve las 2:00 AM. La diferencia surge porque 180 minutos antes de la 1:00 AM mueve la  hora a las 10:00 PM <EM>del d&#237;a anterior</EM> y Visual Basic maneja esto en forma distinta.</p>
+<hr><br>
+
+<script  language="JavaScript"><!--
+
+var prev = "Functions112.html";
+var next = "Functions114.html";
+
+function setTopicID() { 
+      var number = "1000536658"; 
+      return number; 
+}
+
+// --></script>
+
+
+
+
+<SCRIPT>
+
+if (!window.parent.toc && navigator.appName == "Netscape") {
+
+   document.writeln ('<TABLE ALIGN="left" border="0" cellspacing="0" cellpadding="10">');
+   document.writeln ('<TR>');
+   document.write ('<TD ALIGN="left">');
+
+   if (prev != "crw_spTOC.hhc") {
+      document.writeln ('<A HREF="' + prev + '">');
+      document.writeln ('<IMG SRC="prevpage.gif" HEIGHT=17 BORDER=0 ALT="Página anterior"></A>');
+   } else {
+//   window.alert ('no previous page');
+   }
+
+   if (next != "crw_spIX.hhk") {
+      document.writeln ('<A HREF="' + next + '">');
+      document.writeln ('<IMG SRC="nextpage.gif" HEIGHT=17 BORDER=0 ALT="Página siguiente"></A>');
+   } else {
+//   window.alert ('no next page');
+   }
+   document.writeln ('</TD><TD ALIGN="left">');
+   document.writeln ('<A HREF="frameset.htm?TOC">');
+   document.writeln ('<IMG SRC="showtoc.gif" HEIGHT=17 BORDER=0 ALT="Haga clic para ver el contenido"></A></TD>');
+   document.writeln ('<TD ALIGN="left">');
+   document.writeln ('<A HREF="frameset.htm?IDX">');
+   document.writeln ('<IMG SRC="showix.gif" HEIGHT=17 BORDER=0 ALT="Haga clic para ver el índice"></A></TD>');
+   document.writeln ('</TD>');
+   document.writeln ('</TR>');
+   document.writeln ('</TABLE>');
+
+}
+
+</SCRIPT>
+<table align="right" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td align="right"><font size="1">Seagate Software, Inc.<br>
+    <a href="http://www.seagatesoftware.com">http://www.seagatesoftware.com</a><br>
+    Envíe sus comentarios a:<br>
+    <a href="mailto:techpubs@seagatesoftware.com">techpubs@seagatesoftware.com</a><br>
+    </font></td>
+  </tr>
+</table>
+</body>
+</html>
+
+

@@ -1,0 +1,89 @@
+BODY, P, LI  { 
+   font-family : Arial, Tahoma, Helvetica, sans-serif;
+   margin-top: 0px;
+   font-size: 12px;
+}
+.code {
+   font-family : "Courier New", Courier, monospace; 
+   margin-top: 6px;
+}
+.indent {
+   margin-top: 2px;
+}
+example { 
+   margin-bottom : 18px;
+}
+H1, H2, H3, H4, H5, H6 { 
+   font-family : Tahoma, sans-serif;
+   color : #00008B;
+   background-color : White;
+   margin-bottom: 0px;
+   text-decoration: none;
+}
+.newpage { 
+   margin-top: 0px; 
+}
+H1 { 
+   font-size: 28px; 
+}
+H2 { 
+   font-size: 24px;
+   margin-top: 12px; 
+}
+H3 { 
+   font-size: 18px; 
+   margin-top: 12px;
+}
+H4 {
+   font-size: 15px; 
+   margin-top: 12px;
+}
+H5 { 
+   font-size: 14px; 
+   margin-top: 12px;
+}
+H6 { 
+   font-size: 12px; 
+   margin-top: 12px;
+}
+PRE, CODE { 
+   font-family : "Courier New", Courier, monospace; 
+}
+P  { 
+   font-family : Arial, Tahoma, Helvetica, sans-serif;
+   margin-top: 0px;
+   font-size: 12px;
+}
+A:active, A:link, A:visited { 
+   text-decoration : underline;
+   color : blue;
+   background-color :  White;
+}
+A:visited { 
+   color: Purple; 
+}
+OL, UL { 
+   margin-top : 0; 
+}
+TH { 
+   font-family : Arial, Tahoma, Helvetica, sans-serif;
+   font-size: 12px;
+   font-weight : bold;
+   padding-right: 5px;
+   text-decoration: none;
+   text-align: left;
+}
+TD { 
+   font-family : Arial, Tahoma, Helvetica, sans-serif;
+   font-size: 12px;
+   padding-right: 5px;
+   text-decoration: none;
+}
+STRONG, KBD { 
+   font-family : Arial, Tahoma, Helvetica, sans-serif;
+   font-size: 12px;
+   font-weight : bold; 
+}
+VAR, EM {
+   font-style: italic; 
+}

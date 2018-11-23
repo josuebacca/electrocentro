@@ -1,0 +1,155 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+
+<html>
+<head>
+<title>Adici&#243;n del visor a una p&#225;gina web</title>
+
+<link REL=STYLESHEET TYPE="text/css" HREF="seagate.css">
+
+<!--
+                 ***********************************
+                 * Seagate Software copyright 1999 *
+                 ***********************************
+
+                      Template version: 5.1
+-->
+
+
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" link="#0000FF" vlink="#0000FF" alink="#800080">
+
+
+ 
+<a name="149499"></a><h3 class="newpage"> Adici&#243;n del visor a una p&#225;gina web</h3>
+<p><a name="149500"></a>Como applet de Java, el visor de informes puede agregarse a una p&#225;gina web utilizando la etiqueta est&#225;ndar APPLET de HTML. El nombre de la clase p&#250;blica expuesta por el applet es "Report Viewer". As&#237;, el siguiente c&#243;digo muestra el visor de informes para Java:</p><PRE><a name="149501"></a>&lt;APPLET CODE="ReportViewer.class"<br>
+CODEBASE="http://&lt;dominio&gt;/viewer/JavaViewer"<br>
+WIDTH=600 HEIGHT=400&gt;<br>
+&lt;/APPLET&gt;
+</PRE><p><a name="149502"></a>Cuando se instala Seagate Crystal Reports o Crystal Web Component Server, el visor Java queda instalado en:</p><PRE><a name="158567"></a>\Archivos de programa\Seagate Software\Viewers\JavaViewer
+</PRE><p><a name="158569"></a>Tambi&#233;n se crea un directorio virtual llamado </p><PRE><a name="158571"></a>/viewer
+</PRE><p><a name="158577"></a>en su servidor web, que apunta a:</p><PRE><a name="158579"></a>\Archivos de programa\Seagate Software\Viewers
+</PRE><p><a name="149503"></a>El visor de informes para Java incluye varios par&#225;metros opcionales que permiten personalizar el aspecto del visor y controlar su funcionalidad. Para asignar valores a estos par&#225;metros utilice la etiqueta est&#225;ndar PARAM de su c&#243;digo HTML.</p><a name="149505"></a><h4>Par&#225;metros </h4><p><a name="149506"></a>El visor de informes para Java incluye los siguientes par&#225;metros:</p><a name="149507"></a><h5>CanDrillDown</h5><p><a name="149508"></a>Determina si el usuario puede o no profundizar en datos de resumen, gr&#225;ficos o diagramas del informe. </p><ul type="disc"><a name="158583"></a><li>TRUE permite profundizar.
+<a name="158586"></a><li>FALSE impide profundizar.
+</ul><a name="149509"></a><h5>HasExportButton</h5><p><a name="149510"></a>Determina si el bot&#243;n de exportaci&#243;n aparece o no en el visor de informes. El bot&#243;n de exportaci&#243;n permite a los usuarios exportar informes visualizados en el visor de informes a formato Microsoft Word, Microsoft Excel, HTML 3.2 o Seagate Crystal Reports. </p><ul type="disc"><a name="158590"></a><li>TRUE permite exportar.
+<a name="158592"></a><li>FALSE impide exportar.
+</ul><p><a name="158599"></a>Para cambiar este ajuste, utilice la aplicaci&#243;n Crystal Report Web Components Manager. Para m&#225;s informaci&#243;n, vea <a href="WebServerAdministration5.html#164578">Ficha Vista de informes</a>.</p><a name="149514"></a><h5>HasGroupTree</h5><p><a name="149515"></a>Determina si el visor genera o no un &#225;rbol de grupos para el informe. No determina si el &#225;rbol de grupos se muestra o no. </p><ul type="disc"><a name="158601"></a><li>TRUE genera un &#225;rbol de grupos.
+<a name="158603"></a><li>FALSE impide la generaci&#243;n de un &#225;rbol de grupos.
+</ul><a name="149516"></a><h5>HasPrintButton</h5><p><a name="149517"></a>Determina si el visor incluye o no un bot&#243;n de impresi&#243;n que permite imprimir los informes visualizados. </p><ul type="disc"><a name="158605"></a><li>TRUE permite imprimir. 
+<a name="158614"></a><li>FALSE impide imprimir. 
+</ul><p><a name="158615"></a>La impresi&#243;n desde el visor de informes para Java requiere un explorador web o m&#225;quina virtual Java que sea compatible con la versi&#243;n 1.1 o posterior de JDK (kit del desarrollador de Java).</p><a name="149518"></a><h5>HasRefreshButton</h5><p><a name="149519"></a>Determina si hay un bot&#243;n de actualizaci&#243;n disponible o no en el visor para permitir al usuario actualizar los datos del informe. </p><ul type="disc"><a name="158624"></a><li>TRUE permite a los usuarios actualizar los datos del informe.
+<a name="158631"></a><li>FALSE impide a los usuarios actualizar los datos del informe.
+</ul><a name="149520"></a><h5>HasTextSearchControls</h5><p><a name="149521"></a>Indica que el visor incluye controles que permiten buscar valores espec&#237;ficos en el informe. </p><ul type="disc"><a name="158634"></a><li>TRUE permite buscar.
+<a name="158640"></a><li>FALSE impide que los controles de b&#250;squeda aparezcan.
+</ul><a name="149522"></a><h5>ReportName</h5><p><a name="149523"></a>Especifica el informe que se mostrar&#225; en el visor. La ruta debe ser una URL en el mismo servidor del documento HTML y debe escribirse entre comillas.</p><a name="149524"></a><h5>ShowGroupTree</h5><p><a name="149525"></a>Determina si el &#225;rbol de grupos se muestra o no cuando el visor aparece por primera vez. Si el par&#225;metro HasGroupTree est&#225; establecido en False (falso), este par&#225;metro no se tiene en cuenta. Si el &#225;rbol de grupos est&#225; oculto, el usuario puede visualizarlo haciendo clic en el bot&#243;n Mostrar/ocultar el &#225;rbol de grupos del visor. </p><ul type="disc"><a name="158645"></a><li>TRUE muestra el &#225;rbol de grupos.
+<a name="158656"></a><li>FALSE oculta el &#225;rbol de grupos.
+</ul><a name="149526"></a><h5>Ejemplo</h5><p><a name="149527"></a>El siguiente c&#243;digo muestra una forma de incrustar el visor de informes para Java en una p&#225;gina web. Este c&#243;digo JavaScript determina la versi&#243;n del explorador y luego instala la versi&#243;n apropiada del visor de informes para Java.</p><PRE><a name="149528"></a>&lt;SCRIPT LANGUAGE="JavaScript"&gt;&lt;!-- <br>
+&nbsp;&nbsp;&nbsp;&nbsp; var _ns3 = false; <br>
+&nbsp;&nbsp;&nbsp;&nbsp; var _ns4 = false; 
+<a name="149529"></a>&nbsp;&nbsp;&nbsp;&nbsp; //--&gt;&lt;/SCRIPT&gt; <br>
+&nbsp;&nbsp;&nbsp;&nbsp; &lt;COMMENT&gt;&lt;SCRIPT LANGUAGE="JavaScript1.1"&gt;&lt;!-- <br>
+&nbsp;&nbsp;&nbsp;&nbsp; var _info = navigator.userAgent; <br>
+&nbsp;&nbsp;&nbsp;&nbsp; var _ns3 = (navigator.appName.indexOf("Netscape") &gt;= 
+0 &amp;&amp; _info.indexOf("Mozilla/3") &gt;= 0); <br>
+&nbsp;&nbsp;&nbsp;&nbsp; var _ns4 = (navigator.appName.indexOf("Netscape") &gt;= 
+0 &amp;&amp; _info.indexOf("Mozilla/4") &gt;= 0 ); 
+<a name="149530"></a>&nbsp;&nbsp;&nbsp;&nbsp; //--&gt;&lt;/SCRIPT&gt;&lt;/COMMENT&gt; <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;SCRIPT LANGUAGE="JavaScript"&gt;&lt;!-- <br>
+&nbsp;&nbsp;&nbsp;&nbsp; if(_ns3==true) <br>
+&nbsp;&nbsp;&nbsp;&nbsp;  document.writeln( '&lt;applet 
+code=com.seagatesoftware.img.ReportViewer.ReportViewer<br>
+&nbsp;&nbsp;&nbsp;&nbsp;codebase="/viewer/JavaViewer" id=ReportViewer 
+width=100% height=95%<br>
+&nbsp;&nbsp;&nbsp;&nbsp;archive="/viewer/JavaViewer/ReportViewer.zip"&gt;' ); <br>
+&nbsp;&nbsp;&nbsp;&nbsp; else if (_ns4 == true) <br>
+&nbsp;&nbsp;&nbsp;&nbsp;  document.writeln( '&lt;applet 
+code=com.seagatesoftware.img.ReportViewer.ReportViewer<br>
+&nbsp;&nbsp;&nbsp;&nbsp;codebase="/viewer/JavaViewer" id=ReportViewer 
+width=100% height=95%<br>
+&nbsp;&nbsp;&nbsp;&nbsp;archive="/viewer/JavaViewer/ReportViewer.jar"&gt;' ); <br>
+&nbsp;&nbsp;&nbsp;&nbsp; else <br>
+&nbsp;&nbsp;&nbsp;&nbsp;  document.writeln( '&lt;applet 
+code=com.seagatesoftware.img.ReportViewer.ReportViewer<br>
+&nbsp;&nbsp;&nbsp;&nbsp;codebase="/viewer/JavaViewer" id=ReportViewer 
+width=100% height=95%&gt;' ); 
+<a name="149531"></a>&nbsp;&nbsp;&nbsp;&nbsp;//--&gt;&lt;/SCRIPT&gt; <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;param name=Language value="en"&gt; <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;param name=ReportName value="empprof.rpt"&gt; <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;param name=ReportParameter value=""&gt; <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;param name=HasGroupTree value="true"&gt; <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;param name=ShowGroupTree value="true"&gt; <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;param name=HasRefreshButton value="true"&gt; <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;param name=HasPrintButton value="true"&gt; <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;param name=HasExportButton value="true"&gt; <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;param name=HasTextSearchControls value="true"&gt; <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;param name=CanDrillDown value="true"&gt; <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;param name=PromptOnRefresh value="true"&gt; <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;param name=cabbase value="/viewer/JavaViewer/
+ReportViewer.cab"&gt; <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&lt;/applet&gt; 
+<a name="149532"></a>
+</PRE><p><a name="149533"></a>Este ejemplo muestra el informe empprof.rpt en la ventana del visor de informes para Java. Se genera un &#225;rbol de grupos para permitir Smart Navigation (desplazamiento inteligente), pero inicialmente est&#225; oculto. El visor no permite al usuario actualizar los datos del informe.</p>
+<hr><br>
+
+<script  language="JavaScript"><!--
+
+var prev = "Report_Viewers13.html";
+var next = "Report_Viewers15.html";
+
+function setTopicID() { 
+      var number = "149499"; 
+      return number; 
+}
+
+// --></script>
+
+
+
+
+<SCRIPT>
+
+if (!window.parent.toc && navigator.appName == "Netscape") {
+
+   document.writeln ('<TABLE ALIGN="left" border="0" cellspacing="0" cellpadding="10">');
+   document.writeln ('<TR>');
+   document.write ('<TD ALIGN="left">');
+
+   if (prev != "wcmadminTOC.hhc") {
+      document.writeln ('<A HREF="' + prev + '">');
+      document.writeln ('<IMG SRC="prevpage.gif" HEIGHT=17 BORDER=0 ALT="Página anterior"></A>');
+   } else {
+//   window.alert ('no previous page');
+   }
+
+   if (next != "wcmadminIX.hhk") {
+      document.writeln ('<A HREF="' + next + '">');
+      document.writeln ('<IMG SRC="nextpage.gif" HEIGHT=17 BORDER=0 ALT="Página siguiente"></A>');
+   } else {
+//   window.alert ('no next page');
+   }
+   document.writeln ('</TD><TD ALIGN="left">');
+   document.writeln ('<A HREF="frameset.htm?TOC">');
+   document.writeln ('<IMG SRC="showtoc.gif" HEIGHT=17 BORDER=0 ALT="Haga clic para ver el contenido"></A></TD>');
+   document.writeln ('<TD ALIGN="left">');
+   document.writeln ('<A HREF="frameset.htm?IDX">');
+   document.writeln ('<IMG SRC="showix.gif" HEIGHT=17 BORDER=0 ALT="Haga clic para ver el índice"></A></TD>');
+   document.writeln ('</TD>');
+   document.writeln ('</TR>');
+   document.writeln ('</TABLE>');
+
+}
+
+</SCRIPT>
+<table align="right" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td align="right"><font size="1">Seagate Software, Inc.<br>
+    <a href="http://www.seagatesoftware.com">http://www.seagatesoftware.com</a><br>
+    Envíe sus comentarios a:<br>
+    <a href="mailto:techpubs@seagatesoftware.com">techpubs@seagatesoftware.com</a><br>
+    </font></td>
+  </tr>
+</table>
+</body>
+</html>
+
+

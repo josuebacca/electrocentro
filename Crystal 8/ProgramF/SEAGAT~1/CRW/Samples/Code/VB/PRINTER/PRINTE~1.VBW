@@ -1,0 +1,4 @@
+CRPrinterSettings = 44, 44, 619, 449, C, -97, 55, 662, 750, C
+frmMain = 0, 0, 531, 448, , 0, 0, 531, 448, C
+Utilities = 176, 176, 707, 624, C
+frmAbout = 0, 0, 0, 0, C, 0, 0, 0, 0, C

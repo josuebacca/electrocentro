@@ -1,0 +1,84 @@
+:Base crsql.HLP
+1 Crystal SQL Designer
+2 Indice principal de ayuda de Crystal SQL Designer=CRSQL_Crystal_SQL_Designer_Help_Index
+2 Porqué usar una consulta?=QUERY_Why_Use_A_Query
+2 Crystal SQL Designer=22713Heading2CrystalQueryDesigneresigner
+2 Uso del Diseñador SQL=QUERY_Using_the_SQL_Designer
+1 Comandos de Crystal SQL Designer
+2 Indice de comandos de Crystal SQL Designer=COMMANDS_Crystal_Query_Designer_Commands
+2 menú Archivo
+3 Comando Nuevo (menú Archivo)=COMMANDS_New_command_File_menu
+3 Comando Abrir (menú Archivo)=COMMANDS_Open_command_File_menu
+3 Comando Guardar (menú Archivo)=COMMANDS_Save_command_File_menu
+3 Comando Guardar como (menú Archivo)=COMMANDS_Save_As_command_File_menu
+3 Comando Guardar datos con la consulta (menú Archivo)=COMMANDS_Save_Data_with_Query_command_File_menu
+3 Comando Cerrar (menú Archivo)=COMMANDS_Close_command_File_menu
+3 Comando Conectar al servidor (menú Archivo)=COMMANDS_Log_On_Server_command_File_menu
+3 Comando Desconectar del servidor (menú Archivo)=COMMANDS_Log_Off_Server_command_File_menu
+3 Comando Opciones (menú Archivo)=COMMANDS_Options_command_File_menu
+3 Comando Salir (menú Archivo)=COMMANDS_Exit_command_File_menu
+2 menú Edición
+3 Comando Consulta (menú Edición)=COMMANDS_Query_command_Edit_menu
+3 Comando Título de consulta (menú Edición)=COMMANDS_Query_Title_command_Edit_menu
+3 Comando Campo de parámetro (menú Edición)=COMMANDS_Parameter_Field_command_Edit_Menu
+3 Comando Actualizar datos (menú Edición)=COMMANDS_Refresh_Data_command_Edit_menu
+3 Comando Verificar consulta (menú Edición)=COMMANDS_Verify_Query_command_Edit_menu
+2 menú Ventana
+3 Comando Mosaico vertical (menú Ventana)=COMMANDS_Tile_Vertically_Window_Menu
+3 Comando Mosaico horizontal (menú Ventana)=COMMANDS_Tile_Horizontally_Window_Menu
+3 Comando Cascada (menú Ventana)=COMMANDS_Cascade_Window_Menu
+3 Comando Organizar iconos (menú Ventana)=COMMANDS_Arrange_Icons_Window_Menu
+3 Comando Cerrar todas (menú Ventana)=COMMANDS_Close_All_Window_Menu
+2 menú Ayuda
+3 Comando Contenido (menú Ayuda)=COMMANDS_Contents_Help_menu
+3 Comando Buscar (menú Ayuda)=COMMANDS_Search_Help_menu
+3 Comando Acerca de Seagate Crystal Reports (menú Ayuda)=COMMANDS_About_Crystal_Reports_Help_menu
+1 Asistente de Creación de Consultas SQL
+2 Ficha Tablas=DIALOGBX_Tables_Tab
+2 Ficha Vínculos=DIALOGBX_Links_Tab
+2 Ficha Campos=DIALOGBX_Fields_Tab
+2 Ficha Ordenar=DIALOGBX_Sort_Tab
+2 Ficha Seleccionar=DIALOGBX_Select_Tab
+2 Ficha SQL=DIALOGBX_SQL_Tab
+1 Cuadros de diálogo
+2 Indice de cuadros de diálogo=DIALOGBX_Dialog_Box_Index
+1 Temas SQL
+2 Temas SQL=SQL_SQL_Topics
+2 Cláusula SELECT=SQL_SELECT_clause
+2 Cláusula DISTINCT=SQL_DISTINCT_clause
+2 Cláusula FROM=SQL_FROM_clause
+2 Cláusula WHERE=SQL_WHERE_clause
+2 Cláusula ORDER BY=SQL_ORDER_BY_clause
+2 Cláusula GROUP BY=SQL_GROUP_BY_clause
+2 Cláusula HAVING=SQL_HAVING_clause
+2 Enunciados SQL=SQL_SQL_Expressions
+2 Enunciados Aritméticos=SQL_Arithmetic_Expressions
+2 Funciones de Agregado (Resumen)=SQL_Aggregate_Summary_Functions
+2 Funciones ODBC SQL=SQL_ODBC_SQL_Functions
+2 Funciones de hora y fecha=SQL_Time_and_Date_Functions
+2 Funciones de Cadena=SQL_String_Functions
+2 Funciones Numéricas=SQL_Numeric_Functions
+2 Tipos de uniones SQL (fuentes de datos ODBC)=SQL_SQL_join_types_ODBC_data_sources
+2 Unión [=] igual que=SQL_Equal_to_join
+2 Unión [=(+), *=] extrema izquierda=SQL_Left_Outer_join
+2 Unión [(+)=, =*] extrema derecha=SQL_Right_Outer_join
+2 Unión [>] mayor que=SQL_Greater_Than_join
+2 Unión [<] menor que=SQL_Less_Than_join
+2 Unión [>=] mayor o igual que=SQL_Greater_Than_Or_Equal_join
+2 Unión [<=] menor o igual que=SQL_Less_Than_Or_Equal_join
+2 Unión [!=, <>] no igual que=SQL_Not_Equal_join
+1 Tutoriales de Manos a la obra
+2 Temas de Tutoriales de Manos a la obra=QUERY_Hands_On_Tutorial_Topics
+2 Cómo usar una consulta SQL existente=QUERY_How_to_use_an_SQL_Query_that_you_designed_elsewhere
+2 Cómo crear una nueva consulta=13964Heading2Cmocrearunanuevaconsultaaconsulta
+2 Cómo agregar tablas a una consulta=CRSQL_How_to_add_tables
+2 Cómo vincular tablas y especificar un tipo de unión=QUERY_How_to_link_tables_and_specify_a_join_type
+2 Cómo agregar campos a la consulta=QUERY_How_to_add_fields
+2 Cómo identificar valores únicos en una consulta=QUERY_How_to_identify_unique_values
+2 Cómo resumir datos con funciones de agrupamiento=QUERY_How_to_summarize_data_with_aggregate_functions
+2 Cómo ordenar registros de acuerdo a los valores del campo=QUERY_How_to_sort_records_according_to_field_values
+2 Cómo especificar los registros que serán incluidos en una consulta=CRSQL_How_to_specify_records_to_be_included
+2 Cómo seleccionar grupos para ser incluidos en una consulta=CRSQL_How_to_select_groups_to_be_included
+2 Cómo crear un enunciado SQL=CRSQL_How_to_create_an_SQL_expression
+2 Cómo crear una consulta desde otra consulta de Crystal=CRSQL_How_to_use_an_SQL_Query_that_you_designed_elsewhere
+2 Cómo seleccionar una consulta para un informe=CRSQL_How_to_select_a_query_for_a_report

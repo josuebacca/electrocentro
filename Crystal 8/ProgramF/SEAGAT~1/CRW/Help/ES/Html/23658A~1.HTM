@@ -1,0 +1,95 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+
+<html>
+<head>
+<title>Vinculaci&#243;n de tablas no indexadas</title>
+
+<link REL=STYLESHEET TYPE="text/css" HREF="seagate.css">
+
+<!--
+                 ***********************************
+                 * Seagate Software copyright 1999 *
+                 ***********************************
+
+                      Template version: 5.1
+-->
+
+
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" link="#0000FF" vlink="#0000FF" alink="#800080">
+
+
+ 
+<a name="45171"></a><h3 class="newpage"> Vinculaci&#243;n de tablas no indexadas</h3>
+<p><a name="45172"></a>Cuando utilice bases de datos de PC (no SQL o ODBC), el campo de v&#237;nculo en la base de datos de b&#250;squeda necesita ser indexado para crear un v&#237;nculo v&#225;lido. Cuando dos tablas contienen datos relacionados pero ninguna est&#225; indexada en el campo que desea utilizar como campo de v&#237;nculo, o si la tabla principal est&#225; indexada pero no la tabla de b&#250;squeda, no es posible vincular las tablas en un solo informe. Debe utilizar subinformes si desea coordinar los datos en ambas tablas.</p><p><a name="45173"></a><font color="darkblue"><b>Nota:   &nbsp;&nbsp;&nbsp;</b></font>Es importante notar que el proceso para generar informes, vinculando tablas no indexadas, o vinculando desde un tabla principal indexada a una tabla de b&#250;squeda no indexada es un proceso lento. Si el conjunto de datos a utilizar es grande, lo m&#225;s probable es que este tipo de informe le lleve mucho tiempo para elaborar. Use esta t&#233;cnica como &#250;ltima instancia.</p>
+<a name="45322"></a><h6>Para vincular tablas no indexadas</h6><ol>
+<a name="45332"></a><li value="1&nbsp;&nbsp;&nbsp;&nbsp;">Cree su informe principal.
+<a name="45335"></a><li value="2&nbsp;&nbsp;&nbsp;&nbsp;">Cree o importe el subinforme e ins&#233;rtelo en el informe principal.
+<p class="indent"><a name="53842"></a>Vea <a href="23_subreports6.html#43958">C&#243;mo insertar un subinforme</a>.</p><a name="45337"></a><li value="3&nbsp;&nbsp;&nbsp;&nbsp;">Vincule el subinforme al informe principal utilizando campos no indexados (o el campo indexado en la tabla principal y el campo no indexado en la tabla de b&#250;squeda). Vea <a href="23_subreports10.html#44569">C&#243;mo vincular un subinforme a los datos del informe principal</a>.
+</ol>
+
+<hr><br>
+
+<script  language="JavaScript"><!--
+
+var prev = "23_subreports15.html";
+var next = "23_subreports17.html";
+
+function setTopicID() { 
+      var number = "45171"; 
+      return number; 
+}
+
+// --></script>
+
+
+
+
+<SCRIPT>
+
+if (!window.parent.toc && navigator.appName == "Netscape") {
+
+   document.writeln ('<TABLE ALIGN="left" border="0" cellspacing="0" cellpadding="10">');
+   document.writeln ('<TR>');
+   document.write ('<TD ALIGN="left">');
+
+   if (prev != "crw_spTOC.hhc") {
+      document.writeln ('<A HREF="' + prev + '">');
+      document.writeln ('<IMG SRC="prevpage.gif" HEIGHT=17 BORDER=0 ALT="Página anterior"></A>');
+   } else {
+//   window.alert ('no previous page');
+   }
+
+   if (next != "crw_spIX.hhk") {
+      document.writeln ('<A HREF="' + next + '">');
+      document.writeln ('<IMG SRC="nextpage.gif" HEIGHT=17 BORDER=0 ALT="Página siguiente"></A>');
+   } else {
+//   window.alert ('no next page');
+   }
+   document.writeln ('</TD><TD ALIGN="left">');
+   document.writeln ('<A HREF="frameset.htm?TOC">');
+   document.writeln ('<IMG SRC="showtoc.gif" HEIGHT=17 BORDER=0 ALT="Haga clic para ver el contenido"></A></TD>');
+   document.writeln ('<TD ALIGN="left">');
+   document.writeln ('<A HREF="frameset.htm?IDX">');
+   document.writeln ('<IMG SRC="showix.gif" HEIGHT=17 BORDER=0 ALT="Haga clic para ver el índice"></A></TD>');
+   document.writeln ('</TD>');
+   document.writeln ('</TR>');
+   document.writeln ('</TABLE>');
+
+}
+
+</SCRIPT>
+<table align="right" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td align="right"><font size="1">Seagate Software, Inc.<br>
+    <a href="http://www.seagatesoftware.com">http://www.seagatesoftware.com</a><br>
+    Envíe sus comentarios a:<br>
+    <a href="mailto:techpubs@seagatesoftware.com">techpubs@seagatesoftware.com</a><br>
+    </font></td>
+  </tr>
+</table>
+</body>
+</html>
+
+

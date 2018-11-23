@@ -1,0 +1,165 @@
+:Base sscdlg.hlp
+1 Acerca Amigo
+2 Amigo 2000=GetThePicture
+1 Galería de Gráficos Amigo
+2 Gráfico de área
+3 Gráfico de área absoluta=Absolute_Area_Chart
+3 Gráfico de área apilada=Stacked_Area_Chart
+3 Área absoluta con dos ejes divididos=Split_Dual_Axes_Absolute_Area
+3 Área apilada con dos ejes divididos=Split_Dual_Axes_Stacked_Area
+3 Área absoluta con dos ejes=Dual_Axes_Absolute_Area
+3 Área apilada con dos ejes=Dual_Axes_Stacked_Area
+3 Área de porcentaje=Percent_Area
+3 Área 3D real=True_3D_Area
+2 Gráficos de barras
+3 Barras agrupadas=Clustered_Bars
+3 Barras apiladas=Stacked_Bars
+3 Barras agrupadas con dos ejes divididos=Split_Dual_Axes_Clustered_Bars
+3 Barras apiladas con dos ejes divididos=Split_Dual_Axes_Stacked_Bars
+3 Barras agrupadas con dos ejes=Dual_Axes_Clustered_Bar
+3 Barras apiladas con dos ejes=Dual_Axes_Stacked_Bar
+3 Barras de porcentaje=Percent_Bars
+2 Gráficos de burbujas
+3 Burbuja con tamaño X-Y=X_Y_Size_Bubble
+3 Burbuja con tamaño X-Y y dos ejes=Dual_Axes_X_Y_Size_Bubble
+2 Gráficos de columnas
+3 Columnas agrupadas=Clustered_Columns
+3 Columnas apiladas=Stacked_Columns
+3 Columnas agrupadas con dos ejes divididos=Split_Dual_Axes_Clustered_Column
+3 Columnas apiladas con dos ejes divididos=Split_Dual_Axes_Stacked_Column
+3 Columnas agrupadas con dos ejes=Dual_Axes_Clustered_Column
+3 Columnas apiladas con dos ejes=Dual_Axes_Stacked_Column
+3 Porcentaje=Percent
+3 Elevadores 3D real=True_3D_Riser
+2 Gráficos de histograma
+3 Histograma vertical=Vertical_Histogram
+3 Histograma horizontal=Horizontal_Histogram
+2 Gráficos de líneas
+3 Líneas absolutas=Absolute_Line
+3 Líneas apiladas=Stacked_Line
+3 Líneas absolutas con dos ejes divididos=Split_Dual_Axes_Absolute_Line
+3 Líneas apiladas con dos ejes divididos=Split_Dual_Axes_Stacked_Line
+3 Líneas absolutas con dos ejes=Dual_Axes_Absolute_Line
+3 Líneas apiladas con dos ejes=Dual_Axes_Stacked_Line
+3 Líneas de porcentaje=Percent_Line
+3 Líneas 3D real=True_3D_Line
+2 Gráficos circulares
+3 Circular=Pie
+3 Anillos=Ring_Pie
+2 Gráficos de dispersión
+3 Dispersión XY=XY_Scatter
+3 Dispersión XY con dos ejes=Dual_Axes_XY_Scatter
+2 Gráficos de superficie
+3 Superficie 3D real=True_3D_Surface
+3 Superficie 3D real con lados=True_3D_Surface_with_Sides
+3 Superficie hexagonal 3D real=True_3D_Honeycomb_Surface
+1 Creación de un gráfico
+2 Creación de un gráfico de área=Creating_an_Area_Chart
+2 Creación de un gráfico de barras o columnas=Creating_a_Bar_or_Column_Chart
+2 Creación de un gráfico de burbujas=Creating_a_Bubble_Chart
+2 Creación de un gráfico de histograma=Creating_a_Histogram_Chart
+2 Creación de un gráfico de líneas=Creating_a_Line_Chart
+2 Creación de un gráfico circular=Creating_a_Pie_Chart
+2 Creación de un gráfico de dispersión=Creating_a_Scatter_Chart
+2 Creación de un gráfico de superficie=Creating_a_Surface_Chart
+2 Creación de un gráfico personalizado=Creating_a_Custom_Chart
+1 Opciones de gráfico
+2 Acerca del cuadro de diálogo Opciones de gráfico=About_the_Chart_Options_Dialog
+2 Opciones generales de gráfico
+3 Cómo dar formato a un gráfico de área=Format_an_Area_Chart
+3 Cómo dar formato a un gráfico de barras=Format_a_Bar_Chart
+3 Cómo dar formato a un gráfico de burbujas=Format_a_Bubble_Chart
+3 Cómo dar formato a un gráfico de columnas=Format_a_Column_Chart
+3 Cómo dar formato a un gráfico de histograma=Format_a_Histogram_Chart
+3 Cómo dar formato a un gráfico de líneas=Format_a_Line_Chart
+3 Cómo dar formato a un gráfico circular=Format_a_Pie_Chart
+3 Cómo dar formato a un gráfico de dispersión=Format_a_Scatter_Chart
+2 Diseño
+3 Opciones de diseño de gráficos=Chart_Layout_Options
+3 Diseño de un gráfico de burbujas=Bubble_Chart_Layout
+3 Diseño de un gráfico de histograma=Histogram_Chart_Layout
+3 Diseño de un gráfico circular=Pie_Chart_Layout
+3 Diseño de un gráfico de dispersión=Scatter_Chart_Layout
+3 Diseño de un gráfico de superficie=Surface_Chart_Layout
+2 Etiquetas de datos
+3 Opciones de etiquetas de datos=Data_Label_Options
+3 Etiquetas de datos en gráficos circulares=Data_Labels_in_Pie_Charts
+2 Números
+3 Acerca de los números de etiquetas de datos=About_Data_Label_Numbers
+3 Cómo dar formato a números de etiquetas de datos=Formatting_Data_Label_Numbers
+2 Opciones de datos 2
+3 Acerca de los gráficos de datos 2=About_Dual_Y_Charts
+3 Selección de opciones de datos 2=Selecting_Dual_Y_Options
+2 Aspecto
+3 Acerca del aspecto de los gráficos=About_Chart_Look
+3 Opciones de aspecto de los gráficos=Chart_Look_Options
+3 Opciones de aspecto para gráficos de superficie=Surface_Chart_Look_Options
+2 Estado de visualización
+3 Cómo mostrar/ocultar objetos=Show_Hide_Objects
+3 Cómo mostrar/ocultar objetos en gráficos circulares=Show_Hide_Objects_in_Pie_Charts
+1 Opciones de serie
+2 Acerca del cuadro de diálogo Opciones de serie=About_the_Series_Options_Dialog
+2 Opciones generales de serie
+3 Cómo dar formato a una serie=Format_a_Series
+3 Cómo dar formato a una serie en un gráfico de burbujas=Format_a_Series_in_a_Bubble_Chart
+3 Cómo dar formato a una serie en un gráfico de líneas=Format_a_Series_in_a_Line_Chart
+3 Cómo dar formato a una serie en un gráfico circular=Format_a_Series_in_a_Pie_Chart
+3 Cómo dar formato a una serie en un gráfico de dispersión=Format_a_Series_in_a_Scatter_Chart
+2 Etiquetas de datos y números
+3 Acerca de las etiquetas de datos para series específicas=About_Series_Specific_Data_Labels
+3 Etiquetas de datos para una serie de un gráfico circular=Data_Labels_for_a_Series_in_a_Pie_Chart
+3 Cómo dar formato a los números de las etiquetas de datos=Formatting_the_Data_Label_Numbers
+2 Líneas de tendencia
+3 Acerca de las líneas de tendencia=About_Trendlines
+3 Cómo dar formato a líneas de tendencia=Formatting_Trend_Lines
+1 Cuadrículas y escalas
+2 Acerca del cuadro de diálogo Cuadrículas y escalas de eje numérico=About_the_Numeric_Axis_Grids_and_Scales_Dialog
+2 Cómo dar formato a un eje de grupo
+3 Acerca del eje de grupo=About_the_Group_Axis
+3 Opciones generales de formato para el eje de grupo=Group_Axis_General_Formatting_Options
+3 Etiquetas del eje de grupo=Group_Axis_Labels
+3 Líneas de cuadrícula en el eje de grupo=Group_Axis_Gridlines
+2 Cómo dar formato a un eje de datos
+3 Acerca del eje principal de datos (Y1)=About_the_Primary_Numeric_Y1_Axis
+3 Acerca del eje secundario de datos (Y2)=About_the_Secondary_Numeric_Y2_Axis
+3 Acerca del eje X=About_the_X_Axis
+3 Opciones generales de formato para ejes de datos=Data_Axis_General_Formatting_Options
+3 Opciones para el eje de grupo en gráficos 3D=Group_Axis_Options_in_3D_Charts
+3 Escalas en el eje de datos=Data_Axis_Scales
+3 Etiquetas del eje de datos=Data_Axis_Labels
+3 Números del eje de datos=Data_Axis_Numbers
+3 Líneas de cuadrícula del eje de datos=Data_Axis_Gridlines
+2 Cómo dar formato a un eje de serie (O2)
+3 Acerca del eje de serie=About_the_Series_Axis
+3 Opciones generales de formato para el eje de serie=Series_Axis_General_Format_Options
+3 Etiquetas del eje de serie=Series_Axis_Labels
+3 Líneas de cuadrícula en el eje de serie=Series_Axis_Gridlines
+1 Títulos de gráfico
+2 Uso del cuadro de diálogo Títulos=Using_the_Titles_Dialog
+2 Título de gráfico=Chart_Title
+2 Subtítulo de gráfico=Chart_Subtitle
+2 Título de grupo=Group_Title
+2 Nota al pie del gráfico=Chart_Footnote
+2 Título de eje de serie (sólo para gráficos 3D)=Series_Axis_Title_for_3D_Charts_Only_
+2 Título de datos=Data_Title
+2 Título de datos 2=Data2_Title
+1 Dar formato a objetos de gráfico
+2 Uso del cuadro de diálogo Formato=Using_the_Formatting_Dialog
+2 Cómo dar formato a objetos de texto
+3 Cómo dar formato a objetos de texto con el cuadro de diálogo Formato=Formatting_Text_Objects_with_the_Formatting_Dialog
+2 Cómo dar formato a objetos de línea
+3 Cómo dar formato a objetos de línea con el cuadro de diálogo Formato=Formatting_Line_Objects_with_the_Formatting_Dialog
+2 Cómo dar formato a objetos de área
+3 Cómo dar formato a objetos de área con el cuadro de diálogo Formato=Formatting_Area_Objects_with_the_Formatting_Dialog
+3 Aplicación de una trama a un objeto de área=Applying_a_Pattern_to_an_Area_Object
+3 Aplicación de un degradado a un objeto de área=Applying_a_Gradient_to_an_Area_Object
+3 Aplicación de una textura a un objeto de área=Applying_a_Texture_to_an_Area_Object
+3 Aplicación de una imagen a un objeto de área=Applying_a_Picture_to_an_Area_Object
+1 Configuración 3D
+2 Acerca de la configuración 3D=About_3D_Settings
+2 Elección de un ángulo de visualización=Choose_a_Viewing_Angle
+2 Opciones avanzadas de ángulos de visualización=Advanced_Viewing_Angle_Options
+2 Cómo girar un cubo 3D=Rotate_a_3D_Cube
+2 Panorámica de un cubo 3D=Pan_a_3D_Cube
+2 Planos laterales de un cubo 3D=3D_Cube_Walls
+2 Cómo mover un cubo 3D=Move_a_3D_Cube

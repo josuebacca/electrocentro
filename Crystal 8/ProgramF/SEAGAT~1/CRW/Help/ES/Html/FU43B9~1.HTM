@@ -1,0 +1,195 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+
+<html>
+<head>
+<title>DateTime</title>
+
+<link REL=STYLESHEET TYPE="text/css" HREF="seagate.css">
+
+<!--
+                 ***********************************
+                 * Seagate Software copyright 1999 *
+                 ***********************************
+
+                      Template version: 5.1
+-->
+
+
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" link="#0000FF" vlink="#0000FF" alink="#800080">
+
+
+ 
+<a name="1000581401"></a><h3 class="newpage"> DateTime</h3>
+<p><a name="1000690280"></a>Sintaxis Crystal.</p><p><a name="1000731941"></a>Las funciones<a href="Functions164.html#1000201915">CDateTime</a> y<a href="Functions111.html#1000533082">DateTimeValue</a> son equivalentes a DateTime. Sin embargo, DateTime s&#243;lo puede usarse en sintaxis Crystal, ya que en sintaxis b&#225;sica es un nombre tipo.</p><a name="1000581402"></a><h5>Sobrecargas</h5><ul type="disc"><a name="1000581403"></a><li>DateTime (fecha)
+<a name="1000581404"></a><li>DateTime (n&#250;mero)
+<a name="1000581405"></a><li>DateTime (cadena)
+<a name="1000581406"></a><li>DateTime (fecha, hora)
+<a name="1000581407"></a><li>DateTime (AAAA, MM, DD)
+<a name="1000581408"></a><li>DateTime (AAAA, MM, DD, HH, MM, SS)
+</ul><a name="1000581409"></a><h5>Argumentos</h5><p><a name="1000637725"></a> <Table Border="1">
+<tr><td align="left" valign="TOP"><P><a name="1000637707"></a>DateTime (fecha)</P>
+
+
+</td><td align="left" valign="TOP"><P><a name="1000637710"></a>fecha es un valor Fecha.</P>
+
+
+</td></tr>
+<tr><td align="left" valign="TOP"><P><a name="1000637712"></a>DateTime (fecha, hora)</P>
+
+
+</td><td align="left" valign="TOP"><ul type="disc"><a name="1000637714"></a><li>fecha es un valor Fecha.
+<a name="1000637813"></a><li>hora es un valor Hora.
+</ul></td></tr>
+<tr><td align="left" valign="TOP"><P><a name="1000637716"></a>DateTime (cadena)</P>
+
+
+</td><td align="left" valign="TOP"><P><a name="1000637718"></a>cadena representa una fecha y hora</P>
+
+
+<P><a name="1000637818"></a>Ejemplo: "15 de septiembre de 1999, 10:45a.m."</P>
+
+
+</td></tr>
+<tr><td align="left" valign="TOP"><P><a name="1000637720"></a>DateTime (n&#250;mero)</P>
+
+
+</td><td align="left" valign="TOP"><P><a name="1000637862"></a>n&#250;mero representa un n&#250;mero de d&#237;as a partir del 30 de diciembre de 1899.</P>
+
+
+<P><a name="1000637867"></a>Ejemplo: 20 representa 20 d&#237;as a partir de diciembre de 1899, lo que es el 19 de enero de 1900.</P>
+
+
+</td></tr>
+<tr><td align="left" valign="TOP"><P><a name="1000637880"></a>DateTime (a&#241;o, mes, d&#237;a)</P>
+
+
+<P><a name="1000637885"></a>DateTime (a&#241;o, mes, d&#237;a, hora, min, seg)</P>
+
+
+</td><td align="left" valign="TOP"><ul type="disc"><a name="1000638870"></a><li>a&#241;o es un n&#250;mero entero que representa un a&#241;o calendario; ejemplo: 1996.
+<a name="1000638871"></a><li>mes es un n&#250;mero entero que representa un mes; ejemplo: 1 por enero.
+<a name="1000638872"></a><li>d&#237;a es un n&#250;mero entero que representa un d&#237;a del mes; ejemplo: 10.
+<a name="1000638873"></a><li>hora es un n&#250;mero entero que representa una hora del d&#237;a; ejemplo: 12.
+<a name="1000638874"></a><li>min es un n&#250;mero entero que representa un minuto; ejemplo: 59.
+<a name="1000638875"></a><li>seg es un n&#250;mero entero que representa segundos; ejemplo: 30.
+</ul></td></tr>
+
+</Table></p>
+<a name="1000581426"></a><h5>Devuelve </h5><p><a name="1000581427"></a>valor Fecha/hora.</p><a name="1000581428"></a><h5>Acci&#243;n</h5><p><a name="1000639142"></a> <Table Border="1">
+<tr><td align="left" valign="TOP"><P><a name="1000639109"></a>DateTime (fecha)</P>
+
+
+</td><td align="left" valign="TOP"><P><a name="1000639111"></a>Devuelve un valor Fecha/hora dado un valor Fecha, asignando 12:00:00 AM a la porci&#243;n de tiempo devuelta como valor Fecha/hora. </P>
+
+
+</td></tr>
+<tr><td align="left" valign="TOP"><P><a name="1000639113"></a>DateTime (fecha, hora)</P>
+
+
+</td><td align="left" valign="TOP"><P><a name="1000639304"></a>Devuelve un valor Fecha/hora dado un valor de Fecha y Hora.</P>
+
+
+</td></tr>
+<tr><td align="left" valign="TOP"><P><a name="1000639118"></a>DateTime (n&#250;mero)</P>
+
+
+</td><td align="left" valign="TOP"><P><a name="1000639121"></a>Devuelve un valor Fecha/hora dado un n&#250;mero que especifique el n&#250;mero de d&#237;as a  partir del 30 de diciembre de 1899. </P>
+
+
+<P><a name="1000639317"></a>N&#250;mero puede ser positivo o negativo, y tambi&#233;n fraccional.   </P>
+
+
+</td></tr>
+<tr><td align="left" valign="TOP"><P><a name="1000639123"></a>DateTime (cadena)</P>
+
+
+</td><td align="left" valign="TOP"><P><a name="1000640668"></a>Devuelve un valor Fecha/hora dada una cadena que especifique una fecha y hora; se admiten varios formatos de cadena.  </P>
+
+
+</td></tr>
+<tr><td align="left" valign="TOP"><P><a name="1000639133"></a>DateTime (AAAA, MM, DD)</P>
+
+
+</td><td align="left" valign="TOP"><P><a name="1000640718"></a>Devuelve un valor Fecha/hora dado argumentos num&#233;ricos del a&#241;o, mes y d&#237;a.   </P>
+
+
+<P><a name="1000640727"></a>Asigna 12:00:00 AM a la porci&#243;n de tiempo del valor Fecha/hora devuelto.</P>
+
+
+</td></tr>
+<tr><td align="left" valign="TOP"><P><a name="1000640693"></a>DateTime (AAAA, MM, DD, HH, MM, SS)</P>
+
+
+</td><td align="left" valign="TOP"><P><a name="1000640735"></a>Devuelve un valor Fecha/hora dados argumentos num&#233;ricos para a&#241;o, mes, d&#237;a, hora, minuto y segundo.</P>
+
+
+</td></tr>
+
+</Table></p>
+<a name="1000581440"></a><h5>Ejemplo(s)</h5><p><a name="1000581441"></a>Los siguientes ejemplos son aplicables para la sintaxis Crystal:</p><p><code><a name="1000581442"></a>DateTime ("10/4/1999 10:20am")</code></p><p class="example"><a name="1000581443"></a>Devuelve el valor Fecha/hora 4 de octubre de 1999 10:20:00 am.</p><p><code><a name="1000581444"></a>DateTime (12.5)</code></p><p class="example"><a name="1000581445"></a>Devuelve el valor Fecha/hora 11 de enero de 1900 12:00:00 pm.</p><p><code><a name="1000581446"></a>DateTime (-2.5)</code></p><p class="example"><a name="1000581447"></a>Devuelve el valor Fecha/hora 27 de diciembre de 1899, 12:00:00 pm.</p><p><code><a name="1000581448"></a>DateTime (CDate ("dic. 25, 1999"))</code></p><p class="example"><a name="1000581449"></a>Devuelve el valor Fecha/hora 25 de diciembre de 1999 12:00:00 am.</p><p><code><a name="1000581450"></a>DateTime (CDate ("noviembre 10, 1999"), CTime("12:20am"))</code></p><p class="example"><a name="1000581451"></a>Devuelve el valor Fecha/hora 10 de noviembre de 1999 12:20:00 am.</p><p><code><a name="1000731944"></a>DateTime (1945, 8, 21, 0, 0, 0)</code></p><p class="example"><a name="1000731945"></a>Devuelve el valor Fecha/hora 21 de agosto de 1945 12:00:00 am.</p><p><code><a name="1000731946"></a>DateTime (1945, 8, 21, 10, 0, 0)</code></p><p class="example"><a name="1000581455"></a>Devuelve el valor Fecha/hora 21 de agosto de 1945 10:00:00 am.</p><a name="1000581456"></a><h5>Comentario(s) </h5><p><a name="1000581458"></a>Puede usar la funci&#243;n IsDate para verificar si un argumento de Cadena puede ser convertido a Fecha/hora, antes de hacer la conversi&#243;n real.  De esta manera, si no puede hacerse la conversi&#243;n, podr&#225; manejar la situaci&#243;n como corresponda. </p><a name="1000690292"></a><h6>Temas relacionados</h6><p><a name="1000690304"></a><a href="Functions111.html#1000533082">DateTimeValue</a></p>
+<hr><br>
+
+<script  language="JavaScript"><!--
+
+var prev = "Functions107.html";
+var next = "Functions109.html";
+
+function setTopicID() { 
+      var number = "1000581401"; 
+      return number; 
+}
+
+// --></script>
+
+
+
+
+<SCRIPT>
+
+if (!window.parent.toc && navigator.appName == "Netscape") {
+
+   document.writeln ('<TABLE ALIGN="left" border="0" cellspacing="0" cellpadding="10">');
+   document.writeln ('<TR>');
+   document.write ('<TD ALIGN="left">');
+
+   if (prev != "crw_spTOC.hhc") {
+      document.writeln ('<A HREF="' + prev + '">');
+      document.writeln ('<IMG SRC="prevpage.gif" HEIGHT=17 BORDER=0 ALT="Página anterior"></A>');
+   } else {
+//   window.alert ('no previous page');
+   }
+
+   if (next != "crw_spIX.hhk") {
+      document.writeln ('<A HREF="' + next + '">');
+      document.writeln ('<IMG SRC="nextpage.gif" HEIGHT=17 BORDER=0 ALT="Página siguiente"></A>');
+   } else {
+//   window.alert ('no next page');
+   }
+   document.writeln ('</TD><TD ALIGN="left">');
+   document.writeln ('<A HREF="frameset.htm?TOC">');
+   document.writeln ('<IMG SRC="showtoc.gif" HEIGHT=17 BORDER=0 ALT="Haga clic para ver el contenido"></A></TD>');
+   document.writeln ('<TD ALIGN="left">');
+   document.writeln ('<A HREF="frameset.htm?IDX">');
+   document.writeln ('<IMG SRC="showix.gif" HEIGHT=17 BORDER=0 ALT="Haga clic para ver el índice"></A></TD>');
+   document.writeln ('</TD>');
+   document.writeln ('</TR>');
+   document.writeln ('</TABLE>');
+
+}
+
+</SCRIPT>
+<table align="right" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td align="right"><font size="1">Seagate Software, Inc.<br>
+    <a href="http://www.seagatesoftware.com">http://www.seagatesoftware.com</a><br>
+    Envíe sus comentarios a:<br>
+    <a href="mailto:techpubs@seagatesoftware.com">techpubs@seagatesoftware.com</a><br>
+    </font></td>
+  </tr>
+</table>
+</body>
+</html>
+
+

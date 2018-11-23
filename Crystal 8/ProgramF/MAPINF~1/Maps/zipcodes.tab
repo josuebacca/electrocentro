@@ -1,0 +1,9 @@
+!table
+!version 300
+!charset WindowsLatin1
+CompressedPoints
+begin_metadata
+"\FIELDS\COL1\SEARCHFORMAT" = "%5s"
+"\IsCompressedPoints" = "TRUE"
+"\IsReadonly" = "TRUE"
+end_metadata

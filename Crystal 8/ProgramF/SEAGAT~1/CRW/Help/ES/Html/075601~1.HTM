@@ -1,0 +1,117 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+
+<html>
+<head>
+<title>C&#243;mo solucionar problemas en f&#243;rmulas de selecci&#243;n de registros </title>
+
+<link REL=STYLESHEET TYPE="text/css" HREF="seagate.css">
+
+<!--
+                 ***********************************
+                 * Seagate Software copyright 1999 *
+                 ***********************************
+
+                      Template version: 5.1
+-->
+
+
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" link="#0000FF" vlink="#0000FF" alink="#800080">
+
+
+ 
+<a name="54578"></a><h2 class="newpage">C&#243;mo solucionar problemas en f&#243;rmulas de selecci&#243;n de registros </h2><p><a name="54580"></a>Para solucionar problemas en su f&#243;rmula de selecci&#243;n, primero aseg&#250;rese que todos los campos invocados en la f&#243;rmula est&#233;n ubicados en su informe, despu&#233;s elimine la f&#243;rmula de selecci&#243;n y pru&#233;bela a medida que la reconstruya, paso a paso.</p><a name="54612"></a><h6>Para soluci&#243;n de problemas de f&#243;rmulas de selecci&#243;n de registros</h6><ol>
+<a name="54613"></a><li value="1&nbsp;&nbsp;&nbsp;&nbsp;">Escriba la f&#243;rmula de selecci&#243;n de registros en un papel, para usar esta copia como una gu&#237;a al reconstruir la f&#243;rmula paso a paso.
+<a name="54614"></a><li value="2&nbsp;&nbsp;&nbsp;&nbsp;">Quite la f&#243;rmula de selecci&#243;n de registros de su informe, elimin&#225;ndola del cuadro Texto de f&#243;rmula en el Editor de F&#243;rmulas.
+<a name="54619"></a><li value="3&nbsp;&nbsp;&nbsp;&nbsp;"><img src="images/bt_svcls.gif">
+
+
+Haga clic en <strong>Guardar y Cerrar</strong> cuando termine.
+<a name="54620"></a><li value="4&nbsp;&nbsp;&nbsp;&nbsp;">Aseg&#250;rese que todos los campos invocados en la f&#243;rmula de selecci&#243;n de registros (los selectores) est&#225;n f&#237;sicamente en el informe y que no est&#225;n ocultos.
+<p class="indent"><a name="54621"></a>Por ejemplo, si uno de los selectores es:</p></ol>
+<PRE><a name="54622"></a>{cliente.CODIGO POSTAL} &gt; "80000"
+<p class="indent"><a name="54623"></a>pero el campo {cliente.CODIGO POSTAL} no se usa en su informe (como en el caso del informe de ventas que usa el c&#243;digo postal para definir territorios pero no lo incluye en los datos del informe), entonces inserte el campo {cliente.CODIGO POSTAL} en un lugar obvio del informe.</p><p class="indent"><a name="54624"></a>O, si uno de los campos invocados en la f&#243;rmula de selecci&#243;n est&#225; en el informe pero oculto, cambie su estado (mu&#233;strelo), desactivando la opci&#243;n Ocultar en impresi&#243;n para ese campo, en el Editor de Formato.</p></PRE><ol>
+<a name="54625"></a><li value="5&nbsp;&nbsp;&nbsp;&nbsp;">Imprima el informe y aseg&#250;rese que todos los datos de los campos invocados por la f&#243;rmula impriman satisfactoriamente. Por ejemplo, si hay un n&#250;mero <kbd>x</kbd> de registros en la base de datos, usted debe obtener un n&#250;mero <kbd>x</kbd> de impresiones por cada campo invocado. Esto establece una base para comparar los resultados de impresi&#243;n usando la f&#243;rmula de selecci&#243;n.
+<a name="54626"></a><li value="6&nbsp;&nbsp;&nbsp;&nbsp;">Cuando est&#233; seguro que est&#225; obteniendo resultados satisfactorios sin la f&#243;rmula de selecci&#243;n, introd&#250;zcala usando s&#243;lo uno de los selectores.
+<p class="indent"><a name="54627"></a>Por ejemplo, si quiere usar lo siguiente en su f&#243;rmula de selecci&#243;n final:</p></ol>
+<PRE><a name="54628"></a>{cliente.CODIGO POSTAL} &gt; "80000" and<br>
+{cliente.APELLIDO DEL CONTACTO}[1] = "C" and<br>
+{cliente.VENTAS DEL A&Ntilde;O PASADO} &gt;= 5000
+<p class="indent"><a name="54629"></a>esta f&#243;rmula seleccionar&#225; todos aquellos registros que muestren un c&#243;digo postal mayor que 80000, un valor en el campo {cliente.APELLIDO DEL CONTACTO} que comience con "C" y un valor en el campo {cliente.VENTAS DEL A&Ntilde;O PASADO} mayor o igual que 5000.</p><p class="indent"><a name="54630"></a>Usted podr&#237;a empezar con esto como su primera prueba de la f&#243;rmula de selecci&#243;n:</p><a name="54631"></a>{cliente.CODIGO POSTAL} &gt; "80000"
+<p class="indent"><a name="54632"></a>Imprima el informe y eval&#250;e los datos que se imprimen con s&#243;lo un selector activado. En su ejemplo, eval&#250;e los datos en el campo {cliente.CODIGO POSTAL}. &#191;Muestra el campo solamente c&#243;digos postales mayores que 80000?</p></PRE><ul type="disc"><a name="54633"></a><li>Si es as&#237;, entonces usted sabe que esta parte de la f&#243;rmula est&#225; funcionando bien.
+<a name="54634"></a><li>Si no, corrija esta parte de la f&#243;rmula de selecci&#243;n.
+</ul><ol>
+<a name="54635"></a><li value="7&nbsp;&nbsp;&nbsp;&nbsp;">Una vez que la f&#243;rmula trabaja correctamente con un selector activado, agregue el segundo selector. En su ejemplo, la nueva f&#243;rmula de selecci&#243;n podr&#237;a ser:
+</ol>
+<PRE><a name="54636"></a>{cliente.CODIGO POSTAL} &gt; "80000" and<br>
+{cliente.APELLIDO DEL CONTACTO}[1] = "C"
+</PRE><ol>
+<a name="54637"></a><li value="8&nbsp;&nbsp;&nbsp;&nbsp;">Imprima el informe y eval&#250;e los datos impresos con los dos selectores activados. En su ejemplo, eval&#250;e los datos en el campo {cliente.APELLIDO DEL CONTACTO} (siendo que ya evalu&#243; el campo {cliente.CODIGO POSTAL} en el paso anterior).
+<p class="indent"><a name="54638"></a>&#191;Muestra el campo {cliente.APELLIDO DEL CONTACTO} s&#243;lo cadenas de texto que comienzan con "C"?</p><ul type="disc"><ul type="disc"><a name="54639"></a><li>Si es as&#237;, entonces usted sabe que esta parte de la f&#243;rmula est&#225; funcionando bien.<a name="54640"></a><li>Si no, corrija esta parte de la f&#243;rmula de selecci&#243;n.</ul></ul><a name="54641"></a><li value="9&nbsp;&nbsp;&nbsp;&nbsp;">Una vez que la f&#243;rmula de selecci&#243;n trabaja perfectamente con dos selectores activados, agregue el tercer selector, luego el cuarto, etc., hasta que haya probado todos los selectores de la f&#243;rmula. 
+</ol>
+
+<hr><br>
+
+<script  language="JavaScript"><!--
+
+var prev = "07_recordgroupsel13.html";
+var next = "07_recordgroupsel15.html";
+
+function setTopicID() { 
+      var number = "54578"; 
+      return number; 
+}
+
+// --></script>
+
+
+
+
+<SCRIPT>
+
+if (!window.parent.toc && navigator.appName == "Netscape") {
+
+   document.writeln ('<TABLE ALIGN="left" border="0" cellspacing="0" cellpadding="10">');
+   document.writeln ('<TR>');
+   document.write ('<TD ALIGN="left">');
+
+   if (prev != "crw_spTOC.hhc") {
+      document.writeln ('<A HREF="' + prev + '">');
+      document.writeln ('<IMG SRC="prevpage.gif" HEIGHT=17 BORDER=0 ALT="Página anterior"></A>');
+   } else {
+//   window.alert ('no previous page');
+   }
+
+   if (next != "crw_spIX.hhk") {
+      document.writeln ('<A HREF="' + next + '">');
+      document.writeln ('<IMG SRC="nextpage.gif" HEIGHT=17 BORDER=0 ALT="Página siguiente"></A>');
+   } else {
+//   window.alert ('no next page');
+   }
+   document.writeln ('</TD><TD ALIGN="left">');
+   document.writeln ('<A HREF="frameset.htm?TOC">');
+   document.writeln ('<IMG SRC="showtoc.gif" HEIGHT=17 BORDER=0 ALT="Haga clic para ver el contenido"></A></TD>');
+   document.writeln ('<TD ALIGN="left">');
+   document.writeln ('<A HREF="frameset.htm?IDX">');
+   document.writeln ('<IMG SRC="showix.gif" HEIGHT=17 BORDER=0 ALT="Haga clic para ver el índice"></A></TD>');
+   document.writeln ('</TD>');
+   document.writeln ('</TR>');
+   document.writeln ('</TABLE>');
+
+}
+
+</SCRIPT>
+<table align="right" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td align="right"><font size="1">Seagate Software, Inc.<br>
+    <a href="http://www.seagatesoftware.com">http://www.seagatesoftware.com</a><br>
+    Envíe sus comentarios a:<br>
+    <a href="mailto:techpubs@seagatesoftware.com">techpubs@seagatesoftware.com</a><br>
+    </font></td>
+  </tr>
+</table>
+</body>
+</html>
+
+

@@ -1,0 +1,466 @@
+<!-- #include virtual="/x-objects-local/colors.inc" -->
+/* $Header: /community/_stylesheets/main.css 31    6/14/99 6:16p Dbraaten $  	*/
+BODY
+{
+    BACKGROUND-COLOR: white;
+    FONT: small Arial, Helvetica, sans-serif;
+    COLOR: black;
+    FONT-SIZE: x-small;
+    FONT-STYLE: normal;
+    FONT-WEIGHT: normal;
+    MARGIN: 0px;
+    PADDING-BOTTOM: 0px;
+    PADDING-LEFT: 0px;
+    PADDING-RIGHT: 0px;
+    PADDING-TOP: 0px
+}
+
+.ssiBODYCOPY
+{
+    BACKGROUND-COLOR: transparent;
+    FONT-FAMILY: Arial, Geneva, Helvetica, sans-serif;
+    COLOR: black;
+    FONT-SIZE: x-small;
+    FONT-STYLE: normal;
+    FONT-WEIGHT: normal;
+    TEXT-DECORATION: none
+}
+
+.ssiHEADLINES
+{
+    BACKGROUND-COLOR: transparent;
+    FONT-FAMILY: Arial, Geneva, Helvetica, sans-serif;
+    COLOR: #44575B;
+    FONT-SIZE: x-small;
+    FONT-STYLE: normal;
+    FONT-WEIGHT: bold;
+    TEXT-DECORATION: none
+}
+
+.ssiSUBHEADINGS
+{
+    BACKGROUND-COLOR: transparent;
+    FONT-FAMILY: Arial, Geneva, Helvetica, sans-serif;
+    COLOR: black;
+    FONT-SIZE: x-small;
+    FONT-STYLE: normal;
+    FONT-WEIGHT: bold;
+    TEXT-DECORATION: none
+}
+
+.ssiSUBHEADINGSItalic
+{
+    BACKGROUND-COLOR: transparent;
+    FONT-FAMILY: Arial, Geneva, Helvetica, sans-serif;
+    COLOR: black;
+    FONT-SIZE: x-small;
+    FONT-STYLE: oblique;
+    TEXT-DECORATION: none
+}
+
+.ssiCALLOUTTEXT
+{
+    BACKGROUND-COLOR: transparent;
+    FONT-FAMILY: Arial, Geneva, Helvetica, sans-serif;
+    COLOR: #FFFFFF;
+    FONT-SIZE: 10pt;
+	 FONT-STYLE: normal;
+    FONT-WEIGHT: bold;
+    TEXT-DECORATION: none
+}
+
+.ssiCALLOUTBODYBG
+{
+    BACKGROUND-COLOR: #ececec
+}
+
+.ssiCALLOUTHEADLINEBG
+{
+    BACKGROUND-COLOR: #75A3D1
+}
+
+.ssiINSTRUCTIONS
+{
+    BACKGROUND-COLOR: transparent;
+    FONT-FAMILY: Arial, Geneva, Helvetica, sans-serif;
+    COLOR: #6699CC;
+    FONT-SIZE: x-small;
+    FONT-STYLE: normal;
+    FONT-WEIGHT: bold;
+    TEXT-DECORATION: none
+}
+
+.ssiDEVICES
+{
+    BACKGROUND-COLOR: transparent;
+    FONT-FAMILY: Arial, Geneva, Helvetica, sans-serif;
+    COLOR: #9183AB;
+    FONT-SIZE: x-small;
+    FONT-STYLE: italic;
+    FONT-WEIGHT: bold;
+    TEXT-DECORATION: none
+}
+
+.ssiPLACEHOLDER
+{
+    BACKGROUND-COLOR: transparent;
+    FONT-FAMILY: Arial, Geneva, Helvetica, sans-serif;
+    COLOR: red;
+    FONT-SIZE: x-small;
+    FONT-STYLE: normal;
+    FONT-WEIGHT: normal;
+    TEXT-DECORATION: none
+}
+
+.xFORMFIELD
+{
+    COLOR: black;
+    BACKGROUND-COLOR: transparent;
+    FONT-FAMILY: Arial, Geneva, Helvetica, sans-serif;
+    FONT-SIZE: x-small;
+    FONT-WEIGHT: bold;
+    TEXT-DECORATION: none;
+    TEXT-TRANSFORM: none
+}
+
+.xFORMINSTRUCTIONS
+{
+    BACKGROUND-COLOR: transparent;
+    FONT-FAMILY: Arial, Geneva, Helvetica, sans-serif;
+    COLOR: #6699CC;
+    FONT-SIZE: x-small;
+    FONT-STYLE: normal;
+    FONT-WEIGHT: bold;
+    TEXT-DECORATION: none
+}
+
+.xREQUIREDFIELD
+{
+    COLOR: red;
+    BACKGROUND-COLOR: transparent;
+    FONT-FAMILY: Arial, Geneva, Helvetica, sans-serif;
+    FONT-SIZE: x-small;
+    FONT-WEIGHT: bold;
+    TEXT-DECORATION: none;
+    TEXT-TRANSFORM: none
+}
+
+.xITpoll
+{
+  COLOR: #000000;
+  FONT-FAMILY: Arial, Geneva, Helvetica;
+  FONT-SIZE: 8pt;
+  FONT-WEIGHT: bold;
+  TEXT-DECORATION: none
+}
+A.xITpoll
+{
+  COLOR: #75A3D1;
+  FONT-FAMILY: Arial, Geneva, Helvetica;
+  FONT-SIZE: 8pt;
+  FONT-WEIGHT: bold;
+  TEXT-DECORATION: none
+}
+
+A.xITpoll:hover
+{
+    COLOR:  #BD3031;
+    TEXT-DECORATION: underline
+}
+
+.xITPastPoll
+{
+  FONT-FAMILY: Arial, Geneva, Helvetica;
+  FONT-SIZE: 10pt;
+  FONT-WEIGHT: bold
+
+}
+
+.xTOPNAV
+{
+    COLOR: #75A3D1;
+    FONT-FAMILY: Arial, Geneva, Helvetica;
+    FONT-SIZE: 8pt;
+    FONT-WEIGHT: bold;
+    TEXT-DECORATION: none
+}
+
+A.xTOPNAV:hover
+{
+    COLOR:  #BD3031;
+    TEXT-DECORATION: underline
+}
+
+.xFOOTER
+{
+    BACKGROUND-COLOR: transparent;
+    COLOR: #75A3d1;
+    FONT-FAMILY: Arial, Geneva, Helvetica;
+    FONT-SIZE: xx-small;
+    TEXT-DECORATION: none;
+    TEXT-TRANSFORM: none
+}
+
+A.xFOOTER:hover
+{
+    COLOR:  #BD3031;
+    TEXT-DECORATION: underline
+}
+
+.xMASTHEADLOGO
+{
+    BACKGROUND-COLOR: black;
+    MARGIN: 0px;
+    PADDING-BOTTOM: 0px;
+    PADDING-LEFT: 0px;
+    PADDING-RIGHT: 0px;
+    PADDING-TOP: 0px
+}
+
+.xMASTHEADLIGHT
+{
+    BACKGROUND-COLOR: #6699CC;
+    MARGIN: 0px;
+    PADDING-BOTTOM: 0px;
+    PADDING-LEFT: 0px;
+    PADDING-RIGHT: 0px;
+    PADDING-TOP: 0px
+}
+
+.xLEVEL1Ta
+{
+    BACKGROUND-COLOR: <%=g_MenubgTopLight %>;
+    FONT-FAMILY: Arial, Geneva, Helvetica, sans-serif;
+    COLOR: white;
+    CURSOR: hand;
+    FONT-SIZE: 10pt;
+    FONT-WEIGHT: bold;
+    LINE-HEIGHT: 14pt;
+    PADDING-LEFT: 5px;
+    TEXT-DECORATION: none
+}
+
+.xLEVEL1Tb
+{
+    BACKGROUND-COLOR: <%=g_MenubgTopDark %>;
+    FONT-FAMILY: Arial, Geneva, Helvetica, sans-serif;
+    COLOR: white;
+    CURSOR: hand;
+    FONT-SIZE: 10pt;
+    FONT-WEIGHT: bold;
+    LINE-HEIGHT: 14pt;
+    PADDING-LEFT: 5px;
+    TEXT-DECORATION: none
+}
+
+.xLEVEL1Tad
+{
+    BACKGROUND-COLOR: <%=g_MenubgTopLight%>;
+    FONT-FAMILY: Arial, Geneva, Helvetica, sans-serif;
+    COLOR: <%=g_MenuTopTextSelected %>;
+    CURSOR: hand;
+    FONT-SIZE: 10pt;
+    FONT-STYLE: italic;
+    FONT-WEIGHT: bold;
+    LINE-HEIGHT: 14pt;
+    PADDING-LEFT: 5px;
+    TEXT-DECORATION: none
+}
+
+.xLEVEL1Tbd
+{
+    BACKGROUND-COLOR: <%=g_MenubgTopDark %>;
+    FONT-FAMILY: Arial, Geneva, Helvetica, sans-serif;
+    COLOR: <%=g_MenuTopTextSelected %>;
+    CURSOR: hand;
+    FONT-SIZE: 10pt;
+    FONT-STYLE: italic;
+    FONT-WEIGHT: bold;
+    LINE-HEIGHT: 14pt;
+    PADDING-LEFT: 5px;
+    TEXT-DECORATION: none
+}
+
+.xLEVEL1La
+{
+    BACKGROUND-COLOR: <%=g_MenubgTopLight%>;
+    COLOR: white;
+    FONT-SIZE: 10pt;
+    FONT-WEIGHT: bold;
+    LINE-HEIGHT: 14pt;
+    PADDING-LEFT: 15px;
+    text-indent: -12px;
+    TEXT-DECORATION: none
+}
+
+.xLEVEL1Th
+{
+    COLOR: white;
+    FONT-SIZE: 10pt;
+    FONT-WEIGHT: bold;
+    TEXT-DECORATION: none
+}
+
+.xLEVEL1Lh
+{
+    COLOR: white;
+    FONT-SIZE: 10pt;
+    FONT-WEIGHT: bold;
+    
+    TEXT-DECORATION: none
+}
+
+A.xLEVEL1Lh:visited
+{
+    COLOR: White
+}
+A.xLEVEL1Lh:hover
+{
+    COLOR: White
+}
+
+.xLEVEL1Lb
+{
+    BACKGROUND-COLOR: <%=g_MenubgTopDark%>;
+    COLOR: white;
+    FONT-SIZE: 10pt;
+    FONT-WEIGHT: bold;
+    LINE-HEIGHT: 14pt;
+    PADDING-LEFT: 15px;
+    text-indent: -12px;
+    TEXT-DECORATION: none
+}
+
+.xLEVEL1Lad
+{
+    BACKGROUND-COLOR: <%=g_MenubgTopLight%>;
+    COLOR: <%=g_MenuTopTextSelected%>;
+    FONT-SIZE: 10pt;
+    FONT-STYLE: italic;
+    FONT-WEIGHT: bold;
+    LINE-HEIGHT: 14pt;
+    PADDING-LEFT: 15px;
+    text-indent: -12px;
+    TEXT-DECORATION: none
+}
+
+.xLEVEL1Lbd
+{
+    BACKGROUND-COLOR: <%=g_MenubgTopDark%>;
+    COLOR: <%=g_MenuTopTextSelected%>;
+    FONT-SIZE: 10pt;
+    FONT-STYLE: italic;
+    FONT-WEIGHT: bold;
+    LINE-HEIGHT: 14pt;
+    PADDING-LEFT: 15px;
+    text-indent: -12px;
+    TEXT-DECORATION: none
+}
+
+.xLEVEL2T
+{
+    BACKGROUND-COLOR: <%=g_MenuLeaf %>;
+    FONT-FAMILY: Arial, Geneva, Helvetica, sans-serif;
+    COLOR: #847952;
+    CURSOR: hand;
+    FONT-SIZE: 10pt;
+    FONT-WEIGHT: bold;
+    LINE-HEIGHT: 10pt;
+    PADDING-LEFT: 22px;
+    TEXT-DECORATION: none;
+    text-indent: -13px
+}
+
+.xLEVEL2Td
+{
+    BACKGROUND-COLOR: <%=g_MenuLeaf %>;
+    FONT-FAMILY: Arial, Geneva, Helvetica, sans-serif;
+    COLOR: black;
+    CURSOR: hand;
+    FONT-SIZE: 10pt;
+    FONT-WEIGHT: bold;
+    LINE-HEIGHT: 10pt;
+    PADDING-LEFT: 20px;
+    TEXT-DECORATION: none;
+    text-indent: -12px
+}
+
+.xLEVEL2L
+{
+    BACKGROUND-COLOR: <%=g_MenuLeaf %>;
+    FONT-FAMILY: Arial, Geneva, Helvetica, sans-serif;
+    COLOR: #44575B;
+    FONT-SIZE: 10pt;
+    LINE-HEIGHT: 10pt;
+    FONT-WEIGHT: bold;
+    PADDING-LEFT: 20px;
+    TEXT-DECORATION: none;
+    text-indent: -12px
+}
+
+.xLEVEL2Ld
+{
+    BACKGROUND-COLOR: <%=g_MenuLeafSelected %>;
+    FONT-FAMILY: Arial, Geneva, Helvetica, sans-serif;
+    COLOR: black;
+    FONT-SIZE: 10pt;
+    FONT-WEIGHT: bold;
+    LINE-HEIGHT: 10pt;
+    PADDING-LEFT: 20px;
+    TEXT-DECORATION: none;
+    text-indent: -12px
+}
+
+.xLEVEL2Lh
+{
+  COLOR: #44575B;
+  FONT-SIZE: 10pt;
+  FONT-WEIGHT: bold;
+  TEXT-DECORATION: none
+}
+
+A.xLEVEL2Lh:hover
+{
+  COLOR:  #BD3031;
+  TEXT-DECORATION: underline
+}
+
+.xLEVEL3L
+{
+    BACKGROUND-COLOR: <%=g_MenuLeaf%>;
+    FONT-FAMILY: Arial, Geneva, Helvetica, sans-serif;
+    COLOR: <%=g_MenuLeafText%>;
+    FONT-SIZE: 8pt;
+    FONT-WEIGHT: bold;
+    LINE-HEIGHT: 10pt;
+    PADDING-LEFT: 30px;
+    TEXT-DECORATION: none;
+    text-indent: -12px
+}
+
+.xLEVEL3Ld
+{
+    BACKGROUND-COLOR: <%=g_MenuLeafSelected%>;
+    FONT-FAMILY: Arial, Geneva, Helvetica, sans-serif;
+    COLOR: black;
+    FONT-SIZE: 8pt;
+    FONT-WEIGHT: bold;
+    LINE-HEIGHT: 10pt;
+    PADDING-LEFT: 30px;
+    TEXT-DECORATION: none;
+    text-indent: -12px
+}
+
+.xLEVEL3Lh
+{
+  COLOR: <%=g_MenuLeafText%>;
+  FONT-SIZE: 8pt;
+  FONT-WEIGHT: bold;
+  TEXT-DECORATION: none
+}
+
+A.xLEVEL3Lh:hover
+{
+  COLOR:  #BD3031;
+  TEXT-DECORATION: underline
+}

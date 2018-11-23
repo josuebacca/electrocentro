@@ -1,0 +1,228 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+
+<html>
+<head>
+<title>Configuraci&#243;n de Lotus Domino con el Web Component Server</title>
+
+<link REL=STYLESHEET TYPE="text/css" HREF="seagate.css">
+
+<!--
+                 ***********************************
+                 * Seagate Software copyright 1999 *
+                 ***********************************
+
+                      Template version: 5.1
+-->
+
+
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" link="#0000FF" vlink="#0000FF" alink="#800080">
+
+
+ 
+<a name="177272"></a><h3 class="newpage"> Configuraci&#243;n de Lotus Domino con el Web Component Server</h3>
+<p><a name="177273"></a>Si va a usar un servidor Lotus Domino, siga el procedimiento que se describe a continuaci&#243;n antes de acceder a informes a trav&#233;s del web.</p><ol>
+<a name="177274"></a><li value="1&nbsp;&nbsp;&nbsp;&nbsp;">Copie el archivo <kbd>wcscgi.exe</kbd> en el directorio<kbd> cgi<nobr>-b</nobr>in</kbd> de Lotus Domino.
+<p class="indent"><a name="177275"></a>Esto proporciona al servidor web Domino acceso a los archivos de programa del servidor web Crystal Reports a trav&#233;s de su directorio CGI.</p><a name="177276"></a><li value="2&nbsp;&nbsp;&nbsp;&nbsp;">Cree un directorio virtual para Seagate Crystal Reports en Lotus Domino.
+<p class="indent"><a name="177277"></a>Para hacerlo, use la base de datos de configuraci&#243;n de Domino. Si no tiene una base de datos de configuraci&#243;n de Domino, cree una denominada domcfg.nsf en el directorio predeterminado de datos del servidor Domino usando la plantilla de configuraci&#243;n de Domino (domcfg.ntf). </p><a name="177278"></a><li value="3&nbsp;&nbsp;&nbsp;&nbsp;">Asigne las URL al informe.
+<p class="indent"><a name="177279"></a>La forma de hacerlo variar&#225; dependiendo de la versi&#243;n de Domino que est&#233; usando. Para m&#225;s informaci&#243;n, consulte la ayuda en l&#237;nea de Domino.</p><ul type="disc"><ul type="disc"><a name="177280"></a><li><kbd>Asignaci&#243;n de directorios en Lotus Domino versi&#243;n 4.x</kbd></ul></ul><p class="indent"><a name="177281"></a>Mediante la base de datos de configuraci&#243;n de Domino, siga la ruta Crear -&gt; Asignaci&#243;n de URL -&gt; Directorio y asigne los siguientes cuatro directorios:<Table Border="1">
+<tr><td align="left" valign="TOP"><a name="177284"></a><strong>
+</strong>
+</td><td align="left" valign="TOP"><a name="177286"></a>Ruta de URL
+
+</td><td align="left" valign="TOP"><a name="177288"></a>Directorio
+
+</td></tr>
+<tr><td align="left" valign="TOP"><P><a name="177290"></a>1</P>
+
+
+</td><td align="left" valign="TOP"><P><a name="177292"></a>/scrreports/*</P>
+
+
+</td><td align="left" valign="TOP"><P><a name="177294"></a>c:\Progra~1\Seagat~1\Crysta~1\Reports\*</P>
+
+
+</td></tr>
+<tr><td align="left" valign="TOP"><P><a name="177296"></a>2</P>
+
+
+</td><td align="left" valign="TOP"><P><a name="177298"></a>/scrsamples/*</P>
+
+
+</td><td align="left" valign="TOP"><P><a name="177300"></a>c:\Progra~1\Seagat~1\Crysta~1\samples\ code\web\*</P>
+
+
+</td></tr>
+<tr><td align="left" valign="TOP"><P><a name="177302"></a>3</P>
+
+
+</td><td align="left" valign="TOP"><P><a name="177304"></a>/viewer/*</P>
+
+
+</td><td align="left" valign="TOP"><P><a name="177306"></a>c:\Progra~1\Seagat~1\Viewers\*</P>
+
+
+</td></tr>
+<tr><td align="left" valign="TOP"><P><a name="177308"></a>4</P>
+
+
+</td><td align="left" valign="TOP"><P><a name="177310"></a>/reports</P>
+
+
+</td><td align="left" valign="TOP"><P><a name="177312"></a>d:\notes\data\report</P>
+
+
+</td></tr>
+
+</Table></p><p class="indent"><a name="177313"></a>Las primeras dos asignaciones son opcionales. Le permiten ver muestras incluidas con el producto.</p><p class="indent"><a name="177314"></a>La tercera asignaci&#243;n es necesaria, ya que &#233;ste es el directorio donde se almacenan los clientes del visor. Cuando un explorador solicita un informe, el Web Component Server interpreta el explorador y carga autom&#225;ticamente el visor apropiado (Java, ActiveX, HTML o HTML con marcos).</p><p class="indent"><a name="177315"></a>La cuarta asignaci&#243;n es necesaria. &Eacute;sta determina el directorio actual en el servidor cada vez que se recibe una solicitud de informe. El nombre del directorio (en este caso /reports) puede ser cualquiera que decida utilizar en el directorio \notes\data. Se activa mediante el redireccionamiento de URL, que se muestra a continuaci&#243;n.</p><p class="indent"><a name="177316"></a>En la asignaci&#243;n de directorios, puede especificar la direcci&#243;n IP a la cual se aplica la asignaci&#243;n. Esto es necesario solamente si va a usar varios servidores virtuales y desea restringir el acceso a s&#243;lo un informe. Todas las asignaciones de directorios deben establecerse tambi&#233;n con acceso de lectura, no de ejecuci&#243;n. Se recomienda introducir informaci&#243;n de referencia en el campo de comentarios, pero esto es opcional.</p><ul type="disc"><ul type="disc"><a name="177317"></a><li><kbd>Asignaci&#243;n de directorios en Lotus Domino versi&#243;n 5.x</kbd></ul></ul><p class="indent"><a name="177318"></a>Abra el administrador de Domino. Haga clic en la ficha de configuraci&#243;n y abra el servidor -&gt;Vista de documentos actuales del servidor A continuaci&#243;n, seleccione el bot&#243;n de web. Cree un redireccionamiento de asignaci&#243;n de directorios URL. <Table Border="1">
+<tr><td align="left" valign="TOP"><a name="177321"></a>
+
+</td><td align="left" valign="TOP"><a name="177323"></a>Ruta de URL
+
+</td><td align="left" valign="TOP"><a name="177325"></a>Directorio
+
+</td><td align="left" valign="TOP"><a name="177327"></a>Acceso
+
+</td><td align="left" valign="TOP"><a name="177329"></a>Informaci&#243;n 
+del sitio
+
+</td></tr>
+<tr><td align="left" valign="TOP"><P><a name="177331"></a>1</P>
+
+
+</td><td align="left" valign="TOP"><P><a name="177333"></a>/scrreports/*</P>
+
+
+</td><td align="left" valign="TOP"><P><a name="177335"></a>c:\Archivos de programa\Seagate Software\Crystal Reports\Samples\Reports\*</P>
+
+
+</td><td align="left" valign="TOP"><P><a name="177337"></a>Lectura</P>
+
+
+</td><td align="left" valign="TOP"><P><a name="177339"></a>Opcional</P>
+
+
+</td></tr>
+<tr><td align="left" valign="TOP"><P><a name="177341"></a>2</P>
+
+
+</td><td align="left" valign="TOP"><P><a name="177343"></a>/scrsamples/*</P>
+
+
+</td><td align="left" valign="TOP"><P><a name="177345"></a>c:\Archivos de programa\Seagate Software\Crystal Reports\Samples\*</P>
+
+
+</td><td align="left" valign="TOP"><P><a name="177347"></a>Lectura</P>
+
+
+</td><td align="left" valign="TOP"><P><a name="177349"></a>Opcional</P>
+
+
+</td></tr>
+<tr><td align="left" valign="TOP"><P><a name="177351"></a>3</P>
+
+
+</td><td align="left" valign="TOP"><P><a name="177353"></a>/viewer/*</P>
+
+
+</td><td align="left" valign="TOP"><P><a name="177355"></a>C:\Archivos de programa\Seagate Software\Viewers\*</P>
+
+
+</td><td align="left" valign="TOP"><P><a name="177357"></a>Lectura</P>
+
+
+</td><td align="left" valign="TOP"><P><a name="177359"></a>Opcional</P>
+
+
+</td></tr>
+<tr><td align="left" valign="TOP"><P><a name="177361"></a>4</P>
+
+
+</td><td align="left" valign="TOP"><P><a name="177363"></a>/reports</P>
+
+
+</td><td align="left" valign="TOP"><P><a name="177365"></a>d:\notes\data\report</P>
+
+
+</td><td align="left" valign="TOP"><P><a name="177367"></a>Lectura</P>
+
+
+</td><td align="left" valign="TOP"><P><a name="177369"></a>Opcional</P>
+
+
+</td></tr>
+
+</Table></p><p class="indent"><a name="177370"></a>Las primeras dos asignaciones son opcionales. Le permiten ver las muestras creadas con el producto.</p><p class="indent"><a name="177371"></a>La tercera asignaci&#243;n es necesaria, ya que &#233;ste es el directorio donde se almacenan los clientes del visor. Cuando un explorador solicita un informe, el Web Component Server interpreta el explorador y carga autom&#225;ticamente el visor apropiado (Java, ActiveX, HTML o HTML con marcos).</p><p class="indent"><a name="177372"></a>La cuarta asignaci&#243;n es necesaria. &Eacute;sta determina el directorio actual en el servidor cada vez que se recibe una solicitud de informe. El nombre del directorio (en este caso /reports) puede ser cualquiera que decida utilizar bajo el directorio \notes\data. Se activa mediante el redireccionamiento de URL, que se muestra a continuaci&#243;n.</p><p class="indent"><a name="177373"></a>En la asignaci&#243;n de directorios, puede especificar la direcci&#243;n IP a la cual se aplica la asignaci&#243;n. Esto es necesario solamente si va a usar varios servidores virtuales y desea restringir el acceso a s&#243;lo un informe. Todas las asignaciones de directorios deben establecerse tambi&#233;n con acceso de lectura, no de ejecuci&#243;n. Se recomienda introducir alguna informaci&#243;n de referencia en el campo de comentarios, pero esto es opcional.</p><a name="177374"></a><li value="4&nbsp;&nbsp;&nbsp;&nbsp;">Reinicie el servidor Lotus Domino.
+<a name="177375"></a><li value="5&nbsp;&nbsp;&nbsp;&nbsp;">Aseg&#250;rese de que los servicios NT se hayan iniciado.
+<ul type="disc"><ul type="disc"><a name="177376"></a><li>Seleccione <kbd>Servicios</kbd> en el Panel de control.<p class="indent"><a name="177377"></a>Aparecer&#225; el cuadro de di&#225;logo Servicios.</p><a name="177378"></a><li>Compruebe que los servicios <kbd>Seagate Page Server</kbd> y <kbd>Seagate Web Component Server</kbd> se hayan iniciado. Si no se est&#225;n ejecutando, haga clic en<kbd> Inicio</kbd>.<p><a name="177382"></a> <img src="images/db_service_seagatepageserver.gif">
+
+
+</p>
+</ul></ul><a name="177384"></a><li value="6&nbsp;&nbsp;&nbsp;&nbsp;">Para acceder a los informes de muestra, introduzca la URL en su explorador web.
+<p class="indent"><a name="177385"></a><code>http:/localhost/scrsamples</code></p></ol>
+
+<hr><br>
+
+<script  language="JavaScript"><!--
+
+var prev = "WebServerImplementation9.html";
+var next = "WebServerImplementation11.html";
+
+function setTopicID() { 
+      var number = "177272"; 
+      return number; 
+}
+
+// --></script>
+
+
+
+
+<SCRIPT>
+
+if (!window.parent.toc && navigator.appName == "Netscape") {
+
+   document.writeln ('<TABLE ALIGN="left" border="0" cellspacing="0" cellpadding="10">');
+   document.writeln ('<TR>');
+   document.write ('<TD ALIGN="left">');
+
+   if (prev != "wcmadminTOC.hhc") {
+      document.writeln ('<A HREF="' + prev + '">');
+      document.writeln ('<IMG SRC="prevpage.gif" HEIGHT=17 BORDER=0 ALT="Página anterior"></A>');
+   } else {
+//   window.alert ('no previous page');
+   }
+
+   if (next != "wcmadminIX.hhk") {
+      document.writeln ('<A HREF="' + next + '">');
+      document.writeln ('<IMG SRC="nextpage.gif" HEIGHT=17 BORDER=0 ALT="Página siguiente"></A>');
+   } else {
+//   window.alert ('no next page');
+   }
+   document.writeln ('</TD><TD ALIGN="left">');
+   document.writeln ('<A HREF="frameset.htm?TOC">');
+   document.writeln ('<IMG SRC="showtoc.gif" HEIGHT=17 BORDER=0 ALT="Haga clic para ver el contenido"></A></TD>');
+   document.writeln ('<TD ALIGN="left">');
+   document.writeln ('<A HREF="frameset.htm?IDX">');
+   document.writeln ('<IMG SRC="showix.gif" HEIGHT=17 BORDER=0 ALT="Haga clic para ver el índice"></A></TD>');
+   document.writeln ('</TD>');
+   document.writeln ('</TR>');
+   document.writeln ('</TABLE>');
+
+}
+
+</SCRIPT>
+<table align="right" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td align="right"><font size="1">Seagate Software, Inc.<br>
+    <a href="http://www.seagatesoftware.com">http://www.seagatesoftware.com</a><br>
+    Envíe sus comentarios a:<br>
+    <a href="mailto:techpubs@seagatesoftware.com">techpubs@seagatesoftware.com</a><br>
+    </font></td>
+  </tr>
+</table>
+</body>
+</html>
+
+

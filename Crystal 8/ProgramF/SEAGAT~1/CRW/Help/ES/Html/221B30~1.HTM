@@ -1,0 +1,93 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+
+<html>
+<head>
+<title>Consideraciones acerca de campos de par&#225;metro</title>
+
+<link REL=STYLESHEET TYPE="text/css" HREF="seagate.css">
+
+<!--
+                 ***********************************
+                 * Seagate Software copyright 1999 *
+                 ***********************************
+
+                      Template version: 5.1
+-->
+
+
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" link="#0000FF" vlink="#0000FF" alink="#800080">
+
+
+ 
+<a name="47218"></a><h3 class="newpage"> Consideraciones acerca de campos de par&#225;metro</h3>
+<p><a name="47219"></a>Hay varias cosas que debe tener en cuenta cuando est&#225; trabajando con campos de par&#225;metro.</p><ul type="disc"><a name="46292"></a><li>Los campos de par&#225;metro son compatibles con los siguientes tipos de datos: 
+<p class="indent"><a name="46293"></a>Booleano: requiere una respuesta s&#237;/no o verdadero/falso. <br>Ejemplo: &#191;Desea incluir cifras de presupuesto planificado en el resumen?</p><p class="indent"><a name="46294"></a>Moneda: requiere un monto en d&#243;lar.<br>Ejemplo: Mostrar clientes con ventas superiores a XXXXX.</p><p class="indent"><a name="46295"></a>Fecha: requiere una respuesta en formato de fecha.<br>Ejemplo: Ingrese las fechas iniciales y finales del trimestre.</p><p class="indent"><a name="46296"></a>FechaHora: requiere tanto la fecha como la hora.<br>Ejemplo: Mostrar estad&#237;sticas del 07/04/1999 entre 13:00-14:00.</p><p class="indent"><a name="46297"></a>N&#250;mero: requiere un valor num&#233;rico.<br>Ejemplo: Ingrese el n&#250;mero de identificaci&#243;n del cliente.</p><p class="indent"><a name="46298"></a>Cadena: requiere una respuesta en texto. <br>Ejemplo: Ingrese la regi&#243;n.</p><p class="indent"><a name="47224"></a>Hora: requiere una respuesta usando un formato de hora <br>Ejemplo: Mostrar el n&#250;mero total de llamadas desde 13:00-14:00.</p><a name="46322"></a><li>El mensaje que aparece cuando se solicita el valor del par&#225;metro puede contener 60 a 70 caracteres por l&#237;nea con un m&#225;ximo de dos l&#237;neas (dependiendo del ancho del car&#225;cter, hasta un m&#225;ximo de 25 caracteres alfanum&#233;ricos). El texto de m&#225;s de una l&#237;nea de longitud divide autom&#225;ticamente las palabras.
+<a name="49491"></a><li>Un campo de par&#225;metro puede contener solamente un valor predeterminado.
+<a name="53293"></a><li>No necesita colocar un campo de par&#225;metro en el informe para poder usarlo en una f&#243;rmula de selecci&#243;n de grupos o registros. Establece el campo de par&#225;metro y lo introduce en su f&#243;rmula como har&#237;a con cualquier otro campo.
+</ul>
+<hr><br>
+
+<script  language="JavaScript"><!--
+
+var prev = "22_param2.html";
+var next = "22_param4.html";
+
+function setTopicID() { 
+      var number = "47218"; 
+      return number; 
+}
+
+// --></script>
+
+
+
+
+<SCRIPT>
+
+if (!window.parent.toc && navigator.appName == "Netscape") {
+
+   document.writeln ('<TABLE ALIGN="left" border="0" cellspacing="0" cellpadding="10">');
+   document.writeln ('<TR>');
+   document.write ('<TD ALIGN="left">');
+
+   if (prev != "crw_spTOC.hhc") {
+      document.writeln ('<A HREF="' + prev + '">');
+      document.writeln ('<IMG SRC="prevpage.gif" HEIGHT=17 BORDER=0 ALT="Página anterior"></A>');
+   } else {
+//   window.alert ('no previous page');
+   }
+
+   if (next != "crw_spIX.hhk") {
+      document.writeln ('<A HREF="' + next + '">');
+      document.writeln ('<IMG SRC="nextpage.gif" HEIGHT=17 BORDER=0 ALT="Página siguiente"></A>');
+   } else {
+//   window.alert ('no next page');
+   }
+   document.writeln ('</TD><TD ALIGN="left">');
+   document.writeln ('<A HREF="frameset.htm?TOC">');
+   document.writeln ('<IMG SRC="showtoc.gif" HEIGHT=17 BORDER=0 ALT="Haga clic para ver el contenido"></A></TD>');
+   document.writeln ('<TD ALIGN="left">');
+   document.writeln ('<A HREF="frameset.htm?IDX">');
+   document.writeln ('<IMG SRC="showix.gif" HEIGHT=17 BORDER=0 ALT="Haga clic para ver el índice"></A></TD>');
+   document.writeln ('</TD>');
+   document.writeln ('</TR>');
+   document.writeln ('</TABLE>');
+
+}
+
+</SCRIPT>
+<table align="right" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td align="right"><font size="1">Seagate Software, Inc.<br>
+    <a href="http://www.seagatesoftware.com">http://www.seagatesoftware.com</a><br>
+    Envíe sus comentarios a:<br>
+    <a href="mailto:techpubs@seagatesoftware.com">techpubs@seagatesoftware.com</a><br>
+    </font></td>
+  </tr>
+</table>
+</body>
+</html>
+
+

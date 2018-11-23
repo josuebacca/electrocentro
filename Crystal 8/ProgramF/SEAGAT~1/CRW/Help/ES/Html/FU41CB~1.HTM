@@ -1,0 +1,102 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+
+<html>
+<head>
+<title>Previous (campo)</title>
+
+<link REL=STYLESHEET TYPE="text/css" HREF="seagate.css">
+
+<!--
+                 ***********************************
+                 * Seagate Software copyright 1999 *
+                 ***********************************
+
+                      Template version: 5.1
+-->
+
+
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" link="#0000FF" vlink="#0000FF" alink="#800080">
+
+
+ 
+<a name="1000594322"></a><h3 class="newpage"> Previous (campo)</h3>
+<p><a name="1000594323"></a>Sintaxis Crystal.</p><p><a name="1000649792"></a><a href="Functions176.html#1000577708">PreviousValue (campo)</a> y Previous son funciones equivalentes. Sin embargo, s&#243;lo puede usar Previous  con sintaxis Crystal y PreviousValue s&#243;lo con sintaxis b&#225;sica.</p><a name="1000594324"></a><h5>Argumentos</h5><p><a name="1000594325"></a>campo<EM> </EM>es un campo de base de datos o una f&#243;rmula v&#225;lida en el informe.</p><a name="1000594326"></a><h5>Devuelve </h5><p><a name="1000594327"></a>Un valor de campo del mismo tipo que el pasado como el argumento campo.</p><a name="1000594328"></a><h5>Acci&#243;n</h5><p><a name="1000594330"></a>PreviousValue devuelve el valor del campo especificado en el registro previo.</p><a name="1000594331"></a><h5>Uso(s) t&#237;pico(s)</h5><p><a name="1000594332"></a>Puede utilizar Previous para identificar el &#250;ltimo registro en un rango previo o el &#250;ltimo registro que ocurre antes de que un nuevo rango comience, o para evaluar en busca de valores duplicados.</p><a name="1000594333"></a><h5>Ejemplo(s)</h5><p><a name="1000594334"></a>Los siguientes ejemplos son aplicables para la sintaxis Crystal:</p><p class="code"><a name="1000594335"></a>If Previous({archivo.CANT}) &lt;&gt; 0 Then
+<br><a name="1000750319"></a>&nbsp;&nbsp;&nbsp;&nbsp;{archivo.CANT}/2
+<br><a name="1000750320"></a>Else
+<br><a name="1000750342"></a>&nbsp;&nbsp;&nbsp;&nbsp;{archivo.CANT}
+</p><p class="example"><a name="1000594336"></a>Eval&#250;a el valor previo en el campo<EM> </EM>{archivo.CANT} para ver si es un valor cero. Si no es, divide el valor entre dos. Si es un valor cero, devuelve el valor.</p><p class="code"><a name="1000594337"></a>If Previous ({cliente.CLIENTE ID}) = {cliente.CLIENTE ID} Then
+<br><a name="1000750358"></a>&nbsp;&nbsp;&nbsp;&nbsp;"Valor Repetido"
+<br><a name="1000750359"></a>Else
+<br><a name="1000750418"></a>&nbsp;&nbsp;&nbsp;&nbsp;""
+</p><p class="example"><a name="1000594338"></a>Pone indicadores en los valores repetidos en el campo{cliente.CLIENTE ID}.</p><p class="code"><a name="1000594339"></a>If Remainder(Previous ({archivo.NUMSERIE), 300) = 0 Then
+<br><a name="1000750477"></a>&nbsp;&nbsp;&nbsp;&nbsp;"Comenzando, nuevo bloque"
+<br><a name="1000750536"></a>Else
+<br><a name="1000750595"></a>&nbsp;&nbsp;&nbsp;&nbsp;""
+</p><p class="example"><a name="1000594340"></a>Divide el valor previo en el campo {archivo.SERIALNUM} entre 300. Si no hay residuo, pone un indicador en el valor actual como "Comenzando, nuevo bloque". Si hay un residuo (Else) no imprime el indicador. (Esta f&#243;rmula divide n&#250;meros de serie en bloques de 300.)</p><p><a name="1000594341"></a><font color="darkblue"><b>Nota:   &nbsp;&nbsp;&nbsp;</b></font>El uso de esta funci&#243;n en una f&#243;rmula obliga a que la f&#243;rmula sea evaluada al momento de impresi&#243;n. Para obtener m&#225;s informaci&#243;n sobre las consideraciones de evaluaci&#243;n de hora, v&#233;ase el <a href="Functions169.html#1000572432">Funciones de tiempo de evaluaci&#243;n</a>.</p>
+
+<hr><br>
+
+<script  language="JavaScript"><!--
+
+var prev = "Functions174.html";
+var next = "Functions176.html";
+
+function setTopicID() { 
+      var number = "1000594322"; 
+      return number; 
+}
+
+// --></script>
+
+
+
+
+<SCRIPT>
+
+if (!window.parent.toc && navigator.appName == "Netscape") {
+
+   document.writeln ('<TABLE ALIGN="left" border="0" cellspacing="0" cellpadding="10">');
+   document.writeln ('<TR>');
+   document.write ('<TD ALIGN="left">');
+
+   if (prev != "crw_spTOC.hhc") {
+      document.writeln ('<A HREF="' + prev + '">');
+      document.writeln ('<IMG SRC="prevpage.gif" HEIGHT=17 BORDER=0 ALT="Página anterior"></A>');
+   } else {
+//   window.alert ('no previous page');
+   }
+
+   if (next != "crw_spIX.hhk") {
+      document.writeln ('<A HREF="' + next + '">');
+      document.writeln ('<IMG SRC="nextpage.gif" HEIGHT=17 BORDER=0 ALT="Página siguiente"></A>');
+   } else {
+//   window.alert ('no next page');
+   }
+   document.writeln ('</TD><TD ALIGN="left">');
+   document.writeln ('<A HREF="frameset.htm?TOC">');
+   document.writeln ('<IMG SRC="showtoc.gif" HEIGHT=17 BORDER=0 ALT="Haga clic para ver el contenido"></A></TD>');
+   document.writeln ('<TD ALIGN="left">');
+   document.writeln ('<A HREF="frameset.htm?IDX">');
+   document.writeln ('<IMG SRC="showix.gif" HEIGHT=17 BORDER=0 ALT="Haga clic para ver el índice"></A></TD>');
+   document.writeln ('</TD>');
+   document.writeln ('</TR>');
+   document.writeln ('</TABLE>');
+
+}
+
+</SCRIPT>
+<table align="right" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td align="right"><font size="1">Seagate Software, Inc.<br>
+    <a href="http://www.seagatesoftware.com">http://www.seagatesoftware.com</a><br>
+    Envíe sus comentarios a:<br>
+    <a href="mailto:techpubs@seagatesoftware.com">techpubs@seagatesoftware.com</a><br>
+    </font></td>
+  </tr>
+</table>
+</body>
+</html>
+
+

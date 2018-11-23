@@ -1,0 +1,93 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+
+<html>
+<head>
+<title>Operador Igual</title>
+
+<link REL=STYLESHEET TYPE="text/css" HREF="seagate.css">
+
+<!--
+                 ***********************************
+                 * Seagate Software copyright 1999 *
+                 ***********************************
+
+                      Template version: 5.1
+-->
+
+
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" link="#0000FF" vlink="#0000FF" alink="#800080">
+
+
+ 
+<a name="1000024440"></a><h3 class="newpage"> Operador Igual</h3>
+<p><a name="1000024441"></a>Basic and Crystal syntax.</p><a name="1000024442"></a><h5>Uso</h5><p><code><a name="1000024443"></a>x = y</code></p><p class="example"><a name="1000024444"></a>x es igual a y</p><p><a name="1000024445"></a>El operador igual le dice al programa que eval&#250;e una expresi&#243;n (x = y) y retorne VERDADERO (si <EM>x</EM> es igual&nbsp;&nbsp;&nbsp;&nbsp; a <EM>y</EM>) o FALSO (si <EM>x</EM> no es igual<EM> </EM>a y).</p><a name="1000024446"></a><h5>Examplos</h5><p><a name="1000024451"></a>Los siguientes ejemplos son aplicables a sintaxis Crystal y Basic:</p><p><code><a name="1000024452"></a>{archivo.CANTIDAD} = 3</code></p><p class="example"><a name="1000024453"></a>VERDADERO, donde {archivo.CANTIDAD} tiene un valor de 3.</p><p><code><a name="1000024454"></a>{archivo.CANTIDAD}  = 3</code></p><p class="example"><a name="1000024455"></a>FALSO, en todas las otras situaciones.</p><p><code><a name="1000024456"></a>{archivo.TOTAL HASTA AHORA} = {archivo.MISMO PERIODO A&Ntilde;O PASADO}</code></p><p class="example"><a name="1000024457"></a>VERDADERO, donde el valor de campo {archivo. MISMO PERIODO A&Ntilde;O PASADO} es id&#233;ntico al valor de campo {archivo.MISMO PERIODO A&Ntilde;O PASADO}.</p><p><code><a name="1000024458"></a>{archivo.TOTAL HASTA AHORA} = {archivo.MISMO PERIODO A&Ntilde;O PASADO}</code></p><p class="example"><a name="1000024459"></a>FALSO, en todas las otras situaciones.</p><p><code><a name="1000024460"></a>({archivo.VENTAS} - {archivo.COGS}) = 22,654</code></p><p class="example"><a name="1000024461"></a>VERDADERO, donde el c&#225;lculo de la expresi&#243;n {archivo.VENTAS}-{archivo.COGS} genera el valor 22,654, por ejemplo {archivo.VENTAS} = 109,986} y {archivo.COGS} = 87,332}.</p><p><code><a name="1000024462"></a>({archivo.VENTAS} - {archivo.COGS})= 22,654</code></p><p class="example"><a name="1000024463"></a>FALSO, en todas las otras situaciones.</p><p><code><a name="1000024464"></a>{cliente.APELLIDO} = "Johnson"</code></p><p class="example"><a name="1000024465"></a>VERDADERO, donde la cadena de texto en el campo {cliente.APELLIDO} es "Johnson".</p><p><code><a name="1000024466"></a>{cliente.APELLIDO} = "Johnson"</code></p><p class="example"><a name="1000024467"></a>FALSO, en todas las otras situaciones.</p><a name="1000024468"></a><h5>Comentarios</h5><p><a name="1000018908"></a>Este Operador a menudo se usa con expresiones que contienen el Operador If<nobr>-T</nobr>hen- Else operator. Por ejemplo en sintaxis Crystal:</p><p class="code"><a name="1000024474"></a>If {archivo.COMPRAS} = 0 Then
+<br><a name="1000024475"></a>&nbsp;&nbsp;&nbsp;&nbsp;"Su cuenta no tuvo movimiento este mes."
+<br><a name="1000024476"></a>Else
+<br><a name="1000024477"></a>&nbsp;&nbsp;&nbsp;&nbsp;"";
+</p><p class="example"><a name="1000024478"></a>Que imprime la afirmaci&#243;n "Su cuenta..." si el campo{archivo.COMPRAS} tiene un valor cero y no imprime (indicado por la cadena de texto vac&#237;o "" ), si el valor del campo {archivo.COMPRAS} es diferente de cero.</p><a name="1000018914"></a><h6>Temas relacionados</h6><p><a name="1000029003"></a><a href="19_introformulas37.html#317136">F&#243;rmula 9</a></p><p><a name="1000028992"></a><a href="19_introformulas43.html#317544">F&#243;rmula 15</a></p><p><a name="1000024488"></a><a href="19_introformulas45.html#317677">F&#243;rmula 17</a></p>
+<hr><br>
+
+<script  language="JavaScript"><!--
+
+var prev = "Operators14.html";
+var next = "Operators16.html";
+
+function setTopicID() { 
+      var number = "1000024440"; 
+      return number; 
+}
+
+// --></script>
+
+
+
+
+<SCRIPT>
+
+if (!window.parent.toc && navigator.appName == "Netscape") {
+
+   document.writeln ('<TABLE ALIGN="left" border="0" cellspacing="0" cellpadding="10">');
+   document.writeln ('<TR>');
+   document.write ('<TD ALIGN="left">');
+
+   if (prev != "crw_spTOC.hhc") {
+      document.writeln ('<A HREF="' + prev + '">');
+      document.writeln ('<IMG SRC="prevpage.gif" HEIGHT=17 BORDER=0 ALT="Página anterior"></A>');
+   } else {
+//   window.alert ('no previous page');
+   }
+
+   if (next != "crw_spIX.hhk") {
+      document.writeln ('<A HREF="' + next + '">');
+      document.writeln ('<IMG SRC="nextpage.gif" HEIGHT=17 BORDER=0 ALT="Página siguiente"></A>');
+   } else {
+//   window.alert ('no next page');
+   }
+   document.writeln ('</TD><TD ALIGN="left">');
+   document.writeln ('<A HREF="frameset.htm?TOC">');
+   document.writeln ('<IMG SRC="showtoc.gif" HEIGHT=17 BORDER=0 ALT="Haga clic para ver el contenido"></A></TD>');
+   document.writeln ('<TD ALIGN="left">');
+   document.writeln ('<A HREF="frameset.htm?IDX">');
+   document.writeln ('<IMG SRC="showix.gif" HEIGHT=17 BORDER=0 ALT="Haga clic para ver el índice"></A></TD>');
+   document.writeln ('</TD>');
+   document.writeln ('</TR>');
+   document.writeln ('</TABLE>');
+
+}
+
+</SCRIPT>
+<table align="right" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td align="right"><font size="1">Seagate Software, Inc.<br>
+    <a href="http://www.seagatesoftware.com">http://www.seagatesoftware.com</a><br>
+    Envíe sus comentarios a:<br>
+    <a href="mailto:techpubs@seagatesoftware.com">techpubs@seagatesoftware.com</a><br>
+    </font></td>
+  </tr>
+</table>
+</body>
+</html>
+
+

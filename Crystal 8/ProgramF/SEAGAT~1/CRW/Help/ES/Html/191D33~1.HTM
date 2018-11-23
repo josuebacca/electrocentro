@@ -1,0 +1,160 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+
+<html>
+<head>
+<title>F&#243;rmula 5</title>
+
+<link REL=STYLESHEET TYPE="text/css" HREF="seagate.css">
+
+<!--
+                 ***********************************
+                 * Seagate Software copyright 1999 *
+                 ***********************************
+
+                      Template version: 5.1
+-->
+
+
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" link="#0000FF" vlink="#0000FF" alink="#800080">
+
+
+ 
+<a name="316857"></a><h3 class="newpage"> F&#243;rmula 5</h3>
+<a name="316858"></a><h4>Funciones y operadores usados</h4><p><a name="316859"></a>F&#243;rmulas anidadas, If<nobr>-T</nobr>hen<nobr>-E</nobr>lse, Sustraer (-), No igual a (&lt;&gt;), Menor que (&lt;), Concatenar (+), ToText, Para d&#243;lar ($), Negativo (-()), Par&#233;ntesis ()</p><a name="316860"></a><h4>Prop&#243;sito de la f&#243;rmula</h4><p><a name="316861"></a>Una compa&#241;&#237;a desea estimular nuevas ventas a cr&#233;dito para aquellos clientes con l&#237;mites de cr&#233;dito abiertos y hacer que los clientes que han superado sus l&#237;mites sepan cu&#225;l es su saldo. Para hacerlo la compa&#241;&#237;a desea incluir una peque&#241;a "PD" en su carta de ventas, ya personalizada (nombre de la compa&#241;&#237;a, nombre de contacto, etc.) para cada cliente. </p><a name="316862"></a><h4>F&#243;rmula</h4><PRE><a name="316863"></a>If {archivo.L&Iacute;MITE CREDITICIO} - {archivo.SALDO} &lt;&gt; 0 
+Then<br>
+&nbsp;&nbsp;&nbsp;&nbsp;If {archivo.L&Iacute;MITE CREDITICIO} - {archivo.SALDO} &lt;&gt; 0 
+Then<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"Su cuenta est&#225; actualmente $" + <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ToText($ (-{archivo.L&Iacute;MITE CREDITICIO} <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- {archivo.SALDO})) <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;+ " por encima del l&#237;mite. Por favor cont&#225;ctenos 
+si <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;desea discutir un aumento en su l&#237;mite de 
+cr&#233;dito." <br>
+&nbsp;&nbsp;&nbsp;&nbsp;Else <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"Su cuenta tiene $" + ToText($({archivo.L&Iacute;MITE 
+CREDITICIO}<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-{archivo.SALDO})) + " de cr&#233;dito disponible. <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Puede pedir hoy sin necesidad de trabajo 
+administrativo adicional." <br>
+Else <br>
+&nbsp;&nbsp;&nbsp;&nbsp;""
+</PRE><a name="316864"></a><h4>Resultado</h4><p><a name="316890"></a> <Table Border="1">
+<tr><td align="left" valign="TOP"><a name="316867"></a>L&#237;mite 
+crediticio
+
+</td><td align="left" valign="TOP"><a name="316869"></a>Saldo
+
+</td><td align="left" valign="TOP"><a name="316871"></a>Resultado
+
+</td></tr>
+<tr><td align="left" valign="TOP"><P><a name="316873"></a>$5.000</P>
+
+
+</td><td align="left" valign="TOP"><P><a name="316875"></a>$2.250</P>
+
+
+</td><td align="left" valign="TOP"><P><a name="316877"></a>"Su cuenta tiene $2750,00 de cr&#233;dito disponible. Puede pedir hoy sin necesidad de trabajo administrativo adicional."</P>
+
+
+</td></tr>
+<tr><td align="left" valign="TOP"><P><a name="316879"></a>$3.000</P>
+
+
+</td><td align="left" valign="TOP"><P><a name="316881"></a>$3.457</P>
+
+
+</td><td align="left" valign="TOP"><P><a name="316883"></a>"Su cuenta est&#225; actualmente $457,00 por encima del l&#237;mite. Por favor cont&#225;ctenos si desea discutir un aumento en su l&#237;mite de cr&#233;dito."</P>
+
+
+</td></tr>
+<tr><td align="left" valign="TOP"><P><a name="316885"></a>$7.500</P>
+
+
+</td><td align="left" valign="TOP"><P><a name="316887"></a>$7.500</P>
+
+
+</td><td align="left" valign="TOP"><P><a name="316889"></a>&#171;sin mensaje&#187;</P>
+
+
+</td></tr>
+
+</Table></p>
+<a name="316891"></a><h4>Explicaci&#243;n</h4><ul type="disc"><a name="316892"></a><li>La f&#243;rmula usa dos operadores If<nobr>-T</nobr>hen<nobr>-E</nobr>lse, uno anidado dentro del otro.
+<a name="316893"></a><li>El primero comienza con la primera palabra If y no termina hasta Else en el otro extremo de la expresi&#243;n. Esta expresi&#243;n dice esencialmente: "Si el l&#237;mite de cr&#233;dito menos el saldo es inferior a cero, entonces imprimir el mensaje de acuerdo a la expresi&#243;n If<nobr>-T</nobr>hen<nobr>-E</nobr>lse que viene a continuaci&#243;n (la expresi&#243;n dentro de los par&#233;ntesis). Si el l&#237;mite de cr&#233;dito menos el saldo da cero, no imprimir nada. Piense en esta primera expresi&#243;n If<nobr>-T</nobr>hen<nobr>-E</nobr>lse de esta forma: Si {archivo.L&Iacute;MITE CREDITICIO} - {archivo.SALDO} &lt;&gt; 0 entonces (hacer lo que est&#225; entre par&#233;ntesis ), si no "".
+<a name="316894"></a><li>La segunda expresi&#243;n If<nobr>-T</nobr>hen<nobr>-E</nobr>lse comienza "If {archivo.L&Iacute;MITE CREDITICIO}" y termina despu&#233;s de las palabras "trabajo administrativo adicional". Esta expresi&#243;n dice: "Si el l&#237;mite de cr&#233;dito menos el saldo es inferior a cero, entonces imprimir el mensaje de haber superado el l&#237;mite, de lo contrario (en aquellos casos donde el resultado sea superior a cero) imprimir el mensaje de cr&#233;dito disponible. 
+<a name="316895"></a><li>La expresi&#243;n Then ToText($(- {archivo.L&Iacute;MITE CREDITICIO} - {archivo.SALDO})) significa:
+<ul type="disc"><ul type="disc"><a name="316896"></a><li>primero usar el operador de sustracci&#243;n (-) para restar {archivo.SALDO} de {archivo.L&Iacute;MITE CREDITICIO}.</ul></ul><a name="316897"></a><li>Dado que esta parte de la expresi&#243;n s&#243;lo se va a activar si el resultado es un n&#250;mero negativo (&lt;0), la f&#243;rmula usa el operador de negativo (-()) para multiplicar el resultado por -1 para devolver un n&#250;mero positivo.
+<a name="316898"></a><li>El operador de d&#243;lar ($) garantiza que el resultado se imprimir&#225; en un formato de d&#243;lares y centavos con dos lugares decimales.
+<a name="316899"></a><li>La funci&#243;n ToText toma el n&#250;mero resultante y lo convierte en texto de modo que se pueda usar en el mensaje de haber superado el l&#237;mite.
+<a name="316900"></a><li>La expresi&#243;n Else ToText($({archivo.L&Iacute;MITE CREDITICIO}-{archivo.SALDO})) difiere levemente de la expresi&#243;n Then anterior. Esta expresi&#243;n no usa el operador de negativo (-()) porque esta expresi&#243;n {archivo.L&Iacute;MITE CREDITICIO}-{archivo.SALDO} se usar&#225; s&#243;lo en aquellos casos donde el resultado corresponda a un n&#250;mero positivo (&gt;0).
+<a name="316901"></a><li>El operador de concatenaci&#243;n (+) une las cadenas de texto (incluidas entre comillas) con el n&#250;mero (convertido a texto usando la funci&#243;n ToText) para producir el mensaje apropiado (el mensaje Then [por encima del l&#237;mite] o el mensaje Else [de cr&#233;dito disponible]).
+<a name="316902"></a><li>Los conjuntos de par&#233;ntesis se usan para controlar el orden de c&#225;lculo de esta f&#243;rmula.
+<a name="316903"></a><li>Los caracteres "" en los extremos de la f&#243;rmula son la representaci&#243;n de una cadena vac&#237;a. Esto significa no imprimir nada.
+</ul><a name="316904"></a><h4>Comentarios</h4><p><a name="316905"></a>Observe el espacio a la izquierda de la cadena " por encima del l&#237;mite". Observe, tambi&#233;n, el espacio a la izquierda de la cadena <br>" de cr&#233;dito disponible". Estos espacios se han ingresado a prop&#243;sito en la f&#243;rmula de modo que haya un espacio entre la cifra en moneda y la palabra de cada mensaje.</p><a name="316906"></a><h6>Temas relacionados</h6><p><a name="316910"></a><a href="19_introformulas28.html#316471">F&#243;rmulas en acci&#243;n</a></p>
+<hr><br>
+
+<script  language="JavaScript"><!--
+
+var prev = "19_introformulas32.html";
+var next = "19_introformulas34.html";
+
+function setTopicID() { 
+      var number = "316857"; 
+      return number; 
+}
+
+// --></script>
+
+
+
+
+<SCRIPT>
+
+if (!window.parent.toc && navigator.appName == "Netscape") {
+
+   document.writeln ('<TABLE ALIGN="left" border="0" cellspacing="0" cellpadding="10">');
+   document.writeln ('<TR>');
+   document.write ('<TD ALIGN="left">');
+
+   if (prev != "crw_spTOC.hhc") {
+      document.writeln ('<A HREF="' + prev + '">');
+      document.writeln ('<IMG SRC="prevpage.gif" HEIGHT=17 BORDER=0 ALT="Página anterior"></A>');
+   } else {
+//   window.alert ('no previous page');
+   }
+
+   if (next != "crw_spIX.hhk") {
+      document.writeln ('<A HREF="' + next + '">');
+      document.writeln ('<IMG SRC="nextpage.gif" HEIGHT=17 BORDER=0 ALT="Página siguiente"></A>');
+   } else {
+//   window.alert ('no next page');
+   }
+   document.writeln ('</TD><TD ALIGN="left">');
+   document.writeln ('<A HREF="frameset.htm?TOC">');
+   document.writeln ('<IMG SRC="showtoc.gif" HEIGHT=17 BORDER=0 ALT="Haga clic para ver el contenido"></A></TD>');
+   document.writeln ('<TD ALIGN="left">');
+   document.writeln ('<A HREF="frameset.htm?IDX">');
+   document.writeln ('<IMG SRC="showix.gif" HEIGHT=17 BORDER=0 ALT="Haga clic para ver el índice"></A></TD>');
+   document.writeln ('</TD>');
+   document.writeln ('</TR>');
+   document.writeln ('</TABLE>');
+
+}
+
+</SCRIPT>
+<table align="right" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td align="right"><font size="1">Seagate Software, Inc.<br>
+    <a href="http://www.seagatesoftware.com">http://www.seagatesoftware.com</a><br>
+    Envíe sus comentarios a:<br>
+    <a href="mailto:techpubs@seagatesoftware.com">techpubs@seagatesoftware.com</a><br>
+    </font></td>
+  </tr>
+</table>
+</body>
+</html>
+
+

@@ -1,0 +1,92 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+
+<html>
+<head>
+<title>M&#233;todos para buscar tablas (bases de datos de acceso directo)</title>
+
+<link REL=STYLESHEET TYPE="text/css" HREF="seagate.css">
+
+<!--
+                 ***********************************
+                 * Seagate Software copyright 1999 *
+                 ***********************************
+
+                      Template version: 5.1
+-->
+
+
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" link="#0000FF" vlink="#0000FF" alink="#800080">
+
+
+ 
+<a name="321286"></a><h4 class="newpage"> M&#233;todos para buscar tablas (bases de datos de acceso directo)</h4><p><a name="321287"></a>Cuando una tabla est&#225; vinculada a dos o m&#225;s tablas, Seagate Crystal Reports necesita saber en qu&#233; orden debe buscar y vincular los datos desde la tabla principal a datos en la segunda, tercera, etc. tabla de comparaci&#243;n.</p><p><a name="321288"></a>Seagate Crystal Reports ofrece tres opciones diferentes para buscar registros en dos o m&#225;s tablas de comparaci&#243;n desde una sola tabla principal:</p><ul type="disc"><a name="321292"></a><li><kbd><a href="24_under_databases16.html#321305">Buscar ambos al mismo tiempo</a>.</kbd>
+<a name="321296"></a><li><kbd><a href="24_under_databases17.html#321373">Buscar todo de uno, despu&#233;s todo de otros (A a B, A a C)</a></kbd>
+<a name="321299"></a><li><kbd><a href="24_under_databases18.html#345535">Buscar todas las combinaciones de los archivos</a>.</kbd>
+</ul><p><a name="321301"></a><font color="darkblue"><b>Nota:   &nbsp;&nbsp;&nbsp;</b></font>Estas opciones no est&#225;n disponibles si est&#225; utilizando datos de una fuente de datos ODBC.</p>
+<p><a name="321302"></a>Estas opciones s&#243;lo est&#225;n disponibles cuando tiene una sola tabla, una tabla principal, que est&#225; vinculada a dos o m&#225;s tablas de comparaci&#243;n. La tabla principal debe ser la tabla <kbd>vincular desde</kbd> en cada uno de los v&#237;nculos. Por ejemplo, si vincula desde la tabla Clientes a la tabla Pedidos y desde la tabla Clientes a la tabla Cr&#233;dito, estas opciones de b&#250;squeda est&#225;n disponibles. Sin embargo, si quiere vincular desde la tabla Clientes a la tabla Pedidos y de la tabla Cr&#233;dito a la tabla Clientes, estas opciones no est&#225;n disponibles.</p><p><a name="321303"></a>En este ejemplo, por cada m&#233;todo demostrado se muestran tres campos de tres diferentes tablas vinculadas. En cada caso, la tabla Clientes est&#225; vinculada a la tabla Pedidos y a la tabla Cr&#233;dito. Los campos mostrados son el campo Nombre de Cliente de la tabla Clientes, el campo Cantidad de la tabla Cr&#233;dito y el campo Monto del Pedido de la tabla Pedidos. Estos no son necesariamente campos de v&#237;nculo de las tablas, pero los datos en estos campos ilustran c&#243;mo son recuperados los datos usando cada uno de los tres m&#233;todos de b&#250;squeda.</p>
+<hr><br>
+
+<script  language="JavaScript"><!--
+
+var prev = "24_under_databases14.html";
+var next = "24_under_databases16.html";
+
+function setTopicID() { 
+      var number = "321286"; 
+      return number; 
+}
+
+// --></script>
+
+
+
+
+<SCRIPT>
+
+if (!window.parent.toc && navigator.appName == "Netscape") {
+
+   document.writeln ('<TABLE ALIGN="left" border="0" cellspacing="0" cellpadding="10">');
+   document.writeln ('<TR>');
+   document.write ('<TD ALIGN="left">');
+
+   if (prev != "crw_spTOC.hhc") {
+      document.writeln ('<A HREF="' + prev + '">');
+      document.writeln ('<IMG SRC="prevpage.gif" HEIGHT=17 BORDER=0 ALT="Página anterior"></A>');
+   } else {
+//   window.alert ('no previous page');
+   }
+
+   if (next != "crw_spIX.hhk") {
+      document.writeln ('<A HREF="' + next + '">');
+      document.writeln ('<IMG SRC="nextpage.gif" HEIGHT=17 BORDER=0 ALT="Página siguiente"></A>');
+   } else {
+//   window.alert ('no next page');
+   }
+   document.writeln ('</TD><TD ALIGN="left">');
+   document.writeln ('<A HREF="frameset.htm?TOC">');
+   document.writeln ('<IMG SRC="showtoc.gif" HEIGHT=17 BORDER=0 ALT="Haga clic para ver el contenido"></A></TD>');
+   document.writeln ('<TD ALIGN="left">');
+   document.writeln ('<A HREF="frameset.htm?IDX">');
+   document.writeln ('<IMG SRC="showix.gif" HEIGHT=17 BORDER=0 ALT="Haga clic para ver el índice"></A></TD>');
+   document.writeln ('</TD>');
+   document.writeln ('</TR>');
+   document.writeln ('</TABLE>');
+
+}
+
+</SCRIPT>
+<table align="right" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td align="right"><font size="1">Seagate Software, Inc.<br>
+    <a href="http://www.seagatesoftware.com">http://www.seagatesoftware.com</a><br>
+    Envíe sus comentarios a:<br>
+    <a href="mailto:techpubs@seagatesoftware.com">techpubs@seagatesoftware.com</a><br>
+    </font></td>
+  </tr>
+</table>
+</body>
+</html>
+
+

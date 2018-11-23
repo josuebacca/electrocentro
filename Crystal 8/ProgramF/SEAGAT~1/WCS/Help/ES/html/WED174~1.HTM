@@ -1,0 +1,95 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+
+<html>
+<head>
+<title>Mejoras en el desempe&#241;o</title>
+
+<link REL=STYLESHEET TYPE="text/css" HREF="seagate.css">
+
+<!--
+                 ***********************************
+                 * Seagate Software copyright 1999 *
+                 ***********************************
+
+                      Template version: 5.1
+-->
+
+
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" link="#0000FF" vlink="#0000FF" alink="#800080">
+
+
+ 
+<a name="171779"></a><h2 class="newpage">Mejoras en el desempe&#241;o</h2><p><a name="171780"></a>Puede mejorar el desempe&#241;o del Web Components Server e incrementar el n&#250;mero de usuarios que pueden acceder a informes a trav&#233;s del web utilizando uno de los siguientes m&#233;todos.</p><a name="163104"></a><h3>Almacenamiento de datos con los informes</h3>
+<a name="164007"></a><h4>Informes con datos almacenados</h4><p><a name="163105"></a>Un informe que tiene datos almacenados y al que no se le han aplicado f&#243;rmulas de selecci&#243;n ni de selecci&#243;n de grupos comparte sus p&#225;ginas entre todos los usuarios. Si al informe se le han aplicado f&#243;rmulas de selecci&#243;n o de selecci&#243;n de grupos, el almacenamiento de las p&#225;ginas en la memoria cach&#233; tendr&#225; lugar en la m&#225;quina del usuario, como en Seagate Crystal Reports 7.</p><a name="163106"></a><h4>Informes sin datos almacenados</h4><p><a name="163107"></a>Un informe sin datos almacenados y que no contenga comandos de f&#243;rmula de selecci&#243;n (SF#), de f&#243;rmula de selecci&#243;n de grupos (GF#), de contrase&#241;a (PASSWORD#), de ID de usuario (USER#), de par&#225;metro (PROMPT#) o de actualizaci&#243;n de valores (promptOnRefresh#), compartir&#225; sus p&#225;ginas entre todos los usuarios.</p><p><a name="170752"></a>Debido a que los informes no se almacenan con datos, el administrador debe especificar el intervalo de actualizaci&#243;n de la base de datos en la aplicaci&#243;n Web Component Manager. Este intervalo indica la frecuencia con que se acceder&#225; a la base de datos. A continuaci&#243;n presentamos un ejemplo:</p><ol>
+<a name="163108"></a><li value="1&nbsp;&nbsp;&nbsp;&nbsp;">El intervalo de actualizaci&#243;n de la base de datos est&#225; ajustado a 5 minutos.
+<a name="163109"></a><li value="2&nbsp;&nbsp;&nbsp;&nbsp;">El usuario A selecciona el informe A1 (sin datos almacenados). Como el usuario A es la primera persona que solicita este informe, es necesario acceder a la base de datos. 
+<a name="163110"></a><li value="3&nbsp;&nbsp;&nbsp;&nbsp;">Dos minutos despu&#233;s de que el usuario A solicita el informe A1, el usuario B selecciona el informe A1. En este caso, los usuarios A y B comparten las p&#225;ginas del informe debido a que el informe ha sido solicitado antes de que terminara el tiempo de actualizaci&#243;n de la base de datos. Por lo tanto, no se produce el acceso a la base de datos.
+<a name="163111"></a><li value="4&nbsp;&nbsp;&nbsp;&nbsp;">Seis minutos despu&#233;s de que el usuario A solicita el informe A1, el usuario C selecciona el informe A1. Puesto que el tiempo de actualizaci&#243;n de la base de datos ha terminado (el ajuste es 5 minutos y ya han transcurrido 6 minutos desde que se accedi&#243; a la base de datos para este informe), ser&#225; necesario acceder a la base de datos y el usuario C no compartir&#225; las p&#225;ginas con el usuario A o B.
+</ol>
+
+<hr><br>
+
+<script  language="JavaScript"><!--
+
+var prev = "WebServerOverview15.html";
+var next = "WebServerOverview17.html";
+
+function setTopicID() { 
+      var number = "171779"; 
+      return number; 
+}
+
+// --></script>
+
+
+
+
+<SCRIPT>
+
+if (!window.parent.toc && navigator.appName == "Netscape") {
+
+   document.writeln ('<TABLE ALIGN="left" border="0" cellspacing="0" cellpadding="10">');
+   document.writeln ('<TR>');
+   document.write ('<TD ALIGN="left">');
+
+   if (prev != "wcmadminTOC.hhc") {
+      document.writeln ('<A HREF="' + prev + '">');
+      document.writeln ('<IMG SRC="prevpage.gif" HEIGHT=17 BORDER=0 ALT="Página anterior"></A>');
+   } else {
+//   window.alert ('no previous page');
+   }
+
+   if (next != "wcmadminIX.hhk") {
+      document.writeln ('<A HREF="' + next + '">');
+      document.writeln ('<IMG SRC="nextpage.gif" HEIGHT=17 BORDER=0 ALT="Página siguiente"></A>');
+   } else {
+//   window.alert ('no next page');
+   }
+   document.writeln ('</TD><TD ALIGN="left">');
+   document.writeln ('<A HREF="frameset.htm?TOC">');
+   document.writeln ('<IMG SRC="showtoc.gif" HEIGHT=17 BORDER=0 ALT="Haga clic para ver el contenido"></A></TD>');
+   document.writeln ('<TD ALIGN="left">');
+   document.writeln ('<A HREF="frameset.htm?IDX">');
+   document.writeln ('<IMG SRC="showix.gif" HEIGHT=17 BORDER=0 ALT="Haga clic para ver el índice"></A></TD>');
+   document.writeln ('</TD>');
+   document.writeln ('</TR>');
+   document.writeln ('</TABLE>');
+
+}
+
+</SCRIPT>
+<table align="right" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td align="right"><font size="1">Seagate Software, Inc.<br>
+    <a href="http://www.seagatesoftware.com">http://www.seagatesoftware.com</a><br>
+    Envíe sus comentarios a:<br>
+    <a href="mailto:techpubs@seagatesoftware.com">techpubs@seagatesoftware.com</a><br>
+    </font></td>
+  </tr>
+</table>
+</body>
+</html>
+
+

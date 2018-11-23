@@ -1,0 +1,90 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+
+<html>
+<head>
+<title>Consideraciones sobre las fuentes de datos</title>
+
+<link REL=STYLESHEET TYPE="text/css" HREF="seagate.css">
+
+<!--
+                 ***********************************
+                 * Seagate Software copyright 1999 *
+                 ***********************************
+
+                      Template version: 5.1
+-->
+
+
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" link="#0000FF" vlink="#0000FF" alink="#800080">
+
+
+ 
+<a name="169523"></a><h4 class="newpage"> Consideraciones sobre las fuentes de datos</h4><p><a name="169524"></a>Si la fuente de datos requiere m&#225;s permisos que la cuenta del sistema local, no podr&#225; acceder al archivo de datos y recibir&#225; inicios de sesi&#243;n en ciclos de repetici&#243;n. A continuaci&#243;n se dan dos ejemplos del caso anterior:</p><ul type="disc"><a name="169525"></a><li>Si sus informes se crearon con una base de datos de PC (Microsoft Access o Microsoft FoxPro) y hace referencia al archivo de datos con una ruta UNC; o si ODBC DSN hace referencia a una ruta UNC y el Page Server se ejecuta en el sistema local (o cualquier otra cuenta local). 
+<a name="169526"></a><li>Si sus informes acceden a los datos a trav&#233;s de un cliente de base de datos como Informix Metacube o Arbor Essbase y el Page Server se ejecuta en el sistema local (o cualquier otra cuenta local).
+</ul><p><a name="169527"></a>Para corregir esto, cambie la cuenta que el Page Server utiliza por una cuenta de dominio que tenga acceso a la parte de la red donde se almacenan los datos.</p>
+<hr><br>
+
+<script  language="JavaScript"><!--
+
+var prev = "WebServerImplementation15.html";
+var next = "WebServerImplementation17.html";
+
+function setTopicID() { 
+      var number = "169523"; 
+      return number; 
+}
+
+// --></script>
+
+
+
+
+<SCRIPT>
+
+if (!window.parent.toc && navigator.appName == "Netscape") {
+
+   document.writeln ('<TABLE ALIGN="left" border="0" cellspacing="0" cellpadding="10">');
+   document.writeln ('<TR>');
+   document.write ('<TD ALIGN="left">');
+
+   if (prev != "wcmadminTOC.hhc") {
+      document.writeln ('<A HREF="' + prev + '">');
+      document.writeln ('<IMG SRC="prevpage.gif" HEIGHT=17 BORDER=0 ALT="Página anterior"></A>');
+   } else {
+//   window.alert ('no previous page');
+   }
+
+   if (next != "wcmadminIX.hhk") {
+      document.writeln ('<A HREF="' + next + '">');
+      document.writeln ('<IMG SRC="nextpage.gif" HEIGHT=17 BORDER=0 ALT="Página siguiente"></A>');
+   } else {
+//   window.alert ('no next page');
+   }
+   document.writeln ('</TD><TD ALIGN="left">');
+   document.writeln ('<A HREF="frameset.htm?TOC">');
+   document.writeln ('<IMG SRC="showtoc.gif" HEIGHT=17 BORDER=0 ALT="Haga clic para ver el contenido"></A></TD>');
+   document.writeln ('<TD ALIGN="left">');
+   document.writeln ('<A HREF="frameset.htm?IDX">');
+   document.writeln ('<IMG SRC="showix.gif" HEIGHT=17 BORDER=0 ALT="Haga clic para ver el índice"></A></TD>');
+   document.writeln ('</TD>');
+   document.writeln ('</TR>');
+   document.writeln ('</TABLE>');
+
+}
+
+</SCRIPT>
+<table align="right" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td align="right"><font size="1">Seagate Software, Inc.<br>
+    <a href="http://www.seagatesoftware.com">http://www.seagatesoftware.com</a><br>
+    Envíe sus comentarios a:<br>
+    <a href="mailto:techpubs@seagatesoftware.com">techpubs@seagatesoftware.com</a><br>
+    </font></td>
+  </tr>
+</table>
+</body>
+</html>
+
+

@@ -1,0 +1,122 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+
+<html>
+<head>
+<title>Agrupar bas&#225;ndose en la primera letra del nombre de la compa&#241;&#237;a</title>
+
+<link REL=STYLESHEET TYPE="text/css" HREF="seagate.css">
+
+<!--
+                 ***********************************
+                 * Seagate Software copyright 1999 *
+                 ***********************************
+
+                      Template version: 5.1
+-->
+
+
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" link="#0000FF" vlink="#0000FF" alink="#800080">
+
+
+ 
+<a name="247131"></a><h3 class="newpage"> Agrupar bas&#225;ndose en la primera letra del nombre de la compa&#241;&#237;a</h3>
+<p><a name="247132"></a>Usted podr&#237;a desear dividir sus datos en grupos bas&#225;ndose en la primera letra del nombre de una compa&#241;&#237;a. En una lista de clientes, por ejemplo, podr&#237;a desear en un grupo a todos los clientes "A", a los "B" en otro y as&#237; sucesivamente. Esto requiere el uso de una f&#243;rmula.</p><p><a name="247133"></a>No se preocupe si a&#250;n no se est&#225; familiarizado con las f&#243;rmulas. Aqu&#237; le mostraremos qu&#233; f&#243;rmula necesita y c&#243;mo introducirla.</p><p><a name="247136"></a>Puede aprender m&#225;s acerca de c&#243;mo crear y editar f&#243;rmulas en <kbd><a href="19_introformulas.html#172160">Uso de las f&#243;rmulas</a></kbd>.</p><p><a name="247138"></a>Usted crear&#225; una f&#243;rmula que extraer&#225; la primera letra del nombre de cada cliente. Luego ha de agrupar los datos utilizando ese campo de f&#243;rmula como el campo para ordenar y agrupar. El programa ordenar&#225; los datos bas&#225;ndose en la primera letra del nombre de cada cliente y empezar&#225; un nuevo grupo cada vez que cambie la letra.</p><a name="245455"></a><h6>Para agrupar datos por la primera letra del nombre <br>de la compa&#241;&#237;a</h6><ol>
+<a name="247193"></a><li value="1&nbsp;&nbsp;&nbsp;&nbsp;">Inicie un informe utilizando los datos de muestra <strong>Xtreme_es.mdb</strong> y coloque los siguientes campos de izquierda a derecha en la secci&#243;n Detalles:
+<a name="247194"></a>{cliente.NOMBRE DEL CLIENTE}<br>{cliente.REGION}<br>{cliente.CODIGO POSTAL}<br>{cliente.PAIS}<br><a name="245500"></a><li value="2&nbsp;&nbsp;&nbsp;&nbsp;"><img src="images/Bt_indat.gif">
+
+
+En el men&#250;<strong> Insertar</strong>, haga clic en <strong>Campo de f&#243;rmula</strong>.
+<p class="indent"><a name="245501"></a>Aparece el cuadro de di&#225;logo Explorador de campos.</p><p><a name="253062"></a> <img src="images/08_sortgrouptotala.gif">
+
+
+</p>
+<a name="245502"></a><li value="3&nbsp;&nbsp;&nbsp;&nbsp;">Haga doble clic en <strong>Campos de f&#243;rmula</strong>.
+<a name="245503"></a><li value="4&nbsp;&nbsp;&nbsp;&nbsp;">En el cuadro de di&#225;logo Nombre de f&#243;rmula, ingrese el nombre que desea para identificar la f&#243;rmula, por ejemplo "Primera letra".
+<a name="245524"></a><li value="5&nbsp;&nbsp;&nbsp;&nbsp;">Haga clic en <strong>Aceptar</strong>.
+<p class="indent"><a name="245525"></a>Aparece el Editor de f&#243;rmulas.</p><a name="245526"></a><li value="6&nbsp;&nbsp;&nbsp;&nbsp;">Elija <strong>Sintaxis Crystal</strong> de la lista desplegable de la esquina superior derecha.
+<a name="245527"></a><li value="7&nbsp;&nbsp;&nbsp;&nbsp;">Escriba la siguiente f&#243;rmula en el cuadro de texto de f&#243;rmula:
+<a name="247226"></a>{Cliente.Nombre del Cliente}[1]<br><a name="262164"></a><li value="8&nbsp;&nbsp;&nbsp;&nbsp;"><img src="images/bt_sclfe.gif">
+
+
+Haga clic en el bot&#243;n <kbd>Guardar y cerrar</kbd>.
+<p class="indent"><a name="262165"></a>El cuadro de di&#225;logo Explorador de campos volver&#225; a aparecer. El nombre de la f&#243;rmula se enumera en el directorio Campos de f&#243;rmula.</p><a name="262166"></a><li value="9&nbsp;&nbsp;&nbsp;&nbsp;">En el men&#250; Insertar, haga clic en <kbd>Grupo</kbd>.
+<p class="indent"><a name="260201"></a>El cuadro de di&#225;logo Insertar grupo vuelve a aparecer.</p><p><a name="260207"></a> <img src="images/in_grp2.gif">
+
+
+</p>
+<a name="260202"></a><li value="10&nbsp;&nbsp;&nbsp;&nbsp;">Seleccione un campo de f&#243;rmula de la primera lista desplegable como campo seg&#250;n el cual desea agrupar los datos.
+<a name="253889"></a><li value="11&nbsp;&nbsp;&nbsp;&nbsp;">Seleccione la direcci&#243;n de ordenamiento de la segunda lista desplegable.
+<a name="250005"></a><li value="12&nbsp;&nbsp;&nbsp;&nbsp;">Haga clic en <strong>Aceptar.</strong> 
+<p class="indent"><a name="247294"></a>El programa lo regresar&#225; a su informe con los datos agrupados por el campo de f&#243;rmulas que especific&#243;. Los datos est&#225;n divididos en grupos basado en la primera letra del Nombre del Cliente. La f&#243;rmula provee un encabezado din&#225;mico para cada grupo.</p><p class="indent"><a name="247297"></a>Para mayor informaci&#243;n sobre encabezados din&#225;micos, ver <kbd><a href="08_sortgrouptotal23.html#248099">Encabezados din&#225;micos</a></kbd>.</p><p class="indent"><a name="261211"></a>El informe deber&#225; verse similar a:</p><p><a name="261225"></a> <img src="images/SORT7_2.gif">
+
+
+</p>
+<p><a name="261215"></a> </p>
+</ol>
+<a name="261216"></a><h5>Temas relacionados</h5><p><a name="258386"></a><kbd><a href="19_introformulas2.html#155144">Introducci&#243;n general sobre las f&#243;rmulas</a>.</kbd></p><p><a name="258400"></a><kbd><a href="08_sortgrouptotal4.html#245030">Agrupamiento de datos</a>.</kbd></p><p><a name="258390"></a><kbd><a href="08_sortgrouptotal11.html#245233">Agrupamiento de datos en intervalos</a>.</kbd></p><p><a name="248927"></a><kbd><a href="08_sortgrouptotal21.html#246260">Creaci&#243;n de encabezados de grupo</a>.</kbd></p>
+<hr><br>
+
+<script  language="JavaScript"><!--
+
+var prev = "08_sortgrouptotal11.html";
+var next = "08_sortgrouptotal13.html";
+
+function setTopicID() { 
+      var number = "247131"; 
+      return number; 
+}
+
+// --></script>
+
+
+
+
+<SCRIPT>
+
+if (!window.parent.toc && navigator.appName == "Netscape") {
+
+   document.writeln ('<TABLE ALIGN="left" border="0" cellspacing="0" cellpadding="10">');
+   document.writeln ('<TR>');
+   document.write ('<TD ALIGN="left">');
+
+   if (prev != "crw_spTOC.hhc") {
+      document.writeln ('<A HREF="' + prev + '">');
+      document.writeln ('<IMG SRC="prevpage.gif" HEIGHT=17 BORDER=0 ALT="Página anterior"></A>');
+   } else {
+//   window.alert ('no previous page');
+   }
+
+   if (next != "crw_spIX.hhk") {
+      document.writeln ('<A HREF="' + next + '">');
+      document.writeln ('<IMG SRC="nextpage.gif" HEIGHT=17 BORDER=0 ALT="Página siguiente"></A>');
+   } else {
+//   window.alert ('no next page');
+   }
+   document.writeln ('</TD><TD ALIGN="left">');
+   document.writeln ('<A HREF="frameset.htm?TOC">');
+   document.writeln ('<IMG SRC="showtoc.gif" HEIGHT=17 BORDER=0 ALT="Haga clic para ver el contenido"></A></TD>');
+   document.writeln ('<TD ALIGN="left">');
+   document.writeln ('<A HREF="frameset.htm?IDX">');
+   document.writeln ('<IMG SRC="showix.gif" HEIGHT=17 BORDER=0 ALT="Haga clic para ver el índice"></A></TD>');
+   document.writeln ('</TD>');
+   document.writeln ('</TR>');
+   document.writeln ('</TABLE>');
+
+}
+
+</SCRIPT>
+<table align="right" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td align="right"><font size="1">Seagate Software, Inc.<br>
+    <a href="http://www.seagatesoftware.com">http://www.seagatesoftware.com</a><br>
+    Envíe sus comentarios a:<br>
+    <a href="mailto:techpubs@seagatesoftware.com">techpubs@seagatesoftware.com</a><br>
+    </font></td>
+  </tr>
+</table>
+</body>
+</html>
+
+

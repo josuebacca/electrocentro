@@ -1,0 +1,349 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+
+<html>
+<head>
+<title>C&#243;mo crear un total acumulado en una relaci&#243;n de v&#237;nculo de uno a varios </title>
+
+<link REL=STYLESHEET TYPE="text/css" HREF="seagate.css">
+
+<!--
+                 ***********************************
+                 * Seagate Software copyright 1999 *
+                 ***********************************
+
+                      Template version: 5.1
+-->
+
+
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" link="#0000FF" vlink="#0000FF" alink="#800080">
+
+
+ 
+<a name="33145"></a><h3 class="newpage"> C&#243;mo crear un total acumulado en una relaci&#243;n de v&#237;nculo de uno a varios </h3>
+<p><a name="33147"></a>El t&#233;rmino informe "A a B", "A a C" ha sido utilizado para referirse a cualquier informe en que una tabla principal es vinculada a dos tablas de b&#250;squeda. Sin embargo, en un verdadero v&#237;nculo A a B, A a C, se usa un solo campo en la tabla principal para vincularse a ambas tablas de b&#250;squeda.</p><p><a name="33151"></a>En una verdadera relaci&#243;n A a B, A a C, una de las dos tablas de b&#250;squeda generalmente tiene m&#225;s registros que la otra. Si usted agrupa estos registros basado en un campo en la tabla principal, los valores en la tabla de b&#250;squeda m&#225;s peque&#241;a se repiten para cada valor en la tabla de b&#250;squeda m&#225;s grande. La siguiente tabla muestra los datos para una relaci&#243;n A a B, A a C. La tabla Cliente est&#225; vinculada a la tabla Cr&#233;dito y nuevamente a la tabla Pedidos. Note que Jones s&#243;lo tiene una Identificaci&#243;n de Cr&#233;dito, pero que el cr&#233;dito y la cantidad est&#225;n repetidos, en cada uno de sus pedidos.</p><p><a name="33213"></a> <Table Border="1">
+<tr><th align="left" valign="bottom"><a name="33154"></a>Nombre
+
+</th><th align="left" valign="bottom"><a name="33156"></a>Id. de 
+cr&#233;dito
+
+</th><th align="left" valign="bottom"><a name="33158"></a>Cantidad <br>
+de cr&#233;dito
+
+</th><th align="left" valign="bottom"><a name="33160"></a>Id. de 
+pedido
+
+</th><th align="left" valign="bottom"><a name="33162"></a>Monto <br>
+del pedido
+
+</th></tr>
+<tr><td align="left" valign="TOP"><P><a name="33164"></a>Jones</P>
+
+
+</td><td align="left" valign="TOP"><P><a name="33166"></a>1</P>
+
+
+</td><td align="left" valign="TOP"><P><a name="33168"></a>-10.00</P>
+
+
+</td><td align="left" valign="TOP"><P><a name="33170"></a>1</P>
+
+
+</td><td align="left" valign="TOP"><P><a name="33172"></a>10.00</P>
+
+
+</td></tr>
+<tr><td align="left" valign="TOP"><P><a name="33174"></a>Jones</P>
+
+
+</td><td align="left" valign="TOP"><P><a name="33176"></a>1</P>
+
+
+</td><td align="left" valign="TOP"><P><a name="33178"></a>-10.00</P>
+
+
+</td><td align="left" valign="TOP"><P><a name="33180"></a>2</P>
+
+
+</td><td align="left" valign="TOP"><P><a name="33182"></a>12.00</P>
+
+
+</td></tr>
+<tr><td align="left" valign="TOP"><P><br></P>
+
+
+</td><td align="left" valign="TOP"><P><br></P>
+
+
+</td><td align="left" valign="TOP"><P><br></P>
+
+
+</td><td align="left" valign="TOP"><P><br></P>
+
+
+</td><td align="left" valign="TOP"><P><br></P>
+
+
+</td></tr>
+<tr><td align="left" valign="TOP"><P><a name="33194"></a>Smith</P>
+
+
+</td><td align="left" valign="TOP"><P><a name="33196"></a>2</P>
+
+
+</td><td align="left" valign="TOP"><P><a name="33198"></a>-23.00</P>
+
+
+</td><td align="left" valign="TOP"><P><a name="33200"></a>3</P>
+
+
+</td><td align="left" valign="TOP"><P><a name="33202"></a>20.00</P>
+
+
+</td></tr>
+<tr><td align="left" valign="TOP"><P><a name="33204"></a>Smith</P>
+
+
+</td><td align="left" valign="TOP"><P><a name="33206"></a>3</P>
+
+
+</td><td align="left" valign="TOP"><P><a name="33208"></a>-45.00</P>
+
+
+</td><td align="left" valign="TOP"><P><a name="33210"></a>4</P>
+
+
+</td><td align="left" valign="TOP"><P><a name="33212"></a>30.00</P>
+
+
+</td></tr>
+
+</Table></p>
+<p><a name="33214"></a>En este ejemplo se usa un subtotal est&#225;ndar en estos grupos para el campo Monto del Pedido y el campo Cantidad. As&#237;, el &#250;nico cr&#233;dito de Jones se cuenta dos veces, y el subtotal muestra un valor incorrecto de -20.00. </p><p><a name="33296"></a> <Table Border="1">
+<tr><th align="left" valign="bottom"><a name="33217"></a>Nombre
+
+</th><th align="left" valign="bottom"><a name="33219"></a>Id. de 
+cr&#233;dito
+
+</th><th align="left" valign="bottom"><a name="33221"></a>Cantidad <br>
+de cr&#233;dito
+
+</th><th align="left" valign="bottom"><a name="33223"></a>Id. de orden
+
+</th><th align="left" valign="bottom"><a name="33225"></a>Monto <br>
+del pedido
+
+</th></tr>
+<tr><td align="left" valign="TOP"><P><a name="33227"></a>Jones</P>
+
+
+</td><td align="left" valign="TOP"><P><a name="33229"></a>1</P>
+
+
+</td><td align="left" valign="TOP"><P><a name="33231"></a>-10.00</P>
+
+
+</td><td align="left" valign="TOP"><P><a name="33233"></a>1</P>
+
+
+</td><td align="left" valign="TOP"><P><a name="33235"></a>10.00</P>
+
+
+</td></tr>
+<tr><td align="left" valign="TOP"><P><a name="33237"></a>Jones</P>
+
+
+</td><td align="left" valign="TOP"><P><a name="33239"></a>1</P>
+
+
+</td><td align="left" valign="TOP"><P><a name="33241"></a>-10.00</P>
+
+
+</td><td align="left" valign="TOP"><P><a name="33243"></a>2</P>
+
+
+</td><td align="left" valign="TOP"><P><a name="33245"></a>12.00</P>
+
+
+</td></tr>
+<tr><td align="left" valign="TOP"><P><br></P>
+
+
+</td><td align="left" valign="TOP"><P><br></P>
+
+
+</td><td align="left" valign="TOP"><P><a name="33251"></a>-20.00</P>
+
+
+</td><td align="left" valign="TOP"><P><br></P>
+
+
+</td><td align="left" valign="TOP"><P><a name="33255"></a>22.00</P>
+
+
+</td></tr>
+<tr><td align="left" valign="TOP"><P><br></P>
+
+
+</td><td align="left" valign="TOP"><P><br></P>
+
+
+</td><td align="left" valign="TOP"><P><br></P>
+
+
+</td><td align="left" valign="TOP"><P><br></P>
+
+
+</td><td align="left" valign="TOP"><P><br></P>
+
+
+</td></tr>
+<tr><td align="left" valign="TOP"><P><a name="33267"></a>Smith</P>
+
+
+</td><td align="left" valign="TOP"><P><a name="33269"></a>2</P>
+
+
+</td><td align="left" valign="TOP"><P><a name="33271"></a>-23.00</P>
+
+
+</td><td align="left" valign="TOP"><P><a name="33273"></a>3</P>
+
+
+</td><td align="left" valign="TOP"><P><a name="33275"></a>20.00</P>
+
+
+</td></tr>
+<tr><td align="left" valign="TOP"><P><a name="33277"></a>Smith</P>
+
+
+</td><td align="left" valign="TOP"><P><a name="33279"></a>3</P>
+
+
+</td><td align="left" valign="TOP"><P><a name="33281"></a>-45.00</P>
+
+
+</td><td align="left" valign="TOP"><P><a name="33283"></a>4</P>
+
+
+</td><td align="left" valign="TOP"><P><a name="33285"></a>30.00</P>
+
+
+</td></tr>
+<tr><td align="left" valign="TOP"><P><br></P>
+
+
+</td><td align="left" valign="TOP"><P><br></P>
+
+
+</td><td align="left" valign="TOP"><P><a name="33291"></a>-68.00</P>
+
+
+</td><td align="left" valign="TOP"><P><br></P>
+
+
+</td><td align="left" valign="TOP"><P><a name="33295"></a>50.00</P>
+
+
+</td></tr>
+
+</Table></p>
+<p><a name="35629"></a><font color="darkblue"><b>Nota:   &nbsp;&nbsp;&nbsp;</b></font>Note que la cantidad de cr&#233;dito total para Jones es incorrecta.</p>
+<p><a name="33298"></a>Este problema ocurrir&#237;a tambi&#233;n en el campo Monto del Pedido, por ejemplo, si Jones tuviera dos Cantidad de Cr&#233;ditos diferentes y s&#243;lo un Monto del Pedido. Puede evitar este problema creando una f&#243;rmula para cada campo que quiera subtotalizar.</p><a name="32136"></a><h6>Para crear una relaci&#243;n de vinculaci&#243;n uno a muchos</h6><ol>
+<a name="32137"></a><li value="1&nbsp;&nbsp;&nbsp;&nbsp;">Para comenzar, cree un informe usando los datos de muestra, <kbd>Xtreme_es.mdb</kbd>, que se encuentra en la carpeta <kbd>File Data Sources </kbd>del cuadro de di&#225;logo Explorador de datos.
+<a name="32138"></a><li value="2&nbsp;&nbsp;&nbsp;&nbsp;">Destaque la tabla <kbd>Cr&#233;dito</kbd> y haga clic en <kbd>Agregar</kbd>.
+<a name="32139"></a><li value="3&nbsp;&nbsp;&nbsp;&nbsp;">Repita el paso anterior para las tablas <kbd>Cliente</kbd> y <kbd>Pedidos</kbd>.
+<a name="32140"></a><li value="4&nbsp;&nbsp;&nbsp;&nbsp;">Cuando haya agregado las tres tablas, haga clic en <kbd>Cerrar</kbd> en el cuadro de di&#225;logo Explorador de datos.
+<p class="indent"><a name="32141"></a>Aparece el Asistente de vinculaci&#243;n visual.</p><a name="32142"></a><li value="5&nbsp;&nbsp;&nbsp;&nbsp;">Vincule el campo <kbd>ID de cr&#233;dito del cliente</kbd> de la tabla <kbd>Cr&#233;dito</kbd> al campo <kbd>ID del cliente</kbd> de cada una de las otras dos tablas.
+<p class="indent"><a name="32143"></a><font color="darkblue"><b>Nota:   &nbsp;&nbsp;&nbsp;</b></font>Se produce una configuraci&#243;n de vinculaci&#243;n diferente si hace clic en V&#237;nculo inteligente y este tutorial no funcionar&#225; correctamente.</p>
+<a name="32144"></a><li value="6&nbsp;&nbsp;&nbsp;&nbsp;">Seleccione uno de los v&#237;nculos del Asistente de vinculaci&#243;n visual y haga clic en <kbd>Opciones</kbd>.
+<a name="32145"></a><li value="7&nbsp;&nbsp;&nbsp;&nbsp;">Haga clic en <kbd>Buscar todas las de una y luego todas de las otras</kbd> en la secci&#243;n <kbd>Al vincular a dos archivos desde este archivo</kbd> del cuadro de di&#225;logo Opciones de vinculaci&#243;n.
+<p class="indent"><a name="32146"></a>Esta opci&#243;n establece un v&#237;nculo de A a B, A a C.</p><a name="32147"></a><li value="8&nbsp;&nbsp;&nbsp;&nbsp;">Haga clic en <kbd>Aceptar</kbd> para volver al Asistente de vinculaci&#243;n visual.
+<p class="indent"><a name="32148"></a>La opci&#243;n que seleccione afectar&#225; a todos los v&#237;nculos.</p><a name="32149"></a><li value="9&nbsp;&nbsp;&nbsp;&nbsp;">Haga clic en <kbd>Aceptar</kbd> para cerrar el Asistente de vinculaci&#243;n visual.
+</ol>
+<p><a name="32150"></a>Ahora ha establecido una relaci&#243;n A a B, A a C entre las tres tablas. Ahora usar&#225; las tablas para crear un informe con un total acumulado.</p><a name="32155"></a><h6>Para crear un total acumulado en una relaci&#243;n de vinculaci&#243;n uno a muchos</h6><ol>
+<a name="32157"></a><li value="1&nbsp;&nbsp;&nbsp;&nbsp;">En el cuadro de di&#225;logo Explorador de campos, coloque los siguientes campos de izquierda a derecha en la secci&#243;n Detalles de su informe:
+<p class="code"><a name="32158"></a>{cliente.NOMBRE DEL CLIENTE}<br><a name="32159"></a>{cr&#233;dito.ID DE CR&Eacute;DITO DEL CLIENTE}<br><a name="32160"></a>{cr&#233;dito.MONTO}<br><a name="32161"></a>{pedidos.ID DEL PEDIDO}<br><a name="32162"></a>{pedidos.MONTO DEL PEDIDO}</p><a name="32166"></a><li value="2&nbsp;&nbsp;&nbsp;&nbsp;"><img src="images/Bt_insum.gif">
+
+
+En la ficha <kbd>Dise&#241;o</kbd>, destaque el campo {pedidos.MONTO DEL PEDIDO} e inserte un subtotal, agrup&#225;ndolo seg&#250;n el campo {cliente.NOMBRE DEL CLIENTE}.
+<p class="indent"><a name="32167"></a>Si presta atenci&#243;n a los subtotales de cada grupo, observar&#225; que no son exactos. Esto se debe al v&#237;nculo uno a muchos creado para el informe. Siga el resto de este procedimiento para ver c&#243;mo los totales acumulados producen resultados precisos en relaciones de vinculaci&#243;n uno a muchos.</p><a name="32168"></a><li value="3&nbsp;&nbsp;&nbsp;&nbsp;">En el men&#250; <kbd>Insertar</kbd>, haga clic en <kbd>Campo de total acumulado</kbd>.
+<p class="indent"><a name="32169"></a>Aparece el cuadro de di&#225;logo Explorador de campos.</p><a name="32170"></a><li value="4&nbsp;&nbsp;&nbsp;&nbsp;">Haga doble clic en <kbd>Campos de total acumulado</kbd>.
+<p class="indent"><a name="32171"></a>Aparece el cuadro de di&#225;logo Crear campo de total acumulado.</p><a name="32172"></a><li value="5&nbsp;&nbsp;&nbsp;&nbsp;">Ingrese el nombre "SubtotalCr&#233;dito" en el cuadro <kbd>Nombre de total acumulado</kbd>.
+<a name="32173"></a><li value="6&nbsp;&nbsp;&nbsp;&nbsp;">Destaque {Cr&#233;dito.MONTO} en el cuadro <kbd>Tablas y campos disponibles</kbd> y use el primer bot&#243;n de flecha para desplazarse sobre el cuadro <kbd>Campo para resumir</kbd>.
+<a name="32177"></a><li value="7&nbsp;&nbsp;&nbsp;&nbsp;"><img src="images/Bt_indat.gif">
+
+
+Seleccione <kbd>suma</kbd> de la lista <kbd>Tipo de resumen</kbd>.
+<a name="32178"></a><li value="8&nbsp;&nbsp;&nbsp;&nbsp;">En la secci&#243;n <kbd>Evaluar</kbd> del cuadro de di&#225;logo, haga clic en <kbd>Al cambiar de campo</kbd> y elija el campo {Cr&#233;dito.ID DE CR&Eacute;DITO DEL CLIENTE}.
+<p class="indent"><a name="32179"></a><font color="darkblue"><b>Nota:   &nbsp;&nbsp;&nbsp;</b></font>Al seleccionar un campo para que sea un campo <EM>Al cambiar de campo</EM>, elija uno que sea exclusivo a la tabla de base de datos que est&#225; usando.</p>
+<a name="32180"></a><li value="9&nbsp;&nbsp;&nbsp;&nbsp;">En la secci&#243;n <kbd>Restablecer</kbd> del cuadro de di&#225;logo, haga clic en <kbd>Al cambiar de campo</kbd> y elija el campo {Cr&#233;dito.NOMBRE DEL CLIENTE}.
+<a name="32181"></a><li value="10&nbsp;&nbsp;&nbsp;&nbsp;">Haga clic en <kbd>Aceptar</kbd> para guardar el campo Total acumulado.
+<p class="indent"><a name="32182"></a>El programa vuelve al cuadro de di&#225;logo Explorador de campos.</p><a name="32183"></a><li value="11&nbsp;&nbsp;&nbsp;&nbsp;">Coloque el total acumulado en la secci&#243;n <kbd>Pie de grupo</kbd> del informe.
+</ol>
+<p><a name="32184"></a>Compare el monto del total acumulado con el monto de subtotal de cada grupo. Ver&#225; que el total acumulado es exacto mientra que el subtotal no. &Eacute;sta es la raz&#243;n por la que debe usar un total acumulado cuando su informe tenga una relaci&#243;n de vinculaci&#243;n de uno a muchos.</p>
+<hr><br>
+
+<script  language="JavaScript"><!--
+
+var prev = "09_runtotal6.html";
+var next = "09_runtotal8.html";
+
+function setTopicID() { 
+      var number = "33145"; 
+      return number; 
+}
+
+// --></script>
+
+
+
+
+<SCRIPT>
+
+if (!window.parent.toc && navigator.appName == "Netscape") {
+
+   document.writeln ('<TABLE ALIGN="left" border="0" cellspacing="0" cellpadding="10">');
+   document.writeln ('<TR>');
+   document.write ('<TD ALIGN="left">');
+
+   if (prev != "crw_spTOC.hhc") {
+      document.writeln ('<A HREF="' + prev + '">');
+      document.writeln ('<IMG SRC="prevpage.gif" HEIGHT=17 BORDER=0 ALT="Página anterior"></A>');
+   } else {
+//   window.alert ('no previous page');
+   }
+
+   if (next != "crw_spIX.hhk") {
+      document.writeln ('<A HREF="' + next + '">');
+      document.writeln ('<IMG SRC="nextpage.gif" HEIGHT=17 BORDER=0 ALT="Página siguiente"></A>');
+   } else {
+//   window.alert ('no next page');
+   }
+   document.writeln ('</TD><TD ALIGN="left">');
+   document.writeln ('<A HREF="frameset.htm?TOC">');
+   document.writeln ('<IMG SRC="showtoc.gif" HEIGHT=17 BORDER=0 ALT="Haga clic para ver el contenido"></A></TD>');
+   document.writeln ('<TD ALIGN="left">');
+   document.writeln ('<A HREF="frameset.htm?IDX">');
+   document.writeln ('<IMG SRC="showix.gif" HEIGHT=17 BORDER=0 ALT="Haga clic para ver el índice"></A></TD>');
+   document.writeln ('</TD>');
+   document.writeln ('</TR>');
+   document.writeln ('</TABLE>');
+
+}
+
+</SCRIPT>
+<table align="right" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td align="right"><font size="1">Seagate Software, Inc.<br>
+    <a href="http://www.seagatesoftware.com">http://www.seagatesoftware.com</a><br>
+    Envíe sus comentarios a:<br>
+    <a href="mailto:techpubs@seagatesoftware.com">techpubs@seagatesoftware.com</a><br>
+    </font></td>
+  </tr>
+</table>
+</body>
+</html>
+
+

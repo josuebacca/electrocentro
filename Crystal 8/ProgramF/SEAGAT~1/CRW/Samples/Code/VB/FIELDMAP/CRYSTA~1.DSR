@@ -1,0 +1,60 @@
+VERSION 5.00
+Begin {BD4B4E61-F7B8-11D0-964D-00A0C9273C2A} CrystalReport1 
+   ClientHeight    =   10020
+   ClientLeft      =   0
+   ClientTop       =   0
+   ClientWidth     =   11055
+   OleObjectBlob   =   "CrystalReport1.dsx":0000
+End
+Attribute VB_Name = "CrystalReport1"
+Attribute VB_GlobalNameSpace = False
+Attribute VB_Creatable = False
+Attribute VB_PredeclaredId = True
+Attribute VB_Exposed = False
+' *************************************************************
+' Purpose:  Demonstrate how to use Report Field Mapping (new to
+'           Crystal Reports 8.0)
+'
+'           Field mapping allows the user to change the name of
+'           a database field that a report field points to if
+'           that field no longer exists or has been renamed in
+'           the data source.
+'
+'           In this sample, the Report_FieldMapping event in the
+'           code for CrystalReport1 is used to programmatically
+'           change the mapping of the report fields to a different
+'           database field.
+'
+
+Option Explicit
+
+' *************************************************************
+' This event is only triggered if the FieldMappingType property
+' for the report is set to 2 (crEventFieldMapping).
+'
+Private Sub Report_FieldMapping(reportFieldArray As Variant, ByVal databaseFieldArray As Variant, useDefault As Boolean)
+    Dim MappingData As CRAXDRT.FieldMappingData
+    Dim dbMappingData As CRAXDRT.FieldMappingData
+    
+    ' Setting useDefault to True will cancel all fieldmapping
+    useDefault = False
+    
+    ' Get the first field in the report ("LastName")
+    Set MappingData = reportFieldArray(0)
+    
+    ' Setting MappingToFieldIndex to -1 will remove this field from the report
+    ' Set the db field to point to the second database field in the report,
+    ' which happens to be "Last Name"
+    MappingData.MappingToFieldIndex = 2
+    MsgBox "Mapped '" & MappingData.FieldName & "' ", vbInformation
+
+    ' Get the first field in the report ("Total Salary")
+    Set MappingData = reportFieldArray(3)
+    Set dbMappingData = databaseFieldArray(12)
+    
+    ' Set the db field to point to the ninth database field in the report,
+    ' which corresponds to "Salary"
+    MappingData.MappingToFieldIndex = 12
+    MsgBox "Mapped '" & dbMappingData.FieldName & "' ", vbInformation
+End Sub
+

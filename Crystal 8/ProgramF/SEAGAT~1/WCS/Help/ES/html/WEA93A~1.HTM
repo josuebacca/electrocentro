@@ -1,0 +1,94 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+
+<html>
+<head>
+<title>Ficha Page Server</title>
+
+<link REL=STYLESHEET TYPE="text/css" HREF="seagate.css">
+
+<!--
+                 ***********************************
+                 * Seagate Software copyright 1999 *
+                 ***********************************
+
+                      Template version: 5.1
+-->
+
+
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" link="#0000FF" vlink="#0000FF" alink="#800080">
+
+
+ 
+<a name="163745"></a><h3 class="newpage"> Ficha Page Server</h3>
+<p><a name="163746"></a>La ficha Page Server consta de cuatro &#225;reas: Procesamiento, Actualizaci&#243;n de base de datos, Per&#237;odo inactivo y Puerto del servidor.</p><p><a name="166945"></a> <img src="images/tb_wcm_pageserver.gif">
+
+
+</p>
+<a name="161969"></a><h4>Procesamiento</h4><p><a name="161981"></a>Esta &#225;rea permite hacer cambios en el n&#250;mero m&#225;ximo de subprocesos.</p><a name="161998"></a><h5>N&#250;mero m&#225;ximo de subprocesos</h5><p><a name="162520"></a>El Page Server es una aplicaci&#243;n de subprocesos m&#250;ltiples. Por cada solicitud que recibe, la aplicaci&#243;n genera un nuevo subproceso para su procesamiento. </p><p><a name="162521"></a>Los subprocesos consumen memoria y recursos del sistema. Un gran n&#250;mero de subprocesos puede afectar el desempe&#241;o general de un sistema.</p><p><a name="162522"></a>Especificando el n&#250;mero m&#225;ximo de subprocesos que pueden ser generados por el Page Server, puede controlar la cantidad de recursos del sistema que se puede asignar para responder a solicitudes en cualquier momento dado. Si el n&#250;mero de solicitudes recibidas por el Page Server excede el n&#250;mero de subprocesos especificado, las solicitudes adicionales son puestas en espera hasta que haya subprocesos disponibles.</p><p><a name="162523"></a>Al determinar el n&#250;mero m&#225;ximo de subprocesos, debe considerar la cantidad de memoria disponible en el sistema del servidor y el tama&#241;o de los informes a los que se accede habitualmente. Los informes grandes requieren m&#225;s tiempo y recursos adicionales del sistema.</p><a name="161982"></a><h4>Actualizaci&#243;n de base de datos</h4><p><a name="162793"></a>Esta opci&#243;n controla la frecuencia con que se consulta la base de datos para actualizar los datos de los informes almacenados en la memoria cach&#233;. </p><p><a name="164911"></a>Si ha transcurrido el tiempo de actualizaci&#243;n de la base de datos desde la primera vez que el informe se almacen&#243; en la memoria cach&#233;, el Page Server puede actualizar los datos de este informe la pr&#243;xima vez que un usuario lo solicite.</p><p><a name="162795"></a>Controlando la frecuencia con que los datos de los informes se actualizan, puede minimizar el impacto de las solicitudes de los clientes en la base de datos. Los clientes que tienen autorizaci&#243;n para actualizar los datos por s&#237; mismos pueden sobrecargar considerablemente el servidor de la base de datos. En cambio, como administrador, puede controlar la frecuencia con que los datos son actualizados.</p><p><a name="162796"></a>Tenga presente que los visores de informes incluyen un bot&#243;n de actualizaci&#243;n de forma predeterminada. Si establece un tiempo de actualizaci&#243;n de la base de datos y un cliente usa el bot&#243;n de actualizaci&#243;n de un visor de informes, el usuario provoca la actualizaci&#243;n del informe almacenado en la memoria cach&#233;, forzando una solicitud a la base de datos. Si lo desea, puede desactivar el bot&#243;n de actualizaci&#243;n. Para m&#225;s informaci&#243;n, vea <a href="WebServerAdministration5.html#164578">Ficha Vista de informes</a>. Si ajusta el tiempo de actualizaci&#243;n de la base de datos a 0, los datos se actualizar&#225;n cada vez se solicite un informe.</p><p><a name="164462"></a>Esta &#225;rea tambi&#233;n incluye una casilla de verificaci&#243;n que le permite determinar si la base de datos se actualiza cuando el usuario hace clic en el bot&#243;n de actualizaci&#243;n de su explorador web.</p><a name="161992"></a><h4>Per&#237;odo inactivo</h4><p><a name="162841"></a>El per&#237;odo inactivo es un per&#237;odo de tiempo durante el cual no ocurre ninguna acci&#243;n. </p><a name="163814"></a><h5>Minutos antes de cerrar un trabajo inactivo</h5><p><a name="162913"></a>Un trabajo, tambi&#233;n denominado tarea, es un informe que ha sido generado y almacenado en la memoria cach&#233; del servidor. Si nadie solicita el informe durante el per&#237;odo de tiempo especificado, la tarea se cierra y es descartada. Por lo tanto, si alguien solicita el informe despu&#233;s de que la tarea se haya cerrado, el sistema tendr&#225; que generar una nueva tarea, causando un retardo inicial.</p><a name="165384"></a><h4>Puerto del servidor</h4><p><a name="165393"></a>Indica el puerto a trav&#233;s del cual el Page Server recibe solicitudes.</p><p><a name="165434"></a><font color="darkblue"><b>Nota:   &nbsp;&nbsp;&nbsp;</b></font>Todos los cambios son almacenados en el Registro de Windows. Los cambios s&#243;lo se hacen efectivos una vez que el servidor web es apagado y reiniciado.</p>
+
+<hr><br>
+
+<script  language="JavaScript"><!--
+
+var prev = "WebServerAdministration5.html";
+var next = "WebServerAdministration7.html";
+
+function setTopicID() { 
+      var number = "163745"; 
+      return number; 
+}
+
+// --></script>
+
+
+
+
+<SCRIPT>
+
+if (!window.parent.toc && navigator.appName == "Netscape") {
+
+   document.writeln ('<TABLE ALIGN="left" border="0" cellspacing="0" cellpadding="10">');
+   document.writeln ('<TR>');
+   document.write ('<TD ALIGN="left">');
+
+   if (prev != "wcmadminTOC.hhc") {
+      document.writeln ('<A HREF="' + prev + '">');
+      document.writeln ('<IMG SRC="prevpage.gif" HEIGHT=17 BORDER=0 ALT="Página anterior"></A>');
+   } else {
+//   window.alert ('no previous page');
+   }
+
+   if (next != "wcmadminIX.hhk") {
+      document.writeln ('<A HREF="' + next + '">');
+      document.writeln ('<IMG SRC="nextpage.gif" HEIGHT=17 BORDER=0 ALT="Página siguiente"></A>');
+   } else {
+//   window.alert ('no next page');
+   }
+   document.writeln ('</TD><TD ALIGN="left">');
+   document.writeln ('<A HREF="frameset.htm?TOC">');
+   document.writeln ('<IMG SRC="showtoc.gif" HEIGHT=17 BORDER=0 ALT="Haga clic para ver el contenido"></A></TD>');
+   document.writeln ('<TD ALIGN="left">');
+   document.writeln ('<A HREF="frameset.htm?IDX">');
+   document.writeln ('<IMG SRC="showix.gif" HEIGHT=17 BORDER=0 ALT="Haga clic para ver el índice"></A></TD>');
+   document.writeln ('</TD>');
+   document.writeln ('</TR>');
+   document.writeln ('</TABLE>');
+
+}
+
+</SCRIPT>
+<table align="right" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td align="right"><font size="1">Seagate Software, Inc.<br>
+    <a href="http://www.seagatesoftware.com">http://www.seagatesoftware.com</a><br>
+    Envíe sus comentarios a:<br>
+    <a href="mailto:techpubs@seagatesoftware.com">techpubs@seagatesoftware.com</a><br>
+    </font></td>
+  </tr>
+</table>
+</body>
+</html>
+
+

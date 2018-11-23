@@ -1,0 +1,103 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+
+<html>
+<head>
+<title>Uso de la expresi&#243;n If</title>
+
+<link REL=STYLESHEET TYPE="text/css" HREF="seagate.css">
+
+<!--
+                 ***********************************
+                 * Seagate Software copyright 1999 *
+                 ***********************************
+
+                      Template version: 5.1
+-->
+
+
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" link="#0000FF" vlink="#0000FF" alink="#800080">
+
+
+ 
+<a name="144571"></a><h4 class="newpage"> Uso de la expresi&#243;n If</h4><p><a name="144573"></a>La expresi&#243;n <EM>If</EM> es una de las caracter&#237;sticas m&#225;s usadas de la sintaxis Crystal. Tambi&#233;n permite entender la naturaleza de las expresiones. Considere la expresi&#243;n If anterior como una f&#243;rmula separada. Observe que dado que esta f&#243;rmula es una sola expresi&#243;n, no necesita un punto y coma:</p><PRE><a name="144575"></a>If {Detalles del pedido.Cantidad} &gt; 1 Then
+<a name="144576"></a>   "varias unidades"
+<a name="144577"></a>Else
+<a name="144578"></a>   "una unidad"
+</PRE><p><a name="144580"></a>Suponga que desea modificar esta f&#243;rmula de modo que imprima "varias unidades" o el n&#250;mero 1. </p><PRE><a name="144582"></a>//Una f&#243;rmula err&#243;nea
+<a name="144583"></a>If {Detalles del pedido.Cantidad} &gt; 1 Then
+<a name="144584"></a>   "varias unidades"
+<a name="144585"></a>Else
+<a name="144586"></a>   1
+</PRE><p><a name="144588"></a>Esta f&#243;rmula va a entregar un error. Esto es porque los valores de esta expresi&#243;n son tipos diferentes: "varias unidades" es un valor de cadena y 1 es un valor num&#233;rico. Seagate Crystal Reports requiere que el valor de una expresi&#243;n siempre sea de un s&#243;lo tipo.</p><p><a name="145133"></a><font color="darkblue"><b>Nota:   &nbsp;&nbsp;&nbsp;</b></font>Este ejemplo se puede corregir al usar la funci&#243;n CStr para convertir el n&#250;mero 1 en un valor de cadena. Por ejemplo, el n&#250;mero 1 se convierte en la cadena "1" al llamar a CStr (1, 0).</p>
+<PRE><a name="144592"></a>//Una f&#243;rmula correcta
+<a name="144593"></a>If {Detalles del pedido.Cantidad} &gt; 1 Then
+<a name="144594"></a>   "varias unidades"
+<a name="144595"></a>Else
+<a name="144596"></a>   CStr (1, 0) //Usar 0 decimales
+</PRE><p><a name="151099"></a>Vea <a href="21_crystalsyntax52.html#147314">Estructuras de control</a> para obtener m&#225;s informaci&#243;n sobre la expresi&#243;n If.</p>
+<hr><br>
+
+<script  language="JavaScript"><!--
+
+var prev = "21_crystalsyntax16.html";
+var next = "21_crystalsyntax18.html";
+
+function setTopicID() { 
+      var number = "144571"; 
+      return number; 
+}
+
+// --></script>
+
+
+
+
+<SCRIPT>
+
+if (!window.parent.toc && navigator.appName == "Netscape") {
+
+   document.writeln ('<TABLE ALIGN="left" border="0" cellspacing="0" cellpadding="10">');
+   document.writeln ('<TR>');
+   document.write ('<TD ALIGN="left">');
+
+   if (prev != "crw_spTOC.hhc") {
+      document.writeln ('<A HREF="' + prev + '">');
+      document.writeln ('<IMG SRC="prevpage.gif" HEIGHT=17 BORDER=0 ALT="Página anterior"></A>');
+   } else {
+//   window.alert ('no previous page');
+   }
+
+   if (next != "crw_spIX.hhk") {
+      document.writeln ('<A HREF="' + next + '">');
+      document.writeln ('<IMG SRC="nextpage.gif" HEIGHT=17 BORDER=0 ALT="Página siguiente"></A>');
+   } else {
+//   window.alert ('no next page');
+   }
+   document.writeln ('</TD><TD ALIGN="left">');
+   document.writeln ('<A HREF="frameset.htm?TOC">');
+   document.writeln ('<IMG SRC="showtoc.gif" HEIGHT=17 BORDER=0 ALT="Haga clic para ver el contenido"></A></TD>');
+   document.writeln ('<TD ALIGN="left">');
+   document.writeln ('<A HREF="frameset.htm?IDX">');
+   document.writeln ('<IMG SRC="showix.gif" HEIGHT=17 BORDER=0 ALT="Haga clic para ver el índice"></A></TD>');
+   document.writeln ('</TD>');
+   document.writeln ('</TR>');
+   document.writeln ('</TABLE>');
+
+}
+
+</SCRIPT>
+<table align="right" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td align="right"><font size="1">Seagate Software, Inc.<br>
+    <a href="http://www.seagatesoftware.com">http://www.seagatesoftware.com</a><br>
+    Envíe sus comentarios a:<br>
+    <a href="mailto:techpubs@seagatesoftware.com">techpubs@seagatesoftware.com</a><br>
+    </font></td>
+  </tr>
+</table>
+</body>
+</html>
+
+

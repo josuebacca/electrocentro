@@ -1,0 +1,102 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+
+<html>
+<head>
+<title>Conceptos de la creaci&#243;n de gr&#225;ficos</title>
+
+<link REL=STYLESHEET TYPE="text/css" HREF="seagate.css">
+
+<!--
+                 ***********************************
+                 * Seagate Software copyright 1999 *
+                 ***********************************
+
+                      Template version: 5.1
+-->
+
+
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" link="#0000FF" vlink="#0000FF" alink="#800080">
+
+
+ 
+<a name="40508"></a><h2 class="newpage">Conceptos de la creaci&#243;n de gr&#225;ficos</h2><a name="40510"></a><h3>Introducci&#243;n general sobre la creaci&#243;n de gr&#225;ficos</h3>
+<p><a name="41894"></a>Seagate Crystal Reports le permite incluir en sus informes gr&#225;ficos sofisticados. Puede utilizar gr&#225;ficos en cualquier momento para mejorar la utilidad de su informe. Por ejemplo, puede usar gr&#225;ficos para mostrar los resultados fiscales de 1996 o las ventas en los trimestres del a&#241;o fiscal.</p><p><a name="41895"></a>Por ejemplo si tiene un informe de ventas agrupado por Regi&#243;n y un Subtotal de las Ventas del A&#241;o Pasado para cada Regi&#243;n, se puede crear r&#225;pidamente un gr&#225;fico que muestre las ventas por Regi&#243;n.</p><p><a name="43103"></a> <img src="images/Graph.gif">
+
+
+</p>
+<p><a name="41900"></a>S&#243;lo puede graficar en lo siguiente:</p><ul type="disc"><a name="41901"></a><li>res&#250;menes y campos de subtotales
+<a name="41902"></a><li>campos de detalles , campos de f&#243;rmulas
+<a name="41903"></a><li>res&#250;menes de tablas cruzadas
+<a name="43108"></a><li>Datos OLAP.
+</ul><p><a name="41905"></a>T&#237;picamente, usted usar&#225; un gr&#225;fico al nivel de un grupo para poder ver la informaci&#243;n de resumen o de subtotales. Las excepciones incluyen los gr&#225;ficos de detalle, de tablas cruzadas y de cuadr&#237;culas OLAP. Antes de poder crear un gr&#225;fico al nivel de grupo, usted debe tener por lo menos un grupo y por lo menos un resumen o subtotal en su informe.</p><a name="41906"></a><h3>Esquemas de gr&#225;ficos</h3>
+<p><a name="41907"></a>El Asistente de Gr&#225;ficos provee cuatro esquemas poderosos. </p><p><a name="41908"></a>Cada uno de estos esquemas es especialmente &#250;til para graficar ciertos tipos de datos. Los gr&#225;ficos se pueden crear con cualquiera de los siguientes esquemas:</p><a name="40547"></a><h5>Avanzada</h5><p><a name="40548"></a>Use la organizaci&#243;n avanzada cuando tenga diferentes valores de gr&#225;ficos o cuando no tenga ning&#250;n campo de resumen o grupo en el informe.</p><p><a name="41955"></a>El esquema de Detalle le permite tener m&#250;ltiples dimensiones, una funci&#243;n que hace posible crear grupos en 3D. Otras funciones espec&#237;ficas del esquema de Detalle incluyen:</p><ul type="disc"><a name="40580"></a><li>los valores se pueden agrupar en orden ascendente, descendente o especificada
+<a name="40581"></a><li>se pueden trazar valores en cada registro
+<a name="41961"></a><li>los gr&#225;ficos se pueden basar en campos de f&#243;rmula y de total acumulado.
+</ul><a name="41962"></a><h5>Grupo</h5><p><a name="41963"></a>El esquema de Grupo es un esquema muy simplificado en el cual usted presenta un resumen a cambio de un campo geogr&#225;fico (tal como Regi&#243;n).</p><p><a name="41964"></a><font color="darkblue"><b>Nota:   &nbsp;&nbsp;&nbsp;</b></font>Para crear un gr&#225;fico usando el esquema de Grupo, el informe debe tener por lo menos un grupo y por lo menos un campo de resumen. </p>
+<a name="41965"></a><h5>Tablas cruzadas</h5><p><a name="41966"></a>Use el esquema de Tablas cruzadas en un objeto de tablas cruzadas. La informaci&#243;n de las tablas cruzadas se puede usar como la base de este tipo de gr&#225;fico. Este esquema no necesita tener grupos o campos de resumen.</p><a name="41967"></a><h5>OLAP</h5><p><a name="41968"></a>El esquema OLAP se usa cuando est&#225; graficando en una cuadr&#237;cula OLAP. Los datos OLAP pueden formar la base de este gr&#225;fico. Los gr&#225;ficos OLAP no requieren grupos ni campos de resumen.</p>
+<hr><br>
+
+<script  language="JavaScript"><!--
+
+var prev = "12_chart.html";
+var next = "12_chart3.html";
+
+function setTopicID() { 
+      var number = "40508"; 
+      return number; 
+}
+
+// --></script>
+
+
+
+
+<SCRIPT>
+
+if (!window.parent.toc && navigator.appName == "Netscape") {
+
+   document.writeln ('<TABLE ALIGN="left" border="0" cellspacing="0" cellpadding="10">');
+   document.writeln ('<TR>');
+   document.write ('<TD ALIGN="left">');
+
+   if (prev != "crw_spTOC.hhc") {
+      document.writeln ('<A HREF="' + prev + '">');
+      document.writeln ('<IMG SRC="prevpage.gif" HEIGHT=17 BORDER=0 ALT="Página anterior"></A>');
+   } else {
+//   window.alert ('no previous page');
+   }
+
+   if (next != "crw_spIX.hhk") {
+      document.writeln ('<A HREF="' + next + '">');
+      document.writeln ('<IMG SRC="nextpage.gif" HEIGHT=17 BORDER=0 ALT="Página siguiente"></A>');
+   } else {
+//   window.alert ('no next page');
+   }
+   document.writeln ('</TD><TD ALIGN="left">');
+   document.writeln ('<A HREF="frameset.htm?TOC">');
+   document.writeln ('<IMG SRC="showtoc.gif" HEIGHT=17 BORDER=0 ALT="Haga clic para ver el contenido"></A></TD>');
+   document.writeln ('<TD ALIGN="left">');
+   document.writeln ('<A HREF="frameset.htm?IDX">');
+   document.writeln ('<IMG SRC="showix.gif" HEIGHT=17 BORDER=0 ALT="Haga clic para ver el índice"></A></TD>');
+   document.writeln ('</TD>');
+   document.writeln ('</TR>');
+   document.writeln ('</TABLE>');
+
+}
+
+</SCRIPT>
+<table align="right" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td align="right"><font size="1">Seagate Software, Inc.<br>
+    <a href="http://www.seagatesoftware.com">http://www.seagatesoftware.com</a><br>
+    Envíe sus comentarios a:<br>
+    <a href="mailto:techpubs@seagatesoftware.com">techpubs@seagatesoftware.com</a><br>
+    </font></td>
+  </tr>
+</table>
+</body>
+</html>
+
+

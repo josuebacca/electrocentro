@@ -1,0 +1,108 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+
+<html>
+<head>
+<title>Representaci&#243;n de Campos de Desbordamiento</title>
+
+<link REL=STYLESHEET TYPE="text/css" HREF="seagate.css">
+
+<!--
+                 ***********************************
+                 * Seagate Software copyright 1999 *
+                 ***********************************
+
+                      Template version: 5.1
+-->
+
+
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" link="#0000FF" vlink="#0000FF" alink="#800080">
+
+
+ 
+<a name="84377"></a><h3 class="newpage"> Representaci&#243;n de Campos de Desbordamiento</h3>
+<p><a name="84381"></a>Seagate Crystal Reports usa Representaci&#243;n de Campo de Desbordamiento para ayudarle a los usuarios al trabajar con valores monetarios o num&#233;ricos en celdas de informe. Normalmente, si un valor num&#233;rico o monetario es m&#225;s grande que el campo que lo contiene, ese valor es truncado, o "recortado." Por ejemplo, valores como 100,000,000 podr&#237;an aparecer en el informe como 1,000, o como 000 (dependiendo de las propiedades establecidas). Esto podr&#237;a potencialmente causar confusi&#243;n al leer el informe.</p><p><a name="84382"></a>Cuando se borra la opci&#243;n Permitir Recorte de Campo, los valores num&#233;ricos/monetarios que exceden el tama&#241;o del campo se representan con signos num&#233;ricos (######) en la ficha Vista previa, lo que le permite saber inmediatamente cuando el campo es demasiado peque&#241;o.</p><a name="84383"></a><h6>Para permitir representaci&#243;n de campo de desbordamiento</h6><ol>
+<a name="84384"></a><li value="1&nbsp;&nbsp;&nbsp;&nbsp;">Haga clic con el bot&#243;n derecho en el campo monetario o campo num&#233;rico al que desea dar formato para mostrar el men&#250; contextual.
+<a name="84385"></a><li value="2&nbsp;&nbsp;&nbsp;&nbsp;">En el men&#250; contextual haga clic en<kbd> Dar formato a Campo</kbd>.
+<p class="indent"><a name="84386"></a>Aparece el cuadro de di&#225;logo Editor de formato con la ficha N&#250;mero abierta.</p><a name="84387"></a><li value="3&nbsp;&nbsp;&nbsp;&nbsp;">Haga clic en el bot&#243;n <kbd>Personalizar</kbd>.
+<p class="indent"><a name="84388"></a>Aparece el cuadro de di&#225;logo Estilo Personalizado con la ficha N&#250;mero abierta.</p><p><a name="84392"></a> <img src="images/db_formedit_custom.gif">
+
+
+</p>
+<a name="84393"></a><li value="4&nbsp;&nbsp;&nbsp;&nbsp;">Para permitir representaci&#243;n de campo de desbordamiento, borre la marca en la casilla de verificaci&#243;n <strong>Permitir Recorte de Campo</strong>. 
+<p class="indent"><a name="84394"></a><font color="darkblue"><b>Nota:   &nbsp;&nbsp;&nbsp;</b></font>Tambi&#233;n tiene la opci&#243;n de hacer clic en el bot&#243;n<strong> </strong>Formato para ingresar una f&#243;rmula en el Editor de f&#243;rmulas de formato. En el Editor de f&#243;rmulas de formato, puede especificar que el recorte de campo se desactive s&#243;lo cuando se cumplan ciertas condiciones.</p>
+<a name="84395"></a><li value="5&nbsp;&nbsp;&nbsp;&nbsp;">Haga clic en <strong>Aceptar</strong> para guardar sus cambios.
+</ol>
+<p><a name="88183"></a>Para ver los resultados, actualice el informe. Si desactiv&#243; el recorte de campo, cualquier valor de campo num&#233;rico/monetario que sea m&#225;s grande que los campos que los contienen se representan mediante signos num&#233;ricos (######).</p><a name="88185"></a><h3>Selecci&#243;n m&#250;ltiple de objetos</h3>
+<p><a name="84425"></a>Puede seleccionar objetos m&#250;ltiples, incluidos objetos de texto, campo, gr&#225;fico, mapa, bitmap, cuadr&#237;cula OLAP, objetos de tabla cruzada y objetos OLE, para darles formato en conjunto.</p><p><a name="84426"></a>Una vez que se han seleccionado objetos m&#250;ltiples, se pueden mover, alinear, modificar tama&#241;o, cortar, copiar y pegar como grupo. Tambi&#233;n puede cambiar su estilo de fuente, color y p&#225;rrafo.</p><p><a name="84427"></a>Los objetos se mueven, alinean y se modifica su tama&#241;o de acuerdo a un objeto "principal", que normalmente es el &#250;ltimo objeto que selecciona. Puede cambiar el objeto principal por otro al hacer clic con el bot&#243;n derecho sobre el objeto deseado.</p><p><a name="84428"></a><font color="darkblue"><b>Nota:   &nbsp;&nbsp;&nbsp;</b></font>Al mover objetos m&#250;ltiples, si la nueva ubicaci&#243;n no acomoda todos los objetos seleccionados, pero puede acomodar el objeto principal, entonces el objeto principal y los aquellos objetos que se pueden acomodar ser&#225;n movidos. Los otros objetos van a permanecer en su posici&#243;n original.</p>
+<a name="84429"></a><h6>Para seleccionar objetos m&#250;ltiples</h6><ol>
+<a name="84430"></a><li value="1&nbsp;&nbsp;&nbsp;&nbsp;">Haga clic en un objeto, y presione la tecla Ctrl y haga clic en los otros objetos que desea seleccionar.
+<a name="84431"></a><li value="2&nbsp;&nbsp;&nbsp;&nbsp;">Haga clic con el bot&#243;n derecho sobre el objeto principal.
+<a name="90889"></a><li value="3&nbsp;&nbsp;&nbsp;&nbsp;">En el men&#250; contextual, seleccione la opci&#243;n apropiada para dar formato.
+</ol>
+
+<hr><br>
+
+<script  language="JavaScript"><!--
+
+var prev = "11_format18.html";
+var next = "11_format20.html";
+
+function setTopicID() { 
+      var number = "84377"; 
+      return number; 
+}
+
+// --></script>
+
+
+
+
+<SCRIPT>
+
+if (!window.parent.toc && navigator.appName == "Netscape") {
+
+   document.writeln ('<TABLE ALIGN="left" border="0" cellspacing="0" cellpadding="10">');
+   document.writeln ('<TR>');
+   document.write ('<TD ALIGN="left">');
+
+   if (prev != "crw_spTOC.hhc") {
+      document.writeln ('<A HREF="' + prev + '">');
+      document.writeln ('<IMG SRC="prevpage.gif" HEIGHT=17 BORDER=0 ALT="Página anterior"></A>');
+   } else {
+//   window.alert ('no previous page');
+   }
+
+   if (next != "crw_spIX.hhk") {
+      document.writeln ('<A HREF="' + next + '">');
+      document.writeln ('<IMG SRC="nextpage.gif" HEIGHT=17 BORDER=0 ALT="Página siguiente"></A>');
+   } else {
+//   window.alert ('no next page');
+   }
+   document.writeln ('</TD><TD ALIGN="left">');
+   document.writeln ('<A HREF="frameset.htm?TOC">');
+   document.writeln ('<IMG SRC="showtoc.gif" HEIGHT=17 BORDER=0 ALT="Haga clic para ver el contenido"></A></TD>');
+   document.writeln ('<TD ALIGN="left">');
+   document.writeln ('<A HREF="frameset.htm?IDX">');
+   document.writeln ('<IMG SRC="showix.gif" HEIGHT=17 BORDER=0 ALT="Haga clic para ver el índice"></A></TD>');
+   document.writeln ('</TD>');
+   document.writeln ('</TR>');
+   document.writeln ('</TABLE>');
+
+}
+
+</SCRIPT>
+<table align="right" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td align="right"><font size="1">Seagate Software, Inc.<br>
+    <a href="http://www.seagatesoftware.com">http://www.seagatesoftware.com</a><br>
+    Envíe sus comentarios a:<br>
+    <a href="mailto:techpubs@seagatesoftware.com">techpubs@seagatesoftware.com</a><br>
+    </font></td>
+  </tr>
+</table>
+</body>
+</html>
+
+

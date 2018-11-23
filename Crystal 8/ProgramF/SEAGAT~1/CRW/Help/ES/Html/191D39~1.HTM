@@ -1,0 +1,273 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+
+<html>
+<head>
+<title>F&#243;rmula 4</title>
+
+<link REL=STYLESHEET TYPE="text/css" HREF="seagate.css">
+
+<!--
+                 ***********************************
+                 * Seagate Software copyright 1999 *
+                 ***********************************
+
+                      Template version: 5.1
+-->
+
+
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" link="#0000FF" vlink="#0000FF" alink="#800080">
+
+
+ 
+<a name="316718"></a><h3 class="newpage"> F&#243;rmula 4</h3>
+<a name="316719"></a><h4>Funciones y operadores usados</h4><p><a name="316720"></a>F&#243;rmulas anidadas, If<nobr>-T</nobr>hen<nobr>-E</nobr>lse, Sustraer (-), Multiplicar (*), Mayor que (&gt;), Mayor o igual que (&gt;=), Sum, Par&#233;ntesis ()</p><a name="316721"></a><h4>Prop&#243;sito de la f&#243;rmula</h4><p><a name="316722"></a>Una tienda de computadoras vende hardware, software y libros. Le paga a sus representantes de ventas un 7% de todas las ventas de hardware (mensualmente) superiores a $5.000, un 10% de todas las ventas de software (mensualmente) superiores a $10.000, y un 5% de todas las ventas de libros (mensualmente) superiores a $1.000. El gerente de ventas quiere calcular la comisi&#243;n de cada categor&#237;a para cada representante, totalizar la comisi&#243;n debida a cada representante e indicar aquellos representantes que est&#225;n facultados para recibir m&#225;s de $5.000 en comisi&#243;n total durante el mes. Lo calcularemos usando f&#243;rmulas anidadas, es decir, usando una f&#243;rmula como uno de los elementos de otra f&#243;rmula.</p><a name="316723"></a><h4>F&#243;rmula(s)</h4><a name="316724"></a><h4>@HARDWARE </h4><PRE><a name="316725"></a>If (({archivo.VENTAS DE HARDWARE}-5000)&gt; 0) Then <br>
+&nbsp;&nbsp;&nbsp;&nbsp;.07 * ({archivo.VENTAS DE HARDWARE}-5000) <br>
+Else <br>
+&nbsp;&nbsp;&nbsp;&nbsp;0
+</PRE><a name="316726"></a><h4>@SOFTWARE </h4><PRE><a name="316727"></a>If (({archivo.VENTAS DE SOFTWARE}-10000)&gt; 0) Then <br>
+&nbsp;&nbsp;&nbsp;&nbsp;.10 * ({archivo.VENTAS DE SOFTWARE}-10000) <br>
+Else <br>
+&nbsp;&nbsp;&nbsp;&nbsp;0
+</PRE><a name="316728"></a><h4>@LIBROS</h4><PRE><a name="316729"></a>If (({archivo.VENTAS DE LIBROS}-1000)&gt; 0) Then <br>
+&nbsp;&nbsp;&nbsp;&nbsp;.05 * ({archivo.VENTAS DE LIBROS}-1000) <br>
+Else <br>
+&nbsp;&nbsp;&nbsp;&nbsp;0
+</PRE><a name="316730"></a><h4>@COMISTOTAL</h4><PRE><a name="316731"></a>Sum([{@HARDWARE}, {@SOFTWARE}, {@LIBROS}])
+</PRE><a name="316732"></a><h4>@INDICADOR </h4><PRE><a name="316733"></a>If {@COMISTOTAL} &gt;= 5000 Then <br>
+&nbsp;&nbsp;&nbsp;&nbsp;" **** " <br>
+Else <br>
+&nbsp;&nbsp;&nbsp;&nbsp;""
+</PRE><a name="316734"></a><h4>Resultado</h4><p><a name="316735"></a>Dados estos datos:</p><p><a name="316777"></a> <Table Border="1">
+<tr><td align="left" valign="TOP"><a name="316738"></a>Rep. de ventas
+
+</td><td align="left" valign="TOP"><a name="316740"></a>Ventas 
+hardware
+
+</td><td align="left" valign="TOP"><a name="316742"></a>Ventas 
+software
+
+</td><td align="left" valign="TOP"><a name="316744"></a>Ventas libros
+
+</td></tr>
+<tr><td align="left" valign="TOP"><P><a name="316746"></a>Rep. ventas A</P>
+
+
+</td><td align="left" valign="TOP"><P><a name="316748"></a>4500</P>
+
+
+</td><td align="left" valign="TOP"><P><a name="316750"></a>21000</P>
+
+
+</td><td align="left" valign="TOP"><P><a name="316752"></a>985</P>
+
+
+</td></tr>
+<tr><td align="left" valign="TOP"><P><a name="316754"></a>Rep. ventas B</P>
+
+
+</td><td align="left" valign="TOP"><P><a name="316756"></a>31427</P>
+
+
+</td><td align="left" valign="TOP"><P><a name="316758"></a>41222</P>
+
+
+</td><td align="left" valign="TOP"><P><a name="316760"></a>4470</P>
+
+
+</td></tr>
+<tr><td align="left" valign="TOP"><P><a name="316762"></a>Rep. ventas C</P>
+
+
+</td><td align="left" valign="TOP"><P><a name="316764"></a>22000</P>
+
+
+</td><td align="left" valign="TOP"><P><a name="316766"></a>4687</P>
+
+
+</td><td align="left" valign="TOP"><P><a name="316768"></a>4250</P>
+
+
+</td></tr>
+<tr><td align="left" valign="TOP"><P><a name="316770"></a>Rep. ventas D</P>
+
+
+</td><td align="left" valign="TOP"><P><a name="316772"></a>14000</P>
+
+
+</td><td align="left" valign="TOP"><P><a name="316774"></a>15678</P>
+
+
+</td><td align="left" valign="TOP"><P><a name="316776"></a>2200</P>
+
+
+</td></tr>
+
+</Table></p>
+<p><a name="316778"></a>Las f&#243;rmulas devuelven los siguientes resultados:</p><p><a name="316840"></a> <Table Border="1">
+<tr><td align="left" valign="TOP"><a name="316781"></a>Rep. de ventas
+
+</td><td align="left" valign="TOP"><a name="316783"></a>Hardware
+
+</td><td align="left" valign="TOP"><a name="316785"></a>Software
+
+</td><td align="left" valign="TOP"><a name="316787"></a>Libros
+
+</td><td align="left" valign="TOP"><a name="316789"></a>Total
+
+</td><td align="left" valign="TOP"><a name="316791"></a>Indicado
+r
+
+</td></tr>
+<tr><td align="left" valign="TOP"><P><a name="316793"></a>Rep. ventas A</P>
+
+
+</td><td align="left" valign="TOP"><P><a name="316795"></a>0.00</P>
+
+
+</td><td align="left" valign="TOP"><P><a name="316797"></a>1100.00</P>
+
+
+</td><td align="left" valign="TOP"><P><a name="316799"></a>0.00</P>
+
+
+</td><td align="left" valign="TOP"><P><a name="316801"></a>1100.00</P>
+
+
+</td><td align="left" valign="TOP"><P><br></P>
+
+
+</td></tr>
+<tr><td align="left" valign="TOP"><P><a name="316805"></a>Rep. ventas B</P>
+
+
+</td><td align="left" valign="TOP"><P><a name="316807"></a>3122.20</P>
+
+
+</td><td align="left" valign="TOP"><P><a name="316809"></a>1849.89</P>
+
+
+</td><td align="left" valign="TOP"><P><a name="316811"></a>173.50</P>
+
+
+</td><td align="left" valign="TOP"><P><a name="316813"></a>5145.59</P>
+
+
+</td><td align="left" valign="TOP"><P><a name="316815"></a>****</P>
+
+
+</td></tr>
+<tr><td align="left" valign="TOP"><P><a name="316817"></a>Rep. ventas C</P>
+
+
+</td><td align="left" valign="TOP"><P><a name="316819"></a>1190.00</P>
+
+
+</td><td align="left" valign="TOP"><P><a name="316821"></a>0.00</P>
+
+
+</td><td align="left" valign="TOP"><P><a name="316823"></a>162.50</P>
+
+
+</td><td align="left" valign="TOP"><P><a name="316825"></a>1352.50</P>
+
+
+</td><td align="left" valign="TOP"><P><br></P>
+
+
+</td></tr>
+<tr><td align="left" valign="TOP"><P><a name="316829"></a>Rep. ventas D</P>
+
+
+</td><td align="left" valign="TOP"><P><a name="316831"></a>630.00</P>
+
+
+</td><td align="left" valign="TOP"><P><a name="316833"></a>567.80</P>
+
+
+</td><td align="left" valign="TOP"><P><a name="316835"></a>60.00</P>
+
+
+</td><td align="left" valign="TOP"><P><a name="316837"></a>1257.80</P>
+
+
+</td><td align="left" valign="TOP"><P><br></P>
+
+
+</td></tr>
+
+</Table></p>
+<a name="316841"></a><h4>Explicaci&#243;n</h4><ul type="disc"><a name="316842"></a><li>Las tres f&#243;rmulas (@HARDWARE, @SOFTWARE y @LIBROS) funcionan de la misma forma. 
+<a name="316843"></a><li>Usan el operador If<nobr>-T</nobr>hen<nobr>-E</nobr>lse para probar una condici&#243;n, realizar una acci&#243;n si la condici&#243;n es verdadera; realizar otra si la condici&#243;n es falsa.
+<a name="316844"></a><li>Toman ventas totales de la categor&#237;a, usan el operador de sustracci&#243;n (-) para restar el monto de ventas sobre el cual no se va a pagar comisi&#243;n y prueban para ver si el monto restante es un n&#250;mero positivo (&gt;0). 
+<a name="316845"></a><li>Si es as&#237; (&gt;0), calculan las comisiones usando el operador de multiplicaci&#243;n (*) para multiplicar el porcentaje apropiado de comisi&#243;n (expresado como decimal: .07, .10, .05) por el monto sujeto a comisi&#243;n ({archivo.VENTAS DE HARDWARE}-5000}, etc.). 
+<a name="316846"></a><li>Si el monto restante es un n&#250;mero negativo (&lt;0), no se calcula ninguna comisi&#243;n y la f&#243;rmula imprime un monto cero (0.00).
+<a name="316847"></a><li>@COMISTOTAL usa la funci&#243;n Sum para totalizar las comisiones adeudadas. En vez de incluir los c&#225;lculos para cada f&#243;rmula (doble tiempo y esfuerzo) sustituye el nombre de la f&#243;rmula en lugar de los c&#225;lculos. Cuando el programa encuentra el nombre de la f&#243;rmula sabe usar los c&#225;lculos subyacentes de la(s) f&#243;rmula(s) a las que se hace referencia.
+<a name="316848"></a><li>@INDICADOR usa el operador If<nobr>-T</nobr>hen<nobr>-E</nobr>lse para evaluar los valores calculados por @COMISTOTAL y marcar como (****) a aquellos valores de $5.000 o m&#225;s (&gt;= 5000). @INDICADOR anida con &#233;xito dos niveles de otras f&#243;rmulas: anida @COMISTOTAL, que es una f&#243;rmula que a su vez anida otras tres f&#243;rmulas: @HARDWARE, @SOFTWARE y @LIBROS. Cuando el programa ve @COMISTOTAL, ejecuta todos los c&#225;lculos subyacentes a los que hace referencia esa f&#243;rmula y las f&#243;rmulas que se usan en @COMISTOTAL.
+<a name="316849"></a><li>Los par&#233;ntesis () se usan en toda la f&#243;rmula para controlar el orden de c&#225;lculo.
+</ul><a name="316850"></a><h6>Temas relacionados</h6><p><a name="316854"></a><a href="19_introformulas28.html#316471">F&#243;rmulas en acci&#243;n</a></p>
+<hr><br>
+
+<script  language="JavaScript"><!--
+
+var prev = "19_introformulas31.html";
+var next = "19_introformulas33.html";
+
+function setTopicID() { 
+      var number = "316718"; 
+      return number; 
+}
+
+// --></script>
+
+
+
+
+<SCRIPT>
+
+if (!window.parent.toc && navigator.appName == "Netscape") {
+
+   document.writeln ('<TABLE ALIGN="left" border="0" cellspacing="0" cellpadding="10">');
+   document.writeln ('<TR>');
+   document.write ('<TD ALIGN="left">');
+
+   if (prev != "crw_spTOC.hhc") {
+      document.writeln ('<A HREF="' + prev + '">');
+      document.writeln ('<IMG SRC="prevpage.gif" HEIGHT=17 BORDER=0 ALT="Página anterior"></A>');
+   } else {
+//   window.alert ('no previous page');
+   }
+
+   if (next != "crw_spIX.hhk") {
+      document.writeln ('<A HREF="' + next + '">');
+      document.writeln ('<IMG SRC="nextpage.gif" HEIGHT=17 BORDER=0 ALT="Página siguiente"></A>');
+   } else {
+//   window.alert ('no next page');
+   }
+   document.writeln ('</TD><TD ALIGN="left">');
+   document.writeln ('<A HREF="frameset.htm?TOC">');
+   document.writeln ('<IMG SRC="showtoc.gif" HEIGHT=17 BORDER=0 ALT="Haga clic para ver el contenido"></A></TD>');
+   document.writeln ('<TD ALIGN="left">');
+   document.writeln ('<A HREF="frameset.htm?IDX">');
+   document.writeln ('<IMG SRC="showix.gif" HEIGHT=17 BORDER=0 ALT="Haga clic para ver el índice"></A></TD>');
+   document.writeln ('</TD>');
+   document.writeln ('</TR>');
+   document.writeln ('</TABLE>');
+
+}
+
+</SCRIPT>
+<table align="right" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td align="right"><font size="1">Seagate Software, Inc.<br>
+    <a href="http://www.seagatesoftware.com">http://www.seagatesoftware.com</a><br>
+    Envíe sus comentarios a:<br>
+    <a href="mailto:techpubs@seagatesoftware.com">techpubs@seagatesoftware.com</a><br>
+    </font></td>
+  </tr>
+</table>
+</body>
+</html>
+
+

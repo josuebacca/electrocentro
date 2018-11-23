@@ -1,0 +1,93 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+
+<html>
+<head>
+<title>Operador No igual</title>
+
+<link REL=STYLESHEET TYPE="text/css" HREF="seagate.css">
+
+<!--
+                 ***********************************
+                 * Seagate Software copyright 1999 *
+                 ***********************************
+
+                      Template version: 5.1
+-->
+
+
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" link="#0000FF" vlink="#0000FF" alink="#800080">
+
+
+ 
+<a name="1000024492"></a><h3 class="newpage"> Operador No igual</h3>
+<p><a name="1000024497"></a>Sintaxis Basic y Crystal.</p><a name="1000024498"></a><h5>Uso</h5><p><code><a name="1000024499"></a>x&lt;&gt;y</code></p><p class="example"><a name="1000024500"></a>x no igual a y.</p><p><a name="1000024501"></a>El operador&nbsp;&nbsp;&nbsp;&nbsp; No igual&nbsp;&nbsp;&nbsp;&nbsp; le pide al programa evaluar una expresi&#243;n (x&lt;&gt;y) y devolver un VERDADERO (si <EM>x</EM> es diferente<EM> </EM>de y) o FALSO (si x es igual a Y).</p><a name="1000024502"></a><h5>Examplos</h5><p><a name="1000024507"></a>Los siguientes ejemplos son aplicables a sintaxis Basic y Crystal:</p><p><code><a name="1000024508"></a>{pedidos.CANTIDAD DEL PEDIDO} &lt;&gt; 400</code></p><p class="example"><a name="1000024509"></a>VERDADERO, donde {pedidos.CANTIDAD DEL PEDIDO} es igual a 200 o {pedidos.CANTIDAD DEL PEDIDO} es igual a 401, etc.</p><p><code><a name="1000024510"></a>{pedidos.CANTIDAD DEL PEDIDO} &lt;&gt; 400</code></p><p class="example"><a name="1000024511"></a>FALSO, donde {pedidos.CANTIDAD DEL PEDIDO} es igual a 400..</p><p><code><a name="1000024512"></a>{archivo.DIA} &lt;&gt; "jueves"</code></p><p class="example"><a name="1000024513"></a>VERDADERO, donde {archivo.DIA} = "viernes".</p><p><code><a name="1000024514"></a>{archivo.DIA} &lt;&gt; "jueves"</code></p><p class="example"><a name="1000024515"></a>FALSO, donde {archivo.DIA} = "jueves".</p><p><code><a name="1000024516"></a>{archivo.A MANO} &lt;&gt;0</code></p><p class="example"><a name="1000024517"></a>VERDADERO, donde el valor de {archivo.A MANO} es 10 o -5.</p><p><code><a name="1000024518"></a>{archivo.A MANO}&lt;&gt;0</code></p><p class="example"><a name="1000024519"></a>FALSO, donde el valor de {archivo.A MANO} es cero.</p><p><code><a name="1000024520"></a>{archivo.DISPONIBLE} - {archivo.USADO} &lt;&gt;10</code></p><p class="example"><a name="1000024521"></a>VERDADERO, donde el valor del campo {archivo.DISPONIBLE} menos el valor del campo {archivo.USAOD} da un resultado menos que 10.</p><p><code><a name="1000024522"></a>{archivo.DISPONIBLE} - {archivo.USADO} &lt;&gt;10</code></p><p class="example"><a name="1000024523"></a>FALSO, donde da un valor de 10.</p><a name="1000024524"></a><h5>Comentarios</h5><p><a name="1000018955"></a>Este operador&nbsp;&nbsp;&nbsp;&nbsp; se usa a menudo con el operador&nbsp;&nbsp;&nbsp;&nbsp; If<nobr>-T</nobr>hen<nobr>-E</nobr>lse. Por ejemplo en sintaxis Crystal:</p><p class="code"><a name="1000024530"></a>If {archivo.SEXO} &lt;&gt; "M" Then
+<br><a name="1000024531"></a>&nbsp;&nbsp;&nbsp;&nbsp;"FEMENINO"
+<br><a name="1000024532"></a>Else
+<br><a name="1000024533"></a>&nbsp;&nbsp;&nbsp;&nbsp;"MASCULINO"
+</p><p class="example"><a name="1000024534"></a>Imprime la palabra "FEMENINO" si el valor en el campo {archivo.SEXO}no es igual a M, e imprime la palabra "MASCULINO" en todas las otras situaciones.</p><a name="1000018961"></a><h6>Temas relacionados</h6><p><a name="1000018965"></a><a href="19_introformulas33.html#316857">F&#243;rmula 5</a></p><p><a name="1000018969"></a><a href="19_introformulas39.html#317288">F&#243;rmula 11</a></p><p><a name="1000024539"></a><a href="19_introformulas43.html#317544">F&#243;rmula 15</a></p>
+<hr><br>
+
+<script  language="JavaScript"><!--
+
+var prev = "Operators15.html";
+var next = "Operators17.html";
+
+function setTopicID() { 
+      var number = "1000024492"; 
+      return number; 
+}
+
+// --></script>
+
+
+
+
+<SCRIPT>
+
+if (!window.parent.toc && navigator.appName == "Netscape") {
+
+   document.writeln ('<TABLE ALIGN="left" border="0" cellspacing="0" cellpadding="10">');
+   document.writeln ('<TR>');
+   document.write ('<TD ALIGN="left">');
+
+   if (prev != "crw_spTOC.hhc") {
+      document.writeln ('<A HREF="' + prev + '">');
+      document.writeln ('<IMG SRC="prevpage.gif" HEIGHT=17 BORDER=0 ALT="Página anterior"></A>');
+   } else {
+//   window.alert ('no previous page');
+   }
+
+   if (next != "crw_spIX.hhk") {
+      document.writeln ('<A HREF="' + next + '">');
+      document.writeln ('<IMG SRC="nextpage.gif" HEIGHT=17 BORDER=0 ALT="Página siguiente"></A>');
+   } else {
+//   window.alert ('no next page');
+   }
+   document.writeln ('</TD><TD ALIGN="left">');
+   document.writeln ('<A HREF="frameset.htm?TOC">');
+   document.writeln ('<IMG SRC="showtoc.gif" HEIGHT=17 BORDER=0 ALT="Haga clic para ver el contenido"></A></TD>');
+   document.writeln ('<TD ALIGN="left">');
+   document.writeln ('<A HREF="frameset.htm?IDX">');
+   document.writeln ('<IMG SRC="showix.gif" HEIGHT=17 BORDER=0 ALT="Haga clic para ver el índice"></A></TD>');
+   document.writeln ('</TD>');
+   document.writeln ('</TR>');
+   document.writeln ('</TABLE>');
+
+}
+
+</SCRIPT>
+<table align="right" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td align="right"><font size="1">Seagate Software, Inc.<br>
+    <a href="http://www.seagatesoftware.com">http://www.seagatesoftware.com</a><br>
+    Envíe sus comentarios a:<br>
+    <a href="mailto:techpubs@seagatesoftware.com">techpubs@seagatesoftware.com</a><br>
+    </font></td>
+  </tr>
+</table>
+</body>
+</html>
+
+

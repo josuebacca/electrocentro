@@ -1,0 +1,94 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+
+<html>
+<head>
+<title>Alias</title>
+
+<link REL=STYLESHEET TYPE="text/css" HREF="seagate.css">
+
+<!--
+                 ***********************************
+                 * Seagate Software copyright 1999 *
+                 ***********************************
+
+                      Template version: 5.1
+-->
+
+
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" link="#0000FF" vlink="#0000FF" alink="#800080">
+
+
+ 
+<a name="319871"></a><h3 class="newpage"> Alias</h3>
+<p><a name="319872"></a>Por diversas razones, los nombres y ubicaciones de bases de datos se cambian. Si usted crea un informe y cambia el nombre o ubicaci&#243;n de una tabla o archivo, Seagate Crystal Reports debe encontrar el nuevo nombre y ubicaci&#243;n. Esto es especialmente importante cuando usted crea f&#243;rmulas en su informe que tienen acceso una tabla que tiene un nuevo nombre o que ha sido movida. Corregir la referencia para un solo campo no ser&#237;a dif&#237;cil, pero encontrar cada f&#243;rmula que utiliza &#233;se campo podr&#237;a ser una tarea dif&#237;cil y tediosa.</p><p><a name="327327"></a>Para solucionar este problema, Seagate Crystal Reports utiliza alias para referirse a tablas y archivos de base de datos. Los alias son punteros, dispositivos internos que le dicen a Seagate Crystal Reports d&#243;nde buscar un campo de base de datos. Ahora, si cambia el nombre y ubicaci&#243;n de la base de datos, simplemente debe restablecer el puntero. Vea <a href="24_under_databases5.html#319885">Ubicaci&#243;n de archivos</a>. El nombre del alias no cambia, por lo que sus f&#243;rmulas quedan iguales. Seagate Crystal Reports busca el alias por la ubicaci&#243;n y el nombre, va a la nueva ubicaci&#243;n del campo de base de datos y ejecuta la f&#243;rmula sin ning&#250;n problema.</p><p><a name="356155"></a> <img src="images/ALIASES.gif">
+
+
+</p>
+<p><a name="341427"></a> </p>
+<p><a name="332595"></a>Seagate Crystal Reports asigna a las tablas (de la base de datos) nombres de alias predeterminados en forma autom&#225;tica al momento que usted selecciona por primera vez la tabla o el archivo. Autom&#225;ticamente, el alias coincide con el nombre original de la tabla. En bases de datos donde la tabla de la base de datos es un archivo diferente (por ejemplo, dBASE), el nombre del archivo es usado sin su respectiva extensi&#243;n. Por ejemplo, si usted est&#225; usando un archivo de dBASE llamado COMPANY.DBF, el programa asignar&#225; al archivo el alias COMPANY autom&#225;ticamente. Ustedpuede aceptar este alias predeterminado o asignar uno nuevo a la tabla de la base de datos.</p><p><a name="332596"></a>Usted puede cambiar un alias cuando quiera usando el comando <kbd>Establecer alias</kbd> del men&#250; Base de datos. Sin embargo, si usted ya ha creado f&#243;rmulas en su informe usando el nombre original del alias, necesitar&#225; editar las f&#243;rmulas para poder usar el nuevo alias.</p>
+<hr><br>
+
+<script  language="JavaScript"><!--
+
+var prev = "24_under_databases3.html";
+var next = "24_under_databases5.html";
+
+function setTopicID() { 
+      var number = "319871"; 
+      return number; 
+}
+
+// --></script>
+
+
+
+
+<SCRIPT>
+
+if (!window.parent.toc && navigator.appName == "Netscape") {
+
+   document.writeln ('<TABLE ALIGN="left" border="0" cellspacing="0" cellpadding="10">');
+   document.writeln ('<TR>');
+   document.write ('<TD ALIGN="left">');
+
+   if (prev != "crw_spTOC.hhc") {
+      document.writeln ('<A HREF="' + prev + '">');
+      document.writeln ('<IMG SRC="prevpage.gif" HEIGHT=17 BORDER=0 ALT="Página anterior"></A>');
+   } else {
+//   window.alert ('no previous page');
+   }
+
+   if (next != "crw_spIX.hhk") {
+      document.writeln ('<A HREF="' + next + '">');
+      document.writeln ('<IMG SRC="nextpage.gif" HEIGHT=17 BORDER=0 ALT="Página siguiente"></A>');
+   } else {
+//   window.alert ('no next page');
+   }
+   document.writeln ('</TD><TD ALIGN="left">');
+   document.writeln ('<A HREF="frameset.htm?TOC">');
+   document.writeln ('<IMG SRC="showtoc.gif" HEIGHT=17 BORDER=0 ALT="Haga clic para ver el contenido"></A></TD>');
+   document.writeln ('<TD ALIGN="left">');
+   document.writeln ('<A HREF="frameset.htm?IDX">');
+   document.writeln ('<IMG SRC="showix.gif" HEIGHT=17 BORDER=0 ALT="Haga clic para ver el índice"></A></TD>');
+   document.writeln ('</TD>');
+   document.writeln ('</TR>');
+   document.writeln ('</TABLE>');
+
+}
+
+</SCRIPT>
+<table align="right" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td align="right"><font size="1">Seagate Software, Inc.<br>
+    <a href="http://www.seagatesoftware.com">http://www.seagatesoftware.com</a><br>
+    Envíe sus comentarios a:<br>
+    <a href="mailto:techpubs@seagatesoftware.com">techpubs@seagatesoftware.com</a><br>
+    </font></td>
+  </tr>
+</table>
+</body>
+</html>
+
+

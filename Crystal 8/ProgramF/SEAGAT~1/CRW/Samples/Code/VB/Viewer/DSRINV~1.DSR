@@ -1,0 +1,116 @@
+VERSION 5.00
+Begin {BD4B4E61-F7B8-11D0-964D-00A0C9273C2A} dsrInventory 
+   ClientHeight    =   10020
+   ClientLeft      =   1770
+   ClientTop       =   1350
+   ClientWidth     =   10875
+   OleObjectBlob   =   "dsrInventory.dsx":0000
+End
+Attribute VB_Name = "dsrInventory"
+Attribute VB_GlobalNameSpace = False
+Attribute VB_Creatable = False
+Attribute VB_PredeclaredId = False
+Attribute VB_Exposed = False
+' *************************************************************
+' Purpose: Do some report level manipulation at run-time
+'
+
+Option Explicit
+
+Dim adoRS As ADODB.Recordset
+
+' *************************************************************
+' The Report Initialize section can be used to do report level
+' manipulation.  Here we show how this can be done.
+'
+Private Sub Report_Initialize()
+    Dim SQL As String
+    
+    ' Generate an SQL statement to return the desired result set
+    SQL = " SELECT" & _
+        " Product.`Product ID`, Product.`Product Name`, Product.`Color`, Product.`Size`, Product.`M/F`, Product.`Product Class`," & _
+        " Product_Type.`Product Type Name`, Product_Type.`Picture`," & _
+        " Purchases.`Reorder Level`, Purchases.`Units in Stock`, Purchases.`Units on Order`, Purchases.`Received`" & _
+    " From" & _
+       " (`Product` Product INNER JOIN `Purchases` Purchases ON" & _
+       " Product.`Product ID` = Purchases.`Product ID`)" & _
+       " INNER JOIN `Product Type` Product_Type ON" & _
+       " Product.`Product Type ID` = Product_Type.`Product Type ID`" & _
+    " Where" & _
+        " Product.`Product Name` NOT LIKE 'Xtreme%' AND" & _
+        " Product.`Product Class` = 'Accessory'" & _
+    " Order By" & _
+        " Product_Type.`Product Type Name` ASC," & _
+        " Product.`Product Name` ASC"
+
+    ' Create and bind the ADO Recordset Object
+    Set adoRS = CreateObject("adodb.recordset")
+
+    ' Code for creating the recordset.  Uses the ODBC datasource name
+    ' Xtreme Sample Data.  Make sure that this DSN is properly set up.
+    ' Bind the ADO Recordset object to the Report
+
+    adoRS.Open SQL, "database=Xtreme.mdb;uid=;pwd=;dsn=Xtreme Sample Database", adOpenKeyset, adLockBatchOptimistic
+    Database.SetDataSource adoRS
+End Sub
+
+' *************************************************************
+' Generate a formatting Code for a description of the products
+' Also do some other manipulate of the report at runtime
+'
+Private Sub scnDetails_Format(ByVal pFormattingInfo As Object)
+    If fldColor.Value = Empty And fldSize.Value = "" Then
+        txtDescription.SetText fldMF.Value
+    ElseIf fldSize.Value = "" And fldMF.Value = Empty Then
+        txtDescription.SetText fldColor.Value
+    ElseIf fldColor.Value = Empty And fldMF.Value = Empty Then
+        txtDescription.SetText fldSize.Value
+    ElseIf fldColor.Value = Empty Then
+        txtDescription.SetText fldSize.Value + " / " + fldMF.Value
+    ElseIf fldSize.Value = "" Then
+        txtDescription.SetText fldColor.Value + " / " + fldMF.Value
+    ElseIf fldMF.Value = Empty Then
+        txtDescription.SetText fldColor.Value + " / " + fldSize.Value
+    ElseIf fldColor.Value = Empty And fldSize.Value = "" And fldMF.Value = Empty Then
+        txtDescription.SetText ""
+    Else
+        txtDescription.SetText fldColor.Value + " / " + fldSize.Value + " / " + fldMF.Value
+    End If
+
+    ' Units on Order - If the units are not received then display the number to be ordered
+    If fldReceived.Value = False Then
+        txtUnitsonOrder.SetText fldUnitsonOrder.Value
+    Else
+        txtUnitsonOrder.SetText "0"
+    End If
+
+    'Status Formula
+    If fldUnitsinStock.Value > fldReorderLevel.Value Then
+        txtStatus.SetText "OK"
+        'txtStatus.TextColor = black
+    ElseIf (fldUnitsinStock.Value <= fldReorderLevel.Value) And txtUnitsonOrder.Text = "0" Then
+        txtStatus.SetText "ORDER"
+        txtStatus.TextColor = vbRed
+    ElseIf (fldUnitsinStock.Value <= fldReorderLevel.Value) And txtUnitsonOrder.Text > "0" Then
+        txtStatus.SetText "ON ORDER"
+        txtStatus.TextColor = &H808000    'teal
+    End If
+
+    'Conditional Fomatting for the section
+    If txtStatus.Text = "ORDER" Then
+        scnDetails.BackColor = &HC0C0C0   'silver
+    Else
+        scnDetails.BackColor = vbWhite
+    End If
+End Sub
+
+' *************************************************************
+' Suppress the page header on the first page because the
+' Report Header contains the same info
+'
+Private Sub scnPHa_Format(ByVal pFormattingInfo As Object)
+    If fldPageNumber.Value = 1 Then
+        scnPHa.Suppress = True
+    End If
+End Sub
+

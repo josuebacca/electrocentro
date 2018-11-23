@@ -1,0 +1,145 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+
+<html>
+<head>
+<title>F&#243;rmula 16</title>
+
+<link REL=STYLESHEET TYPE="text/css" HREF="seagate.css">
+
+<!--
+                 ***********************************
+                 * Seagate Software copyright 1999 *
+                 ***********************************
+
+                      Template version: 5.1
+-->
+
+
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" link="#0000FF" vlink="#0000FF" alink="#800080">
+
+
+ 
+<a name="317623"></a><h3 class="newpage"> F&#243;rmula 16</h3>
+<a name="317624"></a><h4>Funciones y operadores usados</h4><p><a name="317625"></a>If<nobr>-T</nobr>hen<nobr>-E</nobr>lse, Agregar (+), Menor que (&lt;), Multiplicar (*)</p><a name="317626"></a><h4>Prop&#243;sito de la f&#243;rmula</h4><p><a name="317627"></a>Un fabricante de productos para jardiner&#237;a otorga un descuento 10-5-5 en los productos de categor&#237;a A y un descuento 15-10-5 en los productos de categor&#237;a B. Tambi&#233;n paga el flete de todos los pedidos de $5.000 o m&#225;s (antes del descuento). Cobra un valor fijo de 4% por flete en todos los pedidos inferiores a $5.000. La gerencia quiere que aparezca una cifra de "Total con flete" en el informe diario de ventas.</p><a name="317628"></a><h4>F&#243;rmula</h4><PRE><a name="317629"></a>If ({archivo.CAT A} + {archivo.CAT B}) &lt; 5000 Then<br>
+&nbsp;&nbsp;&nbsp;&nbsp;1.04 * .95 *.95 *.90 *{archivo.CAT A} + .95 *.90 *.85 <br>
+&nbsp;&nbsp;&nbsp;&nbsp;*{archivo.CAT B}<br>
+Else<br>
+&nbsp;&nbsp;&nbsp;&nbsp;.95 *.95 *.90 *{archivo.CAT A} + .95 *.90 *.85 
+*{archivo.CAT B}
+</PRE><a name="317630"></a><h4>Resultado</h4><p><a name="317656"></a> <Table Border="1">
+<tr><td align="left" valign="TOP"><a name="317633"></a>Cat. A
+
+</td><td align="left" valign="TOP"><a name="317635"></a>Cat. B
+
+</td><td align="left" valign="TOP"><a name="317637"></a>Cat. A+Cat. B
+
+</td><td align="left" valign="TOP"><a name="317639"></a>Ttal Flete
+
+</td></tr>
+<tr><td align="left" valign="TOP"><P><a name="317641"></a>9524</P>
+
+
+</td><td align="left" valign="TOP"><P><a name="317643"></a>1344</P>
+
+
+</td><td align="left" valign="TOP"><P><a name="317645"></a>10868</P>
+
+
+</td><td align="left" valign="TOP"><P><a name="317647"></a>8712.62</P>
+
+
+</td></tr>
+<tr><td align="left" valign="TOP"><P><a name="317649"></a>3424</P>
+
+
+</td><td align="left" valign="TOP"><P><a name="317651"></a>1344</P>
+
+
+</td><td align="left" valign="TOP"><P><a name="317653"></a>4768</P>
+
+
+</td><td align="left" valign="TOP"><P><a name="317655"></a>3908.21</P>
+
+
+</td></tr>
+
+</Table></p>
+<a name="317657"></a><h4>Explicaci&#243;n</h4><ul type="disc"><a name="317658"></a><li>Esta f&#243;rmula usa el operador If<nobr>-T</nobr>hen<nobr>-E</nobr>lse para decir: si la suma de {archivo.CAT A} y {archivo.CAT B} es inferior a $5.000, entonces (Then) multiplicar el precio con descuento por 104% (1,04) para llegar el precio m&#225;s el flete. Si la suma de {archivo.CAT A} y {archivo.CAT B} es superior a $5.000 (Else), simplemente calcular el precio con descuento (sin flete, puesto que el pedido es superior a $5.000).
+<a name="317659"></a><li>La parte If de la expresi&#243;n usa el operador de adici&#243;n (+) para calcular el valor sin descuento de {archivo.CAT A} y {archivo.CAT B}.
+<a name="317660"></a><li>Usa el operador menor que (&lt;) para determinar si la suma de {archivo.CAT A} y {archivo.CAT B} es inferior a $5.000.
+<a name="317661"></a><li>Si la suma es inferior a $5.000, se cumple la parte If de la expresi&#243;n, lo que activa la consecuencia Then.
+<a name="317662"></a><li>La f&#243;rmula usa el operador de multiplicaci&#243;n (*) varias veces, primero para multiplicar el valor de {archivo.CAT A} por 0,90 (10% de descuento), para multiplicar ese resultado por 0,95 (5% de descuento), y para multiplicar ese resultado por 0,95 (5% de descuento) para llegar al segundo monto descontado de {archivo.CAT A}.
+<a name="317663"></a><li>Ejecuta el mismo conjunto de c&#225;lculos con {archivo.CAT B} para determinar el monto descontado para esa categor&#237;a.
+<a name="317664"></a><li>Usa el operador de adici&#243;n (+) para sumar los montos descontados de {archivo.CAT A} y {archivo.CAT B} para llegar al total descontado (antes del flete).
+<a name="317665"></a><li>Finalmente, usa el operador de multiplicaci&#243;n (*) para multiplicar el total descontado por 1,04 (100% + 4% de flete) para llegar al total facturado, incluido el flete.
+<a name="317666"></a><li>Si la suma es $5.000 o m&#225;s, no se cumple la parte If de la expresi&#243;n, lo que activa la consecuencia Else.
+<a name="317667"></a><li>La f&#243;rmula usa el operador de multiplicaci&#243;n (*) varias veces, primero para multiplicar el valor de {archivo.CAT A} por 0,90 (10% de descuento), para multiplicar ese resultado por 0,95 (5% de descuento), y para multiplicar ese resultado por 0,95 (5% de descuento) para determinar el monto descontado de {archivo.CAT A} (sin pago de flete). 
+<a name="317668"></a><li>Ejecuta el mismo conjunto de c&#225;lculos con {archivo.CAT B} para determinar el monto descontado para esa categor&#237;a.
+<a name="317669"></a><li>Usa el operador de adici&#243;n (+) para sumar los montos descontados de {archivo.CAT A} y {archivo.CAT B} para llegar al total final facturado (sin pago de flete).
+</ul><a name="317670"></a><h6>Temas relacionados</h6><p><a name="317674"></a><a href="19_introformulas28.html#316471">F&#243;rmulas en acci&#243;n</a></p>
+<hr><br>
+
+<script  language="JavaScript"><!--
+
+var prev = "19_introformulas43.html";
+var next = "19_introformulas45.html";
+
+function setTopicID() { 
+      var number = "317623"; 
+      return number; 
+}
+
+// --></script>
+
+
+
+
+<SCRIPT>
+
+if (!window.parent.toc && navigator.appName == "Netscape") {
+
+   document.writeln ('<TABLE ALIGN="left" border="0" cellspacing="0" cellpadding="10">');
+   document.writeln ('<TR>');
+   document.write ('<TD ALIGN="left">');
+
+   if (prev != "crw_spTOC.hhc") {
+      document.writeln ('<A HREF="' + prev + '">');
+      document.writeln ('<IMG SRC="prevpage.gif" HEIGHT=17 BORDER=0 ALT="Página anterior"></A>');
+   } else {
+//   window.alert ('no previous page');
+   }
+
+   if (next != "crw_spIX.hhk") {
+      document.writeln ('<A HREF="' + next + '">');
+      document.writeln ('<IMG SRC="nextpage.gif" HEIGHT=17 BORDER=0 ALT="Página siguiente"></A>');
+   } else {
+//   window.alert ('no next page');
+   }
+   document.writeln ('</TD><TD ALIGN="left">');
+   document.writeln ('<A HREF="frameset.htm?TOC">');
+   document.writeln ('<IMG SRC="showtoc.gif" HEIGHT=17 BORDER=0 ALT="Haga clic para ver el contenido"></A></TD>');
+   document.writeln ('<TD ALIGN="left">');
+   document.writeln ('<A HREF="frameset.htm?IDX">');
+   document.writeln ('<IMG SRC="showix.gif" HEIGHT=17 BORDER=0 ALT="Haga clic para ver el índice"></A></TD>');
+   document.writeln ('</TD>');
+   document.writeln ('</TR>');
+   document.writeln ('</TABLE>');
+
+}
+
+</SCRIPT>
+<table align="right" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td align="right"><font size="1">Seagate Software, Inc.<br>
+    <a href="http://www.seagatesoftware.com">http://www.seagatesoftware.com</a><br>
+    Envíe sus comentarios a:<br>
+    <a href="mailto:techpubs@seagatesoftware.com">techpubs@seagatesoftware.com</a><br>
+    </font></td>
+  </tr>
+</table>
+</body>
+</html>
+
+

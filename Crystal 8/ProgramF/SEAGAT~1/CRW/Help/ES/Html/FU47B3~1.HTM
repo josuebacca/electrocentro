@@ -1,0 +1,190 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+
+<html>
+<head>
+<title>DateDiff</title>
+
+<link REL=STYLESHEET TYPE="text/css" HREF="seagate.css">
+
+<!--
+                 ***********************************
+                 * Seagate Software copyright 1999 *
+                 ***********************************
+
+                      Template version: 5.1
+-->
+
+
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" link="#0000FF" vlink="#0000FF" alink="#800080">
+
+
+ 
+<a name="1000548748"></a><h3 class="newpage"> DateDiff</h3>
+<p><a name="1000693179"></a>Sintaxis b&#225;sica y Crystal.</p><a name="1000548749"></a><h5>Sobrecargas</h5><ul type="disc"><a name="1000548750"></a><li>DateDiff (tipoIntervalo, fechaHoraInicio, fechaHoraFin)
+<a name="1000548751"></a><li>DateDiff (tipoIntervalo, fechaHoraInicio, fechaHoraFin, primerD&#237;aDeLaSemana)
+</ul><a name="1000548752"></a><h5>Argumentos</h5><ul type="disc"><a name="1000548753"></a><li>tipoIntervalo es una expresi&#243;n Cadena que corresponde al intervalo de tiempo que Ud. usa para calcular la diferencia entre fechaHoraInicio y fechaHoraFin. Los valores posibles pueden ser:
+<p><a name="1000697348"></a> <Table Border="1">
+<tr><th align="left" valign="bottom"><a name="1000697305"></a>Valor 
+tipo de 
+interval
+o
+
+</th><th align="left" valign="bottom"><a name="1000697307"></a>Descripci&#243;n
+
+</th></tr>
+<tr><td align="left" valign="TOP"><P><a name="1000697309"></a>aaaa</P>
+
+
+</td><td align="left" valign="TOP"><P><a name="1000697311"></a>A&#241;o</P>
+
+
+</td></tr>
+<tr><td align="left" valign="TOP"><P><a name="1000697313"></a>t</P>
+
+
+</td><td align="left" valign="TOP"><P><a name="1000697315"></a>Trimestre </P>
+
+
+</td></tr>
+<tr><td align="left" valign="TOP"><P><a name="1000697317"></a>m</P>
+
+
+</td><td align="left" valign="TOP"><P><a name="1000697319"></a>Mes</P>
+
+
+</td></tr>
+<tr><td align="left" valign="TOP"><P><a name="1000697321"></a>a</P>
+
+
+</td><td align="left" valign="TOP"><P><a name="1000697323"></a>D&#237;a del a&#241;o</P>
+
+
+</td></tr>
+<tr><td align="left" valign="TOP"><P><a name="1000697325"></a>d</P>
+
+
+</td><td align="left" valign="TOP"><P><a name="1000697327"></a>D&#237;a  (tanto "a" como "d" encuentran la diferencia en d&#237;as)</P>
+
+
+</td></tr>
+<tr><td align="left" valign="TOP"><P><a name="1000697329"></a>s</P>
+
+
+</td><td align="left" valign="TOP"><P><a name="1000697331"></a>N&#250;mero de semanas entre fechaHoraInicio y fechaHoraFin</P>
+
+
+</td></tr>
+<tr><td align="left" valign="TOP"><P><a name="1000697333"></a>ss</P>
+
+
+</td><td align="left" valign="TOP"><P><a name="1000697335"></a>N&#250;mero de primerD&#237;aDeLaSemana entre fechaHoraInicio y fechaHoraFin</P>
+
+
+</td></tr>
+<tr><td align="left" valign="TOP"><P><a name="1000697337"></a>h</P>
+
+
+</td><td align="left" valign="TOP"><P><a name="1000697339"></a>Hora</P>
+
+
+</td></tr>
+<tr><td align="left" valign="TOP"><P><a name="1000697341"></a>n</P>
+
+
+</td><td align="left" valign="TOP"><P><a name="1000697343"></a>Minuto</P>
+
+
+</td></tr>
+<tr><td align="left" valign="TOP"><P><a name="1000697345"></a>s</P>
+
+
+</td><td align="left" valign="TOP"><P><a name="1000697347"></a>Segundo</P>
+
+
+</td></tr>
+
+</Table></p>
+<a name="1000548764"></a><li>fechaHoraInicio es el primer valor Fecha/hora que se ha usado para calcular la diferencia.
+<a name="1000548765"></a><li>fechaHoraFin es el segundo valor Fecha/hora que se ha usado para calcular la diferencia.
+<a name="1000707543"></a><li>primerD&#237;aDeLaSemana es una constante opcional que especifica el primer d&#237;a de la semana.   Si no se especifica, se presupone crDomingo. Vea <a href="Operators70.html#1000020886">Constantes de d&#237;a de la semana</a>.
+</ul><a name="1000707544"></a><h5>Devuelve </h5><p><a name="1000548768"></a>Un valor N&#250;mero.</p><a name="1000548769"></a><h5>Acci&#243;n</h5><p><a name="1000548770"></a>DateDiff devuelve un n&#250;mero de intervalos de tiempo entre dos fechas especificadas.  </p><a name="1000548771"></a><h5>Ejemplo(s)</h5><p><a name="1000548772"></a>Los siguientes ejemplos son aplicables a las sintaxis b&#225;sica y Crystal:</p><p><a name="1000548774"></a>Use DateDiff con el tipo de par&#225;metro de intervalo "d" o "a" para encontrar el n&#250;mero de d&#237;as entre dos fechas:</p><p><code><a name="1000548775"></a>DateDiff ("d", #10/7/1999#, #10/10/1999#)</code></p><p class="example"><a name="1000548776"></a>Devuelve 3.</p><p><a name="1000548778"></a>Use DateDiff con el tipo de par&#225;metro de intervalo "aaaa" para encontrar el n&#250;mero de a&#241;os de diferencia entre dos fechas.   Este uso de DateDiff es lo mismo que encontrar la diferencia entre el a&#241;o de fechaHoraFin y el a&#241;o de fechaHoraInicio.</p><p><code><a name="1000548779"></a>DateDiff ("aaaa", #10/7/1999#, #2/10/2005#)</code></p><p class="example"><a name="1000548780"></a>Devuelve 6.</p><p><code><a name="1000548781"></a>DateDiff ("aaaa", #12/31/1999#, #1/1/2000#)</code></p><p class="example"><a name="1000548782"></a>Devuelve 1 (una diferencia de 1 a&#241;o), aunque s&#243;lo hay 1 d&#237;a de diferencia entre ambas fechas.  </p><p><code><a name="1000548783"></a>DateDiff ("aaaa", #1/1/1999#, #12/31/1999#)</code></p><p class="example"><a name="1000548784"></a>Devuelve 0 (una diferencia de 0 a&#241;os), aunque hay una diferencia de 364 d&#237;as.  </p><p><a name="1000548785"></a>Suponga que en los ejemplos anteriores la primera fecha es la fecha en la que adquiri&#243; un fondo mutuo y que la segunda fecha es la fecha en que lo vendi&#243;.   La compa&#241;&#237;a de fondos mutuos debe enviarle un informe anual por cada a&#241;o en que Ud. posey&#243; unidades en el fondo.   Por lo tanto, en los ejemplos anteriores, Ud. recibir&#237;a  7, 2 y 1 informes anuales, respectivamente.   </p><p><a name="1000548787"></a>Use DateDiff con el par&#225;metro "t" para encontrar la diferencia del n&#250;mero de trimestres (per&#237;odos de 3 meses) entre ambas fechas.</p><p><code><a name="1000548788"></a>DateDiff ("t", #10/6/1999#, #5/20/2003#)</code></p><p class="example"><a name="1000548789"></a>Devuelve 14.</p><p><code><a name="1000548790"></a>DateDiff ("t", #3/31/1999#, #4/1/1999#)</code></p><p class="example"><a name="1000548791"></a>Devuelve 1. Las dos fechas caen dentro de trimestres contiguos.  </p><p><code><a name="1000548792"></a>DateDiff ("t", #1/1/1999#, #3/31/1999#)</code></p><p class="example"><a name="1000548793"></a>Devuelve 0. Las dos fechas caen dentro del mismo trimestre.  </p><p><a name="1000548794"></a>Suponga que la compa&#241;&#237;a de fondos mutuos en el  ejemplo "aaaa" env&#237;o informes trimestrales.   As&#237;, en los ejemplos anteriores, tendr&#237;a que enviar 15, 2 y 1 informes trimestrales, respectivamente.</p><p><a name="1000548796"></a>Use DateDiff con el par&#225;metro "m" para encontrar la diferencia del n&#250;mero de meses entre dos fechas. </p><p><code><a name="1000548797"></a>DateDiff ("m", #3/15/1999#, #7/13/1999#)</code></p><p class="example"><a name="1000548798"></a>Devuelve 4.</p><p><a name="1000548800"></a>Use DateDiff con el par&#225;metro "s" para calcular el n&#250;mero de semanas entre dos fechas.  Por ejemplo, si fechaHoraInicio es un martes, DateDiff cuenta el n&#250;mero de martes entre fechaHoraInicio y fechaHoraFin, sin incluir el martes inicial de fechaHoraInicio. Note, sin embargo, que si fechaHoraFin es un martes, cuenta fechaHoraFin.   </p><p><code><a name="1000548801"></a>DateDiff ("s", #10/19/1999#, #10/25/1999#)</code></p><p class="example"><a name="1000548802"></a>Devuelve 0.</p><p><code><a name="1000548803"></a>DateDiff ("s", #10/19/1999#, #10/26/1999#)</code></p><p class="example"><a name="1000548804"></a>Devuelve 1.</p><p><a name="1000548806"></a>Use DateDiff con el par&#225;metro "ss" para calcular el n&#250;mero de primerD&#237;aDeLaSemana que existe entre dos fechas.  En la funci&#243;n DateDiff, el par&#225;metro "ss" es el &#250;nico que hace uso del argumento primerD&#237;aDeLaSemana. Todos los dem&#225;s tipos de par&#225;metros de intervalo la pasan por alto.   Por ejemplo, si primerD&#237;aDeLaSemana es crWensday, cuenta el n&#250;mero de d&#237;as mi&#233;rcoles entre fechaHoraInicio y fechaHoraFin. No cuenta fechaHoraInicio ni siquiera si fechaHoraInicio cae un d&#237;a mi&#233;rcoles, pero s&#237; cuenta fechaHoraFin si fechaHoraFin cae un d&#237;a mi&#233;rcoles.   Por ejemplo, observe que el 6, 13, 20 y 27 de octubre caen en d&#237;a mi&#233;rcoles en 1999.</p><p><code><a name="1000548807"></a>DateDiff ("ss", #10/5/1999#, #10/29/1999#, crWensday)</code></p><p class="example"><a name="1000548808"></a>Devuelve 4.</p><p><code><a name="1000548809"></a>DateDiff ("ss", #10/6/1999#, #10/29/1999#, crWensday)</code></p><p class="example"><a name="1000548810"></a>Devuelve 3.</p><p><code><a name="1000548811"></a>DateDiff ("ss", #10/5/1999#, #10/27/1999#, crWensday)</code></p><p class="example"><a name="1000548812"></a>Devuelve 4.</p><p><a name="1000548813"></a>Por ejemplo, suponga que desea calcular el n&#250;mero de d&#237;as entre la fecha de pedido y la fecha de env&#237;o, excluyendo los d&#237;as s&#225;bado y domingo.  </p><p class="code"><a name="1000548814"></a>Sintaxis b&#225;sica Rem
+<br><a name="1000548815"></a>Dim d1, d2
+<br><a name="1000548816"></a>d1 = {pedidos.FECHA DEL PEDIDO}
+<br><a name="1000548817"></a>d2 = {Pedidos.Fecha de Env&#237;o}
+<br><a name="1000548818"></a>formula = DateDiff("d", d1, d2) - _
+<br><a name="1000548819"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;DateDiff("ss", d1, d2, crSaturday) - _
+<br><a name="1000548820"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;DateDiff("ss", d1, d2, crSunday)
+<br><a name="1000548821"></a>
+<br><a name="1000548822"></a>Sintaxis Crystal
+<br><a name="1000548823"></a>Local DateTimeVar d := {pedidos.FECHA DEL PEDIDO};
+<br><a name="1000548824"></a>Local DateTimeVar d2 := {Pedidos.Fecha de Env&#237;o};
+<br><a name="1000548825"></a>DateDiff ("d", d1, d2) - 
+<br><a name="1000548826"></a>&nbsp;&nbsp;&nbsp;&nbsp;DateDiff ("ss", d1, d2, crSaturday) -
+<br><a name="1000548827"></a>&nbsp;&nbsp;&nbsp;&nbsp;DateDiff ("ss", d1, d2, crSunday)
+</p><a name="1000548828"></a><h5>Comentario</h5><p><a name="1000548829"></a>Esta funci&#243;n est&#225; dise&#241;ada para trabajar exactamente como la funci&#243;n de Visual Basic del mismo nombre.</p>
+<hr><br>
+
+<script  language="JavaScript"><!--
+
+var prev = "Functions128.html";
+var next = "Functions130.html";
+
+function setTopicID() { 
+      var number = "1000548748"; 
+      return number; 
+}
+
+// --></script>
+
+
+
+
+<SCRIPT>
+
+if (!window.parent.toc && navigator.appName == "Netscape") {
+
+   document.writeln ('<TABLE ALIGN="left" border="0" cellspacing="0" cellpadding="10">');
+   document.writeln ('<TR>');
+   document.write ('<TD ALIGN="left">');
+
+   if (prev != "crw_spTOC.hhc") {
+      document.writeln ('<A HREF="' + prev + '">');
+      document.writeln ('<IMG SRC="prevpage.gif" HEIGHT=17 BORDER=0 ALT="Página anterior"></A>');
+   } else {
+//   window.alert ('no previous page');
+   }
+
+   if (next != "crw_spIX.hhk") {
+      document.writeln ('<A HREF="' + next + '">');
+      document.writeln ('<IMG SRC="nextpage.gif" HEIGHT=17 BORDER=0 ALT="Página siguiente"></A>');
+   } else {
+//   window.alert ('no next page');
+   }
+   document.writeln ('</TD><TD ALIGN="left">');
+   document.writeln ('<A HREF="frameset.htm?TOC">');
+   document.writeln ('<IMG SRC="showtoc.gif" HEIGHT=17 BORDER=0 ALT="Haga clic para ver el contenido"></A></TD>');
+   document.writeln ('<TD ALIGN="left">');
+   document.writeln ('<A HREF="frameset.htm?IDX">');
+   document.writeln ('<IMG SRC="showix.gif" HEIGHT=17 BORDER=0 ALT="Haga clic para ver el índice"></A></TD>');
+   document.writeln ('</TD>');
+   document.writeln ('</TR>');
+   document.writeln ('</TABLE>');
+
+}
+
+</SCRIPT>
+<table align="right" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td align="right"><font size="1">Seagate Software, Inc.<br>
+    <a href="http://www.seagatesoftware.com">http://www.seagatesoftware.com</a><br>
+    Envíe sus comentarios a:<br>
+    <a href="mailto:techpubs@seagatesoftware.com">techpubs@seagatesoftware.com</a><br>
+    </font></td>
+  </tr>
+</table>
+</body>
+</html>
+
+

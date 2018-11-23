@@ -1,0 +1,92 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+
+<html>
+<head>
+<title>FRDividendYield (dividendo, precioDeMercado)</title>
+
+<link REL=STYLESHEET TYPE="text/css" HREF="seagate.css">
+
+<!--
+                 ***********************************
+                 * Seagate Software copyright 1999 *
+                 ***********************************
+
+                      Template version: 5.1
+-->
+
+
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" link="#0000FF" vlink="#0000FF" alink="#800080">
+
+
+ 
+<a name="1000592253"></a><h3 class="newpage"> FRDividendYield (dividendo, precioDeMercado)</h3>
+<p><a name="1000723888"></a>Sintaxis b&#225;sica y Crystal.</p><a name="1000592257"></a><h5>Formato</h5><p><code><a name="1000592259"></a>FRDividendYield (dividendo, precioDeMercado)</code></p><a name="1000592260"></a><h5>Argumentos</h5><ul type="disc"><a name="1000592261"></a><li>dividendo es un n&#250;mero o f&#243;rmula. dividendo es el dividendo anual indicado por acci&#243;n com&#250;n.
+<a name="1000592262"></a><li>precioDeMercado es un n&#250;mero o f&#243;rmula. precioDeMercado es el precio de venta actual de la acci&#243;n com&#250;n de una compa&#241;&#237;a. Esta informaci&#243;n se ofrece p&#250;blicamente si las acciones de una compa&#241;&#237;a se venden en una bolsa de valores. 
+</ul><a name="1000592263"></a><h5>Acci&#243;n</h5><p><a name="1000592264"></a>FRDividendYield devuelve la relaci&#243;n entre Dividendo y precioDeMercado (por ejemplo, DividendYield = Dividendo / precioDeMercado).</p><a name="1000592266"></a><h5>Uso(s) t&#237;pico(s)</h5><p><a name="1000592267"></a>Esta relaci&#243;n se usa como una indicaci&#243;n del rendimiento de inversi&#243;n para un inversionista de acciones comunes. Es una comparaci&#243;n superficial entre las acciones de diferentes compa&#241;&#237;as. Algunos analistas tambi&#233;n podr&#237;an usar la misma funci&#243;n para calcular el rendimiento de la acci&#243;n preferida.</p><a name="1000592268"></a><h5>Ejemplo(s)</h5><p><a name="1000592269"></a>Los siguientes ejemplos son aplicables a las sintaxis b&#225;sica y Crystal:</p><p><code><a name="1000592270"></a>FRDividendYield(3,25) </code></p><p class="example"><a name="1000592271"></a>Devuelve 0.12.</p><p><code><a name="1000592272"></a>FRDividendYield(5, 80) </code></p><p class="example"><a name="1000592273"></a>Devuelve 0.0625.</p><p><a name="1000686165"></a><font color="darkblue"><b>Nota:   &nbsp;&nbsp;&nbsp;</b></font>Ninguno de los argumentos de entrada pueden ser negativos; debe revisar si hay valores negativos antes de pasar los argumentos de entrada.</p>
+<a name="1000829513"></a><h5>Comentario</h5><p><a name="1000592281"></a>FRDividendYield es una de las muchas herramientas para an&#225;lisis financiero que se usan para interpretar la posici&#243;n financiera de una compa&#241;&#237;a. Como en el caso de todas las relaciones, se debe usar con precauci&#243;n. Se puede usar s&#243;lo como una gu&#237;a y no como prueba firme para formar una opini&#243;n sobre el estado financiero de una compa&#241;&#237;a. </p><p><a name="1000592282"></a>Ninguna de las relaciones se puede usar exclusivamente para hacer an&#225;lisis financieros y no hay reglas fijas sobre los resultados de las relaciones. Aparte de las diferencias entre los tipos de industrias, el resultado var&#237;a entre las compa&#241;&#237;as diferentes dentro de la misma industria y dentro de per&#237;odos de cuenta diferentes. Los resultados s&#243;lo se deben usar para hacer comparaciones relativas y an&#225;lisis de tendencias, y no se deben tratar como algo absoluto.</p>
+<hr><br>
+
+<script  language="JavaScript"><!--
+
+var prev = "Functions234.html";
+var next = "Functions236.html";
+
+function setTopicID() { 
+      var number = "1000592253"; 
+      return number; 
+}
+
+// --></script>
+
+
+
+
+<SCRIPT>
+
+if (!window.parent.toc && navigator.appName == "Netscape") {
+
+   document.writeln ('<TABLE ALIGN="left" border="0" cellspacing="0" cellpadding="10">');
+   document.writeln ('<TR>');
+   document.write ('<TD ALIGN="left">');
+
+   if (prev != "crw_spTOC.hhc") {
+      document.writeln ('<A HREF="' + prev + '">');
+      document.writeln ('<IMG SRC="prevpage.gif" HEIGHT=17 BORDER=0 ALT="Página anterior"></A>');
+   } else {
+//   window.alert ('no previous page');
+   }
+
+   if (next != "crw_spIX.hhk") {
+      document.writeln ('<A HREF="' + next + '">');
+      document.writeln ('<IMG SRC="nextpage.gif" HEIGHT=17 BORDER=0 ALT="Página siguiente"></A>');
+   } else {
+//   window.alert ('no next page');
+   }
+   document.writeln ('</TD><TD ALIGN="left">');
+   document.writeln ('<A HREF="frameset.htm?TOC">');
+   document.writeln ('<IMG SRC="showtoc.gif" HEIGHT=17 BORDER=0 ALT="Haga clic para ver el contenido"></A></TD>');
+   document.writeln ('<TD ALIGN="left">');
+   document.writeln ('<A HREF="frameset.htm?IDX">');
+   document.writeln ('<IMG SRC="showix.gif" HEIGHT=17 BORDER=0 ALT="Haga clic para ver el índice"></A></TD>');
+   document.writeln ('</TD>');
+   document.writeln ('</TR>');
+   document.writeln ('</TABLE>');
+
+}
+
+</SCRIPT>
+<table align="right" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td align="right"><font size="1">Seagate Software, Inc.<br>
+    <a href="http://www.seagatesoftware.com">http://www.seagatesoftware.com</a><br>
+    Envíe sus comentarios a:<br>
+    <a href="mailto:techpubs@seagatesoftware.com">techpubs@seagatesoftware.com</a><br>
+    </font></td>
+  </tr>
+</table>
+</body>
+</html>
+
+

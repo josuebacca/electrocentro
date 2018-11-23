@@ -1,0 +1,95 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+
+<html>
+<head>
+<title>StrCmp (cadena1, cadena2), StrCmp (cadena1, cadena2, comparar)</title>
+
+<link REL=STYLESHEET TYPE="text/css" HREF="seagate.css">
+
+<!--
+                 ***********************************
+                 * Seagate Software copyright 1999 *
+                 ***********************************
+
+                      Template version: 5.1
+-->
+
+
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" link="#0000FF" vlink="#0000FF" alink="#800080">
+
+
+ 
+<a name="1000853534"></a><h3 class="newpage"> StrCmp (cadena1, cadena2), StrCmp (cadena1, cadena2, comparar)</h3>
+<p><a name="1000853535"></a>Sintaxis b&#225;sica y Crystal.</p><a name="1000853536"></a><h5>Argumentos</h5><ul type="disc"><a name="1000853537"></a><li><EM>cadena1</EM> es la primer cadena de caracteres a ser comparada.
+<a name="1000853538"></a><li><EM>cadena2</EM> es la segunda cadena de caracteres a ser comparada.
+<a name="1000853539"></a><li>comparar es un valor Num&#233;rico opcional que indica el tipo de cadena de comparaci&#243;n a usar:
+<ul type="disc"><ul type="disc"><a name="1000853540"></a><li> Realiza una comparaci&#243;n, que es sensible a may&#250;sculas y min&#250;sculas<a name="1000853541"></a><li> Realiza una comparaci&#243;n, que es sensible a may&#250;sculas y min&#250;sculas<p class="indent"><a name="1000853542"></a>Si se omite, se realiza una comparaci&#243;n sensible a may&#250;sculas y min&#250;sculas.</p></ul></ul></ul><a name="1000853543"></a><h5>Devuelve </h5><p><a name="1000853544"></a>Un n&#250;mero entero donde&nbsp; :</p><ul type="disc"><a name="1000853545"></a><li>-1 = Menor Que
+<a name="1000853546"></a><li>0 = Igual A
+<a name="1000853547"></a><li>1 = Mayor Que
+</ul><a name="1000853548"></a><h5>Acci&#243;n</h5><p><a name="1000853549"></a>La funci&#243;n StrCmp compara dos cadenas. </p><a name="1000853550"></a><h5>Uso(s) t&#237;pico(s)</h5><p><a name="1000853551"></a>Utilice esta funci&#243;n para determinar si dos valores de cadena son id&#233;nticos. </p><a name="1000853552"></a><h5>Ejemplo(s)</h5><p><a name="1000853553"></a>Los siguientes ejemplos son aplicables a las sintaxis b&#225;sica y Crystal:</p><p><code><a name="1000853554"></a>StrCmp("abcd", "aa") </code></p><p class="example"><a name="1000853555"></a>Devuelve = 1.</p><p><code><a name="1000853556"></a>StrCmp("abcd", "aa", 1) </code></p><p class="example"><a name="1000853557"></a>Devuelve = 1.</p><p><code><a name="1000853558"></a>StrCmp ("abcd", "ac") </code></p><p class="example"><a name="1000853559"></a>Devuelve = -1.</p><p><code><a name="1000853560"></a>StrCmp ("aa", "aa") </code></p><p class="example"><a name="1000853561"></a>Devuelve = 0.</p><a name="1000853562"></a><h5>Comentario(s) </h5><p><a name="1000853563"></a>Esta funci&#243;n est&#225; dise&#241;ada para trabajar exactamente como la funci&#243;n de Visual Basic del mismo nombre.</p>
+<hr><br>
+
+<script  language="JavaScript"><!--
+
+var prev = "Functions90.html";
+var next = "Functions92.html";
+
+function setTopicID() { 
+      var number = "1000853534"; 
+      return number; 
+}
+
+// --></script>
+
+
+
+
+<SCRIPT>
+
+if (!window.parent.toc && navigator.appName == "Netscape") {
+
+   document.writeln ('<TABLE ALIGN="left" border="0" cellspacing="0" cellpadding="10">');
+   document.writeln ('<TR>');
+   document.write ('<TD ALIGN="left">');
+
+   if (prev != "crw_spTOC.hhc") {
+      document.writeln ('<A HREF="' + prev + '">');
+      document.writeln ('<IMG SRC="prevpage.gif" HEIGHT=17 BORDER=0 ALT="Página anterior"></A>');
+   } else {
+//   window.alert ('no previous page');
+   }
+
+   if (next != "crw_spIX.hhk") {
+      document.writeln ('<A HREF="' + next + '">');
+      document.writeln ('<IMG SRC="nextpage.gif" HEIGHT=17 BORDER=0 ALT="Página siguiente"></A>');
+   } else {
+//   window.alert ('no next page');
+   }
+   document.writeln ('</TD><TD ALIGN="left">');
+   document.writeln ('<A HREF="frameset.htm?TOC">');
+   document.writeln ('<IMG SRC="showtoc.gif" HEIGHT=17 BORDER=0 ALT="Haga clic para ver el contenido"></A></TD>');
+   document.writeln ('<TD ALIGN="left">');
+   document.writeln ('<A HREF="frameset.htm?IDX">');
+   document.writeln ('<IMG SRC="showix.gif" HEIGHT=17 BORDER=0 ALT="Haga clic para ver el índice"></A></TD>');
+   document.writeln ('</TD>');
+   document.writeln ('</TR>');
+   document.writeln ('</TABLE>');
+
+}
+
+</SCRIPT>
+<table align="right" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td align="right"><font size="1">Seagate Software, Inc.<br>
+    <a href="http://www.seagatesoftware.com">http://www.seagatesoftware.com</a><br>
+    Envíe sus comentarios a:<br>
+    <a href="mailto:techpubs@seagatesoftware.com">techpubs@seagatesoftware.com</a><br>
+    </font></td>
+  </tr>
+</table>
+</body>
+</html>
+
+

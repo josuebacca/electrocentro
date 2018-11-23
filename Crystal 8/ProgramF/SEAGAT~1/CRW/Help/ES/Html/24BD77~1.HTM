@@ -1,0 +1,212 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+
+<html>
+<head>
+<title>Uni&#243;n Igual que [=]</title>
+
+<link REL=STYLESHEET TYPE="text/css" HREF="seagate.css">
+
+<!--
+                 ***********************************
+                 * Seagate Software copyright 1999 *
+                 ***********************************
+
+                      Template version: 5.1
+-->
+
+
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" link="#0000FF" vlink="#0000FF" alink="#800080">
+
+
+ 
+<a name="321618"></a><h4 class="newpage"> Uni&#243;n Igual que [=]</h4><p><a name="321619"></a>El conjunto de resultados de una uni&#243;n Igual que, incluye todos los registros donde el campo vinculado en ambas tablas es una coincidencia exacta. En el siguiente ejemplo, la tabla Clientes est&#225; vinculada a la tabla Pedidos por el campo Id del Cliente. Cuando una Id del Cliente se encuentra en la tabla Pedidos que coincide con la Id del Cliente de la tabla Clientes, la informaci&#243;n es mostrada para los registros correspondientes en ambas tablas.</p><p><a name="321620"></a>SQL usa la siguiente sintaxis para describir una uni&#243;n Igual que:</p><PRE><a name="321621"></a>SELECT Cliente.'Id del Cliente',<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Cliente.'Nombre de Cliente',<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Pedidos.'Monto del Pedido'<br>
+FROM 'Cliente' Cliente,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;'Pedidos' Pedidos<br>
+WHERE Cliente.Id del Cliente =<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Pedidos.Id del Cliente
+</PRE><p><a name="321622"></a>Este enunciado produce los siguientes datos:</p><p><a name="321696"></a> <Table Border="1">
+<tr><th align="left" valign="bottom"><a name="321625"></a>Tabla Clientes
+
+</th><th align="left" valign="bottom"><a name="321627"></a>Tabla Clientes
+
+</th><th align="left" valign="bottom"><a name="321629"></a>Tabla Pedidos
+
+</th></tr>
+<tr><th align="left" valign="bottom"><a name="321631"></a>Id. del Cliente
+
+</th><th align="left" valign="bottom"><a name="321633"></a>Nombre de Cliente
+
+</th><th align="left" valign="bottom"><a name="321635"></a>Monto del Pedido
+
+</th></tr>
+<tr><td align="left" valign="TOP"><P><a name="321637"></a>52</P>
+
+
+</td><td align="left" valign="TOP"><P><a name="321639"></a>Allez Distribution</P>
+
+
+</td><td align="left" valign="TOP"><P><a name="321641"></a>25141.50</P>
+
+
+</td></tr>
+<tr><td align="left" valign="TOP"><P><a name="321643"></a>53</P>
+
+
+</td><td align="left" valign="TOP"><P><a name="321645"></a>BG Mountain Inc.</P>
+
+
+</td><td align="left" valign="TOP"><P><a name="321647"></a>19164.30</P>
+
+
+</td></tr>
+<tr><td align="left" valign="TOP"><P><a name="321649"></a>53</P>
+
+
+</td><td align="left" valign="TOP"><P><a name="321651"></a>BG Mountain Inc.</P>
+
+
+</td><td align="left" valign="TOP"><P><a name="321653"></a>1683.60</P>
+
+
+</td></tr>
+<tr><td align="left" valign="TOP"><P><a name="321655"></a>57</P>
+
+
+</td><td align="left" valign="TOP"><P><a name="321657"></a>Hansen MTB Inc.</P>
+
+
+</td><td align="left" valign="TOP"><P><a name="321659"></a>15716.40</P>
+
+
+</td></tr>
+<tr><td align="left" valign="TOP"><P><a name="321661"></a>58</P>
+
+
+</td><td align="left" valign="TOP"><P><a name="321663"></a>La Bomba de Bicicleta</P>
+
+
+</td><td align="left" valign="TOP"><P><a name="321665"></a>1956.20</P>
+
+
+</td></tr>
+<tr><td align="left" valign="TOP"><P><a name="321667"></a>60</P>
+
+
+</td><td align="left" valign="TOP"><P><a name="321669"></a>Mountain Toad</P>
+
+
+</td><td align="left" valign="TOP"><P><a name="321671"></a>24580.50</P>
+
+
+</td></tr>
+<tr><td align="left" valign="TOP"><P><a name="321673"></a>62</P>
+
+
+</td><td align="left" valign="TOP"><P><a name="321675"></a>SFB Inc.</P>
+
+
+</td><td align="left" valign="TOP"><P><a name="321677"></a>7911.80</P>
+
+
+</td></tr>
+<tr><td align="left" valign="TOP"><P><a name="321679"></a>63</P>
+
+
+</td><td align="left" valign="TOP"><P><a name="321681"></a>Sierra Bicycle Group</P>
+
+
+</td><td align="left" valign="TOP"><P><a name="321683"></a>19766.20</P>
+
+
+</td></tr>
+<tr><td align="left" valign="TOP"><P><a name="321685"></a>63</P>
+
+
+</td><td align="left" valign="TOP"><P><a name="321687"></a>Sierra Bicycle Group</P>
+
+
+</td><td align="left" valign="TOP"><P><a name="321689"></a>12763.95</P>
+
+
+</td></tr>
+<tr><td align="left" valign="TOP"><P><a name="321691"></a>64</P>
+
+
+</td><td align="left" valign="TOP"><P><a name="321693"></a>Sierra Mountain</P>
+
+
+</td><td align="left" valign="TOP"><P><a name="321695"></a>8233.50</P>
+
+
+</td></tr>
+
+</Table></p>
+
+<hr><br>
+
+<script  language="JavaScript"><!--
+
+var prev = "24_under_databases19.html";
+var next = "24_under_databases21.html";
+
+function setTopicID() { 
+      var number = "321618"; 
+      return number; 
+}
+
+// --></script>
+
+
+
+
+<SCRIPT>
+
+if (!window.parent.toc && navigator.appName == "Netscape") {
+
+   document.writeln ('<TABLE ALIGN="left" border="0" cellspacing="0" cellpadding="10">');
+   document.writeln ('<TR>');
+   document.write ('<TD ALIGN="left">');
+
+   if (prev != "crw_spTOC.hhc") {
+      document.writeln ('<A HREF="' + prev + '">');
+      document.writeln ('<IMG SRC="prevpage.gif" HEIGHT=17 BORDER=0 ALT="Página anterior"></A>');
+   } else {
+//   window.alert ('no previous page');
+   }
+
+   if (next != "crw_spIX.hhk") {
+      document.writeln ('<A HREF="' + next + '">');
+      document.writeln ('<IMG SRC="nextpage.gif" HEIGHT=17 BORDER=0 ALT="Página siguiente"></A>');
+   } else {
+//   window.alert ('no next page');
+   }
+   document.writeln ('</TD><TD ALIGN="left">');
+   document.writeln ('<A HREF="frameset.htm?TOC">');
+   document.writeln ('<IMG SRC="showtoc.gif" HEIGHT=17 BORDER=0 ALT="Haga clic para ver el contenido"></A></TD>');
+   document.writeln ('<TD ALIGN="left">');
+   document.writeln ('<A HREF="frameset.htm?IDX">');
+   document.writeln ('<IMG SRC="showix.gif" HEIGHT=17 BORDER=0 ALT="Haga clic para ver el índice"></A></TD>');
+   document.writeln ('</TD>');
+   document.writeln ('</TR>');
+   document.writeln ('</TABLE>');
+
+}
+
+</SCRIPT>
+<table align="right" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td align="right"><font size="1">Seagate Software, Inc.<br>
+    <a href="http://www.seagatesoftware.com">http://www.seagatesoftware.com</a><br>
+    Envíe sus comentarios a:<br>
+    <a href="mailto:techpubs@seagatesoftware.com">techpubs@seagatesoftware.com</a><br>
+    </font></td>
+  </tr>
+</table>
+</body>
+</html>
+
+

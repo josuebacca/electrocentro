@@ -1,0 +1,95 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+
+<html>
+<head>
+<title>Aspectos fundamentales de la sintaxis Crystal</title>
+
+<link REL=STYLESHEET TYPE="text/css" HREF="seagate.css">
+
+<!--
+                 ***********************************
+                 * Seagate Software copyright 1999 *
+                 ***********************************
+
+                      Template version: 5.1
+-->
+
+
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" link="#0000FF" vlink="#0000FF" alink="#800080">
+
+
+ 
+<a name="144695"></a><h2 class="newpage">Aspectos fundamentales de la sintaxis Crystal</h2><a name="144696"></a><h3>Resultado de una f&#243;rmula</h3>
+<p><a name="144445"></a>El resultado de una f&#243;rmula, o el valor que se imprime cuando la f&#243;rmula aparece en un informe, se denomina <EM>valor devuelto por la f&#243;rmula</EM>. Cada f&#243;rmula de Seagate Crystal Reports debe devolver un valor. Por ejemplo, esta f&#243;rmula simple de Crystal devuelve el valor 10:</p><p><code><a name="144448"></a>10</code></p><p><a name="144802"></a>El valor devuelto por una f&#243;rmula puede ser uno de los 7 tipos de datos simples admitidos: num&#233;rico, monetario, cadena, booleano, fecha, hora y fechahora.</p><p><a name="144803"></a><font color="darkblue"><b>Nota:   &nbsp;&nbsp;&nbsp;</b></font>Seagate Crystal Reports tambi&#233;n admite tipos de rango y tipos de matriz, pero &#233;stos no pueden ser devueltos por una f&#243;rmula.</p>
+<p><a name="144454"></a>Por ejemplo, supongamos una compa&#241;&#237;a que tiene una pol&#237;tica de env&#237;os en las que los pedidos de m&#225;s de $1.000 est&#225;n asegurados, pero los pedidos inferiores a esa cantidad no lo est&#225;n:</p><PRE><a name="144456"></a>//Una f&#243;rmula que devuelve un valor de cadena
+<a name="144457"></a>If {Pedidos.Monto del pedido} &gt;= 1000 Then
+<a name="144458"></a>   "Env&#237;o asegurado"
+<a name="144459"></a>Else
+<a name="144460"></a>   "Env&#237;o regular"
+</PRE><p><a name="144462"></a>La f&#243;rmula devuelve el valor de cadena de texto "Env&#237;o asegurado" si el valor del campo de base de datos {Pedidos.Monto del pedido}es mayor o igual a 1000; de lo contrario, devuelve el valor de cadena de texto "Env&#237;o regular".</p>
+<hr><br>
+
+<script  language="JavaScript"><!--
+
+var prev = "21_crystalsyntax8.html";
+var next = "21_crystalsyntax10.html";
+
+function setTopicID() { 
+      var number = "144695"; 
+      return number; 
+}
+
+// --></script>
+
+
+
+
+<SCRIPT>
+
+if (!window.parent.toc && navigator.appName == "Netscape") {
+
+   document.writeln ('<TABLE ALIGN="left" border="0" cellspacing="0" cellpadding="10">');
+   document.writeln ('<TR>');
+   document.write ('<TD ALIGN="left">');
+
+   if (prev != "crw_spTOC.hhc") {
+      document.writeln ('<A HREF="' + prev + '">');
+      document.writeln ('<IMG SRC="prevpage.gif" HEIGHT=17 BORDER=0 ALT="Página anterior"></A>');
+   } else {
+//   window.alert ('no previous page');
+   }
+
+   if (next != "crw_spIX.hhk") {
+      document.writeln ('<A HREF="' + next + '">');
+      document.writeln ('<IMG SRC="nextpage.gif" HEIGHT=17 BORDER=0 ALT="Página siguiente"></A>');
+   } else {
+//   window.alert ('no next page');
+   }
+   document.writeln ('</TD><TD ALIGN="left">');
+   document.writeln ('<A HREF="frameset.htm?TOC">');
+   document.writeln ('<IMG SRC="showtoc.gif" HEIGHT=17 BORDER=0 ALT="Haga clic para ver el contenido"></A></TD>');
+   document.writeln ('<TD ALIGN="left">');
+   document.writeln ('<A HREF="frameset.htm?IDX">');
+   document.writeln ('<IMG SRC="showix.gif" HEIGHT=17 BORDER=0 ALT="Haga clic para ver el índice"></A></TD>');
+   document.writeln ('</TD>');
+   document.writeln ('</TR>');
+   document.writeln ('</TABLE>');
+
+}
+
+</SCRIPT>
+<table align="right" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td align="right"><font size="1">Seagate Software, Inc.<br>
+    <a href="http://www.seagatesoftware.com">http://www.seagatesoftware.com</a><br>
+    Envíe sus comentarios a:<br>
+    <a href="mailto:techpubs@seagatesoftware.com">techpubs@seagatesoftware.com</a><br>
+    </font></td>
+  </tr>
+</table>
+</body>
+</html>
+
+

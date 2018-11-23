@@ -1,0 +1,98 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+
+<html>
+<head>
+<title>Adici&#243;n de l&#237;neas condicionales en blanco </title>
+
+<link REL=STYLESHEET TYPE="text/css" HREF="seagate.css">
+
+<!--
+                 ***********************************
+                 * Seagate Software copyright 1999 *
+                 ***********************************
+
+                      Template version: 5.1
+-->
+
+
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" link="#0000FF" vlink="#0000FF" alink="#800080">
+
+
+ 
+<a name="60599"></a><h3 class="newpage"> Adici&#243;n de l&#237;neas condicionales en blanco </h3>
+<p><a name="64790"></a>Si desea imprimir l&#237;neas en blanco en su informe bajo condiciones espec&#237;ficas, lo puede hacer utilizando una seci&#243;n m&#250;ltiple. Por ejemplo, si desea insertar en su informe una l&#237;nea en blanco cada cinco registros.</p><a name="60618"></a><h6>Para agregar l&#237;neas condicionales en blanco</h6><ol>
+<a name="60623"></a><li value="1&nbsp;&nbsp;&nbsp;&nbsp;">Use el Asistente de secci&#243;n para crear dos secciones de detalles. Vea <EM><a href="10_multsec_rep3.html#58219">Trabajo con secciones</a></EM>.
+<a name="60624"></a><li value="2&nbsp;&nbsp;&nbsp;&nbsp;">Ponga los datos del informe en la secci&#243;n superior.
+<a name="60625"></a><li value="3&nbsp;&nbsp;&nbsp;&nbsp;">Deje vac&#237;a la segunda secci&#243;n.
+<a name="58990"></a><li value="4&nbsp;&nbsp;&nbsp;&nbsp;">En el Asistente de secci&#243;n, destaque la segunda secci&#243;n.
+<a name="58991"></a><li value="5&nbsp;&nbsp;&nbsp;&nbsp;">En la ficha <kbd>Com&#250;n</kbd>, seleccione la casilla de verificaci&#243;n <kbd>Suprimir (No profundizar)</kbd> y luego haga clic en el bot&#243;n de formato condicional a la derecha.
+<a name="60630"></a><li value="6&nbsp;&nbsp;&nbsp;&nbsp;">Ingrese la siguiente f&#243;rmula en el Editor de f&#243;rmulas de formato:
+<a name="60631"></a><p class="indent"><code>Remainder (RecordNumber, 5) &lt;&gt; 0</code></p><p class="indent"><a name="60632"></a>Esta f&#243;rmula divide cada n&#250;mero de Registro entre 5. Si la divisi&#243;n produce un residuo, la secci&#243;n en blanco se suprime. Pero si el residuo es cero (o sea cada cinco registros, cuando el n&#250;mero del registro es m&#250;ltiplo de cinco), el programa imprime la segunda secci&#243;n, incluyendo as&#237; una l&#237;nea en blanco.</p></ol>
+<p><a name="64800"></a><font color="darkblue"><b>Nota:   &nbsp;&nbsp;&nbsp;</b></font>Si usted quiere insertar una l&#237;nea en blanco bajo diferentes condiciones, puede modificar la f&#243;rmula apropiadamente. Vea <a href="11_format43.html#89319">Trabajo con Formato condicional</a>.</p>
+
+<hr><br>
+
+<script  language="JavaScript"><!--
+
+var prev = "10_multsec_rep10.html";
+var next = "10_multsec_rep12.html";
+
+function setTopicID() { 
+      var number = "60599"; 
+      return number; 
+}
+
+// --></script>
+
+
+
+
+<SCRIPT>
+
+if (!window.parent.toc && navigator.appName == "Netscape") {
+
+   document.writeln ('<TABLE ALIGN="left" border="0" cellspacing="0" cellpadding="10">');
+   document.writeln ('<TR>');
+   document.write ('<TD ALIGN="left">');
+
+   if (prev != "crw_spTOC.hhc") {
+      document.writeln ('<A HREF="' + prev + '">');
+      document.writeln ('<IMG SRC="prevpage.gif" HEIGHT=17 BORDER=0 ALT="Página anterior"></A>');
+   } else {
+//   window.alert ('no previous page');
+   }
+
+   if (next != "crw_spIX.hhk") {
+      document.writeln ('<A HREF="' + next + '">');
+      document.writeln ('<IMG SRC="nextpage.gif" HEIGHT=17 BORDER=0 ALT="Página siguiente"></A>');
+   } else {
+//   window.alert ('no next page');
+   }
+   document.writeln ('</TD><TD ALIGN="left">');
+   document.writeln ('<A HREF="frameset.htm?TOC">');
+   document.writeln ('<IMG SRC="showtoc.gif" HEIGHT=17 BORDER=0 ALT="Haga clic para ver el contenido"></A></TD>');
+   document.writeln ('<TD ALIGN="left">');
+   document.writeln ('<A HREF="frameset.htm?IDX">');
+   document.writeln ('<IMG SRC="showix.gif" HEIGHT=17 BORDER=0 ALT="Haga clic para ver el índice"></A></TD>');
+   document.writeln ('</TD>');
+   document.writeln ('</TR>');
+   document.writeln ('</TABLE>');
+
+}
+
+</SCRIPT>
+<table align="right" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td align="right"><font size="1">Seagate Software, Inc.<br>
+    <a href="http://www.seagatesoftware.com">http://www.seagatesoftware.com</a><br>
+    Envíe sus comentarios a:<br>
+    <a href="mailto:techpubs@seagatesoftware.com">techpubs@seagatesoftware.com</a><br>
+    </font></td>
+  </tr>
+</table>
+</body>
+</html>
+
+

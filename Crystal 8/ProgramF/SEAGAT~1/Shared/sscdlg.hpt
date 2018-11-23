@@ -1,0 +1,156 @@
+RoboHelp Topic Export file
+23|Category_Axis_Gridlines|Category Axis Gridlines
+23|Chart_Look_Options|Chart Look Options
+23|Creating_an_Amigo_Chart|Creating an Amigo Chart
+23|GetThePicture|Amigo
+23|Applying_a_Picture_to_an_Area_Object|Applying a Picture to an Area Object
+23|Applying_a_Texture_to_an_Area_Object|Applying a Texture to an Area Object
+23|Applying_a_Gradient_to_an_Area_Object|Applying a Gradient to an Area Object
+23|Applying_a_Pattern_to_an_Area_Object|Applying a Pattern to an Area Object
+23|Formatting_Area_Objects_with_the_Formatting_Dialog|Formatting Area Objects with the Formatting Dialog
+23|Formatting_Area_Objects|Formatting Area Objects
+23|Formatting_Line_Objects_with_the_Formatting_Dialog|Formatting Line Objects with the Formatting Dialog
+23|Formatting_Line_Objects|Formatting Line Objects
+23|Formatting_Text_Objects_with_the_Formatting_Dialog|Formatting Text Objects with the Formatting Dialog
+23|Formatting_Text_Objects|Formatting Text Objects
+23|Using_the_Formatting_Dialog|Using the Formatting Dialog
+23|Move_a_3D_Cube|Move a 3D Cube
+23|3D_Cube_Walls|3D Cube Walls
+23|Pan_a_3D_Cube|Pan a 3D Cube
+23|Rotate_a_3D_Cube|Rotate a 3D Cube
+23|Advanced_Viewing_Angle_Options|Advanced Viewing Angle Options
+23|Choose_a_Viewing_Angle|Choose a Viewing Angle
+23|About_3D_Settings|About 3D Settings
+23|Selecting_a_Custom_Chart|Selecting a Custom Chart
+23|Selecting_a_Surface_Chart_from_the_Amigo_Gallery|Selecting a Surface Chart from the Amigo Gallery
+23|Selecting_a_Scatter_Chart_from_the_Amigo_Gallery|Selecting a Scatter Chart from the Amigo Gallery
+23|Selecting_a_Pie_Chart_from_the_Amigo_Gallery|Selecting a Pie Chart from the Amigo Gallery
+23|Selecting_a_Line_Chart_from_the_Amigo_Gallery|Selecting a Line Chart from the Amigo Gallery
+23|Selecting_a_Histogram_Chart_from_the_Amigo_Gallery|Selecting a Histogram Chart from the Amigo Gallery
+23|Selecting_a_Bubble_Chart_from_the_Amigo_Gallery|Selecting a Bubble Chart from the Amigo Gallery
+23|Selecting_a_Bar_or_Column_Chart_from_the_Amigo_Gallery|Selecting a Bar or Column Chart from the Amigo Gallery
+23|Selecting_an_Area_Chart_from_the_Amigo_Gallery|Selecting an Area Chart from the Amigo Gallery
+23|Percent_Bars|Percent Bars
+23|Dual_Axes_Stacked_Bar|Dual Axes Stacked Bar
+23|Dual_Axes_Clustered_Bar|Dual Axes Clustered Bar
+23|Split_Dual_Axes_Stacked_Bars|Split Dual Axes Stacked Bars
+23|Split_Dual_Axes_Clustered_Bars|Split Dual Axes Clustered Bars
+23|Stacked_Bars|Stacked Bars
+23|Clustered_Bars|Clustered Bars
+23|Bar_Charts|Bar Charts
+23|True_3D_Area|True 3D Area
+23|Percent_Area|Percent Area
+23|Dual_Axes_Stacked_Area|Dual Axes Stacked Area
+23|Dual_Axes_Absolute_Area|Dual Axes Absolute Area
+23|Split_Dual_Axes_Stacked_Area|Split Dual Axes Stacked Area
+23|Split_Dual_Axes_Absolute_Area|Split Dual Axes Absolute Area
+23|Stacked_Area_Chart|Stacked Area Chart
+23|Absolute_Area_Chart|Absolute Area Chart
+23|Line_Charts|Line Charts
+23|Horizontal_Histogram|Horizontal Histogram
+23|Vertical_Histogram|Vertical Histogram
+23|Histogram_Charts|Histogram Charts
+23|True_3D_Riser|True 3D Riser
+23|Percent|Percent
+23|Dual_Axes_Stacked_Column|Dual Axes Stacked Column
+23|Dual_Axes_Clustered_Column|Dual Axes Clustered Column
+23|Split_Dual_Axes_Stacked_Column|Split Dual Axes Stacked Column
+23|Split_Dual_Axes_Clustered_Column|Split Dual Axes Clustered Column
+23|Stacked_Columns|Stacked Columns
+23|Clustered_Columns|Clustered Columns
+23|Column_Charts|Column Charts
+23|Dual_Axes_X_Y_Size_Bubble|Dual Axes X-Y-Size Bubble
+23|X_Y_Size_Bubble|X-Y-Size Bubble
+23|Bubble_Charts|Bubble Charts
+23|True_3D_Surface|True 3D Surface
+23|Surface_Charts|Surface Charts
+23|Dual_Axes_XY_Scatter|Dual Axes XY Scatter
+23|XY_Scatter|XY Scatter
+23|Scatter_Charts|Scatter Charts
+23|Ring_Pie|Ring Pie
+23|Pie|Pie
+23|Pie_Charts|Pie Charts
+23|True_3D_Line|True 3D Line
+23|Percent_Line|Percent Line
+23|Dual_Axes_Stacked_Line|Dual Axes Stacked Line
+23|Dual_Axes_Absolute_Line|Dual Axes Absolute Line
+23|Split_Dual_Axes_Stacked_Line|Split Dual Axes Stacked Line
+23|Split_Dual_Axes_Absolute_Line|Split Dual Axes Absolute Line
+23|Stacked_Line|Stacked Line
+23|Absolute_Line|Absolute Line
+23|Histogram_Chart_Layout|Histogram Chart Layout
+23|Bubble_Chart_Layout|Bubble Chart Layout
+23|Chart_Layout_Options|Chart Layout Options
+23|Layout|Layout
+23|Format_a_Scatter_Chart|Format a Scatter Chart
+23|Format_a_Pie_Chart|Format a Pie Chart
+23|Format_a_Line_Chart|Format a Line Chart
+23|Format_a_Histogram_Chart|Format a Histogram Chart
+23|Format_a_Column_Chart|Format a Column Chart
+23|Format_a_Bubble_Chart|Format a Bubble Chart
+23|Format_a_Bar_Chart|Format a Bar Chart
+23|Format_an_Area_Chart|Format an Area Chart
+23|General_Chart_Options|General Chart Options
+23|About_the_Chart_Options_Dialog|About the Chart Options Dialog
+23|True_3D_Honeycomb_Surface|True 3D Honeycomb Surface
+23|True_3D_Surface_with_Sides|True 3D Surface with Sides
+23|Display_Status|Display Status
+23|Surface_Chart_Look_Options|Surface Chart Look Options
+23|About_Chart_Look|About Chart Look
+23|Look|Look
+23|Selecting_Dual_Y_Options|Selecting Dual Y Options
+23|About_Dual_Y_Charts|About Dual Y Charts
+23|Dual_Y_Options|Dual Y Options
+23|Formatting_Data_Label_Numbers|Formatting Data Label Numbers
+23|About_Data_Label_Numbers|About Data Label Numbers
+23|Numbers|Numbers
+23|Data_Labels_in_Pie_Charts|Data Labels in Pie Charts
+23|Data_Label_Options|Data Label Options
+23|Data_Labels|Data Labels
+23|Surface_Chart_Layout|Surface Chart Layout
+23|Scatter_Chart_Layout|Scatter Chart Layout
+23|Pie_Chart_Layout|Pie Chart Layout
+23|Formatting_Trend_Lines|Formatting Trend Lines
+23|About_Trendlines|About Trendlines
+23|Trend_Lines|Trend Lines
+23|Formatting_the_Data_Label_Numbers|Formatting the Data Label Numbers
+23|Data_Labels_for_a_Series_in_a_Pie_Chart|Data Labels for a Series in a Pie Chart
+23|About_Series_Specific_Data_Labels|About Series Specific Data Labels
+23|Data_Label_and_Numbers|Data Label and Numbers
+23|Format_a_Series_in_a_Scatter_Chart|Format a Series in a Scatter Chart
+23|Format_a_Series_in_a_Pie_Chart|Format a Series in a Pie Chart
+23|Format_a_Series_in_a_Line_Chart|Format a Series in a Line Chart
+23|Format_a_Series_in_a_Bubble_Chart|Format a Series in a Bubble Chart
+23|Format_a_Series|Format a Series
+23|General_Series_Options|General Series Options
+23|About_the_Series_Options_Dialog|About the Series Options Dialog
+23|Show_Hide_Objects_in_Pie_Charts|Show/Hide Objects in Pie Charts
+23|Show_Hide_Objects|Show/Hide Objects
+23|About_the_Series_Axis|About the Series Axis
+23|Formatting_a_Series_O2_Axis|Formatting a Series (O2) Axis
+23|Numeric_Axis_Gridlines|Numeric Axis Gridlines
+23|Numeric_Axis_Numbers|Numeric Axis Numbers
+23|Numeric_Axis_Labels|Numeric Axis Labels
+23|Numeric_Axis_Scales|Numeric Axis Scales
+23|Numeric_Axis_General_Formatting_Options|Numeric Axis General Formatting Options
+23|About_the_X_Axis|About the X-Axis
+23|About_the_Secondary_Numeric_Y2_Axis|About the Secondary Numeric (Y2) Axis
+23|About_the_Primary_Numeric_Y1_Axis|About the Primary Numeric (Y1) Axis
+23|Formatting_a_Numeric_Axis|Formatting a Numeric Axis
+23|Category_Axis_Labels|Category Axis Labels
+23|Category_Axis_General_Formatting_Options|Category Axis General Formatting Options
+23|About_the_Category_Axis|About the Category Axis
+23|Formatting_a_Category_Axis|Formatting a Category Axis
+23|About_the_Grids_and_Scales_Dialog|About the Grids and Scales Dialog
+23|X_Axis_Title|X-Axis Title
+23|Value_Title_Y2_|Value Title (Y2)
+23|Value_Title_Y1_|Value Title (Y1)
+23|Series_Axis_Title_for_3D_Charts_Only_|Series Axis Title (for 3D Charts Only)
+23|Chart_Footnote|Chart Footnote
+23|Category_Title|Category Title
+23|Chart_Subtitle|Chart Subtitle
+23|Chart_Title|Chart Title
+23|Using_the_Titles_Dialog|Using the Titles Dialog
+23|Series_Axis_Gridlines|Series Axis Gridlines
+23|Series_Axis_Labels|Series Axis Labels
+23|Series_Axis_General_Format_Options|Series Axis General Format Options

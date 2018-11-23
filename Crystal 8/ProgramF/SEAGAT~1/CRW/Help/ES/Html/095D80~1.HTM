@@ -1,0 +1,126 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+
+<html>
+<head>
+<title>C&#243;mo crear un total acumulado condicional</title>
+
+<link REL=STYLESHEET TYPE="text/css" HREF="seagate.css">
+
+<!--
+                 ***********************************
+                 * Seagate Software copyright 1999 *
+                 ***********************************
+
+                      Template version: 5.1
+-->
+
+
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" link="#0000FF" vlink="#0000FF" alink="#800080">
+
+
+ 
+<a name="35589"></a><h3 class="newpage"> C&#243;mo crear un total acumulado condicional</h3>
+<p><a name="33062"></a>Puede haber veces en que usted tiene una lista de valores que no est&#225;n agrupados y s&#243;lo quiere subtotalizar algunos de esos valores. Por ejemplo:</p><ul type="disc"><a name="33063"></a><li>usted tiene una lista que contiene clientes Canadienses y Norteamericanos,
+<a name="33064"></a><li>quiere mantener los registros de clientes ordenados alfab&#233;ticamente por nombre de cliente,
+<a name="33065"></a><li>no quiere separar los datos en grupos basados en el pa&#237;s, pero
+<a name="33066"></a><li>quiere un total de los valores de los registros Canadienses, y
+<a name="33067"></a><li>tambi&#233;n quiere, por separado, un total de los valores de los registros de Estados Unidos.
+</ul><p><a name="33068"></a>Para hacer esto, tendr&#225; que crear dos f&#243;rmulas, uno para llevar el control de los registros norteamericanos y otro para llevar el control de los registros canadienses.</p><ul type="disc"><a name="33069"></a><li><strong>EE.UUTotal <br></strong>Mantiene un total acumulado de los registros nortemaericanos.
+<a name="35594"></a><li><strong>Canad&#225;Total</strong> <br>Mantiene un total acumulado de los registros canadienses.
+</ul><a name="33071"></a><h6>Para crear un total acumulado condicional</h6><ol>
+<a name="33072"></a><li value="1&nbsp;&nbsp;&nbsp;&nbsp;">Para comenzar, cree un informe usando los datos de muestra de <strong>xtreme_es.mdb </strong>que se encuentra en la carpeta <kbd>File Data Sources </kbd>del cuadro de di&#225;logo Explorador de datos. Ponga los siguientes campos de izquierda a derecha en la secci&#243;n Detalles:
+<a name="39187"></a>{cliente.NOMBRE DEL CLIENTE}<br>{cliente.PAIS}<br>{cliente.VENTAS DEL &Uacute;LTIMO A&Ntilde;O}<br></ol>
+<ol>
+<a name="39192"></a><li value="2&nbsp;&nbsp;&nbsp;&nbsp;">En el men&#250; <kbd>Informe</kbd>, haga clic en <kbd>Ordenar registros</kbd><img src="images/Bt_sordr.gif">
+
+
+.
+<a name="31953"></a><li value="3&nbsp;&nbsp;&nbsp;&nbsp;">Ordene los registros seg&#250;n el campo {cliente.NOMBRE DEL CLIENTE}.
+<a name="31954"></a><li value="4&nbsp;&nbsp;&nbsp;&nbsp;">En el men&#250; <kbd>Insertar</kbd>, haga clic en <kbd>Campo de total acumulado</kbd>.
+<p class="indent"><a name="31955"></a>Aparece el cuadro de di&#225;logo Explorador de campos.</p><a name="31956"></a><li value="5&nbsp;&nbsp;&nbsp;&nbsp;">Haga doble clic en <kbd>Campos de total acumulado</kbd>.
+<p class="indent"><a name="31957"></a>Aparece el cuadro de di&#225;logo Crear campo de total acumulado.</p><a name="33139"></a><li value="6&nbsp;&nbsp;&nbsp;&nbsp;">Ingrese el nombre "TotalEEUU" en el cuadro <kbd>Nombre de total acumulado.</kbd>
+<a name="31959"></a><li value="7&nbsp;&nbsp;&nbsp;&nbsp;">Destaque {Cliente.VENTAS DEL &Uacute;LTIMO A&Ntilde;O} en el cuadro<kbd> Tablas y campos disponibles</kbd> y use el primer bot&#243;n de flecha para desplazarse sobre el cuadro <kbd>Campo para resumir</kbd>.
+<a name="31960"></a><li value="8&nbsp;&nbsp;&nbsp;&nbsp;">Seleccione <kbd>suma</kbd> de la lista <kbd>Tipo de resumen</kbd><EM>.</EM>
+<a name="31964"></a><li value="9&nbsp;&nbsp;&nbsp;&nbsp;"><img src="images/bt_check.gif">
+
+
+En la secci&#243;n <kbd>Evaluar</kbd> del cuadro de di&#225;logo, haga clic en <kbd>Usar una f&#243;rmula</kbd> y luego haga clic en el bot&#243;n<EM> </EM><kbd>F&#243;rmula</kbd><EM>.</EM>
+<p class="indent"><a name="31965"></a>Aparece el Editor de f&#243;rmulas de condici&#243;n de total acumulado.</p><a name="31966"></a><li value="10&nbsp;&nbsp;&nbsp;&nbsp;">Ingrese la siguiente f&#243;rmula en el cuadro de f&#243;rmula:<br>{Cliente.Pa&#237;s} = "EE.UU."
+<p class="indent"><a name="31967"></a>Esto indica al programa que eval&#250;e el total acumulado cada vez que llegue a un registro donde {Cliente.PA&Iacute;S} sea igual a "EE.UU.". El total acumulado no tendr&#225; en cuenta todos los dem&#225;s registros (como registros para Canad&#225;).</p><a name="31971"></a><li value="11&nbsp;&nbsp;&nbsp;&nbsp;"><img src="images/bt_sclfe.gif">
+
+
+Cuando la f&#243;rmula tenga la sintaxis correcta, haga clic en <kbd>Guardar y cerrar</kbd>. 
+<p class="indent"><a name="31972"></a>El cuadro de di&#225;logo Crear campo de total acumulado volver&#225; a aparecer.</p><a name="31973"></a><li value="12&nbsp;&nbsp;&nbsp;&nbsp;">En la secci&#243;n <kbd>Restablecer</kbd> del cuadro de di&#225;logo, haga clic en <kbd>Nunca</kbd>.
+<a name="31974"></a><li value="13&nbsp;&nbsp;&nbsp;&nbsp;">Haga clic en <kbd>Aceptar</kbd> para guardar el campo de total acumulado.
+<p class="indent"><a name="31975"></a>El programa vuelve al cuadro de di&#225;logo Explorador de campos.</p><a name="31976"></a><li value="14&nbsp;&nbsp;&nbsp;&nbsp;">Coloque el campo de total acumulado en la secci&#243;n Detalles de su informe.
+<a name="31977"></a><li value="15&nbsp;&nbsp;&nbsp;&nbsp;">Ahora cree el campo de total acumulado <kbd>TotalCanad&#225;</kbd> usando el proceso indicado en los pasos del 3 al 13. La &#250;nica diferencia es que esta vez usted establece la f&#243;rmula de evaluaci&#243;n en:
+<a name="31978"></a><p class="indent"><code>{Cliente.Pa&#237;s} = "Canad&#225;"</code></p><a name="31979"></a><li value="16&nbsp;&nbsp;&nbsp;&nbsp;">Al terminar, coloque el campo <kbd>#TotalCanad&#225;</kbd> en la secci&#243;n Detalles de su informe, justo a la derecha del campo {Cliente.VENTAS DEL &Uacute;LTIMO A&Ntilde;O}.
+<a name="35613"></a><li value="17&nbsp;&nbsp;&nbsp;&nbsp;">Si s&#243;lo desea ver un total general de las ventas de Estados Unidos y de Canad&#225;, coloque los dos campos de total acumulado creados en la secci&#243;n Pie de informe de su informe.
+</ol>
+
+<hr><br>
+
+<script  language="JavaScript"><!--
+
+var prev = "09_runtotal5.html";
+var next = "09_runtotal7.html";
+
+function setTopicID() { 
+      var number = "35589"; 
+      return number; 
+}
+
+// --></script>
+
+
+
+
+<SCRIPT>
+
+if (!window.parent.toc && navigator.appName == "Netscape") {
+
+   document.writeln ('<TABLE ALIGN="left" border="0" cellspacing="0" cellpadding="10">');
+   document.writeln ('<TR>');
+   document.write ('<TD ALIGN="left">');
+
+   if (prev != "crw_spTOC.hhc") {
+      document.writeln ('<A HREF="' + prev + '">');
+      document.writeln ('<IMG SRC="prevpage.gif" HEIGHT=17 BORDER=0 ALT="Página anterior"></A>');
+   } else {
+//   window.alert ('no previous page');
+   }
+
+   if (next != "crw_spIX.hhk") {
+      document.writeln ('<A HREF="' + next + '">');
+      document.writeln ('<IMG SRC="nextpage.gif" HEIGHT=17 BORDER=0 ALT="Página siguiente"></A>');
+   } else {
+//   window.alert ('no next page');
+   }
+   document.writeln ('</TD><TD ALIGN="left">');
+   document.writeln ('<A HREF="frameset.htm?TOC">');
+   document.writeln ('<IMG SRC="showtoc.gif" HEIGHT=17 BORDER=0 ALT="Haga clic para ver el contenido"></A></TD>');
+   document.writeln ('<TD ALIGN="left">');
+   document.writeln ('<A HREF="frameset.htm?IDX">');
+   document.writeln ('<IMG SRC="showix.gif" HEIGHT=17 BORDER=0 ALT="Haga clic para ver el índice"></A></TD>');
+   document.writeln ('</TD>');
+   document.writeln ('</TR>');
+   document.writeln ('</TABLE>');
+
+}
+
+</SCRIPT>
+<table align="right" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td align="right"><font size="1">Seagate Software, Inc.<br>
+    <a href="http://www.seagatesoftware.com">http://www.seagatesoftware.com</a><br>
+    Envíe sus comentarios a:<br>
+    <a href="mailto:techpubs@seagatesoftware.com">techpubs@seagatesoftware.com</a><br>
+    </font></td>
+  </tr>
+</table>
+</body>
+</html>
+
+

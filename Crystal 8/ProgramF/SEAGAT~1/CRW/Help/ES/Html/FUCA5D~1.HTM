@@ -1,0 +1,90 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+
+<html>
+<head>
+<title>Argumentos opcionales de paso</title>
+
+<link REL=STYLESHEET TYPE="text/css" HREF="seagate.css">
+
+<!--
+                 ***********************************
+                 * Seagate Software copyright 1999 *
+                 ***********************************
+
+                      Template version: 5.1
+-->
+
+
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" link="#0000FF" vlink="#0000FF" alink="#800080">
+
+
+ 
+<a name="1000853286"></a><h4 class="newpage"> Argumentos opcionales de paso</h4><ul type="disc"><a name="1000853287"></a><li>Varios argumentos para la funci&#243;n ToText han sido especificados como opcionales. De cualquier forma, un argumento no puede estar en blanco si un argumento es suministrado despu&#233;s de que est&#225; en la funci&#243;n. En otras palabras, usted no puede dejar los argumentos y y z en blanco y proporcionar un argumento para w. Es posible, de cualquier forma, dejar uno, dos, o todos los argumentos opcionales en blanco, mientras no se suministren argumentos despu&#233;s de los argumentos en blanco. Las siguientes combinaciones son posibles cuando se suministran argumentos a la funci&#243;n ToText:
+<ul type="disc"><ul type="disc"><a name="1000853288"></a><li>ToText(x)<a name="1000853289"></a><li>ToText (x, y)<a name="1000853290"></a><li>ToText (x, y, z)<a name="1000853291"></a><li>ToText (x, y, z, w)<a name="1000853292"></a><li>ToText (x, y, z, w, q)</ul></ul><a name="1000853293"></a><li>Utilizando los caracteres de formato "t" o "tt" en una cadena de formato de tiempo proporciona cadenas predeterminadas para indicar horas a.m. (ma&#241;ana) y p.m. (tarde). "t" produce un car&#225;cter sencillo, "a" o "p", mientras que "tt" produce la cadena completa, "am" o "pm". Usted pueda pasar su propia cadena personalizada para indicar cadenas am/pm. (Vera los argumentos para convertir valores de hora y de fecha/hora con ToText&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; en la secci&#243;n Argumentos de <a href="Functions79.html#1000852914">ToText</a>.) 
+<p class="indent"><a name="1000853297"></a>Si pasa sus propias cadenas am/pm, los caracteres de formato  "t" y "tt" tendr&#225;n el mismo efecto en ellos (produciendo cadenas de car&#225;cter sencillo contra caracteres m&#250;ltiples). De cualquier forma los caracteres de formato "t" y "tt" son opcionales y s&#243;lo son necesarios cuando las cadenas predeterminadas am/pm son necesarias.</p></ul><a name="1000853298"></a><h6>Temas relacionados</h6><p><a name="1000853302"></a><a href="Functions161.html#1000569614">CStr</a></p><p><a name="1000853306"></a><a href="19_introformulas29.html#316566">F&#243;rmula 1</a></p><p><a name="1000853310"></a><a href="19_introformulas30.html#316614">F&#243;rmula 2</a></p><p><a name="1000853314"></a><a href="19_introformulas31.html#316667">F&#243;rmula 3</a></p><p><a name="1000853318"></a><a href="19_introformulas33.html#316857">F&#243;rmula 5</a></p><p><a name="1000853322"></a><a href="19_introformulas41.html#317444">F&#243;rmula 13</a></p>
+<hr><br>
+
+<script  language="JavaScript"><!--
+
+var prev = "Functions84.html";
+var next = "Functions86.html";
+
+function setTopicID() { 
+      var number = "1000853286"; 
+      return number; 
+}
+
+// --></script>
+
+
+
+
+<SCRIPT>
+
+if (!window.parent.toc && navigator.appName == "Netscape") {
+
+   document.writeln ('<TABLE ALIGN="left" border="0" cellspacing="0" cellpadding="10">');
+   document.writeln ('<TR>');
+   document.write ('<TD ALIGN="left">');
+
+   if (prev != "crw_spTOC.hhc") {
+      document.writeln ('<A HREF="' + prev + '">');
+      document.writeln ('<IMG SRC="prevpage.gif" HEIGHT=17 BORDER=0 ALT="Página anterior"></A>');
+   } else {
+//   window.alert ('no previous page');
+   }
+
+   if (next != "crw_spIX.hhk") {
+      document.writeln ('<A HREF="' + next + '">');
+      document.writeln ('<IMG SRC="nextpage.gif" HEIGHT=17 BORDER=0 ALT="Página siguiente"></A>');
+   } else {
+//   window.alert ('no next page');
+   }
+   document.writeln ('</TD><TD ALIGN="left">');
+   document.writeln ('<A HREF="frameset.htm?TOC">');
+   document.writeln ('<IMG SRC="showtoc.gif" HEIGHT=17 BORDER=0 ALT="Haga clic para ver el contenido"></A></TD>');
+   document.writeln ('<TD ALIGN="left">');
+   document.writeln ('<A HREF="frameset.htm?IDX">');
+   document.writeln ('<IMG SRC="showix.gif" HEIGHT=17 BORDER=0 ALT="Haga clic para ver el índice"></A></TD>');
+   document.writeln ('</TD>');
+   document.writeln ('</TR>');
+   document.writeln ('</TABLE>');
+
+}
+
+</SCRIPT>
+<table align="right" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td align="right"><font size="1">Seagate Software, Inc.<br>
+    <a href="http://www.seagatesoftware.com">http://www.seagatesoftware.com</a><br>
+    Envíe sus comentarios a:<br>
+    <a href="mailto:techpubs@seagatesoftware.com">techpubs@seagatesoftware.com</a><br>
+    </font></td>
+  </tr>
+</table>
+</body>
+</html>
+
+

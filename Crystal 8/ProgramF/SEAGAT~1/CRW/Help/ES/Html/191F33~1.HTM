@@ -1,0 +1,189 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+
+<html>
+<head>
+<title>F&#243;rmula 15</title>
+
+<link REL=STYLESHEET TYPE="text/css" HREF="seagate.css">
+
+<!--
+                 ***********************************
+                 * Seagate Software copyright 1999 *
+                 ***********************************
+
+                      Template version: 5.1
+-->
+
+
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" link="#0000FF" vlink="#0000FF" alink="#800080">
+
+
+ 
+<a name="317544"></a><h3 class="newpage"> F&#243;rmula 15</h3>
+<a name="317545"></a><h4>Funciones y operadores usados</h4><p><a name="317546"></a>Operadores If<nobr>-T</nobr>hen<nobr>-E</nobr>lse anidados, No igual a (&lt;&gt;), Operador booleano (And), Igual a (=), Concatenar (+), Par&#233;ntesis ()</p><a name="317547"></a><h4>Prop&#243;sito de la f&#243;rmula</h4><p><a name="317548"></a>El director de un centro de salud sin fines de lucro desea automatizar el saludo en una carta que va a enviar a su personal. El personal consta de empleados de ambos sexos y de licenciados y no licenciados. Desea estar seguro de que todos los doctores del personal (enfermer&#237;a, odontolog&#237;a, medicina general, etc.) reciban el trato de "Dr." y todos los que no son doctores reciban el trato apropiado a su sexo.</p><a name="317549"></a><h4>F&#243;rmula</h4><PRE><a name="317550"></a>If {archivo.T&Iacute;TULO UNIVERSITARIO} &lt;&gt; "Doctorado en 
+medicina" And<br>
+{archivo.T&Iacute;TULO UNIVERSITARIO} &lt;&gt;"Medicina general" And<br>
+{archivo.T&Iacute;TULO UNIVERSITARIO} &lt;&gt;"Odontolog&#237;a" Then<br>
+&nbsp;&nbsp;&nbsp;&nbsp;If {archivo.SEXO} = "M" Then<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"Estimado se&#241;or " + {archivo.APELLIDO}<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Else<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"Estimada se&#241;ora/se&#241;orita " + {archivo.APELLIDO}<br>
+Else<br>
+&nbsp;&nbsp;&nbsp;&nbsp;"Estimado/a Dr./Dra. " + {archivo.APELLIDO}
+</PRE><a name="317551"></a><h4>Resultado</h4><p><a name="317601"></a> <Table Border="1">
+<tr><td align="left" valign="TOP"><a name="317554"></a>T&#237;tulo
+
+</td><td align="left" valign="TOP"><a name="317556"></a>Sexo
+
+</td><td align="left" valign="TOP"><a name="317558"></a>Apellido
+
+</td><td align="left" valign="TOP"><a name="317560"></a>Tratamiento
+
+</td></tr>
+<tr><td align="left" valign="TOP"><P><a name="317562"></a>Letras</P>
+
+
+</td><td align="left" valign="TOP"><P><a name="317564"></a>F</P>
+
+
+</td><td align="left" valign="TOP"><P><a name="317566"></a>Jones</P>
+
+
+</td><td align="left" valign="TOP"><P><a name="317568"></a>"Estimada se&#241;ora/se&#241;orita Jones</P>
+
+
+</td></tr>
+<tr><td align="left" valign="TOP"><P><a name="317570"></a>Doctorado en medicina</P>
+
+
+</td><td align="left" valign="TOP"><P><a name="317572"></a>F</P>
+
+
+</td><td align="left" valign="TOP"><P><a name="317574"></a>Smith</P>
+
+
+</td><td align="left" valign="TOP"><P><a name="317576"></a>"Estimado/a Dr./Dra. Smith"</P>
+
+
+</td></tr>
+<tr><td align="left" valign="TOP"><P><a name="317578"></a>Medicina general</P>
+
+
+</td><td align="left" valign="TOP"><P><a name="317580"></a>M</P>
+
+
+</td><td align="left" valign="TOP"><P><a name="317582"></a>Jackson</P>
+
+
+</td><td align="left" valign="TOP"><P><a name="317584"></a>"Estimado/a Dr./Dra. Jackson"</P>
+
+
+</td></tr>
+<tr><td align="left" valign="TOP"><P><a name="317586"></a>Ciencias</P>
+
+
+</td><td align="left" valign="TOP"><P><a name="317588"></a>M</P>
+
+
+</td><td align="left" valign="TOP"><P><a name="317590"></a>Miller</P>
+
+
+</td><td align="left" valign="TOP"><P><a name="317592"></a>"Estimado se&#241;or Miller"</P>
+
+
+</td></tr>
+<tr><td align="left" valign="TOP"><P><a name="317594"></a>Odontolog&#237;a</P>
+
+
+</td><td align="left" valign="TOP"><P><a name="317596"></a>F</P>
+
+
+</td><td align="left" valign="TOP"><P><a name="317598"></a>Johnson</P>
+
+
+</td><td align="left" valign="TOP"><P><a name="317600"></a>"Estimado/a Dr./Dra. Johnson"</P>
+
+
+</td></tr>
+
+</Table></p>
+<a name="317602"></a><h4>Explicaci&#243;n</h4><ul type="disc"><a name="317603"></a><li>Esta f&#243;rmula usa operadores If<nobr>-T</nobr>hen<nobr>-E</nobr>lse anidados. 
+<a name="317604"></a><li>La primera expresi&#243;n If<nobr>-T</nobr>hen<nobr>-E</nobr>lse comienza con el primer If y contin&#250;a hasta Else "Estimado/a Dr./Dra. " + {archivo.APELLIDO} al final de la f&#243;rmula. Dice: "Si el t&#237;tulo de la lista no corresponde a un t&#237;tulo de medicina, entonces (Then) seguir las consecuencias Then, que contienen otra expresi&#243;n If<nobr>-T</nobr>hen<nobr>-E</nobr>lse. Si el t&#237;tulo de la lista es de medicina (Else), imprimir un saludo doctoral.
+<a name="317605"></a><li>La parte If de la expresi&#243;n prueba tres condiciones diferentes. 
+<a name="317606"></a><li>La condici&#243;n A usa el operador no igual a &lt;&gt; para garantizar que el t&#237;tulo del empleado no es doctorado en medicina.
+<a name="317607"></a><li>La condici&#243;n B usa el operador no igual a &lt;&gt; para garantizar que el t&#237;tulo del empleado no es medicina general.
+<a name="317608"></a><li>La condici&#243;n C usa el operador no igual a &lt;&gt; para garantizar que el t&#237;tulo del empleado no es odontolog&#237;a.
+<a name="317609"></a><li>Los dos operadores And indican que se deben cumplir las tres condiciones para satisfacer la parte If de la expresi&#243;n.
+<a name="317610"></a><li>Si se cumplen las tres condiciones, se satisface la parte If de la expresi&#243;n, lo que activa las consecuencias Then.
+<a name="317611"></a><li>Si alguna de las tres condiciones no se satisface (o dos o las tres), no se cumple la parte If de la expresi&#243;n, lo que activa la consecuencia Else.
+<a name="317612"></a><li>El segundo enunciado If<nobr>-T</nobr>hen<nobr>-E</nobr>lse comienza con if {archivo.SEXO} = y termina con Else "Estimada se&#241;ora/se&#241;orita " + {archivo.APELLIDO}). Dice: "Si el empleado es var&#243;n, entonces (Then) imprimir un saludo para var&#243;n. Si el empleado no es var&#243;n (Else), imprimir un saludo para dama. La expresi&#243;n If<nobr>-T</nobr>hen<nobr>-E</nobr>lse determina qu&#233; sucede realmente si se satisface la parte If de la expresi&#243;n.
+<a name="317613"></a><li>Si el sexo es masculino (determinado por el uso del operador igual a =), se cumple la parte If de la segunda expresi&#243;n If<nobr>-T</nobr>hen<nobr>-E</nobr>lse, lo que activa la consecuencia Then (que imprime el saludo "Estimado se&#241;or " + {archivo.APELLIDO}).
+<a name="317614"></a><li>Si el sexo no es masculino, no se satisface la parte If de la segunda expresi&#243;n If<nobr>-T</nobr>hen<nobr>-E</nobr>lse, lo que activa la consecuencia Else (que imprime el saludo "Estimada se&#241;ora/se&#241;orita " + {archivo.APELLIDO}).
+<a name="317615"></a><li>El operador de concatenaci&#243;n (+) conecta la parte "Estimado/a x" del saludo con el apellido (almacenado en el campo {archivo.APELLIDO}).
+</ul><a name="317616"></a><h6>Temas relacionados</h6><p><a name="317620"></a><a href="19_introformulas28.html#316471">F&#243;rmulas en acci&#243;n</a></p>
+<hr><br>
+
+<script  language="JavaScript"><!--
+
+var prev = "19_introformulas42.html";
+var next = "19_introformulas44.html";
+
+function setTopicID() { 
+      var number = "317544"; 
+      return number; 
+}
+
+// --></script>
+
+
+
+
+<SCRIPT>
+
+if (!window.parent.toc && navigator.appName == "Netscape") {
+
+   document.writeln ('<TABLE ALIGN="left" border="0" cellspacing="0" cellpadding="10">');
+   document.writeln ('<TR>');
+   document.write ('<TD ALIGN="left">');
+
+   if (prev != "crw_spTOC.hhc") {
+      document.writeln ('<A HREF="' + prev + '">');
+      document.writeln ('<IMG SRC="prevpage.gif" HEIGHT=17 BORDER=0 ALT="Página anterior"></A>');
+   } else {
+//   window.alert ('no previous page');
+   }
+
+   if (next != "crw_spIX.hhk") {
+      document.writeln ('<A HREF="' + next + '">');
+      document.writeln ('<IMG SRC="nextpage.gif" HEIGHT=17 BORDER=0 ALT="Página siguiente"></A>');
+   } else {
+//   window.alert ('no next page');
+   }
+   document.writeln ('</TD><TD ALIGN="left">');
+   document.writeln ('<A HREF="frameset.htm?TOC">');
+   document.writeln ('<IMG SRC="showtoc.gif" HEIGHT=17 BORDER=0 ALT="Haga clic para ver el contenido"></A></TD>');
+   document.writeln ('<TD ALIGN="left">');
+   document.writeln ('<A HREF="frameset.htm?IDX">');
+   document.writeln ('<IMG SRC="showix.gif" HEIGHT=17 BORDER=0 ALT="Haga clic para ver el índice"></A></TD>');
+   document.writeln ('</TD>');
+   document.writeln ('</TR>');
+   document.writeln ('</TABLE>');
+
+}
+
+</SCRIPT>
+<table align="right" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td align="right"><font size="1">Seagate Software, Inc.<br>
+    <a href="http://www.seagatesoftware.com">http://www.seagatesoftware.com</a><br>
+    Envíe sus comentarios a:<br>
+    <a href="mailto:techpubs@seagatesoftware.com">techpubs@seagatesoftware.com</a><br>
+    </font></td>
+  </tr>
+</table>
+</body>
+</html>
+
+

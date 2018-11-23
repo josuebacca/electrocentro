@@ -1,0 +1,139 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+
+<html>
+<head>
+<title>Incrustaci&#243;n del visor de informes para Active X en una p&#225;gina web</title>
+
+<link REL=STYLESHEET TYPE="text/css" HREF="seagate.css">
+
+<!--
+                 ***********************************
+                 * Seagate Software copyright 1999 *
+                 ***********************************
+
+                      Template version: 5.1
+-->
+
+
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" link="#0000FF" vlink="#0000FF" alink="#800080">
+
+
+ 
+<a name="153868"></a><h3 class="newpage"> Incrustaci&#243;n del visor de informes para Active X en una p&#225;gina web</h3>
+<p><a name="153869"></a>El siguiente c&#243;digo HTML muestra una forma de incrustar el visor de informes para ActiveX en una p&#225;gina web mediante la etiqueta OBJECT:</p><PRE><a name="158357"></a>&lt;OBJECT ID="CRViewer"
+<a name="158358"></a>&nbsp;&nbsp;&nbsp;&nbsp;CLASSID="CLSID:C4847596-972C-11D0-9567-00A0C9273C2A"
+<a name="158359"></a>&nbsp;&nbsp;&nbsp;&nbsp;WIDTH=100% HEIGHT=95%
+<a name="158360"></a>&nbsp;&nbsp;&nbsp;&nbsp;CODEBASE="/viewer/activeXViewer/
+activexviewer.cab#Version=1.0.0.0"&gt;
+<a name="158361"></a>&lt;PARAM NAME="EnableRefreshButton" VALUE=1&gt;
+<a name="158362"></a>&lt;PARAM NAME="EnableGroupTree" VALUE=1&gt;
+<a name="158363"></a>&lt;PARAM NAME="DisplayGroupTree" VALUE=1&gt;
+<a name="158364"></a>&lt;PARAM NAME="EnablePrintButton" VALUE=1&gt;
+<a name="158365"></a>&lt;PARAM NAME="EnableExportButton" VALUE=1&gt;
+<a name="158366"></a>&lt;PARAM NAME="EnableDrillDown" VALUE=1&gt;
+<a name="158367"></a>&lt;PARAM NAME="EnableSearchControl" VALUE=1&gt;
+<a name="158368"></a>&lt;PARAM NAME="EnableAnimationControl" VALUE=1&gt;
+<a name="158369"></a>&lt;PARAM NAME="EnableZoomControl" VALUE=1&gt;
+<a name="158370"></a>&lt;/OBJECT&gt;
+<a name="158372"></a>&lt;SCRIPT LANGUAGE="VBScript"&gt;
+<a name="158373"></a>&lt;!--
+<a name="158374"></a>Sub window_onLoad()
+<a name="158375"></a>&nbsp;&nbsp;&nbsp;&nbsp;Page_Initialize()
+<a name="158376"></a>End Sub
+<a name="158378"></a>Sub Page_Initialize
+<a name="158379"></a>&nbsp;&nbsp;&nbsp;&nbsp;On Error Resume Next
+<a name="158380"></a>&nbsp;&nbsp;&nbsp;&nbsp;Dim webBroker
+<a name="158381"></a>&nbsp;&nbsp;&nbsp;&nbsp;Set webBroker = 
+CreateObject("WebReportBroker.WebReportBroker")
+<a name="158382"></a>&nbsp;&nbsp;&nbsp;&nbsp;URL = Location.Href
+<a name="158383"></a>&nbsp;&nbsp;&nbsp;&nbsp;if InStr(1, URL, "?")&gt;0 then
+<a name="158384"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;URL=Mid(URL, 1, InStr(1, URL, "?") - 1)
+<a name="158385"></a>&nbsp;&nbsp;&nbsp;&nbsp;end if
+<a name="158386"></a>&nbsp;&nbsp;&nbsp;&nbsp;if ScriptEngineMajorVersion &lt; 2 then
+<a name="158387"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;window.alert "Los usuarios de IE 3.02 en NT4 deben 
+obtener la versi&#243;n m&#225;s reciente de VBScript o instalar IE 
+4.01 SP1. Los usuarios de IE 3.02 de Win95 necesitan 
+DCOM95 y la versi&#243;n m&#225;s reciente de VBScript o instalar 
+IE 4.01 SP1. Estos archivos est&#225;n disponibles en el sitio 
+web de Microsoft."
+<a name="158388"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;CRViewer.ReportName = URL
+<a name="158389"></a>&nbsp;&nbsp;&nbsp;&nbsp;else
+<a name="158390"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Dim webSource
+<a name="158391"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Set webSource = 
+CreateObject("WebReportSource.WebReportSource")
+<a name="158392"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;webSource.ReportSource = webBroker
+<a name="158393"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;webSource.URL = URL
+<a name="158394"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;webSource.PromptOnRefresh = True
+<a name="158395"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;CRViewer.ReportSource = webSource
+<a name="158396"></a>&nbsp;&nbsp;&nbsp;&nbsp;end if
+<a name="158397"></a>&nbsp;&nbsp;&nbsp;&nbsp;CRViewer.ViewReport
+<a name="158398"></a>End Sub
+<a name="158399"></a>--&gt;
+<a name="158351"></a>&lt;/SCRIPT&gt;
+</PRE><p><a name="153872"></a>En este ejemplo se muestra un &#225;rbol de grupos que permite Smart Navigation (desplazamiento inteligente). Adem&#225;s, el usuario puede profundizar en informes de resumen, actualizar los datos de los informes e imprimir los informes en una impresora.</p><p><a name="153918"></a>Para obtener informaci&#243;n acerca de c&#243;mo utilizar el visor ActiveX en otras aplicaciones y entornos de desarrollo, consulte el manual de referencia t&#233;cnica.</p>
+<hr><br>
+
+<script  language="JavaScript"><!--
+
+var prev = "Report_Viewers11.html";
+var next = "Report_Viewers13.html";
+
+function setTopicID() { 
+      var number = "153868"; 
+      return number; 
+}
+
+// --></script>
+
+
+
+
+<SCRIPT>
+
+if (!window.parent.toc && navigator.appName == "Netscape") {
+
+   document.writeln ('<TABLE ALIGN="left" border="0" cellspacing="0" cellpadding="10">');
+   document.writeln ('<TR>');
+   document.write ('<TD ALIGN="left">');
+
+   if (prev != "wcmadminTOC.hhc") {
+      document.writeln ('<A HREF="' + prev + '">');
+      document.writeln ('<IMG SRC="prevpage.gif" HEIGHT=17 BORDER=0 ALT="Página anterior"></A>');
+   } else {
+//   window.alert ('no previous page');
+   }
+
+   if (next != "wcmadminIX.hhk") {
+      document.writeln ('<A HREF="' + next + '">');
+      document.writeln ('<IMG SRC="nextpage.gif" HEIGHT=17 BORDER=0 ALT="Página siguiente"></A>');
+   } else {
+//   window.alert ('no next page');
+   }
+   document.writeln ('</TD><TD ALIGN="left">');
+   document.writeln ('<A HREF="frameset.htm?TOC">');
+   document.writeln ('<IMG SRC="showtoc.gif" HEIGHT=17 BORDER=0 ALT="Haga clic para ver el contenido"></A></TD>');
+   document.writeln ('<TD ALIGN="left">');
+   document.writeln ('<A HREF="frameset.htm?IDX">');
+   document.writeln ('<IMG SRC="showix.gif" HEIGHT=17 BORDER=0 ALT="Haga clic para ver el índice"></A></TD>');
+   document.writeln ('</TD>');
+   document.writeln ('</TR>');
+   document.writeln ('</TABLE>');
+
+}
+
+</SCRIPT>
+<table align="right" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td align="right"><font size="1">Seagate Software, Inc.<br>
+    <a href="http://www.seagatesoftware.com">http://www.seagatesoftware.com</a><br>
+    Envíe sus comentarios a:<br>
+    <a href="mailto:techpubs@seagatesoftware.com">techpubs@seagatesoftware.com</a><br>
+    </font></td>
+  </tr>
+</table>
+</body>
+</html>
+
+

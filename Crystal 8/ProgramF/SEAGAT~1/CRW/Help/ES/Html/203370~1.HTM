@@ -1,0 +1,114 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+
+<html>
+<head>
+<title>Ejemplo de ciclo For/Next</title>
+
+<link REL=STYLESHEET TYPE="text/css" HREF="seagate.css">
+
+<!--
+                 ***********************************
+                 * Seagate Software copyright 1999 *
+                 ***********************************
+
+                      Template version: 5.1
+-->
+
+
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" link="#0000FF" vlink="#0000FF" alink="#800080">
+
+
+ 
+<a name="132844"></a><h4 class="newpage"> Ejemplo de ciclo For/Next</h4><p><a name="132846"></a>He aqu&#237; un ejemplo m&#225;s detallado de las capacidades de procesamiento de cadenas de Seagate Crystal Reports. El c&#243;digo C&#233;sar es un c&#243;digo simple que tradicionalmente se atribuye a Julio C&#233;sar. En este c&#243;digo, cada letra de una palabra es sustituida por una letra cinco caracteres m&#225;s adelante en el alfabeto. Por ejemplo, "Atroz" se convierte en "Fzwte". Observe que "z" es remplazada por "e". Como en el alfabeto no existen 5 caracteres despu&#233;s de la "z", se comienza nuevamente desde el principio.</p><p><a name="143644"></a>He aqu&#237; una f&#243;rmula que se implementa al aplicar el c&#243;digo C&#233;sar al campo {Cliente.Nombre del cliente} de la base de datos Xtreme_es:</p><p><code><a name="132848"></a>Rem El c&#243;digo C&#233;sar</code></p><PRE><a name="132850"></a>Dim cadenaEntrada 'La cadena de entrada que se va a 
+codificar
+<a name="132851"></a>cadenaEntrada = {Cliente.Nombre del cliente}
+<a name="132852"></a>Dim movimiento
+<a name="132853"></a>movimiento = 5
+</PRE><p><code><a name="132855"></a>formula = ""</code></p><PRE><a name="132857"></a>Dim i
+<a name="132858"></a>For i = 1 To Len(cadenaEntrada)
+<a name="132859"></a>   Dim carEntrada, carSalida
+<a name="132860"></a>   carEntrada = Mid(cadenaEntrada, i, 1)
+<a name="132862"></a>   Dim esCar&#225;cter, esCar&#225;cterMay&#250;s
+<a name="132863"></a>   esCar&#225;cter = LCase(carEntrada) In "a" To "z"
+<a name="132864"></a>   esCar&#225;cterMay&#250;s = esCar&#225;cter And (UCase (carEntrada) = 
+carEntrada)
+</PRE><p><code><a name="133195"></a>&nbsp;&nbsp;&nbsp;carEntrada = LCase(carEntrada)</code></p><PRE><a name="133197"></a>   If esCar&#225;cter Then
+<a name="132869"></a>      Dim desplazamiento
+<a name="132870"></a>      desplazamiento = (Asc(carEntrada) + movimiento - 
+Asc("a")) Mod _
+<a name="132871"></a>               (Asc("z") - Asc("a") + 1)
+<a name="132872"></a>      carSalida = Chr(desplazamiento + Asc("a"))
+<a name="132873"></a>      If esCar&#225;cterMay&#250;s Then carSalida = 
+UCase(carSalida)
+<a name="132874"></a>   Else
+<a name="132875"></a>      carSalida = carEntrada
+<a name="132876"></a>   End If
+<a name="132878"></a>   formula = formula &amp; carSalida
+<a name="132879"></a>Next i
+</PRE><p><a name="132881"></a>En el ejemplo anterior, existe un enunciado If de m&#250;ltiples l&#237;neas incorporado dentro del bloque de enunciados del ciclo For/Next. Este enunciado If es responsable de los detalles precisos del cambio de un solo car&#225;cter. Por ejemplo, las letras son consideradas de forma diferente que los espacios y signos de puntuaci&#243;n. En particular, los espacios y signos de puntuaci&#243;n no se codifican. Puede haber estructuras de control incorporadas dentro de otras estructuras de control y m&#250;ltiples enunciados pueden estar incluidos en el bloque de enunciados de una estructura de control.</p>
+<hr><br>
+
+<script  language="JavaScript"><!--
+
+var prev = "20_basicsyntax52.html";
+var next = "20_basicsyntax54.html";
+
+function setTopicID() { 
+      var number = "132844"; 
+      return number; 
+}
+
+// --></script>
+
+
+
+
+<SCRIPT>
+
+if (!window.parent.toc && navigator.appName == "Netscape") {
+
+   document.writeln ('<TABLE ALIGN="left" border="0" cellspacing="0" cellpadding="10">');
+   document.writeln ('<TR>');
+   document.write ('<TD ALIGN="left">');
+
+   if (prev != "crw_spTOC.hhc") {
+      document.writeln ('<A HREF="' + prev + '">');
+      document.writeln ('<IMG SRC="prevpage.gif" HEIGHT=17 BORDER=0 ALT="Página anterior"></A>');
+   } else {
+//   window.alert ('no previous page');
+   }
+
+   if (next != "crw_spIX.hhk") {
+      document.writeln ('<A HREF="' + next + '">');
+      document.writeln ('<IMG SRC="nextpage.gif" HEIGHT=17 BORDER=0 ALT="Página siguiente"></A>');
+   } else {
+//   window.alert ('no next page');
+   }
+   document.writeln ('</TD><TD ALIGN="left">');
+   document.writeln ('<A HREF="frameset.htm?TOC">');
+   document.writeln ('<IMG SRC="showtoc.gif" HEIGHT=17 BORDER=0 ALT="Haga clic para ver el contenido"></A></TD>');
+   document.writeln ('<TD ALIGN="left">');
+   document.writeln ('<A HREF="frameset.htm?IDX">');
+   document.writeln ('<IMG SRC="showix.gif" HEIGHT=17 BORDER=0 ALT="Haga clic para ver el índice"></A></TD>');
+   document.writeln ('</TD>');
+   document.writeln ('</TR>');
+   document.writeln ('</TABLE>');
+
+}
+
+</SCRIPT>
+<table align="right" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td align="right"><font size="1">Seagate Software, Inc.<br>
+    <a href="http://www.seagatesoftware.com">http://www.seagatesoftware.com</a><br>
+    Envíe sus comentarios a:<br>
+    <a href="mailto:techpubs@seagatesoftware.com">techpubs@seagatesoftware.com</a><br>
+    </font></td>
+  </tr>
+</table>
+</body>
+</html>
+
+

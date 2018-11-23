@@ -1,0 +1,96 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+
+<html>
+<head>
+<title>InStrRev</title>
+
+<link REL=STYLESHEET TYPE="text/css" HREF="seagate.css">
+
+<!--
+                 ***********************************
+                 * Seagate Software copyright 1999 *
+                 ***********************************
+
+                      Template version: 5.1
+-->
+
+
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" link="#0000FF" vlink="#0000FF" alink="#800080">
+
+
+ 
+<a name="1000853495"></a><h3 class="newpage"> InStrRev</h3>
+<p><a name="1000853496"></a>Sintaxis b&#225;sica y Crystal.</p><a name="1000853497"></a><h5>Sobrecargas</h5><ul type="disc"><a name="1000853498"></a><li>InStrRev (cadenaEntrada, cadenaB&#250;squeda)
+<a name="1000853499"></a><li>InStrRev (cadenaEntrada, cadenaB&#250;squeda, inicioPosici&#243;n)
+<a name="1000853500"></a><li>InStrRev (cadenaEntrada, cadenaencontrar, inicioPosici&#243;n, comparar)
+</ul><a name="1000853501"></a><h5>Argumentos</h5><ul type="disc"><a name="1000853502"></a><li>cadenaEntrada es una expresi&#243;n de Cadena que est&#225; siendo buscada.
+<a name="1000853503"></a><li>cadenaB&#250;squeda es una expresi&#243;n de Cadena que est&#225; siendo buscada.
+<a name="1000853504"></a><li>posici&#243;nInicio es una expresi&#243;n num&#233;rica opcional que establece la posici&#243;n de inicio de una b&#250;squeda. Si se omite, se usa -1, lo que significa que la b&#250;squeda se inicia en la &#250;ltima posici&#243;n de car&#225;cter.
+<a name="1000853505"></a><li>comparar es un valor num&#233;rico opcional que indica el tipo de comparaci&#243;n que deber&#225; usarse para evaluar subcadenas:
+<ul type="disc"><ul type="disc"><a name="1000853506"></a><li> Realiza una comparaci&#243;n, que es sensible a may&#250;sculas y min&#250;sculas<a name="1000853507"></a><li> Realiza una comparaci&#243;n, que es sensible a may&#250;sculas y min&#250;sculas<p class="indent"><a name="1000853508"></a>Si se omite, se realiza una comparaci&#243;n sensible a may&#250;sculas y min&#250;sculas.</p></ul></ul></ul><a name="1000853509"></a><h5>Devuelve </h5><p><a name="1000853510"></a>es una cadena que indica que indica la posici&#243;n de la cadena concordante dentro de la cadena con la que debe coincidir. El primer car&#225;cter de cadenaEntrada (desde el principio) es 1.</p><a name="1000853511"></a><h5>Acci&#243;n</h5><p><a name="1000853512"></a>InStrRev devuelve la posici&#243;n de la primera aparici&#243;n de una cadena dentro de otra.   El proceso de concordancia se realiza en direcci&#243;n reversa desde la posici&#243;n inicial especificada. </p><a name="1000853513"></a><h5>Ejemplo(s)</h5><p><a name="1000853514"></a>Los siguientes ejemplos son aplicables a las sintaxis b&#225;sica y Crystal:</p><p><code><a name="1000853515"></a>InStrRev ("abcdefgbchijk", "bc") </code></p><p class="example"><a name="1000853516"></a>Devuelve 8, donde el proceso de concordancia se inicia desde el final de la cadena en direcci&#243;n reversa. </p><p><code><a name="1000853517"></a>InStrRev ("abcdefgbchijk", "bc", -1) </code></p><p class="example"><a name="1000853518"></a>Devuelve 8, donde el proceso de concordancia se inicia desde el final de la cadena en direcci&#243;n reversa. </p><p><code><a name="1000853519"></a>InStrRev ("abcdefgbchijk", "bc", 2) </code></p><p class="example"><a name="1000853520"></a>Devuelve 0, es decir, no se encuentra una concordancia. El proceso de concordancia se inicia en la "b" dentro de "ab" en direcci&#243;n reversa.</p><p><code><a name="1000853521"></a>InStrRev ("abcdefgbchijk", "bc", 3) </code></p><p class="example"><a name="1000853522"></a>Devuelve 2. El proceso de concordancia se inicia en la "c" dentro de "abc" en la direcci&#243;n reversa.</p><p><code><a name="1000853523"></a>InStrRev ("abcdefgbchijk", "bc", 10) </code></p><p class="example"><a name="1000853524"></a>Devuelve 8. El proceso de concordancia se inicia en la 'h' dentro de "abcdefgbch" en  direcci&#243;n reversa, y la primera aparici&#243;n de "bc" se encuentra en la posici&#243;n 8 desde el principio de la cadena s.</p><p><code><a name="1000853525"></a>InStrRev ("abcdefgbchijk", "BC", -1, 1) </code></p><p class="example"><a name="1000853526"></a>Devuelve 8. El proceso de concordancia se inicia al final de la cadena en direcci&#243;n reversa, y la primera aparici&#243;n de "BC", independientemente de la letra inicial min&#250;scula o may&#250;scula ya que se especific&#243; una comparaci&#243;n no sensible, se encuentra en la posici&#243;n 8 desde el principio de la cadena de entrada.</p><p><code><a name="1000853527"></a>InStrRev ("aBCdefgbchijk", "BC", -1, 0) </code></p><p class="example"><a name="1000853528"></a>Devuelve 2. El proceso de concordancia se inicia al final de la cadena en la direcci&#243;n inversa, y la primera aparici&#243;n de "BC" se encuentra en la posici&#243;n 2 desde el principio de la cadena s.</p><a name="1000853529"></a><h5>Comentario</h5><p><a name="1000853530"></a>Esta funci&#243;n est&#225; dise&#241;ada para trabajar exactamente como la funci&#243;n de Visual Basic del mismo nombre.</p>
+<hr><br>
+
+<script  language="JavaScript"><!--
+
+var prev = "Functions89.html";
+var next = "Functions91.html";
+
+function setTopicID() { 
+      var number = "1000853495"; 
+      return number; 
+}
+
+// --></script>
+
+
+
+
+<SCRIPT>
+
+if (!window.parent.toc && navigator.appName == "Netscape") {
+
+   document.writeln ('<TABLE ALIGN="left" border="0" cellspacing="0" cellpadding="10">');
+   document.writeln ('<TR>');
+   document.write ('<TD ALIGN="left">');
+
+   if (prev != "crw_spTOC.hhc") {
+      document.writeln ('<A HREF="' + prev + '">');
+      document.writeln ('<IMG SRC="prevpage.gif" HEIGHT=17 BORDER=0 ALT="Página anterior"></A>');
+   } else {
+//   window.alert ('no previous page');
+   }
+
+   if (next != "crw_spIX.hhk") {
+      document.writeln ('<A HREF="' + next + '">');
+      document.writeln ('<IMG SRC="nextpage.gif" HEIGHT=17 BORDER=0 ALT="Página siguiente"></A>');
+   } else {
+//   window.alert ('no next page');
+   }
+   document.writeln ('</TD><TD ALIGN="left">');
+   document.writeln ('<A HREF="frameset.htm?TOC">');
+   document.writeln ('<IMG SRC="showtoc.gif" HEIGHT=17 BORDER=0 ALT="Haga clic para ver el contenido"></A></TD>');
+   document.writeln ('<TD ALIGN="left">');
+   document.writeln ('<A HREF="frameset.htm?IDX">');
+   document.writeln ('<IMG SRC="showix.gif" HEIGHT=17 BORDER=0 ALT="Haga clic para ver el índice"></A></TD>');
+   document.writeln ('</TD>');
+   document.writeln ('</TR>');
+   document.writeln ('</TABLE>');
+
+}
+
+</SCRIPT>
+<table align="right" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td align="right"><font size="1">Seagate Software, Inc.<br>
+    <a href="http://www.seagatesoftware.com">http://www.seagatesoftware.com</a><br>
+    Envíe sus comentarios a:<br>
+    <a href="mailto:techpubs@seagatesoftware.com">techpubs@seagatesoftware.com</a><br>
+    </font></td>
+  </tr>
+</table>
+</body>
+</html>
+
+

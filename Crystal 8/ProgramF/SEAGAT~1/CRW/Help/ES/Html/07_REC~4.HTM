@@ -1,0 +1,90 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+
+<html>
+<head>
+<title>F&#243;rmulas avanzadas de selecci&#243;n de registros</title>
+
+<link REL=STYLESHEET TYPE="text/css" HREF="seagate.css">
+
+<!--
+                 ***********************************
+                 * Seagate Software copyright 1999 *
+                 ***********************************
+
+                      Template version: 5.1
+-->
+
+
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" link="#0000FF" vlink="#0000FF" alink="#800080">
+
+
+ 
+<a name="53628"></a><h3 class="newpage"> F&#243;rmulas avanzadas de selecci&#243;n de registros</h3>
+<p><a name="53629"></a>Esta secci&#243;n es de su inter&#233;s si va a crear informes a partir de grandes bases de datos y desea reducir el tiempo que le toma procesar y mostrar los resultados.</p><p><a name="53630"></a><font color="darkblue"><b>Nota:   &nbsp;&nbsp;&nbsp;</b></font>Esta secci&#243;n supone que usted est&#225; familiarizado con el Asistente de selecci&#243;n y que elabora informes a partir de una base de datos SQL.</p>
+<a name="53631"></a><h4>Limitaci&#243;n de la cantidad de datos tomados de la base de datos</h4><p><a name="53632"></a>Lo m&#225;s importante que puede hacer para acelerar el procesamiento de informes es limitar la cantidad de datos que se toman de la base de datos.</p><p><a name="53633"></a>Una herramienta principal para hacerlo es la f&#243;rmula de selecci&#243;n de registros. Seagate Crystal Reports analiza su f&#243;rmula de selecci&#243;n de registros y genera una consulta SQL a partir de ella. La base de datos luego procesa esta consulta SQL y los registros resultantes se env&#237;an a Seagate Crystal Reports. Seagate Crystal Reports entonces eval&#250;a localmente la f&#243;rmula de selecci&#243;n de registros para cada uno de los registros recuperados de la base de datos, obteniendo as&#237; el conjunto de registros que se usar&#225; para generar el informe.</p><p><a name="53634"></a>Los registros innecesarios se eliminan en dos etapas: en la base de datos con la consulta SQL y en Seagate Crystal Reports mediante la f&#243;rmula de selecci&#243;n de registros. Para acelerar el proceso, se prefiere eliminar en la primera etapa la mayor cantidad de registros posible. Esto com&#250;nmente se denomina <EM>reducir la selecci&#243;n de registros para la base de datos</EM>.</p><a name="53636"></a><h4>Ejemplos de f&#243;rmula de selecci&#243;n de registros</h4><p><a name="53637"></a>En la base de datos de muestra Xtreme_es, existen 2.001 registros en la tabla Pedidos de los cuales 169 tienen fechas de pedido anteriores a 1997. Supongamos que solamente queremos generar un informe sobre esos registros. Una posible f&#243;rmula de selecci&#243;n de registros es:</p><p><code><a name="53638"></a>Year ({Pedidos.Fecha del pedido}) &lt; 1997</code></p><p><a name="53639"></a>La consulta SQL generada enviar&#225; los 2.001 registros a Seagate Crystal Reports y luego la f&#243;rmula de selecci&#243;n de registros los reducir&#225; a 169. Para ver esto, abra el cuadro de di&#225;logo Mostrar consulta SQL en el men&#250; Base de datos y observe que la consulta SQL no tiene cl&#225;usula Where. Esto se debe a que Seagate Crystal Reports no puede reducir la funci&#243;n Year ( ) en la cl&#225;usula WHERE.</p><p><a name="53643"></a>Por otra parte, una f&#243;rmula de selecci&#243;n de registros que genera el mismo<br>informe es:</p><p><code><a name="53644"></a>{Pedidos.Fecha del pedido} &lt; #Jan 1, 1997#</code></p><p><a name="53645"></a>Esta selecci&#243;n de registros se puede efectuar en el servidor de la base de datos, por lo que &#233;sta se reduce. La consulta SQL generada s&#243;lo env&#237;a 169 registros a Seagate Crystal Reports y cuando la f&#243;rmula es evaluada por Seagate Crystal Reports, no es necesario eliminar m&#225;s registros. Observe que la consulta SQL resultante tiene una cl&#225;usula Where.</p><p><a name="53646"></a>Para acelerar el proceso, resulta mejor, si es posible, escribir f&#243;rmulas de selecci&#243;n de registros como la segunda y no como la primera; ambas generan el mismo informe, pero la segunda se beneficia de la potencia y optimizaciones disponibles en el servidor de la base de datos para manejar sus propios datos.</p>
+<hr><br>
+
+<script  language="JavaScript"><!--
+
+var prev = "07_recordgroupsel11.html";
+var next = "07_recordgroupsel13.html";
+
+function setTopicID() { 
+      var number = "53628"; 
+      return number; 
+}
+
+// --></script>
+
+
+
+
+<SCRIPT>
+
+if (!window.parent.toc && navigator.appName == "Netscape") {
+
+   document.writeln ('<TABLE ALIGN="left" border="0" cellspacing="0" cellpadding="10">');
+   document.writeln ('<TR>');
+   document.write ('<TD ALIGN="left">');
+
+   if (prev != "crw_spTOC.hhc") {
+      document.writeln ('<A HREF="' + prev + '">');
+      document.writeln ('<IMG SRC="prevpage.gif" HEIGHT=17 BORDER=0 ALT="Página anterior"></A>');
+   } else {
+//   window.alert ('no previous page');
+   }
+
+   if (next != "crw_spIX.hhk") {
+      document.writeln ('<A HREF="' + next + '">');
+      document.writeln ('<IMG SRC="nextpage.gif" HEIGHT=17 BORDER=0 ALT="Página siguiente"></A>');
+   } else {
+//   window.alert ('no next page');
+   }
+   document.writeln ('</TD><TD ALIGN="left">');
+   document.writeln ('<A HREF="frameset.htm?TOC">');
+   document.writeln ('<IMG SRC="showtoc.gif" HEIGHT=17 BORDER=0 ALT="Haga clic para ver el contenido"></A></TD>');
+   document.writeln ('<TD ALIGN="left">');
+   document.writeln ('<A HREF="frameset.htm?IDX">');
+   document.writeln ('<IMG SRC="showix.gif" HEIGHT=17 BORDER=0 ALT="Haga clic para ver el índice"></A></TD>');
+   document.writeln ('</TD>');
+   document.writeln ('</TR>');
+   document.writeln ('</TABLE>');
+
+}
+
+</SCRIPT>
+<table align="right" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td align="right"><font size="1">Seagate Software, Inc.<br>
+    <a href="http://www.seagatesoftware.com">http://www.seagatesoftware.com</a><br>
+    Envíe sus comentarios a:<br>
+    <a href="mailto:techpubs@seagatesoftware.com">techpubs@seagatesoftware.com</a><br>
+    </font></td>
+  </tr>
+</table>
+</body>
+</html>
+
+

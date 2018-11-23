@@ -1,0 +1,81 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+
+<html>
+<head>
+
+<title>Actualizaci&#243;n de los datos del informe web </title>
+
+<link REL=STYLESHEET TYPE="text/css" HREF="seagate.css">
+
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" link="#0000FF" vlink="#0000FF" alink="#800080">
+
+
+ 
+<a name="150103"></a><h3 class="newpage"> Actualizaci&#243;n de los datos del informe web </h3>
+<p><a name="150104"></a>Cuando un informe contiene datos almacenados, &#233;ste no necesita acceder a una base de datos. En este caso, el informe obtiene la informaci&#243;n directamente desde el Web Component Server. Esto puede reducir significativamente el tr&#225;fico en la red y el uso de recursos del servidor de la red cuando muchas personas solicitan informes frecuentemente. Por esta raz&#243;n, es preferible dise&#241;ar la mayor&#237;a de los informes de manera que contengan datos almacenados. Adem&#225;s, los informes que contienen datos almacenados pueden almacenarse f&#225;cilmente de forma temporal por el Web Component Server para optimizar las tareas compartidas, entregando a m&#225;s usuarios la misma informaci&#243;n simult&#225;neamente. Sin embargo, si un informe contiene datos almacenados, y se hacen modificaciones en la base de datos original, el informe no entregar&#225; informaci&#243;n precisa. Para actualizar el informe, puede abrirlo en Seagate Crystal Reports, actualizar los datos y volver a almacenar el informe. Sin embargo, el Web Component Server tambi&#233;n incluye un medio de actualizaci&#243;n din&#225;mica de los datos de los informes.</p><p><a name="150105"></a>Como administrador de un sistema web, debe decidir si desea permitir que los usuarios actualicen los datos de los informes por s&#237; mismos o si prefiere controlar c&#243;mo y con qu&#233; frecuencia los usuarios pueden actualizar los datos de los informes. Todos los visores de informes incluyen un bot&#243;n que permite actualizar los datos mientras se visualiza el informe. Sin embargo, los sitios en que varios usuarios actualizan los datos de los informes pueden causar congesti&#243;n en la red y reducir la velocidad del sistema, puesto que cada actualizaci&#243;n requiere conexi&#243;n a una base de datos y clasificaci&#243;n de datos.</p><p><a name="150106"></a>Puede modificar e incluso desactivar la capacidad del usuario para actualizar datos, as&#237; como crear otros medios para mantener actualizados los datos de los informes. Una forma es programar actualizaciones autom&#225;ticas usando la opci&#243;n Actualizaci&#243;n de base de datos de la ficha Page Server de la aplicaci&#243;n Crystal Report Web Components Manager. Para m&#225;s informaci&#243;n, vea <a href="WebServerAdministration6.html#161982">Actualizaci&#243;n de base de datos</a>.</p><p><a name="150113"></a>Al determinar la forma de actualizaci&#243;n de los datos en su sitio web, tenga presente que las actualizaciones frecuentes de los datos de los informes limitan la capacidad de almacenamiento temporal de informes del Web Component Server. Cada vez que se actualiza un informe, queda obsoleta cualquier versi&#243;n de dicho informe que ha sido almacenada de forma temporal. </p>
+<hr><br>
+
+<script  language="JavaScript"><!--
+
+var prev = "WebServerCommands17.html";
+var next = "Report_Viewers.html";
+
+function setTopicID() { 
+      var number = "150103"; 
+      return number; 
+}
+
+// --></script>
+
+
+
+
+<SCRIPT>
+
+if (!window.parent.toc && navigator.appName == "Netscape") {
+
+   document.writeln ('<TABLE ALIGN="left" border="0" cellspacing="0" cellpadding="10">');
+   document.writeln ('<TR>');
+   document.write ('<TD ALIGN="left">');
+
+   if (prev != "wcmadminTOC.hhc") {
+      document.writeln ('<A HREF="' + prev + '">');
+      document.writeln ('<IMG SRC="prevpage.gif" HEIGHT=17 BORDER=0 ALT="Página anterior"></A>');
+   } else {
+//   window.alert ('no previous page');
+   }
+
+   if (next != "wcmadminIX.hhk") {
+      document.writeln ('<A HREF="' + next + '">');
+      document.writeln ('<IMG SRC="nextpage.gif" HEIGHT=17 BORDER=0 ALT="Página siguiente"></A>');
+   } else {
+//   window.alert ('no next page');
+   }
+   document.writeln ('</TD><TD ALIGN="left">');
+   document.writeln ('<A HREF="frameset.htm?TOC">');
+   document.writeln ('<IMG SRC="showtoc.gif" HEIGHT=17 BORDER=0 ALT="Haga clic para ver el contenido"></A></TD>');
+   document.writeln ('<TD ALIGN="left">');
+   document.writeln ('<A HREF="frameset.htm?IDX">');
+   document.writeln ('<IMG SRC="showix.gif" HEIGHT=17 BORDER=0 ALT="Haga clic para ver el índice"></A></TD>');
+   document.writeln ('</TD>');
+   document.writeln ('</TR>');
+   document.writeln ('</TABLE>');
+
+}
+
+</SCRIPT>
+<table align="right" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td align="right"><font size="1">Seagate Software, Inc.<br>
+    <a href="http://www.seagatesoftware.com">http://www.seagatesoftware.com</a><br>
+    Envíe sus comentarios a:<br>
+    <a href="mailto:techpubs@seagatesoftware.com">techpubs@seagatesoftware.com</a><br>
+    </font></td>
+  </tr>
+</table>
+</body>
+</html>
+
+

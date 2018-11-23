@@ -1,0 +1,101 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+
+<html>
+<head>
+<title>Uso de los valores nulos</title>
+
+<link REL=STYLESHEET TYPE="text/css" HREF="seagate.css">
+
+<!--
+                 ***********************************
+                 * Seagate Software copyright 1999 *
+                 ***********************************
+
+                      Template version: 5.1
+-->
+
+
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" link="#0000FF" vlink="#0000FF" alink="#800080">
+
+
+ 
+<a name="130732"></a><h4 class="newpage"> Uso de los valores nulos</h4><p><a name="135851"></a>Para algunos productos, como el candado de cadena Guardian, no se registr&#243; un valor de color y por ello el campo {Producto.Color} tiene un valor nulo en la base de datos para ese registro. En general, cuando Seagate Crystal Reports encuentra un campo de valor nulo en una f&#243;rmula, deja inmediatamente de evaluar la f&#243;rmula y no genera ning&#250;n valor. As&#237;, el registro del candado de cadena Guardian no tiene ninguna palabra impresa junto a s&#237;. Si desea manejar valores nulos de la f&#243;rmula, debe hacerlo expl&#237;citamente usando una de las funciones especiales dise&#241;adas para ello: IsNull, PreviousIsNull o NextIsNull. He aqu&#237; un ejemplo de c&#243;mo solucionar la situaci&#243;n anterior usando IsNull:</p><PRE><a name="130734"></a>If IsNull({Producto.Color}) Or _
+<a name="130735"></a>   InStr({Producto.Color}, " ") = 0 Then
+<a name="130736"></a>   formula = "b&#225;sico"
+<a name="130737"></a>Else
+<a name="130738"></a>   formula = "mezcla"
+<a name="130739"></a>End If
+</PRE><p><a name="130741"></a>Relacionado con los operadores, cuando Seagate Crystal Reports eval&#250;a la condici&#243;n:</p><PRE><a name="130742"></a>IsNull({Producto.Color}) Or _
+<a name="130743"></a>InStr({Producto.Color}, " ") = 0
+</PRE><p><a name="130744"></a>Primero eval&#250;a IsNull ({Producto.Color)) y cuando determina que es verdadero, sabe que toda la condici&#243;n tambi&#233;n lo es y no necesita verificar si:</p><p><code><a name="130745"></a>InStr({Producto.Color}, " ") = 0.</code></p><p><a name="130746"></a>Es decir, Seagate Crystal Reports detendr&#225; la evaluaci&#243;n de una expresi&#243;n booleana cuando pueda predecir los resultados de toda la expresi&#243;n. En el ejemplo siguiente, la f&#243;rmula protege del intento de dividir por cero en caso de que el denominador sea 0:</p><PRE><a name="130747"></a>Dim num As Number, denom As Number
+<a name="130748"></a>...
+<a name="130749"></a>If denom &lt;&gt; 0 And num / denom &gt; 5 Then
+<a name="130750"></a>...
+</PRE><p><a name="130752"></a><font color="darkblue"><b>Nota:   &nbsp;&nbsp;&nbsp;</b></font>Visual Basic no es compatible con esta t&#233;cnica, ya que se eval&#250;an todas las partes de una expresi&#243;n booleana en Visual Basic, incluso cuando no sea necesario.</p>
+
+<hr><br>
+
+<script  language="JavaScript"><!--
+
+var prev = "20_basicsyntax46.html";
+var next = "20_basicsyntax48.html";
+
+function setTopicID() { 
+      var number = "130732"; 
+      return number; 
+}
+
+// --></script>
+
+
+
+
+<SCRIPT>
+
+if (!window.parent.toc && navigator.appName == "Netscape") {
+
+   document.writeln ('<TABLE ALIGN="left" border="0" cellspacing="0" cellpadding="10">');
+   document.writeln ('<TR>');
+   document.write ('<TD ALIGN="left">');
+
+   if (prev != "crw_spTOC.hhc") {
+      document.writeln ('<A HREF="' + prev + '">');
+      document.writeln ('<IMG SRC="prevpage.gif" HEIGHT=17 BORDER=0 ALT="Página anterior"></A>');
+   } else {
+//   window.alert ('no previous page');
+   }
+
+   if (next != "crw_spIX.hhk") {
+      document.writeln ('<A HREF="' + next + '">');
+      document.writeln ('<IMG SRC="nextpage.gif" HEIGHT=17 BORDER=0 ALT="Página siguiente"></A>');
+   } else {
+//   window.alert ('no next page');
+   }
+   document.writeln ('</TD><TD ALIGN="left">');
+   document.writeln ('<A HREF="frameset.htm?TOC">');
+   document.writeln ('<IMG SRC="showtoc.gif" HEIGHT=17 BORDER=0 ALT="Haga clic para ver el contenido"></A></TD>');
+   document.writeln ('<TD ALIGN="left">');
+   document.writeln ('<A HREF="frameset.htm?IDX">');
+   document.writeln ('<IMG SRC="showix.gif" HEIGHT=17 BORDER=0 ALT="Haga clic para ver el índice"></A></TD>');
+   document.writeln ('</TD>');
+   document.writeln ('</TR>');
+   document.writeln ('</TABLE>');
+
+}
+
+</SCRIPT>
+<table align="right" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td align="right"><font size="1">Seagate Software, Inc.<br>
+    <a href="http://www.seagatesoftware.com">http://www.seagatesoftware.com</a><br>
+    Envíe sus comentarios a:<br>
+    <a href="mailto:techpubs@seagatesoftware.com">techpubs@seagatesoftware.com</a><br>
+    </font></td>
+  </tr>
+</table>
+</body>
+</html>
+
+

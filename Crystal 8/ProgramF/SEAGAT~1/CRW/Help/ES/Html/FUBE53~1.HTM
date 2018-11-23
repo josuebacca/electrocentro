@@ -1,0 +1,96 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+
+<html>
+<head>
+<title>WeightedAverage (campo, campo), WeightedAverage (campo, campo, campoCondicional), WeightedAverage (campo, campo, campoCondicional, condici&#243;n)</title>
+
+<link REL=STYLESHEET TYPE="text/css" HREF="seagate.css">
+
+<!--
+                 ***********************************
+                 * Seagate Software copyright 1999 *
+                 ***********************************
+
+                      Template version: 5.1
+-->
+
+
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" link="#0000FF" vlink="#0000FF" alink="#800080">
+
+
+ 
+<a name="1000851250"></a><h3 class="newpage"> WeightedAverage (campo, campo), WeightedAverage (campo, campo, campoCondicional), WeightedAverage (campo, campo, campoCondicional, condici&#243;n)</h3>
+<p><a name="1000851253"></a>Sintaxis b&#225;sica y Crystal.</p><a name="1000851254"></a><h5>Argumentos</h5><ul type="disc"><a name="1000851255"></a><li>campo es cualquier campo num&#233;rico de base de datos o de f&#243;rmula que puede ser evaluado por la funci&#243;n.
+<a name="1000851256"></a><li>campoCondicional es un campo utilizado para agrupar los valores del campo.
+<a name="1000851257"></a><li>condici&#243;n es una cadena de texto que indica la condici&#243;n de campoCondicional que controla la agrupaci&#243;n. Las cadenas v&#225;lidas para este argumento dependen del contenido de campoCondicional, el cual puede ser fecha o booleano. Para obtener m&#225;s informaci&#243;n acerca de las condiciones, v&#233;ase  <a href="Functions20.html#1000850529">Condiciones para las funciones de resumen</a>.
+</ul><a name="1000851261"></a><h5>Devuelve </h5><p><a name="1000851262"></a>Un n&#250;mero fraccionario</p><a name="1000851263"></a><h5>Acci&#243;n</h5><p><a name="1000851264"></a>Le permite calcular el promedio ponderado de los campos especificados. Cuando calcula un promedio ponderado, lo que calcula es el promedio de un campo y luego usando los valores en otro campo para ponderar la contribuci&#243;n de cada valor en el primer campo al promedio. En un promedio normal, todas las ponderaciones son igual a 1.</p><p><a name="1000851265"></a>Por ejemplo:</p><ul type="disc"><a name="1000851266"></a><li>Puede calcular el promedio ponderado de dos campos. Para obtener m&#225;s informaci&#243;n acerca de esta clase de resumen, vea <a href="Functions22.html#1000850599">SummaryFunction (campo)</a>.
+<a name="1000851270"></a><li>Puede calcular el promedio ponderado de dos campos para los valores dentro de un grupo (por ejemplo, las ventas agrupadas por el estado de donde provienen). Para obtener m&#225;s informaci&#243;n acerca de esta clase de resumen, vea <a href="Functions23.html#1000850631">SummaryFunction (campo, campoCondicional)</a>.
+<a name="1000851274"></a><li>Puede calcular el promedio ponderado de dos campos para los valores dentro de un grupo en el cual el agrupamiento es controlado por los cambios en un campo de fecha o booleano (por ejemplo, las ventas agrupadas por el mes en que fueron hechas). Para obtener m&#225;s informaci&#243;n acerca de esta clase de resumen, vea <a href="Functions24.html#1000850661">SummaryFunction (campo, campoCondicional, condici&#243;n)</a>.
+</ul><a name="1000851278"></a><h5>Ejemplo(s)</h5><p><a name="1000851279"></a>Los siguientes ejemplos son aplicables a las sintaxis b&#225;sica y Crystal:</p><p><code><a name="1000851280"></a>WeightedAverage({tabla.CAMPO1}, {tabla.CAMPO2})</code></p><p class="example"><a name="1000851281"></a>Devuelve 1.75, donde los dos campos tienen cuatro valores cada uno. El campo 1 tiene valores de 3, 2, 5, y 1. La tabla 2 tiene valores de 0, 1, 1, y 0. El promedio ponderado se calcula de la siguiente manera: (3*0 + 2*1 + 5*1 + 1*0)/4 = 1.75.</p><p><a name="1000851282"></a><font color="darkblue"><b>Nota:   &nbsp;&nbsp;&nbsp;</b></font>El uso de esta funci&#243;n en una f&#243;rmula obliga a que la f&#243;rmula sea evaluada al momento de impresi&#243;n. Para obtener m&#225;s informaci&#243;n sobre las consideraciones de evaluaci&#243;n de hora, vea el <a href="Functions169.html#1000572432">Funciones de tiempo de evaluaci&#243;n</a>.</p>
+
+<hr><br>
+
+<script  language="JavaScript"><!--
+
+var prev = "Functions35.html";
+var next = "Functions37.html";
+
+function setTopicID() { 
+      var number = "1000851250"; 
+      return number; 
+}
+
+// --></script>
+
+
+
+
+<SCRIPT>
+
+if (!window.parent.toc && navigator.appName == "Netscape") {
+
+   document.writeln ('<TABLE ALIGN="left" border="0" cellspacing="0" cellpadding="10">');
+   document.writeln ('<TR>');
+   document.write ('<TD ALIGN="left">');
+
+   if (prev != "crw_spTOC.hhc") {
+      document.writeln ('<A HREF="' + prev + '">');
+      document.writeln ('<IMG SRC="prevpage.gif" HEIGHT=17 BORDER=0 ALT="Página anterior"></A>');
+   } else {
+//   window.alert ('no previous page');
+   }
+
+   if (next != "crw_spIX.hhk") {
+      document.writeln ('<A HREF="' + next + '">');
+      document.writeln ('<IMG SRC="nextpage.gif" HEIGHT=17 BORDER=0 ALT="Página siguiente"></A>');
+   } else {
+//   window.alert ('no next page');
+   }
+   document.writeln ('</TD><TD ALIGN="left">');
+   document.writeln ('<A HREF="frameset.htm?TOC">');
+   document.writeln ('<IMG SRC="showtoc.gif" HEIGHT=17 BORDER=0 ALT="Haga clic para ver el contenido"></A></TD>');
+   document.writeln ('<TD ALIGN="left">');
+   document.writeln ('<A HREF="frameset.htm?IDX">');
+   document.writeln ('<IMG SRC="showix.gif" HEIGHT=17 BORDER=0 ALT="Haga clic para ver el índice"></A></TD>');
+   document.writeln ('</TD>');
+   document.writeln ('</TR>');
+   document.writeln ('</TABLE>');
+
+}
+
+</SCRIPT>
+<table align="right" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td align="right"><font size="1">Seagate Software, Inc.<br>
+    <a href="http://www.seagatesoftware.com">http://www.seagatesoftware.com</a><br>
+    Envíe sus comentarios a:<br>
+    <a href="mailto:techpubs@seagatesoftware.com">techpubs@seagatesoftware.com</a><br>
+    </font></td>
+  </tr>
+</table>
+</body>
+</html>
+
+

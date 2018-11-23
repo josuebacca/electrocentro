@@ -1,0 +1,112 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+
+<html>
+<head>
+<title>Creaci&#243;n de grupos personalizados</title>
+
+<link REL=STYLESHEET TYPE="text/css" HREF="seagate.css">
+
+<!--
+                 ***********************************
+                 * Seagate Software copyright 1999 *
+                 ***********************************
+
+                      Template version: 5.1
+-->
+
+
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" link="#0000FF" vlink="#0000FF" alink="#800080">
+
+
+ 
+<a name="245079"></a><h3 class="newpage"> Creaci&#243;n de grupos personalizados</h3>
+<p><a name="245080"></a>Generalmente los datos se ordenan seg&#250;n los valores de un campo del informe. Sin embargo, en algunas ocasiones es aconsejable no agrupar datos seg&#250;n los valores que se encuentran en uno de los campos de su informe. Por ejemplo:</p><ul type="disc"><a name="245081"></a><li>El campo seg&#250;n el cual desea agrupar no existe.
+<p class="indent"><a name="245082"></a>Por ejemplo, su informe puede contener un campo Ciudad y un campo Estado, pero ning&#250;n campo Pa&#237;s, aunque necesita agrupar por pa&#237;s.</p><a name="245083"></a><li>El campo existe, pero no desea agrupar seg&#250;n los valores de ese campo.
+<p class="indent"><a name="245084"></a>Por ejemplo, puede tener un campo Color en el informe que incluya nombres de colores espec&#237;ficos (verde logan, azul cielo, verde esmeralda, azul marino, etc.); pero desea que todas las tonalidades aparezcan en un solo grupo (verdes, azules, rojos, etc.). En este caso, puede crear grupos personalizados y asignar los registros que desea que aparezcan en cada grupo manualmente.</p><a name="245085"></a><li>El campo existe, pero desea seleccionar valores espec&#237;ficos o rangos de valores para cada grupo.
+<p class="indent"><a name="245086"></a>Por ejemplo, es aconsejable tener un grupo que contenga los registros donde las ventas brutas sean inferiores a cierto valor, un segundo grupo donde sean superiores a cierto valor y un grupo final donde las ventas brutas caigan entre dos valores. En este caso, puede crear sus grupos usando el mismo rango de facilidades de selecci&#243;n que est&#225;n disponibles para crear consultas de selecci&#243;n de registros.</p></ul><p><a name="245087"></a>El agrupamiento por orden espec&#237;fico ofrece una soluci&#243;n a los desaf&#237;os de ordenamiento y grupos personalizados. Le permite crear los grupos personalizados que aparecen en un informe y los registros que contiene cada grupo. La &#250;nica limitaci&#243;n es que s&#243;lo se puede asignar un registro a un grupo.</p><p><a name="245088"></a>Para seguir el tutorial donde puede crear grupos personalizados para ordenar clientes por el monto de los negocios que efectuaron el a&#241;o anterior, vea <a href="08_sortgrouptotal11.html#245233">Agrupamiento de datos en intervalos</a>.</p><a name="245092"></a><h6>Para crear un grupo personalizado </h6><ol>
+<a name="245097"></a><li value="1&nbsp;&nbsp;&nbsp;&nbsp;"><img src="images/08_sortgrouptotal7a.gif">
+
+
+En el men&#250; <strong>Insertar</strong>, haga clic en <strong>Grupo</strong>.
+<p class="indent"><a name="245098"></a>Aparece el cuadro de di&#225;logo Insertar grupo.</p><a name="245099"></a><li value="2&nbsp;&nbsp;&nbsp;&nbsp;">Seleccione el campo seg&#250;n el cual desea agrupar los datos de la primera lista desplegable.
+<p><a name="245103"></a> <img src="images/db_insertgroup_specorder.gif">
+
+
+</p>
+<a name="245104"></a><li value="3&nbsp;&nbsp;&nbsp;&nbsp;">Seleccione en la segunda lista desplegable <strong>en orden espec&#237;fico</strong> como opci&#243;n de ordenamiento.
+<a name="245105"></a><li value="4&nbsp;&nbsp;&nbsp;&nbsp;">En el cuadro de di&#225;logo Cambiar opciones de grupo, ingrese el nombre del grupo en el campo<strong> Grupo nombrado</strong>.
+<a name="245106"></a><li value="5&nbsp;&nbsp;&nbsp;&nbsp;">Haga clic en <strong>Nuevo</strong>.
+<a name="245107"></a><li value="6&nbsp;&nbsp;&nbsp;&nbsp;">En el cuadro de di&#225;logo Definir grupo nombrado, use las listas desplegables para seleccionar los datos que ser&#225;n parte del grupo.
+<a name="245108"></a><li value="7&nbsp;&nbsp;&nbsp;&nbsp;">Haga clic en la ficha <kbd>&lt;Nuevo&gt;</kbd> para agregar m&#225;s criterios de selecci&#243;n al grupo especificado, si fuera necesario.
+<a name="245109"></a><li value="8&nbsp;&nbsp;&nbsp;&nbsp;">Haga clic en <strong>Aceptar</strong>.
+<a name="245110"></a><li value="9&nbsp;&nbsp;&nbsp;&nbsp;">Haga clic en <strong>Nuevo</strong> para crear m&#225;s grupos personalizados, si fuera necesario.
+<a name="245111"></a><li value="10&nbsp;&nbsp;&nbsp;&nbsp;">Haga clic en la ficha <strong>Otros</strong> para especificar c&#243;mo desea organizar los datos que no forman parte de los grupos definidos.
+<a name="245112"></a><li value="11&nbsp;&nbsp;&nbsp;&nbsp;">Haga clic en <strong>Aceptar</strong>.
+</ol>
+
+<hr><br>
+
+<script  language="JavaScript"><!--
+
+var prev = "08_sortgrouptotal4.html";
+var next = "08_sortgrouptotal6.html";
+
+function setTopicID() { 
+      var number = "245079"; 
+      return number; 
+}
+
+// --></script>
+
+
+
+
+<SCRIPT>
+
+if (!window.parent.toc && navigator.appName == "Netscape") {
+
+   document.writeln ('<TABLE ALIGN="left" border="0" cellspacing="0" cellpadding="10">');
+   document.writeln ('<TR>');
+   document.write ('<TD ALIGN="left">');
+
+   if (prev != "crw_spTOC.hhc") {
+      document.writeln ('<A HREF="' + prev + '">');
+      document.writeln ('<IMG SRC="prevpage.gif" HEIGHT=17 BORDER=0 ALT="Página anterior"></A>');
+   } else {
+//   window.alert ('no previous page');
+   }
+
+   if (next != "crw_spIX.hhk") {
+      document.writeln ('<A HREF="' + next + '">');
+      document.writeln ('<IMG SRC="nextpage.gif" HEIGHT=17 BORDER=0 ALT="Página siguiente"></A>');
+   } else {
+//   window.alert ('no next page');
+   }
+   document.writeln ('</TD><TD ALIGN="left">');
+   document.writeln ('<A HREF="frameset.htm?TOC">');
+   document.writeln ('<IMG SRC="showtoc.gif" HEIGHT=17 BORDER=0 ALT="Haga clic para ver el contenido"></A></TD>');
+   document.writeln ('<TD ALIGN="left">');
+   document.writeln ('<A HREF="frameset.htm?IDX">');
+   document.writeln ('<IMG SRC="showix.gif" HEIGHT=17 BORDER=0 ALT="Haga clic para ver el índice"></A></TD>');
+   document.writeln ('</TD>');
+   document.writeln ('</TR>');
+   document.writeln ('</TABLE>');
+
+}
+
+</SCRIPT>
+<table align="right" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td align="right"><font size="1">Seagate Software, Inc.<br>
+    <a href="http://www.seagatesoftware.com">http://www.seagatesoftware.com</a><br>
+    Envíe sus comentarios a:<br>
+    <a href="mailto:techpubs@seagatesoftware.com">techpubs@seagatesoftware.com</a><br>
+    </font></td>
+  </tr>
+</table>
+</body>
+</html>
+
+

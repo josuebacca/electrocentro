@@ -1,0 +1,94 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+
+<html>
+<head>
+<title>SummaryFunction (campo, campoCondicional, condici&#243;n)</title>
+
+<link REL=STYLESHEET TYPE="text/css" HREF="seagate.css">
+
+<!--
+                 ***********************************
+                 * Seagate Software copyright 1999 *
+                 ***********************************
+
+                      Template version: 5.1
+-->
+
+
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" link="#0000FF" vlink="#0000FF" alink="#800080">
+
+
+ 
+<a name="1000850661"></a><h3 class="newpage"> SummaryFunction (campo, campoCondicional, condici&#243;n)</h3>
+<p><a name="1000850662"></a>Sintaxis b&#225;sica y Crystal.</p><a name="1000850663"></a><h5>Argumentos</h5><ul type="disc"><a name="1000850664"></a><li>campo es cualquier base de datos o campo de f&#243;rmula v&#225;lido que puede ser evaluado por la funci&#243;n .
+<a name="1000850665"></a><li>campoCondicional es cualquier campo Booleano o de fecha v&#225;lido usado para agrupar valores en campo.
+<a name="1000850666"></a><li>condici&#243;n es una cadena de texto que indica la condici&#243;n campoCondicional que controla la agrupaci&#243;n. Las cadenas v&#225;lidas para este argumento dependen de si campoCondicional contiene valores de fecha o valores Booleanos. Para obtener m&#225;s informaci&#243;n acerca de las condiciones disponibles, v&#233;ase <a href="Functions20.html#1000850529">Condiciones para las funciones de resumen</a>.
+</ul><a name="1000850670"></a><h5>Devuelve </h5><p><a name="1000850671"></a>Un n&#250;mero fraccionario.</p><a name="1000850672"></a><h5>Acci&#243;n </h5><p><a name="1000850673"></a>SummaryFunction(campo, campoCondicional, condici&#243;n) resume cada grupo de valores que es generado cuando se cumple la condici&#243;n de resumen espec&#237;fica. Estas funciones trabajan como cualquier <a href="Functions23.html#1000850631">SummaryFunction (campo, campoCondicional)</a>, pero, debido a que usan un campo de fecha o Booleano como campo de ordenamiento y agrupaci&#243;n por (activador), requieren una condici&#243;n aparte de los otros argumentos.</p><a name="1000850677"></a><h5>Uso(s) t&#237;pico(s) </h5><p><a name="1000850678"></a>Utilice estas funciones siempre que quiera duplicar en una f&#243;rmula un resumen: </p><ul type="disc"><a name="1000850679"></a><li>que resuma los valores en un grupo
+<a name="1000850680"></a><li>que utilice un campo de fecha o Booleano como campo de ordenamiento y agrupar por.
+</ul><a name="1000850681"></a><h5>Ejemplo(s) </h5><p><a name="1000850682"></a>Los siguientes ejemplos son aplicables a las sintaxis b&#225;sica y Crystal:</p><p><code><a name="1000850683"></a>SummmaryFunction{pedidos.ID DEL PEDIDO}, {pedidos FECHA DEL PEDIDO}, @@@"mensual") </code></p><p class="example"><a name="1000850684"></a>Resume los pedidos en cada grupo de pedidos en el campo Pedidos. Los pedidos son separados en grupos siempre que el valor del campo Fecha cambia a un mes nuevo.</p><p><code><a name="1000850685"></a>Count({pedidos.MONTO DEL PEDIDO}, {pedidos.FECHA DEL PEDIDO}, @@@"mensual")</code></p><p class="example"><a name="1000850686"></a>Cuenta el n&#250;mero de pedidos en cada grupo de pedidos en el campo Monto (los pedidos totales para cada mes). Los pedidos son separados en grupos siempre que el valor del campo Fecha cambia a un mes nuevo.</p><p><code><a name="1000850687"></a>DisctrictCount{pedidos.ID DEL PEDIDO}, {pedidos FECHA DEL PEDIDO}, @@@"semanal") </code></p><p class="example"><a name="1000850688"></a>Cuenta el n&#250;mero de clientes diferentes contactados; los contactos siguientes son excluidos. Los clientes son separados en grupos siempre que el valor del campo Fecha cambia a una semana nueva.</p><p><a name="1000850689"></a>El siguiente ejemplo es aplicable a la sintaxis Crystal:</p><p><code><a name="1000850690"></a>SummaryFucntion({pedidos.MONTO DEL PEDIDO}, {pedidos MONTO DE L PEDIDO}"mensual")) % SummaryFunction({pedidos.MONTO DEL PEDIDO}) </code></p><p class="example"><a name="1000850691"></a>Agrupa los valores del campo Monto por mes, resume los valores para cada grupo de mes y  muestra esos valores como un porcentaje del valor del resumen para el informe completo. </p><a name="1000850692"></a><h5>Comentario(s)  </h5><p><a name="1000850693"></a>Para poder utilizar esta funci&#243;n para insertar un campo de grupo en una f&#243;rmula, usted ya debe haber introducido un campo de grupo en su informe con argumentos id&#233;nticos: mismo campo, mismo campo de ordenamiento y agrupar por (activador), misma acci&#243;n (promedio, cuenta, etc.).</p>
+<hr><br>
+
+<script  language="JavaScript"><!--
+
+var prev = "Functions23.html";
+var next = "Functions25.html";
+
+function setTopicID() { 
+      var number = "1000850661"; 
+      return number; 
+}
+
+// --></script>
+
+
+
+
+<SCRIPT>
+
+if (!window.parent.toc && navigator.appName == "Netscape") {
+
+   document.writeln ('<TABLE ALIGN="left" border="0" cellspacing="0" cellpadding="10">');
+   document.writeln ('<TR>');
+   document.write ('<TD ALIGN="left">');
+
+   if (prev != "crw_spTOC.hhc") {
+      document.writeln ('<A HREF="' + prev + '">');
+      document.writeln ('<IMG SRC="prevpage.gif" HEIGHT=17 BORDER=0 ALT="Página anterior"></A>');
+   } else {
+//   window.alert ('no previous page');
+   }
+
+   if (next != "crw_spIX.hhk") {
+      document.writeln ('<A HREF="' + next + '">');
+      document.writeln ('<IMG SRC="nextpage.gif" HEIGHT=17 BORDER=0 ALT="Página siguiente"></A>');
+   } else {
+//   window.alert ('no next page');
+   }
+   document.writeln ('</TD><TD ALIGN="left">');
+   document.writeln ('<A HREF="frameset.htm?TOC">');
+   document.writeln ('<IMG SRC="showtoc.gif" HEIGHT=17 BORDER=0 ALT="Haga clic para ver el contenido"></A></TD>');
+   document.writeln ('<TD ALIGN="left">');
+   document.writeln ('<A HREF="frameset.htm?IDX">');
+   document.writeln ('<IMG SRC="showix.gif" HEIGHT=17 BORDER=0 ALT="Haga clic para ver el índice"></A></TD>');
+   document.writeln ('</TD>');
+   document.writeln ('</TR>');
+   document.writeln ('</TABLE>');
+
+}
+
+</SCRIPT>
+<table align="right" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td align="right"><font size="1">Seagate Software, Inc.<br>
+    <a href="http://www.seagatesoftware.com">http://www.seagatesoftware.com</a><br>
+    Envíe sus comentarios a:<br>
+    <a href="mailto:techpubs@seagatesoftware.com">techpubs@seagatesoftware.com</a><br>
+    </font></td>
+  </tr>
+</table>
+</body>
+</html>
+
+

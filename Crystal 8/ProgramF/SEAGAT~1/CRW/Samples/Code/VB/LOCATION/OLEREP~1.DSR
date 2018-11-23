@@ -1,0 +1,55 @@
+VERSION 5.00
+Begin {BD4B4E61-F7B8-11D0-964D-00A0C9273C2A} crOLEReport 
+   ClientHeight    =   10020
+   ClientLeft      =   1710
+   ClientTop       =   1935
+   ClientWidth     =   11055
+   OleObjectBlob   =   "OLEReport.dsx":0000
+End
+Attribute VB_Name = "crOLEReport"
+Attribute VB_GlobalNameSpace = False
+Attribute VB_Creatable = False
+Attribute VB_PredeclaredId = False
+Attribute VB_Exposed = False
+' *************************************************************
+' Purpose: Demonstrate how the location of an OLE object can
+'          be set at Runtime using the SetOleLocation command
+'
+
+Option Explicit
+
+' *************************************************************
+' Every time section details are formatted, change the location
+' to a corresponding OLE object or bitmap. There are only three
+' OLE Objects in our resource directory, so cycle through those
+' objects in the report.
+'
+Private Sub SectionDetails_Format(ByVal pFormattingInfo As Object)
+    Dim bmpHold As StdPicture               ' object to hold the bitmap
+    Dim iModNum As Integer
+
+    ' Calculate an integer to pass in as the bmp name.
+    iModNum = cRecNum.Value Mod 3 + 1
+
+    Select Case iModNum
+    Case 1
+        ' Set our variable to an bitmap
+        Set bmpHold = LoadPicture(App.Path & "\res\SampleBitmap1.bmp")
+        ' Set the height and width of the Report object equal to the actual values for
+        ' the bitmap - the StdPicture object defaults to HiMetric, the Report uses twips
+        ' Set the bitmap on the Report equal to the variable
+        Set cOLEObj.FormattedPicture = bmpHold
+        cOLEObj.Height = bmpHold.Height * 567 / 1000   ' convert from HiMetric to Twips
+        cOLEObj.Width = bmpHold.Width * 567 / 1000     ' convert from HiMetric to Twips
+    Case 2
+        cOLEObj.SetOleLocation App.Path & "\res\SampleExcel1.xls"
+        cOLEObj.Height = 1800
+        cOLEObj.Width = 5791
+    Case 3
+        cOLEObj.SetOleLocation App.Path & "\res\SampleWord1.doc"
+        cOLEObj.Height = 322
+        cOLEObj.Width = 8641
+    End Select
+    
+End Sub
+

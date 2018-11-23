@@ -1,0 +1,98 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+
+<html>
+<head>
+<title>SummaryFunction (campo)</title>
+
+<link REL=STYLESHEET TYPE="text/css" HREF="seagate.css">
+
+<!--
+                 ***********************************
+                 * Seagate Software copyright 1999 *
+                 ***********************************
+
+                      Template version: 5.1
+-->
+
+
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" link="#0000FF" vlink="#0000FF" alink="#800080">
+
+
+ 
+<a name="1000850599"></a><h3 class="newpage"> SummaryFunction (campo)</h3>
+<p><a name="1000850600"></a>Sintaxis b&#225;sica y Crystal.</p><a name="1000850601"></a><h5>Argumentos</h5><p><a name="1000850602"></a><EM>campo</EM> es cualquier base de datos o campo de f&#243;rmula v&#225;lido que puede ser evaluado por la funci&#243;n. </p><a name="1000850603"></a><h5>Devuelve </h5><p><a name="1000850604"></a>Un n&#250;mero fraccionario.</p><a name="1000850605"></a><h5>Acci&#243;n</h5><p><a name="1000850606"></a>SummaryFunction(campo) resume los valores del campo especificado por el informe completo. Genera un resumen de "Total general".</p><a name="1000850607"></a><h5>Uso(s) t&#237;pico(s) </h5><p><a name="1000850608"></a>Utilice estas funciones siempre que necesite resumir todos los valores que aparecen en un campo dado en un informe, o cuando necesite utilizar un resumen en un c&#225;lculo o comparaci&#243;n.</p><a name="1000850609"></a><h5>Ejemplo(s)</h5><p><a name="1000850610"></a>Los siguientes ejemplos son aplicables para la sintaxis Crystal:</p><p><code><a name="1000850611"></a>SummaryFunction({pedidos.MONTO DEL PEDIDO})</code></p><p class="example"><a name="1000850612"></a>Resume todos los valores del campo Monto .</p><p class="code"><a name="1000850613"></a>If {pedidos.MONTO DEL PEDIDO} &gt; SummaryFunction({pedidos.MONTO DEL 
+PEDIDO}) Then
+<br><a name="1000850614"></a>&nbsp;&nbsp;&nbsp;&nbsp;"Indicador" 
+<br><a name="1000850615"></a>Else
+<br><a name="1000850616"></a>&nbsp;&nbsp;&nbsp;&nbsp;""
+</p><p class="example"><a name="1000850617"></a>Compara cada valor del campo Monto  con el valor resumen de todos los valores del campo Monto . Si el valor es mayor que el valor resumen, le pone indicadores con la palabra "Indicador"; si es igual o menor que el valor resumen, no imprime nada. </p><p><code><a name="1000850618"></a>Average({pedidos.MONTO DEL PEDIDO})</code></p><p class="example"><a name="1000850619"></a>Calcula el promedio de todos los valores del campo Monto .</p><p class="code"><a name="1000850620"></a>If Count({pedidos.ID DEL PEDIDO}) &gt;= 100 Then
+<br><a name="1000850621"></a>&nbsp;&nbsp;&nbsp;&nbsp;"&#161;Felicidades por cumplir su cuota!" 
+<br><a name="1000850622"></a>Else
+<br><a name="1000850623"></a>&nbsp;&nbsp;&nbsp;&nbsp;""
+</p><p class="example"><a name="1000850624"></a>Imprime el mensaje de felicitaci&#243;n si el n&#250;mero de pedidos es 100 o m&#225;s, y no imprime nada si el n&#250;mero de pedidos es menor que 100. </p><p><code><a name="1000850625"></a>Sum({archivo.CANT})</code></p><p class="example"><a name="1000850626"></a>Calcula la suma de todos los valores del campo Cant.</p><a name="1000850627"></a><h5>Comentarios</h5><p><a name="1000850628"></a>No todos las funciones de grupo aritm&#233;ticas est&#225;n disponibles para utilizarse con todos los tipos de datos.</p>
+<hr><br>
+
+<script  language="JavaScript"><!--
+
+var prev = "Functions21.html";
+var next = "Functions23.html";
+
+function setTopicID() { 
+      var number = "1000850599"; 
+      return number; 
+}
+
+// --></script>
+
+
+
+
+<SCRIPT>
+
+if (!window.parent.toc && navigator.appName == "Netscape") {
+
+   document.writeln ('<TABLE ALIGN="left" border="0" cellspacing="0" cellpadding="10">');
+   document.writeln ('<TR>');
+   document.write ('<TD ALIGN="left">');
+
+   if (prev != "crw_spTOC.hhc") {
+      document.writeln ('<A HREF="' + prev + '">');
+      document.writeln ('<IMG SRC="prevpage.gif" HEIGHT=17 BORDER=0 ALT="Página anterior"></A>');
+   } else {
+//   window.alert ('no previous page');
+   }
+
+   if (next != "crw_spIX.hhk") {
+      document.writeln ('<A HREF="' + next + '">');
+      document.writeln ('<IMG SRC="nextpage.gif" HEIGHT=17 BORDER=0 ALT="Página siguiente"></A>');
+   } else {
+//   window.alert ('no next page');
+   }
+   document.writeln ('</TD><TD ALIGN="left">');
+   document.writeln ('<A HREF="frameset.htm?TOC">');
+   document.writeln ('<IMG SRC="showtoc.gif" HEIGHT=17 BORDER=0 ALT="Haga clic para ver el contenido"></A></TD>');
+   document.writeln ('<TD ALIGN="left">');
+   document.writeln ('<A HREF="frameset.htm?IDX">');
+   document.writeln ('<IMG SRC="showix.gif" HEIGHT=17 BORDER=0 ALT="Haga clic para ver el índice"></A></TD>');
+   document.writeln ('</TD>');
+   document.writeln ('</TR>');
+   document.writeln ('</TABLE>');
+
+}
+
+</SCRIPT>
+<table align="right" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td align="right"><font size="1">Seagate Software, Inc.<br>
+    <a href="http://www.seagatesoftware.com">http://www.seagatesoftware.com</a><br>
+    Envíe sus comentarios a:<br>
+    <a href="mailto:techpubs@seagatesoftware.com">techpubs@seagatesoftware.com</a><br>
+    </font></td>
+  </tr>
+</table>
+</body>
+</html>
+
+

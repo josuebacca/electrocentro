@@ -1,0 +1,95 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+
+<html>
+<head>
+<title>ToNumber (num&#233;rico), ToNumber (cadena)</title>
+
+<link REL=STYLESHEET TYPE="text/css" HREF="seagate.css">
+
+<!--
+                 ***********************************
+                 * Seagate Software copyright 1999 *
+                 ***********************************
+
+                      Template version: 5.1
+-->
+
+
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" link="#0000FF" vlink="#0000FF" alink="#800080">
+
+
+ 
+<a name="1000852857"></a><h3 class="newpage"> ToNumber (num&#233;rico), ToNumber (cadena)</h3>
+<p><a name="1000852858"></a>Sintaxis b&#225;sica y Crystal. </p><p><a name="1000852862"></a>ToNumber y <a href="Functions160.html#1000201851">CDbl</a> son funciones equivalentes.</p><a name="1000852863"></a><h5>Argumentos</h5><ul type="disc"><a name="1000852864"></a><li>num&#233;rico es un valor de tipo de N&#250;mero o Moneda. 
+<a name="1000852865"></a><li>cadena es una cadena de texto que tiene un texto num&#233;rico.
+</ul><a name="1000852866"></a><h5>Devuelve </h5><p><a name="1000852867"></a>Un n&#250;mero fraccionario.</p><a name="1000852868"></a><h5>Acci&#243;n</h5><p><a name="1000852869"></a>ToNumber convierte un   N&#250;mero, Moneda o cadena de texto en un N&#250;mero.</p><p><a name="1000852870"></a>En una base de datos, algunos n&#250;meros son guardados en campos num&#233;ricos como n&#250;meros y algunos son guardados en campos de cadena como texto. Usted determina qu&#233; campos son num&#233;ricos y qu&#233; campos son texto al configurar la base de datos por primera vez. Los n&#250;meros en los que podr&#237;a desear realizar operaciones aritm&#233;ticas (coste del elemento, cantidad ordenada, etc.) son generalmente guardados en campos num&#233;ricos; los n&#250;meros en los que usted no espera realizar operaciones aritm&#233;ticas (n&#250;mero de cliente, n&#250;mero telef&#243;nico, etc.) son generalmente guardados en objetos de texto.</p><p><a name="1000852871"></a>ToNumber le permite convertir un n&#250;mero guardado como texto a un n&#250;mero en que usted puede realizar operaciones aritm&#233;ticas.</p><a name="1000852872"></a><h5>Uso(s) t&#237;pico(s)</h5><p><a name="1000852873"></a>Puede utilizar esta funci&#243;n, por ejemplo, si su n&#250;meros de elementos contienen informaci&#243;n de producto codificada y quiere utilizar esa informaci&#243;n en c&#225;lculos. </p><p><a name="1000852874"></a>Normalmente, usted usar&#225; esta funci&#243;n para convertir un valor Cadena o Moneda cuyo contenido sean todos caracteres num&#233;ricos a un valor de tipo de N&#250;mero.</p><a name="1000852875"></a><h5>Ejemplo(s)</h5><p><a name="1000852876"></a>Los siguientes ejemplos son aplicables a las sintaxis b&#225;sica y Crystal:</p><p><code><a name="1000852877"></a>Average({pedidos.MONTO DEL PEDIDO}) </code></p><p class="example"><a name="1000852878"></a>Devuelve un valor de tipo de N&#250;mero contenido en el campo Moneda {pedidos.MONTO DEL PEDIDO}.</p><p><code><a name="1000852879"></a>ToNumber("123.45") </code></p><p class="example"><a name="1000852880"></a>Devuelve 123.45.</p><p><code><a name="1000852881"></a>ToNumber({archivo.REFERENCIA}) </code></p><p class="example"><a name="1000852882"></a>Devuelve 200.00 donde  "200" es la cadena de texto en el campo {archivo.REFERENCIA}.</p><p><code><a name="1000852883"></a>ToNumber({archivo.ACCTNO}/2) </code></p><p class="example"><a name="1000852884"></a>Devuelve 22144 donde {archivo.ACCTNO} = 44288.</p><p><code><a name="1000852885"></a>ToNumber({cliente.C&Oacute;DIGO POSTAL}) &lt; 33333 </code></p><p class="example"><a name="1000852886"></a>Devuelve VERDADERO donde {cliente.C&Oacute;DIGO POSTAL} es"21385".</p><a name="1000852887"></a><h5>Comentario(s) </h5><p><a name="1000852888"></a>Cuando utiliza la funci&#243;n ToNumber, usted debe primero evaluar el valor con la funci&#243;n NumericText. NumericText devuelve un valor VERDADERO s&#243;lo si el valor en la cadena puede ser correctamente convertido a un n&#250;mero. De otra manera, si intenta convertir un valor  a un n&#250;mero que no es un n&#250;mero, la f&#243;rmula producir&#225; un error en su informe.</p><p><a name="1000852889"></a>El siguiente ejemplo es un uso com&#250;n de las funciones NumericText y ToNumber conjuntamente, en sintaxis  Crystal:</p><p class="code"><a name="1000852890"></a>If NumericText ({archivo.CAMPO}) Then
+<br><a name="1000852891"></a>&nbsp;&nbsp;&nbsp;&nbsp;ToNumber ({archivo.CAMPO})
+<br><a name="1000852892"></a>Else
+<br><a name="1000852893"></a>&nbsp;&nbsp;&nbsp;&nbsp;0
+</p><a name="1000852894"></a><h6>Temas relacionados</h6><p><a name="1000852898"></a><a href="19_introformulas30.html#316614">F&#243;rmula 2</a></p><p><a name="1000852902"></a><a href="19_introformulas31.html#316667">F&#243;rmula 3</a></p><p><a name="1000852906"></a><a href="19_introformulas37.html#317136">F&#243;rmula 9</a></p><p><a name="1000852910"></a><a href="19_introformulas45.html#317677">F&#243;rmula 17</a></p>
+<hr><br>
+
+<script  language="JavaScript"><!--
+
+var prev = "Functions77.html";
+var next = "Functions79.html";
+
+function setTopicID() { 
+      var number = "1000852857"; 
+      return number; 
+}
+
+// --></script>
+
+
+
+
+<SCRIPT>
+
+if (!window.parent.toc && navigator.appName == "Netscape") {
+
+   document.writeln ('<TABLE ALIGN="left" border="0" cellspacing="0" cellpadding="10">');
+   document.writeln ('<TR>');
+   document.write ('<TD ALIGN="left">');
+
+   if (prev != "crw_spTOC.hhc") {
+      document.writeln ('<A HREF="' + prev + '">');
+      document.writeln ('<IMG SRC="prevpage.gif" HEIGHT=17 BORDER=0 ALT="Página anterior"></A>');
+   } else {
+//   window.alert ('no previous page');
+   }
+
+   if (next != "crw_spIX.hhk") {
+      document.writeln ('<A HREF="' + next + '">');
+      document.writeln ('<IMG SRC="nextpage.gif" HEIGHT=17 BORDER=0 ALT="Página siguiente"></A>');
+   } else {
+//   window.alert ('no next page');
+   }
+   document.writeln ('</TD><TD ALIGN="left">');
+   document.writeln ('<A HREF="frameset.htm?TOC">');
+   document.writeln ('<IMG SRC="showtoc.gif" HEIGHT=17 BORDER=0 ALT="Haga clic para ver el contenido"></A></TD>');
+   document.writeln ('<TD ALIGN="left">');
+   document.writeln ('<A HREF="frameset.htm?IDX">');
+   document.writeln ('<IMG SRC="showix.gif" HEIGHT=17 BORDER=0 ALT="Haga clic para ver el índice"></A></TD>');
+   document.writeln ('</TD>');
+   document.writeln ('</TR>');
+   document.writeln ('</TABLE>');
+
+}
+
+</SCRIPT>
+<table align="right" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td align="right"><font size="1">Seagate Software, Inc.<br>
+    <a href="http://www.seagatesoftware.com">http://www.seagatesoftware.com</a><br>
+    Envíe sus comentarios a:<br>
+    <a href="mailto:techpubs@seagatesoftware.com">techpubs@seagatesoftware.com</a><br>
+    </font></td>
+  </tr>
+</table>
+</body>
+</html>
+
+

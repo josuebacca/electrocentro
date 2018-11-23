@@ -1,0 +1,96 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+
+<html>
+<head>
+<title>PreviousIsNull (campo)</title>
+
+<link REL=STYLESHEET TYPE="text/css" HREF="seagate.css">
+
+<!--
+                 ***********************************
+                 * Seagate Software copyright 1999 *
+                 ***********************************
+
+                      Template version: 5.1
+-->
+
+
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" link="#0000FF" vlink="#0000FF" alink="#800080">
+
+
+ 
+<a name="1000578318"></a><h3 class="newpage"> PreviousIsNull (campo)</h3>
+<p><a name="1000719989"></a>Sintaxis b&#225;sica y Crystal.</p><a name="1000578319"></a><h5>Argumentos</h5><p><a name="1000578320"></a>campo es todo campo num&#233;rico, de f&#243;rmula, memo o BLOB del informe.  </p><a name="1000578321"></a><h5>Devuelve </h5><p><a name="1000578322"></a>Un valor booleano.</p><a name="1000578323"></a><h5>Acci&#243;n</h5><p><a name="1000578324"></a>Eval&#250;a el campo especificado en el registro previo y devuelve un VERDADERO si el campo contiene un valor nulo. </p><a name="1000578325"></a><h5>Uso(s) t&#237;pico(s)</h5><p><a name="1000578326"></a>Puede utilizar esta funci&#243;n para evaluar el primer elemento en una lista y realizar alguna acci&#243;n cuando el primer elemento es identificado.</p><a name="1000578327"></a><h5>Ejemplo(s)</h5><p><a name="1000578328"></a>El siguiente ejemplo es aplicable a la sintaxis Crystal:</p><p class="code"><a name="1000578329"></a>If PreviousIsNull ({empleados.EMPLEADOS ID}) Then
+<br><a name="1000750799"></a>&nbsp;&nbsp;&nbsp;&nbsp;"Primer empledo del registro" 
+<br><a name="1000750800"></a>Else
+<br><a name="1000750801"></a>&nbsp;&nbsp;&nbsp;&nbsp;""
+</p><p class="example"><a name="1000578330"></a>En una base de datos de empleados sin valores nulos en un campo Empleados ID, se pone un indicador al primer empleado en la lista.</p><a name="1000578331"></a><h5>Comentario(s) </h5><p><a name="1000578332"></a>Algunas bases de datos soportan valores de datos nulos y otras no. Esta funci&#243;n no trabajar&#225; si la(s) base(s) de datos activa(s) no soportan valores nulos. Si la(s) base(s) de datos no soportan valores nulos, la funci&#243;n puede ser utilizada para referenciar los valores nulos que son creados como un resultado de una b&#250;squeda fallido mientras combina.</p><p><a name="1000578333"></a><font color="darkblue"><b>Nota:   &nbsp;&nbsp;&nbsp;</b></font></p>
+<ul type="disc"><a name="1000578334"></a><li>El cero y el espacio en blanco (vac&#237;o o " ") no son valores nulos.
+<a name="1000578335"></a><li>El uso de esta funci&#243;n en una f&#243;rmula obliga a que la f&#243;rmula sea evaluada al momento de impresi&#243;n. Para obtener m&#225;s informaci&#243;n sobre las consideraciones de evaluaci&#243;n de hora, v&#233;ase el <a href="Functions169.html#1000572432">Funciones de tiempo de evaluaci&#243;n</a>.
+</ul>
+<hr><br>
+
+<script  language="JavaScript"><!--
+
+var prev = "Functions179.html";
+var next = "Functions181.html";
+
+function setTopicID() { 
+      var number = "1000578318"; 
+      return number; 
+}
+
+// --></script>
+
+
+
+
+<SCRIPT>
+
+if (!window.parent.toc && navigator.appName == "Netscape") {
+
+   document.writeln ('<TABLE ALIGN="left" border="0" cellspacing="0" cellpadding="10">');
+   document.writeln ('<TR>');
+   document.write ('<TD ALIGN="left">');
+
+   if (prev != "crw_spTOC.hhc") {
+      document.writeln ('<A HREF="' + prev + '">');
+      document.writeln ('<IMG SRC="prevpage.gif" HEIGHT=17 BORDER=0 ALT="Página anterior"></A>');
+   } else {
+//   window.alert ('no previous page');
+   }
+
+   if (next != "crw_spIX.hhk") {
+      document.writeln ('<A HREF="' + next + '">');
+      document.writeln ('<IMG SRC="nextpage.gif" HEIGHT=17 BORDER=0 ALT="Página siguiente"></A>');
+   } else {
+//   window.alert ('no next page');
+   }
+   document.writeln ('</TD><TD ALIGN="left">');
+   document.writeln ('<A HREF="frameset.htm?TOC">');
+   document.writeln ('<IMG SRC="showtoc.gif" HEIGHT=17 BORDER=0 ALT="Haga clic para ver el contenido"></A></TD>');
+   document.writeln ('<TD ALIGN="left">');
+   document.writeln ('<A HREF="frameset.htm?IDX">');
+   document.writeln ('<IMG SRC="showix.gif" HEIGHT=17 BORDER=0 ALT="Haga clic para ver el índice"></A></TD>');
+   document.writeln ('</TD>');
+   document.writeln ('</TR>');
+   document.writeln ('</TABLE>');
+
+}
+
+</SCRIPT>
+<table align="right" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td align="right"><font size="1">Seagate Software, Inc.<br>
+    <a href="http://www.seagatesoftware.com">http://www.seagatesoftware.com</a><br>
+    Envíe sus comentarios a:<br>
+    <a href="mailto:techpubs@seagatesoftware.com">techpubs@seagatesoftware.com</a><br>
+    </font></td>
+  </tr>
+</table>
+</body>
+</html>
+
+

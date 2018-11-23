@@ -1,0 +1,98 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+
+<html>
+<head>
+<title>Rango excluido del punto extremo izquierdo (x _To y)</title>
+
+<link REL=STYLESHEET TYPE="text/css" HREF="seagate.css">
+
+<!--
+                 ***********************************
+                 * Seagate Software copyright 1999 *
+                 ***********************************
+
+                      Template version: 5.1
+-->
+
+
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" link="#0000FF" vlink="#0000FF" alink="#800080">
+
+
+ 
+<a name="1000019455"></a><h3 class="newpage"> Rango excluido del punto extremo izquierdo (x _To y)</h3>
+<p><a name="1000019456"></a>Sintaxis Basic y Crystal.</p><a name="1000019457"></a><h5>Uso</h5><p><code><a name="1000019458"></a>x  _To y</code></p><p class="example"><a name="1000019459"></a>x  _To y se usa para especificar un rango de valores mayores que, pero no incluido el valor x, y menor o igual que el valor y. x e y pueden ser de tipo num&#233;rico, booleano, monetario, fecha, hora, fechahora y cadena.</p><a name="1000019460"></a><h5>Ejemplos</h5><p><a name="1000019461"></a>El siguiente ejemplo es aplicable para sintaxis Basic:</p><p class="code"><a name="1000019462"></a>Dim FehasRestricci&#243;n As Date Range
+<br><a name="1000019463"></a>Rem El per&#237;odo de restricci&#243;n va desde el 1 de enero de 1999 al 31 de marzo 
+de 1999 (inclusive)
+<br><a name="1000019464"></a>FechasRestricci&#243;n = CDate(#12/31/1998#) _To CDate(#3/ 31/1999#)
+<br><a name="1000019465"></a>If CurrentDate In FechasRestricci&#243;n Then
+<br><a name="1000019466"></a>&nbsp;&nbsp;&nbsp;&nbsp;formula = "Restricci&#243;n"
+<br><a name="1000019467"></a>Else
+<br><a name="1000019468"></a>&nbsp;&nbsp;&nbsp;&nbsp;formula = "Libre comercio"
+<br><a name="1000019469"></a>End If
+</p><p class="indent"><a name="1000019470"></a>Si la fecha de hoy es 31 de diciembre de 1998, entonces la f&#243;rmula devuelve "Libre comercio" dado que est&#225; antes que el per&#237;odo de restricci&#243;n.</p><p class="indent"><a name="1000019471"></a>Si la fecha de hoy es 1 de enero de 1999, entonces la f&#243;rmula devuelve "Restricci&#243;n" dado que est&#225; dentro del per&#237;odo de restricci&#243;n.</p><p class="indent"><a name="1000019472"></a>Si la fecha de hoy es 31 de marzo de 1999, entonces la f&#243;rmula devuelve "Restricci&#243;n" dado que est&#225; dentro del per&#237;odo de restricci&#243;n.</p><p class="indent"><a name="1000019473"></a>Si la fecha de hoy es 30 de octubre de 1998, entonces la f&#243;rmula devuelve "Libre comercio" dado que est&#225; despu&#233;s del per&#237;odo de restricci&#243;n.</p>
+<hr><br>
+
+<script  language="JavaScript"><!--
+
+var prev = "Operators28.html";
+var next = "Operators30.html";
+
+function setTopicID() { 
+      var number = "1000019455"; 
+      return number; 
+}
+
+// --></script>
+
+
+
+
+<SCRIPT>
+
+if (!window.parent.toc && navigator.appName == "Netscape") {
+
+   document.writeln ('<TABLE ALIGN="left" border="0" cellspacing="0" cellpadding="10">');
+   document.writeln ('<TR>');
+   document.write ('<TD ALIGN="left">');
+
+   if (prev != "crw_spTOC.hhc") {
+      document.writeln ('<A HREF="' + prev + '">');
+      document.writeln ('<IMG SRC="prevpage.gif" HEIGHT=17 BORDER=0 ALT="Página anterior"></A>');
+   } else {
+//   window.alert ('no previous page');
+   }
+
+   if (next != "crw_spIX.hhk") {
+      document.writeln ('<A HREF="' + next + '">');
+      document.writeln ('<IMG SRC="nextpage.gif" HEIGHT=17 BORDER=0 ALT="Página siguiente"></A>');
+   } else {
+//   window.alert ('no next page');
+   }
+   document.writeln ('</TD><TD ALIGN="left">');
+   document.writeln ('<A HREF="frameset.htm?TOC">');
+   document.writeln ('<IMG SRC="showtoc.gif" HEIGHT=17 BORDER=0 ALT="Haga clic para ver el contenido"></A></TD>');
+   document.writeln ('<TD ALIGN="left">');
+   document.writeln ('<A HREF="frameset.htm?IDX">');
+   document.writeln ('<IMG SRC="showix.gif" HEIGHT=17 BORDER=0 ALT="Haga clic para ver el índice"></A></TD>');
+   document.writeln ('</TD>');
+   document.writeln ('</TR>');
+   document.writeln ('</TABLE>');
+
+}
+
+</SCRIPT>
+<table align="right" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td align="right"><font size="1">Seagate Software, Inc.<br>
+    <a href="http://www.seagatesoftware.com">http://www.seagatesoftware.com</a><br>
+    Envíe sus comentarios a:<br>
+    <a href="mailto:techpubs@seagatesoftware.com">techpubs@seagatesoftware.com</a><br>
+    </font></td>
+  </tr>
+</table>
+</body>
+</html>
+
+

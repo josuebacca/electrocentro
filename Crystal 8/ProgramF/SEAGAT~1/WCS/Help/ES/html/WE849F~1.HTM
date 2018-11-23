@@ -1,0 +1,92 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+
+<html>
+<head>
+<title>Fuentes de datos SQL y ODBC </title>
+
+<link REL=STYLESHEET TYPE="text/css" HREF="seagate.css">
+
+<!--
+                 ***********************************
+                 * Seagate Software copyright 1999 *
+                 ***********************************
+
+                      Template version: 5.1
+-->
+
+
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" link="#0000FF" vlink="#0000FF" alink="#800080">
+
+
+ 
+<a name="149904"></a><h3 class="newpage"> Fuentes de datos SQL y ODBC </h3>
+<p><a name="149905"></a>El Web Component Server puede abrir informes basados en servidores SQL y en fuentes de datos ODBC con la misma facilidad con que abre informes basados en archivos de bases de datos m&#225;s peque&#241;as. Si los datos de un informe requieren acceso a una fuente de datos segura, como un servidor SQL o una fuente de datos ODBC, el Web Component Server pide autom&#225;ticamente al usuario que est&#225; solicitando el informe que introduzca una ID de usuario y una contrase&#241;a antes de mostrar los datos del informe.</p><p><a name="150952"></a><font color="darkblue"><b>Nota:   &nbsp;&nbsp;&nbsp;</b></font>Aunque el Web Component Server requiere que los usuarios inicien la sesi&#243;n antes de mostrar informes que acceden a bases de datos aseguradas, pueden producirse conflictos de seguridad si varias personas intentan acceder al mismo informe simult&#225;neamente. Para evitar este tipo de conflictos, aumente la seguridad de su sitio web, impidiendo que los usuarios puedan ver y acceder a informes asegurados. Una soluci&#243;n usada para lograr la seguridad total del sistema es obligar a los usuarios a iniciar una sesi&#243;n en el sitio de intranet.</p>
+<p><a name="149916"></a>Dependiendo del tipo de datos en los que sus informes se basen, la p&#225;gina de inicio de sesi&#243;n que aparece puede variar ligeramente. </p><p><a name="149921"></a><font color="darkblue"><b>Nota:   &nbsp;&nbsp;&nbsp;</b></font>Si la seguridad de la base de datos no tiene una contrase&#241;a o si tiene una contrase&#241;a en blanco, el Web Component Server no pedir&#225; a los usuarios que inicien una sesi&#243;n. Para garantizar la seguridad, aseg&#250;rese de que las bases de datos tengan contrase&#241;as v&#225;lidas.</p>
+<p><a name="149924"></a>Para crear hiperv&#237;nculos en sus p&#225;ginas web que manejen autom&#225;ticamente las ID de usuario y las contrase&#241;as, use los comandos Usuario y Contrase&#241;a. Estos comandos le permiten especificar m&#225;s de una ID y contrase&#241;a de usuario si el informe se conecta a dos o m&#225;s bases de datos aseguradas. Tenga presente que si se env&#237;a una ID de usuario o contrase&#241;a incorrecta, el Web Component Server impedir&#225; el acceso hasta que la informaci&#243;n correcta sea suministrada.</p><p><a name="162212"></a><font color="darkblue"><b>Nota:   &nbsp;&nbsp;&nbsp;</b></font>El Web Component Server aplica un algoritmo de encriptaci&#243;n simple a los nombres y contrase&#241;as de usuario. Si usa un servidor web Microsoft, aseg&#250;rese de que su sitio de intranet o extranet tenga instalado y activado el protocolo de encriptaci&#243;n Secure Sockets Layer (SSL) para garantizar una seguridad total durante el acceso a la informaci&#243;n de la base de datos. Debido a un problema documentado de los servidores web Netscape, el protocolo SSL no es compatible con el Web Component Server en servidores Netscape. Para m&#225;s informaci&#243;n, consulte la documentaci&#243;n de Netscape.</p>
+
+<hr><br>
+
+<script  language="JavaScript"><!--
+
+var prev = "WebServerCommands8.html";
+var next = "WebServerCommands10.html";
+
+function setTopicID() { 
+      var number = "149904"; 
+      return number; 
+}
+
+// --></script>
+
+
+
+
+<SCRIPT>
+
+if (!window.parent.toc && navigator.appName == "Netscape") {
+
+   document.writeln ('<TABLE ALIGN="left" border="0" cellspacing="0" cellpadding="10">');
+   document.writeln ('<TR>');
+   document.write ('<TD ALIGN="left">');
+
+   if (prev != "wcmadminTOC.hhc") {
+      document.writeln ('<A HREF="' + prev + '">');
+      document.writeln ('<IMG SRC="prevpage.gif" HEIGHT=17 BORDER=0 ALT="Página anterior"></A>');
+   } else {
+//   window.alert ('no previous page');
+   }
+
+   if (next != "wcmadminIX.hhk") {
+      document.writeln ('<A HREF="' + next + '">');
+      document.writeln ('<IMG SRC="nextpage.gif" HEIGHT=17 BORDER=0 ALT="Página siguiente"></A>');
+   } else {
+//   window.alert ('no next page');
+   }
+   document.writeln ('</TD><TD ALIGN="left">');
+   document.writeln ('<A HREF="frameset.htm?TOC">');
+   document.writeln ('<IMG SRC="showtoc.gif" HEIGHT=17 BORDER=0 ALT="Haga clic para ver el contenido"></A></TD>');
+   document.writeln ('<TD ALIGN="left">');
+   document.writeln ('<A HREF="frameset.htm?IDX">');
+   document.writeln ('<IMG SRC="showix.gif" HEIGHT=17 BORDER=0 ALT="Haga clic para ver el índice"></A></TD>');
+   document.writeln ('</TD>');
+   document.writeln ('</TR>');
+   document.writeln ('</TABLE>');
+
+}
+
+</SCRIPT>
+<table align="right" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td align="right"><font size="1">Seagate Software, Inc.<br>
+    <a href="http://www.seagatesoftware.com">http://www.seagatesoftware.com</a><br>
+    Envíe sus comentarios a:<br>
+    <a href="mailto:techpubs@seagatesoftware.com">techpubs@seagatesoftware.com</a><br>
+    </font></td>
+  </tr>
+</table>
+</body>
+</html>
+
+

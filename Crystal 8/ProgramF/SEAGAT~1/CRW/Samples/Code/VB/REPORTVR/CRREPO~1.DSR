@@ -1,0 +1,112 @@
+VERSION 5.00
+Begin {BD4B4E61-F7B8-11D0-964D-00A0C9273C2A} CRReportVariables 
+   ClientHeight    =   10020
+   ClientLeft      =   0
+   ClientTop       =   0
+   ClientWidth     =   11055
+   OleObjectBlob   =   "CRReportVariables.dsx":0000
+End
+Attribute VB_Name = "CRReportVariables"
+Attribute VB_GlobalNameSpace = False
+Attribute VB_Creatable = False
+Attribute VB_PredeclaredId = True
+Attribute VB_Exposed = False
+' *************************************************************
+' Purpose: Demonstrate how to use Report Variables (new to Crystal Reports 8.0)
+'          Report Variables allow you to save values inside the report object
+'          while the report is being formatted.  The format event for a given
+'          section is often triggered more than once during the report formatting
+'          process, making totalling using VB code a very difficult process.
+'
+'          This sample shows how to use Report Variables to calculate totals based
+'          on only part of the data.  Since Report Variables accept any valid value
+'          from the VB environment, you can use values that only exist at Runtime
+'          to change the formatting of your report.
+'
+'          In this sample, there are three columns based on a database -- one column
+'          of currency values, one column of integer values, and one column of non-
+'          integer values.
+'           - The first column changes to a blue color when the sum of the values
+'           in the column is greater than a random value.  A total is displayed
+'           in the lower part of frmMain showing the total of the values colored blue.
+'           - Records in the second and third columns change color when the sum
+'           is greater than a different randomm value.  The sum is then reset.  This
+'           can be useful if you wish to start and restart a totalling operation
+'           in the middle of a report.
+'           - A String Report Variable is used to build a string consisting of the
+'           first digit of each green highlighted value.  You could use this method
+'           to easily extract individual string values from a report field.
+'           Note that Report Variables can only be set and retrieved while the report
+'           is formatting.
+'
+
+Option Explicit
+
+Dim RandomNumber As Double          ' The Random number used in the First and second columns
+Dim RandomLong As Long              ' The Random number used in the third column
+Dim Total As Double                 ' The grand total of the First Column
+
+' *************************************************************
+' Add the report variables and prepare the sample
+'
+Private Sub Report_Initialize()
+    Randomize Timer
+    
+    ' Point the database to the correct location
+    'Database.Tables(1).Location = App.Path + "\ReportVariables.mdb"
+        
+    ' Add the three Report Variables
+    AddReportVariable crRVCurrency, "CurrencyVal"
+    AddReportVariable crRVNumber, "LongVal"
+    AddReportVariable crRVNumber, "DoubleVal"
+    AddReportVariable crRVString, "StringVal"
+    
+    ' Generate the Random Numbers
+    RandomNumber = Rnd * 15000 + 1000
+    RandomLong = CLng(Rnd * 15000)
+    Total = 0
+End Sub
+
+' *************************************************************
+' Calculate the totals while the details section is formatting.
+'
+Private Sub scnDetails_Format(ByVal pFormattingInfo As Object)
+    Dim CurVal As Variant       ' A temporary variable
+    
+    ' First Column
+    Total = Total + CDbl(FieldNumber.Value)
+    If Total >= RandomNumber * 4 Then
+        ' The total is above our target - start updating the main form and
+        ' adding the values to our subtotal
+        FieldNumber.BackColor = vbBlue
+        frmMain.lblTotal.Caption = CStr(GetReportVariableValue("DoubleVal"))
+        DoEvents
+    End If
+    If frmMain.lblTotal.Caption = "" Then frmMain.lblTotal.Caption = "0"    ' Prevent errors from a null string
+    SetReportVariableValue "DoubleVal", CDbl(frmMain.lblTotal.Caption) + CDbl(FieldNumber.Value)
+
+    ' Second Column
+    CurVal = GetReportVariableValue("CurrencyVal")
+    If CurVal >= RandomNumber Then
+        ' Reset the totalling operation
+        FieldCurrency.BackColor = vbRed
+        SetReportVariableValue "CurrencyVal", 0
+    Else
+        ' Continue adding to our total
+        SetReportVariableValue "CurrencyVal", CDbl(CurVal) + CDbl(FieldCurrency.Value)
+    End If
+
+    ' Third Column
+    CurVal = GetReportVariableValue("LongVal")
+    If CurVal >= RandomLong Then
+        ' Reset the totalling operation
+        FieldLong.BackColor = vbGreen
+        SetReportVariableValue "LongVal", 0
+        SetReportVariableValue "StringVal", GetReportVariableValue("StringVal") + Left(CStr(FieldLong.Value), 1)
+        frmMain.lblFirstDigits.Caption = CStr(GetReportVariableValue("StringVal"))
+        DoEvents
+    Else
+        ' Continue adding to our total
+        SetReportVariableValue "LongVal", CLng(CurVal) + CLng(FieldLong.Value)
+    End If
+End Sub

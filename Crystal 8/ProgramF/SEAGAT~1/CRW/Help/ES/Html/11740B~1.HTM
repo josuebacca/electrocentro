@@ -1,0 +1,97 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+
+<html>
+<head>
+<title>Inconsistencias a causa de los controladores de impresora</title>
+
+<link REL=STYLESHEET TYPE="text/css" HREF="seagate.css">
+
+<!--
+                 ***********************************
+                 * Seagate Software copyright 1999 *
+                 ***********************************
+
+                      Template version: 5.1
+-->
+
+
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" link="#0000FF" vlink="#0000FF" alink="#800080">
+
+
+ 
+<a name="88720"></a><h4 class="newpage"> Inconsistencias a causa de los controladores de impresora</h4><p><a name="88721"></a>A la hora de imprimir, pueden ocurrir inconsistencias si el controlador de la impresora que ocupa para imprimir es diferente al controlador de la impresora usado al momento de crear el informe (es decir, la impresora virtual en el software). Estas inconsistencias son el resultado de una variedad de m&#233;todos que usan los controladores para medir los par&#225;metros del texto, como tama&#241;o de la fuente. Cuando se imprimen, los objetos base<nobr>-t</nobr>exto pueden aparecer desalineados, cortados o superpuestos. Ejemplos de objetos base<nobr>-t</nobr>exto incluyen campos de caracteres o frases, objetos de texto, campos memo, campos num&#233;ricos y campos de f&#243;rmula.</p><p><a name="88722"></a>Esta clase de problemas puede surgir cuando tiene:</p><ul type="disc"><a name="88723"></a><li>Dos impresoras iguales, pero cada una utiliza un controlador diferente.
+<a name="88724"></a><li>Dos impresoras diferentes usando el mismo controlador.
+<a name="88725"></a><li>Dos impresoras diferentes usando diferentes controladores.
+<a name="88726"></a><li>Un controlador que usa fuentes TrueType y un segundo controlador que convierte caracteres TrueType en mapas de bits PostScript.
+<a name="88727"></a><li>Dos impresoras iguales usando el mismo controlador, pero cada una imprimiendo desde una versi&#243;n diferente de Microsoft Windows.
+<a name="88728"></a><li>Dos impresoras iguales usando el mismo controlador, pero los controladores son de diferente versi&#243;n.
+<a name="88729"></a><li>Dos impresoras iguales usando el mismo controlador y el mismo sistema operativo, pero la resoluci&#243;n de los controladores de video es diferente.
+</ul><p><a name="88730"></a>As&#237;, mientras un documento usando un determinado controlador puede requerir seis l&#237;neas completas para imprimir un bloque de texto:</p><ul type="disc"><a name="88731"></a><li>un segundo controlador con medidas de fuentes m&#225;s angostas, podr&#237;a imprimir el mismo bloque de texto en menos de seis l&#237;neas, o
+<a name="88732"></a><li>usando un tercer controlador con medidas de fuente m&#225;s anchas, podr&#237;a necesitar m&#225;s de seis l&#237;neas para la misma impresi&#243;n.
+</ul><p><a name="88733"></a>La mayor&#237;a de las veces, esta situaci&#243;n puede ser evitada. Por lo tanto, si piensa distribuir su informe, una de sus metas es dise&#241;ar un informe que se pueda acomodar a diferentes condiciones con respecto al controlador de impresora e imprimir consistentemente usando cualquier controlador. Para hacer esto, Seagate Crystal Reports provee varias soluciones a nivel de dise&#241;o que si son tomadas en cuenta al momento de crear su informe, pueden asegurar una impresi&#243;n correcta y una distribuci&#243;n en casi cualquier entorno o plataforma.</p>
+<hr><br>
+
+<script  language="JavaScript"><!--
+
+var prev = "11_format30.html";
+var next = "11_format32.html";
+
+function setTopicID() { 
+      var number = "88720"; 
+      return number; 
+}
+
+// --></script>
+
+
+
+
+<SCRIPT>
+
+if (!window.parent.toc && navigator.appName == "Netscape") {
+
+   document.writeln ('<TABLE ALIGN="left" border="0" cellspacing="0" cellpadding="10">');
+   document.writeln ('<TR>');
+   document.write ('<TD ALIGN="left">');
+
+   if (prev != "crw_spTOC.hhc") {
+      document.writeln ('<A HREF="' + prev + '">');
+      document.writeln ('<IMG SRC="prevpage.gif" HEIGHT=17 BORDER=0 ALT="Página anterior"></A>');
+   } else {
+//   window.alert ('no previous page');
+   }
+
+   if (next != "crw_spIX.hhk") {
+      document.writeln ('<A HREF="' + next + '">');
+      document.writeln ('<IMG SRC="nextpage.gif" HEIGHT=17 BORDER=0 ALT="Página siguiente"></A>');
+   } else {
+//   window.alert ('no next page');
+   }
+   document.writeln ('</TD><TD ALIGN="left">');
+   document.writeln ('<A HREF="frameset.htm?TOC">');
+   document.writeln ('<IMG SRC="showtoc.gif" HEIGHT=17 BORDER=0 ALT="Haga clic para ver el contenido"></A></TD>');
+   document.writeln ('<TD ALIGN="left">');
+   document.writeln ('<A HREF="frameset.htm?IDX">');
+   document.writeln ('<IMG SRC="showix.gif" HEIGHT=17 BORDER=0 ALT="Haga clic para ver el índice"></A></TD>');
+   document.writeln ('</TD>');
+   document.writeln ('</TR>');
+   document.writeln ('</TABLE>');
+
+}
+
+</SCRIPT>
+<table align="right" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td align="right"><font size="1">Seagate Software, Inc.<br>
+    <a href="http://www.seagatesoftware.com">http://www.seagatesoftware.com</a><br>
+    Envíe sus comentarios a:<br>
+    <a href="mailto:techpubs@seagatesoftware.com">techpubs@seagatesoftware.com</a><br>
+    </font></td>
+  </tr>
+</table>
+</body>
+</html>
+
+

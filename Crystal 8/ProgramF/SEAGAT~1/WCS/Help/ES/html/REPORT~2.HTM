@@ -1,0 +1,94 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+
+<html>
+<head>
+<title>Descarga del visor de informes desde el servidor</title>
+
+<link REL=STYLESHEET TYPE="text/css" HREF="seagate.css">
+
+<!--
+                 ***********************************
+                 * Seagate Software copyright 1999 *
+                 ***********************************
+
+                      Template version: 5.1
+-->
+
+
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" link="#0000FF" vlink="#0000FF" alink="#800080">
+
+
+ 
+<a name="153820"></a><h3 class="newpage"> Descarga del visor de informes desde el servidor</h3>
+<p><a name="153821"></a>Para que un explorador web pueda utilizar un control ActiveX almacenado en el servidor web, el explorador debe ser capaz de descargar el control desde el servidor y registrarlo localmente. El atributo CODEBASE de la etiqueta OBJECT le permite especificar la ubicaci&#243;n del control ActiveX original en relaci&#243;n a la p&#225;gina actual. Por ejemplo:</p><PRE><a name="153822"></a>&lt;OBJECT ID="CRViewer" WIDTH=100% HEIGHT=95%<br>
+&nbsp;&nbsp;&nbsp;&nbsp;CLASSID="CLSID:C4847596-972C-11D0-9567-00A0C9273C2A"<br>
+&nbsp;&nbsp;&nbsp;&nbsp;CODEBASE="/viewer/ActiveXViewer/
+CRViewer.dll#Version=1.0.0.0&gt;<br>
+&lt;/OBJECT&gt;
+</PRE><p><a name="153823"></a>La primera parte del valor del atributo CODEBASE indica la ubicaci&#243;n y el nombre de archivo del control ActiveX como direcci&#243;n URL asociada a la p&#225;gina web actual. El atributo Version que aparece despu&#233;s del s&#237;mbolo # es opcional y le permite especificar qu&#233; versi&#243;n del visor de informes para ActiveX desea proporcionar a sus usuarios. Si especifica 1.0.0.0, el explorador utilizar&#225; autom&#225;ticamente la versi&#243;n m&#225;s reciente que est&#233; disponible en el servidor o en el cliente.</p><p><a name="153824"></a>Cuando un explorador web abre esta p&#225;gina, primero comprueba el atributo CLASSID para determinar si el control ya est&#225; registrado en el sistema cliente. Si no lo est&#225;, o si la versi&#243;n del visor es anterior a la del visor actualmente registrado en el sistema, el explorador utiliza el atributo CODEBASE para buscar el control y descargarlo. Una vez descargado, el explorador puede registrar y mostrar el control.</p>
+<hr><br>
+
+<script  language="JavaScript"><!--
+
+var prev = "Report_Viewers9.html";
+var next = "Report_Viewers11.html";
+
+function setTopicID() { 
+      var number = "153820"; 
+      return number; 
+}
+
+// --></script>
+
+
+
+
+<SCRIPT>
+
+if (!window.parent.toc && navigator.appName == "Netscape") {
+
+   document.writeln ('<TABLE ALIGN="left" border="0" cellspacing="0" cellpadding="10">');
+   document.writeln ('<TR>');
+   document.write ('<TD ALIGN="left">');
+
+   if (prev != "wcmadminTOC.hhc") {
+      document.writeln ('<A HREF="' + prev + '">');
+      document.writeln ('<IMG SRC="prevpage.gif" HEIGHT=17 BORDER=0 ALT="Página anterior"></A>');
+   } else {
+//   window.alert ('no previous page');
+   }
+
+   if (next != "wcmadminIX.hhk") {
+      document.writeln ('<A HREF="' + next + '">');
+      document.writeln ('<IMG SRC="nextpage.gif" HEIGHT=17 BORDER=0 ALT="Página siguiente"></A>');
+   } else {
+//   window.alert ('no next page');
+   }
+   document.writeln ('</TD><TD ALIGN="left">');
+   document.writeln ('<A HREF="frameset.htm?TOC">');
+   document.writeln ('<IMG SRC="showtoc.gif" HEIGHT=17 BORDER=0 ALT="Haga clic para ver el contenido"></A></TD>');
+   document.writeln ('<TD ALIGN="left">');
+   document.writeln ('<A HREF="frameset.htm?IDX">');
+   document.writeln ('<IMG SRC="showix.gif" HEIGHT=17 BORDER=0 ALT="Haga clic para ver el índice"></A></TD>');
+   document.writeln ('</TD>');
+   document.writeln ('</TR>');
+   document.writeln ('</TABLE>');
+
+}
+
+</SCRIPT>
+<table align="right" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td align="right"><font size="1">Seagate Software, Inc.<br>
+    <a href="http://www.seagatesoftware.com">http://www.seagatesoftware.com</a><br>
+    Envíe sus comentarios a:<br>
+    <a href="mailto:techpubs@seagatesoftware.com">techpubs@seagatesoftware.com</a><br>
+    </font></td>
+  </tr>
+</table>
+</body>
+</html>
+
+

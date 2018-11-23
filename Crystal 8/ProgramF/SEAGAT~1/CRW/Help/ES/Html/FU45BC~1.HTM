@@ -1,0 +1,102 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+
+<html>
+<head>
+<title>ExchGetPath (ruta)</title>
+
+<link REL=STYLESHEET TYPE="text/css" HREF="seagate.css">
+
+<!--
+                 ***********************************
+                 * Seagate Software copyright 1999 *
+                 ***********************************
+
+                      Template version: 5.1
+-->
+
+
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" link="#0000FF" vlink="#0000FF" alink="#800080">
+
+
+ 
+<a name="1000587657"></a><h3 class="newpage"> ExchGetPath (ruta)</h3>
+<p><a name="1000652268"></a>Sintaxis b&#225;sica y Crystal.</p><a name="1000587661"></a><h5>Argumentos</h5><p><a name="1000587662"></a>ruta es la direcci&#243;n del emisor/receptor (tipo de datos de cadena).</p><a name="1000587663"></a><h5>Devuelve </h5><p><a name="1000587664"></a>Una cadena</p><a name="1000587665"></a><h5>Acci&#243;n</h5><p><a name="1000587666"></a>Esta funci&#243;n retornar&#225; la informaci&#243;n de contenedor en un campo de direcci&#243;n.</p><ul type="disc"><a name="1000587667"></a><li>Si el tipo de direcci&#243;n es X500, la funci&#243;n retornar&#225; toda la informaci&#243;n desde la primera instancia del c&#243;digo "CN=" hasta la &#250;ltima instancia del c&#243;digo "CN=". Si s&#243;lo hay una instancia del c&#243;digo "CN=", la funci&#243;n retornar&#225; NULO.
+<a name="1000587668"></a><li>Si el tipo de direcci&#243;n es X400, la funci&#243;n retornar&#225; todos los c&#243;digos "OU*=" (residiendo entre los c&#243;digos "P=" y "O=").
+<a name="1000587669"></a><li>Si la direcci&#243;n inicia con "DDA:", la funci&#243;n retornar&#225; toda la informaci&#243;n despu&#233;s del c&#243;digo "DDA:". 
+<a name="1000587670"></a><li>Si el campo est&#225; en blanco, se retornar&#225;  "DIRECCI&Oacute;N DESCONOCIDA".
+</ul><a name="1000587671"></a><h5>Ejemplo(s)</h5><p><a name="1000587672"></a>Los siguientes ejemplos son aplicables para la sintaxis Crystal:</p><p class="code"><a name="1000587673"></a>Campo = /o=Seagate Software/ou=CRYSTALNT/
+<br><a name="1000721929"></a>/cn=Configuration/cn=Servers/cn=ESPRESSO/cn=Fredt
+<br><a name="1000721934"></a>ExchGetPath ({Campo})
+</p><p class="example"><a name="1000587674"></a>Devuelve "cn=Configuration/cn=Servers/cn=ESPRESSO".</p><p class="code"><a name="1000587675"></a>Campo - c=US; a= ; p=Microsoft; ou1=James;
+<br><a name="1000721955"></a>ou2=RichCorp; o=apps<nobr>-w</nobr>ga;
+<br><a name="1000722175"></a>dda:smtp=James@Rich.com
+<br><a name="1000722390"></a>ExchGetPath ({Campo})
+</p><p class="example"><a name="1000587676"></a>Devuelve "ou1=James; ou2=Richcorp".</p><p class="code"><a name="1000587677"></a>Campo = DDA:MS=CRYSTAL/JAMES/crystal
+<br><a name="1000722823"></a>ExchGetPath9 ({Campo})
+</p><p class="example"><a name="1000587678"></a>Devuelve "MS=CRYSTAL/JAMES/crystal".</p>
+<hr><br>
+
+<script  language="JavaScript"><!--
+
+var prev = "Functions214.html";
+var next = "Functions216.html";
+
+function setTopicID() { 
+      var number = "1000587657"; 
+      return number; 
+}
+
+// --></script>
+
+
+
+
+<SCRIPT>
+
+if (!window.parent.toc && navigator.appName == "Netscape") {
+
+   document.writeln ('<TABLE ALIGN="left" border="0" cellspacing="0" cellpadding="10">');
+   document.writeln ('<TR>');
+   document.write ('<TD ALIGN="left">');
+
+   if (prev != "crw_spTOC.hhc") {
+      document.writeln ('<A HREF="' + prev + '">');
+      document.writeln ('<IMG SRC="prevpage.gif" HEIGHT=17 BORDER=0 ALT="Página anterior"></A>');
+   } else {
+//   window.alert ('no previous page');
+   }
+
+   if (next != "crw_spIX.hhk") {
+      document.writeln ('<A HREF="' + next + '">');
+      document.writeln ('<IMG SRC="nextpage.gif" HEIGHT=17 BORDER=0 ALT="Página siguiente"></A>');
+   } else {
+//   window.alert ('no next page');
+   }
+   document.writeln ('</TD><TD ALIGN="left">');
+   document.writeln ('<A HREF="frameset.htm?TOC">');
+   document.writeln ('<IMG SRC="showtoc.gif" HEIGHT=17 BORDER=0 ALT="Haga clic para ver el contenido"></A></TD>');
+   document.writeln ('<TD ALIGN="left">');
+   document.writeln ('<A HREF="frameset.htm?IDX">');
+   document.writeln ('<IMG SRC="showix.gif" HEIGHT=17 BORDER=0 ALT="Haga clic para ver el índice"></A></TD>');
+   document.writeln ('</TD>');
+   document.writeln ('</TR>');
+   document.writeln ('</TABLE>');
+
+}
+
+</SCRIPT>
+<table align="right" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td align="right"><font size="1">Seagate Software, Inc.<br>
+    <a href="http://www.seagatesoftware.com">http://www.seagatesoftware.com</a><br>
+    Envíe sus comentarios a:<br>
+    <a href="mailto:techpubs@seagatesoftware.com">techpubs@seagatesoftware.com</a><br>
+    </font></td>
+  </tr>
+</table>
+</body>
+</html>
+
+

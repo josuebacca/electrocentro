@@ -1,0 +1,182 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+
+<html>
+<head>
+<title>F&#243;rmula 6</title>
+
+<link REL=STYLESHEET TYPE="text/css" HREF="seagate.css">
+
+<!--
+                 ***********************************
+                 * Seagate Software copyright 1999 *
+                 ***********************************
+
+                      Template version: 5.1
+-->
+
+
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" link="#0000FF" vlink="#0000FF" alink="#800080">
+
+
+ 
+<a name="316913"></a><h3 class="newpage"> F&#243;rmula 6</h3>
+<a name="316914"></a><h4>Funciones y operadores usados</h4><p><a name="316915"></a>If<nobr>-T</nobr>hen<nobr>-E</nobr>lse, Mayor que (&gt;), Porcentaje (%), Mayor o igual que (&gt;=), Operador booleano (And), Operador booleano (Or), Par&#233;ntesis ()</p><a name="316916"></a><h4>Prop&#243;sito de la f&#243;rmula</h4><p><a name="316917"></a>El entrenador de un equipo de b&#233;isbol desea una columna en el informe de estad&#237;sticas que indique todos los promedios de bateo del 30% o mejor y todos los promedios inferiores al 20%. El entrenador no desea que se indique el promedio de bateo para ning&#250;n jugador que haya bateado menos de 100 veces porque no cree que ese promedio de bateo sea estad&#237;sticamente significativo.</p><a name="316918"></a><h4>F&#243;rmula</h4><PRE><a name="316919"></a>If ({archivo.BATEOS}&gt;=100) And <br>
+(({archivo.ACIERTOS} % {archivo.BATEOS}&gt;=30) Or <br>
+({archivo.ACIERTOS} % {archivo.BATEOS}&lt;20)) Then <br>
+&nbsp;&nbsp;&nbsp;&nbsp;"####" <br>
+Else <br>
+&nbsp;&nbsp;&nbsp;&nbsp;""
+</PRE><a name="316920"></a><h4>Resultado</h4><p><a name="316972"></a> <Table Border="1">
+<tr><td align="left" valign="TOP"><a name="316923"></a>Aciert
+os
+
+</td><td align="left" valign="TOP"><a name="316925"></a>Bateos
+
+</td><td align="left" valign="TOP"><a name="316927"></a>Promedio
+
+</td><td align="left" valign="TOP"><a name="316929"></a>Indicad
+or
+
+</td><td align="left" valign="TOP"><a name="316931"></a>Explicaci&#243;n
+
+</td></tr>
+<tr><td align="left" valign="TOP"><P><a name="316933"></a>31</P>
+
+
+</td><td align="left" valign="TOP"><P><a name="316935"></a>98</P>
+
+
+</td><td align="left" valign="TOP"><P><a name="316937"></a>31,6</P>
+
+
+</td><td align="left" valign="TOP"><P><br></P>
+
+
+</td><td align="left" valign="TOP"><P><a name="316941"></a>Bateos &lt;100 (no significativo)</P>
+
+
+</td></tr>
+<tr><td align="left" valign="TOP"><P><a name="316943"></a>31</P>
+
+
+</td><td align="left" valign="TOP"><P><a name="316945"></a>101</P>
+
+
+</td><td align="left" valign="TOP"><P><a name="316947"></a>30,7</P>
+
+
+</td><td align="left" valign="TOP"><P><a name="316949"></a>"####"</P>
+
+
+</td><td align="left" valign="TOP"><P><a name="316951"></a>Promedio &gt; 30 (30%)</P>
+
+
+</td></tr>
+<tr><td align="left" valign="TOP"><P><a name="316953"></a>43</P>
+
+
+</td><td align="left" valign="TOP"><P><a name="316955"></a>216</P>
+
+
+</td><td align="left" valign="TOP"><P><a name="316957"></a>19,9</P>
+
+
+</td><td align="left" valign="TOP"><P><a name="316959"></a>"####"</P>
+
+
+</td><td align="left" valign="TOP"><P><a name="316961"></a>Promedio &lt; 20 (20%)</P>
+
+
+</td></tr>
+<tr><td align="left" valign="TOP"><P><a name="316963"></a>19</P>
+
+
+</td><td align="left" valign="TOP"><P><a name="316965"></a>99</P>
+
+
+</td><td align="left" valign="TOP"><P><a name="316967"></a>19,2</P>
+
+
+</td><td align="left" valign="TOP"><P><br></P>
+
+
+</td><td align="left" valign="TOP"><P><a name="316971"></a>Bateos &lt;100 (no significativo)</P>
+
+
+</td></tr>
+
+</Table></p>
+<a name="316973"></a><h4>Explicaci&#243;n</h4><ul type="disc"><a name="316974"></a><li>La f&#243;rmula usa el operador If<nobr>-T</nobr>hen<nobr>-E</nobr>lse para probar condiciones espec&#237;ficas. 
+<a name="316975"></a><li>La condici&#243;n A ({archivo.BATEOS} &gt;= 100) usa el operador mayor o igual que (&gt;=) para asegurarse de que el bateador ha bateado cien veces por lo menos. Si ha bateado 100 o m&#225;s veces, esta condici&#243;n es verdadera, si no, es falsa.
+<a name="316976"></a><li>La condici&#243;n B ({archivo.ACIERTOS} % {archivo.BATEOS} &gt;30) usa el operador de porcentaje (%) para calcular {archivo.ACIERTOS}como porcentaje de {archivo.BATEOS}. Luego usa el operador mayor o igual que (&gt;=) para probar el porcentaje resultante y ver si es 30% (0,300 promedio de bateo) o m&#225;s. Si el porcentaje es mayor o igual que 30, esta condici&#243;n es verdadera, si no, es falsa.
+<a name="316977"></a><li>La condici&#243;n C ({archivo.ACIERTOS} % {archivo.BATEOS} &gt;20) usa nuevamente el operador de porcentaje (%) para calcular {archivo.ACIERTOS}como porcentaje de {archivo.BATEOS}. Luego usa el operador menor que (&lt;) para probar el porcentaje resultante y ver si es menor que 20% (0,200 promedio de bateo). Si el porcentaje es menor que 20, esta condici&#243;n es verdadera, si no, es falsa.
+<a name="316978"></a><li>La f&#243;rmula usa los operadores booleanos And y Or para evaluar las condiciones A, B y C. La relaci&#243;n l&#243;gica requerida es: condici&#243;n A y condici&#243;n B o condici&#243;n C. Por ende, la parte If de la f&#243;rmula se cumple si la condici&#243;n A es VERDADERA y si la condici&#243;n B o la condici&#243;n C es VERDADERA.
+<a name="316979"></a><li>Si se cumple la parte If de la f&#243;rmula (Then), &#233;sta marca el promedio de bateo al imprimir cuatro signos de almohadilla "####".
+<a name="316980"></a><li>Si esas condiciones no son verdaderas (Else), no imprime nada (como se indica por la cadena de texto vac&#237;a "").
+</ul><a name="316981"></a><h6>Temas relacionados</h6><p><a name="316985"></a><a href="19_introformulas28.html#316471">F&#243;rmulas en acci&#243;n</a></p>
+<hr><br>
+
+<script  language="JavaScript"><!--
+
+var prev = "19_introformulas33.html";
+var next = "19_introformulas35.html";
+
+function setTopicID() { 
+      var number = "316913"; 
+      return number; 
+}
+
+// --></script>
+
+
+
+
+<SCRIPT>
+
+if (!window.parent.toc && navigator.appName == "Netscape") {
+
+   document.writeln ('<TABLE ALIGN="left" border="0" cellspacing="0" cellpadding="10">');
+   document.writeln ('<TR>');
+   document.write ('<TD ALIGN="left">');
+
+   if (prev != "crw_spTOC.hhc") {
+      document.writeln ('<A HREF="' + prev + '">');
+      document.writeln ('<IMG SRC="prevpage.gif" HEIGHT=17 BORDER=0 ALT="Página anterior"></A>');
+   } else {
+//   window.alert ('no previous page');
+   }
+
+   if (next != "crw_spIX.hhk") {
+      document.writeln ('<A HREF="' + next + '">');
+      document.writeln ('<IMG SRC="nextpage.gif" HEIGHT=17 BORDER=0 ALT="Página siguiente"></A>');
+   } else {
+//   window.alert ('no next page');
+   }
+   document.writeln ('</TD><TD ALIGN="left">');
+   document.writeln ('<A HREF="frameset.htm?TOC">');
+   document.writeln ('<IMG SRC="showtoc.gif" HEIGHT=17 BORDER=0 ALT="Haga clic para ver el contenido"></A></TD>');
+   document.writeln ('<TD ALIGN="left">');
+   document.writeln ('<A HREF="frameset.htm?IDX">');
+   document.writeln ('<IMG SRC="showix.gif" HEIGHT=17 BORDER=0 ALT="Haga clic para ver el índice"></A></TD>');
+   document.writeln ('</TD>');
+   document.writeln ('</TR>');
+   document.writeln ('</TABLE>');
+
+}
+
+</SCRIPT>
+<table align="right" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td align="right"><font size="1">Seagate Software, Inc.<br>
+    <a href="http://www.seagatesoftware.com">http://www.seagatesoftware.com</a><br>
+    Envíe sus comentarios a:<br>
+    <a href="mailto:techpubs@seagatesoftware.com">techpubs@seagatesoftware.com</a><br>
+    </font></td>
+  </tr>
+</table>
+</body>
+</html>
+
+

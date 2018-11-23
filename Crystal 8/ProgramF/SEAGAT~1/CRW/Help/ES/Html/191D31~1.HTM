@@ -1,0 +1,186 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+
+<html>
+<head>
+<title>F&#243;rmula 8</title>
+
+<link REL=STYLESHEET TYPE="text/css" HREF="seagate.css">
+
+<!--
+                 ***********************************
+                 * Seagate Software copyright 1999 *
+                 ***********************************
+
+                      Template version: 5.1
+-->
+
+
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" link="#0000FF" vlink="#0000FF" alink="#800080">
+
+
+ 
+<a name="317048"></a><h3 class="newpage"> F&#243;rmula 8</h3>
+<a name="317049"></a><h4>Funciones y operadores usados</h4><p><a name="317050"></a>If<nobr>-T</nobr>hen<nobr>-E</nobr>lse, Menor que (&lt;), Negativo (-), Agregar (+), Round, Average([matriz]), Par&#233;ntesis ().</p><a name="317051"></a><h4>Prop&#243;sito de la f&#243;rmula</h4><p><a name="317052"></a>Para controlar mejor sus compras e inventario, el due&#241;o de un tienda desea que el informe de inventario incluya una columna "Cantidad a pedir". Quiere que la columna le indique qu&#233; cantidad necesita pedir para mantener disponible la cantidad promedio vendida mensualmente durante los &#250;ltimos tres meses.</p><ul type="disc"><a name="317053"></a><li>Si hay existencias disponibles, va a pedir la cantidad promedio vendida menos las existencias disponibles.
+<a name="317054"></a><li>Si no hay existencias disponibles pero no hay pedidos pendientes, va a pedir la cantidad promedio vendida. 
+<a name="317055"></a><li>Si no hay existencias disponibles y s&#237; hay pedidos pendientes, va a pedir lo suficiente para liquidar los pedidos pendientes m&#225;s la cantidad promedio vendida.
+</ul><a name="317056"></a><h4>F&#243;rmula</h4><PRE><a name="317057"></a>If {archivo.DISPONIBLE} &lt; 0 Then
+<a name="317058"></a>((- ({archivo.DISPONIBLE})) + Round
+<a name="317059"></a>((Average([{archivo.MES1}{archivo.MES2},
+<a name="317060"></a>{archivo.MES3}]))))
+<a name="317061"></a>Else
+<a name="317062"></a>((Average([{archivo.MES1}{archivo.MES2},
+<a name="317063"></a>{archivo.MES3}])) - {archivo.DISPONIBLE}))
+</PRE><a name="317064"></a><h4>Resultado</h4><p><a name="317114"></a> <Table Border="1">
+<tr><td align="left" valign="TOP"><a name="317067"></a>Disponible
+
+</td><td align="left" valign="TOP"><a name="317069"></a>Mes 1
+
+</td><td align="left" valign="TOP"><a name="317071"></a>Mes 2
+
+</td><td align="left" valign="TOP"><a name="317073"></a>Mes 3
+
+</td><td align="left" valign="TOP"><a name="317075"></a>Promed
+io
+
+</td><td align="left" valign="TOP"><a name="317077"></a>Pedir
+
+</td></tr>
+<tr><td align="left" valign="TOP"><P><a name="317079"></a>2</P>
+
+
+</td><td align="left" valign="TOP"><P><a name="317081"></a>16</P>
+
+
+</td><td align="left" valign="TOP"><P><a name="317083"></a>6</P>
+
+
+</td><td align="left" valign="TOP"><P><a name="317085"></a>30</P>
+
+
+</td><td align="left" valign="TOP"><P><a name="317087"></a>17</P>
+
+
+</td><td align="left" valign="TOP"><P><a name="317089"></a>15</P>
+
+
+</td></tr>
+<tr><td align="left" valign="TOP"><P><a name="317091"></a>5-</P>
+
+
+</td><td align="left" valign="TOP"><P><a name="317093"></a>7</P>
+
+
+</td><td align="left" valign="TOP"><P><a name="317095"></a>3</P>
+
+
+</td><td align="left" valign="TOP"><P><a name="317097"></a>19</P>
+
+
+</td><td align="left" valign="TOP"><P><a name="317099"></a>10</P>
+
+
+</td><td align="left" valign="TOP"><P><a name="317101"></a>15</P>
+
+
+</td></tr>
+<tr><td align="left" valign="TOP"><P><a name="317103"></a>0</P>
+
+
+</td><td align="left" valign="TOP"><P><a name="317105"></a>9</P>
+
+
+</td><td align="left" valign="TOP"><P><a name="317107"></a>8</P>
+
+
+</td><td align="left" valign="TOP"><P><a name="317109"></a>18</P>
+
+
+</td><td align="left" valign="TOP"><P><a name="317111"></a>12</P>
+
+
+</td><td align="left" valign="TOP"><P><a name="317113"></a>12</P>
+
+
+</td></tr>
+
+</Table></p>
+<a name="317115"></a><h4>Explicaci&#243;n</h4><ul type="disc"><a name="317116"></a><li>La f&#243;rmula usa el operador If<nobr>-T</nobr>hen<nobr>-E</nobr>lse para configurar un conjunto de c&#225;lculos si hay pedidos pendientes ({archivo.DISPONIBLE}&lt; 0), y un conjunto diferente de c&#225;lculos si no hay pedidos pendientes.
+<a name="317117"></a><li>La parte If de la f&#243;rmula usa el operador menor que (&lt;) para ver si la cantidad disponible es menor que cero. Esto indica que, no s&#243;lo se vendieron todas las existencias sino que hay pedidos que no se han entregado (una situaci&#243;n de pedido pendiente).
+<a name="317118"></a><li>Si hay un pedido pendiente, la parte Then de la f&#243;rmula calcula el monto a pedir como ventas promedio mensuales durante un per&#237;odo especificado de tres meses m&#225;s el monto de pedidos pendientes (expresados como n&#250;mero positivo).
+<a name="317119"></a><li>Usa el operador de negativo (-) para convertir el valor negativo de {archivo.DISPONIBLE}en un valor positivo.
+<a name="317120"></a><li>Usa la funci&#243;n Average([matriz]) para promediar las ventas de producto durante {archivo.MES1}, {archivo.MES2}y {archivo.MES3} (los tres meses usados para determinar un patr&#243;n t&#237;pico de ventas para el producto).
+<a name="317121"></a><li>Usa la funci&#243;n Round para redondear las ventas promedio del producto hasta el n&#250;mero entero m&#225;s cercano.
+<a name="317122"></a><li>Usa el operador de adici&#243;n (+) para sumar la cantidad disponible (ahora expresada como positivo) a la cifra redondeada de ventas promedio mensuales.
+<a name="317123"></a><li>El resultado es el monto que se va a pedir.
+<a name="317124"></a><li>Si no hay pedidos pendientes, la parte Else de la f&#243;rmula calcula el monto a pedir como ventas promedio mensuales durante el per&#237;odo especificado de tres meses menos la cantidad ya disponible.
+<a name="317125"></a><li>Usa la funci&#243;n Average para promediar las ventas de producto durante {archivo.MES1}, {archivo.MES2}y {archivo.MES3} (los tres meses que permiten determinar un patr&#243;n t&#237;pico de ventas para el producto).
+<a name="317126"></a><li>Usa la funci&#243;n Round para redondear las ventas promedio del producto hasta el n&#250;mero entero m&#225;s cercano.
+<a name="317127"></a><li>Usa el operador de sustracci&#243;n (-) para restar la cantidad disponible de la cifra redondeada de ventas mensuales promedio.
+<a name="317128"></a><li>El resultado es el monto que se va a pedir.
+</ul><a name="317129"></a><h6>Temas relacionados</h6><p><a name="317133"></a><a href="19_introformulas28.html#316471">F&#243;rmulas en acci&#243;n</a></p>
+<hr><br>
+
+<script  language="JavaScript"><!--
+
+var prev = "19_introformulas35.html";
+var next = "19_introformulas37.html";
+
+function setTopicID() { 
+      var number = "317048"; 
+      return number; 
+}
+
+// --></script>
+
+
+
+
+<SCRIPT>
+
+if (!window.parent.toc && navigator.appName == "Netscape") {
+
+   document.writeln ('<TABLE ALIGN="left" border="0" cellspacing="0" cellpadding="10">');
+   document.writeln ('<TR>');
+   document.write ('<TD ALIGN="left">');
+
+   if (prev != "crw_spTOC.hhc") {
+      document.writeln ('<A HREF="' + prev + '">');
+      document.writeln ('<IMG SRC="prevpage.gif" HEIGHT=17 BORDER=0 ALT="Página anterior"></A>');
+   } else {
+//   window.alert ('no previous page');
+   }
+
+   if (next != "crw_spIX.hhk") {
+      document.writeln ('<A HREF="' + next + '">');
+      document.writeln ('<IMG SRC="nextpage.gif" HEIGHT=17 BORDER=0 ALT="Página siguiente"></A>');
+   } else {
+//   window.alert ('no next page');
+   }
+   document.writeln ('</TD><TD ALIGN="left">');
+   document.writeln ('<A HREF="frameset.htm?TOC">');
+   document.writeln ('<IMG SRC="showtoc.gif" HEIGHT=17 BORDER=0 ALT="Haga clic para ver el contenido"></A></TD>');
+   document.writeln ('<TD ALIGN="left">');
+   document.writeln ('<A HREF="frameset.htm?IDX">');
+   document.writeln ('<IMG SRC="showix.gif" HEIGHT=17 BORDER=0 ALT="Haga clic para ver el índice"></A></TD>');
+   document.writeln ('</TD>');
+   document.writeln ('</TR>');
+   document.writeln ('</TABLE>');
+
+}
+
+</SCRIPT>
+<table align="right" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td align="right"><font size="1">Seagate Software, Inc.<br>
+    <a href="http://www.seagatesoftware.com">http://www.seagatesoftware.com</a><br>
+    Envíe sus comentarios a:<br>
+    <a href="mailto:techpubs@seagatesoftware.com">techpubs@seagatesoftware.com</a><br>
+    </font></td>
+  </tr>
+</table>
+</body>
+</html>
+
+

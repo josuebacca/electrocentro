@@ -1,0 +1,90 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+
+<html>
+<head>
+
+<title>Archivos de Crystal Dictionary </title>
+
+<link REL=STYLESHEET TYPE="text/css" HREF="seagate.css">
+
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" link="#0000FF" vlink="#0000FF" alink="#800080">
+
+
+ 
+<a name="72060"></a><h2 class="newpage">Archivos de Crystal Dictionary </h2><p><a name="72061"></a>Un archivo de diccionario (.DC5) es una vista simplificada y estructurada de datos organizacionales que puede crear para cualquier usuario de su organizaci&#243;n que use Seagate Crystal Reports. Con un diccionario, los usuarios finales solamente ven el subconjunto de tablas y campos que necesitan.</p><p><a name="2042"></a>Un diccionario es una fuente de datos opcional para Seagate Crystal Reports. Proporciona un filtro pr&#225;ctico, aclarando y simplificando t&#233;cnicas de acceso a datos complejos para los usuarios finales, aunque el usuario pueda acceder directamente a los datos desde la base de datos. Los diccionarios simplemente proporcionan toda la comodidad.</p><p><a name="306370"></a>Si dise&#241;a un informe con un diccionario, no puede usar ninguna otra fuente de datos en dicho informe. Esto incluye otros diccionarios, Seagate Crystal Reports, fuentes de datos ODBC, bases de datos de acceso directo y todas las dem&#225;s fuentes de datos. El objetivo de un diccionario es proporcionar un acceso r&#225;pido y f&#225;cil de comprender a un conjunto particular de datos. La conexi&#243;n a otras fuentes de datos dentro del mismo informe va en contra de este objetivo. Vea <a href="27_dictionary4.html#141183">C&#243;mo crear un Diccionario nuevo</a>.</p><p><a name="188257"></a>Los diccionarios le permiten:</p><ul type="disc"><a name="2046"></a><li>Dise&#241;ar una vista simple y din&#225;mica de todos los datos que son necesarios para crear consultas e informes organizacionales.
+<a name="2048"></a><li>Crear un diccionario que contenga diferentes fuentes de datos, tablas y v&#237;nculos.
+<a name="2050"></a><li>Organizar los datos y cambiar el nombre de tablas y campos para facilitar a los usuarios la comprensi&#243;n del contenido y prop&#243;sito de los datos.
+<a name="2052"></a><li>Crear f&#243;rmulas de manipulaci&#243;n de datos complejas accesibles para los usuarios sin necesidad de comprender conceptos de f&#243;rmulas.
+</ul><p><a name="2054"></a>Los diccionarios reducen el costo y tiempo de soporte, aumentan la productividad de los usuarios y reducen el mal uso, p&#233;rdida y da&#241;o de los datos.</p><p><a name="2056"></a>Una vez creado, el diccionario act&#250;a como filtro, ofreciendo una vista de datos complejos que es clara y f&#225;cil de entender a cualquier usuario. La complejidad de sus datos no impedir&#225; que los usuarios puedan crear informes poderosos.</p><p><a name="363823"></a> <img src="images/dictds.gif">
+
+
+</p>
+<p><a name="333573"></a> </p>
+<p><a name="72165"></a>Seagate Crystal Reports lee el archivo de diccionario usando el archivo P2ixbse.dll. Este archivo de traducci&#243;n se basa en el motor xBase usado para acceder a bases de datos dBASE, FoxPro y Clipper, pero proporciona toda la flexibilidad necesaria para leer diccionarios. Vea <a href="25_access_sources7.html#1756">dBASE, FoxPro, Clipper</a>.</p><p><a name="333631"></a><font color="darkblue"><b>Nota:   &nbsp;&nbsp;&nbsp;</b></font>Si ha actualizado una versi&#243;n anterior de Seagate Crystal Reports que permit&#237;a archivos de diccionario, los archivos de diccionario antiguos (.DCT) se basaron en el motor Btrieve. Si convierte dichos archivos a nuevos archivos de diccionario, &#233;stos usar&#225;n la capa de traducci&#243;n xBase en vez de Btrieve. Sin embargo, el motor Btrieve instalado por la versi&#243;n anterior de Seagate Crystal Reports debe permanecer en su sistema para que la nueva aplicaci&#243;n de diccionario lea los archivos de diccionario antiguos.</p>
+<p><a name="27251"></a>La capa de acceso a bases de datos es la capa mediante la cual el archivo de diccionario realmente lee los datos de la base de datos original. Los diccionarios deben leer datos de base de datos usando las mismas rutas que Seagate Crystal Reports usa para leer los datos. Las secciones de las capas de bases de datos de acceso directo y fuentes de datos ODBC describen los archivos que los diccionarios necesitan para leer datos.</p><p><a name="33660"></a>La ventaja de los diccionarios es que esta capa de acceso a bases de datos es completamente transparente para el usuario. El diccionario muestra una vista de datos de Seagate Crystal Reports que pueden coincidir o no con los datos reales, pero que son de f&#225;cil acceso y c&#243;modos para los usuarios.</p><p><a name="33661"></a>Finalmente, los diccionarios proporcionan un medio f&#225;cil de cambiar los datos a que se accede originalmente sin cambiar la vista de los datos vistos por los usuarios. Por ejemplo, su base de datos original puede contener los campos Precio, Cantidad y Costo y usted decide que el costo se puede calcular a partir del precio y cantidad, por lo que elimina el campo Costo. Al actualizar el diccionario para calcular el costo en vez de obtenerlo directamente de la base de datos, sus usuarios nunca saben la diferencia. Esto tambi&#233;n resulta de utilidad cuando se cambia todo el formato de base de datos subyacente. Nuevamente, con s&#243;lo actualizar el diccionario.</p><p><a name="2062"></a>Los archivos de diccionario a menudo son creados por el gerente de sistemas de informaci&#243;n que controla la base de datos de una compa&#241;&#237;a. El gerente de sistemas de informaci&#243;n puede trabajar con datos que est&#225;n organizados y clasificados para crear diccionarios simples y f&#225;ciles de usar para los empleados. En cada archivo de diccionario, los empleados encuentran solamente los datos necesarios, ya que los datos originales han sido manipulados o personalizados por el gerente de sistemas de informaci&#243;n para diversos usos.</p>
+<hr><br>
+
+<script  language="JavaScript"><!--
+
+var prev = "25_access_sources45.html";
+var next = "26_sql.html";
+
+function setTopicID() { 
+      var number = "72060"; 
+      return number; 
+}
+
+// --></script>
+
+
+
+
+<SCRIPT>
+
+if (!window.parent.toc && navigator.appName == "Netscape") {
+
+   document.writeln ('<TABLE ALIGN="left" border="0" cellspacing="0" cellpadding="10">');
+   document.writeln ('<TR>');
+   document.write ('<TD ALIGN="left">');
+
+   if (prev != "crw_spTOC.hhc") {
+      document.writeln ('<A HREF="' + prev + '">');
+      document.writeln ('<IMG SRC="prevpage.gif" HEIGHT=17 BORDER=0 ALT="Página anterior"></A>');
+   } else {
+//   window.alert ('no previous page');
+   }
+
+   if (next != "crw_spIX.hhk") {
+      document.writeln ('<A HREF="' + next + '">');
+      document.writeln ('<IMG SRC="nextpage.gif" HEIGHT=17 BORDER=0 ALT="Página siguiente"></A>');
+   } else {
+//   window.alert ('no next page');
+   }
+   document.writeln ('</TD><TD ALIGN="left">');
+   document.writeln ('<A HREF="frameset.htm?TOC">');
+   document.writeln ('<IMG SRC="showtoc.gif" HEIGHT=17 BORDER=0 ALT="Haga clic para ver el contenido"></A></TD>');
+   document.writeln ('<TD ALIGN="left">');
+   document.writeln ('<A HREF="frameset.htm?IDX">');
+   document.writeln ('<IMG SRC="showix.gif" HEIGHT=17 BORDER=0 ALT="Haga clic para ver el índice"></A></TD>');
+   document.writeln ('</TD>');
+   document.writeln ('</TR>');
+   document.writeln ('</TABLE>');
+
+}
+
+</SCRIPT>
+<table align="right" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td align="right"><font size="1">Seagate Software, Inc.<br>
+    <a href="http://www.seagatesoftware.com">http://www.seagatesoftware.com</a><br>
+    Envíe sus comentarios a:<br>
+    <a href="mailto:techpubs@seagatesoftware.com">techpubs@seagatesoftware.com</a><br>
+    </font></td>
+  </tr>
+</table>
+</body>
+</html>
+
+

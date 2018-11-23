@@ -1,0 +1,92 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+
+<html>
+<head>
+<title>Variables</title>
+
+<link REL=STYLESHEET TYPE="text/css" HREF="seagate.css">
+
+<!--
+                 ***********************************
+                 * Seagate Software copyright 1999 *
+                 ***********************************
+
+                      Template version: 5.1
+-->
+
+
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" link="#0000FF" vlink="#0000FF" alink="#800080">
+
+
+ 
+<a name="130270"></a><h2 class="newpage">Variables</h2><p><a name="130272"></a>Esta secci&#243;n describe los componentes clave de las variables y muestra c&#243;mo crear y asignar valores a variables.</p><a name="130273"></a><h3>Introducci&#243;n general sobre las variables</h3>
+<p><a name="130274"></a>Una variable representa un elemento de datos espec&#237;fico, o valor, y act&#250;a como marcador para dicho valor. Cuando una f&#243;rmula encuentra una variable, la primera busca el valor de la variable y lo usa. A diferencia de un valor constante, que es fijo y no cambia, a una variable se le pueden asignar repetidamente diferentes valores. Usted asigna un valor a una variable y &#233;sta mantiene dicho valor hasta que le asigna otro nuevo. Debido a esta flexibilidad, es necesario declarar las variables antes de usarlas, de modo que Seagate Crystal Reports las reconozca y comprenda c&#243;mo desea usarlas.</p><a name="130275"></a><h4>Ejemplo de una variable</h4><p><a name="130276"></a>Si desea un informe sobre clientes por c&#243;digo de &#225;rea, puede crear una variable que extraiga ese c&#243;digo del n&#250;mero de fax de un cliente. El siguiente es un ejemplo de una variable denominada <EM>aCodigo</EM>:</p><PRE><a name="130278"></a>Dim aCodigo As String
+<a name="130279"></a>aCodigo = Left ({Cliente.Fax}, 3)
+<a name="130280"></a>Rem tambi&#233;n puede usar: aCodigo = {Cliente.Fax} (1 To 3)
+</PRE><p><a name="130282"></a>La primera l&#237;nea de la variable es la declaraci&#243;n de variable; le asigna un nombre y un tipo. El campo de base de datos {Cliente.Fax} es un campo de cadena y la funci&#243;n Left extrae los primeros 3 caracteres de su valor actual. Luego este valor se asigna a la variable aCodigo.</p>
+<hr><br>
+
+<script  language="JavaScript"><!--
+
+var prev = "20_basicsyntax21.html";
+var next = "20_basicsyntax23.html";
+
+function setTopicID() { 
+      var number = "130270"; 
+      return number; 
+}
+
+// --></script>
+
+
+
+
+<SCRIPT>
+
+if (!window.parent.toc && navigator.appName == "Netscape") {
+
+   document.writeln ('<TABLE ALIGN="left" border="0" cellspacing="0" cellpadding="10">');
+   document.writeln ('<TR>');
+   document.write ('<TD ALIGN="left">');
+
+   if (prev != "crw_spTOC.hhc") {
+      document.writeln ('<A HREF="' + prev + '">');
+      document.writeln ('<IMG SRC="prevpage.gif" HEIGHT=17 BORDER=0 ALT="Página anterior"></A>');
+   } else {
+//   window.alert ('no previous page');
+   }
+
+   if (next != "crw_spIX.hhk") {
+      document.writeln ('<A HREF="' + next + '">');
+      document.writeln ('<IMG SRC="nextpage.gif" HEIGHT=17 BORDER=0 ALT="Página siguiente"></A>');
+   } else {
+//   window.alert ('no next page');
+   }
+   document.writeln ('</TD><TD ALIGN="left">');
+   document.writeln ('<A HREF="frameset.htm?TOC">');
+   document.writeln ('<IMG SRC="showtoc.gif" HEIGHT=17 BORDER=0 ALT="Haga clic para ver el contenido"></A></TD>');
+   document.writeln ('<TD ALIGN="left">');
+   document.writeln ('<A HREF="frameset.htm?IDX">');
+   document.writeln ('<IMG SRC="showix.gif" HEIGHT=17 BORDER=0 ALT="Haga clic para ver el índice"></A></TD>');
+   document.writeln ('</TD>');
+   document.writeln ('</TR>');
+   document.writeln ('</TABLE>');
+
+}
+
+</SCRIPT>
+<table align="right" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td align="right"><font size="1">Seagate Software, Inc.<br>
+    <a href="http://www.seagatesoftware.com">http://www.seagatesoftware.com</a><br>
+    Envíe sus comentarios a:<br>
+    <a href="mailto:techpubs@seagatesoftware.com">techpubs@seagatesoftware.com</a><br>
+    </font></td>
+  </tr>
+</table>
+</body>
+</html>
+
+

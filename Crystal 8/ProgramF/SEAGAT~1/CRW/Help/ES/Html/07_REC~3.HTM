@@ -1,0 +1,98 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+
+<html>
+<head>
+<title>Sugerencias acerca de selecci&#243;n</title>
+
+<link REL=STYLESHEET TYPE="text/css" HREF="seagate.css">
+
+<!--
+                 ***********************************
+                 * Seagate Software copyright 1999 *
+                 ***********************************
+
+                      Template version: 5.1
+-->
+
+
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" link="#0000FF" vlink="#0000FF" alink="#800080">
+
+
+ 
+<a name="54472"></a><h2 class="newpage">Sugerencias acerca de selecci&#243;n</h2><p><a name="54473"></a>Considerar los siguientes elementos relacionados con el rendimiento cuando est&#233; configurando sus solicitudes de selecci&#243;n:</p><a name="53611"></a><h4>Especificaciones generales </h4><ul type="disc"><a name="53612"></a><li>Para reducir la selecci&#243;n de registros, la opci&#243;n "Usar &#237;ndices o servidor para rapidez" debe estar activada.
+<a name="53613"></a><li>Evite la conversi&#243;n de tipos de fecha en las f&#243;rmulas de selecci&#243;n de registros.
+<p class="indent"><a name="53614"></a>Por ejemplo, el uso de ToText ( ) para convertir un campo num&#233;rico a cadena.</p><a name="53615"></a><li>Puede reducir algunas f&#243;rmulas de selecci&#243;n de registros que usan enunciados constantes.
+</ul><a name="53616"></a><h4>Bases de datos PC</h4><ul type="disc"><a name="53617"></a><li>S&#243;lo puede reducir la selecci&#243;n de campos indexados.
+<a name="53618"></a><li>Puede reducir s&#243;lo cl&#225;usulas AND (no OR).
+</ul><a name="53619"></a><h4>Bases de datos SQL</h4><ul type="disc"><a name="53620"></a><li>Puede reducir la selecci&#243;n de campos indexados o no indexados.
+<p class="indent"><a name="53621"></a><font color="darkblue"><b>Nota:   &nbsp;&nbsp;&nbsp;</b></font>El servidor responde m&#225;s r&#225;pido si usa campos indexados.</p>
+<a name="53622"></a><li>Puede reducir cl&#225;usulas AND y OR.
+<a name="53623"></a><li>Puede reducir la selecci&#243;n de registros que contenga algunos tipos de f&#243;rmulas incrustadas.
+<a name="53624"></a><li>Use los campos de enunciado SQL para reducir c&#225;lculos de f&#243;rmulas necesarios para la selecci&#243;n de registros.
+<p class="indent"><a name="53625"></a>Por ejemplo, no es posible reducir una selecci&#243;n de registros de {@PrecioFinal &gt; 1000} donde @PrecioFinal = (Pedidos x Cantidad). Sin embargo, si se reemplaza @PrecioFinal con un campo de enunciado SQL, &#233;ste se podr&#225; reducir.</p></ul><p><a name="53626"></a>Use Mostrar consulta SQL para ver el SQL que ser&#225; enviado al servidor.</p>
+<hr><br>
+
+<script  language="JavaScript"><!--
+
+var prev = "07_recordgroupsel10.html";
+var next = "07_recordgroupsel12.html";
+
+function setTopicID() { 
+      var number = "54472"; 
+      return number; 
+}
+
+// --></script>
+
+
+
+
+<SCRIPT>
+
+if (!window.parent.toc && navigator.appName == "Netscape") {
+
+   document.writeln ('<TABLE ALIGN="left" border="0" cellspacing="0" cellpadding="10">');
+   document.writeln ('<TR>');
+   document.write ('<TD ALIGN="left">');
+
+   if (prev != "crw_spTOC.hhc") {
+      document.writeln ('<A HREF="' + prev + '">');
+      document.writeln ('<IMG SRC="prevpage.gif" HEIGHT=17 BORDER=0 ALT="Página anterior"></A>');
+   } else {
+//   window.alert ('no previous page');
+   }
+
+   if (next != "crw_spIX.hhk") {
+      document.writeln ('<A HREF="' + next + '">');
+      document.writeln ('<IMG SRC="nextpage.gif" HEIGHT=17 BORDER=0 ALT="Página siguiente"></A>');
+   } else {
+//   window.alert ('no next page');
+   }
+   document.writeln ('</TD><TD ALIGN="left">');
+   document.writeln ('<A HREF="frameset.htm?TOC">');
+   document.writeln ('<IMG SRC="showtoc.gif" HEIGHT=17 BORDER=0 ALT="Haga clic para ver el contenido"></A></TD>');
+   document.writeln ('<TD ALIGN="left">');
+   document.writeln ('<A HREF="frameset.htm?IDX">');
+   document.writeln ('<IMG SRC="showix.gif" HEIGHT=17 BORDER=0 ALT="Haga clic para ver el índice"></A></TD>');
+   document.writeln ('</TD>');
+   document.writeln ('</TR>');
+   document.writeln ('</TABLE>');
+
+}
+
+</SCRIPT>
+<table align="right" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td align="right"><font size="1">Seagate Software, Inc.<br>
+    <a href="http://www.seagatesoftware.com">http://www.seagatesoftware.com</a><br>
+    Envíe sus comentarios a:<br>
+    <a href="mailto:techpubs@seagatesoftware.com">techpubs@seagatesoftware.com</a><br>
+    </font></td>
+  </tr>
+</table>
+</body>
+</html>
+
+

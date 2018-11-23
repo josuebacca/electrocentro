@@ -1,0 +1,105 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+
+<html>
+<head>
+<title>Redim</title>
+
+<link REL=STYLESHEET TYPE="text/css" HREF="seagate.css">
+
+<!--
+                 ***********************************
+                 * Seagate Software copyright 1999 *
+                 ***********************************
+
+                      Template version: 5.1
+-->
+
+
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" link="#0000FF" vlink="#0000FF" alink="#800080">
+
+
+ 
+<a name="1000020063"></a><h3 class="newpage"> Redim</h3>
+<a name="1000020065"></a><h4>Sintaxis Basic x(n)</h4><p><a name="1000020066"></a>Use Redim x[n] (con los corchetes) s&#243;lo en sintaxis Crystal, y Redim x(n) (con las llaves) s&#243;lo en sintaxis Basic.</p><a name="1000020067"></a><h5>Uso</h5><p><code><a name="1000020068"></a>Redim x(n)</code></p><p class="example"><a name="1000020069"></a>Cambia la dimensi&#243;n de la matriz x al tama&#241;o n, donde x es una matriz y n es un n&#250;mero entero positivo que especifica el nuevo tama&#241;o de n.</p><a name="1000020070"></a><h5>Ejemplos</h5><p><a name="1000020071"></a>El siguiente ejemplo es aplicable para sintaxis Basic:</p><p class="code"><a name="1000020072"></a>Dim x() As String
+<br><a name="1000020073"></a>'Iniciar los tres primeros elementos de la matriz
+<br><a name="1000020074"></a>x = Array ("a", "bb", "ccc")  
+<br><a name="1000020075"></a>'Ajustar el tama&#241;o de x a 4; los valores antiguos se omiten
+<br><a name="1000020076"></a>'x ahora es igual a una matriz ("", "", "", "")
+<br><a name="1000020077"></a>Redim x(4)
+<br><a name="1000020078"></a>'x ahora es igual a una matriz ("", "", "", "dddd")
+<br><a name="1000020079"></a>x(4) = "dddd"
+<br><a name="1000020080"></a>formula = x(4)
+</p><a name="1000020081"></a><h5>Comentarios</h5><p><a name="1000020082"></a>Cuando se cambia la dimensi&#243;n de una matriz con Redim, los elementos de la matriz se completan con los valores predeterminados para ese tipo. Vea <a href="20_basicsyntax30.html#130492">Valores predeterminados para los tipos simples</a> (sintaxis Basic). </p><a name="1000020086"></a><h6>Temas relacionados</h6><p><a name="1000020090"></a><a href="20_basicsyntax21.html#128315">Tipos de datos de matriz</a> (Sintaxis Basic)</p><p><a name="1000020094"></a><a href="20_basicsyntax29.html#130465">Uso de las variables de matriz</a> (Sintaxis Basic)</p><a name="1000020096"></a><h4>Sintaxis Crystal x[n]</h4><ul type="disc"><a name="1000020097"></a><li>Use Redim x[n] (con los corchetes) s&#243;lo en sintaxis Crystal, y Redim x(n) (con las llaves) s&#243;lo en sintaxis Basic.
+<a name="1000020098"></a><li>A diferencia de Redim x(n) en sintaxis Basic, un enunciado Redim en sintaxis Crystal no puede tener matrices m&#250;ltiples. 
+</ul><a name="1000020099"></a><h5>Uso</h5><p><code><a name="1000020100"></a>Redim x[n] </code></p><p class="example"><a name="1000020101"></a>Cambia la dimensi&#243;n de la matriz x al tama&#241;o n, donde x es una matriz y n es un n&#250;mero entero positivo que especifica el nuevo tama&#241;o de n.</p><a name="1000020102"></a><h5>Ejemplos</h5><p><a name="1000020103"></a>El siguiente ejemplo es aplicable para sintaxis Crystal:</p><p class="code"><a name="1000020104"></a>Local StringVar matriz x:= ["a", "bb", "ccc"];
+<br><a name="1000020105"></a>// ajustar el tama&#241;o de la matriz a 4; los valores antiguos se omiten
+<br><a name="1000020106"></a>// y se completan con valores predeterminados de las cadenas vac&#237;as
+<br><a name="1000020107"></a>Redim x [4];
+<br><a name="1000020108"></a>x [4] := "dddd"; // s&#243;lo se inicia x[4]
+</p><a name="1000020109"></a><h5>Comentarios</h5><p><a name="1000020110"></a>Cuando se cambia la dimensi&#243;n de una matriz con Redim, los elementos de la matriz se completan con los valores predeterminados para ese tipo. Vea <a href="21_crystalsyntax35.html#145556">Valores predeterminados para los tipos simples</a> (Sintaxis Crystal).</p><a name="1000020114"></a><h6>Temas relacionados</h6><p><a name="1000020118"></a><a href="21_crystalsyntax26.html#145346">Tipos de datos de matriz</a> (Sintaxis Crystal)</p><p><a name="1000020122"></a><a href="21_crystalsyntax33.html#145513">Uso de las variables de matriz</a> (Sintaxis Crystal)</p>
+<hr><br>
+
+<script  language="JavaScript"><!--
+
+var prev = "Operators49.html";
+var next = "Operators51.html";
+
+function setTopicID() { 
+      var number = "1000020063"; 
+      return number; 
+}
+
+// --></script>
+
+
+
+
+<SCRIPT>
+
+if (!window.parent.toc && navigator.appName == "Netscape") {
+
+   document.writeln ('<TABLE ALIGN="left" border="0" cellspacing="0" cellpadding="10">');
+   document.writeln ('<TR>');
+   document.write ('<TD ALIGN="left">');
+
+   if (prev != "crw_spTOC.hhc") {
+      document.writeln ('<A HREF="' + prev + '">');
+      document.writeln ('<IMG SRC="prevpage.gif" HEIGHT=17 BORDER=0 ALT="Página anterior"></A>');
+   } else {
+//   window.alert ('no previous page');
+   }
+
+   if (next != "crw_spIX.hhk") {
+      document.writeln ('<A HREF="' + next + '">');
+      document.writeln ('<IMG SRC="nextpage.gif" HEIGHT=17 BORDER=0 ALT="Página siguiente"></A>');
+   } else {
+//   window.alert ('no next page');
+   }
+   document.writeln ('</TD><TD ALIGN="left">');
+   document.writeln ('<A HREF="frameset.htm?TOC">');
+   document.writeln ('<IMG SRC="showtoc.gif" HEIGHT=17 BORDER=0 ALT="Haga clic para ver el contenido"></A></TD>');
+   document.writeln ('<TD ALIGN="left">');
+   document.writeln ('<A HREF="frameset.htm?IDX">');
+   document.writeln ('<IMG SRC="showix.gif" HEIGHT=17 BORDER=0 ALT="Haga clic para ver el índice"></A></TD>');
+   document.writeln ('</TD>');
+   document.writeln ('</TR>');
+   document.writeln ('</TABLE>');
+
+}
+
+</SCRIPT>
+<table align="right" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td align="right"><font size="1">Seagate Software, Inc.<br>
+    <a href="http://www.seagatesoftware.com">http://www.seagatesoftware.com</a><br>
+    Envíe sus comentarios a:<br>
+    <a href="mailto:techpubs@seagatesoftware.com">techpubs@seagatesoftware.com</a><br>
+    </font></td>
+  </tr>
+</table>
+</body>
+</html>
+
+

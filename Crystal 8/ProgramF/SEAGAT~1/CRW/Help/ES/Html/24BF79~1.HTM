@@ -1,0 +1,136 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+
+<html>
+<head>
+<title>El lenguaje SQL</title>
+
+<link REL=STYLESHEET TYPE="text/css" HREF="seagate.css">
+
+<!--
+                 ***********************************
+                 * Seagate Software copyright 1999 *
+                 ***********************************
+
+                      Template version: 5.1
+-->
+
+
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" link="#0000FF" vlink="#0000FF" alink="#800080">
+
+
+ 
+<a name="323214"></a><h4 class="newpage"> El lenguaje SQL</h4><p><a name="323215"></a>Debido a que Seagate Crystal Reports usa el lenguaje SQL para tener acceso a las bases de datos cliente/servidor a trav&#233;s del ODBC, usted puede comprender mejor el proceso de elaborar informes entendiendo algunas de las cl&#225;usulas (comandos) SQL usadas:</p><a name="323218"></a><h5>SELECT</h5><p><a name="323219"></a>La cl&#225;usula SELECT indica elementos de datos espec&#237;ficos a recuperar de las tablas de base de datos. El elemento recuperado puede ser el valor en un campo de base de datos (columna) o puede ser el resultado de una operaci&#243;n de c&#225;lculo realizada mientras se recuperan los datos. Por ejemplo:</p><PRE><a name="323220"></a>SELECT<br>
+&nbsp;&nbsp;&nbsp;&nbsp;TABLAX.'NOMBRE',<br>
+&nbsp;&nbsp;&nbsp;&nbsp;TABLAX.'ESTADO'
+</PRE><a name="323224"></a><h5>DISTINCT</h5><p><a name="323225"></a>La cl&#225;usula DISTINCT puede ser agregada a un enunciado SQL justo despu&#233;s de la cl&#225;usula SELECT. La cl&#225;usula DISTINCT obliga a la consulta a recuperar s&#243;lo conjuntos de datos &#250;nicos (distintos). Una fila de resultados ser&#225; recuperada s&#243;lo una vez. El enunciado SELECT anterior puede ser cambiado para usar la cl&#225;usula DISTINCT:</p><PRE><a name="323226"></a>SELECT DISTINCT<br>
+&nbsp;&nbsp;&nbsp;&nbsp;TABLAX.'NOMBRE',<br>
+&nbsp;&nbsp;&nbsp;&nbsp;TABLAX.'ESTADO'
+</PRE><a name="323230"></a><h5>FROM</h5><p><a name="323231"></a>La cl&#225;usula FROM especifica las fuentes de los campos de base de datos indicados en la cl&#225;usula SELECT. FROM enumera las tablas de base de datos reales que contienen los campos y registros teniendo los datos requeridos. La cl&#225;usula FROM generada por Seagate Crystal Reports precede al nombre de cada tabla con el alias que usa para identificar la tabla en su informe. Lo que sigue ilustra la cl&#225;usula FROM con la cl&#225;usula SELECT:</p><PRE><a name="323232"></a>SELECT<br>
+&nbsp;&nbsp;&nbsp;&nbsp;TABLAX.'NOMBRE',<br>
+&nbsp;&nbsp;&nbsp;&nbsp;TABLAX.'ESTADO'<br>
+FROM<br>
+&nbsp;&nbsp;&nbsp;&nbsp;'TABLAX' TABLAX
+</PRE><a name="323235"></a><h5>WHERE</h5><p><a name="323236"></a>La cl&#225;usula WHERE tienes dos prop&#243;sitos:</p><ul type="disc"><a name="323237"></a><li>WHERE puede especificar un criterio de selecci&#243;n de registros.
+<a name="323238"></a><li>WHERE puede especificar c&#243;mo unir dos tablas de base de datos.
+</ul><p><a name="323239"></a>Cuando WHERE es usado para especificar un criterio de selecci&#243;n de registros usando una condici&#243;n de b&#250;squeda, &#233;ste determina qu&#233; registros (filas de datos) van a ser recuperados. Por ejemplo:</p><PRE><a name="323240"></a>SELECT<br>
+&nbsp;&nbsp;&nbsp;&nbsp;TABLEX.'VENDEDOR',<br>
+&nbsp;&nbsp;&nbsp;&nbsp;TABLEX.'TOTALVENTAS'<br>
+FROM<br>
+&nbsp;&nbsp;&nbsp;&nbsp;'TABLAX' TABLAX<br>
+WHERE<br>
+&nbsp;&nbsp;&nbsp;&nbsp;TABLAX.'TOTALVENTAS' &lt; 10000.00
+</PRE><p><a name="323241"></a>Si WHERE es usado para especificar la manera en que dos tablas son vinculadas, un operador de uni&#243;n SQL se interpone entre los dos nombres de las tablas. Vea <a href="24_under_databases19.html#321572">Tipos de uniones SQL (fuentes de datos ODBC)</a>. </p><p><a name="323245"></a>El siguiente es un ejemplo de la cl&#225;usula WHERE uniendo dos tablas:</p><PRE><a name="323246"></a>SELECT<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Cliente.'ID DEL CLIENTE',<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Cliente.'NOMBRE DEL CLIENTE',<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Pedidos.'MONTO DEL PEDIDO'<br>
+FROM<br>
+&nbsp;&nbsp;&nbsp;&nbsp;'Cliente' Cliente,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;'Pedidos' Pedidos<br>
+WHERE<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Cliente.'ID DEL CLIENTE' = Pedidos.'ID DEL CLIENTE'
+</PRE><a name="323249"></a><h5>ORDER BY</h5><p><a name="323250"></a>La cl&#225;usula ORDER BY indica que los registros de base de datos recuperados sean ordenados de acuerdo a los valores en un campo espec&#237;fico. Si la cl&#225;usula ORDER BY no es usada, los registros son recuperados en el orden en que aparecen en la base de datos original. Si m&#225;s de un campo es especificado despu&#233;s de la cl&#225;usula ORDER BY, los registros son ordenados de acuerdo a los valores en el primer campo especificado, luego, dentro de ese ordenamiento, son ordenados de acuerdo a los valores en el segundo campo, y as&#237; sucesivamente. El siguiente enunciado SQL utiliza la cl&#225;usula ORDER BY:</p><PRE><a name="323251"></a>SELECT<br>
+&nbsp;&nbsp;&nbsp;&nbsp;TABLAX.'COMPA&Ntilde;IA',<br>
+&nbsp;&nbsp;&nbsp;&nbsp;TABLAX.'CIUDAD',<br>
+&nbsp;&nbsp;&nbsp;&nbsp;TABLAX.'ESTADO'<br>
+FROM<br>
+&nbsp;&nbsp;&nbsp;&nbsp;'TABLAX' TABLAX<br>
+ORDER BY<br>
+&nbsp;&nbsp;&nbsp;&nbsp;TABLAX.'ESTADO' ASC,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;TABLAX.'CIUDAD' ASC
+</PRE><p><a name="328440"></a><font color="darkblue"><b>Nota:   &nbsp;&nbsp;&nbsp;</b></font>ASC indica que los valores en el campo son ordenados de manera ascendente en lugar de descendente (DESC). El ascendente ordena las letras de la A a la Z y los n&#250;meros de 0 a 9.</p>
+<a name="323264"></a><h5>GROUP BY</h5><p><a name="323265"></a>La cl&#225;usula GROUP BY recupera un conjunto de datos resumidos. En lugar de recuperar los datos en si, GROUP BY los agrupa y resume cada grupo de acuerdo a una funci&#243;n de resumen SQL. S&#243;lo la informaci&#243;n resumida por cada grupo es regresada a Seagate Crystal Reports. Por ejemplo:</p><PRE><a name="323266"></a>SELECT<br>
+&nbsp;&nbsp;&nbsp;&nbsp;TABLAX.'ESTADO',<br>
+&nbsp;&nbsp;&nbsp;&nbsp;TABLAX.'CODIGO POSTAL',<br>
+&nbsp;&nbsp;&nbsp;&nbsp;SUM (TABLAX.'VENTAS')<br>
+FROM<br>
+&nbsp;&nbsp;&nbsp;&nbsp;'TABLAX' MYTABLE<br>
+GROUP BY<br>
+&nbsp;&nbsp;&nbsp;&nbsp;TABLAX.'ESTADO',<br>
+&nbsp;&nbsp;&nbsp;&nbsp;TABLAX.'CODIGO POSTAL'
+</PRE>
+<hr><br>
+
+<script  language="JavaScript"><!--
+
+var prev = "24_under_databases30.html";
+var next = "24_under_databases32.html";
+
+function setTopicID() { 
+      var number = "323214"; 
+      return number; 
+}
+
+// --></script>
+
+
+
+
+<SCRIPT>
+
+if (!window.parent.toc && navigator.appName == "Netscape") {
+
+   document.writeln ('<TABLE ALIGN="left" border="0" cellspacing="0" cellpadding="10">');
+   document.writeln ('<TR>');
+   document.write ('<TD ALIGN="left">');
+
+   if (prev != "crw_spTOC.hhc") {
+      document.writeln ('<A HREF="' + prev + '">');
+      document.writeln ('<IMG SRC="prevpage.gif" HEIGHT=17 BORDER=0 ALT="Página anterior"></A>');
+   } else {
+//   window.alert ('no previous page');
+   }
+
+   if (next != "crw_spIX.hhk") {
+      document.writeln ('<A HREF="' + next + '">');
+      document.writeln ('<IMG SRC="nextpage.gif" HEIGHT=17 BORDER=0 ALT="Página siguiente"></A>');
+   } else {
+//   window.alert ('no next page');
+   }
+   document.writeln ('</TD><TD ALIGN="left">');
+   document.writeln ('<A HREF="frameset.htm?TOC">');
+   document.writeln ('<IMG SRC="showtoc.gif" HEIGHT=17 BORDER=0 ALT="Haga clic para ver el contenido"></A></TD>');
+   document.writeln ('<TD ALIGN="left">');
+   document.writeln ('<A HREF="frameset.htm?IDX">');
+   document.writeln ('<IMG SRC="showix.gif" HEIGHT=17 BORDER=0 ALT="Haga clic para ver el índice"></A></TD>');
+   document.writeln ('</TD>');
+   document.writeln ('</TR>');
+   document.writeln ('</TABLE>');
+
+}
+
+</SCRIPT>
+<table align="right" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td align="right"><font size="1">Seagate Software, Inc.<br>
+    <a href="http://www.seagatesoftware.com">http://www.seagatesoftware.com</a><br>
+    Envíe sus comentarios a:<br>
+    <a href="mailto:techpubs@seagatesoftware.com">techpubs@seagatesoftware.com</a><br>
+    </font></td>
+  </tr>
+</table>
+</body>
+</html>
+
+

@@ -1,0 +1,133 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+
+<html>
+<head>
+<title>F&#243;rmula 1</title>
+
+<link REL=STYLESHEET TYPE="text/css" HREF="seagate.css">
+
+<!--
+                 ***********************************
+                 * Seagate Software copyright 1999 *
+                 ***********************************
+
+                      Template version: 5.1
+-->
+
+
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" link="#0000FF" vlink="#0000FF" alink="#800080">
+
+
+ 
+<a name="316566"></a><h3 class="newpage"> F&#243;rmula 1</h3>
+<a name="316567"></a><h4>Funciones y operadores usados</h4><p><a name="316568"></a>Abs(x), Sustraer (-), Dividir (/), Multiplicar (*), ToText, Concatenar (+)</p><a name="316569"></a><h4>Prop&#243;sito de la f&#243;rmula</h4><p><a name="316570"></a>Como gerente de ventas a cargo de gran cantidad de ventas, necesita identificar aquellos representantes de ventas que presentan el desempe&#241;o m&#225;s consistente en cuanto a la cuota. Desea determinar aquellos que m&#225;s se acercan a cumplir la cuota, independientemente de si est&#225;n levemente por debajo o por encima de &#233;sta. No importa si la variaci&#243;n es mayor o menor a la cuota. Lo que importa es el porcentaje de variaci&#243;n respecto de la marca. </p><a name="316571"></a><h4>F&#243;rmula</h4><p><code><a name="316572"></a>ToText(Abs({archivo.CUOTA}-{archivo.VENTAS})/{archivo.CUOTA} * 100) + "%"</code></p><a name="316573"></a><h4>Resultado</h4><p><a name="316599"></a> <Table Border="1">
+<tr><td align="left" valign="TOP"><a name="316576"></a>Ventas
+
+</td><td align="left" valign="TOP"><a name="316578"></a>Cuota
+
+</td><td align="left" valign="TOP"><a name="316580"></a>Cuota - Ventas
+
+</td><td align="left" valign="TOP"><a name="316582"></a>% de variaci&#243;n
+
+</td></tr>
+<tr><td align="left" valign="TOP"><P><a name="316584"></a>8.000</P>
+
+
+</td><td align="left" valign="TOP"><P><a name="316586"></a>10.000</P>
+
+
+</td><td align="left" valign="TOP"><P><a name="316588"></a>2000</P>
+
+
+</td><td align="left" valign="TOP"><P><a name="316590"></a>20%</P>
+
+
+</td></tr>
+<tr><td align="left" valign="TOP"><P><a name="316592"></a>11.000</P>
+
+
+</td><td align="left" valign="TOP"><P><a name="316594"></a>10.000</P>
+
+
+</td><td align="left" valign="TOP"><P><a name="316596"></a>1000-</P>
+
+
+</td><td align="left" valign="TOP"><P><a name="316598"></a>10%</P>
+
+
+</td></tr>
+
+</Table></p>
+<a name="316600"></a><h4>Explicaci&#243;n</h4><ul type="disc"><a name="316601"></a><li>La f&#243;rmula usa el operador de sustracci&#243;n (-) para restar {archivo.VENTAS} de {archivo.CUOTA}. Esto entrega la variaci&#243;n monetaria de {archivo.CUOTA} (+ o -). 
+<a name="316602"></a><li>La funci&#243;n Abs(x) convierte la variaci&#243;n monetaria en un n&#250;mero absoluto, sin tener en cuenta ning&#250;n signo + o -.
+<a name="316603"></a><li>Luego usa el operador de divisi&#243;n (/) para dividir ese resultado por {archivo.CUOTA}. Esto entrega la variaci&#243;n expresada como fracci&#243;n decimal. 
+<a name="316604"></a><li>La f&#243;rmula luego usa el operador de multiplicaci&#243;n (*) para multiplicar el resultado por 100 y calcular as&#237; el resultado final en forma de porcentaje. 
+<a name="316605"></a><li>La funci&#243;n ToText se usa para convertir el porcentaje calculado a texto que luego se pueda unir a otro texto.
+<a name="316606"></a><li>El operador de concatenaci&#243;n (+) se usa para unir el porcentaje, una vez convertido en texto, al car&#225;cter de signo de porcentaje (%).
+</ul><a name="316607"></a><h6>Temas relacionados</h6><p><a name="316611"></a><a href="19_introformulas28.html#316471">F&#243;rmulas en acci&#243;n</a></p>
+<hr><br>
+
+<script  language="JavaScript"><!--
+
+var prev = "19_introformulas28.html";
+var next = "19_introformulas30.html";
+
+function setTopicID() { 
+      var number = "316566"; 
+      return number; 
+}
+
+// --></script>
+
+
+
+
+<SCRIPT>
+
+if (!window.parent.toc && navigator.appName == "Netscape") {
+
+   document.writeln ('<TABLE ALIGN="left" border="0" cellspacing="0" cellpadding="10">');
+   document.writeln ('<TR>');
+   document.write ('<TD ALIGN="left">');
+
+   if (prev != "crw_spTOC.hhc") {
+      document.writeln ('<A HREF="' + prev + '">');
+      document.writeln ('<IMG SRC="prevpage.gif" HEIGHT=17 BORDER=0 ALT="Página anterior"></A>');
+   } else {
+//   window.alert ('no previous page');
+   }
+
+   if (next != "crw_spIX.hhk") {
+      document.writeln ('<A HREF="' + next + '">');
+      document.writeln ('<IMG SRC="nextpage.gif" HEIGHT=17 BORDER=0 ALT="Página siguiente"></A>');
+   } else {
+//   window.alert ('no next page');
+   }
+   document.writeln ('</TD><TD ALIGN="left">');
+   document.writeln ('<A HREF="frameset.htm?TOC">');
+   document.writeln ('<IMG SRC="showtoc.gif" HEIGHT=17 BORDER=0 ALT="Haga clic para ver el contenido"></A></TD>');
+   document.writeln ('<TD ALIGN="left">');
+   document.writeln ('<A HREF="frameset.htm?IDX">');
+   document.writeln ('<IMG SRC="showix.gif" HEIGHT=17 BORDER=0 ALT="Haga clic para ver el índice"></A></TD>');
+   document.writeln ('</TD>');
+   document.writeln ('</TR>');
+   document.writeln ('</TABLE>');
+
+}
+
+</SCRIPT>
+<table align="right" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td align="right"><font size="1">Seagate Software, Inc.<br>
+    <a href="http://www.seagatesoftware.com">http://www.seagatesoftware.com</a><br>
+    Envíe sus comentarios a:<br>
+    <a href="mailto:techpubs@seagatesoftware.com">techpubs@seagatesoftware.com</a><br>
+    </font></td>
+  </tr>
+</table>
+</body>
+</html>
+
+

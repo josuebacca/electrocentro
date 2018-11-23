@@ -1,0 +1,128 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+
+<html>
+<head>
+<title>C&#243;mo crear un campo de par&#225;metro</title>
+
+<link REL=STYLESHEET TYPE="text/css" HREF="seagate.css">
+
+<!--
+                 ***********************************
+                 * Seagate Software copyright 1999 *
+                 ***********************************
+
+                      Template version: 5.1
+-->
+
+
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" link="#0000FF" vlink="#0000FF" alink="#800080">
+
+
+ 
+<a name="53296"></a><h3 class="newpage"> C&#243;mo crear un campo de par&#225;metro</h3>
+<p><a name="53297"></a>Use los siguientes pasos para crear un par&#225;metro que permita al usuario especificar una lista de clientes para un pa&#237;s espec&#237;fico. Este procedimiento consta de dos conjuntos de pasos. El primero es la creaci&#243;n del par&#225;metro y el segundo es usando el Asistente de selecci&#243;n para incorporar el par&#225;metro.</p><a name="46328"></a><h6>Para crear un campo de par&#225;metro</h6><ol>
+<a name="46329"></a><li value="1&nbsp;&nbsp;&nbsp;&nbsp;">Verifique que su informe est&#233; abierto en la ficha Dise&#241;o.
+<p class="indent"><a name="46330"></a>Este procedimiento usa el archivo Group.rpt, un informe de muestra que se incluye con el  software de Seagate Crystal Reports.</p></ol>
+<ol>
+<a name="46332"></a><li value="2&nbsp;&nbsp;&nbsp;&nbsp;">En el men&#250; <strong>Insertar</strong>, haga clic en <strong>Campo de par&#225;metro</strong>.
+<p class="indent"><a name="46336"></a><img src="images/Bt_indat.gif">
+
+
+El Explorador de campos aparece con la opci&#243;n Campos de par&#225;metro seleccionada.</p><p><a name="46340"></a> <img src="images/db_fieldexplorer_parameters.gif">
+
+
+</p>
+<a name="46341"></a><li value="3&nbsp;&nbsp;&nbsp;&nbsp;">Haga clic en <strong>Nuevo</strong>. 
+<p class="indent"><a name="46342"></a>Aparece el cuadro de di&#225;logo Crear campo de par&#225;metro.</p><a name="46343"></a><li value="4&nbsp;&nbsp;&nbsp;&nbsp;">Ingrese un nombre para el par&#225;metro en el campo <strong>Nombre</strong><EM> </EM> (hasta 255 caracteres alfanum&#233;ricos).
+<p class="indent"><a name="46344"></a>En este ejemplo se usa Pa&#237;s.</p><a name="46345"></a><li value="5&nbsp;&nbsp;&nbsp;&nbsp;">Ingrese el texto de solicitud deseado en el campo <strong>Texto de confirmaci&#243;n</strong> (hasta 255 caracteres alfanum&#233;ricos).
+<p class="indent"><a name="46346"></a>&Eacute;ste es el texto que aparece en el cuadro de di&#225;logo Ingresar valores de par&#225;metro cuando se actualiza el informe. En este ejemplo se usa Seleccionar un pa&#237;s.</p><a name="46347"></a><li value="6&nbsp;&nbsp;&nbsp;&nbsp;">Use <strong>Cadena</strong> como <strong>Tipo de valor</strong>.
+<p><a name="46351"></a> <img src="images/db_createparameter.gif">
+
+
+</p>
+<a name="46352"></a><li value="7&nbsp;&nbsp;&nbsp;&nbsp;">Haga clic en <strong>Establecer valores predeterminados</strong>.
+<p class="indent"><a name="46353"></a>Aparece el cuadro de di&#225;logo Establecer valores predeterminados.</p><a name="46354"></a><li value="8&nbsp;&nbsp;&nbsp;&nbsp;">Verifique que la lista desplegable <strong>Examinar tabla </strong>est&#225; establecida en <strong>Cliente</strong>.
+<a name="46355"></a><li value="9&nbsp;&nbsp;&nbsp;&nbsp;">En la lista desplegable <strong>Examinar campo</strong>, seleccione <strong>Pa&#237;s</strong>.
+<a name="46356"></a><li value="10&nbsp;&nbsp;&nbsp;&nbsp;">Haga clic en &gt;&gt; para mover todos los pa&#237;ses al &#225;rea Valores predeterminados.
+<p class="indent"><a name="46357"></a>Este ejemplo permite al usuario elegir cualquiera de los pa&#237;ses. Si desea limitar la selecci&#243;n, mueva solamente los pa&#237;ses que desee que elija el usuario.</p><p><a name="46361"></a> <img src="images/db_setdefaultvalues_countries.gif">
+
+
+</p>
+<a name="46362"></a><li value="11&nbsp;&nbsp;&nbsp;&nbsp;">Haga clic en <strong>Aceptar</strong>.
+<p class="indent"><a name="46363"></a>Aparece el cuadro de di&#225;logo Crear campo de par&#225;metro.</p><a name="46364"></a><li value="12&nbsp;&nbsp;&nbsp;&nbsp;">Haga clic en <strong>Aceptar</strong>.
+<p class="indent"><a name="46365"></a>Aparece el cuadro de di&#225;logo Explorador de campos con el par&#225;metro Pa&#237;s seleccionado.</p><p><a name="46369"></a> <img src="images/db_fieldexplorer_countryparam.gif">
+
+
+</p>
+</ol>
+<ol>
+<a name="46370"></a><li value="13&nbsp;&nbsp;&nbsp;&nbsp;">Haga clic en<strong> Cerrar</strong>.
+<a name="46372"></a><li value="14&nbsp;&nbsp;&nbsp;&nbsp;">Arrastre y suelte el par&#225;metro Pa&#237;s a su informe.
+</ol>
+
+<hr><br>
+
+<script  language="JavaScript"><!--
+
+var prev = "22_param3.html";
+var next = "22_param5.html";
+
+function setTopicID() { 
+      var number = "53296"; 
+      return number; 
+}
+
+// --></script>
+
+
+
+
+<SCRIPT>
+
+if (!window.parent.toc && navigator.appName == "Netscape") {
+
+   document.writeln ('<TABLE ALIGN="left" border="0" cellspacing="0" cellpadding="10">');
+   document.writeln ('<TR>');
+   document.write ('<TD ALIGN="left">');
+
+   if (prev != "crw_spTOC.hhc") {
+      document.writeln ('<A HREF="' + prev + '">');
+      document.writeln ('<IMG SRC="prevpage.gif" HEIGHT=17 BORDER=0 ALT="Página anterior"></A>');
+   } else {
+//   window.alert ('no previous page');
+   }
+
+   if (next != "crw_spIX.hhk") {
+      document.writeln ('<A HREF="' + next + '">');
+      document.writeln ('<IMG SRC="nextpage.gif" HEIGHT=17 BORDER=0 ALT="Página siguiente"></A>');
+   } else {
+//   window.alert ('no next page');
+   }
+   document.writeln ('</TD><TD ALIGN="left">');
+   document.writeln ('<A HREF="frameset.htm?TOC">');
+   document.writeln ('<IMG SRC="showtoc.gif" HEIGHT=17 BORDER=0 ALT="Haga clic para ver el contenido"></A></TD>');
+   document.writeln ('<TD ALIGN="left">');
+   document.writeln ('<A HREF="frameset.htm?IDX">');
+   document.writeln ('<IMG SRC="showix.gif" HEIGHT=17 BORDER=0 ALT="Haga clic para ver el índice"></A></TD>');
+   document.writeln ('</TD>');
+   document.writeln ('</TR>');
+   document.writeln ('</TABLE>');
+
+}
+
+</SCRIPT>
+<table align="right" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td align="right"><font size="1">Seagate Software, Inc.<br>
+    <a href="http://www.seagatesoftware.com">http://www.seagatesoftware.com</a><br>
+    Envíe sus comentarios a:<br>
+    <a href="mailto:techpubs@seagatesoftware.com">techpubs@seagatesoftware.com</a><br>
+    </font></td>
+  </tr>
+</table>
+</body>
+</html>
+
+

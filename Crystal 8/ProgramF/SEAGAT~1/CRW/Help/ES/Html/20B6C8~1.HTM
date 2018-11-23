@@ -1,0 +1,95 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+
+<html>
+<head>
+<title>Restricciones del cambio de tipos de datos variables de f&#243;rmula</title>
+
+<link REL=STYLESHEET TYPE="text/css" HREF="seagate.css">
+
+<!--
+                 ***********************************
+                 * Seagate Software copyright 1999 *
+                 ***********************************
+
+                      Template version: 5.1
+-->
+
+
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" link="#0000FF" vlink="#0000FF" alink="#800080">
+
+
+ 
+<a name="128052"></a><h4 class="newpage"> Restricciones del cambio de tipos de datos variables de f&#243;rmula</h4><p><a name="128872"></a>La variable <EM>formula</EM> se puede establecer varias veces en una sola f&#243;rmula. Por ejemplo, supongamos una compa&#241;&#237;a que tiene una pol&#237;tica de env&#237;os en las que los pedidos de m&#225;s de $1.000 est&#225;n asegurados, pero los pedidos inferiores a esa cantidad no lo est&#225;n:</p><PRE><a name="128054"></a>Rem F&#243;rmula que devuelve un valor de cadena
+<a name="128055"></a>If {Pedidos.Monto del pedido} &gt;= 1000 Then
+<a name="128056"></a>   formula = "Env&#237;o asegurado"
+<a name="128057"></a>Else
+<a name="128058"></a>   formula = "Env&#237;o regular"
+<a name="128059"></a>End If
+</PRE><p><a name="128842"></a>La f&#243;rmula anterior devuelve el valor de cadena de texto "Env&#237;o asegurado" si el valor del campo de base de datos {Pedidos.Monto del pedido}es mayor o igual a 1000; de lo contrario, devuelve el valor de cadena de texto "Env&#237;o regular". Las cadenas de texto generalmente se conocen simplemente como cadenas. Observe que la variable <EM>formula </EM>aparece dos veces en el ejemplo anterior.</p><p><a name="133669"></a>Si la variable <EM>formula</EM> se establece en un valor de un tipo, no se puede establecer m&#225;s tarde en un valor de otro tipo dentro de la misma f&#243;rmula. Por ejemplo, al sustituir la cadena "Env&#237;o regular" en el ejemplo anterior con el n&#250;mero 10, resultar&#237;a en un error, ya que la variable especial <EM>f&#243;rmula</EM> se estableci&#243; primero con el valor de cadena "Env&#237;o asegurado". </p><p><a name="141982"></a>El motivo de esta restricci&#243;n es que Seagate Crystal Reports necesita saber con antelaci&#243;n cu&#225;l ser&#225; el tipo de devoluci&#243;n de una f&#243;rmula para poder asignarle suficiente espacio de almacenamiento a los valores devueltos. Esto se debe a que distintos tipos tienen diferentes requisitos de almacenamiento. Otro motivo es que las opciones de formato disponibles para un campo de f&#243;rmulas depende de su tipo. Por ejemplo, un campo num&#233;rico tiene opciones de formato de n&#250;mero, como el n&#250;mero de decimales, lo cual no tiene sentido para un campo cadena.</p><p><a name="133670"></a><font color="darkblue"><b>Nota:   &nbsp;&nbsp;&nbsp;</b></font>La variable especial <EM>formula</EM> no se debe declarar, a diferencia de otras variables usadas en una f&#243;rmula de sintaxis Basic. Vea <a href="20_basicsyntax22.html#130270">Variables</a>.</p>
+
+<hr><br>
+
+<script  language="JavaScript"><!--
+
+var prev = "20_basicsyntax4.html";
+var next = "20_basicsyntax6.html";
+
+function setTopicID() { 
+      var number = "128052"; 
+      return number; 
+}
+
+// --></script>
+
+
+
+
+<SCRIPT>
+
+if (!window.parent.toc && navigator.appName == "Netscape") {
+
+   document.writeln ('<TABLE ALIGN="left" border="0" cellspacing="0" cellpadding="10">');
+   document.writeln ('<TR>');
+   document.write ('<TD ALIGN="left">');
+
+   if (prev != "crw_spTOC.hhc") {
+      document.writeln ('<A HREF="' + prev + '">');
+      document.writeln ('<IMG SRC="prevpage.gif" HEIGHT=17 BORDER=0 ALT="Página anterior"></A>');
+   } else {
+//   window.alert ('no previous page');
+   }
+
+   if (next != "crw_spIX.hhk") {
+      document.writeln ('<A HREF="' + next + '">');
+      document.writeln ('<IMG SRC="nextpage.gif" HEIGHT=17 BORDER=0 ALT="Página siguiente"></A>');
+   } else {
+//   window.alert ('no next page');
+   }
+   document.writeln ('</TD><TD ALIGN="left">');
+   document.writeln ('<A HREF="frameset.htm?TOC">');
+   document.writeln ('<IMG SRC="showtoc.gif" HEIGHT=17 BORDER=0 ALT="Haga clic para ver el contenido"></A></TD>');
+   document.writeln ('<TD ALIGN="left">');
+   document.writeln ('<A HREF="frameset.htm?IDX">');
+   document.writeln ('<IMG SRC="showix.gif" HEIGHT=17 BORDER=0 ALT="Haga clic para ver el índice"></A></TD>');
+   document.writeln ('</TD>');
+   document.writeln ('</TR>');
+   document.writeln ('</TABLE>');
+
+}
+
+</SCRIPT>
+<table align="right" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td align="right"><font size="1">Seagate Software, Inc.<br>
+    <a href="http://www.seagatesoftware.com">http://www.seagatesoftware.com</a><br>
+    Envíe sus comentarios a:<br>
+    <a href="mailto:techpubs@seagatesoftware.com">techpubs@seagatesoftware.com</a><br>
+    </font></td>
+  </tr>
+</table>
+</body>
+</html>
+
+

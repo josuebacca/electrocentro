@@ -1,0 +1,1239 @@
+; This contents file was created with HelpScribble 5.2.0
+; Registered to: Seagate Software
+
+:BASE ucrpe32.hlp
+:TITLE Crystal Reports Component Help
+:LINK DEL5VCL.HLP
+1 TCrpe component
+2 TCrpe Component=Scribble4
+2 What's New?=Scribble6
+2 Installation =Scribble8
+2 Known Problems=Scribble9
+2 Technical Support =Scribble10
+2 C++ Builder Notes=Scribble11
+2 Programming Introduction=Scribble12
+2 Programming Tips=Scribble14
+2 Frequent Questions=Scribble16
+2 Distributing an Application=Scribble17
+2 Properties
+2 Properties Reference=Scribble18>property
+2 Properties Reference by Group=Scribble30>property
+3 About=Scribble9300
+3 AreaFormat
+4 AreaFormat Reference=Scribble3700>main
+4 Properties & Methods=Scribble3704>property
+4 Properties
+5 Hide=Scribble3708
+5 Item=Scribble3714
+5 ItemIndex=Scribble3720
+5 KeepTogether=Scribble3726
+5 NewPageAfter=Scribble3732
+5 NewPageBefore=Scribble3738
+5 PrintAtBottomOfPage=Scribble3744
+5 ResetPageNAfter=Scribble3750
+5 Section=Scribble3756
+5 SectionAsCode=Scribble3812
+5 Suppress=Scribble3762
+4 Methods
+5 Add=Scribble3794
+5 Clear=Scribble3800
+5 CopyFrom=Scribble3824
+5 Create=Scribble3768
+5 Delete=Scribble3806
+5 Destroy=Scribble3772
+5 Count=Scribble3776
+5 Retrieve=Scribble3782
+5 SectionType=Scribble3818
+5 Send=Scribble3788
+3 AreaFormatFormulas
+4 AreaFormatFormulas Reference=Scribble5000>main
+4 Properties & Methods=Scribble5004>property
+4 Properties
+5 Hide=Scribble5014
+5 Item=Scribble5062
+5 ItemIndex=Scribble5056
+5 KeepTogether=Scribble5020
+5 NewPageAfter=Scribble5026
+5 NewPageBefore=Scribble5032
+5 PrintAtBottomOfPage=Scribble5038
+5 ResetPageNAfter=Scribble5044
+5 Section=Scribble5008
+5 SectionAsCode=Scribble5068
+5 Suppress=Scribble5050
+4 Methods
+5 Add=Scribble5098
+5 Check=Scribble5062
+5 Clear=Scribble5092
+5 CopyFrom=Scribble5130
+5 Count=Scribble5086
+5 Create=Scribble5116
+5 Delete=Scribble5104
+5 Destroy=Scribble5120
+5 IndexOf=Scribble5124
+5 Retrieve=Scribble5080
+5 SectionType=Scribble5074
+5 Send=Scribble5110
+2 CanCloseEngine=Scribble9310
+3 Connect
+4 Connect Reference=Scribble1800
+4 Properties and Methods=Scribble1804>property
+4 Properties
+5 DatabaseName=Scribble1808
+5 Password=Scribble1814
+5 Propagate=Scribble1820
+5 ServerName=Scribble1826
+5 UserID=Scribble1832
+4 Methods
+5 Clear=Scribble1860
+5 CopyFrom=Scribble1866
+5 Create=Scribble1838
+5 Retrieve=Scribble1842
+5 Send=Scribble1848
+5 Test=Scribble1854
+2 ConnectMethod=Scribble9696
+2 CrpePath=Scribble9704
+2 DesignControls=Scribble9400
+2 DetailCopies=Scribble9440
+2 DialogParent=Scribble9445
+2 DiscardData=Scribble10324
+2 DiscardSavedData=Scribble9450
+3 Export
+4 Export Reference=Scribble1400
+4 Properties & Methods=Scribble1404>property
+4 Properties
+5 AppName=Scribble1518
+5 CharSepQuote=Scribble1408
+5 CharSepSeparator=Scribble1414
+5 Destination=Scribble1426
+5 FileName=Scribble1444
+5 FileType=Scribble1450
+5 LinesPerPage=Scribble1456
+5 PromptForOptions=Scribble1468
+5 PromptOnOverwrite=Scribble1474
+5 UseRptDateFmt=Scribble1480
+5 UseRptNumberFmt=Scribble1486
+5 Email 
+6 Email Reference=Scribble1100
+6 Properties & Methods=Scribble1104>property
+6 Properties
+7 CCList=Scribble1108
+7 Message=Scribble1114
+7 Subject=Scribble1120
+7 ToList=Scribble1126
+7 VIMBCCList=Scribble1132
+6 Methods
+7 Clear=Scribble1138
+7 CopyFrom=Scribble1144
+5 Excel5Ext
+6 Excel5Ext Reference=Scribble6000
+6 Properties & Methods=Scribble6004
+6 Properties
+7 Area=Scribble6008
+7 ColumnHeadings=Scribble6014
+7 ColumnWidth=Scribble6020
+7 Constant=Scribble6026
+7 TabularFormat=Scribble6032
+6 Methods
+7 Create=Scribble6038
+7 CopyFrom=Scribble6044
+7 Clear=Scribble6050
+5 Exchange 
+6 Exchange Reference=Scribble1200
+6 Properties & Methods=Scribble1204>property
+6 Properties
+7 Folder=Scribble1208
+7 Password=Scribble1214
+7 Profile=Scribble1220
+6 Methods
+7 Clear=Scribble1226
+7 CopyFrom=Scribble1232
+5 LotusNotes
+6 LotusNotes Reference=Scribble1250
+6 LotusNotes - Properties & Methods=Scribble1252
+6 Properties
+7 DBName property=Scribble1254
+7 FormName property=Scribble1258
+7 Comments property=Scribble1264
+6 Properties
+7 Clear method=Scribble1270
+7 CopyFrom method=Scribble1276
+5 ODBC 
+6 ODBC Reference=Scribble1300
+6 Properties & Methods=Scribble1304>property
+6 Properties
+7 Password=Scribble1308
+7 Source=Scribble1314
+7 Table=Scribble1320
+7 User=Scribble1326
+6 Methods
+7 Clear=Scribble1332
+7 CopyFrom=Scribble1338
+4 Methods
+5 Clear=Scribble1506
+5 CopyFrom=Scribble1512
+5 Create=Scribble1492
+5 Destroy=Scribble1496
+5 Send=Scribble1500
+2 FieldMapping=Scribble9684
+3 Formulas
+4 Formulas Reference=Scribble3100
+4 Properties & Methods=Scribble3104>property
+4 Using Variables with Formulas=Scribble3182>property
+4 Properties
+5 Formula=Scribble3126
+5 Item=Scribble3108
+5 ItemIndex=Scribble3114
+5 Name=Scribble3120
+4 Methods
+5 Add=Scribble3164
+5 Check=Scribble3140
+5 Clear=Scribble3170
+5 CopyFrom=Scribble3184
+5 Count=Scribble3146
+5 Create=Scribble3132
+5 Delete=Scribble3176
+5 Destroy=Scribble3136
+5 IndexOf=Scribble3190
+5 Retrieve=Scribble3152
+5 Send=Scribble3158
+2 GetPathFromAlias=Scribble10150
+3 GraphAxis
+4 GraphAxis Reference=Scribble6400
+4 Properties & Methods=Scribble6404>property
+4 Properties
+5 DataValuesY=Scribble6429>property
+5 DataValuesY2=Scribble6432>property
+5 DataValuesZ=Scribble6435>property
+5 DivisionsY=Scribble6474>property
+5 DivisionsY2=Scribble6477>property
+5 DivisionsZ=Scribble6480>property
+5 DivisionTypeY=Scribble6465>property
+5 DivisionTypeY=Scribble6465>property
+5 DivisionTypeY2=Scribble6468>property
+5 DivisionTypeZ=Scribble6471>property
+5 GridLineX=Scribble6417>property
+5 GridLineY=Scribble6420>property
+5 GridLineY2=Scribble6423>property
+5 GridLineZ=Scribble6426>property
+5 Item=Scribble6486>property
+5 ItemIndex=Scribble6489>property
+5 MinY=Scribble6438>property
+5 MaxY=Scribble6441>property
+5 MinY2=Scribble6444>property
+5 MaxY2=Scribble6447>property
+5 MinZ=Scribble6450>property
+5 MaxZ=Scribble6453>property
+5 Number=Scribble6408>property
+5 NumberFormatY=Scribble6456>property
+5 NumberFormatY2=Scribble6459>property
+5 NumberFormatZ=Scribble6462>property
+5 Section=Scribble6414>property
+5 SectionAsCode=Scribble6492>property
+5 SectionGraphNum=Scribble6483>property
+4 Methods
+5 Add=Scribble6507>property
+5 Clear=Scribble6504>property
+5 CopyFrom=Scribble6519>property
+5 Count=Scribble6501>property
+5 Create=Scribble6522>property
+5 Delete=Scribble6510>property
+5 Destroy=Scribble6524>property
+5 IndexOf=Scribble6513>property
+5 Retrieve=Scribble6498>property
+5 SectionType=Scribble6495>property
+5 Send=Scribble6516>property
+3 GraphData 
+4 GraphData Reference=Scribble4400
+4 Properties & Methods=Scribble4404>property
+4 Properties
+5 ColGroupN=Scribble4408
+5 Direction=Scribble4414
+5 Item=Scribble4420
+5 ItemIndex=Scribble4426
+5 Number=Scribble4432
+5 RowGroupN=Scribble4438
+5 Section=Scribble4444
+5 SectionAsCode=Scribble4479
+5 SummarizedFieldN=Scribble4450
+4 Methods
+5 Add=Scribble4469
+5 Clear=Scribble4472
+5 CopyFrom=Scribble4491
+5 Count=Scribble4460
+5 Create=Scribble4456
+5 Delete=Scribble4475
+5 Destroy=Scribble4458
+5 Retrieve=Scribble4463
+5 SectionType=Scribble4485
+5 Send=Scribble4466
+3 GraphOptionInfo
+4 GraphOptionInfo Reference=Scribble6600
+4 Properties & Methods=Scribble6604>property
+4 Properties
+5 BarDirection=Scribble6628>property
+5 BarSize=Scribble6625>property
+5 Color=Scribble6613>property
+5 DataPoints=Scribble6637>property
+5 Item=Scribble6652>property
+5 ItemIndex=Scribble6649>property
+5 Legend=Scribble6616>property
+5 MarkerShape=Scribble6634>property
+5 MarkerSize=Scribble6631>property
+5 Number=Scribble6607>property
+5 NumberFormat=Scribble6640>property
+5 PieSize=Scribble6619>property
+5 PieSlice=Scribble6622>property
+5 Section=Scribble6610>property
+5 SectionAsCode=Scribble6655>property
+5 SectionGraphNum=Scribble6646>property
+5 ViewingAngle=Scribble6643>property
+4 Methods
+5 Add=Scribble6670>property
+5 Clear=Scribble6667>property
+5 CopyFrom=Scribble6682>property
+5 Count=Scribble6664>property
+5 Create=Scribble6685>property
+5 Delete=Scribble6673>property
+5 Destroy=Scribble6687>property
+5 IndexOf=Scribble6676>property
+5 Retrieve=Scribble6661>property
+5 SectionType=Scribble6658>property
+5 Send=Scribble6679>property
+3 GraphOptions
+4 GraphOptions Reference=Scribble4700
+4 Properties & Methods=Scribble4704>property
+4 Properties
+5 BarDirection=Scribble4708
+5 DataValues=Scribble4714
+5 Font=Scribble4720
+5 GridLines=Scribble4726
+5 Item=Scribble4732
+5 ItemIndex=Scribble4738
+5 Legend=Scribble4744
+5 Max=Scribble4750
+5 Min=Scribble4756
+5 Number=Scribble4762
+5 Section=Scribble4768
+5 SectionAsCode=Scribble4818
+4 Methods
+5 Add=Scribble4800
+5 Clear=Scribble4806
+5 CopyFrom=Scribble4830
+5 Count=Scribble4782
+5 Create=Scribble4774
+5 Delete=Scribble4812
+5 Destroy=Scribble4778
+5 Retrieve=Scribble4788
+5 SectionType=Scribble4824
+5 Send=Scribble4794
+3 GraphText
+4 GraphText Reference=Scribble4500
+4 Properties & Methods=Scribble4504>property
+4 Properties
+5 DataLabelsFont=Scribble4690
+5 DataTitleFont=Scribble4666
+5 FootNote=Scribble4508
+5 FootNoteFont=Scribble4654
+5 GroupLabelsFont=Scribble4678
+5 GroupsTitle=Scribble4514
+5 GroupsTitleFont=Scribble4660
+5 Item=Scribble4520
+5 ItemIndex=Scribble4526
+5 LegendFont=Scribble4672
+5 Number=Scribble4532
+5 Section=Scribble4538
+5 SectionAsCode=Scribble4624
+5 SeriesTitle=Scribble4544
+5 SubTitle=Scribble4550
+5 SubTitleFont=Scribble4648
+5 Title=Scribble4556
+5 TitleFont=Scribble4642
+5 XAxisTitle=Scribble4562
+5 YAxisTitle=Scribble4568
+5 ZAxisTitle=Scribble4574
+4 Methods
+5 Add=Scribble4606
+5 Clear=Scribble4612
+5 CopyFrom=Scribble4636
+5 Count=Scribble4588
+5 Create=Scribble4580
+5 Delete=Scribble4618
+5 Destroy=Scribble4584
+5 Retrieve=Scribble4594
+5 SectionType=Scribble4630
+5 Send=Scribble4600
+3 GraphType
+4 GraphType Reference=Scribble4300
+4 Properties & Methods=Scribble4304>property
+4 How Graphs are Numbered=Scribble4382>property
+4 Properties
+5 Item=Scribble4308
+5 ItemIndex=Scribble4314
+5 Number=Scribble4320
+5 Section=Scribble4326
+5 SectionAsCode=Scribble4376
+5 SectionGraphNum=Scribble4390
+5 Style=Scribble4332
+4 Methods
+5 Add=Scribble4364
+5 Clear=Scribble4370
+5 CopyFrom=Scribble4383
+5 Count=Scribble4346
+5 Create=Scribble4338
+5 Delete=Scribble4373
+5 Destroy=Scribble4342
+5 IndexOf=Scribble4393
+5 Retrieve=Scribble4352
+5 SectionType=Scribble4379
+5 Send=Scribble4358
+3 GroupCondition
+4 GroupCondition Reference=Scribble3400
+4 Properties & Methods=Scribble3404>property
+4 Properties
+5 Condition=Scribble3408
+5 Direction=Scribble3414
+5 Field=Scribble3420
+5 GroupType=Scribble3426
+5 Item=Scribble3432
+5 ItemIndex=Scribble3438
+5 Number=Scribble3444
+4 Methods
+5 Add=Scribble3476
+5 Clear=Scribble3482
+5 CopyFrom=Scribble3494
+5 Count=Scribble3458
+5 Create=Scribble3450
+5 Delete=Scribble3488
+5 Destroy=Scribble3454
+5 Retrieve=Scribble3464
+5 Send=Scribble3470
+3 GroupOptions
+4 GroupOptions Reference=Scribble5500
+4 Properties & Methods=Scribble5504>property
+4 Properties
+5 Condition=Scribble5520>property
+5 Direction=Scribble5526>property
+5 Field=Scribble5514>property
+5 GroupType=Scribble5532>property
+5 Item=Scribble5580>property
+5 ItemIndex=Scribble5574>property
+5 KeepTogether=Scribble5544>property
+5 Number=Scribble5508>property
+5 RepeatGH=Scribble5538>property
+5 TopNDiscardOthers=Scribble5568>property
+5 TopNGroups=Scribble5556>property
+5 TopNOptions=Scribble5550>property
+5 TopNSortField=Scribble5562>property
+4 Methods
+5 Add=Scribble5604>property
+5 Clear=Scribble5598>property
+5 CopyFrom=Scribble5630>property
+5 Create=Scribble5622>property
+5 Count=Scribble5592>property
+5 Delete=Scribble5610>property
+5 Destroy=Scribble5626>property
+5 Retrieve=Scribble5586>property
+5 Send=Scribble5616>property
+3 GroupSelection
+4 GroupSelection Reference=Scribble3000
+4 Properties & Methods=Scribble3004>property
+4 Using Variables with GroupSelection Formula=Scribble3054>property
+4 Properties
+5 Formula=Scribble3010
+5 Replace=Scribble3016
+4 Methods
+5 Check=Scribble3030
+5 Clear=Scribble3048
+5 CopyFrom=Scribble3056
+5 Create=Scribble3022
+5 Destroy=Scribble3026
+5 Retrieve=Scribble3036
+5 Send=Scribble3042
+3 GroupSortFields
+4 GroupSortFields Reference=Scribble3300
+4 Properties & Methods=Scribble3304>property
+4 Properties
+5 DeleteGSF=Scribble3308
+5 Direction=Scribble3314
+5 Field=Scribble3320
+5 Item=Scribble3326
+5 ItemIndex=Scribble3332
+5 Number=Scribble3338
+4 Methods
+5 Add=Scribble3370
+5 Clear=Scribble3376
+5 CopyFrom=Scribble3388
+5 Count=Scribble3352
+5 Create=Scribble3344
+5 Delete=Scribble3382
+5 Destroy=Scribble3348
+5 Retrieve=Scribble3358
+5 Send=Scribble3364
+2 HasSavedData=Scribble9500
+2 IsJobFinished=Scribble9505
+2 JobNumber=Scribble9510
+2 LastErrorNumber=Scribble9515
+2 LastErrorString=Scribble9520
+2 LoadEngineOnUse=Scribble9525
+3 LogOnInfo 
+4 LogOnInfo Reference=Scribble2100
+4 Properties & Methods=Scribble2104>property
+4 Properties
+5 DatabaseName=Scribble2108
+5 DescriptiveName=Scribble2114
+5 DLLName=Scribble2120
+5 Item=Scribble2126
+5 ItemIndex=Scribble2132
+5 Password=Scribble2138
+5 PromptForLogOn=Scribble2224
+5 ServerName=Scribble2144
+5 Table=Scribble2150
+5 TableType=Scribble2156
+5 UserID=Scribble2162
+5 SQLTablesOnly=Scribble2230
+4 Methods
+5 Add=Scribble2200
+5 Clear=Scribble2206
+5 Create=Scribble2168
+5 CopyFrom=Scribble2218
+5 Count=Scribble2176
+5 Delete=Scribble2212
+5 Destroy=Scribble2172
+5 Retrieve=Scribble2182
+5 Send=Scribble2188
+5 Test=Scribble2194
+3 LogOnServer 
+4 LogOnServer Reference=Scribble1900
+4 Properties & Methods=Scribble1904>property
+4 Properties
+5 DatabaseName=Scribble1908
+5 DLLName=Scribble1914
+5 Item=Scribble1920
+5 ItemIndex=Scribble1926
+5 Number=Scribble1932
+5 Password=Scribble1938
+5 ServerName=Scribble1944
+5 UserID=Scribble1950
+4 Methods
+5 Add=Scribble1994
+5 Clear=Scribble2000
+5 Count=Scribble1964
+5 CopyFrom=Scribble2012
+5 Create=Scribble1956
+5 Delete=Scribble2006
+5 Destroy=Scribble1960
+5 IndexOf=Scribble1970
+5 LogOff=Scribble1976
+5 LogOn=Scribble1982
+5 Retrieve=Scribble1988
+3 LotusNotes
+4 LotusNotes Reference=Scribble1250
+4 Properties & Methods=Scribble1252>property
+4 Properties
+5 DBName=Scribble1254>property
+5 FormName=Scribble1258>property
+5 Comments=Scribble1264>property
+4 Methods
+5 Clear=Scribble1270>property
+5 CopyFrom=Scribble1276>property
+3 Margins 
+4 Margins=Scribble900
+4 Properties & Methods=Scribble904>property
+4 Properties
+5 Bottom=Scribble908
+5 Left=Scribble914
+5 Right=Scribble920
+5 Top=Scribble926
+4 Methods
+5 Clear=Scribble948
+5 CopyFrom=Scribble954
+5 Create=Scribble932
+5 Retrieve=Scribble936
+5 Send=Scribble942
+2 Output=Scribble9545
+3 Pages 
+4 Pages Reference=Scribble550
+4 Properties & Methods=Scribble554>property
+4 Properties
+5 Item=Scribble558
+5 ItemIndex=Scribble614
+4 Methods
+5 Count=Scribble560
+5 First=Scribble574
+5 GetDisplayed=Scribble566
+5 GetLatest=Scribble632
+5 GetStart=Scribble638
+5 GoToPage=Scribble650
+5 Last=Scribble656
+5 Next=Scribble662
+5 Previous=Scribble668
+3 ParamFields 
+4 ParamFields Reference=Scribble2500
+4 Properties & Methods=Scribble2504>property
+4 Properties
+5 AsBoolean=Scribble2563
+5 AsCurrency=Scribble2560
+5 AsDate=Scribble2566
+5 AsDateTime=Scribble2575
+5 AsNumber=Scribble2557
+5 AsTime=Scribble2578
+5 CurrentValue=Scribble2572
+5 CurrentValues=Scribble2581
+5 DefaultValue=Scribble2569
+5 DefaultValues=Scribble2584
+5 EditMask=Scribble2587
+5 Item=Scribble2508
+5 ItemIndex=Scribble2511
+5 Name=Scribble2514
+5 NeedsCurrentValue=Scribble2517
+5 ParamSource=Scribble2593
+5 ParamType=Scribble2520
+5 Prompt=Scribble2523
+5 ReportName=Scribble2526
+5 ShowDialog=Scribble2529
+5 Value=Scribble2532
+5 ValueLimit=Scribble2599
+5 ValueMax=Scribble2602
+5 ValueMin=Scribble2605
+5 PickList=Scribble2621
+5 PLDescriptionOnly=Scribble2627
+5 PLSortMethod=Scribble2633
+5 PLSortByDescription=Scribble2639
+4 Methods
+5 Add=Scribble2548
+5 Clear=Scribble2551
+5 CopyFrom=Scribble2608
+5 Count=Scribble2539
+5 Create=Scribble2535
+5 Delete=Scribble2554
+5 Destroy=Scribble2537
+5 IndexOf=Scribble2611
+5 Retrieve=Scribble2542
+5 RetrieveValues=Scribble2615
+5 Send=Scribble2545
+4 Info
+5 Info Reference=Scribble6100
+5 Properties & Methods=Scribble6104
+5 Properties
+6 AllowEditing=Scribble6108
+6 AllowMultipleValues=Scribble6114
+6 AllowNull=Scribble6120
+6 GroupNum=Scribble6126
+6 MutuallyExclusiveGroup=Scribble6132
+6 PartOfGroup=Scribble6138
+6 ValueType=Scribble6144
+5 Methods
+6 Clear=Scribble6174
+6 CopyFrom=Scribble6156
+6 Create=Scribble6150
+6 Retrieve=Scribble6162
+6 Send=Scribble6168
+4 Ranges
+5 Ranges Reference=Scribble6200
+5 Properties & Methods=Scribble6204
+5 Properties
+6 Item=Scribble6208
+6 ItemIndex=Scribble6214
+6 Number=Scribble6220
+6 RangeBounds=Scribble6226
+6 RangeEnd=Scribble6232
+6 RangeStart=Scribble6238
+5 Methods
+6 Add=Scribble6274
+6 Clear=Scribble6280
+6 CopyFrom=Scribble6250
+6 Count=Scribble6256
+6 Create=Scribble6244
+6 Delete=Scribble6286
+6 Destroy=Scribble6292
+6 Retrieve=Scribble6262
+6 Send=Scribble6268
+3 PrintDate 
+4 PrintDate Reference=Scribble1000
+4 Properties & Methods=Scribble1004>property
+4 Properties
+5 Day=Scribble1008
+5 Month=Scribble1014
+5 Year=Scribble1020
+4 Methods
+5 Clear=Scribble1038
+5 CopyFrom=Scribble1044
+5 Retrieve=Scribble1026
+5 Send=Scribble1032
+2 PrintEnded=Scribble9565
+3 Printer 
+4 Printer Reference=Scribble1600
+4 Properties & Methods=Scribble1604>property
+4 DevMode Structure=Scribble1678>property
+4 Setting Port to FILE=Scribble1680>property
+4 Properties
+5 Driver=Scribble1608
+5 Mode=Scribble1614
+5 Name=Scribble1620
+5 Orientation=Scribble1626
+5 PMode=Scribble1632
+5 Port=Scribble1638
+5 PreserveRptSettings=Scribble1644
+5 ShowDialog=Scribble1650
+4 Methods
+5 Clear=Scribble1675
+5 CopyFrom=Scribble1687
+5 Create=Scribble1656
+5 GetCurrent=Scribble1660
+5 Retrieve=Scribble1666
+5 Send=Scribble1669
+5 SetCurrent=Scribble1690
+5 ShowPrintDlg=Scribble1672
+3 PrintOptions 
+4 PrintOptions Reference=Scribble1700
+4 Properties & Methods=Scribble1704>property
+4 Properties
+5 Collation=Scribble1708
+5 Copies=Scribble1714
+5 StartPage=Scribble1720
+5 StopPage=Scribble1726
+5 OutputFileName=Scribble1766
+5 PromptForOptions=Scribble1754
+4 Methods
+5 Clear=Scribble1748
+5 CopyFrom=Scribble1760
+5 Create=Scribble1732
+5 Retrieve=Scribble1736
+5 Send=Scribble1742
+2 ProgressDialog=Scribble9580
+3 Records 
+4 Records Reference=Scribble600
+4 Methods List=Scribble604>property
+4 Methods
+5 Printed=Scribble606
+5 Read=Scribble712
+5 Selected=Scribble718
+2 ReportName=Scribble9590
+2 ReportTitle=Scribble9595
+3 ReportOptions
+4 ReportOptions Reference=Scribble5700
+4 Properties & Methods=Scribble5704
+4 Properties
+5 CaseInsensitiveSQLData=Scribble5708
+5 ConvertDateTimeType=Scribble5714
+5 ConvertNullFieldToDefault=Scribble5720
+5 CreateGroupTree=Scribble5726
+5 NoDataForHiddenObjects=Scribble5732
+5 PerformGroupingOnServer=Scribble5738
+5 PrintEngineErrorMessages=Scribble5744
+5 SaveDataWithReport=Scribble5750
+5 SaveSummariesWithReport=Scribble5756
+5 TranslateDOSMemos=Scribble5762
+5 TranslateDOSStrings=Scribble5768
+5 UseIndexForSpeed=Scribble5774
+5 VerifyOnEveryPrint=Scribble5780
+5 ZoomMode=Scribble5786
+4 Methods
+5 Clear=Scribble5816
+5 CopyFrom=Scribble5798
+5 Create=Scribble5792
+5 Retrieve=Scribble5804
+5 Send=Scribble5810
+3 SectionFont
+4 SectionFont Reference=Scribble3900
+4 Properties & Methods=Scribble3904>property
+4 Properties
+5 CharSet=Scribble3908
+5 Family=Scribble3914
+5 Italic=Scribble3920
+5 Item=Scribble3926
+5 ItemIndex=Scribble3932
+5 Name=Scribble3938
+5 Pitch=Scribble3944
+5 Scope=Scribble3950
+5 Section=Scribble3956
+5 SectionAsCode=Scribble4030
+5 Size=Scribble3962
+5 StrikeThrough=Scribble3968
+5 Underlined=Scribble3974
+5 Weight=Scribble3980
+4 Methods
+5 Add=Scribble4012
+5 Clear=Scribble4018
+5 CopyFrom=Scribble4042
+5 Count=Scribble3994
+5 Create=Scribble3986
+5 Delete=Scribble4024
+5 Destroy=Scribble3990
+5 Retrieve=Scribble4000
+5 SectionType=Scribble4036
+5 Send=Scribble4006
+3 SectionFormat
+4 SectionFormat Reference=Scribble3500
+4 Properties & Methods=Scribble3504>property
+4 Properties
+5 BackgroundColor=Scribble3508
+5 FreeFormPlacement=Scribble3514
+5 Hide=Scribble3520
+5 Item=Scribble3526
+5 ItemIndex=Scribble3532
+5 KeepTogether=Scribble3538
+5 NewPageAfter=Scribble3544
+5 NewPageBefore=Scribble3550
+5 PrintAtBottomOfPage=Scribble3556
+5 ResetPageNAfter=Scribble3562
+5 Section=Scribble3568
+5 SuppressBlankSection=Scribble3574
+5 UnderlaySection=Scribble3580
+5 SectionAsCode=Scribble3630
+4 Methods
+5 Add=Scribble3612
+5 Clear=Scribble3618
+5 CopyFrom=Scribble3642
+5 Count=Scribble3594
+5 Create=Scribble3586
+5 Delete=Scribble3624
+5 Destroy=Scribble3590
+5 Retrieve=Scribble3600
+5 Send=Scribble3606
+5 SectionType=Scribble3636
+3 SectionFormatFormulas
+4 SectionFormatFormulas Reference=Scribble5200
+4 Properties & Methods=Scribble5204>property
+4 Properties
+5 Item=Scribble5274>property
+5 ItemIndex=Scribble5268>property
+5 BackgroundColor=Scribble5214>property
+5 KeepTogether=Scribble5220>property
+5 NewPageAfter=Scribble5226>property
+5 Section=Scribble5208>property
+5 SectionAsCode=Scribble5280>property
+5 NewPageBefore=Scribble5232>property
+5 PrintAtBottomOfPage=Scribble5238>property
+5 ResetPageNAfter=Scribble5244>property
+5 Suppress=Scribble5250>property
+5 SuppressBlankSection=Scribble5256>property
+5 UnderlaySection=Scribble5262>property
+4 Methods
+5 Add=Scribble5316>property
+5 Check=Scribble5304>property
+5 Clear=Scribble5310>property
+5 CopyFrom=Scribble5348>property
+5 Count=Scribble5298>property
+5 Create=Scribble5334>property
+5 Delete=Scribble5322>property
+5 Destroy=Scribble5338>property
+5 Retrieve=Scribble5292>property
+5 SectionType=Scribble5286>property
+5 Send=Scribble5328>property
+5 IndexOf=Scribble5342>property
+3 SectionHeight
+4 SectionHeight Reference=Scribble4100
+4 Properties & Methods=Scribble4104>property
+4 Properties
+5 Height=Scribble4108
+5 Item=Scribble4114
+5 ItemIndex=Scribble4120
+5 Section=Scribble4126
+5 SectionAsCode=Scribble4176
+4 Methods
+5 Add=Scribble4158
+5 Clear=Scribble4164
+5 CopyFrom=Scribble4188
+5 Count=Scribble4140
+5 Create=Scribble4132
+5 Delete=Scribble4170
+5 Destroy=Scribble4136
+5 Retrieve=Scribble4146
+5 SectionType=Scribble4182
+5 Send=Scribble4152
+3 Selection
+4 Selection Reference=Scribble2900
+4 Properties & Methods=Scribble2904>property
+4 Using Variables with Selection Formula=Scribble2952>property
+4 Properties
+5 Formula=Scribble2908
+5 Replace=Scribble2914
+4 Methods
+5 Create=Scribble2920
+5 Check=Scribble2928
+5 Clear=Scribble2946
+5 CopyFrom=Scribble2954
+5 Destroy=Scribble2924
+5 Retrieve=Scribble2934
+5 Send=Scribble2940
+2 SendOnExecute=Scribble9620
+3 SessionInfo
+4 SessionInfo Reference=Scribble4200
+4 Properties & Methods=Scribble4204>property
+4 Properties
+5 DBPassword=Scribble4208
+5 Handle=Scribble4214
+5 Item=Scribble4220
+5 ItemIndex=Scribble4226
+5 Propagate=Scribble4232
+5 Table=Scribble4238
+5 UserID=Scribble4244
+5 UserPassword=Scribble4250
+4 Methods
+5 Add=Scribble4281
+5 Clear=Scribble4284
+5 CopyFrom=Scribble4290
+5 Count=Scribble4264
+5 Create=Scribble4256
+5 Delete=Scribble4287
+5 Destroy=Scribble4260
+5 Retrieve=Scribble4270
+5 Send=Scribble4276
+5 Test=Scribble4294
+3 SortFields
+4 SortFields Reference=Scribble3200
+4 Properties & Methods=Scribble3204>property
+4 Properties
+5 DeleteSF=Scribble3208
+5 Direction=Scribble3214
+5 Field=Scribble3220
+5 Item=Scribble3226
+5 ItemIndex=Scribble3232
+5 Number=Scribble3238
+4 Methods
+5 Add=Scribble3270
+5 Clear=Scribble3276
+5 CopyFrom=Scribble3288
+5 Count=Scribble3252
+5 Create=Scribble3244
+5 Delete=Scribble3282
+5 Destroy=Scribble3248
+5 Retrieve=Scribble3258
+5 Send=Scribble3264
+3 SQL 
+4 SQL Reference=Scribble2800
+4 Properties & Methods=Scribble2804>property
+4 Properties
+5 Query=Scribble2814
+5 Expressions
+6 Expressions Reference=Scribble5900
+6 Properties & Methods=Scribble5904
+6 Properties
+7 Expression=Scribble5908
+7 Item=Scribble5914
+7 ItemIndex=Scribble5920
+7 Name=Scribble5926
+6 Methods
+7 Add=Scribble5974
+7 Check=Scribble5938
+7 Clear=Scribble5980
+7 CopyFrom=Scribble5944
+7 Count=Scribble5950
+7 Create=Scribble5932
+7 Delete=Scribble5986
+7 IndexOf=Scribble5956
+7 Retrieve=Scribble5962
+7 Send=Scribble5968
+5 Params 
+6 Params Reference=Scribble2700
+6 Properties & Methods=Scribble2704>property
+6 Properties
+7 AsBoolean=Scribble2784
+7 AsDate=Scribble2788
+7 AsDateTime=Scribble2792
+7 AsFloat=Scribble2780
+7 AsInteger=Scribble2776
+7 Item=Scribble2708
+7 ItemIndex=Scribble2714
+7 Name=Scribble2720
+7 ParamType=Scribble2723
+7 Text=Scribble2726
+7 Value=Scribble2726
+6 Methods
+7 Add=Scribble2758
+7 Clear=Scribble2764
+7 CopyFrom=Scribble2795
+7 Count=Scribble2740
+7 Create=Scribble2732
+7 Delete=Scribble2770
+7 Destroy=Scribble2736
+7 Retrieve=Scribble2746
+7 Send=Scribble2752
+4 Methods
+5 Clear=Scribble2840
+5 CopyFrom=Scribble2846
+5 Create=Scribble2820
+5 Destroy=Scribble2824
+5 Retrieve=Scribble2828
+5 Send=Scribble2834
+2 Status=Scribble9640
+3 Subreports
+4 Subreports Reference=Scribble4900
+4 Properties & Methods=Scribble4904>property
+4 Properties
+5 Item=Scribble4908
+5 ItemIndex=Scribble4914
+5 Name=Scribble4920
+5 NLinks=Scribble4982
+5 OnDemand=Scribble4988
+5 Section=Scribble4926
+5 SubExecute=Scribble4932
+4 Methods
+5 Add=Scribble4958
+5 Clear=Scribble4964
+5 CopyFrom=Scribble4994
+5 Count=Scribble4946
+5 Create=Scribble4938
+5 Delete=Scribble4970
+5 Destroy=Scribble4942
+5 IndexOf=Scribble4976
+5 Retrieve=Scribble4952
+3 SummaryInfo 
+4 SummaryInfo Reference=Scribble650
+4 Properties & Methods=Scribble654>property
+4 Properties
+5 AppName=Scribble808
+5 Author=Scribble814
+5 Comments=Scribble820
+5 Keywords=Scribble826
+5 Subject=Scribble832
+5 Template=Scribble838
+5 Title=Scribble844
+4 Methods
+5 Clear=Scribble870
+5 CopyFrom=Scribble876
+5 Create=Scribble850
+5 Destroy=Scribble854
+5 Retrieve=Scribble858
+5 Send=Scribble864
+3 Tables 
+4 Tables Reference=Scribble2300
+4 Properties & Methods=Scribble2304>property
+4 Properties
+5 Bytes=Scribble2418
+5 DataPointer=Scribble2430
+5 DescriptiveName=Scribble2308
+5 DLLName=Scribble2314
+5 Item=Scribble2320
+5 ItemIndex=Scribble2326
+5 Name=Scribble2332
+5 Number=Scribble2338
+5 Password=Scribble2344
+5 Path=Scribble2350
+5 Propagate=Scribble2356
+5 TableType=Scribble2362
+5 Tag=Scribble2424
+5 SubName=Scribble2450
+5 ConnectBuffer=Scribble2456
+4 Methods
+5 Delete=Scribble2406
+5 Destroy=Scribble2372
+5 Retrieve=Scribble2382
+5 Send=Scribble2388
+5 Add=Scribble2394
+5 Clear=Scribble2400
+5 CopyFrom=Scribble2412
+5 Count=Scribble2376
+5 Create=Scribble2368
+5 Test=Scribble2462
+5 CheckDifferences=Scribble2468
+5 IndexOf=Scribble2474
+5 IndexOfName=Scribble2480
+4 Other Information
+5 The Crystal Data Object (CDO)=Scribble2436
+5 The Active Data Object (ADO)=Scribble2440
+5 Active Data Object Header=Scribble2444
+5 Crystal Data Object Header=Scribble2446
+5 CRDataSource=Scribble2448
+3 Version
+4 Version Reference=Scribble50
+4 Properties & Methods=Scribble52>property
+4 Properties
+5 DLL=Scribble54
+5 Engine=Scribble57
+5 Major=Scribble77
+5 Minor=Scribble80
+5 Windows=Scribble60
+4 Methods
+5 Clear=Scribble68
+5 CopyFrom=Scribble74
+5 Create=Scribble63
+5 Retrieve=Scribble65
+3 WindowButtonBar
+4 WindowButtonBar Reference=Scribble400
+4 Properties & Methods=Scribble404>property
+4 Properties
+5 AllowDrillDown=Scribble408
+5 CancelBtn=Scribble414
+5 CloseBtn=Scribble420
+5 ExportBtn=Scribble426
+5 GroupTree=Scribble432
+5 NavigationCtls=Scribble438
+5 PrintBtn=Scribble444
+5 PrintSetupBtn=Scribble450
+5 ProgressCtls=Scribble456
+5 RefreshBtn=Scribble462
+5 SearchBtn=Scribble468
+5 Visible=Scribble474
+5 ZoomCtl=Scribble480
+4 Methods
+5 Clear=Scribble502
+5 CopyFrom=Scribble524
+5 Create=Scribble486
+5 Retrieve=Scribble490
+5 Send=Scribble496
+3 WindowCursor
+4 WindowCursor Reference=Scribble5400
+4 Properties & Methods=Scribble5404>property
+4 Properties
+5 DetailArea=Scribble5420>property
+5 DetailAreaField=Scribble5426>property
+5 Graph=Scribble5432>property
+5 GroupArea=Scribble5408>property
+5 GroupAreaField=Scribble5414>property
+4 Methods
+5 Clear=Scribble5438>property
+5 CopyFrom=Scribble5460>property
+5 Create=Scribble5456>property
+5 Retrieve=Scribble5444>property
+5 Send=Scribble5450>property
+2 WindowEvents property=Scribble9690
+2 WindowParent=Scribble9670
+3 WindowSize
+4 WindowSize Reference=Scribble100
+4 Properties & Methods=Scribble104>property
+4 Properties
+5 Height=Scribble108
+5 Left=Scribble114
+5 Top=Scribble120
+5 Width=Scribble126
+4 Methods
+5 Clear=Scribble142
+5 CopyFrom=Scribble148
+5 Create=Scribble132
+5 Retrieve=Scribble136
+5 Send=Scribble154
+2 WindowState=Scribble9680
+3 WindowStyle
+4 WindowStyle Reference=Scribble300
+4 Properties & Methods=Scribble304>property
+4 Properties
+5 BorderStyle=Scribble308
+5 Disabled=Scribble354
+5 MaxButton=Scribble320
+5 MinButton=Scribble326
+5 SystemMenu=Scribble314
+5 Title=Scribble332
+4 Methods
+5 Clear=Scribble342
+5 CopyFrom=Scribble348
+5 Create=Scribble338
+3 WindowZoom
+4 WindowZoom Reference=Scribble200
+4 Properties & Methods=Scribble204>property
+4 Properties
+5 Magnification=Scribble208
+5 Preview=Scribble214
+4 Methods
+5 Clear=Scribble230
+5 CopyFrom=Scribble242
+5 Create=Scribble220
+5 NextLevel=Scribble236
+5 Send=Scribble224
+2 WindowEvents=Scribble9690
+2 Methods
+3 CancelJob=Scribble10052
+3 Clear=Scribble10058
+3 Create=Scribble10000
+3 CloseEngine=Scribble10064
+3 CloseJob=Scribble10070
+3 CloseWindow=Scribble10076
+3 CopyFrom=Scribble10168
+3 Destroy=Scribble10006
+3 ExportWindow=Scribble10082
+3 Execute=Scribble10010
+3 Focused=Scribble10016
+3 HideWindow=Scribble10300
+3 LogOnPrivateInfo=Scribble10088
+3 OpenEngine=Scribble10096
+3 OpenJob=Scribble10022
+3 PrintWindow=Scribble10102
+3 ReportWindowHandle=Scribble10028
+3 RetrieveDetailCopies=Scribble10034
+3 RetrieveFieldMapping=Scribble10222
+3 RetrieveReportTitle=Scribble10040
+3 RetrieveWindowState=Scribble10306
+3 SendDetailCopies=Scribble10108
+3 SendDialogParent=Scribble10318
+3 SendDiscardSavedData=Scribble10114
+3 SendFieldMapping=Scribble10228
+3 SendOutput=Scribble10120
+3 SendProgressDialog=Scribble10126
+3 SendReportTitle=Scribble10132
+3 SetFocus=Scribble10138
+3 ShowWindow=Scribble10312
+3 VerifyDatabase=Scribble10288
+2 Events
+3 OnCreate=Scribble11044
+3 OnError=Scribble11000
+3 OnExecuteBegin=Scribble11008
+3 OnExecuteDoneSend=Scribble11014
+3 OnExecuteEnd=Scribble11020
+3 OnFieldMapping=Scribble11532
+3 OnGetVersion=Scribble11538
+3 OnJobOpened=Scribble11026
+3 OnPrintEnded=Scribble11032
+3 OnPrinterSend=Scribble11544
+3 OnWindowClose=Scribble11038
+2 WindowEvents
+3 wOnActivateWindow=Scribble11400
+3 wOnCancelBtnClick=Scribble11406
+3 wOnCloseBtnClick =Scribble11412
+3 wOnCloseWindow=Scribble11418
+3 wOnDeActivateWindow=Scribble11424
+3 wOnDrillDetail=Scribble11430
+3 wOnDrillGroup=Scribble11436
+3 wOnExportBtnClick=Scribble11442
+3 wOnFirstPageBtnClick=Scribble11448
+3 wOnGroupTreeBtnClick=Scribble11454
+3 wOnLastPageBtnClick=Scribble11460
+3 wOnNextPageBtnClick=Scribble11466
+3 wOnPreviousPageBtnClick=Scribble11472
+3 wOnPrintBtnClick=Scribble11478
+3 wOnPrintSetupBtnClick=Scribble11484
+3 wOnReadingRecords=Scribble11490
+3 wOnRefreshBtnClick=Scribble11496
+3 wOnMouseClick event=Scribble11550
+3 wOnSearchBtnClick=Scribble11502
+3 wOnShowGroup=Scribble11508
+3 wOnStartEvent=Scribble11514
+3 wOnStopEvent=Scribble11520
+3 wOnZoomLevelChange=Scribble11526
+1 Types=Scribble12000
+1 Constants=Scribble12010
+1 TCrpeString=Scribble12020
+1 About Section Names=Scribble12030
+1 Utility Methods
+2 AddBackSlash method=Scribble12500
+2 GetErrorNum method=Scribble12501
+2 GetErrorStr method=Scribble12502
+2 GetPathFromAlias method=Scribble12503
+2 GetStrFromRsc method=Scribble12504
+2 GetToken method=Scribble12505
+2 IsNumeric method=Scribble12506
+2 IsStrEmpty method=Scribble12507
+2 StrToValueInfo method=Scribble12508
+2 TruncStr method=Scribble12509
+2 ValueInfoToStr method=Scribble12510
+2 CrBooleanToStr method=Scribble12511
+2 CrStrToBoolean method=Scribble12512
+2 CrFloatingToStr method=Scribble12513
+2 CrStrToFloating method=Scribble12514
+2 CrDateToStr method=Scribble12515
+2 CrStrToDate method=Scribble12516
+2 ExDateStr method=Scribble12517
+2 CrDateTimeToStr method=Scribble12518
+2 CrStrToDateTime method=Scribble12519
+2 ExDateTimeStr method=Scribble12520
+2 CrTimeToStr method=Scribble12521
+2 CrStrToTime method=Scribble12522
+2 ExTimeStr method=Scribble12523
+2 SectionCodeToStr method=Scribble12524
+2 StrToSectionCode method=Scribble12525
+2 IndexInRange method=Scribble12526
+2 IndexValid method=Scribble12527
+2 CopyDevMode method=Scribble12528
+2 GetVersionInfo method=Scribble12529
+2 RGBToColor method=Scribble12530
+2 RTrimList method=Scribble12531

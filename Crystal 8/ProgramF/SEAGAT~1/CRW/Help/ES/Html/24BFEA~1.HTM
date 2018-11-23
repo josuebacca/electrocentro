@@ -1,0 +1,90 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+
+<html>
+<head>
+<title>Vinculaci&#243;n de tablas</title>
+
+<link REL=STYLESHEET TYPE="text/css" HREF="seagate.css">
+
+<!--
+                 ***********************************
+                 * Seagate Software copyright 1999 *
+                 ***********************************
+
+                      Template version: 5.1
+-->
+
+
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" link="#0000FF" vlink="#0000FF" alink="#800080">
+
+
+ 
+<a name="320357"></a><h3 class="newpage"> Vinculaci&#243;n de tablas</h3>
+<p><a name="320358"></a>Usted vincula las tablas de manera que los registros de una de ellas coincidan con los registros relacionados de otra. Por ejemplo, si activa una tabla de Pedidos y una de Clientes, vincula las tablas para que cada pedido (de la tabla Pedidos) pueda coincidir con el cliente (de la tabla Clientes) que hizo el pedido.</p><p><a name="320359"></a>Cuando hace una vinculaci&#243;n, utiliza un campo en com&#250;n a ambas tablas. Seagate Crystal Reports utiliza el v&#237;nculo para cotejar los registros de una tabla con los de la otra. En este ejemplo, el v&#237;nculo asegura que los datos en cada fila del informe se refieran al mismo pedido.</p><a name="320360"></a><h4>Vincular "desde" y vincular "a"</h4><p><a name="320361"></a>Cuando vincula dos tablas, vincula <kbd>desde</kbd> una tabla <kbd>a</kbd> otra tabla. Este es un concepto importante de comprender. La tabla "<kbd>desde"</kbd> es utilizada como tabla principal, mientras que la tabla "<kbd>a</kbd>" act&#250;a como tabla de comparaci&#243;n donde los registros son comparados por la tabla principal. En un v&#237;nculo simple, Seagate Crystal Reports examina el primer registro en la tabla principal y encuentra todos los registros coincidentes en la tabla de comparaci&#243;n. Una vez que han sido encontradas todas las coincidencias en la tabla de comparaci&#243;n para el primer registro en la tabla principal, realiza la misma b&#250;squeda para el siguiente registro.</p><p><a name="327474"></a><font color="darkblue"><b>Nota:   &nbsp;&nbsp;&nbsp;</b></font>Seagate Crystal Reports puede vincular dos registros basado en un cotejamiento parcial de una cadena de caracteres. Esto se llama v&#237;nculo parcial. Para habilitar el V&#237;nculo parcial en Seagate Crystal Reports, active el cuadro de verificaci&#243;n Permitir coincidencias de texto parciales usando el cuadro de di&#225;logo Opciones de V&#237;nculo. Como ejemplo de un v&#237;nculo parcial, un registro con un valor de campo "Chris" se puede vincular a un registro con valor de campo "Christopher". Sin embargo, el V&#237;nculo parcial s&#243;lo funciona cuando el valor en la tabla de comparaci&#243;n es mayor que el valor en la tabla principal. En otras palabras, el valor "Chris" se puede vincular al valor "Christopher", pero el valor "Christopher" no se puede vincular al valor "Chris". Buscar cuadro de di&#225;logo Opciones de V&#237;nculo en la Ayuda en l&#237;nea de Seagate Crystal Reports.</p>
+
+<hr><br>
+
+<script  language="JavaScript"><!--
+
+var prev = "24_under_databases6.html";
+var next = "24_under_databases8.html";
+
+function setTopicID() { 
+      var number = "320357"; 
+      return number; 
+}
+
+// --></script>
+
+
+
+
+<SCRIPT>
+
+if (!window.parent.toc && navigator.appName == "Netscape") {
+
+   document.writeln ('<TABLE ALIGN="left" border="0" cellspacing="0" cellpadding="10">');
+   document.writeln ('<TR>');
+   document.write ('<TD ALIGN="left">');
+
+   if (prev != "crw_spTOC.hhc") {
+      document.writeln ('<A HREF="' + prev + '">');
+      document.writeln ('<IMG SRC="prevpage.gif" HEIGHT=17 BORDER=0 ALT="Página anterior"></A>');
+   } else {
+//   window.alert ('no previous page');
+   }
+
+   if (next != "crw_spIX.hhk") {
+      document.writeln ('<A HREF="' + next + '">');
+      document.writeln ('<IMG SRC="nextpage.gif" HEIGHT=17 BORDER=0 ALT="Página siguiente"></A>');
+   } else {
+//   window.alert ('no next page');
+   }
+   document.writeln ('</TD><TD ALIGN="left">');
+   document.writeln ('<A HREF="frameset.htm?TOC">');
+   document.writeln ('<IMG SRC="showtoc.gif" HEIGHT=17 BORDER=0 ALT="Haga clic para ver el contenido"></A></TD>');
+   document.writeln ('<TD ALIGN="left">');
+   document.writeln ('<A HREF="frameset.htm?IDX">');
+   document.writeln ('<IMG SRC="showix.gif" HEIGHT=17 BORDER=0 ALT="Haga clic para ver el índice"></A></TD>');
+   document.writeln ('</TD>');
+   document.writeln ('</TR>');
+   document.writeln ('</TABLE>');
+
+}
+
+</SCRIPT>
+<table align="right" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td align="right"><font size="1">Seagate Software, Inc.<br>
+    <a href="http://www.seagatesoftware.com">http://www.seagatesoftware.com</a><br>
+    Envíe sus comentarios a:<br>
+    <a href="mailto:techpubs@seagatesoftware.com">techpubs@seagatesoftware.com</a><br>
+    </font></td>
+  </tr>
+</table>
+</body>
+</html>
+
+

@@ -1,0 +1,18 @@
+LIBRARY     U2LSAMP1
+DESCRIPTION 'Sample User Function Library for Crystal Reports'
+EXPORTS
+            UFInitialize
+            UFTerminate
+            UFGetVersion
+            UFStartJob
+            UFEndJob
+            UFGetFunctionDefStrings
+            UFGetFunctionExamples
+            UFGetFunctionTemplates            
+            UFErrorRecovery
+            Now
+            NowStringRetSize
+            Soundex
+            SoundexStringRetSize
+            LooksLike
+            Picture

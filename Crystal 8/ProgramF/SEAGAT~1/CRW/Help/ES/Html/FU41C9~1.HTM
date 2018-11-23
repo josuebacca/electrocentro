@@ -1,0 +1,100 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+
+<html>
+<head>
+<title>NextValue (Campo)</title>
+
+<link REL=STYLESHEET TYPE="text/css" HREF="seagate.css">
+
+<!--
+                 ***********************************
+                 * Seagate Software copyright 1999 *
+                 ***********************************
+
+                      Template version: 5.1
+-->
+
+
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" link="#0000FF" vlink="#0000FF" alink="#800080">
+
+
+ 
+<a name="1000576660"></a><h3 class="newpage"> NextValue (Campo)</h3>
+<p><a name="1000719438"></a>Sintaxis b&#225;sica</p><p><a name="1000719487"></a>NextValue y <a href="Functions177.html#1000594165">Next (Campo)</a> son funciones equivalentes. Sin embargo, s&#243;lo puede usar NextValue con sintaxis b&#225;sica y Next s&#243;lo con sintaxis Crystal. </p><a name="1000576661"></a><h5>Argumento</h5><p><a name="1000576662"></a>campo es el nombre del campo de base de datos.</p><a name="1000576663"></a><h5>Devuelve </h5><p><a name="1000576664"></a>Valor del campo especificado; el tipo depende del tipo de ese campo.</p><a name="1000576665"></a><h5>Acci&#243;n</h5><p><a name="1000576666"></a>NextValue devuelve el valor del siguiente registro del campo especificado.  </p><a name="1000576667"></a><h5>Uso t&#237;pico</h5><p><a name="1000576668"></a>Puede utilizar NextValue para identificar el primero o el &#250;ltimo dato dentro de un rango, para identificar el punto inicial para un nuevo grupo, o para evaluar la existencia de valores duplicados.</p><a name="1000576669"></a><h5>Ejemplo(s)</h5><p><a name="1000576670"></a>Los siguientes ejemplos son aplicables a la sintaxis b&#225;sica:</p><p class="code"><a name="1000576672"></a>If NextValue ({DetallePedidos.Cantidad}) &lt;&gt; 0 Then
+<br><a name="1000576673"></a>&nbsp;&nbsp;&nbsp;&nbsp;formula = {DetallePedidos.Cantidad} / 2
+<br><a name="1000576674"></a>Else
+<br><a name="1000576675"></a>&nbsp;&nbsp;&nbsp;&nbsp;formula = {DetallePedidos.Cantidad}
+<br><a name="1000576676"></a>End If
+</p><p class="example"><a name="1000576677"></a>Eval&#250;a el valor siguiente en el campo {Orders Detail.Quantity}  para ver si es un valor cero. Si no es, divide el valor entre dos. Si es un valor cero, devuelve el valor.</p><p class="code"><a name="1000576679"></a>If NextValue ({Pedidos.IDPedido}) Mod 10 = 0 Then
+<br><a name="1000576680"></a>&nbsp;&nbsp;&nbsp;&nbsp;formula = "Fin de bloque"
+<br><a name="1000576681"></a>Else
+<br><a name="1000576682"></a>&nbsp;&nbsp;&nbsp;&nbsp;formula = "M&#225;s por venir"
+<br><a name="1000576683"></a>End If
+</p><p class="example"><a name="1000576684"></a>Esta f&#243;rmula divide los pedidos en bloques de 10. Si la siguiente ID de Pedido es un m&#250;ltiplo de 10, marca el valor actual como "Fin de bloque". De lo contrario, imprime "M&#225;s por venir".</p><p><a name="1000719870"></a><font color="darkblue"><b>Nota:   &nbsp;&nbsp;&nbsp;</b></font>El uso de esta funci&#243;n en una f&#243;rmula obliga a que la f&#243;rmula sea evaluada al momento de impresi&#243;n. Para obtener m&#225;s informaci&#243;n sobre las consideraciones de evaluaci&#243;n de hora, v&#233;ase el <a href="Functions169.html#1000572432">Funciones de tiempo de evaluaci&#243;n</a>.</p>
+
+<hr><br>
+
+<script  language="JavaScript"><!--
+
+var prev = "Functions177.html";
+var next = "Functions179.html";
+
+function setTopicID() { 
+      var number = "1000576660"; 
+      return number; 
+}
+
+// --></script>
+
+
+
+
+<SCRIPT>
+
+if (!window.parent.toc && navigator.appName == "Netscape") {
+
+   document.writeln ('<TABLE ALIGN="left" border="0" cellspacing="0" cellpadding="10">');
+   document.writeln ('<TR>');
+   document.write ('<TD ALIGN="left">');
+
+   if (prev != "crw_spTOC.hhc") {
+      document.writeln ('<A HREF="' + prev + '">');
+      document.writeln ('<IMG SRC="prevpage.gif" HEIGHT=17 BORDER=0 ALT="Página anterior"></A>');
+   } else {
+//   window.alert ('no previous page');
+   }
+
+   if (next != "crw_spIX.hhk") {
+      document.writeln ('<A HREF="' + next + '">');
+      document.writeln ('<IMG SRC="nextpage.gif" HEIGHT=17 BORDER=0 ALT="Página siguiente"></A>');
+   } else {
+//   window.alert ('no next page');
+   }
+   document.writeln ('</TD><TD ALIGN="left">');
+   document.writeln ('<A HREF="frameset.htm?TOC">');
+   document.writeln ('<IMG SRC="showtoc.gif" HEIGHT=17 BORDER=0 ALT="Haga clic para ver el contenido"></A></TD>');
+   document.writeln ('<TD ALIGN="left">');
+   document.writeln ('<A HREF="frameset.htm?IDX">');
+   document.writeln ('<IMG SRC="showix.gif" HEIGHT=17 BORDER=0 ALT="Haga clic para ver el índice"></A></TD>');
+   document.writeln ('</TD>');
+   document.writeln ('</TR>');
+   document.writeln ('</TABLE>');
+
+}
+
+</SCRIPT>
+<table align="right" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td align="right"><font size="1">Seagate Software, Inc.<br>
+    <a href="http://www.seagatesoftware.com">http://www.seagatesoftware.com</a><br>
+    Envíe sus comentarios a:<br>
+    <a href="mailto:techpubs@seagatesoftware.com">techpubs@seagatesoftware.com</a><br>
+    </font></td>
+  </tr>
+</table>
+</body>
+</html>
+
+

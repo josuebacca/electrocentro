@@ -1,0 +1,95 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+
+<html>
+<head>
+<title>Opciones para seleccionar registros</title>
+
+<link REL=STYLESHEET TYPE="text/css" HREF="seagate.css">
+
+<!--
+                 ***********************************
+                 * Seagate Software copyright 1999 *
+                 ***********************************
+
+                      Template version: 5.1
+-->
+
+
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" link="#0000FF" vlink="#0000FF" alink="#800080">
+
+
+ 
+<a name="53193"></a><h4 class="newpage"> Opciones para seleccionar registros</h4><p><a name="53998"></a>Seagate Crystal Reports incluye un sofisticado lenguaje de f&#243;rmula que usted puede usar para especificar pr&#225;cticamente cualquier tipo de selecci&#243;n de registros que desee. Sin embargo, es posible que en muchas ocasiones no necesite la flexibilidad en la selecci&#243;n de registros que el lenguaje de f&#243;rmula le proporciona. El Asistente de Selecci&#243;n fue dise&#241;ado para estas ocasiones.</p><p><a name="53999"></a>Usted puede seleccionar registros en una de dos maneras.</p><ul type="disc"><a name="54000"></a><li>usando el Asistente de Selecci&#243;n, o
+<a name="54001"></a><li>usando el Editor de F&#243;rmulas.
+</ul><a name="54002"></a><h4>Como determinar que campo(s) usar</h4><p><a name="54003"></a>Cuando selecciona registros, est&#225; basando su informe s&#243;lo en aquellos registros que cumplen con ciertas condiciones que usted establece. Usted basa esas condiciones en el tipo de informaci&#243;n que desea en su informe final.</p><p><a name="54004"></a>Asuma, por ejemplo, que quiere un informe que &#250;nicamente muestre los datos de California. Su tarea es encontrar la mejor manera de identificar aquellos registros que provienen de California.</p><ul type="disc"><a name="54005"></a><li>Si la tabla que est&#225; usando para hacer su informe contiene un campo de Estado o de Regi&#243;n, usted puede especificar en la solicitud que el programa utilice s&#243;lo esos registros donde el valor en el campo de Estado es igual a California (Regi&#243;n es igual a CA). Esta es indudablemente la manera m&#225;s f&#225;cil.
+<a name="54006"></a><li>Si la tabla no contiene un campo de Estado y todav&#237;a quiere hacer su informe basado s&#243;lo en los datos de California, pueden haber otras formas de hacerlo. Es posible identificar esos datos de otra manera.
+<ul type="disc"><ul type="disc"><a name="54007"></a><li>Si la tabla contiene un campo de C&#243;digo Postal, puede basar su selecci&#243;n de registro en el rango de c&#243;digos postales que se usa para California (C&#243;digo Postal entre <EM>n</EM> y <EM>N</EM>), o <a name="57166"></a><li>Si la tabla contiene un campo de Prefijos de Larga Distancia, puede basar su selecci&#243;n de registros en los Prefijos de Larga Distancia de California (un Prefijo de Larga Distancia es uno de x, y, . . . z).</ul></ul></ul><p><a name="58175"></a><font color="darkblue"><b>Nota:   &nbsp;&nbsp;&nbsp;</b></font></p>
+<ul type="disc"><a name="58179"></a><li>Si el c&#243;digo de &#225;rea se almacena en el campo del n&#250;mero de tel&#233;phono, no podr&#225; realizar la selecci&#243;n de este mismo registro con el Assistente de selecci&#243;n seg&#250;n el c&#243;digo de &#225;rea. Ser&#225; necesario crear una f&#243;rmula de selecci&#243;n de registros mediante el langaje de f&#243;rmula para extraer la parte del c&#243;digo de &#225;rea del n&#250;mero de tel&#233;phono y, a continuaci&#243;n, realizar la selecci&#243;n seg&#250;n ese valor.
+<a name="58211"></a><li>Por lo general, si puede basar la selecci&#243;n de registros en varios campos (como en este ejemplo), debe seleccionar un campo indexado en vez de un campo no indexado.
+</ul>
+<hr><br>
+
+<script  language="JavaScript"><!--
+
+var prev = "07_recordgroupsel2.html";
+var next = "07_recordgroupsel4.html";
+
+function setTopicID() { 
+      var number = "53193"; 
+      return number; 
+}
+
+// --></script>
+
+
+
+
+<SCRIPT>
+
+if (!window.parent.toc && navigator.appName == "Netscape") {
+
+   document.writeln ('<TABLE ALIGN="left" border="0" cellspacing="0" cellpadding="10">');
+   document.writeln ('<TR>');
+   document.write ('<TD ALIGN="left">');
+
+   if (prev != "crw_spTOC.hhc") {
+      document.writeln ('<A HREF="' + prev + '">');
+      document.writeln ('<IMG SRC="prevpage.gif" HEIGHT=17 BORDER=0 ALT="Página anterior"></A>');
+   } else {
+//   window.alert ('no previous page');
+   }
+
+   if (next != "crw_spIX.hhk") {
+      document.writeln ('<A HREF="' + next + '">');
+      document.writeln ('<IMG SRC="nextpage.gif" HEIGHT=17 BORDER=0 ALT="Página siguiente"></A>');
+   } else {
+//   window.alert ('no next page');
+   }
+   document.writeln ('</TD><TD ALIGN="left">');
+   document.writeln ('<A HREF="frameset.htm?TOC">');
+   document.writeln ('<IMG SRC="showtoc.gif" HEIGHT=17 BORDER=0 ALT="Haga clic para ver el contenido"></A></TD>');
+   document.writeln ('<TD ALIGN="left">');
+   document.writeln ('<A HREF="frameset.htm?IDX">');
+   document.writeln ('<IMG SRC="showix.gif" HEIGHT=17 BORDER=0 ALT="Haga clic para ver el índice"></A></TD>');
+   document.writeln ('</TD>');
+   document.writeln ('</TR>');
+   document.writeln ('</TABLE>');
+
+}
+
+</SCRIPT>
+<table align="right" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td align="right"><font size="1">Seagate Software, Inc.<br>
+    <a href="http://www.seagatesoftware.com">http://www.seagatesoftware.com</a><br>
+    Envíe sus comentarios a:<br>
+    <a href="mailto:techpubs@seagatesoftware.com">techpubs@seagatesoftware.com</a><br>
+    </font></td>
+  </tr>
+</table>
+</body>
+</html>
+
+

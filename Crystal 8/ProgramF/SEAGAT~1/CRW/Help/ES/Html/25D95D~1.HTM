@@ -1,0 +1,99 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+
+<html>
+<head>
+<title>Bases de datos SQL mediante Merant DataDirect</title>
+
+<link REL=STYLESHEET TYPE="text/css" HREF="seagate.css">
+
+<!--
+                 ***********************************
+                 * Seagate Software copyright 1999 *
+                 ***********************************
+
+                      Template version: 5.1
+-->
+
+
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" link="#0000FF" vlink="#0000FF" alink="#800080">
+
+
+ 
+<a name="27238"></a><h4 class="newpage"> Bases de datos SQL mediante Merant DataDirect</h4><p><a name="1930"></a>En el mercado existen muchos sistemas de administraci&#243;n de bases de datos SQL disponibles y a la mayor&#237;a de ellos se puede acceder mediante ODBC. Seagate Crystal Reports instala y configura autom&#225;ticamente varias fuentes de datos ODBC, permiti&#233;ndole acceder a muchas de las bases de datos SQL m&#225;s usadas, incluidas:</p><ul type="disc"><a name="1932"></a><li>Oracle
+<a name="1934"></a><li>Sybase SQL Server
+<a name="1942"></a><li>DB2/2.
+</ul><p><a name="26758"></a>Seagate Crystal Reports proporciona los controladores ODBC Merant DataDirect para estos formatos de bases de datos SQL. No es posible acceder a todas las bases de datos SQL mediante estos controladores, pero como conveniencia, el programa configura autom&#225;ticamente estos controladores durante la instalaci&#243;n. Seagate Crystal Reports se comunica de todas maneras con ODBC mediante el archivo de traducci&#243;n P2sodbc.dll, pero los controladores DataDirect proporcionan a ODBC un acceso f&#225;cil a las bases de datos reales.</p><p><a name="306052"></a><font color="darkblue"><b>Nota:   &nbsp;&nbsp;&nbsp;</b></font>Si va a usar una base de datos SQL no accesible para los controladores Merant, vea la documentaci&#243;n de DBMS para m&#225;s informaci&#243;n sobre de los controladores ODBC requeridos.</p>
+<p><a name="1948"></a>No confunda las bases de datos SQL con el lenguaje SQL. El lenguaje de consulta estructurado (SQL) es un lenguaje computacional especializado usado para dise&#241;ar, crear y leer archivos de bases de datos. Vea <a href="24_under_databases28.html#322386">Uso de SQL y bases de datos SQL</a>.</p><p><a name="1950"></a>Las bases de datos SQL son cualquier conjunto de aplicaciones computacionales que dependen del lenguaje SQL para la creaci&#243;n y manipulaci&#243;n de base de datos. Las aplicaciones SQL de DBMS se dise&#241;an por lo general para su ejecuci&#243;n como grandes aplicaciones cliente/servidor en una red.</p><p><a name="1952"></a>Para abrir una base de datos SQL, ODBC usa un conjunto de cuatro controladores de soporte ODBC de DataDirect (que son los mismos para todo formato de base de datos SQL), un controlador ODBC de DataDirect espec&#237;fico del formato de base de datos y la capa de comunicaci&#243;n de base de datos que se comunique directamente con el archivo de base de datos. Todos los archivos proporcionados para esta capa de traducci&#243;n DBMS son controladores Merant DataDirect.</p><p><a name="306074"></a><font color="darkblue"><b>Nota:   &nbsp;&nbsp;&nbsp;</b></font>ODBC no tiene que usar los controladores Merant DataDirect para acceder a las bases de datos SQL que se muestran a continuaci&#243;n. La mayor&#237;a de aplicaciones SQL DBMS cuenta con sus propios controladores ODBC. Sin embargo, Seagate Crystal Reports configura autom&#225;ticamente los controladores Merant. </p>
+<p><a name="306093"></a> </p>
+<p><a name="306106"></a><font color="darkblue"><b>Nota:   &nbsp;&nbsp;&nbsp;</b></font>Seagate Crystal Reports proporciona controladores Merant para acceder a las bases de datos SQL. Estos controladores de 32 bits se denominan Cr*13.dll.</p>
+<p><a name="27239"></a>Tal como se mencion&#243; anteriormente, Seagate Crystal Reports crea autom&#225;ticamente varias fuentes de datos ODBC para los formatos de bases de datos SQL admitidos por Merant DataDirect. Estas fuentes de datos son creadas autom&#225;ticamente:</p><ul type="disc"><a name="1962"></a><li>ODBC<nobr>-C</nobr>RDB es compatible con DB2/2
+<a name="1966"></a><li>ODBC<nobr>-C</nobr>ROR7 es compatible con Oracle 7
+<a name="1968"></a><li>ODBC<nobr>-C</nobr>ROR8 es compatible con Oracle 8
+<a name="26463"></a><li>ODBC<nobr>-C</nobr>RSYB es compatible con Sybase System 10.
+</ul>
+<hr><br>
+
+<script  language="JavaScript"><!--
+
+var prev = "25_access_sources37.html";
+var next = "25_access_sources39.html";
+
+function setTopicID() { 
+      var number = "27238"; 
+      return number; 
+}
+
+// --></script>
+
+
+
+
+<SCRIPT>
+
+if (!window.parent.toc && navigator.appName == "Netscape") {
+
+   document.writeln ('<TABLE ALIGN="left" border="0" cellspacing="0" cellpadding="10">');
+   document.writeln ('<TR>');
+   document.write ('<TD ALIGN="left">');
+
+   if (prev != "crw_spTOC.hhc") {
+      document.writeln ('<A HREF="' + prev + '">');
+      document.writeln ('<IMG SRC="prevpage.gif" HEIGHT=17 BORDER=0 ALT="Página anterior"></A>');
+   } else {
+//   window.alert ('no previous page');
+   }
+
+   if (next != "crw_spIX.hhk") {
+      document.writeln ('<A HREF="' + next + '">');
+      document.writeln ('<IMG SRC="nextpage.gif" HEIGHT=17 BORDER=0 ALT="Página siguiente"></A>');
+   } else {
+//   window.alert ('no next page');
+   }
+   document.writeln ('</TD><TD ALIGN="left">');
+   document.writeln ('<A HREF="frameset.htm?TOC">');
+   document.writeln ('<IMG SRC="showtoc.gif" HEIGHT=17 BORDER=0 ALT="Haga clic para ver el contenido"></A></TD>');
+   document.writeln ('<TD ALIGN="left">');
+   document.writeln ('<A HREF="frameset.htm?IDX">');
+   document.writeln ('<IMG SRC="showix.gif" HEIGHT=17 BORDER=0 ALT="Haga clic para ver el índice"></A></TD>');
+   document.writeln ('</TD>');
+   document.writeln ('</TR>');
+   document.writeln ('</TABLE>');
+
+}
+
+</SCRIPT>
+<table align="right" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td align="right"><font size="1">Seagate Software, Inc.<br>
+    <a href="http://www.seagatesoftware.com">http://www.seagatesoftware.com</a><br>
+    Envíe sus comentarios a:<br>
+    <a href="mailto:techpubs@seagatesoftware.com">techpubs@seagatesoftware.com</a><br>
+    </font></td>
+  </tr>
+</table>
+</body>
+</html>
+
+

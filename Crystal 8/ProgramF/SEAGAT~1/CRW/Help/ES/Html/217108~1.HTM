@@ -1,0 +1,116 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+
+<html>
+<head>
+<title>Expresiones If </title>
+
+<link REL=STYLESHEET TYPE="text/css" HREF="seagate.css">
+
+<!--
+                 ***********************************
+                 * Seagate Software copyright 1999 *
+                 ***********************************
+
+                      Template version: 5.1
+-->
+
+
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" link="#0000FF" vlink="#0000FF" alink="#800080">
+
+
+ 
+<a name="147318"></a><h3 class="newpage"> Expresiones If </h3>
+<p><a name="147320"></a>La expresi&#243;n <EM>If</EM> es una de las estructuras de control m&#225;s &#250;tiles. Le permite evaluar una expresi&#243;n si una condici&#243;n es verdadera o evaluar otra distinta si no lo es.</p><a name="152471"></a><h5>Ejemplo</h5><p><a name="152472"></a>Una compa&#241;&#237;a tiene intenciones de pagar un bono del 4 por ciento a sus empleados excepto para aquellos que trabajan en el departamento de ventas, quienes recibir&#225;n un 6 por ciento. El uso de una expresi&#243;n If dar&#237;a el siguiente resultado:</p><PRE><a name="147322"></a>//Ejemplo de expresi&#243;n If 1
+<a name="147323"></a>If {Empleado.Departamento} = "Ventas" Then
+<a name="147324"></a>   {Empleado.Salario} * 0.06
+<a name="147325"></a>Else
+<a name="147326"></a>   {Empleado.Salario} * 0.04
+</PRE><p><a name="147328"></a>En este ejemplo, si la condici&#243;n {Empleado.Departamento} = "Ventas" se eval&#250;a como verdadera, entonces la expresi&#243;n</p><p><code><a name="147329"></a>{Empleado.Salario} * 0.06</code></p><p><a name="147330"></a>se procesa. De lo contrario, la expresi&#243;n que sigue a <EM>Else</EM>, es decir,</p><p><code><a name="147331"></a>{Empleado.Salario} * 0.04</code></p><p><a name="147332"></a>ser&#225; la que se procese.</p><p><a name="147334"></a>Supongamos que otra compa&#241;&#237;a desea dar a sus empleados un bono del 4%, pero con un bono m&#237;nimo de $1.000. El siguiente ejemplo muestra el procedimiento. Observe que no se incluy&#243; la cl&#225;usula <EM>Else</EM>; es opcional e innecesaria en este caso.</p><PRE><a name="147336"></a>//Ejemplo de expresi&#243;n If 2
+<a name="147337"></a>Local CurrencyVar bono := {Empleado.Salario} * 0.04;
+<a name="147338"></a>If bono &lt; 1000 Then
+<a name="147339"></a>   bono := 1000;
+<a name="147340"></a>//La expresi&#243;n final es simplemente la variable 'bono'.
+<a name="147341"></a>//Esto devuelve el valor de la variable y es el 
+<a name="147342"></a>//resultado de la f&#243;rmula
+<a name="147343"></a>bono
+</PRE><p><a name="147345"></a>Otra forma de lograr el ejemplo 2 es usar una cl&#225;usula Else:</p><PRE><a name="147347"></a>//Ejemplo de expresi&#243;n If 3
+<a name="147348"></a>Local CurrencyVar bono := {Empleado.Salario} * 0.04;
+<a name="147349"></a>If bono &lt; 1000 Then
+<a name="147350"></a>   1000
+<a name="147351"></a>Else
+<a name="147352"></a>   bono
+</PRE><p><a name="147354"></a>Ahora supongamos que la compa&#241;&#237;a anterior tambi&#233;n desea un bono m&#225;ximo de $5.000. Necesitar&#225; usar una cl&#225;usula Else If. El siguiente ejemplo tiene s&#243;lo una cl&#225;usula Else If, pero es posible agregar todas las necesarias. Observe, sin embargo, que hay un m&#225;ximo de una cl&#225;usula Else por expresi&#243;n If. La cl&#225;usula Else se ejecuta si una de las condiciones If o Else If es verdadera.</p><PRE><a name="147356"></a>//Ejemplo de expresi&#243;n If 4
+<a name="147357"></a>Local CurrencyVar bono := {Empleado.Salario} * 0.04;
+<a name="147358"></a>If bono &lt; 1000 Then
+<a name="147359"></a>   1000
+<a name="147360"></a>Else If bono &gt; 5000 Then
+<a name="147361"></a>   5000
+<a name="147362"></a>Else
+<a name="147363"></a>   bono;
+</PRE>
+<hr><br>
+
+<script  language="JavaScript"><!--
+
+var prev = "21_crystalsyntax52.html";
+var next = "21_crystalsyntax54.html";
+
+function setTopicID() { 
+      var number = "147318"; 
+      return number; 
+}
+
+// --></script>
+
+
+
+
+<SCRIPT>
+
+if (!window.parent.toc && navigator.appName == "Netscape") {
+
+   document.writeln ('<TABLE ALIGN="left" border="0" cellspacing="0" cellpadding="10">');
+   document.writeln ('<TR>');
+   document.write ('<TD ALIGN="left">');
+
+   if (prev != "crw_spTOC.hhc") {
+      document.writeln ('<A HREF="' + prev + '">');
+      document.writeln ('<IMG SRC="prevpage.gif" HEIGHT=17 BORDER=0 ALT="Página anterior"></A>');
+   } else {
+//   window.alert ('no previous page');
+   }
+
+   if (next != "crw_spIX.hhk") {
+      document.writeln ('<A HREF="' + next + '">');
+      document.writeln ('<IMG SRC="nextpage.gif" HEIGHT=17 BORDER=0 ALT="Página siguiente"></A>');
+   } else {
+//   window.alert ('no next page');
+   }
+   document.writeln ('</TD><TD ALIGN="left">');
+   document.writeln ('<A HREF="frameset.htm?TOC">');
+   document.writeln ('<IMG SRC="showtoc.gif" HEIGHT=17 BORDER=0 ALT="Haga clic para ver el contenido"></A></TD>');
+   document.writeln ('<TD ALIGN="left">');
+   document.writeln ('<A HREF="frameset.htm?IDX">');
+   document.writeln ('<IMG SRC="showix.gif" HEIGHT=17 BORDER=0 ALT="Haga clic para ver el índice"></A></TD>');
+   document.writeln ('</TD>');
+   document.writeln ('</TR>');
+   document.writeln ('</TABLE>');
+
+}
+
+</SCRIPT>
+<table align="right" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td align="right"><font size="1">Seagate Software, Inc.<br>
+    <a href="http://www.seagatesoftware.com">http://www.seagatesoftware.com</a><br>
+    Envíe sus comentarios a:<br>
+    <a href="mailto:techpubs@seagatesoftware.com">techpubs@seagatesoftware.com</a><br>
+    </font></td>
+  </tr>
+</table>
+</body>
+</html>
+
+

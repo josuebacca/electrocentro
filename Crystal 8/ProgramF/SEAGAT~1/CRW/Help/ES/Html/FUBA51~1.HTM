@@ -1,0 +1,95 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+
+<html>
+<head>
+<title>Length (cadena))</title>
+
+<link REL=STYLESHEET TYPE="text/css" HREF="seagate.css">
+
+<!--
+                 ***********************************
+                 * Seagate Software copyright 1999 *
+                 ***********************************
+
+                      Template version: 5.1
+-->
+
+
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" link="#0000FF" vlink="#0000FF" alink="#800080">
+
+
+ 
+<a name="1000852352"></a><h3 class="newpage"> Length (cadena))</h3>
+<p><a name="1000852356"></a>Length y <a href="Functions64.html#1000852310">Len (cadena)</a> son funciones equivalentes. Sin embargo, se prefiere Length en la sintaxis Crystal y Len en la sintaxis b&#225;sica.</p><a name="1000852357"></a><h5>Argumentos</h5><p><a name="1000852358"></a>cadena es un valor de texto.</p><a name="1000852359"></a><h5>Devuelve </h5><p><a name="1000852360"></a>Un n&#250;mero entero</p><a name="1000852361"></a><h5>Acci&#243;n</h5><p><a name="1000852362"></a>Length devuelve el n&#250;mero de caracteres en una cadena de texto que se introduce en la <a href="glossary.html#32706">F&#243;rmula</a>, o  se guarda en una cadena de texto como un <a href="glossary.html#44012">Valor</a> en un campo de datos.</p><p><a name="1000852369"></a><font color="darkblue"><b>Nota:   &nbsp;&nbsp;&nbsp;</b></font>Las cadenas de texto deben escribirse entre comillas dobles o simples (" " o ` '). Todos los espacios en blanco se incluyen como parte del recuento de caracteres. </p>
+<a name="1000852370"></a><h5>Uso(s) t&#237;pico(s)</h5><p><a name="1000852371"></a>Utilice esta funci&#243;n siempre que tenga una manipulaci&#243;n, comparaci&#243;n o c&#225;lculo que dependa de la longitud de la cadena de texto. </p><a name="1000852372"></a><h5>Ejemplo(s)</h5><p><a name="1000852373"></a>Los siguientes ejemplos se aplican a las sintaxis b&#225;sica y Crystal, aunque se prefiere Len en esta &#250;ltima:</p><p><code><a name="1000852374"></a>Length("Cuenta") </code></p><p class="example"><a name="1000852375"></a>Devuelve 7.</p><p><code><a name="1000852376"></a>Length("Cadena_texto") </code></p><p class="example"><a name="1000852377"></a>Devuelve 11.</p><p><code><a name="1000852378"></a>Length("__Centro__")</code></p><p class="example"><a name="1000852379"></a>Devuelve 10.</p><p><code><a name="1000852380"></a>Length(ToText({pedidos.MONTO DEL PEDIDO}) </code></p><p class="example"><a name="1000852381"></a>Devuelve 9, donde {pedidos.MONTO DEL PEDIDO} es 14233.08, y ToText ({pedidos.MONTO DEL PEDIDO}) devuelve la Cadena  "14.233,08". Aqu&#237;, se han especificado la coma y el punto en el formato de N&#250;mero para el campo de la f&#243;rmula como las separaciones de millares y decimales respectivamente.</p><p><code><a name="1000852382"></a>Length(ToText({pedidos.MONTO DEL PEDIDO}, 2, "", ".")) </code></p><p class="example"><a name="1000852383"></a>Devuelve  8 donde {pedidos.MONTO DEL PEDIDO} = 14233.08, y ToText ({pedidos.MONTO DEL PEDIDO}, 2, "", ".") devuelve la Cadena "14233.08". Aqu&#237;, se han especificado el car&#225;cter nulo y el punto en el formato de N&#250;mero para el campo de la f&#243;rmula  como las separaciones de millares y decimales respectivamente.</p><p><code><a name="1000852384"></a>Length("BOB") </code></p><p class="example"><a name="1000852385"></a>Devuelve 3.</p><p><code><a name="1000852386"></a>Length("SMITH") </code></p><p class="example"><a name="1000852387"></a>Devuelve 5.</p><p><code><a name="1000852388"></a>Length("BOB SMITH") </code></p><p class="example"><a name="1000852389"></a>Devuelve 9. (El espacio en blanco entre BOB y SMITH se cuenta como un car&#225;cter.)</p><p><code><a name="1000852390"></a>Length ({Cliente.NOMBRE DEL CLIENTE}); </code></p><p class="example"><a name="1000852391"></a>La longitud de la cadena de texto guardada como un valor en {cliente.NOMBRE DEL CLIENTE}.</p><p><a name="1000852392"></a>Los siguientes ejemplos se aplican a la sintaxis Crystal:</p><p><code><a name="1000852393"></a>{cliente.NOMBRE DEL CLIENTE} [Length({cliente.NOMBRE DEL CLIENTE})-2]</code></p><p class="example"><a name="1000852394"></a>Devuelve el tercer car&#225;cter de la derecha en el nombre del cliente.  Esto tambi&#233;n puede ser usado para extraer una subcadena de una Cadena que siempre empieza en una posici&#243;n fija desde el final de la Cadena. </p><p><a name="1000852395"></a>En el siguiente ejemplo, una l&#237;nea de direcci&#243;n contiene el nombre de la provincia y c&#243;digo postal.  Los nombres completos de las provincias var&#237;an en la longitud, pero el primer car&#225;cter del c&#243;digo postal siempre es el s&#233;ptimo a partir del &#250;ltimo car&#225;cter.  La f&#243;rmula determina la longitud de la l&#237;nea de direcci&#243;n, le resta 7 y usa el resultado para identificar el primer car&#225;cter del c&#243;digo postal en la l&#237;nea de direcci&#243;n.  </p><p class="code"><a name="1000852396"></a>Local StringVar l&#237;neaDeDirecci&#243;n;
+<br><a name="1000852397"></a>Local NumberVar longitudDeL&#237;nea;
+<br><a name="1000852398"></a>l&#237;neaDeDirecci&#243;n = "Columbia Brit&#225;nica V6X 3W2"
+<br><a name="1000852399"></a>longitudDeDirecci&#243;n := Length (l&#237;neaDeDirecci&#243;n);
+<br><a name="1000852400"></a>l&#237;neaDeDirecci&#243;n [longitudDeDirecci&#243;n-7+1 a longitudDeDirecci&#243;n]
+</p><a name="1000852401"></a><h6>Temas relacionados</h6><p><a name="1000852405"></a><a href="19_introformulas42.html#317486">F&#243;rmula 14</a></p>
+<hr><br>
+
+<script  language="JavaScript"><!--
+
+var prev = "Functions64.html";
+var next = "Functions66.html";
+
+function setTopicID() { 
+      var number = "1000852352"; 
+      return number; 
+}
+
+// --></script>
+
+
+
+
+<SCRIPT>
+
+if (!window.parent.toc && navigator.appName == "Netscape") {
+
+   document.writeln ('<TABLE ALIGN="left" border="0" cellspacing="0" cellpadding="10">');
+   document.writeln ('<TR>');
+   document.write ('<TD ALIGN="left">');
+
+   if (prev != "crw_spTOC.hhc") {
+      document.writeln ('<A HREF="' + prev + '">');
+      document.writeln ('<IMG SRC="prevpage.gif" HEIGHT=17 BORDER=0 ALT="Página anterior"></A>');
+   } else {
+//   window.alert ('no previous page');
+   }
+
+   if (next != "crw_spIX.hhk") {
+      document.writeln ('<A HREF="' + next + '">');
+      document.writeln ('<IMG SRC="nextpage.gif" HEIGHT=17 BORDER=0 ALT="Página siguiente"></A>');
+   } else {
+//   window.alert ('no next page');
+   }
+   document.writeln ('</TD><TD ALIGN="left">');
+   document.writeln ('<A HREF="frameset.htm?TOC">');
+   document.writeln ('<IMG SRC="showtoc.gif" HEIGHT=17 BORDER=0 ALT="Haga clic para ver el contenido"></A></TD>');
+   document.writeln ('<TD ALIGN="left">');
+   document.writeln ('<A HREF="frameset.htm?IDX">');
+   document.writeln ('<IMG SRC="showix.gif" HEIGHT=17 BORDER=0 ALT="Haga clic para ver el índice"></A></TD>');
+   document.writeln ('</TD>');
+   document.writeln ('</TR>');
+   document.writeln ('</TABLE>');
+
+}
+
+</SCRIPT>
+<table align="right" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td align="right"><font size="1">Seagate Software, Inc.<br>
+    <a href="http://www.seagatesoftware.com">http://www.seagatesoftware.com</a><br>
+    Envíe sus comentarios a:<br>
+    <a href="mailto:techpubs@seagatesoftware.com">techpubs@seagatesoftware.com</a><br>
+    </font></td>
+  </tr>
+</table>
+</body>
+</html>
+
+

@@ -1,0 +1,98 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+
+<html>
+<head>
+<title>IPmt</title>
+
+<link REL=STYLESHEET TYPE="text/css" HREF="seagate.css">
+
+<!--
+                 ***********************************
+                 * Seagate Software copyright 1999 *
+                 ***********************************
+
+                      Template version: 5.1
+-->
+
+
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" link="#0000FF" vlink="#0000FF" alink="#800080">
+
+
+ 
+<a name="1000851863"></a><h3 class="newpage"> IPmt</h3>
+<p><a name="1000851864"></a>Sintaxis b&#225;sica y Crystal.</p><a name="1000851865"></a><h5>Sobrecargas</h5><ul type="disc"><a name="1000851866"></a><li>IPmt (tasa, per&#237;odo, nPer&#237;odos, Valor presente)
+<a name="1000851867"></a><li>IPmt (tasa, per&#237;odo, nPer&#237;odos, valorPresente, ValorFuturo).
+<a name="1000851868"></a><li>IPmt (tasa, per&#237;odo, nPer&#237;odos, valorPresente, ValorFuturo, tipo).
+</ul><a name="1000851869"></a><h5>Argumentos</h5><ul type="disc"><a name="1000851870"></a><li>tasa es un N&#250;mero que especifica la tasa de inter&#233;s por per&#237;odo.  
+<a name="1000851871"></a><li>per&#237;odo es un N&#250;mero que especifica el per&#237;odo de pago en el rango de 1 a nPer&#237;odos. 
+<a name="1000851872"></a><li>nPer&#237;odos es un N&#250;mero positivo que especifica el n&#250;mero total de per&#237;odos de pago en el a&#241;o.  Las unidades utilizadas para especificar la tasa, per&#237;odo y nPer&#237;odos deben ser concordantes.  Por ejemplo, si nPer&#237;odos es el n&#250;mero de per&#237;odos en meses, entonces el inter&#233;s es una tasa de inter&#233;s mensual y el per&#237;odo especifica un mes. 
+<a name="1000851873"></a><li>valorPresente es un N&#250;mero o Moneda que especifica el valor presente o valor al d&#237;a de una serie de ingresos o pagos futuros. 
+<a name="1000851874"></a><li>valorFuturo es un N&#250;mero o Moneda opcional que especifica el valor futuro o saldo de efectivo que usted desea despu&#233;s de haber efectuado el pago final.  Si se omite, se asume 0. 
+<a name="1000851875"></a><li>tipo es un N&#250;mero opcional que especifica cu&#225;ndo vencen los pagos.  Especifique  0 si los pagos vencen al final del per&#237;odo de pago y 1 si vencen al principio del per&#237;odo. Si se omite, se asume 0.
+</ul><a name="1000851876"></a><h5>Devuelve </h5><p><a name="1000851877"></a>Valor num&#233;rico</p><a name="1000851878"></a><h5>Acci&#243;n</h5><p><a name="1000851879"></a>IPmt devuelve un N&#250;mero especificando el pago de inter&#233;s por un per&#237;odo determinado de una anualidad basada en pagos fijos y una tasa de inter&#233;s fija.  </p><a name="1000851880"></a><h5>Ejemplo(s)</h5><p><a name="1000851881"></a>El siguiente ejemplo es aplicable a las sintaxis b&#225;sica y Crystal:</p><p><a name="1000851882"></a>Supongamos que desea solicitar un pr&#233;stamo por  $250,000 pagadero mensualmente por 15 a&#241;os a una tasa de inter&#233;s anual del 7 por ciento. La siguiente f&#243;rmula devuelve la cantidad de intereses que paga durante el primer a&#241;o del pr&#233;stamo. Tenga en cuenta que el inter&#233;s mensual es de  0.07 / 12 y el n&#250;mero de meses del pr&#233;stamo es  15 * 12.</p><p><code><a name="1000851883"></a>IPmt (0.07 / 12, 1, 15 * 12, 250000)</code></p><p class="example"><a name="1000851884"></a>Devuelve el valor num&#233;rico -1458.33 (redondeado a 2 decimales). El valor es negativo debido a que representa un pago que usted efect&#250;a mientras que el monto del pr&#233;stamo $250,000 es positivo porque representa un ingreso para usted. </p><p><a name="1000851885"></a>La siguiente f&#243;rmula devuelve el monto de los intereses que paga en su pago n&#250;mero 121 (despu&#233;s de 10 a&#241;os):</p><p><code><a name="1000851886"></a>IPmt (0.07 / 12, 10*12 + 1, 15 * 12, 250000)</code></p><p class="example"><a name="1000851887"></a>Devuelve  -661.98 (redondeado a 4 decimales). Usted ha progresado con su pr&#233;stamo por lo que ahora una porci&#243;n menor de su  pago mensual se destina al pago de intereses. </p><a name="1000851888"></a><h5>Comentario</h5><p><a name="1000851889"></a>Esta funci&#243;n est&#225; dise&#241;ada para trabajar exactamente como la funci&#243;n de Visual Basic del mismo nombre.</p>
+<hr><br>
+
+<script  language="JavaScript"><!--
+
+var prev = "Functions51.html";
+var next = "Functions53.html";
+
+function setTopicID() { 
+      var number = "1000851863"; 
+      return number; 
+}
+
+// --></script>
+
+
+
+
+<SCRIPT>
+
+if (!window.parent.toc && navigator.appName == "Netscape") {
+
+   document.writeln ('<TABLE ALIGN="left" border="0" cellspacing="0" cellpadding="10">');
+   document.writeln ('<TR>');
+   document.write ('<TD ALIGN="left">');
+
+   if (prev != "crw_spTOC.hhc") {
+      document.writeln ('<A HREF="' + prev + '">');
+      document.writeln ('<IMG SRC="prevpage.gif" HEIGHT=17 BORDER=0 ALT="Página anterior"></A>');
+   } else {
+//   window.alert ('no previous page');
+   }
+
+   if (next != "crw_spIX.hhk") {
+      document.writeln ('<A HREF="' + next + '">');
+      document.writeln ('<IMG SRC="nextpage.gif" HEIGHT=17 BORDER=0 ALT="Página siguiente"></A>');
+   } else {
+//   window.alert ('no next page');
+   }
+   document.writeln ('</TD><TD ALIGN="left">');
+   document.writeln ('<A HREF="frameset.htm?TOC">');
+   document.writeln ('<IMG SRC="showtoc.gif" HEIGHT=17 BORDER=0 ALT="Haga clic para ver el contenido"></A></TD>');
+   document.writeln ('<TD ALIGN="left">');
+   document.writeln ('<A HREF="frameset.htm?IDX">');
+   document.writeln ('<IMG SRC="showix.gif" HEIGHT=17 BORDER=0 ALT="Haga clic para ver el índice"></A></TD>');
+   document.writeln ('</TD>');
+   document.writeln ('</TR>');
+   document.writeln ('</TABLE>');
+
+}
+
+</SCRIPT>
+<table align="right" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td align="right"><font size="1">Seagate Software, Inc.<br>
+    <a href="http://www.seagatesoftware.com">http://www.seagatesoftware.com</a><br>
+    Envíe sus comentarios a:<br>
+    <a href="mailto:techpubs@seagatesoftware.com">techpubs@seagatesoftware.com</a><br>
+    </font></td>
+  </tr>
+</table>
+</body>
+</html>
+
+

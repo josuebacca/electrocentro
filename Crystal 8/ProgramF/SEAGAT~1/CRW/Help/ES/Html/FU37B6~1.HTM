@@ -1,0 +1,92 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+
+<html>
+<head>
+<title>FRInterestCoverage (flujoDeCaja, gastosPorIntereses)</title>
+
+<link REL=STYLESHEET TYPE="text/css" HREF="seagate.css">
+
+<!--
+                 ***********************************
+                 * Seagate Software copyright 1999 *
+                 ***********************************
+
+                      Template version: 5.1
+-->
+
+
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" link="#0000FF" vlink="#0000FF" alink="#800080">
+
+
+ 
+<a name="1000590197"></a><h3 class="newpage"> FRInterestCoverage (flujoDeCaja, gastosPorIntereses)</h3>
+<p><a name="1000723398"></a>Sintaxis b&#225;sica y Crystal.</p><a name="1000590201"></a><h5>Formato</h5><p><code><a name="1000590203"></a>FRInterestCoverage (flujoDeCaja, gastosPorIntereses)</code></p><a name="1000590204"></a><h5>Argumentos</h5><ul type="disc"><a name="1000590205"></a><li>flujoDeCaja es un n&#250;mero o f&#243;rmula. En general, flujoDeCaja es igual a las ganancias netas de la compa&#241;&#237;a m&#225;s todos los gastos que no involucran dinero en efectivo (tal como depreciaci&#243;n, perdidas de capital, etc.) menos todas las ganancias que no involucran dinero en efectivo (tales como ganancias de capitales, etc.). Esta informaci&#243;n se puede encontrar en el estado de p&#233;rdidas y ganancias y estado de cambio en la posici&#243;n financiera de una compa&#241;&#237;a.
+<a name="1000590206"></a><li>gastosPorIntereses es un n&#250;mero o f&#243;rmula. gastosPorIntereses es el total de intereses pagados que se pueden encontrar en el estado de p&#233;rdidas y ganancias de una compa&#241;&#237;a.
+</ul><a name="1000590207"></a><h5>Acci&#243;n</h5><p><a name="1000590208"></a>FRInterestCoverage  devuelve la relaci&#243;n entre flujoDeCaja y gastosPorIntereses (por ejemplo, InterestCoverage = flujoDeCaja / gastosPorIntereses).</p><a name="1000828813"></a><h5>Uso(s) t&#237;pico(s)</h5><p><a name="1000828814"></a>Esta relaci&#243;n se usa para medir la capacidad de una compa&#241;&#237;a a pagar los cargos de intereses por su deuda con el flujo de caja generado de su operaci&#243;n. Usualmente, se mide por n&#250;mero de veces (por ejemplo, 3X, etc.). Cuanto m&#225;s alto es el resultado, m&#225;s alta es la capacidad de la compa&#241;&#237;a para satisfacer el pago de inter&#233;s, a&#250;n cuando suba la tasa de inter&#233;s.</p><a name="1000828815"></a><h5>Ejemplo(s)</h5><p><a name="1000590213"></a>Los siguientes ejemplos son aplicables a las sintaxis b&#225;sica y Crystal:</p><p><code><a name="1000590214"></a>FRInterestCoverage(120, 50) </code></p><p class="example"><a name="1000723445"></a>Devuelve 24.</p><p><code><a name="1000590215"></a>FRInterestCoverage(30, 100) </code></p><p class="example"><a name="1000590216"></a>Devuelve 0.3.</p><p><a name="1000685110"></a><font color="darkblue"><b>Nota:   &nbsp;&nbsp;&nbsp;</b></font>Ninguno de los argumentos de entrada pueden ser negativos; debe revisar si hay valores negativos antes de pasar los argumentos de entrada.</p>
+<a name="1000828827"></a><h5>Comentario</h5><p><a name="1000828828"></a>FRInterestCoverage es una de las muchas herramientas para an&#225;lisis financiero que se usan para interpretar la posici&#243;n financiera de una compa&#241;&#237;a. Como en el caso de todas las relaciones, se debe usar con precauci&#243;n. Se puede usar s&#243;lo como una gu&#237;a y no como prueba firme para formar una opini&#243;n sobre el estado financiero de una compa&#241;&#237;a. </p><p><a name="1000590225"></a>Ninguna de las relaciones se puede usar exclusivamente para hacer an&#225;lisis financieros y no hay reglas fijas sobre los resultados de las relaciones. Aparte de las diferencias entre los tipos de industrias, el resultado var&#237;a entre las compa&#241;&#237;as diferentes dentro de la misma industria y dentro de per&#237;odos de cuenta diferentes. Los resultados s&#243;lo se deben usar para hacer comparaciones relativas y an&#225;lisis de tendencias, y no se deben tratar como algo absoluto.</p>
+<hr><br>
+
+<script  language="JavaScript"><!--
+
+var prev = "Functions223.html";
+var next = "Functions225.html";
+
+function setTopicID() { 
+      var number = "1000590197"; 
+      return number; 
+}
+
+// --></script>
+
+
+
+
+<SCRIPT>
+
+if (!window.parent.toc && navigator.appName == "Netscape") {
+
+   document.writeln ('<TABLE ALIGN="left" border="0" cellspacing="0" cellpadding="10">');
+   document.writeln ('<TR>');
+   document.write ('<TD ALIGN="left">');
+
+   if (prev != "crw_spTOC.hhc") {
+      document.writeln ('<A HREF="' + prev + '">');
+      document.writeln ('<IMG SRC="prevpage.gif" HEIGHT=17 BORDER=0 ALT="Página anterior"></A>');
+   } else {
+//   window.alert ('no previous page');
+   }
+
+   if (next != "crw_spIX.hhk") {
+      document.writeln ('<A HREF="' + next + '">');
+      document.writeln ('<IMG SRC="nextpage.gif" HEIGHT=17 BORDER=0 ALT="Página siguiente"></A>');
+   } else {
+//   window.alert ('no next page');
+   }
+   document.writeln ('</TD><TD ALIGN="left">');
+   document.writeln ('<A HREF="frameset.htm?TOC">');
+   document.writeln ('<IMG SRC="showtoc.gif" HEIGHT=17 BORDER=0 ALT="Haga clic para ver el contenido"></A></TD>');
+   document.writeln ('<TD ALIGN="left">');
+   document.writeln ('<A HREF="frameset.htm?IDX">');
+   document.writeln ('<IMG SRC="showix.gif" HEIGHT=17 BORDER=0 ALT="Haga clic para ver el índice"></A></TD>');
+   document.writeln ('</TD>');
+   document.writeln ('</TR>');
+   document.writeln ('</TABLE>');
+
+}
+
+</SCRIPT>
+<table align="right" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td align="right"><font size="1">Seagate Software, Inc.<br>
+    <a href="http://www.seagatesoftware.com">http://www.seagatesoftware.com</a><br>
+    Envíe sus comentarios a:<br>
+    <a href="mailto:techpubs@seagatesoftware.com">techpubs@seagatesoftware.com</a><br>
+    </font></td>
+  </tr>
+</table>
+</body>
+</html>
+
+

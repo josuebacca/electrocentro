@@ -1,0 +1,93 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+
+<html>
+<head>
+<title>FRAccRecTurnover (cuentasPorCobrar, ventas, n&#250;meroDeD&#237;as)</title>
+
+<link REL=STYLESHEET TYPE="text/css" HREF="seagate.css">
+
+<!--
+                 ***********************************
+                 * Seagate Software copyright 1999 *
+                 ***********************************
+
+                      Template version: 5.1
+-->
+
+
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" link="#0000FF" vlink="#0000FF" alink="#800080">
+
+
+ 
+<a name="1000592414"></a><h3 class="newpage"> FRAccRecTurnover (cuentasPorCobrar, ventas, n&#250;meroDeD&#237;as)</h3>
+<p><a name="1000723733"></a>Sintaxis b&#225;sica y Crystal.</p><a name="1000592418"></a><h5>Formato</h5><p><code><a name="1000592420"></a>FRAccRecTurnover (cuentasPorCobrar, ventas, n&#250;meroDeD&#237;as)</code></p><a name="1000829312"></a><h5>Argumentos</h5><ul type="disc"><a name="1000829313"></a><li>AccountReceivable es un n&#250;mero o f&#243;rmula. AccountReceivable es el total de cuentas por cobrar en el balance general de una compa&#241;&#237;a.
+<a name="1000829314"></a><li>ventas es un n&#250;mero o f&#243;rmula. ventas es el total de ventas durante el periodo que aparece en el estado de p&#233;rdidas y ganancias de una compa&#241;&#237;a.
+<a name="1000592424"></a><li>n&#250;meroDeD&#237;as es un n&#250;mero o f&#243;rmula. Por lo general, es el n&#250;mero de d&#237;as en un a&#241;o. Algunos analistas usan 360 y otros usan 365. La forma predeterminada para esta funci&#243;n es 360.
+</ul><a name="1000592425"></a><h5>Acci&#243;n</h5><p><a name="1000592426"></a>FRAccRecTurnover devuelve la rotaci&#243;n promedio de AccountReceivable por d&#237;as (por ejemplo, AccRecTurnover = (AccountReceivable / ventas) * 360).</p><a name="1000592427"></a><h5>Uso(s) t&#237;pico(s)</h5><p><a name="1000592428"></a>Esta relaci&#243;n mide la rotaci&#243;n de cuentas a cobrar por d&#237;as. Una relaci&#243;n m&#225;s peque&#241;a representa una rotaci&#243;n m&#225;s alta, lo que significa que las cuentas a cobrar reciben pago un poco despu&#233;s de ser incurridas. Una rotaci&#243;n m&#225;s alta es generalmente preferible sobre una rotaci&#243;n m&#225;s baja, la cual puede ser una indicaci&#243;n de cuentas dudosas.</p><a name="1000592429"></a><h5>Ejemplo(s)</h5><p><a name="1000592430"></a>Los siguientes ejemplos son aplicables a las sintaxis b&#225;sica y Crystal:</p><p><code><a name="1000592431"></a>FRAccRecTurnover(100, 600, 360)</code></p><p class="example"><a name="1000592432"></a>Devuelve 60.</p><p><code><a name="1000592433"></a>FRAccRecTurnover(200, 300, 360)</code></p><p class="example"><a name="1000592434"></a>Devuelve 24.</p><p><a name="1000685916"></a><font color="darkblue"><b>Nota:   &nbsp;&nbsp;&nbsp;</b></font>Ninguno de los argumentos de entrada pueden ser negativos; debe revisar si hay valores negativos antes de pasar los argumentos de entrada.</p>
+<a name="1000829344"></a><h5>Comentario</h5><p><a name="1000829345"></a>FRAccRecTurnover es una de las muchas herramientas para an&#225;lisis financiero que se usan para interpretar la posici&#243;n financiera de una compa&#241;&#237;a. Como en el caso de todas las relaciones, se debe usar con precauci&#243;n. Se puede usar s&#243;lo como una gu&#237;a y no como prueba firme para formar una opini&#243;n sobre el estado financiero de una compa&#241;&#237;a. </p><p><a name="1000723751"></a>Ninguna de las relaciones se puede usar exclusivamente para hacer an&#225;lisis financieros y no hay reglas fijas sobre los resultados de las relaciones. Aparte de las diferencias entre los tipos de industrias, el resultado var&#237;a entre las compa&#241;&#237;as diferentes dentro de la misma industria y dentro de per&#237;odos de cuenta diferentes. Los resultados s&#243;lo se deben usar para hacer comparaciones relativas y an&#225;lisis de tendencias, y no se deben tratar como algo absoluto.</p>
+<hr><br>
+
+<script  language="JavaScript"><!--
+
+var prev = "Functions231.html";
+var next = "Functions233.html";
+
+function setTopicID() { 
+      var number = "1000592414"; 
+      return number; 
+}
+
+// --></script>
+
+
+
+
+<SCRIPT>
+
+if (!window.parent.toc && navigator.appName == "Netscape") {
+
+   document.writeln ('<TABLE ALIGN="left" border="0" cellspacing="0" cellpadding="10">');
+   document.writeln ('<TR>');
+   document.write ('<TD ALIGN="left">');
+
+   if (prev != "crw_spTOC.hhc") {
+      document.writeln ('<A HREF="' + prev + '">');
+      document.writeln ('<IMG SRC="prevpage.gif" HEIGHT=17 BORDER=0 ALT="Página anterior"></A>');
+   } else {
+//   window.alert ('no previous page');
+   }
+
+   if (next != "crw_spIX.hhk") {
+      document.writeln ('<A HREF="' + next + '">');
+      document.writeln ('<IMG SRC="nextpage.gif" HEIGHT=17 BORDER=0 ALT="Página siguiente"></A>');
+   } else {
+//   window.alert ('no next page');
+   }
+   document.writeln ('</TD><TD ALIGN="left">');
+   document.writeln ('<A HREF="frameset.htm?TOC">');
+   document.writeln ('<IMG SRC="showtoc.gif" HEIGHT=17 BORDER=0 ALT="Haga clic para ver el contenido"></A></TD>');
+   document.writeln ('<TD ALIGN="left">');
+   document.writeln ('<A HREF="frameset.htm?IDX">');
+   document.writeln ('<IMG SRC="showix.gif" HEIGHT=17 BORDER=0 ALT="Haga clic para ver el índice"></A></TD>');
+   document.writeln ('</TD>');
+   document.writeln ('</TR>');
+   document.writeln ('</TABLE>');
+
+}
+
+</SCRIPT>
+<table align="right" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td align="right"><font size="1">Seagate Software, Inc.<br>
+    <a href="http://www.seagatesoftware.com">http://www.seagatesoftware.com</a><br>
+    Envíe sus comentarios a:<br>
+    <a href="mailto:techpubs@seagatesoftware.com">techpubs@seagatesoftware.com</a><br>
+    </font></td>
+  </tr>
+</table>
+</body>
+</html>
+
+

@@ -1,0 +1,94 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+
+<html>
+<head>
+<title>Operador Dividir</title>
+
+<link REL=STYLESHEET TYPE="text/css" HREF="seagate.css">
+
+<!--
+                 ***********************************
+                 * Seagate Software copyright 1999 *
+                 ***********************************
+
+                      Template version: 5.1
+-->
+
+
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" link="#0000FF" vlink="#0000FF" alink="#800080">
+
+
+ 
+<a name="1000024187"></a><h3 class="newpage"> Operador Dividir</h3>
+<p><a name="1000024192"></a>Sintaxis Basic y Crystal.</p><a name="1000024193"></a><h5>Uso</h5><p><code><a name="1000024194"></a>x/y</code></p><p class="example"><a name="1000024195"></a>Dividir valor <EM>x</EM> por valor <EM>y</EM>.</p><a name="1000024196"></a><h5>Examplos</h5><p><a name="1000024201"></a>Los siguientes ejemplos son aplicables a sintaxis Basic y Crystal:</p><p><code><a name="1000024202"></a>25/5</code></p><p class="example"><a name="1000024203"></a>Retorna 5</p><p><code><a name="1000024204"></a>1/3</code></p><p class="example"><a name="1000024205"></a>Retorna .333333</p><p><code><a name="1000024206"></a>{archivo.VENTAS} / {archivo.PRONOSTICO}</code></p><p class="example"><a name="1000024207"></a>Retorna .875, donde {archivo.VENTAS} = 52533, {archivo.PRONOSTICO} = 60000.</p><p><code><a name="1000024208"></a>{archivo.DIAS PARA EL VENCIMIENTO} / 5</code></p><p class="example"><a name="1000024209"></a>Retorna 22, donde {archivo.DIAS PARA EL VENCIMIENTO} = 110.</p><p><a name="1000024210"></a><font color="darkblue"><b>Nota:   &nbsp;&nbsp;&nbsp;</b></font>Si el denominador es = 0, el informe se detiene con una advertencia de divisi&#243;n por cero. Si quiere evitar este tipo de problema incluya un enunciado para manejar la situaci&#243;n. </p>
+<p><a name="1000024215"></a>El siguiente ejemplo es aplicable a sintaxis Crystal:</p><p class="code"><a name="1000024216"></a>If {archivo.PRONOSTICO} = 0 Then
+<br><a name="1000024217"></a>&nbsp;&nbsp;&nbsp;&nbsp;0
+<br><a name="1000024218"></a>Else
+<br><a name="1000024219"></a>&nbsp;&nbsp;&nbsp;&nbsp;{archivo.VENTAS} / {archivo.PRONOSTICO}
+</p><a name="1000018702"></a><h6>Temas relacionados</h6><p><a name="1000024224"></a><a href="19_introformulas41.html#317444">F&#243;rmula 13</a></p>
+<hr><br>
+
+<script  language="JavaScript"><!--
+
+var prev = "Operators5.html";
+var next = "Operators7.html";
+
+function setTopicID() { 
+      var number = "1000024187"; 
+      return number; 
+}
+
+// --></script>
+
+
+
+
+<SCRIPT>
+
+if (!window.parent.toc && navigator.appName == "Netscape") {
+
+   document.writeln ('<TABLE ALIGN="left" border="0" cellspacing="0" cellpadding="10">');
+   document.writeln ('<TR>');
+   document.write ('<TD ALIGN="left">');
+
+   if (prev != "crw_spTOC.hhc") {
+      document.writeln ('<A HREF="' + prev + '">');
+      document.writeln ('<IMG SRC="prevpage.gif" HEIGHT=17 BORDER=0 ALT="Página anterior"></A>');
+   } else {
+//   window.alert ('no previous page');
+   }
+
+   if (next != "crw_spIX.hhk") {
+      document.writeln ('<A HREF="' + next + '">');
+      document.writeln ('<IMG SRC="nextpage.gif" HEIGHT=17 BORDER=0 ALT="Página siguiente"></A>');
+   } else {
+//   window.alert ('no next page');
+   }
+   document.writeln ('</TD><TD ALIGN="left">');
+   document.writeln ('<A HREF="frameset.htm?TOC">');
+   document.writeln ('<IMG SRC="showtoc.gif" HEIGHT=17 BORDER=0 ALT="Haga clic para ver el contenido"></A></TD>');
+   document.writeln ('<TD ALIGN="left">');
+   document.writeln ('<A HREF="frameset.htm?IDX">');
+   document.writeln ('<IMG SRC="showix.gif" HEIGHT=17 BORDER=0 ALT="Haga clic para ver el índice"></A></TD>');
+   document.writeln ('</TD>');
+   document.writeln ('</TR>');
+   document.writeln ('</TABLE>');
+
+}
+
+</SCRIPT>
+<table align="right" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td align="right"><font size="1">Seagate Software, Inc.<br>
+    <a href="http://www.seagatesoftware.com">http://www.seagatesoftware.com</a><br>
+    Envíe sus comentarios a:<br>
+    <a href="mailto:techpubs@seagatesoftware.com">techpubs@seagatesoftware.com</a><br>
+    </font></td>
+  </tr>
+</table>
+</body>
+</html>
+
+

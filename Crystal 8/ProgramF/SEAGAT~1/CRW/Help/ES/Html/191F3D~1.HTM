@@ -1,0 +1,170 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+
+<html>
+<head>
+<title>F&#243;rmula 12</title>
+
+<link REL=STYLESHEET TYPE="text/css" HREF="seagate.css">
+
+<!--
+                 ***********************************
+                 * Seagate Software copyright 1999 *
+                 ***********************************
+
+                      Template version: 5.1
+-->
+
+
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" link="#0000FF" vlink="#0000FF" alink="#800080">
+
+
+ 
+<a name="317369"></a><h3 class="newpage"> F&#243;rmula 12</h3>
+<a name="317370"></a><h4>Funciones y operadores usados</h4><p><a name="317371"></a>If<nobr>-T</nobr>hen<nobr>-E</nobr>lse, Average([matriz]), Sustraer (-), Mayor que (&gt;), Minimum([matriz]), Multiplicar (*), Par&#233;ntesis ().</p><a name="317372"></a><h4>Prop&#243;sito de la f&#243;rmula</h4><p><a name="317373"></a>Un asesor tiene contratos que le pagan un porcentaje del monto que ahorra a sus clientes con un l&#237;mite al monto que puede ganar. Sus contratos le significan 25% de los ahorros mensuales hasta un m&#225;ximo de $10.000 al mes. Si este porcentaje supera los $10.000, el asesor cobra un m&#225;ximo de $10.000. Si el porcentaje es inferior a $10.000, cobra el porcentaje real. El per&#237;odo base de acuerdo al cual se calculan los ahorros es el promedio de tres meses t&#237;picos en un a&#241;o anterior.</p><a name="317374"></a><h4>F&#243;rmula</h4><PRE><a name="317375"></a>If (Average([{archivo.MES1}, {archivo.MES2}, 
+{archivo.MES3}]) -
+<a name="317376"></a>{archivo.MES ACTUAL})&gt; 0 Then
+<a name="317377"></a>Minimum([.25*((Average([{archivo.MES1}, {archivo.MES2},
+<a name="317378"></a>{archivo.MES3}) - {archivo.MES ACTUAL}]), 10000])
+<a name="317379"></a>Else
+<a name="317380"></a>0
+</PRE><a name="317381"></a><h4>Resultado</h4><p><a name="317423"></a> <Table Border="1">
+<tr><td align="left" valign="TOP"><a name="317384"></a>Promedio
+
+</td><td align="left" valign="TOP"><a name="317386"></a>Mes actual
+
+</td><td align="left" valign="TOP"><a name="317388"></a>Ahorros
+
+</td><td align="left" valign="TOP"><a name="317390"></a>25%
+
+</td><td align="left" valign="TOP"><a name="317392"></a>Monto a pagar
+
+</td></tr>
+<tr><td align="left" valign="TOP"><P><a name="317394"></a>90.000</P>
+
+
+</td><td align="left" valign="TOP"><P><a name="317396"></a>65.000</P>
+
+
+</td><td align="left" valign="TOP"><P><a name="317398"></a>25.000</P>
+
+
+</td><td align="left" valign="TOP"><P><a name="317400"></a>6250</P>
+
+
+</td><td align="left" valign="TOP"><P><a name="317402"></a>6250</P>
+
+
+</td></tr>
+<tr><td align="left" valign="TOP"><P><a name="317404"></a>120.000</P>
+
+
+</td><td align="left" valign="TOP"><P><a name="317406"></a>60.000</P>
+
+
+</td><td align="left" valign="TOP"><P><a name="317408"></a>60.000</P>
+
+
+</td><td align="left" valign="TOP"><P><a name="317410"></a>15.000</P>
+
+
+</td><td align="left" valign="TOP"><P><a name="317412"></a>10.000</P>
+
+
+</td></tr>
+<tr><td align="left" valign="TOP"><P><a name="317414"></a>75.000</P>
+
+
+</td><td align="left" valign="TOP"><P><a name="317416"></a>77.000</P>
+
+
+</td><td align="left" valign="TOP"><P><a name="317418"></a>N/D</P>
+
+
+</td><td align="left" valign="TOP"><P><a name="317420"></a>N/D</P>
+
+
+</td><td align="left" valign="TOP"><P><a name="317422"></a>0</P>
+
+
+</td></tr>
+
+</Table></p>
+<a name="317424"></a><h4>Explicaci&#243;n</h4><ul type="disc"><a name="317425"></a><li>La f&#243;rmula usa el operador If<nobr>-T</nobr>hen<nobr>-E</nobr>lse para decir: si los gastos promedio durante los tres meses especificados fue mayor al mes actual, entonces devolver un 25% de la diferencia, hasta un m&#225;ximo de $10.000. Si el gasto promedio fue igual o menor que el gasto durante el mes actual, devolver 0.
+<a name="317426"></a><li>La f&#243;rmula usa la funci&#243;n Average para calcular el gasto promedio durante {archivo.MES1}, {archivo.MES2} y {archivo.MES3} (per&#237;odo de l&#237;nea base).
+<a name="317427"></a><li>Usa el operador de sustracci&#243;n (-) para restar el gasto en el mes actual del promedio durante el per&#237;odo de l&#237;nea base, con lo que se genera la diferencia entre el mes actual y la l&#237;nea base.
+<a name="317428"></a><li>Usa el operador mayor que (&gt;) para comparar la diferencia con 0.
+<a name="317429"></a><li>Si la diferencia es mayor que 0 (realmente hubo ahorro), se cumple la parte If de la expresi&#243;n, lo que activa las consecuencias Then.
+<a name="317430"></a><li>Si se activan las consecuencias Then:
+<a name="317431"></a><li>La f&#243;rmula usa la funci&#243;n Average para calcular el gasto promedio durante {archivo.MES1}, {archivo.MES2} y {archivo.MES3} (per&#237;odo de l&#237;nea base).
+<a name="317432"></a><li>Usa el operador de sustracci&#243;n (-) para restar el gasto en el mes actual del promedio durante el per&#237;odo de l&#237;nea base.
+<a name="317433"></a><li>Usa el operador de multiplicaci&#243;n (*) para calcular el 25% de la diferencia (.25 *...).
+<a name="317434"></a><li>Usa la funci&#243;n Minimum ([matriz]) para devolver el monto menor: el 25% de la diferencia o $10.000. Usar la funci&#243;n Minimum con &#233;xito de esta forma pone un l&#237;mite al resultado del c&#225;lculo.
+<a name="317435"></a><li>Si la diferencia es igual o menor que 0 (no hubo ahorros), no se cumple la parte If de la expresi&#243;n, lo que activa la consecuencia Else.
+<a name="317436"></a><li>La consecuencia Else (Else 0) simplemente devuelve el valor 0.
+</ul><a name="317437"></a><h6>Temas relacionados</h6><p><a name="317441"></a><a href="19_introformulas28.html#316471">F&#243;rmulas en acci&#243;n</a></p>
+<hr><br>
+
+<script  language="JavaScript"><!--
+
+var prev = "19_introformulas39.html";
+var next = "19_introformulas41.html";
+
+function setTopicID() { 
+      var number = "317369"; 
+      return number; 
+}
+
+// --></script>
+
+
+
+
+<SCRIPT>
+
+if (!window.parent.toc && navigator.appName == "Netscape") {
+
+   document.writeln ('<TABLE ALIGN="left" border="0" cellspacing="0" cellpadding="10">');
+   document.writeln ('<TR>');
+   document.write ('<TD ALIGN="left">');
+
+   if (prev != "crw_spTOC.hhc") {
+      document.writeln ('<A HREF="' + prev + '">');
+      document.writeln ('<IMG SRC="prevpage.gif" HEIGHT=17 BORDER=0 ALT="Página anterior"></A>');
+   } else {
+//   window.alert ('no previous page');
+   }
+
+   if (next != "crw_spIX.hhk") {
+      document.writeln ('<A HREF="' + next + '">');
+      document.writeln ('<IMG SRC="nextpage.gif" HEIGHT=17 BORDER=0 ALT="Página siguiente"></A>');
+   } else {
+//   window.alert ('no next page');
+   }
+   document.writeln ('</TD><TD ALIGN="left">');
+   document.writeln ('<A HREF="frameset.htm?TOC">');
+   document.writeln ('<IMG SRC="showtoc.gif" HEIGHT=17 BORDER=0 ALT="Haga clic para ver el contenido"></A></TD>');
+   document.writeln ('<TD ALIGN="left">');
+   document.writeln ('<A HREF="frameset.htm?IDX">');
+   document.writeln ('<IMG SRC="showix.gif" HEIGHT=17 BORDER=0 ALT="Haga clic para ver el índice"></A></TD>');
+   document.writeln ('</TD>');
+   document.writeln ('</TR>');
+   document.writeln ('</TABLE>');
+
+}
+
+</SCRIPT>
+<table align="right" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td align="right"><font size="1">Seagate Software, Inc.<br>
+    <a href="http://www.seagatesoftware.com">http://www.seagatesoftware.com</a><br>
+    Envíe sus comentarios a:<br>
+    <a href="mailto:techpubs@seagatesoftware.com">techpubs@seagatesoftware.com</a><br>
+    </font></td>
+  </tr>
+</table>
+</body>
+</html>
+
+

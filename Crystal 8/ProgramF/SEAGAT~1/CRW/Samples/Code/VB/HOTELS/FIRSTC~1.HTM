@@ -1,0 +1,78 @@
+<HTML>
+<HEAD>
+<TITLE>Seagate Crystal Reports Sample</TITLE>
+</HEAD>
+
+<FONT SIZE=2><P><IMG SRC=".\..\..\Logo.gif" WIDTH=206 HEIGHT=43></P>
+
+<FONT FACE="Arial" SIZE=5><P ALIGN="CENTER">Seagate Crystal Reports Sample - First Class Hotels</P>
+</FONT><FONT FACE="Arial" SIZE=4><P>Overview:</P>
+</FONT><FONT FACE="Arial"><P>The sample is intended to be a small hotel reservation system for a fictional company called First Class Hotels. The sample demonstrates a number of Crystal Reports features that are new to version 8, as well as possible advanced uses for some existing features.</P>
+<P>From the main screen that displays upon starting, the user has five options:</P>
+<B><P>1. Reservations:</B> The main form in the sample, used for managing the reservations. Some features of note:</P>
+
+<UL>
+<LI>The report displayed in the window is automatically updated whenver a reservation is added, the customer name is changed, or the date range is changed. </LI>
+<LI>Double clicking on a customer name or room number in the report will bring up a form containing information about that customer or room. </LI>
+<LI>Clicking on one of the two miniature notepad icons in this window will also cause this same information report to be displayed. </LI>
+<LI>The billing report that can be displayed via double clicking the report or clicking the notepad icons only displays information between the start and end dates shown at the bottom of the reservation form.</LI></UL>
+
+<B><P>2. Rooms:</B> Allows adding/removing of hotel room numbers</P>
+
+<UL>
+<LI>Clicking on the miniature notepad icon in this window will cause the information report to be displayed. The information will be displayed for all dates that the room has been used and is not restricted by a start or end date.</LI></UL>
+
+<B><P>3. Prices:</B> Allows adding/removing of hotel room prices.</P>
+<B><P>4. Customer:</B> Allows adding/editing/removing of customers.</P>
+
+<UL>
+<LI>Clicking on the miniature notepad icon in this window will cause the information report to be displayed. The information will be displayed for all dates that the customer has stayed at the hotel and is not restricted by a start or end date.</LI></UL>
+
+<B><P>5. Exit</P>
+</B><BR>
+<P>Crystal Reports features demonstrated in Visual Basic Code:
+</FONT><FONT FACE="Arial" SIZE=2><BR>(* = new in version 8</FONT><FONT FACE="Arial">)</P>
+<B><P>Crystal Reports Viewer Object</B><DIR>
+<I>Methods:<DIR>
+
+</I>PrintOut<BR>
+Refresh<BR>
+ReportSource<BR>
+ViewReport<BR>
+</DIR>
+
+<I><P>Events:<DIR>
+</I>DblClicked<BR>
+</DIR>
+<I><P>Properties:<BR><DIR>
+</I>EventInfo.Text<BR>
+EventInfo.Type<BR>
+</DIR>
+</DIR>
+<B><P>Crystal Reports Report Object<DIR>
+</B><I>Methods:<DIR>
+</I>*AddReportVariable<BR>
+*GetReportVariable<BR>
+*SetReportVariable<BR>
+RecordSelectionFormula<BR>
+*SetUnboundFieldSource</P></DIR>
+
+<I><P>Properties:<DIR>
+
+</I>Get and Set PaperSize<BR>
+Get and Set PaperOrientation<BR>
+*Get and Set PrinterDuplex<BR>
+*Get and Set Papersource<BR>
+Database.Table().Location<BR>
+LeftMargin<BR>
+RightMargin</DIR>
+
+<I><P>Events<DIR>
+</I>*BeforeFormatPage<BR>
+*EndFormatPage<BR>
+Initialize<BR>
+*NoData<BR>
+Section_Format</DIR>
+</DIR>
+</FONT></BODY>
+</HTML>

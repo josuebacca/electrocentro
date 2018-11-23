@@ -1,0 +1,89 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+
+<html>
+<head>
+<title>Procedimiento de solicitud de informes</title>
+
+<link REL=STYLESHEET TYPE="text/css" HREF="seagate.css">
+
+<!--
+                 ***********************************
+                 * Seagate Software copyright 1999 *
+                 ***********************************
+
+                      Template version: 5.1
+-->
+
+
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" link="#0000FF" vlink="#0000FF" alink="#800080">
+
+
+ 
+<a name="166344"></a><h3 class="newpage"> Procedimiento de solicitud de informes</h3>
+<a name="169021"></a><h4>Paso 1</h4><p><a name="169485"></a>Por medio de un explorador web, un usuario se conecta a su servidor web y hace una solicitud. El explorador web utiliza un visor de informes para comunicarse con el servidor.</p><a name="169121"></a><h4>Paso 2</h4><p><a name="169138"></a>Si va a usar un servidor web Microsoft o Netscape, la solicitud es procesada utilizando ISAP o NSAPI. Si va a usar un servidor Lotus Domino u otro servidor que se ajusta al est&#225;ndar CGI, la solicitud es procesada utilizando CGI. Luego, la solicitud se env&#237;a al Web Component Server.</p><a name="169303"></a><h4>Paso 3</h4><p><a name="170209"></a>Una vez que el Web Component Server ha formado una l&#237;nea de espera y determinado el tipo de solicitud, &#233;sta se env&#237;a al servidor Page Server.</p><p><a name="170221"></a>La &#250;nica excepci&#243;n es el procesamiento de una solicitud HTML. Las im&#225;genes de un informe HTML no siguen los siguientes dos pasos, sino que van autom&#225;ticamente al paso 4.</p><a name="170292"></a><h4>Paso 3.1 y 3.2</h4><p><a name="169933"></a>El Page Server se hace cargo de la generaci&#243;n y almacenamiento del EPF en la memoria cach&#233;. Cuando finaliza, los detalles del EPF son enviados al Web Component Server.</p><a name="169322"></a><h4>Paso 4</h4><p><a name="169323"></a>Si se trata de una solicitud HTML, el Web Component Server traduce la p&#225;gina del informe a HTML. Luego, el Web Component Server env&#237;a la p&#225;gina HTML y almacena los archivos *.CRI hasta que sean solicitados.</p><a name="169156"></a><h4>Paso 5</h4><p><a name="172219"></a>El servidor web env&#237;a el informe al visor de informes apropiado, que lo muestra en el explorador del usuario.</p>
+<hr><br>
+
+<script  language="JavaScript"><!--
+
+var prev = "WebServerOverview10.html";
+var next = "WebServerOverview12.html";
+
+function setTopicID() { 
+      var number = "166344"; 
+      return number; 
+}
+
+// --></script>
+
+
+
+
+<SCRIPT>
+
+if (!window.parent.toc && navigator.appName == "Netscape") {
+
+   document.writeln ('<TABLE ALIGN="left" border="0" cellspacing="0" cellpadding="10">');
+   document.writeln ('<TR>');
+   document.write ('<TD ALIGN="left">');
+
+   if (prev != "wcmadminTOC.hhc") {
+      document.writeln ('<A HREF="' + prev + '">');
+      document.writeln ('<IMG SRC="prevpage.gif" HEIGHT=17 BORDER=0 ALT="Página anterior"></A>');
+   } else {
+//   window.alert ('no previous page');
+   }
+
+   if (next != "wcmadminIX.hhk") {
+      document.writeln ('<A HREF="' + next + '">');
+      document.writeln ('<IMG SRC="nextpage.gif" HEIGHT=17 BORDER=0 ALT="Página siguiente"></A>');
+   } else {
+//   window.alert ('no next page');
+   }
+   document.writeln ('</TD><TD ALIGN="left">');
+   document.writeln ('<A HREF="frameset.htm?TOC">');
+   document.writeln ('<IMG SRC="showtoc.gif" HEIGHT=17 BORDER=0 ALT="Haga clic para ver el contenido"></A></TD>');
+   document.writeln ('<TD ALIGN="left">');
+   document.writeln ('<A HREF="frameset.htm?IDX">');
+   document.writeln ('<IMG SRC="showix.gif" HEIGHT=17 BORDER=0 ALT="Haga clic para ver el índice"></A></TD>');
+   document.writeln ('</TD>');
+   document.writeln ('</TR>');
+   document.writeln ('</TABLE>');
+
+}
+
+</SCRIPT>
+<table align="right" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td align="right"><font size="1">Seagate Software, Inc.<br>
+    <a href="http://www.seagatesoftware.com">http://www.seagatesoftware.com</a><br>
+    Envíe sus comentarios a:<br>
+    <a href="mailto:techpubs@seagatesoftware.com">techpubs@seagatesoftware.com</a><br>
+    </font></td>
+  </tr>
+</table>
+</body>
+</html>
+
+

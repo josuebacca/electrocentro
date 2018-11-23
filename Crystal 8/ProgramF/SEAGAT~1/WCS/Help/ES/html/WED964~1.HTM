@@ -1,0 +1,91 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+
+<html>
+<head>
+<title>Web Component Server</title>
+
+<link REL=STYLESHEET TYPE="text/css" HREF="seagate.css">
+
+<!--
+                 ***********************************
+                 * Seagate Software copyright 1999 *
+                 ***********************************
+
+                      Template version: 5.1
+-->
+
+
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" link="#0000FF" vlink="#0000FF" alink="#800080">
+
+
+ 
+<a name="171732"></a><h3 class="newpage"> Web Component Server</h3>
+<p><a name="171733"></a>Cuando se instala el Web Component Server, se crean dos nuevas extensiones de archivo en su sistema: .rpt y .cri. Cuando el servidor web recibe una solicitud para uno de estos tipos de archivo, dirige la solicitud a uno de los conectores (wcsinsapi.dll o wcscgi.exe) del Web Component Server.</p><p><a name="171058"></a>El conector wcsinsapi.dll funciona con ISAPI y NSAPI. Estas extensiones se utilizan con los servidores web Microsoft y Netscape.</p><p><a name="171742"></a>Si no va a usar un servidor web Microsoft o Netscape, el Web Component Server utiliza el archivo wcscgi.exe.</p><a name="171743"></a><h4>ISAPI y NSAPI</h4><p><a name="171744"></a>Utilizando las extensiones API expuestas por los servidores web Microsoft y Netscape, wcsinsapi.dll produce un sistema m&#225;s r&#225;pido y robusto para la entrega de informes al servidor web.</p><p><a name="167388"></a>La extensi&#243;n ISAPI funciona con la versi&#243;n 2.0 y posteriores de Microsoft Internet Information Server (IIS), as&#237; como con Personal Web Server para las estaciones de trabajo de Windows NT.</p><p><a name="167389"></a>La interfaz de programaci&#243;n NSAPI est&#225; disponible en todos los servidores web Netscape.</p><a name="167378"></a><h4>CGI</h4><p><a name="172765"></a>Si va a usar el est&#225;ndar CGI, el Web Component Server utiliza el archivo wcscgi.exe.</p><a name="172768"></a><h4>Formato de informe HTML</h4><p><a name="170656"></a>Cuando un informe se genera en HTML, las im&#225;genes gr&#225;ficas, mapas, gr&#225;ficos y objetos OLE se reproducen como archivos de imagen de Crystal Image (.CRI) y se almacenan en el Web Component Server. Cuando el Web Component Server detecta una imagen Crystal en el informe HTML, el servidor traduce la imagen a un formato que puede visualizarse en los exploradores (como el formato JPEG) y env&#237;a la imagen de vuelta al servidor web para su distribuci&#243;n.</p><p><a name="170657"></a><font color="darkblue"><b>Nota:   &nbsp;&nbsp;&nbsp;</b></font>Si va a usar un visor de informes para complemento de ActiveX, Java o Netscape, el formato archivo de p&#225;ginas encapsuladas (EPF) se utilizar&#225; en lugar del formato de archivo de im&#225;genes Crystal Image.</p>
+<a name="165978"></a><h4>Web Component Server en relaci&#243;n con Active Server Pages</h4><p><a name="165982"></a>Como alternativa al uso del Web Component Server, puede usar Active Server Pages. El m&#233;todo a usar depende de si usted es un administrador web o un programador web.</p><p><a name="169644"></a>Si es responsable del desarrollo de su sitio web (es decir, si escribe c&#243;digos y aplicaciones para personalizar la funcionalidad de su sitio), puede ser una buena idea usar el RDC Automation Server y Active Server Pages. El RDC Automation Server permite controlar completamente la forma en que los informes son presentados y entregados a un cliente. Durante la ejecuci&#243;n, dispone de poderosas funciones, tales como el cambio de la fuente de datos usada o la manipulaci&#243;n de f&#243;rmulas en informes existentes. Sin embargo, el RDC Automation Server requiere una programaci&#243;n considerable en el entorno de Active Server Pages. Es necesario estar familiarizado con un lenguaje de lista de comandos como VBScript o JScript. </p><p><a name="172923"></a><font color="darkblue"><b>Nota:   &nbsp;&nbsp;&nbsp;</b></font>Si no va a usar un servidor web Microsoft ni otro servidor que se ajuste al est&#225;ndar ISAPI, ni el RDC Automation Server ni Active Server Pages estar&#225;n disponibles como medio de distribuci&#243;n de informes desde un sitio web.</p>
+<p><a name="167250"></a>En cambio, el Web Component Server necesita menos tiempo para configurarse y no requiere ninguna programaci&#243;n o lista de comandos. Simplemente almacena los informes en un directorio accesible para su sitio web y luego crea v&#237;nculos de estilo HTML est&#225;ndar a los informes contenidos en sus p&#225;ginas web. Esto le permite hacer algunos cambios ejecutables en los informes, tales como selecci&#243;n de registros y cambio de par&#225;metros almacenados. Sin embargo, estas funciones est&#225;n limitadas tanto en alcance como en funcionalidad.</p><p><a name="170685"></a>Para m&#225;s informaci&#243;n acerca del uso de Active Server Pages, consulte la secci&#243;n RDC Automation Server en el manual de referencia t&#233;cnica.</p>
+<hr><br>
+
+<script  language="JavaScript"><!--
+
+var prev = "WebServerOverview13.html";
+var next = "WebServerOverview15.html";
+
+function setTopicID() { 
+      var number = "171732"; 
+      return number; 
+}
+
+// --></script>
+
+
+
+
+<SCRIPT>
+
+if (!window.parent.toc && navigator.appName == "Netscape") {
+
+   document.writeln ('<TABLE ALIGN="left" border="0" cellspacing="0" cellpadding="10">');
+   document.writeln ('<TR>');
+   document.write ('<TD ALIGN="left">');
+
+   if (prev != "wcmadminTOC.hhc") {
+      document.writeln ('<A HREF="' + prev + '">');
+      document.writeln ('<IMG SRC="prevpage.gif" HEIGHT=17 BORDER=0 ALT="Página anterior"></A>');
+   } else {
+//   window.alert ('no previous page');
+   }
+
+   if (next != "wcmadminIX.hhk") {
+      document.writeln ('<A HREF="' + next + '">');
+      document.writeln ('<IMG SRC="nextpage.gif" HEIGHT=17 BORDER=0 ALT="Página siguiente"></A>');
+   } else {
+//   window.alert ('no next page');
+   }
+   document.writeln ('</TD><TD ALIGN="left">');
+   document.writeln ('<A HREF="frameset.htm?TOC">');
+   document.writeln ('<IMG SRC="showtoc.gif" HEIGHT=17 BORDER=0 ALT="Haga clic para ver el contenido"></A></TD>');
+   document.writeln ('<TD ALIGN="left">');
+   document.writeln ('<A HREF="frameset.htm?IDX">');
+   document.writeln ('<IMG SRC="showix.gif" HEIGHT=17 BORDER=0 ALT="Haga clic para ver el índice"></A></TD>');
+   document.writeln ('</TD>');
+   document.writeln ('</TR>');
+   document.writeln ('</TABLE>');
+
+}
+
+</SCRIPT>
+<table align="right" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td align="right"><font size="1">Seagate Software, Inc.<br>
+    <a href="http://www.seagatesoftware.com">http://www.seagatesoftware.com</a><br>
+    Envíe sus comentarios a:<br>
+    <a href="mailto:techpubs@seagatesoftware.com">techpubs@seagatesoftware.com</a><br>
+    </font></td>
+  </tr>
+</table>
+</body>
+</html>
+
+

@@ -1,0 +1,127 @@
+VERSION 5.00
+Begin {BD4B4E61-F7B8-11D0-964D-00A0C9273C2A} rptCustomer 
+   ClientHeight    =   10020
+   ClientLeft      =   0
+   ClientTop       =   0
+   ClientWidth     =   11265
+   OleObjectBlob   =   "rptCustomerReport.dsx":0000
+End
+Attribute VB_Name = "rptCustomer"
+Attribute VB_GlobalNameSpace = False
+Attribute VB_Creatable = False
+Attribute VB_PredeclaredId = True
+Attribute VB_Exposed = False
+' *************************************************************
+' Purpose: Some extra code enhancements to directly manipulate
+'          and extract data from the report before and while it
+'          is being formatted
+
+Option Explicit
+
+Public TotalBill As Currency                    ' The total bill owed by the customer
+Public DaysPaid As Long                         ' The number of days that the customer has already paid for
+Public DaysOwed As Long                         ' The number of days that the customer has not paid for
+Public PagesCount As Long                       ' The number of pages in the report
+Public IsNoData As Boolean                  ' The externally available indicator of no available data in the report
+
+' *************************************************************
+' When the report is initially loaded, after initializing some variables,
+' two possibilities can occur:
+' 1. If the report is intended to display all information related to a customer,
+'    shrink FieldCustomerName and LabelName to an effectively invisible width.
+' 2. If the report is intended to display all information related to a room,
+'    shrink FieldRoom and LabelRoom to an effectively invisible width.  Also, move
+'    the Customer names and CustomerName label to the location previously occupied by
+'    the Room number.
+' We can't suppress Room number or customer, since the unbound field "fieldReportTitle"
+' takes on the value of whatever is in Room number or customer, depending on the type
+' of report.
+'
+Private Sub Report_Initialize()
+    ' Add two report variables to the report that record the number of days that the customer(s)
+    ' has paid and the number of days that have not been paid for.
+    AddReportVariable crRVNumber, "DaysPaid"
+    AddReportVariable crRVNumber, "DaysOwed"
+    
+    ' Do the visual tricks.
+    If ReportChoice = vbGroupName Then
+        FieldCustomerName.Width = 100
+        LabelName.Width = 100
+    ElseIf ReportChoice = vbGroupRoom Then
+        FieldCustomerName.Left = FieldRoom.Left
+        LabelName.Left = LabelRoom.Left
+        FieldRoom.Width = 100
+        FieldRoom.Left = FieldRoom.Left - 300     ' Fieldroom was still slightly visible,
+                                                  ' therefore move it out of the way a bit.
+        LabelRoom.Width = 100
+    End If
+End Sub
+
+' *************************************************************
+' This event allows the programmer to change properties in the
+' report specific to a particular page, or to control the report
+' formatting information as desired before the page is formatted.
+' Here, I am using BeforeFormatPage to reset some report variables if
+' the pagenumber is 1.
+'
+Private Sub Report_BeforeFormatPage(ByVal PageNumber As Long)
+    If PageNumber = 1 Then
+        ' ** .SetReportVariableValue can only be used while report formatting
+        ' is active. Therefore, reset the variables now.  Be sure to pass in
+        ' the same variable type (in this case a number) as you declared the variable
+        SetReportVariableValue "DaysPaid", 0
+        SetReportVariableValue "DaysOwed", 0
+    End If
+End Sub
+
+' *************************************************************
+' If the report has no data, cancel the report and prevent
+' all the other events in the form from occurring (and causing errors)
+'
+Private Sub Report_NoData(pCancel As Boolean)
+    If IsNoData = True Then Exit Sub        ' We've already seen this warning message
+    pCancel = True
+    IsNoData = True
+    MsgBox "There is no customer and room data that match your criteria.", vbExclamation, "No Data"
+End Sub
+
+' *************************************************************
+' Each time the details section is formatted, we have an opportunity
+' to glean some extra useful information from the report.
+'
+Private Sub SectionDetails_Format(ByVal pFormattingInfo As Object)
+    Dim i As Long
+    Dim numDays As Integer
+       
+    ' If the report is printing, set the label in frmBilling to update the user on the
+    ' current number of records printed.
+    i = PrintingStatus.NumberOfRecordPrinted
+    If i > 0 Then
+        lblPrinting.Caption = "Records Printed: " & i
+        DoEvents
+    End If
+    
+    ' FieldPaidRoom is a formula in the report that is set to zero if the room is paid for,
+    ' but is set to the room price if the room has not been paid for.  We use this information
+    ' to track how many rooms have and have not been paid for.
+    If FieldPaidRoom.Value = 0 Then
+        numDays = GetReportVariableValue("DaysPaid") + 1
+        SetReportVariableValue "DaysPaid", numDays
+    Else
+        numDays = GetReportVariableValue("DaysOwed") + 1
+        SetReportVariableValue "DaysOwed", numDays
+    End If
+End Sub
+
+' *************************************************************
+' When the report is formatting, return the total cost of the rooms
+' as well as the number of pages in the report.
+'
+Private Sub SectionReportFooter_Format(ByVal pFormattingInfo As Object)
+     ' ** .GetReportVariableValue can only be used while report formatting is active
+    DaysPaid = GetReportVariableValue("DaysPaid")
+    DaysOwed = GetReportVariableValue("DaysOwed")
+   
+    TotalBill = FieldBill.Value
+    PagesCount = FieldTotalPages.Value
+End Sub

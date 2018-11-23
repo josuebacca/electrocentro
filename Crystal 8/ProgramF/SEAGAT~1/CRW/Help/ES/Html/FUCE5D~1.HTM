@@ -1,0 +1,95 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+
+<html>
+<head>
+<title>ToWords (x), ToWords (x, #lugares)</title>
+
+<link REL=STYLESHEET TYPE="text/css" HREF="seagate.css">
+
+<!--
+                 ***********************************
+                 * Seagate Software copyright 1999 *
+                 ***********************************
+
+                      Template version: 5.1
+-->
+
+
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" link="#0000FF" vlink="#0000FF" alink="#800080">
+
+
+ 
+<a name="1000853326"></a><h3 class="newpage"> ToWords (x), ToWords (x, #lugares)</h3>
+<p><a name="1000853327"></a>Sintaxis b&#225;sica y Crystal.</p><a name="1000853328"></a><h5>Argumentos</h5><ul type="disc"><a name="1000853329"></a><li><EM>x</EM> es un n&#250;mero fraccionario a ser convertido a palabras.
+<a name="1000853330"></a><li>#lugares es un n&#250;mero entero que indica el n&#250;mero de lugares decimales a ser convertidos. (Este argumento es opcional.)
+</ul><a name="1000853331"></a><h5>Devuelve </h5><p><a name="1000853332"></a>Una cadena de texto.</p><a name="1000853333"></a><h5>Acci&#243;n </h5><p><a name="1000853334"></a>Puede utilizar esta funci&#243;n para convertir un valor de campo num&#233;rico o valor monetario o el resultado de una operaci&#243;n num&#233;rica a palabras para que pueda ser usado como texto. La habilidad de ajustar el n&#250;mero de lugares decimales puede ser &#250;til cuando el n&#250;mero es el resultado de una operaci&#243;n que puede producir m&#225;s lugares decimales de los que desea.</p><a name="1000853335"></a><h5>Uso(s) t&#237;pico(s) </h5><p><a name="1000853336"></a>Puede utilizar esta funci&#243;n para escribir con letra la cantidad para cada cheque si est&#225; usando cheques electr&#243;nicos. </p><a name="1000853337"></a><h5>Ejemplo(s) </h5><p><a name="1000853338"></a>Los siguientes ejemplos son aplicables a las sintaxis b&#225;sica y Crystal:</p><p><code><a name="1000853339"></a>ToWords(12345) </code></p><p class="example"><a name="1000853340"></a>Devuelve doce mil trescientos cuarenta y cinco y xx/100.</p><p><code><a name="1000853341"></a>ToWords(12345.6749,2) </code></p><p class="example"><a name="1000853342"></a>Devuelve doce mil trescientos cuarenta y cinco y 67/100.</p><p><code><a name="1000853343"></a>ToWords(12345.4999,0) </code></p><p class="example"><a name="1000853344"></a>Devuelve doce mil trescientos cuarenta y cinco.</p><p><code><a name="1000853345"></a>ToWords(12345.5000,0) </code></p><p class="example"><a name="1000853346"></a>Devuelve doce mil trescientos cuarenta y seis.</p><p><code><a name="1000853347"></a>ToWords(-12345) </code></p><p class="example"><a name="1000853348"></a>Devuelve negativos doce mil trescientos cuarenta y cinco y xx/100.</p><p><code><a name="1000853349"></a>ToWords(12.3499) </code></p><p class="example"><a name="1000853350"></a>Devuelve doce y 35/100.</p><p><code><a name="1000853351"></a>ToWords({pedidos.MONTO DEL PEDIDO}) </code></p><p class="example"><a name="1000853352"></a>Devuelve dos mil diecis&#233;is y 84/100 cuando Monto = 2016.84.</p><p><code><a name="1000853353"></a>ToWords((({archivo.CANT1} + {archivo.CANT2} + {archivo.CANT3}) * {archivo.PRECIO}) * 1.075) </code></p><p class="example"><a name="1000853354"></a>Devuelve  ciento dos y 13/100.</p><p><code><a name="1000853355"></a>ToWords((({archivo.CANT1} + {archivo.CANT2} + {archivo.CANT3}) * {archivo.PRECIO}) * 1.075,0)</code></p><p class="example"><a name="1000853356"></a>ciento dos donde CANT1 = 1, Cant2 = 82, CANT3 = 12, y Pricio = 1.00 (suma las tres cantidades, las multiplica por el precio y agrega un 7.5% de impuestos). En este caso la respuesta num&#233;rica es 102.125, la cual es redondeada a 102.13 (los dos lugares decimales est&#225;ndar) antes de escribirlo con palabras.</p><a name="1000853357"></a><h5>Comentario(s)  </h5><ul type="disc"><a name="1000853358"></a><li>La funci&#243;n trata al n&#250;mero como un todo, en vez de como una serie de n&#250;meros individuales. Esto es, 123 es tratado como el n&#250;mero ciento veintitr&#233;s en vez de los d&#237;gitos individuales uno, dos y tres. 
+<a name="1000853359"></a><li>Los n&#250;meros negativos empiezan con la palabra "negativo." 
+<a name="1000853360"></a><li>Los valores de campo monetario y los valores de campo num&#233;rico son tratados de la misma forma y produce resultados id&#233;nticos.
+<a name="1000853361"></a><li>Como el valor escrito con letra es mucho mayor que el valor num&#233;rico, necesitar&#225; incrementar el tama&#241;o del cuadro de campo para acomodar la longitud del nuevo campo.
+</ul>
+<hr><br>
+
+<script  language="JavaScript"><!--
+
+var prev = "Functions85.html";
+var next = "Functions87.html";
+
+function setTopicID() { 
+      var number = "1000853326"; 
+      return number; 
+}
+
+// --></script>
+
+
+
+
+<SCRIPT>
+
+if (!window.parent.toc && navigator.appName == "Netscape") {
+
+   document.writeln ('<TABLE ALIGN="left" border="0" cellspacing="0" cellpadding="10">');
+   document.writeln ('<TR>');
+   document.write ('<TD ALIGN="left">');
+
+   if (prev != "crw_spTOC.hhc") {
+      document.writeln ('<A HREF="' + prev + '">');
+      document.writeln ('<IMG SRC="prevpage.gif" HEIGHT=17 BORDER=0 ALT="Página anterior"></A>');
+   } else {
+//   window.alert ('no previous page');
+   }
+
+   if (next != "crw_spIX.hhk") {
+      document.writeln ('<A HREF="' + next + '">');
+      document.writeln ('<IMG SRC="nextpage.gif" HEIGHT=17 BORDER=0 ALT="Página siguiente"></A>');
+   } else {
+//   window.alert ('no next page');
+   }
+   document.writeln ('</TD><TD ALIGN="left">');
+   document.writeln ('<A HREF="frameset.htm?TOC">');
+   document.writeln ('<IMG SRC="showtoc.gif" HEIGHT=17 BORDER=0 ALT="Haga clic para ver el contenido"></A></TD>');
+   document.writeln ('<TD ALIGN="left">');
+   document.writeln ('<A HREF="frameset.htm?IDX">');
+   document.writeln ('<IMG SRC="showix.gif" HEIGHT=17 BORDER=0 ALT="Haga clic para ver el índice"></A></TD>');
+   document.writeln ('</TD>');
+   document.writeln ('</TR>');
+   document.writeln ('</TABLE>');
+
+}
+
+</SCRIPT>
+<table align="right" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td align="right"><font size="1">Seagate Software, Inc.<br>
+    <a href="http://www.seagatesoftware.com">http://www.seagatesoftware.com</a><br>
+    Envíe sus comentarios a:<br>
+    <a href="mailto:techpubs@seagatesoftware.com">techpubs@seagatesoftware.com</a><br>
+    </font></td>
+  </tr>
+</table>
+</body>
+</html>
+
+

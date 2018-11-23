@@ -1,0 +1,151 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+
+<html>
+<head>
+<title>F&#243;rmula 14</title>
+
+<link REL=STYLESHEET TYPE="text/css" HREF="seagate.css">
+
+<!--
+                 ***********************************
+                 * Seagate Software copyright 1999 *
+                 ***********************************
+
+                      Template version: 5.1
+-->
+
+
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" link="#0000FF" vlink="#0000FF" alink="#800080">
+
+
+ 
+<a name="317486"></a><h3 class="newpage"> F&#243;rmula 14</h3>
+<a name="317487"></a><h4>Funciones y operadores usados</h4><p><a name="317488"></a>If<nobr>-T</nobr>hen<nobr>-E</nobr>lse, Length, TrimLeft, Menor o igual que (&lt;=), Par&#233;ntesis ().</p><a name="317489"></a><h4>Prop&#243;sito de la f&#243;rmula</h4><p><a name="317490"></a>Cinco a&#241;os y medio antes, una compa&#241;&#237;a hab&#237;a cambiado de una garant&#237;a de por vida para sus productos a una garant&#237;a de cinco a&#241;os. Los primeros productos que se hab&#237;an fabricado con la garant&#237;a m&#225;s reducida ahora ya no ten&#237;an garant&#237;a, pero el departamento de reparaciones se demor&#243; en adaptarse. Sigui&#243; reparando sin costo todos los productos, como si estuviesen cubiertos por la garant&#237;a de por vida original.</p><p><a name="317491"></a>Todos los productos fabricados bajo la nueva garant&#237;a m&#225;s reducida ten&#237;an n&#250;meros de serie de ocho caracteres en lugar de n&#250;meros de serie de cinco, seis o siete caracteres que se hab&#237;an emitido para los productos con garant&#237;a de por vida.</p><p><a name="317492"></a>Para comenzar a controlar la situaci&#243;n, la gerencia ha solicitado una columna en su informe de reparaciones que identifique los productos reparados bajo garant&#237;a de por vida o garant&#237;a de cinco a&#241;os.</p><a name="317493"></a><h4>F&#243;rmula</h4><PRE><a name="317494"></a>If Length(TrimLeft({archivo.N&#186; SERIE))&lt;= 7 Then <br>
+&nbsp;&nbsp;&nbsp;&nbsp;"Garant&#237;a de por vida" <br>
+Else <br>
+&nbsp;&nbsp;&nbsp;&nbsp;"5 a&#241;os de garant&#237;a"
+</PRE><a name="317495"></a><h4>Resultado</h4><p><a name="317527"></a> <Table Border="1">
+<tr><td align="left" valign="TOP"><a name="317498"></a>N&#186; de serie
+
+</td><td align="left" valign="TOP"><a name="317500"></a>N&#186; de caracteres
+
+</td><td align="left" valign="TOP"><a name="317502"></a>Indicador
+
+</td></tr>
+<tr><td align="left" valign="TOP"><P><a name="317504"></a>BP10001</P>
+
+
+</td><td align="left" valign="TOP"><P><a name="317506"></a>7</P>
+
+
+</td><td align="left" valign="TOP"><P><a name="317508"></a>"Garant&#237;a de por vida"</P>
+
+
+</td></tr>
+<tr><td align="left" valign="TOP"><P><a name="317510"></a>BP1000</P>
+
+
+</td><td align="left" valign="TOP"><P><a name="317512"></a>6</P>
+
+
+</td><td align="left" valign="TOP"><P><a name="317514"></a>"Garant&#237;a de por vida"</P>
+
+
+</td></tr>
+<tr><td align="left" valign="TOP"><P><a name="317516"></a>BP999</P>
+
+
+</td><td align="left" valign="TOP"><P><a name="317518"></a>5</P>
+
+
+</td><td align="left" valign="TOP"><P><a name="317520"></a>"Garant&#237;a de por vida"</P>
+
+
+</td></tr>
+<tr><td align="left" valign="TOP"><P><a name="317522"></a>BP100001</P>
+
+
+</td><td align="left" valign="TOP"><P><a name="317524"></a>8</P>
+
+
+</td><td align="left" valign="TOP"><P><a name="317526"></a>"5 a&#241;os de garant&#237;a"</P>
+
+
+</td></tr>
+
+</Table></p>
+<a name="317528"></a><h4>Explicaci&#243;n</h4><ul type="disc"><a name="317529"></a><li>La f&#243;rmula usa el operador If<nobr>-T</nobr>hen<nobr>-E</nobr>lse para decir: "Si el n&#250;mero de serie tiene 7 caracteres o menos, entonces (Then), imprimir "Garant&#237;a de por vida"; de lo contrario (Else) imprimir "5 a&#241;os de garant&#237;a".
+<a name="317530"></a><li>TrimLeft({archivo.N&#186; SERIE}) quita todos los espacios en blanco almacenados a la izquierda del n&#250;mero de serie real en el campo justificado a la derecha {archivo.N&#186; SERIE}. La f&#243;rmula usa TrimLeft para eliminar espacios porque la funci&#243;n Length cuenta los espacios como caracteres si est&#225;n presentes.
+<a name="317531"></a><li>La funci&#243;n Length cuenta los caracteres en el n&#250;mero de serie real.
+<a name="317532"></a><li>La f&#243;rmula usa el operador menor o igual que (&lt;=) para garantizar que el n&#250;mero de serie tiene 7 caracteres de longitud (o menos).
+<a name="317533"></a><li>Si el n&#250;mero de serie es menor o igual a 7 caracteres, se cumple la parte If de la expresi&#243;n, con lo que se activa la consecuencia Then.
+<a name="317534"></a><li>Si se cumple la parte If de la expresi&#243;n, la f&#243;rmula imprime la cadena de texto "Garant&#237;a de por vida".
+<a name="317535"></a><li>Si el n&#250;mero de serie es mayor que 7 caracteres, no se cumple la parte If de la expresi&#243;n, con lo que se activa la consecuencia Else.
+<a name="317536"></a><li>Si no se cumple la parte If de la expresi&#243;n, la f&#243;rmula imprime la cadena de texto "5 a&#241;os de garant&#237;a".
+</ul><a name="317537"></a><h6>Temas relacionados</h6><p><a name="317541"></a><a href="19_introformulas28.html#316471">F&#243;rmulas en acci&#243;n</a></p>
+<hr><br>
+
+<script  language="JavaScript"><!--
+
+var prev = "19_introformulas41.html";
+var next = "19_introformulas43.html";
+
+function setTopicID() { 
+      var number = "317486"; 
+      return number; 
+}
+
+// --></script>
+
+
+
+
+<SCRIPT>
+
+if (!window.parent.toc && navigator.appName == "Netscape") {
+
+   document.writeln ('<TABLE ALIGN="left" border="0" cellspacing="0" cellpadding="10">');
+   document.writeln ('<TR>');
+   document.write ('<TD ALIGN="left">');
+
+   if (prev != "crw_spTOC.hhc") {
+      document.writeln ('<A HREF="' + prev + '">');
+      document.writeln ('<IMG SRC="prevpage.gif" HEIGHT=17 BORDER=0 ALT="Página anterior"></A>');
+   } else {
+//   window.alert ('no previous page');
+   }
+
+   if (next != "crw_spIX.hhk") {
+      document.writeln ('<A HREF="' + next + '">');
+      document.writeln ('<IMG SRC="nextpage.gif" HEIGHT=17 BORDER=0 ALT="Página siguiente"></A>');
+   } else {
+//   window.alert ('no next page');
+   }
+   document.writeln ('</TD><TD ALIGN="left">');
+   document.writeln ('<A HREF="frameset.htm?TOC">');
+   document.writeln ('<IMG SRC="showtoc.gif" HEIGHT=17 BORDER=0 ALT="Haga clic para ver el contenido"></A></TD>');
+   document.writeln ('<TD ALIGN="left">');
+   document.writeln ('<A HREF="frameset.htm?IDX">');
+   document.writeln ('<IMG SRC="showix.gif" HEIGHT=17 BORDER=0 ALT="Haga clic para ver el índice"></A></TD>');
+   document.writeln ('</TD>');
+   document.writeln ('</TR>');
+   document.writeln ('</TABLE>');
+
+}
+
+</SCRIPT>
+<table align="right" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td align="right"><font size="1">Seagate Software, Inc.<br>
+    <a href="http://www.seagatesoftware.com">http://www.seagatesoftware.com</a><br>
+    Envíe sus comentarios a:<br>
+    <a href="mailto:techpubs@seagatesoftware.com">techpubs@seagatesoftware.com</a><br>
+    </font></td>
+  </tr>
+</table>
+</body>
+</html>
+
+

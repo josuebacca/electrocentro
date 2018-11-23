@@ -1,0 +1,106 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+
+<html>
+<head>
+<title>Crear totales acumulados de grupos</title>
+
+<link REL=STYLESHEET TYPE="text/css" HREF="seagate.css">
+
+<!--
+                 ***********************************
+                 * Seagate Software copyright 1999 *
+                 ***********************************
+
+                      Template version: 5.1
+-->
+
+
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" link="#0000FF" vlink="#0000FF" alink="#800080">
+
+
+ 
+<a name="32880"></a><h3 class="newpage"> Crear totales acumulados de grupos</h3>
+<p><a name="32881"></a>Otro uso com&#250;n de totales acumulados es llevar la cuenta de los elementos en un grupo. El total acumulado comienza con el primer elemento en el grupo y termina con el &#250;ltimo. Despu&#233;s comienza nuevamente con el siguiente grupo; luego el siguiente y as&#237; sucesivamente.</p><p><a name="32882"></a>En este ejemplo, usted va a crear un informe que:</p><ul type="disc"><a name="32883"></a><li>mantiene un total acumulado de pedidos de clientes,
+<a name="32884"></a><li>agrupa pedidos de clientes y restablece el total acumulado para cada grupo, y
+<a name="35557"></a><li>muestra el subtotal por cada pedido (el &#250;ltimo total acumulado para ese pedido).
+</ul><a name="32886"></a><h6>Para crear un total acumulado para un grupo</h6><ol>
+<a name="38993"></a><li value="1&nbsp;&nbsp;&nbsp;&nbsp;">Comience un informe usando los datos de muestra,<strong> Xtreme_es.mdb,</strong> que se encuentra en la carpeta <kbd>File Data Sources </kbd>del cuadro de di&#225;logo Explorador de datos. Vincule las tablas Cliente y Pedidos como lo hizo en el ejemplo anterior y coloque los siguientes campos de izquierda a derecha en la secci&#243;n Detalles:
+<a name="39031"></a>{cliente.NOMBRE DEL CLIENTE}<br>{pedidos.ID DEL PEDIDO}<br>{pedidos.MONTO DEL PEDIDO}<br><a name="39032"></a><li value="2&nbsp;&nbsp;&nbsp;&nbsp;">En el men&#250; Insertar, haga clic en Grupo y agrupe seg&#250;n {cliente.NOMBRE DEL CLIENTE}.
+<a name="39033"></a><li value="3&nbsp;&nbsp;&nbsp;&nbsp;">Elija <strong>Campo de total acumulado</strong> del men&#250; <strong>Insertar</strong>.
+<p class="indent"><a name="32891"></a>El cuadro de di&#225;logo Explorador de Campos aparecer&#225; en su pantalla.</p><a name="32892"></a><li value="4&nbsp;&nbsp;&nbsp;&nbsp;">Haga doble clic en <strong>Campo de total acumulado.</strong>
+<p class="indent"><a name="39060"></a>El cuadro de di&#225;logo Crear Campo de Total Acumulado aparecer&#225; en su pantalla.</p><a name="32893"></a><li value="5&nbsp;&nbsp;&nbsp;&nbsp;">Introduzca el nombre "GroupRunningTotal" (Agrupar total acumulado) en el cuadro de texto <strong>Nombre del Total acumulado</strong>.
+<a name="32894"></a><li value="6&nbsp;&nbsp;&nbsp;&nbsp;">Seleccione {pedidos.MONTO DEL PEDIDO} del cuadro de lista <strong>Campos y Tablas disponibles</strong> y use el primer bot&#243;n de flecha para introducir ese campo en el cuadro <kbd>Campo para resumir</kbd><strong>.</strong>
+<a name="32895"></a><li value="7&nbsp;&nbsp;&nbsp;&nbsp;">Seleccione <strong>suma</strong> de la lista desplegable <strong>Tipo de resumen</strong>.
+<a name="32896"></a><li value="8&nbsp;&nbsp;&nbsp;&nbsp;">En la secci&#243;n <strong>Evaluar</strong> del cuadro de di&#225;logo, haga clic en la opci&#243;n <strong>Para cada registro.</strong>
+<a name="32897"></a><li value="9&nbsp;&nbsp;&nbsp;&nbsp;">En la secci&#243;n <strong>Restablecer</strong>, haga clic en <strong>Al cambiar de grupo</strong> y acepte el nombre predeterminado del grupo
+<a name="40218"></a><li value="10&nbsp;&nbsp;&nbsp;&nbsp;">Haga clic en <strong>Aceptar</strong> para guardar el campo de total acumulado.
+<p class="indent"><a name="32899"></a>El programa vuelve al cuadro de di&#225;logo Explorador de Campos.</p><a name="32900"></a><li value="11&nbsp;&nbsp;&nbsp;&nbsp;">Inserte el campo de total acumulado en la secci&#243;n Detalles del informe, justamente a la derecha de {pedidos.MONTO DEL PEDIDO}.
+</ol>
+<p><a name="33057"></a><font color="darkblue"><b>Nota:   &nbsp;&nbsp;&nbsp;</b></font>Si desea ver un total general de cada grupo, coloque el campo de total acumulado en la secci&#243;n Pie de grupo de su informe.</p>
+
+<hr><br>
+
+<script  language="JavaScript"><!--
+
+var prev = "09_runtotal4.html";
+var next = "09_runtotal6.html";
+
+function setTopicID() { 
+      var number = "32880"; 
+      return number; 
+}
+
+// --></script>
+
+
+
+
+<SCRIPT>
+
+if (!window.parent.toc && navigator.appName == "Netscape") {
+
+   document.writeln ('<TABLE ALIGN="left" border="0" cellspacing="0" cellpadding="10">');
+   document.writeln ('<TR>');
+   document.write ('<TD ALIGN="left">');
+
+   if (prev != "crw_spTOC.hhc") {
+      document.writeln ('<A HREF="' + prev + '">');
+      document.writeln ('<IMG SRC="prevpage.gif" HEIGHT=17 BORDER=0 ALT="Página anterior"></A>');
+   } else {
+//   window.alert ('no previous page');
+   }
+
+   if (next != "crw_spIX.hhk") {
+      document.writeln ('<A HREF="' + next + '">');
+      document.writeln ('<IMG SRC="nextpage.gif" HEIGHT=17 BORDER=0 ALT="Página siguiente"></A>');
+   } else {
+//   window.alert ('no next page');
+   }
+   document.writeln ('</TD><TD ALIGN="left">');
+   document.writeln ('<A HREF="frameset.htm?TOC">');
+   document.writeln ('<IMG SRC="showtoc.gif" HEIGHT=17 BORDER=0 ALT="Haga clic para ver el contenido"></A></TD>');
+   document.writeln ('<TD ALIGN="left">');
+   document.writeln ('<A HREF="frameset.htm?IDX">');
+   document.writeln ('<IMG SRC="showix.gif" HEIGHT=17 BORDER=0 ALT="Haga clic para ver el índice"></A></TD>');
+   document.writeln ('</TD>');
+   document.writeln ('</TR>');
+   document.writeln ('</TABLE>');
+
+}
+
+</SCRIPT>
+<table align="right" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td align="right"><font size="1">Seagate Software, Inc.<br>
+    <a href="http://www.seagatesoftware.com">http://www.seagatesoftware.com</a><br>
+    Envíe sus comentarios a:<br>
+    <a href="mailto:techpubs@seagatesoftware.com">techpubs@seagatesoftware.com</a><br>
+    </font></td>
+  </tr>
+</table>
+</body>
+</html>
+
+

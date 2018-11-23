@@ -1,0 +1,96 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+
+<html>
+<head>
+<title>Servidores Netscape</title>
+
+<link REL=STYLESHEET TYPE="text/css" HREF="seagate.css">
+
+<!--
+                 ***********************************
+                 * Seagate Software copyright 1999 *
+                 ***********************************
+
+                      Template version: 5.1
+-->
+
+
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" link="#0000FF" vlink="#0000FF" alink="#800080">
+
+
+ 
+<a name="165262"></a><h4 class="newpage"> Servidores Netscape</h4><p><a name="165263"></a>Para determinar si el Web Component Server est&#225; configurado correctamente en servidores web Netscape, siga el procedimiento que se describe a continuaci&#243;n:</p><ol>
+<a name="149444"></a><li value="1&nbsp;&nbsp;&nbsp;&nbsp;">Localice el archivo MIME.TYPES y el archivo OBJ.CONF. Normalmente, estos archivos se encuentran en los siguientes directorios:
+<ul type="disc"><ul type="disc"><a name="149445"></a><li>Netscape Enterprise 3.51:<p class="indent"><a name="167768"></a>&lt;dir&gt;\Netscape\SuiteSpot\https-&lt;machinename&gt;\config</p><a name="149446"></a><li>Netscape Enterprise 3.0:<p class="indent"><a name="167769"></a>&lt;dir&gt;\Netscape\SuiteSpot\https-&lt;machinename&gt;\config</p><a name="149447"></a><li>Netscape Enterprise 2.0 y Netscape FastTrack:<p class="indent"><a name="167770"></a>&lt;dir&gt;\Netscape\server\https-&lt;machinename&gt;\config</p></ul></ul><a name="149448"></a><li value="2&nbsp;&nbsp;&nbsp;&nbsp;">En MIME.TYPES, compruebe que aparecen las siguientes l&#237;neas:
+<p class="indent"><a name="149449"></a>type=magnus<nobr>-i</nobr>nternal/rpt exts=rpt</p><p class="indent"><a name="167771"></a>type=magnus<nobr>-i</nobr>nternal/cri exts=cri</p><a name="149450"></a><li value="3&nbsp;&nbsp;&nbsp;&nbsp;">En OBJ.CONF, compruebe que aparecen las siguientes l&#237;neas:
+<p class="indent"><a name="167030"></a>Init fn="load<nobr>-m</nobr>odules" funcs="req_handler"</p><p class="indent"><a name="167772"></a>&nbsp;&nbsp;&nbsp;&nbsp;shlib="C:\Archivos de programa\Seagate Software\WCS\wcsinsapi.dll"</p><a name="167031"></a><li value="4&nbsp;&nbsp;&nbsp;&nbsp;">En OBJ.CONF, bajo el encabezado <kbd>&lt;Object name="default"&gt;</kbd>, compruebe que aparecen las siguientes l&#237;neas:
+<p class="code"><a name="167015"></a>NameTrans fn="pfx2dir" from="/viewer"<br><a name="167016"></a>&nbsp;&nbsp;&nbsp;&nbsp;dir="C:\Archivos de programa\Seagate Software\Viewers\"<br><a name="167017"></a>NameTrans fn="pfx2dir" from="/scrsamples"<br><a name="167018"></a>&nbsp;&nbsp;&nbsp;&nbsp;dir="C:/Archivos de programa/Seagate Software/Crystal<br><a name="167019"></a>&nbsp;&nbsp;&nbsp;&nbsp;Reports/samples/code/web"<br><a name="167020"></a>NameTrans fn="pfx2dir" from="/scrreports"<br><a name="167021"></a>&nbsp;&nbsp;&nbsp;&nbsp;dir="C:/Archivos de programa/Seagate Software/Crystal<br><a name="167022"></a>&nbsp;&nbsp;&nbsp;&nbsp;Reports/samples/reports"<br><a name="167023"></a>Service fn="req_handler" method="(GET|POST)"<br><a name="167024"></a>&nbsp;&nbsp;&nbsp;&nbsp;type="magnus<nobr>-i</nobr>nternal/rpt"<br><a name="167025"></a>Service fn="req_handler" method="(GET|POST)"<br><a name="167026"></a>&nbsp;&nbsp;&nbsp;&nbsp;type="magnus<nobr>-i</nobr>nternal/cri"</p><a name="167027"></a><li value="5&nbsp;&nbsp;&nbsp;&nbsp;">Si falta alguna de estas l&#237;neas, agr&#233;guelas al archivo apropiado.
+<a name="165238"></a><li value="6&nbsp;&nbsp;&nbsp;&nbsp;">Cierre el servidor web Netscape y reinicie su sistema de servidor web.
+</ol>
+
+<hr><br>
+
+<script  language="JavaScript"><!--
+
+var prev = "WebServerImplementation21.html";
+var next = "WebServerImplementation23.html";
+
+function setTopicID() { 
+      var number = "165262"; 
+      return number; 
+}
+
+// --></script>
+
+
+
+
+<SCRIPT>
+
+if (!window.parent.toc && navigator.appName == "Netscape") {
+
+   document.writeln ('<TABLE ALIGN="left" border="0" cellspacing="0" cellpadding="10">');
+   document.writeln ('<TR>');
+   document.write ('<TD ALIGN="left">');
+
+   if (prev != "wcmadminTOC.hhc") {
+      document.writeln ('<A HREF="' + prev + '">');
+      document.writeln ('<IMG SRC="prevpage.gif" HEIGHT=17 BORDER=0 ALT="Página anterior"></A>');
+   } else {
+//   window.alert ('no previous page');
+   }
+
+   if (next != "wcmadminIX.hhk") {
+      document.writeln ('<A HREF="' + next + '">');
+      document.writeln ('<IMG SRC="nextpage.gif" HEIGHT=17 BORDER=0 ALT="Página siguiente"></A>');
+   } else {
+//   window.alert ('no next page');
+   }
+   document.writeln ('</TD><TD ALIGN="left">');
+   document.writeln ('<A HREF="frameset.htm?TOC">');
+   document.writeln ('<IMG SRC="showtoc.gif" HEIGHT=17 BORDER=0 ALT="Haga clic para ver el contenido"></A></TD>');
+   document.writeln ('<TD ALIGN="left">');
+   document.writeln ('<A HREF="frameset.htm?IDX">');
+   document.writeln ('<IMG SRC="showix.gif" HEIGHT=17 BORDER=0 ALT="Haga clic para ver el índice"></A></TD>');
+   document.writeln ('</TD>');
+   document.writeln ('</TR>');
+   document.writeln ('</TABLE>');
+
+}
+
+</SCRIPT>
+<table align="right" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td align="right"><font size="1">Seagate Software, Inc.<br>
+    <a href="http://www.seagatesoftware.com">http://www.seagatesoftware.com</a><br>
+    Envíe sus comentarios a:<br>
+    <a href="mailto:techpubs@seagatesoftware.com">techpubs@seagatesoftware.com</a><br>
+    </font></td>
+  </tr>
+</table>
+</body>
+</html>
+
+

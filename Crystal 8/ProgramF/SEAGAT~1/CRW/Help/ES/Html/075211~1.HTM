@@ -1,0 +1,80 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+
+<html>
+<head>
+
+<title>Espacios en blanco innecesarios en la f&#243;rmula de selecci&#243;n</title>
+
+<link REL=STYLESHEET TYPE="text/css" HREF="seagate.css">
+
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" link="#0000FF" vlink="#0000FF" alink="#800080">
+
+
+ 
+<a name="54698"></a><h4 class="newpage"> Espacios en blanco innecesarios en la f&#243;rmula de selecci&#243;n</h4><p><a name="54699"></a>En computaci&#243;n, los espacios son caracteres, por lo tanto, cuando usted los incluye en la expresi&#243;n de comparaci&#243;n de una f&#243;rmula de selecci&#243;n de registros, &#233;sta busca los registros que contengan una coincidencia exacta en el campo seleccionado, incluyendo los espacios. Por ejemplo, la siguiente f&#243;rmula:</p><p><code><a name="54700"></a>"Sr ." in {cliente.TITULO}</code></p><p><a name="56053"></a>no encontrar&#225; ninguna coincidencia "Sr.", debido a que hay un espacio extra en el termino de comparaci&#243;n entre la letra "r" y el punto.</p><p><a name="54701"></a>Revise cuidadosamente su f&#243;rmula de selecci&#243;n y aseg&#250;rese que los espacios en la f&#243;rmula de selecci&#243;n coincidan con los espacios en los campos que est&#225; comparando.</p>
+<hr><br>
+
+<script  language="JavaScript"><!--
+
+var prev = "07_recordgroupsel16.html";
+var next = "08_sortgrouptotal.html";
+
+function setTopicID() { 
+      var number = "54698"; 
+      return number; 
+}
+
+// --></script>
+
+
+
+
+<SCRIPT>
+
+if (!window.parent.toc && navigator.appName == "Netscape") {
+
+   document.writeln ('<TABLE ALIGN="left" border="0" cellspacing="0" cellpadding="10">');
+   document.writeln ('<TR>');
+   document.write ('<TD ALIGN="left">');
+
+   if (prev != "crw_spTOC.hhc") {
+      document.writeln ('<A HREF="' + prev + '">');
+      document.writeln ('<IMG SRC="prevpage.gif" HEIGHT=17 BORDER=0 ALT="Página anterior"></A>');
+   } else {
+//   window.alert ('no previous page');
+   }
+
+   if (next != "crw_spIX.hhk") {
+      document.writeln ('<A HREF="' + next + '">');
+      document.writeln ('<IMG SRC="nextpage.gif" HEIGHT=17 BORDER=0 ALT="Página siguiente"></A>');
+   } else {
+//   window.alert ('no next page');
+   }
+   document.writeln ('</TD><TD ALIGN="left">');
+   document.writeln ('<A HREF="frameset.htm?TOC">');
+   document.writeln ('<IMG SRC="showtoc.gif" HEIGHT=17 BORDER=0 ALT="Haga clic para ver el contenido"></A></TD>');
+   document.writeln ('<TD ALIGN="left">');
+   document.writeln ('<A HREF="frameset.htm?IDX">');
+   document.writeln ('<IMG SRC="showix.gif" HEIGHT=17 BORDER=0 ALT="Haga clic para ver el índice"></A></TD>');
+   document.writeln ('</TD>');
+   document.writeln ('</TR>');
+   document.writeln ('</TABLE>');
+
+}
+
+</SCRIPT>
+<table align="right" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td align="right"><font size="1">Seagate Software, Inc.<br>
+    <a href="http://www.seagatesoftware.com">http://www.seagatesoftware.com</a><br>
+    Envíe sus comentarios a:<br>
+    <a href="mailto:techpubs@seagatesoftware.com">techpubs@seagatesoftware.com</a><br>
+    </font></td>
+  </tr>
+</table>
+</body>
+</html>
+
+

@@ -1,0 +1,130 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+
+<html>
+<head>
+<title>IsNull (Campo)</title>
+
+<link REL=STYLESHEET TYPE="text/css" HREF="seagate.css">
+
+<!--
+                 ***********************************
+                 * Seagate Software copyright 1999 *
+                 ***********************************
+
+                      Template version: 5.1
+-->
+
+
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" link="#0000FF" vlink="#0000FF" alink="#800080">
+
+
+ 
+<a name="1000578104"></a><h3 class="newpage"> IsNull (Campo)</h3>
+<p><a name="1000719956"></a>Sintaxis b&#225;sica y Crystal.</p><a name="1000825051"></a><h5>Argumentos</h5><p><a name="1000825052"></a>campo es todo campo de base de datos, memo o BLOB v&#225;lido. </p><a name="1000825053"></a><h5>Devuelve </h5><p><a name="1000578111"></a>Un valor Booleano</p><a name="1000578112"></a><h5>Acci&#243;n</h5><p><a name="1000578113"></a>Eval&#250;a el campo especificado en el registro actual y devuelve VERDADERO si el campo contiene un valor nulo.</p><a name="1000578114"></a><h5>Uso(s) t&#237;pico(s)</h5><p><a name="1000578115"></a>Puede utilizar esta funci&#243;n en una f&#243;rmula de selecci&#243;n de registro para limitar el informe a los registros que tienen algo diferente a un valor nulo en el campo especificado. Puede tambi&#233;n utilizarla para que Crystal Reports realice alguna acci&#243;n siempre que encuentre un valor nulo.</p><a name="1000578116"></a><h5>Ejemplo(s) </h5><p><a name="1000578117"></a>Los siguientes ejemplos son aplicables a las sintaxis b&#225;sica y Crystal:</p><p><a name="1000578118"></a>IsNull({pedidos.MONTO DEL PEDIDO}) = produce los resultados siguientes:</p><p><a name="1000578140"></a> <Table Border="1">
+<tr><td align="left" valign="TOP"><a name="1000578121"></a>Si({pedidos.MONTO DEL 
+PEDIDO})<br>
+muestra este valor
+
+</td><td align="left" valign="TOP"><a name="1000578123"></a>IsNull({pedidos.MONTO DEL 
+PEDIDO}) <br>
+Devuelve 
+
+</td></tr>
+<tr><td align="left" valign="TOP"><P><a name="1000578125"></a>200.00</P>
+
+
+</td><td align="left" valign="TOP"><P><a name="1000578127"></a>Falso</P>
+
+
+</td></tr>
+<tr><td align="left" valign="TOP"><P><a name="1000578129"></a>(nulo)</P>
+
+
+</td><td align="left" valign="TOP"><P><a name="1000578131"></a>Verdadero</P>
+
+
+</td></tr>
+<tr><td align="left" valign="TOP"><P><a name="1000578133"></a>100.00</P>
+
+
+</td><td align="left" valign="TOP"><P><a name="1000578135"></a>Falso</P>
+
+
+</td></tr>
+<tr><td align="left" valign="TOP"><P><a name="1000578137"></a>347.12</P>
+
+
+</td><td align="left" valign="TOP"><P><a name="1000578139"></a>Falso</P>
+
+
+</td></tr>
+
+</Table></p>
+<p><code><a name="1000578141"></a>Not IsNull({pedidos.MONTO DEL PEDIDO})</code></p><p class="indent"><a name="1000578142"></a>Cuando se utiliza como una f&#243;rmula de selecci&#243;n de registro, incluye en el informe s&#243;lo aquellos registros que tienen algo diferente a un valor nulo en el campo {pedidos.MONTO DEL PEDIDO}.</p><a name="1000578143"></a><h5>Comentario(s) </h5><p><a name="1000578144"></a>Algunas bases de datos soportan valores de datos nulos y otras no. Esta funci&#243;n no trabajar&#225; si la(s) base(s) de datos activa(s) no soportan valores nulos. Si la(s) bases(s) de datos soportan valores nulos, la funci&#243;n puede ser utilizada para referenciar los valores nulos que son creados como el resultado de una b&#250;squeda fallida mientras se combinaba.</p><p><a name="1000683637"></a><font color="darkblue"><b>Nota:   &nbsp;&nbsp;&nbsp;</b></font>El cero y el espacio en blanco (vac&#237;o o " ") no son valores nulos.</p>
+<a name="1000750805"></a><h6>Temas relacionados</h6><p><a name="1000750827"></a><a href="20_basicsyntax46.html#130720">Campos nulos y uso de IsNull</a> (Sintaxis b&#225;sica)</p><p><a name="1000750839"></a><a href="21_crystalsyntax50.html#147283">Campos nulos y uso de IsNull</a> (Sintaxis Crystal)</p>
+<hr><br>
+
+<script  language="JavaScript"><!--
+
+var prev = "Functions178.html";
+var next = "Functions180.html";
+
+function setTopicID() { 
+      var number = "1000578104"; 
+      return number; 
+}
+
+// --></script>
+
+
+
+
+<SCRIPT>
+
+if (!window.parent.toc && navigator.appName == "Netscape") {
+
+   document.writeln ('<TABLE ALIGN="left" border="0" cellspacing="0" cellpadding="10">');
+   document.writeln ('<TR>');
+   document.write ('<TD ALIGN="left">');
+
+   if (prev != "crw_spTOC.hhc") {
+      document.writeln ('<A HREF="' + prev + '">');
+      document.writeln ('<IMG SRC="prevpage.gif" HEIGHT=17 BORDER=0 ALT="Página anterior"></A>');
+   } else {
+//   window.alert ('no previous page');
+   }
+
+   if (next != "crw_spIX.hhk") {
+      document.writeln ('<A HREF="' + next + '">');
+      document.writeln ('<IMG SRC="nextpage.gif" HEIGHT=17 BORDER=0 ALT="Página siguiente"></A>');
+   } else {
+//   window.alert ('no next page');
+   }
+   document.writeln ('</TD><TD ALIGN="left">');
+   document.writeln ('<A HREF="frameset.htm?TOC">');
+   document.writeln ('<IMG SRC="showtoc.gif" HEIGHT=17 BORDER=0 ALT="Haga clic para ver el contenido"></A></TD>');
+   document.writeln ('<TD ALIGN="left">');
+   document.writeln ('<A HREF="frameset.htm?IDX">');
+   document.writeln ('<IMG SRC="showix.gif" HEIGHT=17 BORDER=0 ALT="Haga clic para ver el índice"></A></TD>');
+   document.writeln ('</TD>');
+   document.writeln ('</TR>');
+   document.writeln ('</TABLE>');
+
+}
+
+</SCRIPT>
+<table align="right" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td align="right"><font size="1">Seagate Software, Inc.<br>
+    <a href="http://www.seagatesoftware.com">http://www.seagatesoftware.com</a><br>
+    Envíe sus comentarios a:<br>
+    <a href="mailto:techpubs@seagatesoftware.com">techpubs@seagatesoftware.com</a><br>
+    </font></td>
+  </tr>
+</table>
+</body>
+</html>
+
+

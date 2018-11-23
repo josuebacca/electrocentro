@@ -1,0 +1,105 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+
+<html>
+<head>
+<title>Funciones de formato condicional</title>
+
+<link REL=STYLESHEET TYPE="text/css" HREF="seagate.css">
+
+<!--
+                 ***********************************
+                 * Seagate Software copyright 1999 *
+                 ***********************************
+
+                      Template version: 5.1
+-->
+
+
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" link="#0000FF" vlink="#0000FF" alink="#800080">
+
+
+ 
+<a name="147204"></a><h3 class="newpage"> Funciones de formato condicional</h3>
+<p><a name="147206"></a>Al escribir una f&#243;rmula de formato condicional, puede usar las funciones adicionales que aparecen en la parte superior del &#225;rbol Funciones. Por ejemplo, puede dar formato al campo {Cliente.Ventas del &#250;ltimo a&#241;o}de modo que las ventas de m&#225;s de $100.000 se impriman en verde, las ventas por debajo de $15.000 se impriman en rojo y todo lo dem&#225;s en negro.</p><a name="152352"></a><h5>Ejemplo</h5><PRE><a name="147208"></a>//Ejemplo de formato condicional 1
+<a name="147209"></a>If {Cliente.Ventas del &#250;ltimo a&#241;o} &gt; 100000 Then
+<a name="147210"></a>   crGreen
+<a name="147211"></a>Else If {Cliente.Ventas del &#250;ltimo a&#241;o} &lt; 15000 Then
+<a name="147212"></a>   crRed
+<a name="147213"></a>Else
+<a name="147214"></a>   crBlack
+</PRE><p><a name="147216"></a>Como &#233;sta es una funci&#243;n de formato de color de fuentes, la lista de constantes de color aparece en el &#225;rbol Funciones. Este ejemplo usa tres: crGreen, crRed y crBlack. En cambio pudo haber usado los valores num&#233;ricos reales de las constantes de colores. Por ejemplo, crRed es 255 y crGreen es 32768. Sin embargo, la f&#243;rmula es m&#225;s f&#225;cil de comprender usando las constantes de colores. Todas las funciones de constantes en sintaxis Basic tienen el prefijo "cr".</p><p><a name="153559"></a>La sintaxis Crystal todav&#237;a admite funciones constantes de versiones anteriores sin el prefijo "cr". Por ejemplo, es posible usar "Red" en lugar de "crRed". No obstante, el uso del prefijo "cr" organiza las funciones constantes y es lo que se recomienda.</p><p><a name="147218"></a><font color="darkblue"><b>Nota:   &nbsp;&nbsp;&nbsp;</b></font>Algunos atributos de formato no usan funciones de constantes. Por ejemplo, si no desea imprimir valores de {Cliente.Ventas del &#250;ltimo a&#241;o} si &#233;stos son inferiores a $50.000, puede escribir la siguiente f&#243;rmula de formato condicional para el atributo de suprimir:</p>
+<PRE><a name="147220"></a>//Ejemplo de formato condicional 2
+<a name="147221"></a>If {Cliente.Ventas del &#250;ltimo a&#241;o} &lt; 50000 Then
+<a name="147222"></a>   True //suprimir el valor
+<a name="147223"></a>Else
+<a name="147224"></a>   False //no suprimir el valor
+</PRE><p><a name="147226"></a>O m&#225;s sencillamente:</p><PRE><a name="147228"></a>//Ejemplo de formato condicional 3 -
+<a name="147229"></a>//equivalente al ejemplo 2
+<a name="147230"></a>{Cliente.Ventas del &#250;ltimo a&#241;o} &lt; 50000
+</PRE><p><a name="147232"></a>Si las ventas del a&#241;o anterior son inferiores a $50.000, entonces la expresi&#243;n</p><p><code><a name="147233"></a>{Cliente.Ventas del &#250;ltimo a&#241;o} &lt; 50000</code></p><p><a name="147234"></a>es verdadera, y por ende la f&#243;rmula devuelve Verdadero. Por otra parte, si las ventas del a&#241;o anterior son superiores o iguales a $50.000, entonces</p><p><code><a name="147235"></a>{Cliente.Ventas del &#250;ltimo a&#241;o} &lt; 50000</code></p><p><a name="147236"></a> es falsa, y por ende la f&#243;rmula devuelve Falso.</p>
+<hr><br>
+
+<script  language="JavaScript"><!--
+
+var prev = "21_crystalsyntax44.html";
+var next = "21_crystalsyntax46.html";
+
+function setTopicID() { 
+      var number = "147204"; 
+      return number; 
+}
+
+// --></script>
+
+
+
+
+<SCRIPT>
+
+if (!window.parent.toc && navigator.appName == "Netscape") {
+
+   document.writeln ('<TABLE ALIGN="left" border="0" cellspacing="0" cellpadding="10">');
+   document.writeln ('<TR>');
+   document.write ('<TD ALIGN="left">');
+
+   if (prev != "crw_spTOC.hhc") {
+      document.writeln ('<A HREF="' + prev + '">');
+      document.writeln ('<IMG SRC="prevpage.gif" HEIGHT=17 BORDER=0 ALT="Página anterior"></A>');
+   } else {
+//   window.alert ('no previous page');
+   }
+
+   if (next != "crw_spIX.hhk") {
+      document.writeln ('<A HREF="' + next + '">');
+      document.writeln ('<IMG SRC="nextpage.gif" HEIGHT=17 BORDER=0 ALT="Página siguiente"></A>');
+   } else {
+//   window.alert ('no next page');
+   }
+   document.writeln ('</TD><TD ALIGN="left">');
+   document.writeln ('<A HREF="frameset.htm?TOC">');
+   document.writeln ('<IMG SRC="showtoc.gif" HEIGHT=17 BORDER=0 ALT="Haga clic para ver el contenido"></A></TD>');
+   document.writeln ('<TD ALIGN="left">');
+   document.writeln ('<A HREF="frameset.htm?IDX">');
+   document.writeln ('<IMG SRC="showix.gif" HEIGHT=17 BORDER=0 ALT="Haga clic para ver el índice"></A></TD>');
+   document.writeln ('</TD>');
+   document.writeln ('</TR>');
+   document.writeln ('</TABLE>');
+
+}
+
+</SCRIPT>
+<table align="right" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td align="right"><font size="1">Seagate Software, Inc.<br>
+    <a href="http://www.seagatesoftware.com">http://www.seagatesoftware.com</a><br>
+    Envíe sus comentarios a:<br>
+    <a href="mailto:techpubs@seagatesoftware.com">techpubs@seagatesoftware.com</a><br>
+    </font></td>
+  </tr>
+</table>
+</body>
+</html>
+
+

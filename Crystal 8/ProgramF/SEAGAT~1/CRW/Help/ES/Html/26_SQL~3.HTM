@@ -1,0 +1,100 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+
+<html>
+<head>
+<title>C&#243;mo resumir datos con funciones de agrupamiento</title>
+
+<link REL=STYLESHEET TYPE="text/css" HREF="seagate.css">
+
+<!--
+                 ***********************************
+                 * Seagate Software copyright 1999 *
+                 ***********************************
+
+                      Template version: 5.1
+-->
+
+
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" link="#0000FF" vlink="#0000FF" alink="#800080">
+
+
+ 
+<a name="59660"></a><h3 class="newpage"> C&#243;mo resumir datos con funciones de agrupamiento</h3>
+<a name="59661"></a><h6>Funciones de agrupamiento</h6><p><a name="59662"></a>Use las funciones de agrupamiento para obtener informaci&#243;n resumida en todos los registros o en grupos de registros. Estas son m&#225;s &#250;tiles cuan- do no necesita la informaci&#243;n detallada y s&#243;lo desea examinar los totales.</p><p><a name="59663"></a>Por ejemplo, usted podr&#237;a necesitar saber el n&#250;mero total de pedidos hechos y la cantidad promedio de cada pedido. Para este tipo de consulta, aplique la funci&#243;n COUNT al campo Id. del Pedido y la funci&#243;n AVG (promedio) al campo Cantidad. La consulta calcula la informaci&#243;n resumida y proporciona los resultados que necesita.</p><ol>
+<a name="59694"></a><li value="1&nbsp;&nbsp;&nbsp;&nbsp;">Seleccione el campo que desea resumir del &#225;rea <kbd>Campos de consulta</kbd>.
+<p><a name="66865"></a> <img src="images/tb_flds2.gif">
+
+
+</p>
+</ol>
+<p><a name="59699"></a></p><ol>
+<a name="61132"></a><li value="2&nbsp;&nbsp;&nbsp;&nbsp;">Seleccione el campo que desee resumir en este cuadro de lista.
+<a name="59702"></a><li value="3&nbsp;&nbsp;&nbsp;&nbsp;">En el cuadro desplegable <kbd>Total</kbd>, seleccione una funci&#243;n de agrupamiento para aplicarla al campo seleccionado.
+<ul type="disc"><ul type="disc"><a name="59703"></a><li>COUNT() cuenta el n&#250;mero de valores dentro de un grupo.<a name="59704"></a><li>SUM() suma los valores dentro de un grupo para un total.<a name="59705"></a><li>AVG() encuentra el promedio de todos los valores en un grupo.<a name="59706"></a><li>MIN() encuentra el valor m&#237;nimo dentro de un grupo.<a name="59707"></a><li>MAX() encuentra el valor m&#225;ximo dentro de un grupo.<p class="indent"><a name="60618"></a>Cualquier otro campo que aparezca en el cuadro de lista <kbd>Campos de consulta</kbd> son usados para ordenar los datos.</p></ul></ul></ol>
+
+<hr><br>
+
+<script  language="JavaScript"><!--
+
+var prev = "26_sql10.html";
+var next = "26_sql12.html";
+
+function setTopicID() { 
+      var number = "59660"; 
+      return number; 
+}
+
+// --></script>
+
+
+
+
+<SCRIPT>
+
+if (!window.parent.toc && navigator.appName == "Netscape") {
+
+   document.writeln ('<TABLE ALIGN="left" border="0" cellspacing="0" cellpadding="10">');
+   document.writeln ('<TR>');
+   document.write ('<TD ALIGN="left">');
+
+   if (prev != "crw_spTOC.hhc") {
+      document.writeln ('<A HREF="' + prev + '">');
+      document.writeln ('<IMG SRC="prevpage.gif" HEIGHT=17 BORDER=0 ALT="Página anterior"></A>');
+   } else {
+//   window.alert ('no previous page');
+   }
+
+   if (next != "crw_spIX.hhk") {
+      document.writeln ('<A HREF="' + next + '">');
+      document.writeln ('<IMG SRC="nextpage.gif" HEIGHT=17 BORDER=0 ALT="Página siguiente"></A>');
+   } else {
+//   window.alert ('no next page');
+   }
+   document.writeln ('</TD><TD ALIGN="left">');
+   document.writeln ('<A HREF="frameset.htm?TOC">');
+   document.writeln ('<IMG SRC="showtoc.gif" HEIGHT=17 BORDER=0 ALT="Haga clic para ver el contenido"></A></TD>');
+   document.writeln ('<TD ALIGN="left">');
+   document.writeln ('<A HREF="frameset.htm?IDX">');
+   document.writeln ('<IMG SRC="showix.gif" HEIGHT=17 BORDER=0 ALT="Haga clic para ver el índice"></A></TD>');
+   document.writeln ('</TD>');
+   document.writeln ('</TR>');
+   document.writeln ('</TABLE>');
+
+}
+
+</SCRIPT>
+<table align="right" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td align="right"><font size="1">Seagate Software, Inc.<br>
+    <a href="http://www.seagatesoftware.com">http://www.seagatesoftware.com</a><br>
+    Envíe sus comentarios a:<br>
+    <a href="mailto:techpubs@seagatesoftware.com">techpubs@seagatesoftware.com</a><br>
+    </font></td>
+  </tr>
+</table>
+</body>
+</html>
+
+

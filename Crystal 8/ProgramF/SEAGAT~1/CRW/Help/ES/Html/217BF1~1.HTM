@@ -1,0 +1,112 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+
+<html>
+<head>
+<title>Declaraciones de variables</title>
+
+<link REL=STYLESHEET TYPE="text/css" HREF="seagate.css">
+
+<!--
+                 ***********************************
+                 * Seagate Software copyright 1999 *
+                 ***********************************
+
+                      Template version: 5.1
+-->
+
+
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" link="#0000FF" vlink="#0000FF" alink="#800080">
+
+
+ 
+<a name="145381"></a><h3 class="newpage"> Declaraciones de variables</h3>
+<p><a name="145383"></a>Debe declarar una variable antes de usarla en una f&#243;rmula.</p><p><a name="146473"></a>Una variable puede incluir valores de un tipo determinado. Los tipos permitidos son los 7 tipos simples (num&#233;rico, monetario, cadena, booleano, fecha, hora y fechahora), los 6 tipos de rango (rango num&#233;rico, rango monetario, rango de cadenas, rango de fechas, rango de horas y rango de fechahora) y las variables que contienen matrices de los tipos ya mencionados. Es decir, un total de 26 posibles tipos distintos en una variable.</p><p><a name="146482"></a>Al declarar una variable, tambi&#233;n especifica su nombre. Una variable no puede tener el mismo nombre que alguna funci&#243;n, operador u otra palabra clave que sea v&#225;lida para la sintaxis Crystal. Por ejemplo, su variable no puede denominarse Sin, Mod o If porque Sin es una funci&#243;n incorporada, Mod es un operador incorporado e If es una palabra clave incorporada. Al escribir f&#243;rmulas en el Editor de f&#243;rmulas, los nombres de funciones, operadores y otras palabras clave incorporadas se resaltan con un color diferente, lo que facilita la verificaci&#243;n de si el nombre de la variable entra en conflicto.</p><p><a name="145385"></a>Una vez que se declara la variable, &#233;sta se puede usar en la f&#243;rmula. Por ejemplo, es preferible asignarle un valor inicial:</p><PRE><a name="145387"></a>Local NumberVar x; //Declarar x para que sea una variable 
+num&#233;rica
+<a name="145388"></a>x := 10; //Asignar a x el valor de 10
+</PRE><p><a name="145390"></a><font color="darkblue"><b>Nota:   &nbsp;&nbsp;&nbsp;</b></font>La palabra clave para declarar la variable num&#233;rica tiene <EM>Var</EM> al final. Esto se aplica a todos los tipos de variables en sintaxis Crystal.</p>
+<p><a name="145392"></a>Una variable s&#243;lo puede contener valores de un tipo. Por ejemplo, si una variable tiene un valor num&#233;rico, no puede usarla despu&#233;s como cadena.</p><a name="151273"></a><h5>Ejemplo</h5><PRE><a name="145394"></a>Local StringVar y;
+<a name="145395"></a>y := "hola";
+<a name="145397"></a>//Correcto - la funci&#243;n Length espera un argumento de 
+cadena
+<a name="145398"></a>Length (y);
+<a name="145400"></a>//Error - y s&#243;lo puede contener valores de cadena
+<a name="145401"></a>y := #Jan 5, 1993#;
+<a name="145403"></a>//Error - y s&#243;lo puede contener valores de cadena
+<a name="145404"></a>y := ["a", "bb", "ccc"];
+<a name="145406"></a>//Error - la funci&#243;n Sin espera un argumento num&#233;rico
+<a name="145407"></a>Sin (y);
+</PRE><p><a name="145409"></a>Es posible combinar si declara una variable y le asigna un valor de una expresi&#243;n simple. Por ejemplo:</p><PRE><a name="145410"></a>Local NumberVar x := 10 + 20;
+<a name="145411"></a>Local StringVar y := "Hola" + " " + "mundo";
+<a name="145412"></a>Local DateVar z := CDate (#Sept 20, 1999#);
+<a name="145413"></a>Local NumberVar Range calificaci&#243;nA := 90 To 100;
+</PRE><p><a name="145415"></a>Esta pr&#225;ctica es m&#225;s eficaz y ayuda a prevenir el error com&#250;n de tener variables incorrectamente iniciadas.</p><p><a name="145417"></a>A continuaci&#243;n se presentan m&#225;s ejemplos de declaraci&#243;n e iniciaci&#243;n de variables de rango:</p><PRE><a name="145419"></a>Local NumberVar Range calificaci&#243;nA;
+<a name="145420"></a>Local DateVar Range trimestre;
+<a name="145421"></a>calificaci&#243;nA := 90 To 100;
+<a name="145422"></a>trimestre := CDate (1999, 10, 1) To CDate (1999, 12, 31);
+</PRE>
+<hr><br>
+
+<script  language="JavaScript"><!--
+
+var prev = "21_crystalsyntax27.html";
+var next = "21_crystalsyntax29.html";
+
+function setTopicID() { 
+      var number = "145381"; 
+      return number; 
+}
+
+// --></script>
+
+
+
+
+<SCRIPT>
+
+if (!window.parent.toc && navigator.appName == "Netscape") {
+
+   document.writeln ('<TABLE ALIGN="left" border="0" cellspacing="0" cellpadding="10">');
+   document.writeln ('<TR>');
+   document.write ('<TD ALIGN="left">');
+
+   if (prev != "crw_spTOC.hhc") {
+      document.writeln ('<A HREF="' + prev + '">');
+      document.writeln ('<IMG SRC="prevpage.gif" HEIGHT=17 BORDER=0 ALT="Página anterior"></A>');
+   } else {
+//   window.alert ('no previous page');
+   }
+
+   if (next != "crw_spIX.hhk") {
+      document.writeln ('<A HREF="' + next + '">');
+      document.writeln ('<IMG SRC="nextpage.gif" HEIGHT=17 BORDER=0 ALT="Página siguiente"></A>');
+   } else {
+//   window.alert ('no next page');
+   }
+   document.writeln ('</TD><TD ALIGN="left">');
+   document.writeln ('<A HREF="frameset.htm?TOC">');
+   document.writeln ('<IMG SRC="showtoc.gif" HEIGHT=17 BORDER=0 ALT="Haga clic para ver el contenido"></A></TD>');
+   document.writeln ('<TD ALIGN="left">');
+   document.writeln ('<A HREF="frameset.htm?IDX">');
+   document.writeln ('<IMG SRC="showix.gif" HEIGHT=17 BORDER=0 ALT="Haga clic para ver el índice"></A></TD>');
+   document.writeln ('</TD>');
+   document.writeln ('</TR>');
+   document.writeln ('</TABLE>');
+
+}
+
+</SCRIPT>
+<table align="right" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td align="right"><font size="1">Seagate Software, Inc.<br>
+    <a href="http://www.seagatesoftware.com">http://www.seagatesoftware.com</a><br>
+    Envíe sus comentarios a:<br>
+    <a href="mailto:techpubs@seagatesoftware.com">techpubs@seagatesoftware.com</a><br>
+    </font></td>
+  </tr>
+</table>
+</body>
+</html>
+
+
